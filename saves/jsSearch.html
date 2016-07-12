@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./jsSearch/js/CoveoJsSearch.Dependencies.js"></script>
+<script src="./jsSearch/js/CoveoJsSearch.js"></script>
+<script src="./jsSearch/js/templates/templates.js"></script>
+<link rel="stylesheet" href="./jsSearch/css/CoveoFullSearch.css" />
+<script type="text/javascript">
+$(function() {
+Coveo.Rest.SearchEndpoint.endpoints["default"] = new Coveo.Rest.SearchEndpoint({
+restUri: 'http://unik.caij.qc.ca/rest/search',
+version: '',
+pipeline: 'default',
+debug: 1,
+anonymous: true
+});
+
+    $('#search').on(Coveo.Events.QueryEvents.buildingQuery, function (e, data) {
+      data.queryBuilder.enableWildcards = true;
+      data.queryBuilder.enableLowercaseOperators = true;
+    });
+
+    $('#search').coveo('init');
+  });
+</script>
+</head>
+<body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new">
+<div class='coveo-search-section'>
+<div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+</div>
+<div class="coveo-main-section">
+<div class="coveo-facet-column">
+<div data-tab="All">
+<div class="CoveoFacet" data-title="Author" data-field="@sysauthor"></div>
+<div class="CoveoFacet" data-title="Tribunal" data-field="@tribunal" data-custom-sort="Cour suprême du Canada-CA,Cour d'appel-QC,Cour supérieure-QC,Cour du Québec-QC" data-number-of-values-in-breadcrumb="20" data-enable-facet-search="true" data-facet-search-ignore-accents="true" data-tab="All"></div>
+</div>
+</div>
+</div>
+</body>
+</html>

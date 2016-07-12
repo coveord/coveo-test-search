@@ -1,0 +1,36 @@
+<script>
+    var authenticateDeferrer = $.Deferred();
+    authenticateDeferrer.resolve();
+    var authenticate = function () {
+        return authenticateDeferrer;
+    };
+</script>
+<link rel="stylesheet" type="text/css" href="interfaceEditor/css/InterfaceToolbox.css"/>
+<script src="interfaceEditor/js/InterfaceToolbox.js"></script>
+<script src="interfaceEditor/js/cultures/toolbox-en.js"></script>
+<script>
+    var pages = <%= JSON.stringify(obj.pages || null) %>;
+    var currentPage = <%= JSON.stringify(obj.currentPage || null) %>;
+    var edit = function (id) {
+        window.location = './edit';
+    };
+    var clone = function (from, to) {
+        $.get('./clone', {from: from, to: to}).done(function () {
+            window.location = '.';
+        });
+    };
+    var del = function (id) {
+        $.get('./del', {id: id}).done(function () {
+            window.location = '.';
+        });
+    };
+
+    $(function () {
+        new Coveo.InterfaceEditor.InterfaceToolbox({
+            currentPage: currentPage,
+            edit: edit,
+            'delete': del,
+            authenticate: authenticate
+        }).dom.appendTo('body');
+    });
+</script>

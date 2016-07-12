@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="./jsSearch/css/CoveoFullSearch.css"/>
+<script src="./jsSearch/js/CoveoJsSearch.js"></script>
+<script src="./jsSearch/js/CoveoJsSearch.dependencies.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+<script>
+    var selectPage = function (name) {
+        window.location = '/?id=' + name;
+    };
+    var authenticateDeferrer = $.Deferred();
+    authenticateDeferrer.resolve();
+    var authenticate = function () {
+        return authenticateDeferrer;
+    };
+</script>
+<link rel="stylesheet" type="text/css" href="./interfaceEditor/css/InterfaceCreator.css"/>
+<script src="./interfaceEditor/js/InterfaceCreator.js"></script>
+<script src="./interfaceEditor/js/cultures/creator-en.js"></script>
+<script>
+    var repositories = <%= JSON.stringify(obj.repositories || null) %>;
+    var name = <%= JSON.stringify(obj.name || null) %>;
+
+    var create = function (name, repositories) {
+        $.get('./create', {id: name, repositories: repositories.join(',')}).done(function () {
+            window.location = '.';
+        });
+    };
+
+    $(function () {
+        Coveo.SearchEndpoint.configureSampleEndpoint()
+        new Coveo.InterfaceEditor.InterfaceCreator({
+            repositories: repositories,
+            name: name,
+            create: create,
+            authenticate: authenticate,
+            endpoint: Coveo.SearchEndpoint.endpoints["default"]
+        }).dom.appendTo('body');
+    })
+</script>  
+</head>
+<body>
+</body>
+</html>

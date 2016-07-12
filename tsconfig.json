@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs"
+  },
+  "files": [
+    "router.ts",
+    "routers.ts", 
+    "server.ts",
+    "typings/tsd.d.ts"
+  ]
+}
