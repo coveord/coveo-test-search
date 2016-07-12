@@ -19,6 +19,6 @@
   },
   "scripts": {
     "start": "nf start",
-    "postinstall": "gulp copySearchUi"
+    "postinstall": "node_modules/gulp/bin/gulp.js copySearchUi"
   }
 }
