@@ -3,7 +3,7 @@ var debug = require('gulp-debug');
 
 
 gulp.task('copyCustomUi', function () {
-    return gulp.src(['searchTest.html'], { "base" : "." })
+    return gulp.src(['./testPages/*.html'], { "base" : "./testPages" })
         .pipe(gulp.dest('./public'))
 });
 
