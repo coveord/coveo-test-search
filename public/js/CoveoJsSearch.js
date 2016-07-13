@@ -2157,8 +2157,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.13',
-	    'product': '1.667.13',
+	    'lib': '1.667.14',
+	    'product': '1.667.14',
 	    'supportedApiVersion': 2
 	};
 
@@ -11295,7 +11295,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Dom_1.$$(this.root).addClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
 	    };
 	    SearchInterface.prototype.unsetSmallInterface = function () {
-	        Dom_1.$$(this.root).addClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
+	        Dom_1.$$(this.root).removeClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
 	    };
 	    SearchInterface.prototype.initializeAnalytics = function () {
 	        var analyticsRef = BaseComponent_1.BaseComponent.getComponentRef('Analytics');
@@ -20124,7 +20124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.facetSearchTimeout = undefined;
 	        }
 	        if (Utils_1.Utils.exists(this.facetSearchPromise)) {
-	            Promise.reject(this.facetSearchPromise);
+	            Promise.reject(this.facetSearchPromise).catch(function () { });
 	            this.facetSearchPromise = undefined;
 	        }
 	        this.hideFacetSearchWaitingAnimation();
@@ -35997,7 +35997,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var valFromHierarchy = _this.getValueFromHierarchy(v);
 	            if (valFromHierarchy) {
 	                var elem = _this.getElementFromFacetValueList(v);
-	                return elem.style.display == 'block' || elem.style.display == '';
+	                return !Dom_1.$$(elem).hasClass('coveo-inactive');
 	            }
 	            return false;
 	        });
@@ -36066,6 +36066,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _this.close(valueHierarchy);
 	        });
 	        _super.prototype.reset.call(this);
+	    };
+	    HierarchicalFacet.prototype.processFacetSearchAllResultsSelected = function (facetValues) {
+	        this.selectMultipleValues(facetValues);
+	        this.triggerNewQuery();
 	    };
 	    HierarchicalFacet.prototype.updateSearchInNewDesign = function (moreValuesAvailable) {
 	        if (moreValuesAvailable === void 0) { moreValuesAvailable = true; }
@@ -36661,6 +36665,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.facet.showWaitingAnimation();
 	        var searchParameters = new FacetSearchParameters_1.FacetSearchParameters(this.facet);
 	        searchParameters.nbResults = this.facet.numberOfValues;
+	        searchParameters.alwaysInclude = this.facet.getDisplayedValues();
 	        searchParameters.setValueToSearch(this.getValueInInputForFacetSearch());
 	        this.facet.facetQueryController.search(searchParameters).then(function (fieldValues) {
 	            _this.completelyDismissSearch();

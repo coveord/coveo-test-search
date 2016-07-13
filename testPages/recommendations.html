@@ -21,12 +21,17 @@
           args.queryBuilder.enableDebug = true;
         })
 
+        Coveo.$$(document.querySelector('#recommendation2')).on('buildingQuery', function(e, args) {
+          args.queryBuilder.enableDebug = true;
+        })
+
         Coveo.initRecommendation(document.querySelector('#recommendation'), document.querySelector('#search'));
+        Coveo.initRecommendation(document.querySelector('#recommendation2'), document.querySelector('#search'));
         Coveo.init(document.querySelector('#search'));
         coveoua('init','c6361306-f44e-4cbb-bfb1-5e752d9b1acb', 'https://usageanalyticsstaging.coveo.com');
 
         Coveo.$$(document.querySelector('#resetHistoryButton')).on('click', function() {
-          let historyStore = new coveoanalytics.history.HistoryStore();
+          var historyStore = new coveoanalytics.history.HistoryStore();
           historyStore.clear();
           Coveo.executeQuery(document.querySelector('#search'));
         })
@@ -44,7 +49,7 @@
       <li><a href="Recommendation.html">Recommendation</a></li>
    </ul>
     <div id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-pipeline="Recommendation - DO NOT DELETE">
-      <div class="CoveoAnalytics" data-endpoint="https://usageanalyticsdev.coveo.com" data-token="75a8f974-1d44-43a4-b69b-f4ff00d7c575"></div>
+      <div class="CoveoAnalytics" data-endpoint="https://usageanalyticsstaging.coveo.com" data-token="c6361306-f44e-4cbb-bfb1-5e752d9b1acb"></div>
       <div class="coveo-tab-section">
         <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
       </div>
@@ -87,9 +92,19 @@
         </div>
         <div class="coveo-recommendation-column">
           <div id="recommendation" class="CoveoRecommendation" data-design="new" data-results-per-page="5" data-pipeline="Recommendation - DO NOT DELETE" data-auto-trigger-query="false">
-            <div class="CoveoAnalytics" data-endpoint="https://usageanalyticsdev.coveo.com" data-token="75a8f974-1d44-43a4-b69b-f4ff00d7c575"></div>
+            <div class="CoveoAnalytics" data-endpoint="https://usageanalyticsstaging.coveo.com" data-token="c6361306-f44e-4cbb-bfb1-5e752d9b1acb"></div>
             <div class="coveo-recommendation-header">
               <div class="coveo-recommendation-title">Recommendations</div>
+            </div>
+            <div class="coveo-recommendation-body">
+              <div class="CoveoResultList"></div>
+            </div>
+          </div>
+          <div id="recommendation2" class="CoveoRecommendation" data-hide-if-no-results="true" data-design="new" data-results-per-page="5" data-pipeline="Recommendation - DO NOT DELETE" data-auto-trigger-query="false">
+            <div class="CoveoAnalytics" data-endpoint="https://usageanalyticsstaging.coveo.com" data-token="c6361306-f44e-4cbb-bfb1-5e752d9b1acb"></div>
+            <script class="CoveoRecommendationQuery" type="text/x-query-generic">@sysfiletype=test</script>
+            <div class="coveo-recommendation-header">
+              <div class="coveo-recommendation-title">Recommendations 2</div>
             </div>
             <div class="coveo-recommendation-body">
               <div class="CoveoResultList"></div>
