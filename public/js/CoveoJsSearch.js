@@ -1,5 +1,14 @@
-var Coveo =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Coveo__temporary"] = factory();
+	else
+		root["Coveo__temporary"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -118,6 +127,7 @@ var Coveo =
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
+	var _this = this;
 	var DefaultLanguage_1 = __webpack_require__(11);
 	DefaultLanguage_1.defaultLanguage();
 	var DefaultLanguage_2 = __webpack_require__(11);
@@ -333,141 +343,158 @@ var Coveo =
 	exports.FacetSearch = FacetSearch_1.FacetSearch;
 	var FacetSearchParameters_1 = __webpack_require__(78);
 	exports.FacetSearchParameters = FacetSearchParameters_1.FacetSearchParameters;
-	var Slider_1 = __webpack_require__(163);
+	var Slider_1 = __webpack_require__(152);
 	exports.Slider = Slider_1.Slider;
-	var FacetSlider_1 = __webpack_require__(165);
+	var FacetSlider_1 = __webpack_require__(154);
 	exports.FacetSlider = FacetSlider_1.FacetSlider;
-	var FacetRange_1 = __webpack_require__(166);
+	var FacetRange_1 = __webpack_require__(155);
 	exports.FacetRange = FacetRange_1.FacetRange;
-	var Pager_1 = __webpack_require__(167);
+	var Pager_1 = __webpack_require__(156);
 	exports.Pager = Pager_1.Pager;
 	var ResultList_1 = __webpack_require__(119);
 	exports.ResultList = ResultList_1.ResultList;
-	var Excerpt_1 = __webpack_require__(168);
+	var Excerpt_1 = __webpack_require__(157);
 	exports.Excerpt = Excerpt_1.Excerpt;
-	var ResultLink_1 = __webpack_require__(169);
+	var ResultLink_1 = __webpack_require__(158);
 	exports.ResultLink = ResultLink_1.ResultLink;
 	var Icon_1 = __webpack_require__(115);
 	exports.Icon = Icon_1.Icon;
-	var Thumbnail_1 = __webpack_require__(170);
+	var Thumbnail_1 = __webpack_require__(159);
 	exports.Thumbnail = Thumbnail_1.Thumbnail;
-	var PrintableUri_1 = __webpack_require__(171);
+	var PrintableUri_1 = __webpack_require__(160);
 	exports.PrintableUri = PrintableUri_1.PrintableUri;
 	var Quickview_1 = __webpack_require__(116);
 	exports.Quickview = Quickview_1.Quickview;
-	var DidYouMean_1 = __webpack_require__(172);
+	var DidYouMean_1 = __webpack_require__(161);
 	exports.DidYouMean = DidYouMean_1.DidYouMean;
-	var ErrorReport_1 = __webpack_require__(173);
+	var ErrorReport_1 = __webpack_require__(162);
 	exports.ErrorReport = ErrorReport_1.ErrorReport;
-	var ExportToExcel_1 = __webpack_require__(174);
+	var ExportToExcel_1 = __webpack_require__(163);
 	exports.ExportToExcel = ExportToExcel_1.ExportToExcel;
-	var Folding_1 = __webpack_require__(175);
+	var Folding_1 = __webpack_require__(164);
 	exports.Folding = Folding_1.Folding;
-	var HiddenQuery_1 = __webpack_require__(177);
+	var HiddenQuery_1 = __webpack_require__(166);
 	exports.HiddenQuery = HiddenQuery_1.HiddenQuery;
-	var HierarchicalFacet_1 = __webpack_require__(178);
+	var HierarchicalFacet_1 = __webpack_require__(167);
 	exports.HierarchicalFacet = HierarchicalFacet_1.HierarchicalFacet;
-	var Matrix_1 = __webpack_require__(188);
+	var Matrix_1 = __webpack_require__(177);
 	exports.Matrix = Matrix_1.Matrix;
 	var QuickviewDocument_1 = __webpack_require__(118);
 	exports.QuickviewDocument = QuickviewDocument_1.QuickviewDocument;
-	var YouTubeThumbnail_1 = __webpack_require__(191);
+	var YouTubeThumbnail_1 = __webpack_require__(180);
 	exports.YouTubeThumbnail = YouTubeThumbnail_1.YouTubeThumbnail;
-	var ResultAttachments_1 = __webpack_require__(192);
+	var ResultAttachments_1 = __webpack_require__(181);
 	exports.ResultAttachments = ResultAttachments_1.ResultAttachments;
-	var ResultFolding_1 = __webpack_require__(194);
+	var ResultFolding_1 = __webpack_require__(183);
 	exports.ResultFolding = ResultFolding_1.ResultFolding;
-	var FieldTable_1 = __webpack_require__(196);
+	var FieldTable_1 = __webpack_require__(185);
 	exports.FieldTable = FieldTable_1.FieldTable;
-	var FieldValue_1 = __webpack_require__(197);
+	var FieldValue_1 = __webpack_require__(186);
 	exports.FieldValue = FieldValue_1.FieldValue;
-	var Badge_1 = __webpack_require__(198);
+	var Badge_1 = __webpack_require__(187);
 	exports.Badge = Badge_1.Badge;
-	var ResultRating_1 = __webpack_require__(199);
+	var ResultRating_1 = __webpack_require__(188);
 	exports.ResultRating = ResultRating_1.ResultRating;
-	var PreferencesPanel_1 = __webpack_require__(200);
+	var PreferencesPanel_1 = __webpack_require__(189);
 	exports.PreferencesPanel = PreferencesPanel_1.PreferencesPanel;
-	var ResultsFiltersPreferences_1 = __webpack_require__(201);
+	var ResultsFiltersPreferences_1 = __webpack_require__(190);
 	exports.ResultsFiltersPreferences = ResultsFiltersPreferences_1.ResultsFiltersPreferences;
 	var Tab_1 = __webpack_require__(149);
 	exports.Tab = Tab_1.Tab;
 	var Omnibox_1 = __webpack_require__(126);
 	exports.Omnibox = Omnibox_1.Omnibox;
-	var QueryDuration_1 = __webpack_require__(203);
+	var QueryDuration_1 = __webpack_require__(192);
 	exports.QueryDuration = QueryDuration_1.QueryDuration;
-	var QuerySummary_1 = __webpack_require__(204);
+	var QuerySummary_1 = __webpack_require__(193);
 	exports.QuerySummary = QuerySummary_1.QuerySummary;
 	var Debug_1 = __webpack_require__(102);
 	exports.Debug = Debug_1.Debug;
-	var Settings_1 = __webpack_require__(205);
+	var Settings_1 = __webpack_require__(194);
 	exports.Settings = Settings_1.Settings;
-	var ShareQuery_1 = __webpack_require__(206);
+	var ShareQuery_1 = __webpack_require__(195);
 	exports.ShareQuery = ShareQuery_1.ShareQuery;
-	var Sort_1 = __webpack_require__(207);
+	var Sort_1 = __webpack_require__(196);
 	exports.Sort = Sort_1.Sort;
-	var SortCriteria_1 = __webpack_require__(176);
+	var SortCriteria_1 = __webpack_require__(165);
 	exports.SortCriteria = SortCriteria_1.SortCriteria;
-	var Triggers_1 = __webpack_require__(208);
+	var Triggers_1 = __webpack_require__(197);
 	exports.Triggers = Triggers_1.Triggers;
 	var Recommendation_1 = __webpack_require__(104);
 	exports.Recommendation = Recommendation_1.Recommendation;
-	var RecommendationQuery_1 = __webpack_require__(209);
+	var RecommendationQuery_1 = __webpack_require__(198);
 	exports.RecommendationQuery = RecommendationQuery_1.RecommendationQuery;
-	var TemplateLoader_1 = __webpack_require__(210);
+	var TemplateLoader_1 = __webpack_require__(199);
 	exports.TemplateLoader = TemplateLoader_1.TemplateLoader;
 	var Template_1 = __webpack_require__(95);
 	exports.Template = Template_1.Template;
-	var SuggestionForOmnibox_1 = __webpack_require__(211);
+	var SuggestionForOmnibox_1 = __webpack_require__(200);
 	exports.SuggestionForOmnibox = SuggestionForOmnibox_1.SuggestionForOmnibox;
-	var AnalyticsSuggestions_1 = __webpack_require__(212);
+	var AnalyticsSuggestions_1 = __webpack_require__(201);
 	exports.AnalyticsSuggestions = AnalyticsSuggestions_1.AnalyticsSuggestions;
-	var FieldSuggestions_1 = __webpack_require__(213);
+	var FieldSuggestions_1 = __webpack_require__(202);
 	exports.FieldSuggestions = FieldSuggestions_1.FieldSuggestions;
-	var AuthenticationProvider_1 = __webpack_require__(214);
+	var AuthenticationProvider_1 = __webpack_require__(203);
 	exports.AuthenticationProvider = AuthenticationProvider_1.AuthenticationProvider;
-	var ResultTagging_1 = __webpack_require__(215);
+	var ResultTagging_1 = __webpack_require__(204);
 	exports.ResultTagging = ResultTagging_1.ResultTagging;
-	var ResultsPreferences_1 = __webpack_require__(216);
+	var ResultsPreferences_1 = __webpack_require__(205);
 	exports.ResultsPreferences = ResultsPreferences_1.ResultsPreferences;
-	var PipelineContext_1 = __webpack_require__(217);
+	var PipelineContext_1 = __webpack_require__(206);
 	exports.PipelineContext = PipelineContext_1.PipelineContext;
 	exports.context = PipelineContext_1.context;
-	var OmniboxResultList_1 = __webpack_require__(218);
+	var OmniboxResultList_1 = __webpack_require__(207);
 	exports.OmniboxResultList = OmniboxResultList_1.OmniboxResultList;
-	var CurrentTab_1 = __webpack_require__(219);
+	var CurrentTab_1 = __webpack_require__(208);
 	exports.CurrentTab = CurrentTab_1.CurrentTab;
 	var QueryboxQueryParameters_1 = __webpack_require__(123);
 	exports.QueryboxQueryParameters = QueryboxQueryParameters_1.QueryboxQueryParameters;
-	var ImageResultList_1 = __webpack_require__(220);
+	var ImageResultList_1 = __webpack_require__(209);
 	exports.ImageResultList = ImageResultList_1.ImageResultList;
-	var CoveoJQuery_1 = __webpack_require__(221);
+	var CoveoJQuery_1 = __webpack_require__(210);
 	exports.CoveoJQuery = CoveoJQuery_1.CoveoJQuery;
-	var CoveoJQuery_2 = __webpack_require__(221);
+	var CoveoJQuery_2 = __webpack_require__(210);
 	exports.$ = CoveoJQuery_2.jQueryInstance;
-	var FollowItem_1 = __webpack_require__(222);
+	var CoveoUnderscore_1 = __webpack_require__(211);
+	exports._ = CoveoUnderscore_1.underscoreInstance;
+	var FollowItem_1 = __webpack_require__(212);
 	exports.FollowItem = FollowItem_1.FollowItem;
-	var SearchAlerts_1 = __webpack_require__(224);
+	var SearchAlerts_1 = __webpack_require__(214);
 	exports.SearchAlerts = SearchAlerts_1.SearchAlerts;
-	var SearchAlertsMessage_1 = __webpack_require__(225);
+	var SearchAlertsMessage_1 = __webpack_require__(215);
 	exports.SearchAlertsMessage = SearchAlertsMessage_1.SearchAlertsMessage;
-	var Text_1 = __webpack_require__(226);
+	var Text_1 = __webpack_require__(216);
 	exports.Text = Text_1.Text;
-	var FoldingForThread_1 = __webpack_require__(227);
+	var FoldingForThread_1 = __webpack_require__(217);
 	exports.FoldingForThread = FoldingForThread_1.FoldingForThread;
 	var ResponsiveFacets_1 = __webpack_require__(147);
 	exports.ResponsiveFacets = ResponsiveFacets_1.ResponsiveFacets;
 	var ResponsiveComponentsManager_1 = __webpack_require__(148);
 	exports.ResponsiveComponentsManager = ResponsiveComponentsManager_1.ResponsiveComponentsManager;
-	var ChatterLikedBy_1 = __webpack_require__(228);
+	var ChatterLikedBy_1 = __webpack_require__(218);
 	exports.ChatterLikedBy = ChatterLikedBy_1.ChatterLikedBy;
-	var ChatterPostAttachment_1 = __webpack_require__(230);
+	var ChatterPostAttachment_1 = __webpack_require__(220);
 	exports.ChatterPostAttachment = ChatterPostAttachment_1.ChatterPostAttachment;
-	var ChatterPostedBy_1 = __webpack_require__(231);
+	var ChatterPostedBy_1 = __webpack_require__(221);
 	exports.ChatterPostedBy = ChatterPostedBy_1.ChatterPostedBy;
-	var ChatterTopic_1 = __webpack_require__(232);
+	var ChatterTopic_1 = __webpack_require__(222);
 	exports.ChatterTopic = ChatterTopic_1.ChatterTopic;
-	var ChatterUtils_1 = __webpack_require__(229);
+	var ChatterUtils_1 = __webpack_require__(219);
 	exports.ChatterUtils = ChatterUtils_1.ChatterUtils;
+	// Webpack output a library target with a temporary name.
+	// This is to allow end user to put CoveoJsSearch.Dependencie.js before or after the main CoveoJsSearch.js, without breaking
+	// This code swap the current module to the "real" Coveo variable.
+	var _ = __webpack_require__(23);
+	var swapVar = function () {
+	    if (window['Coveo'] == undefined) {
+	        window['Coveo'] = _this;
+	    }
+	    else {
+	        _.each(_.keys(_this), function (k) {
+	            window['Coveo'][k] = _this[k];
+	        });
+	    }
+	};
+	swapVar();
 
 
 /***/ },
@@ -2130,8 +2157,8 @@ var Coveo =
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.11',
-	    'product': '1.667.11',
+	    'lib': '1.667.13',
+	    'product': '1.667.13',
 	    'supportedApiVersion': 2
 	};
 
@@ -11261,6 +11288,15 @@ var Coveo =
 	    SearchInterface.prototype.isNewDesign = function () {
 	        return this.isNewDesignAttribute;
 	    };
+	    SearchInterface.prototype.isSmallInterface = function () {
+	        return Dom_1.$$(this.root).hasClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
+	    };
+	    SearchInterface.prototype.setSmallInterface = function () {
+	        Dom_1.$$(this.root).addClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
+	    };
+	    SearchInterface.prototype.unsetSmallInterface = function () {
+	        Dom_1.$$(this.root).addClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
+	    };
 	    SearchInterface.prototype.initializeAnalytics = function () {
 	        var analyticsRef = BaseComponent_1.BaseComponent.getComponentRef('Analytics');
 	        if (analyticsRef) {
@@ -11575,6 +11611,7 @@ var Coveo =
 	         */
 	        searchPageUri: ComponentOptions_1.ComponentOptions.buildStringOption()
 	    };
+	    SearchInterface.SMALL_INTERFACE_CLASS_NAME = 'coveo-small-search-interface';
 	    return SearchInterface;
 	}(RootComponent_1.RootComponent));
 	exports.SearchInterface = SearchInterface;
@@ -18255,7 +18292,6 @@ var Coveo =
 	var Initialization_1 = __webpack_require__(90);
 	var BreadcrumbEvents_1 = __webpack_require__(41);
 	var ResponsiveFacets_1 = __webpack_require__(147);
-	__webpack_require__(160);
 	/**
 	 * This component displays a facet of the results for the current query. A facet consists of a list of values for a given field occurring in the results, ordered using a configurable criteria.<br/>
 	 * The list of values is obtained using a {@link IGroupByRequest} operation performed at the same time as the main query.<br/>
@@ -22038,9 +22074,10 @@ var Coveo =
 	var InitializationEvents_1 = __webpack_require__(44);
 	var ResponsiveComponentsManager_1 = __webpack_require__(148);
 	var EventsUtils_1 = __webpack_require__(151);
+	var SearchInterface_1 = __webpack_require__(92);
+	var Component_1 = __webpack_require__(91);
 	var Utils_1 = __webpack_require__(22);
 	var Logger_1 = __webpack_require__(21);
-	__webpack_require__(158);
 	var Strings_1 = __webpack_require__(29);
 	var PopupUtils_1 = __webpack_require__(69);
 	var _ = __webpack_require__(23);
@@ -22049,6 +22086,7 @@ var Coveo =
 	        this.facets = [];
 	        this.ID = ID;
 	        this.coveoRoot = root;
+	        this.searchInterface = Component_1.Component.get(root.el, SearchInterface_1.SearchInterface, false);
 	        this.tabSection = Dom_1.$$(this.coveoRoot.find('.coveo-tab-section'));
 	        this.buildDropdownContent();
 	        this.buildDropdownHeader();
@@ -22084,6 +22122,11 @@ var Coveo =
 	    ResponsiveFacets.prototype.registerFacet = function (facet) {
 	        this.facets.push(facet);
 	    };
+	    ResponsiveFacets.prototype.handleResizeEvent = function () {
+	        if (this.dropdownHeader.hasClass('coveo-dropdown-header-active')) {
+	            this.positionPopup();
+	        }
+	    };
 	    ResponsiveFacets.prototype.buildDropdownContent = function () {
 	        this.dropdownContent = Dom_1.$$(this.coveoRoot.find('.coveo-facet-column'));
 	        var filterByContainer = Dom_1.$$('div', { className: 'coveo-facet-header-filter-by-container' });
@@ -22095,7 +22138,7 @@ var Coveo =
 	    ResponsiveFacets.prototype.buildDropdownHeader = function () {
 	        this.dropdownHeader = Dom_1.$$('a', { className: 'coveo-dropdown-header coveo-facet-dropdown-header' });
 	        var content = Dom_1.$$('p');
-	        content.text(Strings_1.l('facets'));
+	        content.text(Strings_1.l('Facets'));
 	        this.dropdownHeader.el.appendChild(content.el);
 	    };
 	    ResponsiveFacets.prototype.bindDropdownHeaderEvents = function () {
@@ -22132,7 +22175,7 @@ var Coveo =
 	    };
 	    ResponsiveFacets.prototype.shouldDetachFacetDropdown = function (eventTarget) {
 	        return !eventTarget.closest('coveo-facet-column') && !eventTarget.closest('coveo-facet-dropdown-header')
-	            && this.coveoRoot.hasClass('coveo-small-search-interface') && !eventTarget.closest('coveo-facet-settings-popup');
+	            && this.searchInterface.isSmallInterface() && !eventTarget.closest('coveo-facet-settings-popup');
 	    };
 	    ResponsiveFacets.prototype.saveFacetsPosition = function () {
 	        this.previousSibling = this.dropdownContent.el.previousSibling ? Dom_1.$$(this.dropdownContent.el.previousSibling) : null;
@@ -22193,7 +22236,7 @@ var Coveo =
 	    };
 	    ResponsiveFacets.ACTIVE_FACET_HEADER_Z_INDEX = '20';
 	    ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH = 280;
-	    ResponsiveFacets.FACET_DROPDOWN_WIDTH_RATIO = 0.35; // Used to have a width relative to the coveo root.
+	    ResponsiveFacets.FACET_DROPDOWN_WIDTH_RATIO = 0.35; // Necessary to have a width relative to the coveo root.
 	    ResponsiveFacets.TRANSPARENT_BACKGROUND_OPACITY = '0.9';
 	    ResponsiveFacets.ROOT_MIN_WIDTH = 800;
 	    return ResponsiveFacets;
@@ -22219,21 +22262,22 @@ var Coveo =
 	        this.responsiveComponents = [];
 	        this.isTabActivated = false;
 	        this.isFacetActivated = false;
+	        var searchInterface = Component_1.Component.get(root.el, SearchInterface_1.SearchInterface, true);
 	        this.coveoRoot = root;
 	        this.searchBoxElement = this.getSearchBoxElement();
 	        this.resizeListener = _.debounce(function () {
 	            for (var i = 0; i < _this.responsiveComponents.length; i++) {
 	                if (_this.responsiveComponents[i].needSmallMode()) {
-	                    if (!_this.coveoRoot.hasClass('coveo-small-search-interface')) {
-	                        _this.coveoRoot.addClass('coveo-small-search-interface');
+	                    if (!searchInterface.isSmallInterface()) {
+	                        searchInterface.setSmallInterface();
 	                        _this.changeToSmallMode();
 	                    }
 	                    _this.handleResizeEvent();
 	                    return;
 	                }
 	            }
-	            if (_this.coveoRoot.hasClass('coveo-small-search-interface')) {
-	                _this.coveoRoot.removeClass('coveo-small-search-interface');
+	            if (searchInterface.isSmallInterface()) {
+	                searchInterface.unsetSmallInterface();
 	                _this.changeToLargeMode();
 	            }
 	            _this.handleResizeEvent();
@@ -22369,7 +22413,6 @@ var Coveo =
 	var Utils_1 = __webpack_require__(22);
 	var Assert_1 = __webpack_require__(20);
 	var Dom_1 = __webpack_require__(56);
-	__webpack_require__(156);
 	/**
 	 * This component is a bar allowing users to select a search interface.<br/>
 	 * The component attaches itself to an div element and is in charge of adding an advanced expression to the query and thus, modify the outgoing query in order to refine the results in relation to the selected tab.<br/>
@@ -22617,14 +22660,16 @@ var Coveo =
 	var Utils_1 = __webpack_require__(22);
 	var Logger_1 = __webpack_require__(21);
 	var Component_1 = __webpack_require__(91);
+	var SearchInterface_1 = __webpack_require__(92);
 	var ResponsiveComponentsManager_1 = __webpack_require__(148);
 	var Strings_1 = __webpack_require__(29);
-	__webpack_require__(152);
 	var _ = __webpack_require__(23);
 	var ResponsiveTabs = (function () {
 	    function ResponsiveTabs(root, ID) {
+	        this.tabSectionChildren = [];
 	        this.ID = ID;
 	        this.coveoRoot = root;
+	        this.searchInterface = Component_1.Component.get(root.el, SearchInterface_1.SearchInterface, false);
 	        this.searchBoxElement = this.getSearchBoxElement();
 	        this.dropdownContent = this.buildDropdownContent();
 	        this.dropdownHeader = this.buildDropdownHeader();
@@ -22633,6 +22678,7 @@ var Coveo =
 	        this.tabSection = Dom_1.$$(this.coveoRoot.find('.coveo-tab-section'));
 	        this.manageTabSwapping();
 	        this.saveTabsPosition();
+	        this.bindNukeEvents();
 	    }
 	    ResponsiveTabs.init = function (root, ID, component) {
 	        this.logger = new Logger_1.Logger('ResponsiveTabs');
@@ -22643,10 +22689,9 @@ var Coveo =
 	        ResponsiveComponentsManager_1.ResponsiveComponentsManager.register(ResponsiveTabs, Dom_1.$$(root), ID, component);
 	    };
 	    ResponsiveTabs.prototype.handleResizeEvent = function () {
+	        var tabs = this.getTabsInTabSection();
 	        if (this.shouldAddTabsToDropdown()) {
 	            var currentTab = void 0;
-	            var overflowingElements = [];
-	            var tabs = this.getTabsInTabSection();
 	            if (!this.tabSection.find('.coveo-tab-dropdown-header')) {
 	                var facetDropdownHeader = this.tabSection.find('.coveo-facet-dropdown-header');
 	                if (facetDropdownHeader) {
@@ -22669,14 +22714,19 @@ var Coveo =
 	        }
 	        else if (this.shouldRemoveTabsFromDropdown()) {
 	            var dropdownTabs = this.dropdownContent.findAll('.coveo-tab-dropdown');
+	            var lastTabInSection = void 0, current = void 0;
+	            if (tabs) {
+	                lastTabInSection = tabs.pop();
+	            }
 	            while (!this.isOverflowing(this.tabSection.el) && !this.isDropdownEmpty()) {
-	                var current = dropdownTabs.shift();
+	                current = dropdownTabs.shift();
 	                this.removeFromDropdown(current);
-	                Dom_1.$$(current).insertBefore(this.dropdownHeader.el);
+	                this.fromDropdownToTabSection(Dom_1.$$(current), lastTabInSection);
+	                lastTabInSection = _.clone(current);
 	            }
 	            if (this.isOverflowing(this.tabSection.el)) {
-	                var tabs = this.getTabsInTabSection();
-	                this.addToDropdown(tabs.pop());
+	                var tabs_1 = this.getTabsInTabSection();
+	                this.addToDropdown(tabs_1.pop());
 	            }
 	            if (this.isDropdownEmpty()) {
 	                this.detachDropdown();
@@ -22688,12 +22738,11 @@ var Coveo =
 	    };
 	    ;
 	    ResponsiveTabs.prototype.needSmallMode = function () {
-	        var tabSectionIsOverflowing = this.isOverflowing(this.tabSection.el);
 	        var win = new Dom_1.Win(window);
 	        if (win.width() <= ResponsiveComponentsManager_1.ResponsiveComponentsManager.MEDIUM_MOBILE_WIDTH) {
 	            return true;
 	        }
-	        else if (!this.coveoRoot.is('.coveo-small-search-interface')) {
+	        else if (!this.searchInterface.isSmallInterface()) {
 	            return this.isOverflowing(this.tabSection.el);
 	        }
 	        else {
@@ -22711,18 +22760,25 @@ var Coveo =
 	        }
 	    };
 	    ResponsiveTabs.prototype.shouldAddTabsToDropdown = function () {
-	        return this.isOverflowing(this.tabSection.el) && this.coveoRoot.is('.coveo-small-search-interface');
+	        return this.isOverflowing(this.tabSection.el) && this.searchInterface.isSmallInterface();
 	    };
 	    ResponsiveTabs.prototype.shouldRemoveTabsFromDropdown = function () {
-	        return !this.isOverflowing(this.tabSection.el) && this.coveoRoot.is('.coveo-small-search-interface') && !this.isDropdownEmpty();
+	        return !this.isOverflowing(this.tabSection.el) && this.searchInterface.isSmallInterface() && !this.isDropdownEmpty();
 	    };
 	    ResponsiveTabs.prototype.emptyDropdown = function () {
 	        if (!this.isDropdownEmpty()) {
 	            var dropdownTabs = this.dropdownContent.findAll('.coveo-tab-dropdown');
+	            var tabs = this.getTabsInTabSection();
+	            var lastTabInSection = void 0;
+	            if (tabs) {
+	                lastTabInSection = tabs.pop();
+	            }
 	            while (!this.isDropdownEmpty()) {
 	                var current = dropdownTabs.shift();
 	                this.removeFromDropdown(current);
 	                Dom_1.$$(current).insertBefore(this.dropdownHeader.el);
+	                this.fromDropdownToTabSection(Dom_1.$$(current), lastTabInSection);
+	                lastTabInSection = _.clone(current);
 	            }
 	        }
 	    };
@@ -22742,18 +22798,14 @@ var Coveo =
 	            });
 	        }
 	        this.coveoRoot.append(virtualTabSection.el);
-	        this.coveoRoot.removeClass('coveo-small-search-interface');
+	        this.searchInterface.unsetSmallInterface();
 	        var isOverflowing = this.isOverflowing(virtualTabSection.el);
-	        this.coveoRoot.addClass('coveo-small-search-interface');
+	        this.searchInterface.setSmallInterface();
 	        virtualTabSection.detach();
 	        return isOverflowing;
 	    };
 	    ResponsiveTabs.prototype.isOverflowing = function (el) {
 	        return el.clientWidth < el.scrollWidth;
-	    };
-	    ResponsiveTabs.prototype.couldNotFindSearchBoxError = function () {
-	        ResponsiveTabs.logger.info('While trying to move the tab section around the search box, could not find an element with class \
-	                      coveo-search-section or CoveoSearchBox');
 	    };
 	    ResponsiveTabs.prototype.buildDropdownHeader = function () {
 	        var dropdownHeader = Dom_1.$$('a', { className: 'coveo-dropdown-header coveo-tab-dropdown-header' });
@@ -22777,7 +22829,7 @@ var Coveo =
 	        });
 	    };
 	    ResponsiveTabs.prototype.buildDropdownContent = function () {
-	        var dropdownContent = Dom_1.$$('div', { className: 'coveo-tab-list-container coveo-small-search-interface' });
+	        var dropdownContent = Dom_1.$$('div', { className: 'coveo-tab-list-container ' + SearchInterface_1.SearchInterface.SMALL_INTERFACE_CLASS_NAME });
 	        var contentList = Dom_1.$$('ol', { className: 'coveo-tab-list' });
 	        dropdownContent.el.appendChild(contentList.el);
 	        return dropdownContent;
@@ -22829,12 +22881,13 @@ var Coveo =
 	            var fadeOutFadeIn = function (event) {
 	                var tabsInSection = _this.getTabsInTabSection();
 	                var lastTabInSection = tabsInSection.pop();
+	                var lastTabSectionSibling = lastTabInSection.previousSibling;
 	                if (event.propertyName == 'opacity') {
 	                    if (tab.el.style.opacity == '0') {
 	                        Dom_1.$$(lastTabInSection).addClass('coveo-tab-dropdown');
 	                        tab.replaceWith(lastTabInSection);
 	                        tab.removeClass('coveo-tab-dropdown');
-	                        tab.insertBefore(_this.dropdownHeader.el);
+	                        _this.fromDropdownToTabSection(tab, lastTabSectionSibling);
 	                        // Because of the DOM manipulation, sometimes the animation will not trigger. Accessing the computed styles makes sure
 	                        // the animation will happen.
 	                        window.getComputedStyle(tab.el).opacity;
@@ -22891,11 +22944,25 @@ var Coveo =
 	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.dropdownHeader.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERLEFT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
 	    };
 	    ResponsiveTabs.prototype.getTabsInTabSection = function () {
-	        var tabsInSection = this.tabSection.findAll('.' + Component_1.Component.computeCssClassNameForType(this.ID));
-	        tabsInSection = _.filter(tabsInSection, function (tab) {
-	            return !Dom_1.$$(tab).hasClass('coveo-tab-dropdown');
+	        var _this = this;
+	        var tabsInSection = [];
+	        _.each(this.tabSection.el.children, function (childElement) {
+	            if (Utils_1.Utils.isHtmlElement(childElement)) {
+	                var child = Dom_1.$$(childElement);
+	                if (!child.hasClass('coveo-tab-dropdown') && child.hasClass(Component_1.Component.computeCssClassNameForType(_this.ID))) {
+	                    tabsInSection.push(child.el);
+	                }
+	            }
 	        });
 	        return tabsInSection;
+	    };
+	    ResponsiveTabs.prototype.fromDropdownToTabSection = function (tab, lastTabInTabSection) {
+	        if (lastTabInTabSection) {
+	            tab.insertAfter(lastTabInTabSection);
+	        }
+	        else {
+	            this.tabSection.prepend(tab.el);
+	        }
 	    };
 	    return ResponsiveTabs;
 	}());
@@ -22939,480 +23006,6 @@ var Coveo =
 /* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(153);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(155)(content, {"insertAt":"bottom"});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_ResponsiveTabs.scss", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_ResponsiveTabs.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 153 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(154)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n\n@-webkit-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-moz-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-o-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoSearchbox {\n  max-width: 800px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoSettings {\n  margin-left: 0;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoSearchbox {\n  margin-right: 50px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-search-section {\n  margin: 0;\n  padding: 20px 10px 20px 10px;\n  background-color: #F7F8F9;\n  margin: 0 auto;\n  width: 100%;\n  max-width: none;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-section {\n  background-color: #F7F8F9;\n  min-height: 40px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-section > a:last-of-type {\n  margin-right: 20px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-section .coveo-tab-dropdown-header {\n  margin-left: 10px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-section .coveo-dropdown-header {\n  font-size: 12px;\n  display: inline-block;\n  border: 1px solid #BCC3CA;\n  border-radius: 4px;\n  background-color: white;\n  padding: 0px 7px 0px 7px;\n  height: 22px;\n  font-weight: 700;\n  line-height: 20px;\n  letter-spacing: 0.09px;\n  vertical-align: middle;\n  white-space: normal;\n  color: #1D4F76;\n  cursor: pointer;\n  text-transform: uppercase;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-section .coveo-dropdown-header * {\n  display: inline-block;\n  margin: 0;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-section .coveo-dropdown-header p {\n  line-height: 16px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-section .coveo-dropdown-header .coveo-sprites-more-tabs {\n  margin-left: 10px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab {\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.25s;\n  -moz-transition-duration: 0.25s;\n  transition-duration: 0.25s;\n  -webkit-transition-timing-function: ease;\n  -moz-transition-timing-function: ease;\n  transition-timing-function: ease;\n  font-size: 12px;\n  color: #1D4F76;\n  font-weight: 400;\n  letter-spacing: 0.25px;\n  height: 40px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab.coveo-selected,\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab.coveo-selected:hover {\n  font-weight: 700;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab * {\n  line-height: 40px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab.coveo-selected,\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab.coveo-selected:hover {\n  border-bottom: 0;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab.coveo-selected p,\n.CoveoSearchInterface.coveo-small-search-interface .CoveoTab.coveo-selected:hover p {\n  border-bottom: 2px solid #263E55;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-list {\n  list-style: none;\n  background-color: white;\n  border: 1px solid #BCC3CA;\n  border-radius: 4px;\n  padding: 0;\n  white-space: nowrap;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-list * {\n  height: 30px;\n  line-height: 30px;\n  clear: both;\n  white-space: nowrap;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-list li:first-child {\n  margin-top: 6px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-list li:last-child {\n  margin-bottom: 6px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-tab-list li:hover {\n  background-color: #E6ECf0;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-settings-popup {\n  z-index: 999;\n}\n\n.coveo-tab-list-container {\n  position: absolute;\n  overflow: hidden;\n  z-index: 11;\n}\n\n.coveo-tab-list-container ol {\n  margin: 0;\n}\n\n", "", {"version":3,"sources":["/./sass/_Variables.scss","/./sass/_ResponsiveTabs.scss","/./sass/bourbon/css3/_keyframes.scss","/./sass/bourbon/addons/_prefixer.scss","/./sass/bourbon/css3/_transition.scss"],"names":[],"mappings":"AAiDA;;;EC9CE;;ADuHF;;;EClHE;;ACGE;EF2JF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFhBL;;EDyJD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFRL;CACF;;ACRG;EFoJF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFEL;;EDuID;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFUL;CACF;;ACnBG;EF6IF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFoBL;;EDqHD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF4BL;CACF;;AC9BG;EFsIF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFsCL;;EDmGD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF8CL;CACF;;AA3EC;EACE,iBAAA;CA8EH;;AAjFD;EAOI,eAAA;CA8EH;;AArFD;EAWI,mBAAA;CA8EH;;AA3EC;EACE,UAAA;EACA,6BAAA;EACA,0BAAA;EACA,eAAA;EACA,YAAA;EACA,gBAAA;CA8EH;;AA5EC;EACE,0BAAA;EACA,iBAAA;CA+EH;;AAvGD;EA2BM,mBAAA;CAgFL;;AA7EG;EACE,kBAAA;CAgFL;;AA7EG;EACE,gBAAA;EACA,sBAAA;EDMJ,0BAAA;EACA,mBAAA;ECLI,wBAAA;EACA,yBAAA;EACA,aAAA;EACA,iBAAA;EACA,kBAAA;EACA,uBAAA;EACA,uBAAA;EACA,oBAAA;EACA,eAAA;EACA,gBAAA;EACA,0BAAA;CAiFL;;AAjID;EAmDQ,sBAAA;EACA,UAAA;CAkFP;;AAtID;EAwDQ,kBAAA;CAkFP;;AA/EK;EACE,kBAAA;CAkFP;;AA9ID;EGcG,qCAAA;EACG,kCAAA;EACK,6BAAA;EDNH,mCAAA;EAKA,gCAAA;EAeA,2BAAA;EApBA,yCAAA;EAKA,sCAAA;EAeA,iCAAA;EFyCJ,gBAAA;EACA,eAAA;EACA,iBAAA;EACA,uBAAA;EAIA,aAAA;CAiFH;;AA5FC;;EASI,iBAAA;CAwFL;;AApKD;EAgFM,kBAAA;CAwFL;;AAxKD;;EAoFM,iBAAA;CAyFL;;AAxFK;;EACE,iCAAA;CA4FP;;AAlLD;EA8FI,iBAAA;EACA,wBAAA;EDrDF,0BAAA;EACA,mBAAA;ECsDE,WAAA;EACA,oBAAA;CAyFH;;AA3LD;EAqGM,aAAA;EACA,kBAAA;EACA,YAAA;EACA,oBAAA;CA0FL;;AAlMD;EA2GM,gBAAA;CA2FL;;AAxFK;EACA,mBAAA;CA2FL;;AA1MD;EAmHM,0BAAA;CA2FL;;AAvFC;EACE,aAAA;CA0FH;;AAtFD;EACE,mBAAA;EACA,iBAAA;EACA,YAAA;CAyFD;;AAvFC;EACE,UAAA;CA0FH","file":"_ResponsiveTabs.scss","sourcesContent":["@import \"bourbon/bourbon\";\n\n// https://app.frontify.com/d/GthysWU8RY0Q/brand-guidelines#/basics/colors\n\n// Corporate Main Colors\n$coveo-orange: #f58020;\n$coveo-blue: #004990;\n\n// Complementary Colors Set 1\n$color-charcoal: #08080E;\n$color-dark-grey: #373737;\n$color-grey: #4F5658;\n$color-greyish-dark-blue: #263E55;\n$color-greyish-teal-blue: #1D4F76;\n$color-blueish-gray: #67768B;\n$color-vibrant-blue: #009ddc;\n\n// Complementary Colors Set 2\n$color-teal: #296896;\n$color-greyish-cyan: #CDDEE9;\n$color-greyish-light-cyan: #CDDEE9;\n$color-light-grey: #BCC3CA;\n$color-blueish-white-grey: #E6ECf0;\n$color-blueish-white: #F7F8F9;\n\n// Coveo Partners Colors\n$color-coveo-for-sitecore: #DC291E;\n$color-coveo-for-salesforce: #009DDC;\n\n$color-green: #4caf50;\n$color-transparent-background: rgba(28, 79, 118, 0.9);\n\n// Font sizes\n$font-size-huge: 24px;\n$font-size-biggest: 18px;\n$font-size-bigger: 16px;\n$font-size-regular: 15px;\n$font-size-smaller: 14px;\n$font-size-smallest: 12px;\n\n// Border\n$default-border-radius: 4px;\n$small-border-radius: 2px;\n$default-border: 1px solid $color-light-grey;\n@mixin defaultRoundedBorder {\n  border: $default-border;\n  border-radius: $default-border-radius;\n}\n\n/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n@mixin align($direction: 'vertical', $position: relative) {\n  position: $position;\n  @if $direction == 'vertical' {\n    top: 50%;\n    @include transform(translateY(-50%));\n  } @else {\n    left: 50%;\n    @include transform(translateX(-50%));\n  }\n}\n\n@mixin hoverEffectForDropdown($target: '&') {\n  @include clickable();\n  cursor: pointer;\n  #{$target} {\n    background: white;\n  }\n\n  #{$target}:hover {\n    background: $color-blueish-white-grey;\n  }\n}\n\n@mixin iconWithHoverState($iconBase, $float:'left', $inactive : 'coveo-disabled') {\n  $iconActive: '#{$iconBase}-active';\n  .coveo-icon {\n    @extend #{$iconBase} !optional;\n    float: #{$float};\n  }\n  &:hover {\n    .coveo-icon {\n      @extend #{$iconActive} !optional;\n    }\n  }\n  &:hover.#{$inactive} {\n    .coveo-icon {\n      @extend #{$iconBase} !optional;\n    }\n  }\n}\n\n@mixin clickable {\n  color: $color-teal;\n  text-decoration: none;\n  cursor: pointer;\n  &:hover, &:visited {\n    text-decoration: none;\n    color: $color-greyish-dark-blue;\n  }\n  &:hover, &:hover a {\n    text-decoration: underline;\n  }\n  &.coveo-selected * {\n    color: $color-greyish-dark-blue;\n  }\n}\n\n@mixin clickableVibrant {\n  @include clickable();\n  color: $color-coveo-for-salesforce;\n  &:hover {\n    text-decoration: underline;\n    color: $color-coveo-for-salesforce;\n  }\n  &.coveo-selected * {\n    color: $color-coveo-for-salesforce;\n  }\n}\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n@mixin clearButton($selector, $size:'normal') {\n  cursor: pointer;\n  $icon: '.coveo-sprites-clear-inactive-filters';\n  $icon-clear: '.coveo-sprites-clear-active-filters';\n\n  @if $size == 'smaller' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'smallest' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'bigger' {\n    $icon: '.coveo-sprites-main-clear';\n    $icon-clear: '.coveo-sprites-main-clear-hover'; //TODO icon not exported yet\n  }\n\n  #{$selector} {\n    @extend #{$icon};\n  }\n  &:hover {\n    #{$selector} {\n      @extend #{$icon-clear};\n    }\n  }\n}\n\n@mixin breadcrumbTitle {\n  color: $color-blueish-gray;\n  margin-right: 14px;\n}\n\n@mixin coveo-email-to-and-from {\n  font-size: 13px;\n  a {\n    @include clickable();\n    white-space: nowrap;\n  }\n}\n\n@include keyframes(coveo-spin) {\n  from {\n    @include transform(rotate(0deg));\n  }\n\n  to {\n    @include transform(rotate(360deg));\n  }\n}\n"," @import \"_Variables.scss\";\n @import \"mixins/_mediaQuery.scss\";\n \n.CoveoSearchInterface.coveo-small-search-interface {\n\n  .CoveoSearchbox {\n    max-width: 800px;\n  }\n\n  .CoveoSettings {\n    margin-left: 0;\n  }\n\n  .CoveoSearchbox {\n    margin-right: 50px;\n  }\n\n  .coveo-search-section {\n    margin: 0;\n    padding: 20px 10px 20px 10px;\n    background-color: $color-blueish-white;\n    margin: 0 auto;\n    width: 100%;\n    max-width: none;\n  }\n  .coveo-tab-section {\n    background-color: $color-blueish-white;\n    min-height: 40px;\n    \n    > a:last-of-type {\n      margin-right: 20px;\n    }\n\n    .coveo-tab-dropdown-header {\n      margin-left: 10px;\n    }\n\n    .coveo-dropdown-header {\n      font-size: $font-size-smallest;\n      display: inline-block;\n      @include defaultRoundedBorder();\n      background-color: white;\n      padding: 0px 7px 0px 7px;\n      height: 22px;\n      font-weight: 700;\n      line-height: 20px;\n      letter-spacing: 0.09px;\n      vertical-align: middle;\n      white-space: normal;\n      color: $color-greyish-teal-blue;\n      cursor: pointer;\n      text-transform: uppercase;\n\n      * {\n        display: inline-block;\n        margin: 0;\n      }\n\n      p {\n        line-height: 16px;\n      }\n\n      .coveo-sprites-more-tabs {\n        margin-left: 10px;\n      }\n    }\n\n    \n  }\n\n  .CoveoTab {\n    @include transition-property(opacity);\n    @include transition-duration(0.250s);\n    @include transition-timing-function(ease);\n    font-size: $font-size-smallest;\n    color: $color-greyish-teal-blue;\n    font-weight: 400;\n    letter-spacing: 0.25px;\n    &.coveo-selected, &.coveo-selected:hover {\n      font-weight: 700;\n    }\n    height: 40px;\n    * {\n      line-height: 40px;\n    }\n\n    &.coveo-selected, &.coveo-selected:hover {\n      border-bottom: 0;\n      p {\n        border-bottom: 2px solid $color-greyish-dark-blue;\n      }\n    }\n  }\n\n  \n\n  .coveo-tab-list {\n    list-style: none;\n    background-color: white;\n    @include defaultRoundedBorder();\n    padding: 0;\n    white-space: nowrap;\n    \n    * {\n      height: 30px;\n      line-height: 30px;\n      clear: both;\n      white-space: nowrap;\n    }\n    li:first-child {\n      margin-top: 6px;\n    }\n    \n    li:last-child {\n      margin-bottom: 6px;\n    }\n    \n    li:hover {\n      background-color: $color-blueish-white-grey;\n    }\n  }\n\n  .coveo-facet-settings-popup {\n    z-index: 999;\n  }\n}\n \n.coveo-tab-list-container {\n  position: absolute;\n  overflow: hidden;\n  z-index: 11;\n\n  ol {\n    margin: 0;\n  }\n}\n","// Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content\n@mixin keyframes($name) {\n  $original-prefix-for-webkit:    $prefix-for-webkit;\n  $original-prefix-for-mozilla:   $prefix-for-mozilla;\n  $original-prefix-for-microsoft: $prefix-for-microsoft;\n  $original-prefix-for-opera:     $prefix-for-opera;\n  $original-prefix-for-spec:      $prefix-for-spec;\n\n  @if $original-prefix-for-webkit {\n    @include disable-prefix-for-all();\n    $prefix-for-webkit: true;\n    @-webkit-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-mozilla {\n    @include disable-prefix-for-all();\n    $prefix-for-mozilla: true;\n    @-moz-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-opera {\n    @include disable-prefix-for-all();\n    $prefix-for-opera: true;\n    @-o-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-spec {\n    @include disable-prefix-for-all();\n    $prefix-for-spec: true;\n    @keyframes #{$name} {\n      @content;\n    }\n  }\n\n  $prefix-for-webkit:    $original-prefix-for-webkit;\n  $prefix-for-mozilla:   $original-prefix-for-mozilla;\n  $prefix-for-microsoft: $original-prefix-for-microsoft;\n  $prefix-for-opera:     $original-prefix-for-opera;\n  $prefix-for-spec:      $original-prefix-for-spec;\n}\n","//************************************************************************//\n// Example: @include prefixer(border-radius, $radii, webkit ms spec);\n//************************************************************************//\n$prefix-for-webkit:    true !default;\n$prefix-for-mozilla:   true !default;\n$prefix-for-microsoft: true !default;\n$prefix-for-opera:     true !default;\n$prefix-for-spec:      true !default; // required for keyframe mixin\n\n@mixin prefixer ($property, $value, $prefixes) {\n  @each $prefix in $prefixes {\n    @if $prefix == webkit {\n      @if $prefix-for-webkit {\n        -webkit-#{$property}: $value;\n      }\n    }\n    @else if $prefix == moz {\n      @if $prefix-for-mozilla {\n        -moz-#{$property}: $value;\n      }\n    }\n    @else if $prefix == ms {\n      @if $prefix-for-microsoft {\n        -ms-#{$property}: $value;\n      }\n    }\n    @else if $prefix == o {\n      @if $prefix-for-opera {\n        -o-#{$property}: $value;\n      }\n    }\n    @else if $prefix == spec {\n      @if $prefix-for-spec {\n        #{$property}: $value;\n      }\n    }\n    @else  {\n      @warn \"Unrecognized prefix: #{$prefix}\";\n    }\n  }\n}\n\n@mixin disable-prefix-for-all() {\n  $prefix-for-webkit:    false;\n  $prefix-for-mozilla:   false;\n  $prefix-for-microsoft: false;\n  $prefix-for-opera:     false;\n  $prefix-for-spec:      false;\n}\n","// Shorthand mixin. Supports multiple parentheses-deliminated values for each variable.\n// Example: @include transition (all, 2.0s, ease-in-out);\n//          @include transition ((opacity, width), (1.0s, 2.0s), ease-in, (0, 2s));\n//          @include transition ($property:(opacity, width), $delay: (1.5s, 2.5s));\n\n@mixin transition ($properties...) {\n  @if length($properties) >= 1 {\n    @include prefixer(transition, $properties, webkit moz spec);\n  }\n\n  @else {\n    $properties: all 0.15s ease-out 0;\n    @include prefixer(transition, $properties, webkit moz spec);\n  }\n}\n\n@mixin transition-property ($properties...) {\n   -webkit-transition-property: transition-property-names($properties, 'webkit');\n      -moz-transition-property: transition-property-names($properties, 'moz');\n           transition-property: transition-property-names($properties, false);\n}\n\n@mixin transition-duration ($times...) {\n  @include prefixer(transition-duration, $times, webkit moz spec);\n}\n\n@mixin transition-timing-function ($motions...) {\n// ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()\n  @include prefixer(transition-timing-function, $motions, webkit moz spec);\n}\n\n@mixin transition-delay ($times...) {\n  @include prefixer(transition-delay, $times, webkit moz spec);\n}\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 154 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-/* 155 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-	
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-	
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-	
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-	
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-	
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-	
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-	
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-	
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-	
-	function createLinkElement(options) {
-		var linkElement = document.createElement("link");
-		linkElement.rel = "stylesheet";
-		insertStyleElement(options, linkElement);
-		return linkElement;
-	}
-	
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-	
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement(options);
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-	
-		update(obj);
-	
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-	
-	var replaceText = (function () {
-		var textStore = [];
-	
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-	
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-	
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-	
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-	
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-	
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var sourceMap = obj.sourceMap;
-	
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-	
-		var blob = new Blob([css], { type: "text/css" });
-	
-		var oldSrc = linkElement.href;
-	
-		linkElement.href = URL.createObjectURL(blob);
-	
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
-
-/***/ },
-/* 156 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(157);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(155)(content, {"insertAt":"bottom"});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_Tab.scss", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_Tab.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 157 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(154)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n\n@-webkit-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-moz-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-o-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n.CoveoTab {\n  color: #67768B;\n  text-decoration: none;\n  cursor: pointer;\n  height: 52px;\n  display: inline-block;\n  font-size: 15px;\n  padding: 0px 10px 2px 10px;\n  text-transform: uppercase;\n  vertical-align: middle;\n  white-space: normal;\n}\n\n.CoveoTab * {\n  display: inline-block;\n  vertical-align: middle;\n  line-height: 52px;\n  margin: 0;\n}\n\n.CoveoTab > .coveo-icon {\n  margin-right: 5px;\n}\n\n.CoveoTab p {\n  height: 100%;\n}\n\n.CoveoTab.coveo-selected,\n.CoveoTab.coveo-selected:hover {\n  border-bottom: 2px solid #263E55;\n  padding-bottom: 0px;\n}\n\n.CoveoTab:hover {\n  color: #263E55;\n}\n\n.coveo-tab-section {\n  width: 100%;\n  min-height: 52px;\n  background-color: #F7F8F9;\n  text-align: center;\n  border-bottom: 1px solid #BCC3CA;\n  font-size: 0;\n  overflow: hidden;\n  white-space: nowrap;\n}\n\n", "", {"version":3,"sources":["/./sass/_Variables.scss","/./sass/_Tab.scss","/./sass/bourbon/css3/_keyframes.scss","/./sass/bourbon/addons/_prefixer.scss"],"names":[],"mappings":"AAiDA;;;EC9CE;;ADuHF;;;EClHE;;ACGE;EF2JF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFhBL;;EDyJD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFRL;CACF;;ACRG;EFoJF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFEL;;EDuID;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFUL;CACF;;ACnBG;EF6IF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFoBL;;EDqHD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF4BL;CACF;;AC9BG;EFsIF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFsCL;;EDmGD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF8CL;CACF;;AA9ED;EACE,eAAA;EACA,sBAAA;EACA,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,gBAAA;EACA,2BAAA;EACA,0BAAA;EACA,uBAAA;EACA,oBAAA;CAiFD;;AA3FD;EAYI,sBAAA;EACA,uBAAA;EACA,kBAAA;EACA,UAAA;CAmFH;;AAlGD;EAkBI,kBAAA;CAoFH;;AAtGD;EAqBI,aAAA;CAqFH;;AA1GD;;EAyBI,iCAAA;EACA,oBAAA;CAsFH;;AAhHD;EA8BI,eAAA;CAsFH;;AAlFD;EACE,YAAA;EACA,iBAAA;EACA,0BAAA;EACA,mBAAA;EACA,iCAAA;EACA,aAAA;EACA,iBAAA;EACA,oBAAA;CAqFD","file":"_Tab.scss","sourcesContent":["@import \"bourbon/bourbon\";\n\n// https://app.frontify.com/d/GthysWU8RY0Q/brand-guidelines#/basics/colors\n\n// Corporate Main Colors\n$coveo-orange: #f58020;\n$coveo-blue: #004990;\n\n// Complementary Colors Set 1\n$color-charcoal: #08080E;\n$color-dark-grey: #373737;\n$color-grey: #4F5658;\n$color-greyish-dark-blue: #263E55;\n$color-greyish-teal-blue: #1D4F76;\n$color-blueish-gray: #67768B;\n$color-vibrant-blue: #009ddc;\n\n// Complementary Colors Set 2\n$color-teal: #296896;\n$color-greyish-cyan: #CDDEE9;\n$color-greyish-light-cyan: #CDDEE9;\n$color-light-grey: #BCC3CA;\n$color-blueish-white-grey: #E6ECf0;\n$color-blueish-white: #F7F8F9;\n\n// Coveo Partners Colors\n$color-coveo-for-sitecore: #DC291E;\n$color-coveo-for-salesforce: #009DDC;\n\n$color-green: #4caf50;\n$color-transparent-background: rgba(28, 79, 118, 0.9);\n\n// Font sizes\n$font-size-huge: 24px;\n$font-size-biggest: 18px;\n$font-size-bigger: 16px;\n$font-size-regular: 15px;\n$font-size-smaller: 14px;\n$font-size-smallest: 12px;\n\n// Border\n$default-border-radius: 4px;\n$small-border-radius: 2px;\n$default-border: 1px solid $color-light-grey;\n@mixin defaultRoundedBorder {\n  border: $default-border;\n  border-radius: $default-border-radius;\n}\n\n/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n@mixin align($direction: 'vertical', $position: relative) {\n  position: $position;\n  @if $direction == 'vertical' {\n    top: 50%;\n    @include transform(translateY(-50%));\n  } @else {\n    left: 50%;\n    @include transform(translateX(-50%));\n  }\n}\n\n@mixin hoverEffectForDropdown($target: '&') {\n  @include clickable();\n  cursor: pointer;\n  #{$target} {\n    background: white;\n  }\n\n  #{$target}:hover {\n    background: $color-blueish-white-grey;\n  }\n}\n\n@mixin iconWithHoverState($iconBase, $float:'left', $inactive : 'coveo-disabled') {\n  $iconActive: '#{$iconBase}-active';\n  .coveo-icon {\n    @extend #{$iconBase} !optional;\n    float: #{$float};\n  }\n  &:hover {\n    .coveo-icon {\n      @extend #{$iconActive} !optional;\n    }\n  }\n  &:hover.#{$inactive} {\n    .coveo-icon {\n      @extend #{$iconBase} !optional;\n    }\n  }\n}\n\n@mixin clickable {\n  color: $color-teal;\n  text-decoration: none;\n  cursor: pointer;\n  &:hover, &:visited {\n    text-decoration: none;\n    color: $color-greyish-dark-blue;\n  }\n  &:hover, &:hover a {\n    text-decoration: underline;\n  }\n  &.coveo-selected * {\n    color: $color-greyish-dark-blue;\n  }\n}\n\n@mixin clickableVibrant {\n  @include clickable();\n  color: $color-coveo-for-salesforce;\n  &:hover {\n    text-decoration: underline;\n    color: $color-coveo-for-salesforce;\n  }\n  &.coveo-selected * {\n    color: $color-coveo-for-salesforce;\n  }\n}\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n@mixin clearButton($selector, $size:'normal') {\n  cursor: pointer;\n  $icon: '.coveo-sprites-clear-inactive-filters';\n  $icon-clear: '.coveo-sprites-clear-active-filters';\n\n  @if $size == 'smaller' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'smallest' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'bigger' {\n    $icon: '.coveo-sprites-main-clear';\n    $icon-clear: '.coveo-sprites-main-clear-hover'; //TODO icon not exported yet\n  }\n\n  #{$selector} {\n    @extend #{$icon};\n  }\n  &:hover {\n    #{$selector} {\n      @extend #{$icon-clear};\n    }\n  }\n}\n\n@mixin breadcrumbTitle {\n  color: $color-blueish-gray;\n  margin-right: 14px;\n}\n\n@mixin coveo-email-to-and-from {\n  font-size: 13px;\n  a {\n    @include clickable();\n    white-space: nowrap;\n  }\n}\n\n@include keyframes(coveo-spin) {\n  from {\n    @include transform(rotate(0deg));\n  }\n\n  to {\n    @include transform(rotate(360deg));\n  }\n}\n","@import \"_Variables.scss\"; \n\n.CoveoTab {\n  color: $color-blueish-gray;\n  text-decoration: none;\n  cursor: pointer;\n  height: 52px;\n  display: inline-block;\n  font-size: 15px;\n  padding: 0px 10px 2px 10px;\n  text-transform: uppercase;\n  vertical-align: middle;\n  white-space: normal;\n  * {\n    display: inline-block;\n    vertical-align: middle;\n    line-height: 52px;\n    margin: 0;\n  }\n  & >.coveo-icon {\n    margin-right: 5px;\n  }\n  p {\n    height: 100%;\n  }\n\n  &.coveo-selected, &.coveo-selected:hover {\n    border-bottom: 2px solid $color-greyish-dark-blue;\n    padding-bottom: 0px;\n  }\n\n  &:hover {\n    color: $color-greyish-dark-blue;\n  }\n}\n\n.coveo-tab-section {\n  width: 100%;\n  min-height: 52px;\n  background-color: $color-blueish-white;\n  text-align: center;\n  border-bottom: 1px solid $color-light-grey;\n  font-size: 0;\n  overflow: hidden;\n  white-space: nowrap;\n}","// Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content\n@mixin keyframes($name) {\n  $original-prefix-for-webkit:    $prefix-for-webkit;\n  $original-prefix-for-mozilla:   $prefix-for-mozilla;\n  $original-prefix-for-microsoft: $prefix-for-microsoft;\n  $original-prefix-for-opera:     $prefix-for-opera;\n  $original-prefix-for-spec:      $prefix-for-spec;\n\n  @if $original-prefix-for-webkit {\n    @include disable-prefix-for-all();\n    $prefix-for-webkit: true;\n    @-webkit-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-mozilla {\n    @include disable-prefix-for-all();\n    $prefix-for-mozilla: true;\n    @-moz-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-opera {\n    @include disable-prefix-for-all();\n    $prefix-for-opera: true;\n    @-o-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-spec {\n    @include disable-prefix-for-all();\n    $prefix-for-spec: true;\n    @keyframes #{$name} {\n      @content;\n    }\n  }\n\n  $prefix-for-webkit:    $original-prefix-for-webkit;\n  $prefix-for-mozilla:   $original-prefix-for-mozilla;\n  $prefix-for-microsoft: $original-prefix-for-microsoft;\n  $prefix-for-opera:     $original-prefix-for-opera;\n  $prefix-for-spec:      $original-prefix-for-spec;\n}\n","//************************************************************************//\n// Example: @include prefixer(border-radius, $radii, webkit ms spec);\n//************************************************************************//\n$prefix-for-webkit:    true !default;\n$prefix-for-mozilla:   true !default;\n$prefix-for-microsoft: true !default;\n$prefix-for-opera:     true !default;\n$prefix-for-spec:      true !default; // required for keyframe mixin\n\n@mixin prefixer ($property, $value, $prefixes) {\n  @each $prefix in $prefixes {\n    @if $prefix == webkit {\n      @if $prefix-for-webkit {\n        -webkit-#{$property}: $value;\n      }\n    }\n    @else if $prefix == moz {\n      @if $prefix-for-mozilla {\n        -moz-#{$property}: $value;\n      }\n    }\n    @else if $prefix == ms {\n      @if $prefix-for-microsoft {\n        -ms-#{$property}: $value;\n      }\n    }\n    @else if $prefix == o {\n      @if $prefix-for-opera {\n        -o-#{$property}: $value;\n      }\n    }\n    @else if $prefix == spec {\n      @if $prefix-for-spec {\n        #{$property}: $value;\n      }\n    }\n    @else  {\n      @warn \"Unrecognized prefix: #{$prefix}\";\n    }\n  }\n}\n\n@mixin disable-prefix-for-all() {\n  $prefix-for-webkit:    false;\n  $prefix-for-mozilla:   false;\n  $prefix-for-microsoft: false;\n  $prefix-for-opera:     false;\n  $prefix-for-spec:      false;\n}\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 158 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(159);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(155)(content, {"insertAt":"bottom"});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_ResponsiveFacets.scss", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_ResponsiveFacets.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 159 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(154)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n\n@-webkit-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-moz-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-o-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-dropdown-header {\n  margin-left: 32px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-column.coveo-facet-dropdown-content {\n  overflow-y: scroll;\n  max-height: 600px;\n  clear: both;\n  white-space: nowrap;\n  padding: 0;\n  min-width: 280px;\n  width: 35%;\n  z-index: 20;\n  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 0 2px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-column.coveo-facet-dropdown-content .coveo-facet-header-filter-by-container {\n  background: #F7F8F9;\n  font-size: 16px;\n  font-weight: 700;\n  letter-spacing: 0.22px;\n  line-height: 22px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-column.coveo-facet-dropdown-content .coveo-facet-header-filter-by-container .coveo-facet-header-filter-by {\n  display: block;\n  padding: 10px 0 10px 20px;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-column.coveo-facet-dropdown-content .CoveoFacet {\n  margin: 0;\n  border: 0;\n  border-radius: 0;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-column.coveo-facet-dropdown-content .CoveoFacet .coveo-facet-header {\n  border: 0;\n  border-radius: 0;\n  border-top: 1px solid #BCC3CA;\n}\n\n.CoveoSearchInterface.coveo-small-search-interface .coveo-facet-column.coveo-facet-dropdown-content .CoveoFacet.coveo-last-facet {\n  border-radius: 0 0 0 2px;\n}\n\n.coveo-facet-dropdown-background {\n  -webkit-transition-property: opacity;\n  -moz-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-duration: 0.3s;\n  -moz-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  background: rgba(28, 79, 118, 0.9);\n  opacity: 0;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 15;\n}\n\n.coveo-facet-header-filter-by {\n  display: none;\n}\n\n", "", {"version":3,"sources":["/./sass/_Variables.scss","/./sass/_ResponsiveFacets.scss","/./sass/bourbon/css3/_keyframes.scss","/./sass/bourbon/addons/_prefixer.scss","/./sass/bourbon/css3/_transition.scss"],"names":[],"mappings":"AAiDA;;;EC9CE;;ADuHF;;;EClHE;;ACGE;EF2JF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFhBL;;EDyJD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFRL;CACF;;ACRG;EFoJF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFEL;;EDuID;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFUL;CACF;;ACnBG;EF6IF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFoBL;;EDqHD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF4BL;CACF;;AC9BG;EFsIF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFsCL;;EDmGD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF8CL;CACF;;AA5EC;EACE,kBAAA;CA+EH;;AA5EoB;EACjB,mBAAA;EACA,kBAAA;EACA,YAAA;EACA,oBAAA;EACA,WAAA;EACA,iBAAA;EACA,WAAA;EACA,YAAA;EACA,2CAAA;EACA,yBAAA;CA+EH;;AA7EG;EACE,oBAAA;EACA,gBAAA;EACA,iBAAA;EACA,uBAAA;EACA,kBAAA;CAgFL;;AAvGD;EA0BQ,eAAA;EACA,0BAAA;CAiFP;;AA7EG;EACE,UAAA;EACA,UAAA;EACA,iBAAA;CAgFL;;AA9EK;EACE,UAAA;EACA,iBAAA;EACA,8BAAA;CAiFP;;AAxHD;EA8CQ,yBAAA;CA8EP;;AA1ED;EGnCG,qCAAA;EACG,kCAAA;EACK,6BAAA;EDNH,kCAAA;EAKA,+BAAA;EAeA,0BAAA;EFsBJ,mCAAA;EACA,WAAA;EACA,gBAAA;EACA,OAAA;EACA,SAAA;EACA,UAAA;EACA,QAAA;EACA,YAAA;CAiFH;;AA9ED;EACE,cAAA;CAiFD","file":"_ResponsiveFacets.scss","sourcesContent":["@import \"bourbon/bourbon\";\n\n// https://app.frontify.com/d/GthysWU8RY0Q/brand-guidelines#/basics/colors\n\n// Corporate Main Colors\n$coveo-orange: #f58020;\n$coveo-blue: #004990;\n\n// Complementary Colors Set 1\n$color-charcoal: #08080E;\n$color-dark-grey: #373737;\n$color-grey: #4F5658;\n$color-greyish-dark-blue: #263E55;\n$color-greyish-teal-blue: #1D4F76;\n$color-blueish-gray: #67768B;\n$color-vibrant-blue: #009ddc;\n\n// Complementary Colors Set 2\n$color-teal: #296896;\n$color-greyish-cyan: #CDDEE9;\n$color-greyish-light-cyan: #CDDEE9;\n$color-light-grey: #BCC3CA;\n$color-blueish-white-grey: #E6ECf0;\n$color-blueish-white: #F7F8F9;\n\n// Coveo Partners Colors\n$color-coveo-for-sitecore: #DC291E;\n$color-coveo-for-salesforce: #009DDC;\n\n$color-green: #4caf50;\n$color-transparent-background: rgba(28, 79, 118, 0.9);\n\n// Font sizes\n$font-size-huge: 24px;\n$font-size-biggest: 18px;\n$font-size-bigger: 16px;\n$font-size-regular: 15px;\n$font-size-smaller: 14px;\n$font-size-smallest: 12px;\n\n// Border\n$default-border-radius: 4px;\n$small-border-radius: 2px;\n$default-border: 1px solid $color-light-grey;\n@mixin defaultRoundedBorder {\n  border: $default-border;\n  border-radius: $default-border-radius;\n}\n\n/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n@mixin align($direction: 'vertical', $position: relative) {\n  position: $position;\n  @if $direction == 'vertical' {\n    top: 50%;\n    @include transform(translateY(-50%));\n  } @else {\n    left: 50%;\n    @include transform(translateX(-50%));\n  }\n}\n\n@mixin hoverEffectForDropdown($target: '&') {\n  @include clickable();\n  cursor: pointer;\n  #{$target} {\n    background: white;\n  }\n\n  #{$target}:hover {\n    background: $color-blueish-white-grey;\n  }\n}\n\n@mixin iconWithHoverState($iconBase, $float:'left', $inactive : 'coveo-disabled') {\n  $iconActive: '#{$iconBase}-active';\n  .coveo-icon {\n    @extend #{$iconBase} !optional;\n    float: #{$float};\n  }\n  &:hover {\n    .coveo-icon {\n      @extend #{$iconActive} !optional;\n    }\n  }\n  &:hover.#{$inactive} {\n    .coveo-icon {\n      @extend #{$iconBase} !optional;\n    }\n  }\n}\n\n@mixin clickable {\n  color: $color-teal;\n  text-decoration: none;\n  cursor: pointer;\n  &:hover, &:visited {\n    text-decoration: none;\n    color: $color-greyish-dark-blue;\n  }\n  &:hover, &:hover a {\n    text-decoration: underline;\n  }\n  &.coveo-selected * {\n    color: $color-greyish-dark-blue;\n  }\n}\n\n@mixin clickableVibrant {\n  @include clickable();\n  color: $color-coveo-for-salesforce;\n  &:hover {\n    text-decoration: underline;\n    color: $color-coveo-for-salesforce;\n  }\n  &.coveo-selected * {\n    color: $color-coveo-for-salesforce;\n  }\n}\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n@mixin clearButton($selector, $size:'normal') {\n  cursor: pointer;\n  $icon: '.coveo-sprites-clear-inactive-filters';\n  $icon-clear: '.coveo-sprites-clear-active-filters';\n\n  @if $size == 'smaller' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'smallest' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'bigger' {\n    $icon: '.coveo-sprites-main-clear';\n    $icon-clear: '.coveo-sprites-main-clear-hover'; //TODO icon not exported yet\n  }\n\n  #{$selector} {\n    @extend #{$icon};\n  }\n  &:hover {\n    #{$selector} {\n      @extend #{$icon-clear};\n    }\n  }\n}\n\n@mixin breadcrumbTitle {\n  color: $color-blueish-gray;\n  margin-right: 14px;\n}\n\n@mixin coveo-email-to-and-from {\n  font-size: 13px;\n  a {\n    @include clickable();\n    white-space: nowrap;\n  }\n}\n\n@include keyframes(coveo-spin) {\n  from {\n    @include transform(rotate(0deg));\n  }\n\n  to {\n    @include transform(rotate(360deg));\n  }\n}\n","@import \"Variables.scss\";\n\n.CoveoSearchInterface.coveo-small-search-interface {\n\n  .coveo-facet-dropdown-header {\n    margin-left: 32px;\n  }\n\n  .coveo-facet-column.coveo-facet-dropdown-content {\n    overflow-y: scroll;\n    max-height: 600px;\n    clear: both;\n    white-space: nowrap;\n    padding: 0;\n    min-width: 280px;\n    width: 35%;\n    z-index: 20;\n    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25);\n    border-radius: 0 0 0 2px;\n\n    .coveo-facet-header-filter-by-container {\n      background: $color-blueish-white;\n      font-size: $font-size-bigger;\n      font-weight: 700;\n      letter-spacing: 0.22px;\n      line-height: 22px;\n\n      .coveo-facet-header-filter-by {\n        display: block;\n        padding: 10px 0 10px 20px;\n      }\n    }\n    \n    .CoveoFacet {\n      margin: 0;\n      border: 0;\n      border-radius: 0;\n\n      .coveo-facet-header {\n        border: 0;\n        border-radius: 0;\n        border-top: $default-border;\n      }\n    }\n\n    .CoveoFacet.coveo-last-facet {\n        //Since we override facet border and we want the facet column to have a border-radius, we need to set the last facet with the\n        //border-radius or it will not be visible since there's no border-width.\n        border-radius: 0 0 0 2px;\n    }\n  }\n}\n.coveo-facet-dropdown-background {\n    @include transition-property(opacity);\n    @include transition-duration(0.300s);\n    background: $color-transparent-background;\n    opacity: 0;\n    position: fixed;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    z-index: 15;\n}\n\n.coveo-facet-header-filter-by {\n  display: none;\n}","// Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content\n@mixin keyframes($name) {\n  $original-prefix-for-webkit:    $prefix-for-webkit;\n  $original-prefix-for-mozilla:   $prefix-for-mozilla;\n  $original-prefix-for-microsoft: $prefix-for-microsoft;\n  $original-prefix-for-opera:     $prefix-for-opera;\n  $original-prefix-for-spec:      $prefix-for-spec;\n\n  @if $original-prefix-for-webkit {\n    @include disable-prefix-for-all();\n    $prefix-for-webkit: true;\n    @-webkit-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-mozilla {\n    @include disable-prefix-for-all();\n    $prefix-for-mozilla: true;\n    @-moz-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-opera {\n    @include disable-prefix-for-all();\n    $prefix-for-opera: true;\n    @-o-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-spec {\n    @include disable-prefix-for-all();\n    $prefix-for-spec: true;\n    @keyframes #{$name} {\n      @content;\n    }\n  }\n\n  $prefix-for-webkit:    $original-prefix-for-webkit;\n  $prefix-for-mozilla:   $original-prefix-for-mozilla;\n  $prefix-for-microsoft: $original-prefix-for-microsoft;\n  $prefix-for-opera:     $original-prefix-for-opera;\n  $prefix-for-spec:      $original-prefix-for-spec;\n}\n","//************************************************************************//\n// Example: @include prefixer(border-radius, $radii, webkit ms spec);\n//************************************************************************//\n$prefix-for-webkit:    true !default;\n$prefix-for-mozilla:   true !default;\n$prefix-for-microsoft: true !default;\n$prefix-for-opera:     true !default;\n$prefix-for-spec:      true !default; // required for keyframe mixin\n\n@mixin prefixer ($property, $value, $prefixes) {\n  @each $prefix in $prefixes {\n    @if $prefix == webkit {\n      @if $prefix-for-webkit {\n        -webkit-#{$property}: $value;\n      }\n    }\n    @else if $prefix == moz {\n      @if $prefix-for-mozilla {\n        -moz-#{$property}: $value;\n      }\n    }\n    @else if $prefix == ms {\n      @if $prefix-for-microsoft {\n        -ms-#{$property}: $value;\n      }\n    }\n    @else if $prefix == o {\n      @if $prefix-for-opera {\n        -o-#{$property}: $value;\n      }\n    }\n    @else if $prefix == spec {\n      @if $prefix-for-spec {\n        #{$property}: $value;\n      }\n    }\n    @else  {\n      @warn \"Unrecognized prefix: #{$prefix}\";\n    }\n  }\n}\n\n@mixin disable-prefix-for-all() {\n  $prefix-for-webkit:    false;\n  $prefix-for-mozilla:   false;\n  $prefix-for-microsoft: false;\n  $prefix-for-opera:     false;\n  $prefix-for-spec:      false;\n}\n","// Shorthand mixin. Supports multiple parentheses-deliminated values for each variable.\n// Example: @include transition (all, 2.0s, ease-in-out);\n//          @include transition ((opacity, width), (1.0s, 2.0s), ease-in, (0, 2s));\n//          @include transition ($property:(opacity, width), $delay: (1.5s, 2.5s));\n\n@mixin transition ($properties...) {\n  @if length($properties) >= 1 {\n    @include prefixer(transition, $properties, webkit moz spec);\n  }\n\n  @else {\n    $properties: all 0.15s ease-out 0;\n    @include prefixer(transition, $properties, webkit moz spec);\n  }\n}\n\n@mixin transition-property ($properties...) {\n   -webkit-transition-property: transition-property-names($properties, 'webkit');\n      -moz-transition-property: transition-property-names($properties, 'moz');\n           transition-property: transition-property-names($properties, false);\n}\n\n@mixin transition-duration ($times...) {\n  @include prefixer(transition-duration, $times, webkit moz spec);\n}\n\n@mixin transition-timing-function ($motions...) {\n// ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()\n  @include prefixer(transition-timing-function, $motions, webkit moz spec);\n}\n\n@mixin transition-delay ($times...) {\n  @include prefixer(transition-delay, $times, webkit moz spec);\n}\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 160 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(161);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(155)(content, {"insertAt":"bottom"});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_Facet.scss", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/resolve-url-loader/index.js!./../node_modules/sass-loader/index.js?sourceMap!./_Facet.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 161 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(154)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n\n@-webkit-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-moz-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-o-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n.CoveoFacet,\n.CoveoFacetRange,\n.CoveoFacetSlider,\n.CoveoHierarchicalFacet {\n  margin: 10px 0px 10px 0px;\n  padding: 0;\n  border: 1px solid #BCC3CA;\n  border-radius: 4px;\n  background: #F7F8F9;\n  position: relative;\n}\n\n.coveo-facet-column .coveo-topSpace.coveo-with-animation,\n.coveo-facet-column .coveo-bottomSpace.coveo-with-animation {\n  -webkit-transition: height 0.5s;\n  -moz-transition: height 0.5s;\n  transition: height 0.5s;\n}\n\n.ie8or9 .coveo-facet-header-wait-animation,\n.ie8or9 .coveo-facet-search-wait-animation {\n  background: url(" + __webpack_require__(162) + ") no-repeat;\n  background-size: 100%;\n}\n\n.coveo-facet-empty {\n  display: none;\n}\n\n.coveo-facet-dependent {\n  display: none;\n}\n\n.coveo-facet-collapsed .coveo-facet-value.coveo-facet-value {\n  display: none;\n}\n\n.coveo-facet-collapsed .coveo-facet-value.coveo-facet-value.coveo-selected,\n.coveo-facet-collapsed .coveo-facet-value.coveo-facet-value.coveo-excluded {\n  display: inherit;\n}\n\n.coveo-facet-collapsed .coveo-facet-footer {\n  display: none;\n}\n\n.coveo-facet-fade .coveo-facet-value {\n  opacity: 0.5;\n}\n\n.coveo-facet-fade .coveo-facet-value.coveo-selected,\n.coveo-facet-fade .coveo-facet-value.coveo-excluded,\n.coveo-facet-fade .coveo-facet-value.coveo-facet-search-selectable {\n  opacity: 1;\n}\n\n", "", {"version":3,"sources":["/./sass/_Variables.scss","/./sass/_Facet.scss","/./sass/bourbon/css3/_keyframes.scss","/./sass/bourbon/addons/_prefixer.scss"],"names":[],"mappings":"AAiDA;;;EC9CE;;ADuHF;;;EClHE;;ACGE;EF2JF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFhBL;;EDyJD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFRL;CACF;;ACRG;EFoJF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFEL;;EDuID;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GFUL;CACF;;ACnBG;EF6IF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFoBL;;EDqHD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF4BL;CACF;;AC9BG;EFsIF;IGzJM,gCAAA;IAKA,6BAAA;IAKA,4BAAA;IAKA,2BAAA;IAKA,wBAAA;GFsCL;;EDmGD;IG7JM,kCAAA;IAKA,+BAAA;IAKA,8BAAA;IAKA,6BAAA;IAKA,0BAAA;GF8CL;CACF;;AA7ED;;;;EACE,0BAAA;EACA,WAAA;EDwCA,0BAAA;EACA,mBAAA;ECvCA,oBAAA;EACA,mBAAA;CAoFD;;AAjFD;;EEEQ,gCAAA;EAKA,6BAAA;EAeA,wBAAA;CFkEP;;AAlFO;;EACN,oDAAA;EACA,sBAAA;CAsFD;;AAnFD;EACE,cAAA;CAsFD;;AAnFD;EACE,cAAA;CAsFD;;AAnFD;EAEI,cAAA;CAqFH;;AAvFD;;EAIM,iBAAA;CAwFL;;AArFC;EACE,cAAA;CAwFH;;AApFD;EAEI,aAAA;CAsFH;;AAvFC;;;EAGI,WAAA;CA0FL","file":"_Facet.scss","sourcesContent":["@import \"bourbon/bourbon\";\n\n// https://app.frontify.com/d/GthysWU8RY0Q/brand-guidelines#/basics/colors\n\n// Corporate Main Colors\n$coveo-orange: #f58020;\n$coveo-blue: #004990;\n\n// Complementary Colors Set 1\n$color-charcoal: #08080E;\n$color-dark-grey: #373737;\n$color-grey: #4F5658;\n$color-greyish-dark-blue: #263E55;\n$color-greyish-teal-blue: #1D4F76;\n$color-blueish-gray: #67768B;\n$color-vibrant-blue: #009ddc;\n\n// Complementary Colors Set 2\n$color-teal: #296896;\n$color-greyish-cyan: #CDDEE9;\n$color-greyish-light-cyan: #CDDEE9;\n$color-light-grey: #BCC3CA;\n$color-blueish-white-grey: #E6ECf0;\n$color-blueish-white: #F7F8F9;\n\n// Coveo Partners Colors\n$color-coveo-for-sitecore: #DC291E;\n$color-coveo-for-salesforce: #009DDC;\n\n$color-green: #4caf50;\n$color-transparent-background: rgba(28, 79, 118, 0.9);\n\n// Font sizes\n$font-size-huge: 24px;\n$font-size-biggest: 18px;\n$font-size-bigger: 16px;\n$font-size-regular: 15px;\n$font-size-smaller: 14px;\n$font-size-smallest: 12px;\n\n// Border\n$default-border-radius: 4px;\n$small-border-radius: 2px;\n$default-border: 1px solid $color-light-grey;\n@mixin defaultRoundedBorder {\n  border: $default-border;\n  border-radius: $default-border-radius;\n}\n\n/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n@mixin align($direction: 'vertical', $position: relative) {\n  position: $position;\n  @if $direction == 'vertical' {\n    top: 50%;\n    @include transform(translateY(-50%));\n  } @else {\n    left: 50%;\n    @include transform(translateX(-50%));\n  }\n}\n\n@mixin hoverEffectForDropdown($target: '&') {\n  @include clickable();\n  cursor: pointer;\n  #{$target} {\n    background: white;\n  }\n\n  #{$target}:hover {\n    background: $color-blueish-white-grey;\n  }\n}\n\n@mixin iconWithHoverState($iconBase, $float:'left', $inactive : 'coveo-disabled') {\n  $iconActive: '#{$iconBase}-active';\n  .coveo-icon {\n    @extend #{$iconBase} !optional;\n    float: #{$float};\n  }\n  &:hover {\n    .coveo-icon {\n      @extend #{$iconActive} !optional;\n    }\n  }\n  &:hover.#{$inactive} {\n    .coveo-icon {\n      @extend #{$iconBase} !optional;\n    }\n  }\n}\n\n@mixin clickable {\n  color: $color-teal;\n  text-decoration: none;\n  cursor: pointer;\n  &:hover, &:visited {\n    text-decoration: none;\n    color: $color-greyish-dark-blue;\n  }\n  &:hover, &:hover a {\n    text-decoration: underline;\n  }\n  &.coveo-selected * {\n    color: $color-greyish-dark-blue;\n  }\n}\n\n@mixin clickableVibrant {\n  @include clickable();\n  color: $color-coveo-for-salesforce;\n  &:hover {\n    text-decoration: underline;\n    color: $color-coveo-for-salesforce;\n  }\n  &.coveo-selected * {\n    color: $color-coveo-for-salesforce;\n  }\n}\n\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n@mixin clearButton($selector, $size:'normal') {\n  cursor: pointer;\n  $icon: '.coveo-sprites-clear-inactive-filters';\n  $icon-clear: '.coveo-sprites-clear-active-filters';\n\n  @if $size == 'smaller' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'smallest' {\n    $icon: '.coveo-sprites-facet-exclusion-hover';\n    $icon-clear: '.coveo-sprites-facet-checkbox-exclusion';\n  } @else if $size == 'bigger' {\n    $icon: '.coveo-sprites-main-clear';\n    $icon-clear: '.coveo-sprites-main-clear-hover'; //TODO icon not exported yet\n  }\n\n  #{$selector} {\n    @extend #{$icon};\n  }\n  &:hover {\n    #{$selector} {\n      @extend #{$icon-clear};\n    }\n  }\n}\n\n@mixin breadcrumbTitle {\n  color: $color-blueish-gray;\n  margin-right: 14px;\n}\n\n@mixin coveo-email-to-and-from {\n  font-size: 13px;\n  a {\n    @include clickable();\n    white-space: nowrap;\n  }\n}\n\n@include keyframes(coveo-spin) {\n  from {\n    @include transform(rotate(0deg));\n  }\n\n  to {\n    @include transform(rotate(360deg));\n  }\n}\n","@import \"bourbon/bourbon\";\n@import \"_Variables.scss\";\n\n.CoveoFacet, .CoveoFacetRange, .CoveoFacetSlider, .CoveoHierarchicalFacet {\n  margin: 10px 0px 10px 0px;\n  padding: 0;\n  @include defaultRoundedBorder();\n  background: $color-blueish-white;\n  position: relative;\n}\n\n.coveo-facet-column {\n  .coveo-topSpace.coveo-with-animation, .coveo-bottomSpace.coveo-with-animation {\n    @include transition(height 0.5s);\n  }\n}\n\n.ie8or9 .coveo-facet-header-wait-animation, .ie8or9 .coveo-facet-search-wait-animation {\n  background: url(../image/wait_facet.gif) no-repeat;\n  background-size: 100%;\n}\n\n.coveo-facet-empty {\n  display: none;\n}\n\n.coveo-facet-dependent {\n  display: none;\n}\n\n.coveo-facet-collapsed {\n  .coveo-facet-value.coveo-facet-value {\n    display: none;\n    &.coveo-selected, &.coveo-excluded {\n      display: inherit;\n    }\n  }\n  .coveo-facet-footer {\n    display: none;\n  }\n}\n\n.coveo-facet-fade {\n  .coveo-facet-value {\n    opacity: 0.5;\n    &.coveo-selected, &.coveo-excluded, &.coveo-facet-search-selectable {\n      opacity: 1;\n    }\n  }\n}\n","// Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content\n@mixin keyframes($name) {\n  $original-prefix-for-webkit:    $prefix-for-webkit;\n  $original-prefix-for-mozilla:   $prefix-for-mozilla;\n  $original-prefix-for-microsoft: $prefix-for-microsoft;\n  $original-prefix-for-opera:     $prefix-for-opera;\n  $original-prefix-for-spec:      $prefix-for-spec;\n\n  @if $original-prefix-for-webkit {\n    @include disable-prefix-for-all();\n    $prefix-for-webkit: true;\n    @-webkit-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-mozilla {\n    @include disable-prefix-for-all();\n    $prefix-for-mozilla: true;\n    @-moz-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-opera {\n    @include disable-prefix-for-all();\n    $prefix-for-opera: true;\n    @-o-keyframes #{$name} {\n      @content;\n    }\n  }\n  @if $original-prefix-for-spec {\n    @include disable-prefix-for-all();\n    $prefix-for-spec: true;\n    @keyframes #{$name} {\n      @content;\n    }\n  }\n\n  $prefix-for-webkit:    $original-prefix-for-webkit;\n  $prefix-for-mozilla:   $original-prefix-for-mozilla;\n  $prefix-for-microsoft: $original-prefix-for-microsoft;\n  $prefix-for-opera:     $original-prefix-for-opera;\n  $prefix-for-spec:      $original-prefix-for-spec;\n}\n","//************************************************************************//\n// Example: @include prefixer(border-radius, $radii, webkit ms spec);\n//************************************************************************//\n$prefix-for-webkit:    true !default;\n$prefix-for-mozilla:   true !default;\n$prefix-for-microsoft: true !default;\n$prefix-for-opera:     true !default;\n$prefix-for-spec:      true !default; // required for keyframe mixin\n\n@mixin prefixer ($property, $value, $prefixes) {\n  @each $prefix in $prefixes {\n    @if $prefix == webkit {\n      @if $prefix-for-webkit {\n        -webkit-#{$property}: $value;\n      }\n    }\n    @else if $prefix == moz {\n      @if $prefix-for-mozilla {\n        -moz-#{$property}: $value;\n      }\n    }\n    @else if $prefix == ms {\n      @if $prefix-for-microsoft {\n        -ms-#{$property}: $value;\n      }\n    }\n    @else if $prefix == o {\n      @if $prefix-for-opera {\n        -o-#{$property}: $value;\n      }\n    }\n    @else if $prefix == spec {\n      @if $prefix-for-spec {\n        #{$property}: $value;\n      }\n    }\n    @else  {\n      @warn \"Unrecognized prefix: #{$prefix}\";\n    }\n  }\n}\n\n@mixin disable-prefix-for-all() {\n  $prefix-for-webkit:    false;\n  $prefix-for-mozilla:   false;\n  $prefix-for-microsoft: false;\n  $prefix-for-opera:     false;\n  $prefix-for-spec:      false;\n}\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 162 */
-/***/ function(module, exports) {
-
-	module.exports = "data:image/gif;base64,R0lGODlhEAAQAOZ9ABYWFvj4+NbW1tXV1XZ2dtTU1Pf3983NzRcXF/b29nd3d3R0dHl5eXp6ehwcHPn5+Xh4eDs7Ozw8PB0dHc7Ozjo6Os/Pzx4eHi8vL3V1dXt7e9jY2Hx8fNPT0y4uLjk5OfX19f39/U5OTszMzCAgIFFRUdfX1/T09PHx8fPz8/Ly8n5+fn9/f1JSUk9PTyEhIRoaGk1NTXNzc/z8/JCQkNvb2x8fH/7+/lBQUCsrK3BwcEBAQIqKiiIiIn19fY2NjcvLy3FxcSMjI8LCwkxMTN3d3Y6Ojl9fX2hoaDAwMPDw8Dc3N+zs7HJycjg4OIyMjLm5udDQ0GxsbJWVlaGhocHBwdra2icnJyoqKrq6uqmpqfr6+tHR0UlJSaWlpb6+vltbW9/f3/v7+2tra5+fn4aGhiQkJIKCgiUlJcXFxaKiotzc3FxcXJOTk6ioqDExMUJCQu/v75KSkqurq7GxsdnZ2WBgYMrKylpaWpaWlhsbGxUVFf///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo0MjU3OTJFQUEyMjE2ODExODA4M0Y2ODYzNkFENDFEOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxNzZGRjEzQ0M3MUQxMUUzQjFEQUFFRjUzN0FFN0E5MiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxNzZGRjEzQkM3MUQxMUUzQjFEQUFFRjUzN0FFN0E5MiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Njg4NDlDNDRDNzIxNjgxMTgwODNGNjg2MzZBRDQxRDgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDI1NzkyRUFBMjIxNjgxMTgwODNGNjg2MzZBRDQxRDgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQFBQB9ACwAAAAAEAAQAAAHhIB8gnwCChI2NhIQAoODAQQAe5KTAAQBgw8le3oaByAgFBx6eyUPggR7HgONggNJewSECHoFrIMDeggCEHsNto0NexBpZRu/gxssVcfMzawHRlbNG2dDvL7MGsIDs6u/uAirqBiMrAMYexmCmZudCQkHGqOljpCTlJa2hREXFxEK5QQFAgAh+QQFBQB9ACwAAAAAEAAQAAAHdIB9goM7Qhd9DBuDixkIi4+DBiKCHBQoCQcNgjiDNH0YApB9Hn0ZfXwzeQOiiwN8r6yLCq98sX0UexFvXSG2BnsTE3sGtjMVLxJ7FLa0toO0oc5yYrWmHquPJoI/gy6UgioWKw59IsSDC6zpogyCek4EHYuBACH5BAUFAH0ALAAAAAAQABAAAAeGgH2CghARFzZ9EIOLfD+Li4qDfHxcLxoWBoIMgi6ZfZN8KY99BTl9C30bUJOjggUwAH0Ke22tjywSewe2ghaCPXsnvH3CenrEwyl7eh99vrwHex8Ew4I8ewQFADAFtnwhWgJ9Mn053Y8poIIJIoINgpkcJAes8AqtCDx8oxsQEn0TIpBaFAgAIfkEBQUAfQAsAAAAABAAEAAAB4iAfYJ9fB0VDmhwLEWDjXx8CRONfU2NDysoj0UBASMLgi0Pggt7SHyTfQIefRl9HQB6BaiDeqkafQyzgxx9BIIjuoIUfRUkfSDBfaKDAcnIJBV9w8HAEoK8wbkcA321ugJ6ALKfHhaofGB7MoNEo0BKATWPTEHLfQE6k3opj7MFBIccVIhyalAgACH5BAUFAH0ALAAAAAAQABAAAAeMgH2CfTV8hjpLDAKDgwEECCOGdoIIBIwBLXsOboYGBw0OggaClhiLjH0FGH2WAwgOA6iyBRB9GrKMDH0ZH30UuIMHghN9o8B9CX0XF8jHxX3EfcLHvx8LfbrHtwodzoIOCIIZfRgFsiar14IxfQ4NFA+GVBN7RMak4X1shlkIGQGyBkBYIsVQiFOCAgEAIfkEBQUAfQAsAAAAABAAEAAAB4eAfYJ9AgwRDXx8N4OMg3t7SIlDAAuMCTF9egwHBolegiWDCoIdjYSCGX0FAHqlpoQOCAMEfQyvgxp9ChF9B7eCFn0fF30Jv30GfRMTyMfGFx99FMe+FaO5v7YLAwgOA7cFegCuggKm5n20yDiCaokPFA2CMcaDCwBfiXiP6a8FIYnGRIDQKBAAIfkEBQUAfQAsAAAAABAAEAAAB42AfYKCCn0TExV1fIOMTQCCe3s9D3yVgwYtggtASgFhlXEKD5p9HhaMgnxHfQt9A4IFqIMFegAdghyyjAyCFX0UuoMjfRF6fQHBgiB9JCR9y8nIehJ9w8nAfbm8ybkEHQDGyYKvrUeLqBYerIIPQUyVNQEoBz7GOIyVfCh6kYIAOrr4HKjgwEEfFmsYBQIAIfkEBQUAfQAsAAAAABAAEAAAB4eAfYJ9GxASF30RCgKDjRCNfXt7CDSQIoIMBwkGFhpmG3x8jVgFkH0goaKCMB2mgnw3dCYrfQ2ug0Z9BBJ9FreCB30fL30qv30pfXrEJ8fNg8G/vh8EfU/HtgomcyGqrjB9panGkAU5fTKvfHckGhYGCbWCl408CJKQCgamAgoRExckQNjQKBAAIfkEBQUAfQAsAAAAABAAEAAAB4CAfYKCDIJCO30Dg4sEi4sLAYMPJY4oFD56ey4Gghl9Ho6CJkl7U4IIeoqhfQJkN3wQq458tBV9B7KCtHwTfZy5ITtXPRIzub59DrvHFLq0x4N8WzQCsgN6CIpPexgmoQOgnr4iew4rfSqCHIIuD4MBCwCrBJGOHQROen0RDNWDgQA7"
-
-/***/ },
-/* 163 */
-/***/ function(module, exports, __webpack_require__) {
-
 	"use strict";
 	/// <reference path="../../../lib/d3.d.ts" />
 	var Dom_1 = __webpack_require__(56);
@@ -23420,7 +23013,10 @@ var Coveo =
 	var SliderEvents_1 = __webpack_require__(51);
 	var Utils_1 = __webpack_require__(22);
 	var InitializationEvents_1 = __webpack_require__(44);
-	var d3 = __webpack_require__(164);
+	var SearchInterface_1 = __webpack_require__(92);
+	var Component_1 = __webpack_require__(91);
+	var d3 = __webpack_require__(153);
+	var _ = __webpack_require__(23);
 	var Slider = (function () {
 	    function Slider(element, options, root) {
 	        var _this = this;
@@ -23918,6 +23514,7 @@ var Coveo =
 	    function SliderGraph(slider, root) {
 	        var _this = this;
 	        this.slider = slider;
+	        this.root = Dom_1.$$(root);
 	        this.svg = d3.select(slider.element).append('svg').append('g');
 	        this.x = d3.scale.ordinal();
 	        this.y = d3.scale.linear();
@@ -23928,11 +23525,11 @@ var Coveo =
 	            bottom: 20
 	        }, this.slider.options.graph.margin || {});
 	        this.slider.options.graph.animationDuration = this.slider.options.graph.animationDuration || 500;
-	        this.resize = function () {
+	        this.resize = _.debounce(function () {
 	            _this.draw();
-	        };
+	        }, 250);
 	        window.addEventListener('resize', this.resize);
-	        Dom_1.$$(root).on(InitializationEvents_1.InitializationEvents.nuke, this.handleNuke);
+	        this.root.on(InitializationEvents_1.InitializationEvents.nuke, this.handleNuke);
 	        this.tooltip = Dom_1.$$('div', {
 	            className: 'coveo-slider-tooltip'
 	        }).el;
@@ -23942,7 +23539,8 @@ var Coveo =
 	    }
 	    SliderGraph.prototype.draw = function (data) {
 	        if (data === void 0) { data = this.oldData; }
-	        if (data) {
+	        var searchInterface = Component_1.Component.get(this.root.el, SearchInterface_1.SearchInterface, true);
+	        if (data && !(searchInterface instanceof SearchInterface_1.SearchInterface && !searchInterface.isSmallInterface())) {
 	            var sliderOuterWidth = this.slider.element.offsetWidth;
 	            var sliderOuterHeight = this.slider.element.offsetHeight;
 	            var width = sliderOuterWidth - this.slider.options.graph.margin.left - this.slider.options.graph.margin.right;
@@ -24112,7 +23710,7 @@ var Coveo =
 
 
 /***/ },
-/* 164 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
@@ -33671,7 +33269,7 @@ var Coveo =
 	}();
 
 /***/ },
-/* 165 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="../Facet/FacetHeader.ts" />
@@ -33682,7 +33280,7 @@ var Coveo =
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Slider_1 = __webpack_require__(163);
+	var Slider_1 = __webpack_require__(152);
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
 	var FacetHeader_1 = __webpack_require__(141);
@@ -34331,7 +33929,7 @@ var Coveo =
 
 
 /***/ },
-/* 166 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path='../Facet/Facet.ts' />
@@ -34408,7 +34006,7 @@ var Coveo =
 
 
 /***/ },
-/* 167 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34685,7 +34283,7 @@ var Coveo =
 
 
 /***/ },
-/* 168 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34731,7 +34329,7 @@ var Coveo =
 
 
 /***/ },
-/* 169 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34983,7 +34581,7 @@ var Coveo =
 	         * It is possible to reference fields from the associated result:
 	         * Ex: '${clickUri}?id=${title}' will generate something like 'http://uri.com?id=documentTitle'
 	         * Or from the global scope:
-	         * Ex: '${window.location.hostname}/{Coveo.QueryEvents.buildingQuery} will generate something like 'localhost/buildingQuery'
+	         * Ex: '${window.location.hostname}/{Foo.Bar} will generate something like 'localhost/fooBar'
 	         * This option will override the field option.
 	         * Default is undefined
 	         */
@@ -35005,7 +34603,7 @@ var Coveo =
 
 
 /***/ },
-/* 170 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35016,7 +34614,7 @@ var Coveo =
 	};
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var ResultLink_1 = __webpack_require__(169);
+	var ResultLink_1 = __webpack_require__(158);
 	var QueryUtils_1 = __webpack_require__(36);
 	var DeviceUtils_1 = __webpack_require__(33);
 	var Initialization_1 = __webpack_require__(90);
@@ -35122,7 +34720,7 @@ var Coveo =
 
 
 /***/ },
-/* 171 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35278,7 +34876,7 @@ var Coveo =
 
 
 /***/ },
-/* 172 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35427,7 +35025,7 @@ var Coveo =
 
 
 /***/ },
-/* 173 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35597,7 +35195,7 @@ var Coveo =
 
 
 /***/ },
-/* 174 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35681,7 +35279,7 @@ var Coveo =
 
 
 /***/ },
-/* 175 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35691,7 +35289,7 @@ var Coveo =
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Component_1 = __webpack_require__(91);
-	var SortCriteria_1 = __webpack_require__(176);
+	var SortCriteria_1 = __webpack_require__(165);
 	var ComponentOptions_1 = __webpack_require__(93);
 	var Utils_1 = __webpack_require__(22);
 	var Assert_1 = __webpack_require__(20);
@@ -35963,7 +35561,7 @@ var Coveo =
 
 
 /***/ },
-/* 176 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36065,7 +35663,7 @@ var Coveo =
 
 
 /***/ },
-/* 177 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36190,7 +35788,7 @@ var Coveo =
 
 
 /***/ },
-/* 178 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="../../controllers/HierarchicalFacetQueryController.ts" />
@@ -36207,17 +35805,17 @@ var Coveo =
 	var FacetValues_1 = __webpack_require__(133);
 	var Facet_1 = __webpack_require__(132);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var HierarchicalFacetValuesList_1 = __webpack_require__(179);
+	var HierarchicalFacetValuesList_1 = __webpack_require__(168);
 	var HierarchicalFacetQueryController_1 = __webpack_require__(82);
 	var Utils_1 = __webpack_require__(22);
 	var Dom_1 = __webpack_require__(56);
 	var Defer_1 = __webpack_require__(26);
-	var HierarchicalFacetSearchValuesList_1 = __webpack_require__(180);
-	var HierarchicalFacetSearch_1 = __webpack_require__(182);
-	var HierarchicalBreadcrumbValuesList_1 = __webpack_require__(183);
+	var HierarchicalFacetSearchValuesList_1 = __webpack_require__(169);
+	var HierarchicalFacetSearch_1 = __webpack_require__(171);
+	var HierarchicalBreadcrumbValuesList_1 = __webpack_require__(172);
 	var Assert_1 = __webpack_require__(20);
-	var OmniboxHierarchicalValuesList_1 = __webpack_require__(185);
-	var HierarchicalFacetValueElement_1 = __webpack_require__(187);
+	var OmniboxHierarchicalValuesList_1 = __webpack_require__(174);
+	var HierarchicalFacetValueElement_1 = __webpack_require__(176);
 	var Initialization_1 = __webpack_require__(90);
 	/**
 	 * This component inherits all of its options and behavior from the normal {@link Facet} component, but is meant to be used for hierarchical values.<br/>
@@ -36946,7 +36544,7 @@ var Coveo =
 
 
 /***/ },
-/* 179 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="HierarchicalFacet.ts" />
@@ -36973,7 +36571,7 @@ var Coveo =
 
 
 /***/ },
-/* 180 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="../Facet/Facet.ts" />
@@ -36984,7 +36582,7 @@ var Coveo =
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var FacetSearchValuesList_1 = __webpack_require__(144);
-	var HierarchicalFacetSearchValueElement_1 = __webpack_require__(181);
+	var HierarchicalFacetSearchValueElement_1 = __webpack_require__(170);
 	var HierarchicalFacetSearchValuesList = (function (_super) {
 	    __extends(HierarchicalFacetSearchValuesList, _super);
 	    function HierarchicalFacetSearchValuesList(facet) {
@@ -36997,7 +36595,7 @@ var Coveo =
 
 
 /***/ },
-/* 181 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -37029,7 +36627,7 @@ var Coveo =
 
 
 /***/ },
-/* 182 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="HierarchicalFacet.ts" />
@@ -37105,7 +36703,7 @@ var Coveo =
 
 
 /***/ },
-/* 183 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="HierarchicalFacet.ts" />
@@ -37116,7 +36714,7 @@ var Coveo =
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var BreadcrumbValuesList_1 = __webpack_require__(143);
-	var HierarchicalBreadcrumbValueElement_1 = __webpack_require__(184);
+	var HierarchicalBreadcrumbValueElement_1 = __webpack_require__(173);
 	var HierarchicalBreadcrumbValuesList = (function (_super) {
 	    __extends(HierarchicalBreadcrumbValuesList, _super);
 	    function HierarchicalBreadcrumbValuesList(facet, facetValues, valueHierarchy) {
@@ -37131,7 +36729,7 @@ var Coveo =
 
 
 /***/ },
-/* 184 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -37166,7 +36764,7 @@ var Coveo =
 
 
 /***/ },
-/* 185 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="../HierarchicalFacet/HierarchicalFacet.ts" />
@@ -37177,7 +36775,7 @@ var Coveo =
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var OmniboxValuesList_1 = __webpack_require__(146);
-	var OmniboxHierarchicalValueElement_1 = __webpack_require__(186);
+	var OmniboxHierarchicalValueElement_1 = __webpack_require__(175);
 	var OmniboxHierarchicalValuesList = (function (_super) {
 	    __extends(OmniboxHierarchicalValuesList, _super);
 	    function OmniboxHierarchicalValuesList(facet, facetValues, omniboxObject) {
@@ -37192,7 +36790,7 @@ var Coveo =
 
 
 /***/ },
-/* 186 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="HierarchicalFacet.ts" />
@@ -37225,7 +36823,7 @@ var Coveo =
 
 
 /***/ },
-/* 187 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="HierarchicalFacet.ts" />
@@ -37250,7 +36848,7 @@ var Coveo =
 
 
 /***/ },
-/* 188 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -37261,8 +36859,8 @@ var Coveo =
 	};
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var Cell_1 = __webpack_require__(189);
-	var DefaultMatrixResultPreviewTemplate_1 = __webpack_require__(190);
+	var Cell_1 = __webpack_require__(178);
+	var DefaultMatrixResultPreviewTemplate_1 = __webpack_require__(179);
 	var Dom_1 = __webpack_require__(56);
 	var QueryEvents_1 = __webpack_require__(47);
 	var QueryStateModel_1 = __webpack_require__(86);
@@ -37967,7 +37565,7 @@ var Coveo =
 
 
 /***/ },
-/* 189 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38058,7 +37656,7 @@ var Coveo =
 
 
 /***/ },
-/* 190 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38101,7 +37699,7 @@ var Coveo =
 
 
 /***/ },
-/* 191 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="../../../node_modules/modal-box/bin/ModalBox.d.ts" />
@@ -38113,7 +37711,7 @@ var Coveo =
 	};
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var ResultLink_1 = __webpack_require__(169);
+	var ResultLink_1 = __webpack_require__(158);
 	var Initialization_1 = __webpack_require__(90);
 	var DomUtils_1 = __webpack_require__(57);
 	var Dom_1 = __webpack_require__(56);
@@ -38198,7 +37796,7 @@ var Coveo =
 
 
 /***/ },
-/* 192 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38209,7 +37807,7 @@ var Coveo =
 	};
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var DefaultResultAttachmentTemplate_1 = __webpack_require__(193);
+	var DefaultResultAttachmentTemplate_1 = __webpack_require__(182);
 	var Utils_1 = __webpack_require__(22);
 	var QueryUtils_1 = __webpack_require__(36);
 	var Initialization_1 = __webpack_require__(90);
@@ -38316,7 +37914,7 @@ var Coveo =
 
 
 /***/ },
-/* 193 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38340,7 +37938,7 @@ var Coveo =
 
 
 /***/ },
-/* 194 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38351,7 +37949,7 @@ var Coveo =
 	};
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var DefaultFoldingTemplate_1 = __webpack_require__(195);
+	var DefaultFoldingTemplate_1 = __webpack_require__(184);
 	var Utils_1 = __webpack_require__(22);
 	var QueryUtils_1 = __webpack_require__(36);
 	var Initialization_1 = __webpack_require__(90);
@@ -38555,7 +38153,7 @@ var Coveo =
 
 
 /***/ },
-/* 195 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38582,7 +38180,7 @@ var Coveo =
 
 
 /***/ },
-/* 196 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38595,7 +38193,7 @@ var Coveo =
 	var ComponentOptions_1 = __webpack_require__(93);
 	var QueryUtils_1 = __webpack_require__(36);
 	var Initialization_1 = __webpack_require__(90);
-	var FieldValue_1 = __webpack_require__(197);
+	var FieldValue_1 = __webpack_require__(186);
 	var Dom_1 = __webpack_require__(56);
 	/**
 	 * This component is used to display a set of {@link FieldValue} components in a table which
@@ -38787,7 +38385,7 @@ var Coveo =
 
 
 /***/ },
-/* 197 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39065,7 +38663,7 @@ var Coveo =
 
 
 /***/ },
-/* 198 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39076,7 +38674,7 @@ var Coveo =
 	};
 	var ComponentOptions_1 = __webpack_require__(93);
 	var Initialization_1 = __webpack_require__(90);
-	var FieldValue_1 = __webpack_require__(197);
+	var FieldValue_1 = __webpack_require__(186);
 	var StringUtils_1 = __webpack_require__(59);
 	var Assert_1 = __webpack_require__(20);
 	var Dom_1 = __webpack_require__(56);
@@ -39234,7 +38832,7 @@ var Coveo =
 
 
 /***/ },
-/* 199 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39343,7 +38941,7 @@ var Coveo =
 
 
 /***/ },
-/* 200 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39425,7 +39023,7 @@ var Coveo =
 
 
 /***/ },
-/* 201 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39438,8 +39036,8 @@ var Coveo =
 	var ComponentOptions_1 = __webpack_require__(93);
 	var LocalStorageUtils_1 = __webpack_require__(67);
 	var KeyboardUtils_1 = __webpack_require__(66);
-	var PreferencesPanel_1 = __webpack_require__(200);
-	var PreferencesPanelItem_1 = __webpack_require__(202);
+	var PreferencesPanel_1 = __webpack_require__(189);
+	var PreferencesPanelItem_1 = __webpack_require__(191);
 	var InitializationEvents_1 = __webpack_require__(44);
 	var PreferencesPanelEvents_1 = __webpack_require__(46);
 	var Model_1 = __webpack_require__(84);
@@ -39929,7 +39527,7 @@ var Coveo =
 
 
 /***/ },
-/* 202 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40166,7 +39764,7 @@ var Coveo =
 
 
 /***/ },
-/* 203 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40252,7 +39850,7 @@ var Coveo =
 
 
 /***/ },
-/* 204 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40389,7 +39987,7 @@ var Coveo =
 
 
 /***/ },
-/* 205 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40529,7 +40127,7 @@ var Coveo =
 
 
 /***/ },
-/* 206 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40671,7 +40269,7 @@ var Coveo =
 
 
 /***/ },
-/* 207 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40681,7 +40279,7 @@ var Coveo =
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Component_1 = __webpack_require__(91);
-	var SortCriteria_ts_1 = __webpack_require__(176);
+	var SortCriteria_ts_1 = __webpack_require__(165);
 	var ComponentOptions_1 = __webpack_require__(93);
 	var Assert_1 = __webpack_require__(20);
 	var Utils_1 = __webpack_require__(22);
@@ -40859,7 +40457,7 @@ var Coveo =
 
 
 /***/ },
-/* 208 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40978,7 +40576,7 @@ var Coveo =
 
 
 /***/ },
-/* 209 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41028,7 +40626,7 @@ var Coveo =
 
 
 /***/ },
-/* 210 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41092,7 +40690,7 @@ var Coveo =
 
 
 /***/ },
-/* 211 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41147,7 +40745,7 @@ var Coveo =
 
 
 /***/ },
-/* 212 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41156,7 +40754,7 @@ var Coveo =
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(211);
+	var SuggestionForOmnibox_1 = __webpack_require__(200);
 	var ComponentOptions_1 = __webpack_require__(93);
 	var Component_1 = __webpack_require__(91);
 	var Assert_1 = __webpack_require__(20);
@@ -41328,7 +40926,7 @@ var Coveo =
 
 
 /***/ },
-/* 213 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41337,7 +40935,7 @@ var Coveo =
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(211);
+	var SuggestionForOmnibox_1 = __webpack_require__(200);
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
 	var Assert_1 = __webpack_require__(20);
@@ -41483,7 +41081,7 @@ var Coveo =
 
 
 /***/ },
-/* 214 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path='../../../node_modules/modal-box/bin/ModalBox.d.ts' />
@@ -41662,7 +41260,7 @@ var Coveo =
 
 
 /***/ },
-/* 215 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42052,7 +41650,7 @@ var Coveo =
 
 
 /***/ },
-/* 216 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42065,8 +41663,8 @@ var Coveo =
 	var ComponentOptions_1 = __webpack_require__(93);
 	var ComponentOptionsModel_1 = __webpack_require__(87);
 	var LocalStorageUtils_1 = __webpack_require__(67);
-	var PreferencesPanel_1 = __webpack_require__(200);
-	var PreferencesPanelItem_1 = __webpack_require__(202);
+	var PreferencesPanel_1 = __webpack_require__(189);
+	var PreferencesPanelItem_1 = __webpack_require__(191);
 	var PreferencesPanelEvents_1 = __webpack_require__(46);
 	var AnalyticsActionListMeta_1 = __webpack_require__(103);
 	var Initialization_1 = __webpack_require__(90);
@@ -42204,7 +41802,7 @@ var Coveo =
 
 
 /***/ },
-/* 217 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42277,7 +41875,7 @@ var Coveo =
 
 
 /***/ },
-/* 218 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42381,7 +41979,7 @@ var Coveo =
 
 
 /***/ },
-/* 219 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42472,7 +42070,7 @@ var Coveo =
 
 
 /***/ },
-/* 220 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42749,7 +42347,7 @@ var Coveo =
 
 
 /***/ },
-/* 221 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42770,6 +42368,12 @@ var Coveo =
 	exports.CoveoJQuery = CoveoJQuery;
 	if (window['$'] != undefined && window['$'].fn != undefined) {
 	    exports.jQueryInstance = window['$'];
+	    if (window['Coveo'] == undefined) {
+	        window['Coveo'] = {};
+	    }
+	    if (window['Coveo']['$'] == undefined) {
+	        window['Coveo']['$'] = exports.jQueryInstance;
+	    }
 	    window['$'].fn.coveo = function () {
 	        var args = [];
 	        for (var _i = 0; _i < arguments.length; _i++) {
@@ -42795,7 +42399,37 @@ var Coveo =
 
 
 /***/ },
-/* 222 */
+/* 211 */
+/***/ function(module, exports) {
+
+	"use strict";
+	if (underscoreIsDefined()) {
+	    setCoveoUnderscore();
+	}
+	else {
+	    // Adding a check in case underscore was added after the jsSearch
+	    document.addEventListener('DOMContentLoaded', function () {
+	        if (underscoreIsDefined()) {
+	            setCoveoUnderscore();
+	        }
+	    });
+	}
+	function setCoveoUnderscore() {
+	    if (window['Coveo'] == undefined) {
+	        window['Coveo'] = {};
+	    }
+	    if (window['Coveo']['_'] == undefined) {
+	        window['Coveo']['_'] = window['_'];
+	        exports.underscoreInstance = window['Coveo']['_'];
+	    }
+	}
+	function underscoreIsDefined() {
+	    return window['_'] != undefined && window['_'].VERSION != undefined && window['_'].each != undefined;
+	}
+
+
+/***/ },
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42808,7 +42442,7 @@ var Coveo =
 	var ComponentOptions_1 = __webpack_require__(93);
 	var Assert_1 = __webpack_require__(20);
 	var SearchAlertEvents_1 = __webpack_require__(49);
-	var Subscription_1 = __webpack_require__(223);
+	var Subscription_1 = __webpack_require__(213);
 	var Initialization_1 = __webpack_require__(90);
 	var Strings_1 = __webpack_require__(29);
 	var Dom_1 = __webpack_require__(56);
@@ -42986,7 +42620,7 @@ var Coveo =
 
 
 /***/ },
-/* 223 */
+/* 213 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -42997,7 +42631,7 @@ var Coveo =
 
 
 /***/ },
-/* 224 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43009,14 +42643,14 @@ var Coveo =
 	/// <reference path='../../../node_modules/modal-box/bin/ModalBox.d.ts' />
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var SearchAlertsMessage_1 = __webpack_require__(225);
+	var SearchAlertsMessage_1 = __webpack_require__(215);
 	var SettingsEvents_1 = __webpack_require__(50);
 	var QueryEvents_1 = __webpack_require__(47);
 	var Assert_1 = __webpack_require__(20);
 	var Querybox_1 = __webpack_require__(122);
 	var Omnibox_1 = __webpack_require__(126);
 	var SearchAlertEvents_1 = __webpack_require__(49);
-	var Subscription_1 = __webpack_require__(223);
+	var Subscription_1 = __webpack_require__(213);
 	var Initialization_1 = __webpack_require__(90);
 	var Strings_1 = __webpack_require__(29);
 	var Dom_1 = __webpack_require__(56);
@@ -43287,7 +42921,7 @@ var Coveo =
 
 
 /***/ },
-/* 225 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43300,7 +42934,7 @@ var Coveo =
 	var ComponentOptions_1 = __webpack_require__(93);
 	var SearchAlertEvents_1 = __webpack_require__(49);
 	var QueryEvents_1 = __webpack_require__(47);
-	var Subscription_1 = __webpack_require__(223);
+	var Subscription_1 = __webpack_require__(213);
 	var PopupUtils_1 = __webpack_require__(69);
 	var Strings_1 = __webpack_require__(29);
 	var Dom_1 = __webpack_require__(56);
@@ -43405,7 +43039,7 @@ var Coveo =
 
 
 /***/ },
-/* 226 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43509,7 +43143,7 @@ var Coveo =
 
 
 /***/ },
-/* 227 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43518,7 +43152,7 @@ var Coveo =
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Folding_1 = __webpack_require__(175);
+	var Folding_1 = __webpack_require__(164);
 	var Initialization_1 = __webpack_require__(90);
 	/**
 	 * This component inherits from the {@link Folding} component.
@@ -43556,7 +43190,7 @@ var Coveo =
 
 
 /***/ },
-/* 228 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43571,7 +43205,7 @@ var Coveo =
 	var Utils_1 = __webpack_require__(22);
 	var Dom_1 = __webpack_require__(56);
 	var Strings_1 = __webpack_require__(29);
-	var ChatterUtils_1 = __webpack_require__(229);
+	var ChatterUtils_1 = __webpack_require__(219);
 	var ChatterLikedBy = (function (_super) {
 	    __extends(ChatterLikedBy, _super);
 	    function ChatterLikedBy(element, options, bindings, result) {
@@ -43657,7 +43291,7 @@ var Coveo =
 
 
 /***/ },
-/* 229 */
+/* 219 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -43676,7 +43310,7 @@ var Coveo =
 
 
 /***/ },
-/* 230 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43687,7 +43321,7 @@ var Coveo =
 	};
 	var Component_1 = __webpack_require__(91);
 	var Utils_1 = __webpack_require__(22);
-	var ChatterUtils_1 = __webpack_require__(229);
+	var ChatterUtils_1 = __webpack_require__(219);
 	var Strings_1 = __webpack_require__(29);
 	var Initialization_1 = __webpack_require__(90);
 	var Dom_1 = __webpack_require__(56);
@@ -43733,7 +43367,7 @@ var Coveo =
 
 
 /***/ },
-/* 231 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43744,7 +43378,7 @@ var Coveo =
 	};
 	var Component_1 = __webpack_require__(91);
 	var ComponentOptions_1 = __webpack_require__(93);
-	var ChatterUtils_1 = __webpack_require__(229);
+	var ChatterUtils_1 = __webpack_require__(219);
 	var Initialization_1 = __webpack_require__(90);
 	var Strings_1 = __webpack_require__(29);
 	var Utils_1 = __webpack_require__(22);
@@ -43810,7 +43444,7 @@ var Coveo =
 
 
 /***/ },
-/* 232 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43864,5 +43498,7 @@ var Coveo =
 
 
 /***/ }
-/******/ ]);
+/******/ ])
+});
+;
 //# sourceMappingURL=CoveoJsSearch.js.map

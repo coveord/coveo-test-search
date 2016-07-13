@@ -732,6 +732,50 @@
 .coveo-sprites-tab-sharepoint,
 .coveo-sprites-tab-youtube,
 .coveo-sprites-tabGroup-show_more,
+.coveo-sprites-fileType-formats-folder,
+.coveo-icon.filetype.folder,
+.coveo-icon.sysfiletype.folder,
+.coveo-sprites-fileType-formats-html,
+.coveo-icon.filetype.html,
+.coveo-icon.sysfiletype.html,
+.coveo-sprites-fileType-formats-image,
+.coveo-icon.filetype.image,
+.coveo-icon.sysfiletype.image,
+.coveo-sprites-fileType-formats-pdf,
+.coveo-icon.filetype.pdf,
+.coveo-icon.sysfiletype.pdf,
+.coveo-sprites-fileType-formats-slideshow,
+.coveo-icon.filetype.ppt,
+.coveo-icon.sysfiletype.ppt,
+.coveo-sprites-fileType-formats-spreadsheet,
+.coveo-icon.filetype.xls,
+.coveo-icon.sysfiletype.xls,
+.coveo-sprites-fileType-formats-text,
+.coveo-icon.filetype.txt,
+.coveo-icon.sysfiletype.txt,
+.coveo-icon.filetype.doc,
+.coveo-icon.sysfiletype.doc,
+.coveo-sprites-fileType-formats-video,
+.coveo-icon.filetype.video,
+.coveo-icon.sysfiletype.video,
+.coveo-sprites-fileType-formats-xml,
+.coveo-icon.filetype.xml,
+.coveo-icon.sysfiletype.xml,
+.coveo-sprites-fileType-formats-zip,
+.coveo-icon.filetype.zip,
+.coveo-icon.sysfiletype.zip,
+.coveo-sprites-fileType-lithium-board,
+.coveo-icon.filetype.lithiumboard,
+.coveo-icon.sysfiletype.lithiumboard,
+.coveo-sprites-fileType-lithium-category,
+.coveo-icon.filetype.lithiumcategory,
+.coveo-icon.sysfiletype.lithiumcategory,
+.coveo-sprites-fileType-lithium-message,
+.coveo-icon.filetype.lithiummessage,
+.coveo-icon.sysfiletype.lithiummessage,
+.coveo-sprites-fileType-lithium-thread,
+.coveo-icon.filetype.lithiumthread,
+.coveo-icon.sysfiletype.lithiumthread,
 .coveo-sprites-fileType-exchange-activity,
 .coveo-icon.filetype.exchangeactivity,
 .coveo-icon.sysfiletype.exchangeactivity,
@@ -785,50 +829,6 @@
 .coveo-icon.sysfiletype.exchangeperson,
 .coveo-icon.filetype.activedirperson,
 .coveo-icon.sysfiletype.activedirperson,
-.coveo-sprites-fileType-formats-folder,
-.coveo-icon.filetype.folder,
-.coveo-icon.sysfiletype.folder,
-.coveo-sprites-fileType-formats-html,
-.coveo-icon.filetype.html,
-.coveo-icon.sysfiletype.html,
-.coveo-sprites-fileType-formats-image,
-.coveo-icon.filetype.image,
-.coveo-icon.sysfiletype.image,
-.coveo-sprites-fileType-formats-pdf,
-.coveo-icon.filetype.pdf,
-.coveo-icon.sysfiletype.pdf,
-.coveo-sprites-fileType-formats-slideshow,
-.coveo-icon.filetype.ppt,
-.coveo-icon.sysfiletype.ppt,
-.coveo-sprites-fileType-formats-spreadsheet,
-.coveo-icon.filetype.xls,
-.coveo-icon.sysfiletype.xls,
-.coveo-sprites-fileType-formats-text,
-.coveo-icon.filetype.txt,
-.coveo-icon.sysfiletype.txt,
-.coveo-icon.filetype.doc,
-.coveo-icon.sysfiletype.doc,
-.coveo-sprites-fileType-formats-video,
-.coveo-icon.filetype.video,
-.coveo-icon.sysfiletype.video,
-.coveo-sprites-fileType-formats-xml,
-.coveo-icon.filetype.xml,
-.coveo-icon.sysfiletype.xml,
-.coveo-sprites-fileType-formats-zip,
-.coveo-icon.filetype.zip,
-.coveo-icon.sysfiletype.zip,
-.coveo-sprites-fileType-lithium-board,
-.coveo-icon.filetype.lithiumboard,
-.coveo-icon.sysfiletype.lithiumboard,
-.coveo-sprites-fileType-lithium-category,
-.coveo-icon.filetype.lithiumcategory,
-.coveo-icon.sysfiletype.lithiumcategory,
-.coveo-sprites-fileType-lithium-message,
-.coveo-icon.filetype.lithiummessage,
-.coveo-icon.sysfiletype.lithiummessage,
-.coveo-sprites-fileType-lithium-thread,
-.coveo-icon.filetype.lithiumthread,
-.coveo-icon.sysfiletype.lithiumthread,
 .coveo-sprites-fileType-objectType-account,
 .coveo-icon.objecttype.Account,
 .coveo-icon.objecttype.account,
@@ -3232,175 +3232,175 @@
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-activity, .coveo-icon.filetype.exchangeactivity, .coveo-icon.sysfiletype.exchangeactivity {
+.coveo-sprites-fileType-formats-folder, .coveo-icon.filetype.folder, .coveo-icon.sysfiletype.folder {
   background-position: -1937px 0px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-appointment, .coveo-icon.filetype.exchangecalendarmessage, .coveo-icon.sysfiletype.exchangecalendarmessage {
+.coveo-sprites-fileType-formats-html, .coveo-icon.filetype.html, .coveo-icon.sysfiletype.html {
   background-position: -1937px -16px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-communicator, .coveo-icon.filetype.exchangeofficecom, .coveo-icon.sysfiletype.exchangeofficecom {
+.coveo-sprites-fileType-formats-image, .coveo-icon.filetype.image, .coveo-icon.sysfiletype.image {
   background-position: -1937px -32px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-file, .coveo-icon.filetype.exchangedocument, .coveo-icon.sysfiletype.exchangedocument {
+.coveo-sprites-fileType-formats-pdf, .coveo-icon.filetype.pdf, .coveo-icon.sysfiletype.pdf {
   background-position: -1937px -48px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-generic, .coveo-icon.filetype.exchangefreebusy, .coveo-icon.sysfiletype.exchangefreebusy, .coveo-icon.filetype.exchangemdn, .coveo-icon.sysfiletype.exchangemdn, .coveo-icon.filetype.exchangeobject, .coveo-icon.sysfiletype.exchangeobject {
+.coveo-sprites-fileType-formats-slideshow, .coveo-icon.filetype.ppt, .coveo-icon.sysfiletype.ppt {
   background-position: -1937px -64px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-group, .coveo-icon.filetype.exchangegroup, .coveo-icon.sysfiletype.exchangegroup {
+.coveo-sprites-fileType-formats-spreadsheet, .coveo-icon.filetype.xls, .coveo-icon.sysfiletype.xls {
   background-position: -1937px -80px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-meeting, .coveo-icon.filetype.exchangeappointment, .coveo-icon.sysfiletype.exchangeappointment {
+.coveo-sprites-fileType-formats-text, .coveo-icon.filetype.txt, .coveo-icon.sysfiletype.txt, .coveo-icon.filetype.doc, .coveo-icon.sysfiletype.doc {
   background-position: -1937px -96px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-message-junk, .coveo-icon.filetype.exchangejunkmessage, .coveo-icon.sysfiletype.exchangejunkmessage {
+.coveo-sprites-fileType-formats-video, .coveo-icon.filetype.video, .coveo-icon.sysfiletype.video {
   background-position: -1953px 0px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-message-recall, .coveo-icon.filetype.exchangerecallmessage, .coveo-icon.sysfiletype.exchangerecallmessage, .coveo-icon.filetype.exchangerecallreport, .coveo-icon.sysfiletype.exchangerecallreport {
+.coveo-sprites-fileType-formats-xml, .coveo-icon.filetype.xml, .coveo-icon.sysfiletype.xml {
   background-position: -1953px -16px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-message-undeliverable, .coveo-icon.filetype.exchangedsn, .coveo-icon.sysfiletype.exchangedsn {
+.coveo-sprites-fileType-formats-zip, .coveo-icon.filetype.zip, .coveo-icon.sysfiletype.zip {
   background-position: -1953px -32px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-message, .coveo-icon.filetype.exchangemessage, .coveo-icon.sysfiletype.exchangemessage {
+.coveo-sprites-fileType-lithium-board, .coveo-icon.filetype.lithiumboard, .coveo-icon.sysfiletype.lithiumboard {
   background-position: -1953px -48px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-note, .coveo-icon.filetype.exchangenote, .coveo-icon.sysfiletype.exchangenote {
+.coveo-sprites-fileType-lithium-category, .coveo-icon.filetype.lithiumcategory, .coveo-icon.sysfiletype.lithiumcategory {
   background-position: -1953px -64px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-rss, .coveo-icon.filetype.exchangerssfeed, .coveo-icon.sysfiletype.exchangerssfeed {
+.coveo-sprites-fileType-lithium-message, .coveo-icon.filetype.lithiummessage, .coveo-icon.sysfiletype.lithiummessage {
   background-position: -1953px -80px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-task, .coveo-icon.filetype.exchangetask, .coveo-icon.sysfiletype.exchangetask {
+.coveo-sprites-fileType-lithium-thread, .coveo-icon.filetype.lithiumthread, .coveo-icon.sysfiletype.lithiumthread {
   background-position: -1953px -96px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-exchange-user, .coveo-icon.filetype.exchangeperson, .coveo-icon.sysfiletype.exchangeperson, .coveo-icon.filetype.activedirperson, .coveo-icon.sysfiletype.activedirperson {
+.coveo-sprites-fileType-exchange-activity, .coveo-icon.filetype.exchangeactivity, .coveo-icon.sysfiletype.exchangeactivity {
   background-position: -1969px 0px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-folder, .coveo-icon.filetype.folder, .coveo-icon.sysfiletype.folder {
+.coveo-sprites-fileType-exchange-appointment, .coveo-icon.filetype.exchangecalendarmessage, .coveo-icon.sysfiletype.exchangecalendarmessage {
   background-position: -1969px -16px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-html, .coveo-icon.filetype.html, .coveo-icon.sysfiletype.html {
+.coveo-sprites-fileType-exchange-communicator, .coveo-icon.filetype.exchangeofficecom, .coveo-icon.sysfiletype.exchangeofficecom {
   background-position: -1969px -32px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-image, .coveo-icon.filetype.image, .coveo-icon.sysfiletype.image {
+.coveo-sprites-fileType-exchange-file, .coveo-icon.filetype.exchangedocument, .coveo-icon.sysfiletype.exchangedocument {
   background-position: -1969px -48px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-pdf, .coveo-icon.filetype.pdf, .coveo-icon.sysfiletype.pdf {
+.coveo-sprites-fileType-exchange-generic, .coveo-icon.filetype.exchangefreebusy, .coveo-icon.sysfiletype.exchangefreebusy, .coveo-icon.filetype.exchangemdn, .coveo-icon.sysfiletype.exchangemdn, .coveo-icon.filetype.exchangeobject, .coveo-icon.sysfiletype.exchangeobject {
   background-position: -1969px -64px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-slideshow, .coveo-icon.filetype.ppt, .coveo-icon.sysfiletype.ppt {
+.coveo-sprites-fileType-exchange-group, .coveo-icon.filetype.exchangegroup, .coveo-icon.sysfiletype.exchangegroup {
   background-position: -1969px -80px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-spreadsheet, .coveo-icon.filetype.xls, .coveo-icon.sysfiletype.xls {
+.coveo-sprites-fileType-exchange-meeting, .coveo-icon.filetype.exchangeappointment, .coveo-icon.sysfiletype.exchangeappointment {
   background-position: -1969px -96px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-text, .coveo-icon.filetype.txt, .coveo-icon.sysfiletype.txt, .coveo-icon.filetype.doc, .coveo-icon.sysfiletype.doc {
+.coveo-sprites-fileType-exchange-message-junk, .coveo-icon.filetype.exchangejunkmessage, .coveo-icon.sysfiletype.exchangejunkmessage {
   background-position: -1985px 0px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-video, .coveo-icon.filetype.video, .coveo-icon.sysfiletype.video {
+.coveo-sprites-fileType-exchange-message-recall, .coveo-icon.filetype.exchangerecallmessage, .coveo-icon.sysfiletype.exchangerecallmessage, .coveo-icon.filetype.exchangerecallreport, .coveo-icon.sysfiletype.exchangerecallreport {
   background-position: -1985px -16px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-xml, .coveo-icon.filetype.xml, .coveo-icon.sysfiletype.xml {
+.coveo-sprites-fileType-exchange-message-undeliverable, .coveo-icon.filetype.exchangedsn, .coveo-icon.sysfiletype.exchangedsn {
   background-position: -1985px -32px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-formats-zip, .coveo-icon.filetype.zip, .coveo-icon.sysfiletype.zip {
+.coveo-sprites-fileType-exchange-message, .coveo-icon.filetype.exchangemessage, .coveo-icon.sysfiletype.exchangemessage {
   background-position: -1985px -48px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-lithium-board, .coveo-icon.filetype.lithiumboard, .coveo-icon.sysfiletype.lithiumboard {
+.coveo-sprites-fileType-exchange-note, .coveo-icon.filetype.exchangenote, .coveo-icon.sysfiletype.exchangenote {
   background-position: -1985px -64px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-lithium-category, .coveo-icon.filetype.lithiumcategory, .coveo-icon.sysfiletype.lithiumcategory {
+.coveo-sprites-fileType-exchange-rss, .coveo-icon.filetype.exchangerssfeed, .coveo-icon.sysfiletype.exchangerssfeed {
   background-position: -1985px -80px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-lithium-message, .coveo-icon.filetype.lithiummessage, .coveo-icon.sysfiletype.lithiummessage {
+.coveo-sprites-fileType-exchange-task, .coveo-icon.filetype.exchangetask, .coveo-icon.sysfiletype.exchangetask {
   background-position: -1985px -96px;
   width: 16px;
   height: 16px;
   text-indent: 16px; }
 
-.coveo-sprites-fileType-lithium-thread, .coveo-icon.filetype.lithiumthread, .coveo-icon.sysfiletype.lithiumthread {
+.coveo-sprites-fileType-exchange-user, .coveo-icon.filetype.exchangeperson, .coveo-icon.sysfiletype.exchangeperson, .coveo-icon.filetype.activedirperson, .coveo-icon.sysfiletype.activedirperson {
   background-position: -2001px 0px;
   width: 16px;
   height: 16px;
