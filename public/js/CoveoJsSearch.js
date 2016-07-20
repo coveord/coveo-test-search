@@ -2150,8 +2150,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.17',
-	    'product': '1.667.17',
+	    'lib': '1.667.18',
+	    'product': '1.667.18',
 	    'supportedApiVersion': 2
 	};
 
@@ -19861,9 +19861,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.onDocClick = function (e) {
 	            _this.handleClickElsewhere(e);
 	        };
-	        window.addEventListener('resize', this.onResize);
-	        document.addEventListener('click', this.onDocClick);
-	        Dom_1.$$(facet.root).on(InitializationEvents_1.InitializationEvents.nuke, this.handleNuke);
+	        window.addEventListener('resize', function () { return _this.onResize(); });
+	        document.addEventListener('click', function (e) { return _this.onDocClick(e); });
+	        Dom_1.$$(facet.root).on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
 	    }
 	    FacetSearch.prototype.isMobileDevice = function () {
 	        return DeviceUtils_1.DeviceUtils.isMobileDevice() && !this.facet.searchInterface.isNewDesign();
@@ -23534,7 +23534,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _this.draw();
 	        }, 250);
 	        window.addEventListener('resize', this.resize);
-	        this.root.on(InitializationEvents_1.InitializationEvents.nuke, this.handleNuke);
+	        this.root.on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
 	        this.tooltip = Dom_1.$$('div', {
 	            className: 'coveo-slider-tooltip'
 	        }).el;
