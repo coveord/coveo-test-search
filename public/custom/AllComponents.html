@@ -8,6 +8,11 @@
     <script src="../js/CoveoJsSearch.js"></script>
     <script src="../js/CoveoJsSearch.Dependencies.js"></script>
     <script src="../js/templates/templatesNew.js"></script>
+    <script src="../js/cultures/fr.js"></script>
+    <script src="../js/cultures/ja.js"></script>
+    <script src="../js/cultures/es.js"></script>
+    <script src="../js/cultures/zh-tw.js"></script>
+    <script src="../js/cultures/ru.js"></script>
     <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css" />
     <title>Coveo Search Test</title>
 </head>
@@ -64,7 +69,12 @@
           <div class="coveo-facet-column">
             <div class="CoveoHierarchicalFacet" data-title="Hierarchical" data-field="@hierarchicfield" data-tab="All">
             </div>
-              <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="All" data-allow-toggling-operator="true" data-include-in-omnibox="true">
+              <div class="CoveoFacet" data-title="Type"
+                                      data-field="@objecttype"
+                                      data-tab="All"
+                                      data-allow-toggling-operator="true"
+                                      data-include-in-omnibox="true"
+                                      data-availablesorts="occurrences, score" >
               </div>
               <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All" data-enable-toggling-operator="true">
               </div>
