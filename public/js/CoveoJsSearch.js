@@ -2150,8 +2150,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.16',
-	    'product': '1.667.16',
+	    'lib': '1.667.17',
+	    'product': '1.667.17',
 	    'supportedApiVersion': 2
 	};
 
@@ -22081,6 +22081,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _ = __webpack_require__(22);
 	var ResponsiveFacets = (function () {
 	    function ResponsiveFacets(root, ID) {
+	        this.root = root;
 	        this.facets = [];
 	        this.ID = ID;
 	        this.coveoRoot = root;
@@ -22193,7 +22194,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.dropdownHeader.el.style.zIndex = ResponsiveFacets.ACTIVE_FACET_HEADER_Z_INDEX;
 	        this.dropdownContent.addClass('coveo-facet-dropdown-content');
 	        this.dropdownHeader.addClass('coveo-dropdown-header-active');
-	        document.documentElement.appendChild(this.popupBackground.el);
+	        this.root.el.appendChild(this.popupBackground.el);
 	        window.getComputedStyle(this.popupBackground.el).opacity;
 	        this.popupBackground.el.style.opacity = ResponsiveFacets.TRANSPARENT_BACKGROUND_OPACITY;
 	        this.dropdownContent.el.style.display = '';
@@ -42375,7 +42376,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return CoveoJQuery;
 	}());
 	exports.CoveoJQuery = CoveoJQuery;
-	if (window['$'] != undefined && window['$'].fn != undefined) {
+	if (jQueryIsDefined()) {
+	    initCoveoJQuery();
+	}
+	else {
+	    // Adding a check in case jQuery was added after the jsSearch
+	    document.addEventListener('DOMContentLoaded', function () {
+	        if (jQueryIsDefined()) {
+	            initCoveoJQuery();
+	        }
+	    });
+	}
+	function initCoveoJQuery() {
 	    exports.jQueryInstance = window['$'];
 	    if (window['Coveo'] == undefined) {
 	        window['Coveo'] = {};
@@ -42404,6 +42416,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	        return returnValue;
 	    };
+	}
+	function jQueryIsDefined() {
+	    return window['$'] != undefined && window['$'].fn != undefined && window['$'].fn.jquery != undefined;
 	}
 
 
