@@ -336,9 +336,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetSearch = FacetSearch_1.FacetSearch;
 	var FacetSearchParameters_1 = __webpack_require__(77);
 	exports.FacetSearchParameters = FacetSearchParameters_1.FacetSearchParameters;
-	var Slider_1 = __webpack_require__(151);
+	var Slider_1 = __webpack_require__(152);
 	exports.Slider = Slider_1.Slider;
-	var FacetSlider_1 = __webpack_require__(153);
+	var FacetSlider_1 = __webpack_require__(151);
 	exports.FacetSlider = FacetSlider_1.FacetSlider;
 	var FacetRange_1 = __webpack_require__(154);
 	exports.FacetRange = FacetRange_1.FacetRange;
@@ -2150,8 +2150,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.18',
-	    'product': '1.667.18',
+	    'lib': '1.667.19',
+	    'product': '1.667.19',
 	    'supportedApiVersion': 2
 	};
 
@@ -5369,6 +5369,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @returns {string}
 	     */
 	    Dom.prototype.css = function (property) {
+	        if (this.el.style[property]) {
+	            return this.el.style[property];
+	        }
 	        return window.getComputedStyle(this.el).getPropertyValue(property);
 	    };
 	    /**
@@ -18321,7 +18324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (this.options.valueCaption != null) {
 	            this.options.availableSorts = _.filter(this.options.availableSorts, function (sort) { return !/^alpha.*$/.test(sort); });
 	        }
-	        ResponsiveFacets_1.ResponsiveFacets.init(this.root, Facet.ID, this);
+	        ResponsiveFacets_1.ResponsiveFacets.init(this.root, this);
 	        // Serves as a way to render facet in the omnibox in the order in which they are instantiated
 	        this.omniboxZIndex = Facet.omniboxIndex;
 	        Facet.omniboxIndex--;
@@ -22078,11 +22081,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Logger_1 = __webpack_require__(20);
 	var Strings_1 = __webpack_require__(28);
 	var PopupUtils_1 = __webpack_require__(68);
+	var Facet_1 = __webpack_require__(131);
+	var FacetSlider_1 = __webpack_require__(151);
 	var _ = __webpack_require__(22);
 	var ResponsiveFacets = (function () {
 	    function ResponsiveFacets(root, ID) {
 	        this.root = root;
 	        this.facets = [];
+	        this.facetSliders = [];
 	        this.ID = ID;
 	        this.coveoRoot = root;
 	        this.searchInterface = Component_1.Component.get(root.el, SearchInterface_1.SearchInterface, false);
@@ -22095,40 +22101,51 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.saveFacetsPosition();
 	        this.bindNukeEvents();
 	    }
-	    ResponsiveFacets.init = function (root, ID, component) {
+	    ResponsiveFacets.init = function (root, component) {
 	        this.logger = new Logger_1.Logger('ResponsiveFacets');
 	        if (!Dom_1.$$(root).find('.coveo-facet-column')) {
 	            this.logger.info('No element with class coveo-facet-column. Responsive facets cannot be enabled');
 	            return;
 	        }
-	        ResponsiveComponentsManager_1.ResponsiveComponentsManager.register(ResponsiveFacets, Dom_1.$$(root), ID, component);
+	        ResponsiveComponentsManager_1.ResponsiveComponentsManager.register(ResponsiveFacets, Dom_1.$$(root), Facet_1.Facet.ID, component);
 	    };
 	    ResponsiveFacets.prototype.needSmallMode = function () {
 	        return this.coveoRoot.width() <= ResponsiveFacets.ROOT_MIN_WIDTH;
 	    };
 	    ResponsiveFacets.prototype.changeToSmallMode = function () {
+	        this.positionPopup();
+	        this.closeDropdown();
 	        this.disableFacetPreservePosition();
 	        this.tabSection.el.appendChild(this.dropdownHeader.el);
-	        this.dropdownContent.detach();
+	        this.dropdownContent.el.style.display = 'none';
 	    };
 	    ResponsiveFacets.prototype.changeToLargeMode = function () {
 	        this.enableFacetPreservePosition();
-	        this.dropdownHeader.detach();
-	        this.detachDropdown();
+	        this.cleanUpDropdown();
 	        this.dropdownContent.el.removeAttribute('style');
 	        this.restoreFacetsPosition();
 	    };
-	    ResponsiveFacets.prototype.registerFacet = function (facet) {
-	        this.facets.push(facet);
+	    ResponsiveFacets.prototype.registerComponent = function (component) {
+	        if (component instanceof Facet_1.Facet) {
+	            this.facets.push(component);
+	        }
+	        else if (component instanceof FacetSlider_1.FacetSlider) {
+	            this.facetSliders.push(component);
+	        }
 	    };
 	    ResponsiveFacets.prototype.handleResizeEvent = function () {
 	        if (this.dropdownHeader.hasClass('coveo-dropdown-header-active')) {
-	            this.positionPopup();
+	            this.openDropdown();
 	        }
+	    };
+	    ResponsiveFacets.prototype.triggerFacetSliderDraw = function () {
+	        _.each(this.facetSliders, function (facetSlider) {
+	            facetSlider.drawDelayedGraphData();
+	        });
 	    };
 	    ResponsiveFacets.prototype.buildDropdownContent = function () {
 	        this.dropdownContent = Dom_1.$$(this.coveoRoot.find('.coveo-facet-column'));
-	        var filterByContainer = Dom_1.$$('div', { className: 'coveo-facet-header-filter-by-container' });
+	        var filterByContainer = Dom_1.$$('div', { className: 'coveo-facet-header-filter-by-container', style: 'display: none' });
 	        var filterBy = Dom_1.$$('div', { className: 'coveo-facet-header-filter-by' });
 	        filterBy.text(Strings_1.l('Filter by:'));
 	        filterByContainer.append(filterBy.el);
@@ -22144,10 +22161,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var _this = this;
 	        this.dropdownHeader.on('click', function () {
 	            if (!_this.dropdownHeader.hasClass('coveo-dropdown-header-active')) {
-	                _this.positionPopup();
+	                _this.openDropdown();
+	                _this.drawFacetSliderGraphs();
 	            }
 	            else {
-	                _this.detachDropdown();
+	                _this.closeDropdown();
 	            }
 	        });
 	    };
@@ -22156,8 +22174,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.documentClickListener = function (event) {
 	            if (Utils_1.Utils.isHtmlElement(event.target)) {
 	                var eventTarget = Dom_1.$$(event.target);
-	                if (_this.shouldDetachFacetDropdown(eventTarget)) {
-	                    _this.detachDropdown();
+	                if (_this.shouldCloseFacetDropdown(eventTarget)) {
+	                    _this.closeDropdown();
 	                }
 	            }
 	        };
@@ -22172,7 +22190,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        });
 	    };
-	    ResponsiveFacets.prototype.shouldDetachFacetDropdown = function (eventTarget) {
+	    ResponsiveFacets.prototype.shouldCloseFacetDropdown = function (eventTarget) {
 	        return !eventTarget.closest('coveo-facet-column') && !eventTarget.closest('coveo-facet-dropdown-header')
 	            && this.searchInterface.isSmallInterface() && !eventTarget.closest('coveo-facet-settings-popup');
 	    };
@@ -22188,15 +22206,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.parent.prepend(this.dropdownContent.el);
 	        }
 	    };
+	    ResponsiveFacets.prototype.openDropdown = function () {
+	        this.positionPopup();
+	        document.documentElement.appendChild(this.popupBackground.el);
+	        this.root.el.appendChild(this.popupBackground.el);
+	        window.getComputedStyle(this.popupBackground.el).opacity;
+	        this.popupBackground.el.style.opacity = ResponsiveFacets.TRANSPARENT_BACKGROUND_OPACITY;
+	        this.triggerFacetSliderDraw();
+	    };
 	    ResponsiveFacets.prototype.positionPopup = function () {
 	        var facetList = this.dropdownContent.findAll('.CoveoFacet, .CoveoFacetSlider, .CoveoFacetRange, .CoveoHierarchicalFacet');
 	        Dom_1.$$(facetList[facetList.length - 1]).addClass('coveo-last-facet');
 	        this.dropdownHeader.el.style.zIndex = ResponsiveFacets.ACTIVE_FACET_HEADER_Z_INDEX;
 	        this.dropdownContent.addClass('coveo-facet-dropdown-content');
 	        this.dropdownHeader.addClass('coveo-dropdown-header-active');
-	        this.root.el.appendChild(this.popupBackground.el);
-	        window.getComputedStyle(this.popupBackground.el).opacity;
-	        this.popupBackground.el.style.opacity = ResponsiveFacets.TRANSPARENT_BACKGROUND_OPACITY;
 	        this.dropdownContent.el.style.display = '';
 	        var width = ResponsiveFacets.FACET_DROPDOWN_WIDTH_RATIO * this.coveoRoot.el.offsetWidth;
 	        if (width <= ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH) {
@@ -22205,17 +22228,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.dropdownContent.el.style.width = width.toString() + 'px';
 	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
 	    };
-	    ResponsiveFacets.prototype.detachDropdown = function () {
-	        var facetList = this.dropdownContent.findAll('.CoveoFacet');
-	        Dom_1.$$(facetList[facetList.length - 1]).removeClass('coveo-last-facet');
-	        this.dropdownHeader.el.style.zIndex = '';
+	    ResponsiveFacets.prototype.closeDropdown = function () {
 	        // Because of DOM manipulation, sometimes the animation will not trigger. Accessing the computed styles makes sure
 	        // the animation will happen. Adding this here because its possible that this element has recently been manipulated. 
 	        window.getComputedStyle(this.popupBackground.el).opacity;
 	        this.popupBackground.el.style.opacity = '0';
+	        this.dropdownHeader.el.style.zIndex = '';
 	        this.dropdownContent.el.style.display = 'none';
 	        this.dropdownContent.removeClass('coveo-facet-dropdown-content');
 	        this.dropdownHeader.removeClass('coveo-dropdown-header-active');
+	    };
+	    ResponsiveFacets.prototype.cleanUpDropdown = function () {
+	        this.closeDropdown();
+	        this.dropdownHeader.detach();
+	        var facetList = this.dropdownContent.findAll('.' + Component_1.Component.computeCssClassNameForType(this.ID));
+	        Dom_1.$$(facetList[facetList.length - 1]).removeClass('coveo-last-facet');
+	        this.dropdownHeader.el.style.zIndex = '';
 	    };
 	    ResponsiveFacets.prototype.enableFacetPreservePosition = function () {
 	        _.each(this.facets, function (facet) {
@@ -22233,9 +22261,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	            Dom_1.$$(document.documentElement).off('click', _this.documentClickListener);
 	        });
 	    };
+	    ResponsiveFacets.prototype.drawFacetSliderGraphs = function () {
+	        _.each(this.facetSliders, function (facetSlider) {
+	            facetSlider.drawDelayedGraphData();
+	        });
+	    };
 	    ResponsiveFacets.ACTIVE_FACET_HEADER_Z_INDEX = '20';
 	    ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH = 280;
-	    ResponsiveFacets.FACET_DROPDOWN_WIDTH_RATIO = 0.35; // Necessary to have a width relative to the coveo root.
+	    ResponsiveFacets.FACET_DROPDOWN_WIDTH_RATIO = 0.35; // Used to set the width relative to the coveo root.
 	    ResponsiveFacets.TRANSPARENT_BACKGROUND_OPACITY = '0.9';
 	    ResponsiveFacets.ROOT_MIN_WIDTH = 800;
 	    return ResponsiveFacets;
@@ -22253,6 +22286,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Component_1 = __webpack_require__(90);
 	var Tab_1 = __webpack_require__(148);
 	var Facet_1 = __webpack_require__(131);
+	var FacetSlider_1 = __webpack_require__(151);
 	var _ = __webpack_require__(22);
 	var SearchInterface_1 = __webpack_require__(91);
 	var ResponsiveComponentsManager = (function () {
@@ -22314,7 +22348,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    ResponsiveComponentsManager.prototype.register = function (responsiveComponentConstructor, root, ID, component) {
 	        if (this.isFacet(ID) && this.isActivated(ID)) {
-	            this.responsiveFacets.registerFacet(component);
+	            this.responsiveFacets.registerComponent(component);
 	        }
 	        if (!this.isActivated(ID)) {
 	            var responsiveComponent = new responsiveComponentConstructor(root, ID);
@@ -22326,7 +22360,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            if (this.isFacet(ID)) {
 	                this.responsiveFacets = responsiveComponent;
-	                this.responsiveFacets.registerFacet(component);
+	                this.responsiveFacets.registerComponent(component);
 	                this.isFacetActivated = true;
 	                if (!this.isTabActivated) {
 	                    this.tabSection = Dom_1.$$('div', { className: 'coveo-tab-section' });
@@ -22359,7 +22393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    };
 	    ResponsiveComponentsManager.prototype.isFacet = function (ID) {
-	        return ID == Facet_1.Facet.ID;
+	        return ID == Facet_1.Facet.ID || ID == FacetSlider_1.FacetSlider.ID;
 	    };
 	    ResponsiveComponentsManager.prototype.isTabs = function (ID) {
 	        return ID == Tab_1.Tab.ID;
@@ -22665,7 +22699,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _ = __webpack_require__(22);
 	var ResponsiveTabs = (function () {
 	    function ResponsiveTabs(root, ID) {
-	        this.tabSectionChildren = [];
 	        this.ID = ID;
 	        this.coveoRoot = root;
 	        this.searchInterface = Component_1.Component.get(root.el, SearchInterface_1.SearchInterface, false);
@@ -23007,16 +23040,702 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/// <reference path="../Facet/FacetHeader.ts" />
+	/// <reference path="../../controllers/FacetSliderQueryController.ts" />
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var Slider_1 = __webpack_require__(152);
+	var Component_1 = __webpack_require__(90);
+	var ComponentOptions_1 = __webpack_require__(92);
+	var ResponsiveFacets_1 = __webpack_require__(146);
+	var FacetHeader_1 = __webpack_require__(140);
+	var Strings_1 = __webpack_require__(28);
+	var InitializationEvents_1 = __webpack_require__(43);
+	var FeatureDetectionUtils_1 = __webpack_require__(61);
+	var FacetSliderQueryController_1 = __webpack_require__(80);
+	var QueryEvents_1 = __webpack_require__(46);
+	var BreadcrumbEvents_1 = __webpack_require__(40);
+	var Model_1 = __webpack_require__(83);
+	var Dom_1 = __webpack_require__(55);
+	var AnalyticsActionListMeta_1 = __webpack_require__(102);
+	var QueryStateModel_1 = __webpack_require__(85);
+	var SliderEvents_1 = __webpack_require__(50);
+	var Assert_1 = __webpack_require__(19);
+	var Utils_1 = __webpack_require__(21);
+	var Initialization_1 = __webpack_require__(89);
+	/**
+	 * The FacetSlider component allows to create a facet that renders a slider widget to filter on a range of numerical values
+	 * rather than the classic multi-select facet with a label and a count for each values.<br/>
+	 * Note that this component does *NOT* inherit from a standard {@link Facet}, and thus does not offer all the same options.<br/>
+	 * If you want to have a graph on top of your FacetSlider, then you will need to manually include d3.js, or d3.min.js from the script files included in the package.
+	 */
+	var FacetSlider = (function (_super) {
+	    __extends(FacetSlider, _super);
+	    function FacetSlider(element, options, bindings) {
+	        var _this = this;
+	        _super.call(this, element, FacetSlider.ID, bindings);
+	        this.element = element;
+	        this.options = options;
+	        this.isEmpty = false;
+	        this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, FacetSlider, options);
+	        ResponsiveFacets_1.ResponsiveFacets.init(this.root, this);
+	        if (this.options.excludeOuterBounds == null) {
+	            this.options.excludeOuterBounds = false;
+	        }
+	        if (this.options.start) {
+	            this.options.start = this.options.dateField ? new Date(this.options.start.replace(/-/g, '/')).getTime() : Number(this.options.start);
+	        }
+	        if (this.options.end) {
+	            this.options.end = this.options.dateField ? new Date(this.options.end.replace(/-/g, '/')).getTime() : Number(this.options.end);
+	        }
+	        if (this.hasAGraph()) {
+	            if (!FeatureDetectionUtils_1.FeatureDetectionUtils.supportSVG()) {
+	                this.options.graph = undefined;
+	                this.logger.info('Your browser does not support SVG. Cannot add graphic to your facet range', this);
+	            }
+	            if (typeof d3 == 'undefined') {
+	                this.options.graph = undefined;
+	                this.logger.info('Cannot find the required dependencies d3.js. Cannot add graphic to your facet range', this);
+	            }
+	        }
+	        this.facetQueryController = new FacetSliderQueryController_1.FacetSliderQueryController(this);
+	        this.initQueryStateEvents();
+	        this.bind.onRootElement(QueryEvents_1.QueryEvents.newQuery, function () { return _this.handleNewQuery(); });
+	        this.bind.onRootElement(QueryEvents_1.QueryEvents.noResults, function () { return _this.handleNoresults(); });
+	        this.bind.onRootElement(QueryEvents_1.QueryEvents.deferredQuerySuccess, function (args) { return _this.handleDeferredQuerySuccess(args); });
+	        this.bind.onRootElement(QueryEvents_1.QueryEvents.buildingQuery, function (args) { return _this.handleBuildingQuery(args); });
+	        this.bind.onRootElement(QueryEvents_1.QueryEvents.doneBuildingQuery, function (args) { return _this.handleDoneBuildingQuery(args); });
+	        this.bind.onRootElement(BreadcrumbEvents_1.BreadcrumbEvents.populateBreadcrumb, function (args) { return _this.handlePopulateBreadcrumb(args); });
+	        this.bind.onRootElement(BreadcrumbEvents_1.BreadcrumbEvents.clearBreadcrumb, function () { return _this.reset(); });
+	        this.onResize = _.debounce(function () {
+	            if (!_this.searchInterface.isSmallInterface()) {
+	                _this.slider.drawGraph();
+	            }
+	        }, 250);
+	        window.addEventListener('resize', this.onResize);
+	        Dom_1.$$(this.root).on(InitializationEvents_1.InitializationEvents.nuke, this.handleNuke);
+	    }
+	    FacetSlider.prototype.createDom = function () {
+	        this.facetHeader = new FacetHeader_1.FacetHeader({
+	            field: this.options.field,
+	            facetElement: this.element,
+	            title: this.options.title,
+	            enableClearElement: true,
+	            enableCollapseElement: true,
+	            isNewDesign: this.getBindings().searchInterface.isNewDesign(),
+	            facetSlider: this
+	        });
+	        this.element.appendChild(this.facetHeader.build());
+	    };
+	    /**
+	     * Reset the facet. This means set the range value as inactive.
+	     */
+	    FacetSlider.prototype.reset = function () {
+	        if (this.slider) {
+	            this.slider.initializeState();
+	            this.updateQueryState();
+	            this.updateAppearanceDependingOnState();
+	        }
+	    };
+	    /**
+	     * Return the current selection in the facet, as an array of number (eg : [start, end] ).<br/>
+	     * If it's not available, return [undefined, undefined]
+	     * @returns {any}
+	     */
+	    FacetSlider.prototype.getSelectedValues = function () {
+	        if (this.startOfSlider != undefined && this.endOfSlider != undefined) {
+	            return [this.startOfSlider, this.endOfSlider];
+	        }
+	        else {
+	            return [undefined, undefined];
+	        }
+	    };
+	    /**
+	     * Set the selected values in the slider.
+	     * @param values [start, end]
+	     */
+	    FacetSlider.prototype.setSelectedValues = function (values) {
+	        this.setupSliderIfNeeded(undefined);
+	        this.startOfSlider = values[0];
+	        this.endOfSlider = values[1];
+	        this.slider.setValues([this.startOfSlider, this.endOfSlider]);
+	        this.updateAppearanceDependingOnState();
+	    };
+	    /**
+	     * Return true if the slider is "active" (will output an expression in the query when a search is performed)
+	     * @returns {boolean}
+	     */
+	    FacetSlider.prototype.isActive = function () {
+	        return !isNaN(this.startOfSlider)
+	            && !isNaN(this.endOfSlider)
+	            && !isNaN(this.initialStartOfSlider)
+	            && !isNaN(this.initialEndOfSlider)
+	            && (this.startOfSlider != this.initialStartOfSlider || this.endOfSlider != this.initialEndOfSlider);
+	    };
+	    FacetSlider.prototype.getSliderBoundaryForQuery = function () {
+	        var needToReturnABoundary = false;
+	        if (!this.slider) {
+	            needToReturnABoundary = true;
+	        }
+	        else if (this.slider && this.isActive()) {
+	            needToReturnABoundary = true;
+	        }
+	        if (needToReturnABoundary) {
+	            return this.generateBoundary();
+	        }
+	        else {
+	            return undefined;
+	        }
+	    };
+	    // There is delayed graph data if at the time the facet slider tried to draw the facet was hidden in the
+	    // facet dropdown. This method will draw delayed graph data if it exists.
+	    FacetSlider.prototype.drawDelayedGraphData = function () {
+	        if (this.delayedGraphData != undefined) {
+	            this.slider.drawGraph(this.delayedGraphData);
+	        }
+	    };
+	    FacetSlider.prototype.handleNoresults = function () {
+	        this.isEmpty = true;
+	        this.updateAppearanceDependingOnState();
+	    };
+	    FacetSlider.prototype.handleNewQuery = function () {
+	        this.isEmpty = false;
+	    };
+	    FacetSlider.prototype.handleRangeQueryStateChanged = function (args) {
+	        this.setupSliderIfNeeded(args);
+	        this.startOfSlider = args.value[0] == undefined ? this.startOfSlider : args.value[0];
+	        this.endOfSlider = args.value[1] == undefined ? this.endOfSlider : args.value[1];
+	        this.setSelectedValues([this.startOfSlider, this.endOfSlider]);
+	    };
+	    FacetSlider.prototype.handlePopulateBreadcrumb = function (args) {
+	        var _this = this;
+	        var populateBreadcrumb = function () {
+	            if (_this.isActive()) {
+	                args.breadcrumbs.push({
+	                    element: _this.buildBreadcrumbFacetSlider()
+	                });
+	            }
+	        };
+	        if (this.slider) {
+	            populateBreadcrumb();
+	        }
+	        else {
+	            Dom_1.$$(this.root).one(QueryEvents_1.QueryEvents.deferredQuerySuccess, function () {
+	                populateBreadcrumb();
+	                Dom_1.$$(_this.root).trigger(BreadcrumbEvents_1.BreadcrumbEvents.redrawBreadcrumb);
+	            });
+	        }
+	    };
+	    FacetSlider.prototype.buildBreadcrumbFacetSlider = function () {
+	        var _this = this;
+	        var elem = Dom_1.$$('div', {
+	            className: 'coveo-facet-slider-breadcrumb'
+	        }).el;
+	        var title = Dom_1.$$('span', {
+	            className: 'coveo-facet-slider-breadcrumb-title'
+	        });
+	        title.text(this.options.title + ':');
+	        elem.appendChild(title.el);
+	        var values = Dom_1.$$('span', {
+	            className: 'coveo-facet-slider-breadcrumb-values'
+	        });
+	        elem.appendChild(values.el);
+	        var value = Dom_1.$$('span', {
+	            className: 'coveo-facet-slider-breadcrumb-value'
+	        });
+	        value.text(this.slider.getCaption());
+	        values.el.appendChild(value.el);
+	        var clear = Dom_1.$$('span', {
+	            className: 'coveo-facet-slider-breadcrumb-clear'
+	        });
+	        value.el.appendChild(clear.el);
+	        value.on('click', function () {
+	            _this.reset();
+	            _this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetClearAll, {
+	                facetId: _this.options.id,
+	                facetTitle: _this.options.title
+	            });
+	            _this.queryController.executeQuery();
+	        });
+	        return elem;
+	    };
+	    FacetSlider.prototype.initSlider = function () {
+	        this.buildSlider();
+	        this.slider.initializeState([this.startOfSlider, this.endOfSlider]);
+	        this.updateAppearanceDependingOnState();
+	    };
+	    FacetSlider.prototype.initQueryStateEvents = function () {
+	        var _this = this;
+	        this.rangeQueryStateAttribute = QueryStateModel_1.QueryStateModel.getFacetId(this.options.id) + ':range';
+	        this.queryStateModel.registerNewAttribute(this.rangeQueryStateAttribute, [undefined, undefined]);
+	        var eventName = this.queryStateModel.getEventName(Model_1.Model.eventTypes.changeOne + this.rangeQueryStateAttribute);
+	        this.bind.onRootElement(eventName, function (args) {
+	            _this.slider ? _this.handleRangeQueryStateChanged(args) : _this.setRangeStateSliderStillNotCreated(args);
+	        });
+	    };
+	    FacetSlider.prototype.setRangeStateSliderStillNotCreated = function (args) {
+	        this.rangeFromUrlState = this.copyValues(args.value);
+	    };
+	    FacetSlider.prototype.buildSlider = function () {
+	        var _this = this;
+	        var sliderContainer = Dom_1.$$('div', {
+	            className: 'coveo-facet-values coveo-slider-container'
+	        }).el;
+	        if (this.hasAGraph()) {
+	            Dom_1.$$(sliderContainer).addClass('coveo-with-graph');
+	        }
+	        var sliderDiv = Dom_1.$$('div').el;
+	        this.slider = new Slider_1.Slider(sliderDiv, _.extend({}, this.options, { dateField: this.options.dateField }), this.root);
+	        Dom_1.$$(sliderDiv).on(SliderEvents_1.SliderEvents.endSlide, function (e, args) {
+	            _this.handleEndSlide(args);
+	        });
+	        Dom_1.$$(sliderDiv).on(SliderEvents_1.SliderEvents.duringSlide, function (e, args) {
+	            _this.handleDuringSlide(args);
+	        });
+	        if (this.hasAGraph()) {
+	            Dom_1.$$(sliderDiv).on(SliderEvents_1.SliderEvents.graphValueSelected, function (e, args) {
+	                _this.handleGraphValueSelected(args);
+	            });
+	        }
+	        sliderContainer.appendChild(sliderDiv);
+	        this.element.appendChild(sliderContainer);
+	        this.updateAppearanceDependingOnState();
+	    };
+	    FacetSlider.prototype.handleBuildingQuery = function (data) {
+	        Assert_1.Assert.exists(data);
+	        Assert_1.Assert.exists(data.queryBuilder);
+	        var boundary = this.getSliderBoundaryForQuery();
+	        if (boundary != undefined) {
+	            this.facetQueryController.prepareForNewQuery();
+	            var expression = this.facetQueryController.computeOurFilterExpression(boundary);
+	            if (Utils_1.Utils.isNonEmptyString(expression)) {
+	                this.logger.trace('Putting filter in query', expression);
+	                data.queryBuilder.advancedExpression.add(expression);
+	            }
+	        }
+	    };
+	    FacetSlider.prototype.handleDoneBuildingQuery = function (data) {
+	        var queryBuilder = data.queryBuilder;
+	        this.facetQueryController.putGroupByIntoQueryBuilder(queryBuilder);
+	    };
+	    FacetSlider.prototype.handleDeferredQuerySuccess = function (data) {
+	        this.ensureDom();
+	        this.setupSliderIfNeeded(data);
+	        var groupByResults = data.results.groupByResults[this.facetQueryController.lastGroupByRequestIndex];
+	        if (groupByResults == undefined || groupByResults.values[0] == undefined) {
+	            this.isEmpty = true;
+	        }
+	        this.updateAppearanceDependingOnState();
+	        if (this.hasAGraph()) {
+	            this.renderToSliderGraph(data);
+	        }
+	    };
+	    FacetSlider.prototype.handleEndSlide = function (args) {
+	        var values = args.slider.getValues();
+	        this.startOfSlider = values[0];
+	        this.endOfSlider = values[1];
+	        if (this.updateQueryState(values)) {
+	            this.updateAppearanceDependingOnState();
+	            this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetRangeSlider, {
+	                facetId: this.options.id,
+	                facetRangeStart: this.startOfSlider.toString(),
+	                facetRangeEnd: this.endOfSlider.toString()
+	            });
+	            this.queryController.executeQuery();
+	        }
+	    };
+	    FacetSlider.prototype.handleDuringSlide = function (args) {
+	        var values = args.slider.getValues();
+	        this.startOfSlider = values[0];
+	        this.endOfSlider = values[1];
+	        this.slider.setValues([this.startOfSlider, this.endOfSlider]);
+	        this.updateAppearanceDependingOnState(true);
+	    };
+	    FacetSlider.prototype.handleGraphValueSelected = function (args) {
+	        if ((this.options.rangeSlider && this.startOfSlider != args.start) || this.endOfSlider != args.end) {
+	            if (this.options.rangeSlider) {
+	                this.startOfSlider = args.start;
+	            }
+	            this.endOfSlider = args.end;
+	            this.slider.setValues([this.startOfSlider, this.endOfSlider]);
+	            this.updateQueryState();
+	            this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetRangeGraph, {
+	                facetId: this.options.id,
+	                facetRangeStart: this.startOfSlider.toString(),
+	                facetRangeEnd: this.endOfSlider.toString()
+	            });
+	            this.queryController.executeQuery();
+	        }
+	    };
+	    FacetSlider.prototype.updateQueryState = function (values, silent) {
+	        if (values === void 0) { values = this.slider.getValues(); }
+	        if (silent === void 0) { silent = false; }
+	        var copyOfValues = this.copyValues(values);
+	        var start = values[0] + 0.0;
+	        var end = values[1] + 0.0;
+	        var model = this.queryStateModel.get(this.rangeQueryStateAttribute);
+	        if (model == null || copyOfValues[0] != model[0] || copyOfValues[1] != model[1]) {
+	            copyOfValues[0] = start;
+	            copyOfValues[1] = end;
+	            this.queryStateModel.set(this.rangeQueryStateAttribute, copyOfValues, { silent: silent });
+	            return true;
+	        }
+	        return false;
+	    };
+	    FacetSlider.prototype.copyValues = function (values) {
+	        // Creating a copy of the values prevents an unwanted automatic update of the state while sliding
+	        // That's the cleanest way I found to copy that array correctly
+	        var copyOfValues = [];
+	        copyOfValues[0] = Number(values[0]) + 0.0;
+	        copyOfValues[1] = Number(values[1]) + 0.0;
+	        return copyOfValues;
+	    };
+	    FacetSlider.prototype.renderToSliderGraph = function (data) {
+	        var _this = this;
+	        var rawGroupByResults = data.results.groupByResults[this.facetQueryController.graphGroupByQueriesIndex];
+	        var graphData;
+	        var totalGraphResults = 0;
+	        if (rawGroupByResults) {
+	            graphData = _.map(rawGroupByResults.values, function (value) {
+	                totalGraphResults += value.numberOfResults;
+	                var start = value.value.split('..')[0];
+	                var end = value.value.split('..')[1];
+	                if (!_this.options.dateField) {
+	                    start = Number(start);
+	                    end = Number(end);
+	                }
+	                else {
+	                    start = new Date(start.split('@')[0]).getTime();
+	                    end = new Date(end.split('@')[0]).getTime();
+	                }
+	                var y = value.numberOfResults;
+	                return {
+	                    start: start,
+	                    y: y,
+	                    end: end,
+	                    isDate: _this.options.dateField
+	                };
+	            });
+	        }
+	        if (totalGraphResults == 0) {
+	            this.isEmpty = true;
+	            this.updateAppearanceDependingOnState();
+	        }
+	        else if (graphData != undefined && !this.isFacetDropdownHidden()) {
+	            this.slider.drawGraph(graphData);
+	        }
+	        else if (graphData != undefined && this.isFacetDropdownHidden()) {
+	            this.delayedGraphData = graphData;
+	        }
+	    };
+	    FacetSlider.prototype.isFacetDropdownHidden = function () {
+	        var facetDropdown = this.root.querySelector('.coveo-facet-column');
+	        if (facetDropdown) {
+	            return Dom_1.$$(facetDropdown).css('display') == 'none';
+	        }
+	        return false;
+	    };
+	    FacetSlider.prototype.generateBoundary = function () {
+	        if (!this.slider) {
+	            // If the slider is not initialized, the only boundary we can get is from the state.
+	            return this.generateBoundaryFromState();
+	        }
+	        else {
+	            // Else, try to get one from the slider itself. If we cant, try to return one from the state.
+	            var boundary = this.generateBoundaryFromSlider();
+	            if (boundary[0] == undefined && boundary[1] == undefined) {
+	                return this.generateBoundaryFromState();
+	            }
+	            else {
+	                return boundary;
+	            }
+	        }
+	    };
+	    FacetSlider.prototype.generateBoundaryFromSlider = function () {
+	        var start, end;
+	        if (this.startOfSlider != undefined) {
+	            start = this.startOfSlider;
+	        }
+	        if (this.endOfSlider != undefined) {
+	            end = this.endOfSlider;
+	        }
+	        return [start, end];
+	    };
+	    FacetSlider.prototype.generateBoundaryFromState = function () {
+	        var start, end;
+	        var startFromState = this.queryStateModel.get(this.rangeQueryStateAttribute)[0];
+	        if (startFromState != undefined) {
+	            start = startFromState;
+	        }
+	        var endFromState = this.queryStateModel.get(this.rangeQueryStateAttribute)[1];
+	        if (endFromState != undefined) {
+	            end = endFromState;
+	        }
+	        if (start != this.queryStateModel.getDefault(this.rangeQueryStateAttribute)[0] || end != this.queryStateModel.getDefault(this.rangeQueryStateAttribute)[1]) {
+	            return [start, end];
+	        }
+	        else {
+	            return [undefined, undefined];
+	        }
+	    };
+	    FacetSlider.prototype.setupSliderIfNeeded = function (data) {
+	        this.ensureDom();
+	        if (Utils_1.Utils.isNullOrUndefined(this.slider)) {
+	            if (!this.alreadySetBoundary()) {
+	                this.trySetSliderBoundaryFromOptions();
+	            }
+	            if (!this.alreadySetBoundary() && data != undefined) {
+	                this.trySetSliderBoundaryFromQueryResult(data);
+	            }
+	            this.trySetSliderBoundaryFromState();
+	            this.setupSliderStateVariables();
+	            var isInError = this.verifySetup();
+	            if (isInError) {
+	                this.logger.warn('Unable to initialize slider with current values', this);
+	            }
+	            else {
+	                this.initSlider();
+	                this.updateQueryState();
+	            }
+	        }
+	    };
+	    FacetSlider.prototype.verifySetup = function () {
+	        var isInError = 0;
+	        isInError += this.initialStartOfSlider == undefined ? 1 : 0;
+	        isInError += isNaN(this.initialStartOfSlider) ? 1 : 0;
+	        isInError += this.initialEndOfSlider == undefined ? 1 : 0;
+	        isInError += isNaN(this.initialEndOfSlider) ? 1 : 0;
+	        return isInError;
+	    };
+	    FacetSlider.prototype.setupSliderStateVariables = function () {
+	        if (isNaN(this.initialStartOfSlider) || isNaN(this.initialEndOfSlider)) {
+	            this.logger.warn('Cannnot initialize slider with those values : start: ' + this.initialStartOfSlider + ' end: ' + this.initialEndOfSlider);
+	        }
+	        else {
+	            this.initialStartOfSlider = Number(this.initialStartOfSlider);
+	            this.initialEndOfSlider = Number(this.initialEndOfSlider);
+	            this.startOfSlider = this.startOfSlider != undefined ? Number(this.startOfSlider) : this.initialStartOfSlider;
+	            this.endOfSlider = this.endOfSlider != undefined ? Number(this.endOfSlider) : this.initialEndOfSlider;
+	            this.options.start = this.initialStartOfSlider;
+	            this.options.end = this.initialEndOfSlider;
+	            this.queryStateModel.setNewDefault(this.rangeQueryStateAttribute, [this.initialStartOfSlider, this.initialEndOfSlider]);
+	        }
+	    };
+	    FacetSlider.prototype.alreadySetBoundary = function () {
+	        return this.startOfSlider != undefined && this.endOfSlider != undefined;
+	    };
+	    FacetSlider.prototype.trySetSliderBoundaryFromOptions = function () {
+	        if (!Utils_1.Utils.isNullOrUndefined(this.options.start)) {
+	            this.setupInitialSliderStateStart(this.options.start);
+	        }
+	        if (!Utils_1.Utils.isNullOrUndefined(this.options.end)) {
+	            this.setupInitialSliderStateEnd(this.options.end);
+	        }
+	    };
+	    FacetSlider.prototype.trySetSliderBoundaryFromState = function () {
+	        var stateValues = this.rangeFromUrlState || this.queryStateModel.get(this.rangeQueryStateAttribute);
+	        if (stateValues && stateValues[0] != undefined && stateValues[1] != undefined) {
+	            stateValues[0] = Number(stateValues[0]);
+	            stateValues[1] = Number(stateValues[1]);
+	            this.setupInitialSliderStateStart(stateValues[0]);
+	            this.setupInitialSliderStateEnd(stateValues[1]);
+	            this.startOfSlider = stateValues[0];
+	            this.endOfSlider = stateValues[1];
+	        }
+	    };
+	    FacetSlider.prototype.trySetSliderBoundaryFromQueryResult = function (data) {
+	        var groupByResults = data.results.groupByResults[this.facetQueryController.lastGroupByRequestIndex];
+	        if (groupByResults && groupByResults.values.length > 0) {
+	            this.setupInitialSliderStateStart(groupByResults.values[0].value.split('..')[0]);
+	            this.setupInitialSliderStateEnd(groupByResults.values[groupByResults.values.length - 1].value.split('..')[1]);
+	        }
+	    };
+	    FacetSlider.prototype.setupInitialSliderStateStart = function (value) {
+	        if (this.initialStartOfSlider == undefined) {
+	            this.initialStartOfSlider = value;
+	            if (this.options.dateField && isNaN(value)) {
+	                this.initialStartOfSlider = new Date(value.replace('@', ' ')).getTime();
+	            }
+	        }
+	    };
+	    FacetSlider.prototype.setupInitialSliderStateEnd = function (value) {
+	        if (this.initialEndOfSlider == undefined) {
+	            this.initialEndOfSlider = value;
+	            if (this.options.dateField && isNaN((value))) {
+	                this.initialEndOfSlider = new Date(value.replace('@', ' ')).getTime();
+	            }
+	        }
+	    };
+	    FacetSlider.prototype.hasAGraph = function () {
+	        return this.options.graph != undefined;
+	    };
+	    FacetSlider.prototype.updateAppearanceDependingOnState = function (sliding) {
+	        if (sliding === void 0) { sliding = false; }
+	        if (this.isEmpty && !this.isActive() && !sliding) {
+	            Dom_1.$$(this.element).addClass('coveo-disabled-empty');
+	        }
+	        else {
+	            Dom_1.$$(this.element).removeClass('coveo-disabled-empty');
+	            Dom_1.$$(this.facetHeader.eraserElement).toggle(this.isActive());
+	        }
+	        if (!this.isActive() && !sliding) {
+	            Dom_1.$$(this.element).addClass('coveo-disabled');
+	        }
+	        else {
+	            Dom_1.$$(this.element).removeClass('coveo-disabled');
+	        }
+	    };
+	    FacetSlider.prototype.handleNuke = function () {
+	        window.removeEventListener('resize', this.onResize);
+	    };
+	    /**
+	     * The component options
+	     * @componentOptions
+	     */
+	    FacetSlider.options = {
+	        /**
+	         * The title on top of the facet component.<br/>
+	         * Default value is the localized string for 'No title'
+	         */
+	        title: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: Strings_1.l('NoTitle') }),
+	        /**
+	         * Specifies whether the field for which you are requesting a range is a date field.<br/>
+	         * This allow the facet to correctly build the outgoing group by request, as well as render it correctly.<br/>
+	         */
+	        dateField: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
+	        /**
+	         * Specifies the index field whose values will be use in the facet.<br/>
+	         * This require the given field to be configured correctly in the index as a facet field.<br/>
+	         * This is a required option and cannot be omitted, otherwise the facet component will not work.
+	         */
+	        field: ComponentOptions_1.ComponentOptions.buildFieldOption({ groupByField: true, required: true }),
+	        /**
+	         * Specifies a unique identifier for a facet. This identifier will be used to save the facet state in the url hash, for example.<br/>
+	         * Optional, since the default will be the {@link FacetSlider.options.field} option.<br/>
+	         * If you have two facets with the same field on the same page, you should specify an id for at least one of those two facets.<br/>
+	         * That id need to be unique on the page.
+	         */
+	        id: ComponentOptions_1.ComponentOptions.buildStringOption({
+	            postProcessing: function (value, options) { return value || options.field; }
+	        }),
+	        /**
+	         * Specifies the format used to display values if they are date.<br/>
+	         * Default value is <code>MMM dd, yyyy</code>
+	         */
+	        dateFormat: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	        /**
+	         * Specifies the query to filter automatic minimum and maximum range of the slider.<br/>
+	         * This is especially useful for date range, where the index may contain values which are not set, and thus the automatic range will return value from the year 1400 (min date from the boost c++ library)<br/>
+	         * Can be used to do something like queryOverride : @date>2000/01/01 or some arbitrary date which will filter out unwanted values
+	         */
+	        queryOverride: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	        /**
+	         * Specifies the starting boundary of the slider.<br/>
+	         * Dates values are rounded on the year when the field used is a date type.<br/>
+	         * Optional: Takes the lowest value available in the index by default.
+	         */
+	        start: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	        /**
+	         * Specifies the ending boundary of the slider.<br/>
+	         * Dates values are rounded on the year when the field used is a date type.<br/>
+	         * Optional: Takes the highest value available in the index by default.
+	         */
+	        end: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	        /**
+	         * Specifies if you want to exclude the outer bounds of your slider in the generated query, when they are not active.<br/>
+	         * Default value is false
+	         */
+	        excludeOuterBounds: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
+	        /**
+	         * Specifies to how many decimal digit displayed numerical values are rounded.<br/>
+	         * Optional. By default, the number rounds to 0 decimal digits.
+	         */
+	        rounded: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
+	        /**
+	         * Specifies the number of steps that you want in your slider.<br/>
+	         * For example, if your range is [ 0 , 100 ] and you specify 10 steps, then the end user is allowed to move the slider only to the values [ 0, 10, 20. 30 ... , 100 ].<br/>
+	         * Optional. By default the slider will allow all values.
+	         */
+	        steps: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 2 }),
+	        /**
+	         * Specifies whether you want a slider with two buttons, or only one.<br/>
+	         * Optional. By default only one button appears in the slider.
+	         */
+	        rangeSlider: ComponentOptions_1.ComponentOptions.buildBooleanOption(),
+	        /**
+	         * Specifies the caption that you want to display the field values.<br/>
+	         * Available options are :
+	         * <ul>
+	         *   <li>enable : (data-display-as-value-enable) <code>boolean</code> : Specifies wether the caption should be displayed as a value. Default is <code>true</code></li>
+	         *   <li>unitSign : (data-display-as-value-unit-sign) <code>string</code> : Specifies the unit sign for this value.</li>
+	         *   <li>separator : (data-display-as-value-separator) <code>string</code> : Specifies the character(s) to use as a separator in the caption. Default is -.</li>
+	         * </ul>
+	         */
+	        displayAsValue: ComponentOptions_1.ComponentOptions.buildObjectOption({
+	            subOptions: {
+	                enable: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
+	                unitSign: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	                separator: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '-' })
+	            }
+	        }),
+	        /**
+	         * Specifies the percentage caption that you want to display the field values.<br/>
+	         * Available options are :
+	         * <ul>
+	         *   <li>enable : (data-display-as-percent-enable) <code>boolean</code> : Specifies wether the caption should be displayed as a percentage. Default is <code>false</code></li>
+	         *   <li>separator : (data-display-as-percent-separator) <code>string</code> : Specifies the character(s) to use as a separator in the caption. Default is -.</li>
+	         * </ul>
+	         */
+	        displayAsPercent: ComponentOptions_1.ComponentOptions.buildObjectOption({
+	            subOptions: {
+	                enable: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
+	                separator: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '-' })
+	            }
+	        }),
+	        /**
+	         * Specifies that you wish to display a small graph on top of the slider.<br/>
+	         * Available options are :
+	         * <ul>
+	         *   <li>steps: (data-graph-steps) <code>number</code> : Specifies the number of steps/columns to display in your graph. Default value is 10</li>
+	         * </ul>
+	         */
+	        graph: ComponentOptions_1.ComponentOptions.buildObjectOption({
+	            subOptions: {
+	                steps: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 2 }),
+	                animationDuration: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
+	                margin: ComponentOptions_1.ComponentOptions.buildObjectOption({
+	                    subOptions: {
+	                        top: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
+	                        bottom: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
+	                        left: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
+	                        right: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 })
+	                    }
+	                })
+	            }
+	        })
+	    };
+	    FacetSlider.ID = 'FacetSlider';
+	    return FacetSlider;
+	}(Component_1.Component));
+	exports.FacetSlider = FacetSlider;
+	Initialization_1.Initialization.registerAutoCreateComponent(FacetSlider);
+
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 	/// <reference path="../../../lib/d3.d.ts" />
 	var Dom_1 = __webpack_require__(55);
 	var DeviceUtils_1 = __webpack_require__(32);
 	var SliderEvents_1 = __webpack_require__(50);
 	var Utils_1 = __webpack_require__(21);
-	var InitializationEvents_1 = __webpack_require__(43);
-	var SearchInterface_1 = __webpack_require__(91);
-	var Component_1 = __webpack_require__(90);
-	var d3 = __webpack_require__(152);
+	var d3 = __webpack_require__(153);
 	var _ = __webpack_require__(22);
 	var Slider = (function () {
 	    function Slider(element, options, root) {
@@ -23036,7 +23755,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.buildSteps();
 	        }
 	        if (this.options.graph) {
-	            this.sliderGraph = new SliderGraph(this, root);
+	            this.sliderGraph = new SliderGraph(this);
 	        }
 	        this.sliderLine = new SliderLine(this);
 	        _.each(this.sliderLine.build(), function (e) {
@@ -23516,10 +24235,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return SliderCaption;
 	}());
 	var SliderGraph = (function () {
-	    function SliderGraph(slider, root) {
-	        var _this = this;
+	    function SliderGraph(slider) {
 	        this.slider = slider;
-	        this.root = Dom_1.$$(root);
 	        this.svg = d3.select(slider.element).append('svg').append('g');
 	        this.x = d3.scale.ordinal();
 	        this.y = d3.scale.linear();
@@ -23530,11 +24247,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            bottom: 20
 	        }, this.slider.options.graph.margin || {});
 	        this.slider.options.graph.animationDuration = this.slider.options.graph.animationDuration || 500;
-	        this.resize = _.debounce(function () {
-	            _this.draw();
-	        }, 250);
-	        window.addEventListener('resize', this.resize);
-	        this.root.on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
 	        this.tooltip = Dom_1.$$('div', {
 	            className: 'coveo-slider-tooltip'
 	        }).el;
@@ -23544,8 +24256,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    SliderGraph.prototype.draw = function (data) {
 	        if (data === void 0) { data = this.oldData; }
-	        var searchInterface = Component_1.Component.get(this.root.el, SearchInterface_1.SearchInterface, true);
-	        if (data && !(searchInterface instanceof SearchInterface_1.SearchInterface && !searchInterface.isSmallInterface())) {
+	        if (data) {
 	            var sliderOuterWidth = this.slider.element.offsetWidth;
 	            var sliderOuterHeight = this.slider.element.offsetHeight;
 	            var width = sliderOuterWidth - this.slider.options.graph.margin.left - this.slider.options.graph.margin.right;
@@ -23559,9 +24270,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.setGraphBarsTransition(bars, height, currentSliderValues);
 	            this.oldData = data;
 	        }
-	    };
-	    SliderGraph.prototype.handleNuke = function () {
-	        window.removeEventListener('resize', this.resize);
 	    };
 	    SliderGraph.prototype.setXAndYRange = function (width, height) {
 	        this.x.rangeBands([0, width], 0.2, 0);
@@ -23715,7 +24423,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
@@ -33272,666 +33980,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	  if (true) this.d3 = d3, !(__WEBPACK_AMD_DEFINE_FACTORY__ = (d3), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); else if (typeof module === "object" && module.exports) module.exports = d3; else this.d3 = d3;
 	}();
-
-/***/ },
-/* 153 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/// <reference path="../Facet/FacetHeader.ts" />
-	/// <reference path="../../controllers/FacetSliderQueryController.ts" />
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Slider_1 = __webpack_require__(151);
-	var Component_1 = __webpack_require__(90);
-	var ComponentOptions_1 = __webpack_require__(92);
-	var FacetHeader_1 = __webpack_require__(140);
-	var Strings_1 = __webpack_require__(28);
-	var FeatureDetectionUtils_1 = __webpack_require__(61);
-	var FacetSliderQueryController_1 = __webpack_require__(80);
-	var QueryEvents_1 = __webpack_require__(46);
-	var BreadcrumbEvents_1 = __webpack_require__(40);
-	var Model_1 = __webpack_require__(83);
-	var Dom_1 = __webpack_require__(55);
-	var AnalyticsActionListMeta_1 = __webpack_require__(102);
-	var QueryStateModel_1 = __webpack_require__(85);
-	var SliderEvents_1 = __webpack_require__(50);
-	var Assert_1 = __webpack_require__(19);
-	var Utils_1 = __webpack_require__(21);
-	var Initialization_1 = __webpack_require__(89);
-	/**
-	 * The FacetSlider component allows to create a facet that renders a slider widget to filter on a range of numerical values
-	 * rather than the classic multi-select facet with a label and a count for each values.<br/>
-	 * Note that this component does *NOT* inherit from a standard {@link Facet}, and thus does not offer all the same options.<br/>
-	 * If you want to have a graph on top of your FacetSlider, then you will need to manually include d3.js, or d3.min.js from the script files included in the package.
-	 */
-	var FacetSlider = (function (_super) {
-	    __extends(FacetSlider, _super);
-	    function FacetSlider(element, options, bindings) {
-	        var _this = this;
-	        _super.call(this, element, FacetSlider.ID, bindings);
-	        this.element = element;
-	        this.options = options;
-	        this.isEmpty = false;
-	        this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, FacetSlider, options);
-	        if (this.options.excludeOuterBounds == null) {
-	            this.options.excludeOuterBounds = false;
-	        }
-	        if (this.options.start) {
-	            this.options.start = this.options.dateField ? new Date(this.options.start.replace(/-/g, '/')).getTime() : Number(this.options.start);
-	        }
-	        if (this.options.end) {
-	            this.options.end = this.options.dateField ? new Date(this.options.end.replace(/-/g, '/')).getTime() : Number(this.options.end);
-	        }
-	        if (this.hasAGraph()) {
-	            if (!FeatureDetectionUtils_1.FeatureDetectionUtils.supportSVG()) {
-	                this.options.graph = undefined;
-	                this.logger.info('Your browser does not support SVG. Cannot add graphic to your facet range', this);
-	            }
-	            if (typeof d3 == 'undefined') {
-	                this.options.graph = undefined;
-	                this.logger.info('Cannot find the required dependencies d3.js. Cannot add graphic to your facet range', this);
-	            }
-	        }
-	        this.facetQueryController = new FacetSliderQueryController_1.FacetSliderQueryController(this);
-	        this.initQueryStateEvents();
-	        this.bind.onRootElement(QueryEvents_1.QueryEvents.newQuery, function () { return _this.handleNewQuery(); });
-	        this.bind.onRootElement(QueryEvents_1.QueryEvents.noResults, function () { return _this.handleNoresults(); });
-	        this.bind.onRootElement(QueryEvents_1.QueryEvents.deferredQuerySuccess, function (args) { return _this.handleDeferredQuerySuccess(args); });
-	        this.bind.onRootElement(QueryEvents_1.QueryEvents.buildingQuery, function (args) { return _this.handleBuildingQuery(args); });
-	        this.bind.onRootElement(QueryEvents_1.QueryEvents.doneBuildingQuery, function (args) { return _this.handleDoneBuildingQuery(args); });
-	        this.bind.onRootElement(BreadcrumbEvents_1.BreadcrumbEvents.populateBreadcrumb, function (args) { return _this.handlePopulateBreadcrumb(args); });
-	        this.bind.onRootElement(BreadcrumbEvents_1.BreadcrumbEvents.clearBreadcrumb, function () { return _this.reset(); });
-	    }
-	    FacetSlider.prototype.createDom = function () {
-	        this.facetHeader = new FacetHeader_1.FacetHeader({
-	            field: this.options.field,
-	            facetElement: this.element,
-	            title: this.options.title,
-	            enableClearElement: true,
-	            enableCollapseElement: true,
-	            isNewDesign: this.getBindings().searchInterface.isNewDesign(),
-	            facetSlider: this
-	        });
-	        this.element.appendChild(this.facetHeader.build());
-	    };
-	    /**
-	     * Reset the facet. This means set the range value as inactive.
-	     */
-	    FacetSlider.prototype.reset = function () {
-	        if (this.slider) {
-	            this.slider.initializeState();
-	            this.updateQueryState();
-	            this.updateAppearanceDependingOnState();
-	        }
-	    };
-	    /**
-	     * Return the current selection in the facet, as an array of number (eg : [start, end] ).<br/>
-	     * If it's not available, return [undefined, undefined]
-	     * @returns {any}
-	     */
-	    FacetSlider.prototype.getSelectedValues = function () {
-	        if (this.startOfSlider != undefined && this.endOfSlider != undefined) {
-	            return [this.startOfSlider, this.endOfSlider];
-	        }
-	        else {
-	            return [undefined, undefined];
-	        }
-	    };
-	    /**
-	     * Set the selected values in the slider.
-	     * @param values [start, end]
-	     */
-	    FacetSlider.prototype.setSelectedValues = function (values) {
-	        this.setupSliderIfNeeded(undefined);
-	        this.startOfSlider = values[0];
-	        this.endOfSlider = values[1];
-	        this.slider.setValues([this.startOfSlider, this.endOfSlider]);
-	        this.updateAppearanceDependingOnState();
-	    };
-	    /**
-	     * Return true if the slider is "active" (will output an expression in the query when a search is performed)
-	     * @returns {boolean}
-	     */
-	    FacetSlider.prototype.isActive = function () {
-	        return !isNaN(this.startOfSlider)
-	            && !isNaN(this.endOfSlider)
-	            && !isNaN(this.initialStartOfSlider)
-	            && !isNaN(this.initialEndOfSlider)
-	            && (this.startOfSlider != this.initialStartOfSlider || this.endOfSlider != this.initialEndOfSlider);
-	    };
-	    FacetSlider.prototype.getSliderBoundaryForQuery = function () {
-	        var needToReturnABoundary = false;
-	        if (!this.slider) {
-	            needToReturnABoundary = true;
-	        }
-	        else if (this.slider && this.isActive()) {
-	            needToReturnABoundary = true;
-	        }
-	        if (needToReturnABoundary) {
-	            return this.generateBoundary();
-	        }
-	        else {
-	            return undefined;
-	        }
-	    };
-	    FacetSlider.prototype.handleNoresults = function () {
-	        this.isEmpty = true;
-	        this.updateAppearanceDependingOnState();
-	    };
-	    FacetSlider.prototype.handleNewQuery = function () {
-	        this.isEmpty = false;
-	    };
-	    FacetSlider.prototype.handleRangeQueryStateChanged = function (args) {
-	        this.setupSliderIfNeeded(args);
-	        this.startOfSlider = args.value[0] == undefined ? this.startOfSlider : args.value[0];
-	        this.endOfSlider = args.value[1] == undefined ? this.endOfSlider : args.value[1];
-	        this.setSelectedValues([this.startOfSlider, this.endOfSlider]);
-	    };
-	    FacetSlider.prototype.handlePopulateBreadcrumb = function (args) {
-	        var _this = this;
-	        var populateBreadcrumb = function () {
-	            if (_this.isActive()) {
-	                args.breadcrumbs.push({
-	                    element: _this.buildBreadcrumbFacetSlider()
-	                });
-	            }
-	        };
-	        if (this.slider) {
-	            populateBreadcrumb();
-	        }
-	        else {
-	            Dom_1.$$(this.root).one(QueryEvents_1.QueryEvents.deferredQuerySuccess, function () {
-	                populateBreadcrumb();
-	                Dom_1.$$(_this.root).trigger(BreadcrumbEvents_1.BreadcrumbEvents.redrawBreadcrumb);
-	            });
-	        }
-	    };
-	    FacetSlider.prototype.buildBreadcrumbFacetSlider = function () {
-	        var _this = this;
-	        var elem = Dom_1.$$('div', {
-	            className: 'coveo-facet-slider-breadcrumb'
-	        }).el;
-	        var title = Dom_1.$$('span', {
-	            className: 'coveo-facet-slider-breadcrumb-title'
-	        });
-	        title.text(this.options.title + ':');
-	        elem.appendChild(title.el);
-	        var values = Dom_1.$$('span', {
-	            className: 'coveo-facet-slider-breadcrumb-values'
-	        });
-	        elem.appendChild(values.el);
-	        var value = Dom_1.$$('span', {
-	            className: 'coveo-facet-slider-breadcrumb-value'
-	        });
-	        value.text(this.slider.getCaption());
-	        values.el.appendChild(value.el);
-	        var clear = Dom_1.$$('span', {
-	            className: 'coveo-facet-slider-breadcrumb-clear'
-	        });
-	        value.el.appendChild(clear.el);
-	        value.on('click', function () {
-	            _this.reset();
-	            _this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetClearAll, {
-	                facetId: _this.options.id,
-	                facetTitle: _this.options.title
-	            });
-	            _this.queryController.executeQuery();
-	        });
-	        return elem;
-	    };
-	    FacetSlider.prototype.initSlider = function () {
-	        this.buildSlider();
-	        this.slider.initializeState([this.startOfSlider, this.endOfSlider]);
-	        this.updateAppearanceDependingOnState();
-	    };
-	    FacetSlider.prototype.initQueryStateEvents = function () {
-	        var _this = this;
-	        this.rangeQueryStateAttribute = QueryStateModel_1.QueryStateModel.getFacetId(this.options.id) + ':range';
-	        this.queryStateModel.registerNewAttribute(this.rangeQueryStateAttribute, [undefined, undefined]);
-	        var eventName = this.queryStateModel.getEventName(Model_1.Model.eventTypes.changeOne + this.rangeQueryStateAttribute);
-	        this.bind.onRootElement(eventName, function (args) {
-	            _this.slider ? _this.handleRangeQueryStateChanged(args) : _this.setRangeStateSliderStillNotCreated(args);
-	        });
-	    };
-	    FacetSlider.prototype.setRangeStateSliderStillNotCreated = function (args) {
-	        this.rangeFromUrlState = this.copyValues(args.value);
-	    };
-	    FacetSlider.prototype.buildSlider = function () {
-	        var _this = this;
-	        var sliderContainer = Dom_1.$$('div', {
-	            className: 'coveo-facet-values coveo-slider-container'
-	        }).el;
-	        if (this.hasAGraph()) {
-	            Dom_1.$$(sliderContainer).addClass('coveo-with-graph');
-	        }
-	        var sliderDiv = Dom_1.$$('div').el;
-	        this.slider = new Slider_1.Slider(sliderDiv, _.extend({}, this.options, { dateField: this.options.dateField }), this.root);
-	        Dom_1.$$(sliderDiv).on(SliderEvents_1.SliderEvents.endSlide, function (e, args) {
-	            _this.handleEndSlide(args);
-	        });
-	        Dom_1.$$(sliderDiv).on(SliderEvents_1.SliderEvents.duringSlide, function (e, args) {
-	            _this.handleDuringSlide(args);
-	        });
-	        if (this.hasAGraph()) {
-	            Dom_1.$$(sliderDiv).on(SliderEvents_1.SliderEvents.graphValueSelected, function (e, args) {
-	                _this.handleGraphValueSelected(args);
-	            });
-	        }
-	        sliderContainer.appendChild(sliderDiv);
-	        this.element.appendChild(sliderContainer);
-	        this.updateAppearanceDependingOnState();
-	    };
-	    FacetSlider.prototype.handleBuildingQuery = function (data) {
-	        Assert_1.Assert.exists(data);
-	        Assert_1.Assert.exists(data.queryBuilder);
-	        var boundary = this.getSliderBoundaryForQuery();
-	        if (boundary != undefined) {
-	            this.facetQueryController.prepareForNewQuery();
-	            var expression = this.facetQueryController.computeOurFilterExpression(boundary);
-	            if (Utils_1.Utils.isNonEmptyString(expression)) {
-	                this.logger.trace('Putting filter in query', expression);
-	                data.queryBuilder.advancedExpression.add(expression);
-	            }
-	        }
-	    };
-	    FacetSlider.prototype.handleDoneBuildingQuery = function (data) {
-	        var queryBuilder = data.queryBuilder;
-	        this.facetQueryController.putGroupByIntoQueryBuilder(queryBuilder);
-	    };
-	    FacetSlider.prototype.handleDeferredQuerySuccess = function (data) {
-	        this.ensureDom();
-	        this.setupSliderIfNeeded(data);
-	        var groupByResults = data.results.groupByResults[this.facetQueryController.lastGroupByRequestIndex];
-	        if (groupByResults == undefined || groupByResults.values[0] == undefined) {
-	            this.isEmpty = true;
-	        }
-	        this.updateAppearanceDependingOnState();
-	        if (this.hasAGraph()) {
-	            this.renderToSliderGraph(data);
-	        }
-	    };
-	    FacetSlider.prototype.handleEndSlide = function (args) {
-	        var values = args.slider.getValues();
-	        this.startOfSlider = values[0];
-	        this.endOfSlider = values[1];
-	        if (this.updateQueryState(values)) {
-	            this.updateAppearanceDependingOnState();
-	            this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetRangeSlider, {
-	                facetId: this.options.id,
-	                facetRangeStart: this.startOfSlider.toString(),
-	                facetRangeEnd: this.endOfSlider.toString()
-	            });
-	            this.queryController.executeQuery();
-	        }
-	    };
-	    FacetSlider.prototype.handleDuringSlide = function (args) {
-	        var values = args.slider.getValues();
-	        this.startOfSlider = values[0];
-	        this.endOfSlider = values[1];
-	        this.slider.setValues([this.startOfSlider, this.endOfSlider]);
-	        this.updateAppearanceDependingOnState(true);
-	    };
-	    FacetSlider.prototype.handleGraphValueSelected = function (args) {
-	        if ((this.options.rangeSlider && this.startOfSlider != args.start) || this.endOfSlider != args.end) {
-	            if (this.options.rangeSlider) {
-	                this.startOfSlider = args.start;
-	            }
-	            this.endOfSlider = args.end;
-	            this.slider.setValues([this.startOfSlider, this.endOfSlider]);
-	            this.updateQueryState();
-	            this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetRangeGraph, {
-	                facetId: this.options.id,
-	                facetRangeStart: this.startOfSlider.toString(),
-	                facetRangeEnd: this.endOfSlider.toString()
-	            });
-	            this.queryController.executeQuery();
-	        }
-	    };
-	    FacetSlider.prototype.updateQueryState = function (values, silent) {
-	        if (values === void 0) { values = this.slider.getValues(); }
-	        if (silent === void 0) { silent = false; }
-	        var copyOfValues = this.copyValues(values);
-	        var start = values[0] + 0.0;
-	        var end = values[1] + 0.0;
-	        var model = this.queryStateModel.get(this.rangeQueryStateAttribute);
-	        if (model == null || copyOfValues[0] != model[0] || copyOfValues[1] != model[1]) {
-	            copyOfValues[0] = start;
-	            copyOfValues[1] = end;
-	            this.queryStateModel.set(this.rangeQueryStateAttribute, copyOfValues, { silent: silent });
-	            return true;
-	        }
-	        return false;
-	    };
-	    FacetSlider.prototype.copyValues = function (values) {
-	        // Creating a copy of the values prevents an unwanted automatic update of the state while sliding
-	        // That's the cleanest way I found to copy that array correctly
-	        var copyOfValues = [];
-	        copyOfValues[0] = Number(values[0]) + 0.0;
-	        copyOfValues[1] = Number(values[1]) + 0.0;
-	        return copyOfValues;
-	    };
-	    FacetSlider.prototype.renderToSliderGraph = function (data) {
-	        var _this = this;
-	        var rawGroupByResults = data.results.groupByResults[this.facetQueryController.graphGroupByQueriesIndex];
-	        var graphData;
-	        var totalGraphResults = 0;
-	        if (rawGroupByResults) {
-	            graphData = _.map(rawGroupByResults.values, function (value) {
-	                totalGraphResults += value.numberOfResults;
-	                var start = value.value.split('..')[0];
-	                var end = value.value.split('..')[1];
-	                if (!_this.options.dateField) {
-	                    start = Number(start);
-	                    end = Number(end);
-	                }
-	                else {
-	                    start = new Date(start.split('@')[0]).getTime();
-	                    end = new Date(end.split('@')[0]).getTime();
-	                }
-	                var y = value.numberOfResults;
-	                return {
-	                    start: start,
-	                    y: y,
-	                    end: end,
-	                    isDate: _this.options.dateField
-	                };
-	            });
-	        }
-	        if (totalGraphResults == 0) {
-	            this.isEmpty = true;
-	            this.updateAppearanceDependingOnState();
-	        }
-	        else if (graphData != undefined) {
-	            this.slider.drawGraph(graphData);
-	        }
-	    };
-	    FacetSlider.prototype.generateBoundary = function () {
-	        var start, end;
-	        if (!this.slider) {
-	            // If the slider is not initialized, the only boundary we can get is from the state.
-	            return this.generateBoundaryFromState();
-	        }
-	        else {
-	            // Else, try to get one from the slider itself. If we cant, try to return one from the state.
-	            var boundary = this.generateBoundaryFromSlider();
-	            if (boundary[0] == undefined && boundary[1] == undefined) {
-	                return this.generateBoundaryFromState();
-	            }
-	            else {
-	                return boundary;
-	            }
-	        }
-	    };
-	    FacetSlider.prototype.generateBoundaryFromSlider = function () {
-	        var start, end;
-	        if (this.startOfSlider != undefined) {
-	            start = this.startOfSlider;
-	        }
-	        if (this.endOfSlider != undefined) {
-	            end = this.endOfSlider;
-	        }
-	        return [start, end];
-	    };
-	    FacetSlider.prototype.generateBoundaryFromState = function () {
-	        var start, end;
-	        var startFromState = this.queryStateModel.get(this.rangeQueryStateAttribute)[0];
-	        if (startFromState != undefined) {
-	            start = startFromState;
-	        }
-	        var endFromState = this.queryStateModel.get(this.rangeQueryStateAttribute)[1];
-	        if (endFromState != undefined) {
-	            end = endFromState;
-	        }
-	        if (start != this.queryStateModel.getDefault(this.rangeQueryStateAttribute)[0] || end != this.queryStateModel.getDefault(this.rangeQueryStateAttribute)[1]) {
-	            return [start, end];
-	        }
-	        else {
-	            return [undefined, undefined];
-	        }
-	    };
-	    FacetSlider.prototype.setupSliderIfNeeded = function (data) {
-	        this.ensureDom();
-	        if (Utils_1.Utils.isNullOrUndefined(this.slider)) {
-	            if (!this.alreadySetBoundary()) {
-	                this.trySetSliderBoundaryFromOptions();
-	            }
-	            if (!this.alreadySetBoundary() && data != undefined) {
-	                this.trySetSliderBoundaryFromQueryResult(data);
-	            }
-	            this.trySetSliderBoundaryFromState();
-	            this.setupSliderStateVariables();
-	            var isInError = this.verifySetup();
-	            if (isInError) {
-	                this.logger.warn('Unable to initialize slider with current values', this);
-	            }
-	            else {
-	                this.initSlider();
-	                this.updateQueryState();
-	            }
-	        }
-	    };
-	    FacetSlider.prototype.verifySetup = function () {
-	        var isInError = 0;
-	        isInError += this.initialStartOfSlider == undefined ? 1 : 0;
-	        isInError += isNaN(this.initialStartOfSlider) ? 1 : 0;
-	        isInError += this.initialEndOfSlider == undefined ? 1 : 0;
-	        isInError += isNaN(this.initialEndOfSlider) ? 1 : 0;
-	        return isInError;
-	    };
-	    FacetSlider.prototype.setupSliderStateVariables = function () {
-	        if (isNaN(this.initialStartOfSlider) || isNaN(this.initialEndOfSlider)) {
-	            this.logger.warn('Cannnot initialize slider with those values : start: ' + this.initialStartOfSlider + ' end: ' + this.initialEndOfSlider);
-	        }
-	        else {
-	            this.initialStartOfSlider = Number(this.initialStartOfSlider);
-	            this.initialEndOfSlider = Number(this.initialEndOfSlider);
-	            this.startOfSlider = this.startOfSlider != undefined ? Number(this.startOfSlider) : this.initialStartOfSlider;
-	            this.endOfSlider = this.endOfSlider != undefined ? Number(this.endOfSlider) : this.initialEndOfSlider;
-	            this.options.start = this.initialStartOfSlider;
-	            this.options.end = this.initialEndOfSlider;
-	            this.queryStateModel.setNewDefault(this.rangeQueryStateAttribute, [this.initialStartOfSlider, this.initialEndOfSlider]);
-	        }
-	    };
-	    FacetSlider.prototype.alreadySetBoundary = function () {
-	        return this.startOfSlider != undefined && this.endOfSlider != undefined;
-	    };
-	    FacetSlider.prototype.trySetSliderBoundaryFromOptions = function () {
-	        if (!Utils_1.Utils.isNullOrUndefined(this.options.start)) {
-	            this.setupInitialSliderStateStart(this.options.start);
-	        }
-	        if (!Utils_1.Utils.isNullOrUndefined(this.options.end)) {
-	            this.setupInitialSliderStateEnd(this.options.end);
-	        }
-	    };
-	    FacetSlider.prototype.trySetSliderBoundaryFromState = function () {
-	        var stateValues = this.rangeFromUrlState || this.queryStateModel.get(this.rangeQueryStateAttribute);
-	        if (stateValues && stateValues[0] != undefined && stateValues[1] != undefined) {
-	            stateValues[0] = Number(stateValues[0]);
-	            stateValues[1] = Number(stateValues[1]);
-	            this.setupInitialSliderStateStart(stateValues[0]);
-	            this.setupInitialSliderStateEnd(stateValues[1]);
-	            this.startOfSlider = stateValues[0];
-	            this.endOfSlider = stateValues[1];
-	        }
-	    };
-	    FacetSlider.prototype.trySetSliderBoundaryFromQueryResult = function (data) {
-	        var groupByResults = data.results.groupByResults[this.facetQueryController.lastGroupByRequestIndex];
-	        if (groupByResults && groupByResults.values.length > 0) {
-	            this.setupInitialSliderStateStart(groupByResults.values[0].value.split('..')[0]);
-	            this.setupInitialSliderStateEnd(groupByResults.values[groupByResults.values.length - 1].value.split('..')[1]);
-	        }
-	    };
-	    FacetSlider.prototype.setupInitialSliderStateStart = function (value) {
-	        if (this.initialStartOfSlider == undefined) {
-	            this.initialStartOfSlider = value;
-	            if (this.options.dateField && isNaN(value)) {
-	                this.initialStartOfSlider = new Date(value.replace('@', ' ')).getTime();
-	            }
-	        }
-	    };
-	    FacetSlider.prototype.setupInitialSliderStateEnd = function (value) {
-	        if (this.initialEndOfSlider == undefined) {
-	            this.initialEndOfSlider = value;
-	            if (this.options.dateField && isNaN((value))) {
-	                this.initialEndOfSlider = new Date(value.replace('@', ' ')).getTime();
-	            }
-	        }
-	    };
-	    FacetSlider.prototype.hasAGraph = function () {
-	        return this.options.graph != undefined;
-	    };
-	    FacetSlider.prototype.updateAppearanceDependingOnState = function (sliding) {
-	        if (sliding === void 0) { sliding = false; }
-	        if (this.isEmpty && !this.isActive() && !sliding) {
-	            Dom_1.$$(this.element).addClass('coveo-disabled-empty');
-	        }
-	        else {
-	            Dom_1.$$(this.element).removeClass('coveo-disabled-empty');
-	            Dom_1.$$(this.facetHeader.eraserElement).toggle(this.isActive());
-	        }
-	        if (!this.isActive() && !sliding) {
-	            Dom_1.$$(this.element).addClass('coveo-disabled');
-	        }
-	        else {
-	            Dom_1.$$(this.element).removeClass('coveo-disabled');
-	        }
-	    };
-	    /**
-	     * The component options
-	     * @componentOptions
-	     */
-	    FacetSlider.options = {
-	        /**
-	         * The title on top of the facet component.<br/>
-	         * Default value is the localized string for 'No title'
-	         */
-	        title: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: Strings_1.l('NoTitle') }),
-	        /**
-	         * Specifies whether the field for which you are requesting a range is a date field.<br/>
-	         * This allow the facet to correctly build the outgoing group by request, as well as render it correctly.<br/>
-	         */
-	        dateField: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
-	        /**
-	         * Specifies the index field whose values will be use in the facet.<br/>
-	         * This require the given field to be configured correctly in the index as a facet field.<br/>
-	         * This is a required option and cannot be omitted, otherwise the facet component will not work.
-	         */
-	        field: ComponentOptions_1.ComponentOptions.buildFieldOption({ groupByField: true, required: true }),
-	        /**
-	         * Specifies a unique identifier for a facet. This identifier will be used to save the facet state in the url hash, for example.<br/>
-	         * Optional, since the default will be the {@link FacetSlider.options.field} option.<br/>
-	         * If you have two facets with the same field on the same page, you should specify an id for at least one of those two facets.<br/>
-	         * That id need to be unique on the page.
-	         */
-	        id: ComponentOptions_1.ComponentOptions.buildStringOption({
-	            postProcessing: function (value, options) { return value || options.field; }
-	        }),
-	        /**
-	         * Specifies the format used to display values if they are date.<br/>
-	         * Default value is <code>MMM dd, yyyy</code>
-	         */
-	        dateFormat: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	        /**
-	         * Specifies the query to filter automatic minimum and maximum range of the slider.<br/>
-	         * This is especially useful for date range, where the index may contain values which are not set, and thus the automatic range will return value from the year 1400 (min date from the boost c++ library)<br/>
-	         * Can be used to do something like queryOverride : @date>2000/01/01 or some arbitrary date which will filter out unwanted values
-	         */
-	        queryOverride: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	        /**
-	         * Specifies the starting boundary of the slider.<br/>
-	         * Dates values are rounded on the year when the field used is a date type.<br/>
-	         * Optional: Takes the lowest value available in the index by default.
-	         */
-	        start: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	        /**
-	         * Specifies the ending boundary of the slider.<br/>
-	         * Dates values are rounded on the year when the field used is a date type.<br/>
-	         * Optional: Takes the highest value available in the index by default.
-	         */
-	        end: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	        /**
-	         * Specifies if you want to exclude the outer bounds of your slider in the generated query, when they are not active.<br/>
-	         * Default value is false
-	         */
-	        excludeOuterBounds: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
-	        /**
-	         * Specifies to how many decimal digit displayed numerical values are rounded.<br/>
-	         * Optional. By default, the number rounds to 0 decimal digits.
-	         */
-	        rounded: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
-	        /**
-	         * Specifies the number of steps that you want in your slider.<br/>
-	         * For example, if your range is [ 0 , 100 ] and you specify 10 steps, then the end user is allowed to move the slider only to the values [ 0, 10, 20. 30 ... , 100 ].<br/>
-	         * Optional. By default the slider will allow all values.
-	         */
-	        steps: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 2 }),
-	        /**
-	         * Specifies whether you want a slider with two buttons, or only one.<br/>
-	         * Optional. By default only one button appears in the slider.
-	         */
-	        rangeSlider: ComponentOptions_1.ComponentOptions.buildBooleanOption(),
-	        /**
-	         * Specifies the caption that you want to display the field values.<br/>
-	         * Available options are :
-	         * <ul>
-	         *   <li>enable : (data-display-as-value-enable) <code>boolean</code> : Specifies wether the caption should be displayed as a value. Default is <code>true</code></li>
-	         *   <li>unitSign : (data-display-as-value-unit-sign) <code>string</code> : Specifies the unit sign for this value.</li>
-	         *   <li>separator : (data-display-as-value-separator) <code>string</code> : Specifies the character(s) to use as a separator in the caption. Default is -.</li>
-	         * </ul>
-	         */
-	        displayAsValue: ComponentOptions_1.ComponentOptions.buildObjectOption({
-	            subOptions: {
-	                enable: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
-	                unitSign: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	                separator: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '-' })
-	            }
-	        }),
-	        /**
-	         * Specifies the percentage caption that you want to display the field values.<br/>
-	         * Available options are :
-	         * <ul>
-	         *   <li>enable : (data-display-as-percent-enable) <code>boolean</code> : Specifies wether the caption should be displayed as a percentage. Default is <code>false</code></li>
-	         *   <li>separator : (data-display-as-percent-separator) <code>string</code> : Specifies the character(s) to use as a separator in the caption. Default is -.</li>
-	         * </ul>
-	         */
-	        displayAsPercent: ComponentOptions_1.ComponentOptions.buildObjectOption({
-	            subOptions: {
-	                enable: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
-	                separator: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '-' })
-	            }
-	        }),
-	        /**
-	         * Specifies that you wish to display a small graph on top of the slider.<br/>
-	         * Available options are :
-	         * <ul>
-	         *   <li>steps: (data-graph-steps) <code>number</code> : Specifies the number of steps/columns to display in your graph. Default value is 10</li>
-	         * </ul>
-	         */
-	        graph: ComponentOptions_1.ComponentOptions.buildObjectOption({
-	            subOptions: {
-	                steps: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 2 }),
-	                animationDuration: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
-	                margin: ComponentOptions_1.ComponentOptions.buildObjectOption({
-	                    subOptions: {
-	                        top: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
-	                        bottom: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
-	                        left: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 }),
-	                        right: ComponentOptions_1.ComponentOptions.buildNumberOption({ min: 0 })
-	                    }
-	                })
-	            }
-	        })
-	    };
-	    FacetSlider.ID = 'FacetSlider';
-	    return FacetSlider;
-	}(Component_1.Component));
-	exports.FacetSlider = FacetSlider;
-	Initialization_1.Initialization.registerAutoCreateComponent(FacetSlider);
-
 
 /***/ },
 /* 154 */
