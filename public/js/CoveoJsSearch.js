@@ -2164,8 +2164,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.21',
-	    'product': '1.667.21',
+	    'lib': '1.667.22',
+	    'product': '1.667.22',
 	    'supportedApiVersion': 2
 	};
 
@@ -43175,7 +43175,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    SearchAlertsMessage.prototype.showMessage = function (dom, message, error) {
 	        var _this = this;
 	        this.message = Dom_1.$$('div');
-	        this.message.el.innerHTML = "<div class='coveo-subscriptions-messages-message'>\n        <div class='coveo-subscriptions-messages-info-close'></div>\n        <div class='coveo-subscriptions-messages-content'>" + message + "</div>\n      </div>";
+	        this.message.el.innerHTML = "\n      <div class='coveo-subscriptions-messages-message'>\n        <div class='coveo-subscriptions-messages-info-close'></div>\n        <div class='coveo-subscriptions-messages-content' title='" + message + "'>" + message + "</div>\n      </div>";
 	        this.message.toggleClass('coveo-subscriptions-messages-error', error);
 	        var closeButton = this.message.find('.coveo-subscriptions-messages-info-close');
 	        Dom_1.$$(closeButton).on('click', function () { return _this.close(); });
