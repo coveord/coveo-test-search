@@ -315,22 +315,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Breadcrumb = Breadcrumb_1.Breadcrumb;
 	var Facet_1 = __webpack_require__(131);
 	exports.Facet = Facet_1.Facet;
-	var FacetHeader_1 = __webpack_require__(140);
+	var FacetHeader_1 = __webpack_require__(141);
 	exports.FacetHeader = FacetHeader_1.FacetHeader;
-	var FacetSearchValuesList_1 = __webpack_require__(143);
+	var FacetSearchValuesList_1 = __webpack_require__(144);
 	exports.FacetSearchValuesList = FacetSearchValuesList_1.FacetSearchValuesList;
-	var FacetSettings_1 = __webpack_require__(137);
+	var FacetSettings_1 = __webpack_require__(138);
 	exports.FacetSettings = FacetSettings_1.FacetSettings;
-	var FacetSort_1 = __webpack_require__(138);
+	var FacetSort_1 = __webpack_require__(139);
 	exports.FacetSort = FacetSort_1.FacetSort;
 	var FacetUtils_1 = __webpack_require__(78);
 	exports.FacetUtils = FacetUtils_1.FacetUtils;
-	var FacetValueElement_1 = __webpack_require__(134);
+	var FacetValueElement_1 = __webpack_require__(135);
 	exports.FacetValueElement = FacetValueElement_1.FacetValueElement;
 	var FacetValues_1 = __webpack_require__(132);
 	exports.FacetValue = FacetValues_1.FacetValue;
 	exports.FacetValues = FacetValues_1.FacetValues;
-	var ValueElementRenderer_1 = __webpack_require__(136);
+	var ValueElementRenderer_1 = __webpack_require__(137);
 	exports.ValueElementRenderer = ValueElementRenderer_1.ValueElementRenderer;
 	var FacetSearch_1 = __webpack_require__(133);
 	exports.FacetSearch = FacetSearch_1.FacetSearch;
@@ -392,7 +392,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.PreferencesPanel = PreferencesPanel_1.PreferencesPanel;
 	var ResultsFiltersPreferences_1 = __webpack_require__(189);
 	exports.ResultsFiltersPreferences = ResultsFiltersPreferences_1.ResultsFiltersPreferences;
-	var Tab_1 = __webpack_require__(148);
+	var Tab_1 = __webpack_require__(149);
 	exports.Tab = Tab_1.Tab;
 	var Omnibox_1 = __webpack_require__(125);
 	exports.Omnibox = Omnibox_1.Omnibox;
@@ -459,9 +459,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Text = Text_1.Text;
 	var FoldingForThread_1 = __webpack_require__(216);
 	exports.FoldingForThread = FoldingForThread_1.FoldingForThread;
-	var ResponsiveFacets_1 = __webpack_require__(146);
+	var ResponsiveFacets_1 = __webpack_require__(147);
 	exports.ResponsiveFacets = ResponsiveFacets_1.ResponsiveFacets;
-	var ResponsiveComponentsManager_1 = __webpack_require__(147);
+	var ResponsiveComponentsManager_1 = __webpack_require__(148);
 	exports.ResponsiveComponentsManager = ResponsiveComponentsManager_1.ResponsiveComponentsManager;
 	var ChatterLikedBy_1 = __webpack_require__(217);
 	exports.ChatterLikedBy = ChatterLikedBy_1.ChatterLikedBy;
@@ -936,13 +936,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "filetype_youtubeplaylistitem": "YouTube playlist item",
 	};
 	function defaultLanguage() {
-	    document.addEventListener('DOMContentLoaded', function (event) {
-	        var locales = String["locales"] || (String["locales"] = {});
-	        locales["en"] = merge(locales["en"], dict);
-	        String["toLocaleString"].call(this, { "en": dict });
-	        String["locale"] = "en";
-	        String["defaultLocale"] = "en";
-	    });
+	    if (window['$'] != undefined && window['$'].fn != undefined && window['$'].fn.jquery != undefined) {
+	        $(function () {
+	            var locales = String["locales"] || (String["locales"] = {});
+	            locales["en"] = merge(locales["en"], dict);
+	            String["toLocaleString"].call(this, { "en": dict });
+	            String["locale"] = "en";
+	            String["defaultLocale"] = "en";
+	            Globalize.culture("en");
+	        });
+	    }
+	    else {
+	        document.addEventListener('DOMContentLoaded', function (event) {
+	            var locales = String["locales"] || (String["locales"] = {});
+	            locales["en"] = merge(locales["en"], dict);
+	            String["toLocaleString"].call(this, { "en": dict });
+	            String["locale"] = "en";
+	            String["defaultLocale"] = "en";
+	            Globalize.culture("en");
+	        });
+	    }
 	}
 	exports.defaultLanguage = defaultLanguage;
 	function setLanguageAfterPageLoaded() {
@@ -951,6 +964,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    String["toLocaleString"].call(this, { "en": dict });
 	    String["locale"] = "en";
 	    String["defaultLocale"] = "en";
+	    Globalize.culture("en");
 	}
 	exports.setLanguageAfterPageLoaded = setLanguageAfterPageLoaded;
 
@@ -2150,8 +2164,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.19',
-	    'product': '1.667.19',
+	    'lib': '1.667.21',
+	    'product': '1.667.21',
 	    'supportedApiVersion': 2
 	};
 
@@ -2591,6 +2605,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        };
 	    };
 	    Utils.extendDeep = function (target, src) {
+	        if (!target) {
+	            target = {};
+	        }
 	        var isArray = _.isArray(src);
 	        var toReturn = isArray && [] || {};
 	        if (isArray) {
@@ -5307,7 +5324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * This is essentially an helper class for dom manipulation.<br/>
 	 * This is intended to provide some basic functionality normally offered by jQuery.<br/>
-	 * To minimize the multiple jQuery conflict we have while integrating in various system, we implemented the very small subset that the framework need.<br/>
+	 * To minimize the multiple jQuery conflict we have while integrating in various system, we implemented the very small subset that the framework needs.<br/>
 	 * See {@link $$}, which is a function that wraps this class constructor, for less verbose code.
 	 */
 	var Dom = (function () {
@@ -5813,6 +5830,70 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        this.detach();
 	    };
+	    // based on http://api.jquery.com/position/
+	    /**
+	     * Return the position relative to the offset parent.
+	     */
+	    Dom.prototype.position = function () {
+	        var offsetParent = this.offsetParent();
+	        var parentOffset = { top: 0, left: 0 };
+	        var offset = this.offset();
+	        if (!$$(offsetParent).is('html')) {
+	            parentOffset = $$(offsetParent).offset();
+	        }
+	        var borderTopWidth = parseInt($$(offsetParent).css('borderTopWidth'));
+	        var borderLeftWidth = parseInt($$(offsetParent).css('borderLeftWidth'));
+	        borderTopWidth = isNaN(borderTopWidth) ? 0 : borderTopWidth;
+	        borderLeftWidth = isNaN(borderLeftWidth) ? 0 : borderLeftWidth;
+	        parentOffset = {
+	            top: parentOffset.top + borderTopWidth,
+	            left: parentOffset.left + borderLeftWidth
+	        };
+	        var marginTop = parseInt(this.css('marginTop'));
+	        var marginLeft = parseInt(this.css('marginLeft'));
+	        marginTop = isNaN(marginTop) ? 0 : marginTop;
+	        marginLeft = isNaN(marginLeft) ? 0 : marginLeft;
+	        return {
+	            top: offset.top - parentOffset.top - marginTop,
+	            left: offset.left - parentOffset.left - marginLeft
+	        };
+	    };
+	    // based on https://api.jquery.com/offsetParent/
+	    /**
+	     * Returns the offset parent. The offset parent is the closest parent that is positioned.
+	     * An element is positioned when its position property is not 'static', which is the default.
+	     */
+	    Dom.prototype.offsetParent = function () {
+	        var offsetParent = this.el.offsetParent;
+	        while (offsetParent instanceof HTMLElement && $$(offsetParent).css('position') === 'static') {
+	            // Will break out if it stumbles upon an non-HTMLElement and return documentElement
+	            offsetParent = offsetParent.offsetParent;
+	        }
+	        if (!(offsetParent instanceof HTMLElement)) {
+	            return document.documentElement;
+	        }
+	        return offsetParent;
+	    };
+	    // based on http://api.jquery.com/offset/
+	    /**
+	     * Return the position relative to the document.
+	     */
+	    Dom.prototype.offset = function () {
+	        // In <=IE11, calling getBoundingClientRect on a disconnected node throws an error
+	        if (!this.el.getClientRects().length) {
+	            return { top: 0, left: 0 };
+	        }
+	        var rect = this.el.getBoundingClientRect();
+	        if (rect.width || rect.height) {
+	            var doc = this.el.ownerDocument;
+	            var docElem = doc.documentElement;
+	            return {
+	                top: rect.top + window.pageYOffset - docElem.clientTop,
+	                left: rect.left + window.pageXOffset - docElem.clientLeft
+	            };
+	        }
+	        return rect;
+	    };
 	    /**
 	     * Returns the offset width of the element
 	     */
@@ -6019,7 +6100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    FileTypes.getFileTypeCaptions = function () {
 	        if (fileTypeCaptions == undefined) {
 	            fileTypeCaptions = {};
-	            var strings = String['locales'][String['locale']];
+	            var strings = String['locales'][String['locale'].toLowerCase()];
 	            Assert_1.Assert.isNotUndefined(strings);
 	            _.each(_.keys(strings), function (key) {
 	                if (key.indexOf('filetype_') == 0) {
@@ -7193,9 +7274,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 68 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+	var Dom_1 = __webpack_require__(55);
 	(function (VerticalAlignment) {
 	    VerticalAlignment[VerticalAlignment["TOP"] = 0] = "TOP";
 	    VerticalAlignment[VerticalAlignment["MIDDLE"] = 1] = "MIDDLE";
@@ -7215,21 +7297,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var PopupUtils = (function () {
 	    function PopupUtils() {
 	    }
-	    PopupUtils.positionPopup = function (popUp, nextTo, boundary, desiredPosition, checkForBoundary) {
+	    PopupUtils.positionPopup = function (popUp, nextTo, appendTo, boundary, desiredPosition, checkForBoundary) {
 	        if (checkForBoundary === void 0) { checkForBoundary = 0; }
-	        if (nextTo.parentElement) {
-	            nextTo.parentElement.appendChild(popUp);
-	        }
-	        else {
-	            document.body.appendChild(popUp);
-	        }
+	        Dom_1.$$(appendTo).prepend(popUp);
 	        desiredPosition.verticalOffset = desiredPosition.verticalOffset ? desiredPosition.verticalOffset : 0;
 	        desiredPosition.horizontalOffset = desiredPosition.horizontalOffset ? desiredPosition.horizontalOffset : 0;
-	        var popUpOriginalPosition = this.getPositionRelativeToOffsetParent(popUp);
-	        var finalPopUpPosition = this.getPositionRelativeToOffsetParent(nextTo);
-	        PopupUtils.basicVerticalAlignment(finalPopUpPosition, popUp, nextTo, desiredPosition);
-	        PopupUtils.basicHorizontalAlignment(finalPopUpPosition, popUp, nextTo, desiredPosition);
-	        PopupUtils.finalAdjustement(popUpOriginalPosition, finalPopUpPosition, popUp, desiredPosition);
+	        var popUpPosition = Dom_1.$$(nextTo).offset();
+	        PopupUtils.basicVerticalAlignment(popUpPosition, popUp, nextTo, desiredPosition);
+	        PopupUtils.basicHorizontalAlignment(popUpPosition, popUp, nextTo, desiredPosition);
+	        PopupUtils.finalAdjustement(Dom_1.$$(popUp).offset(), popUpPosition, popUp, desiredPosition);
 	        var popUpBoundary = PopupUtils.getBoundary(popUp);
 	        var boundaryPosition = PopupUtils.getBoundary(boundary);
 	        if (checkForBoundary < 2) {
@@ -7247,14 +7323,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            if (checkBoundary.vertical != 'ok' || checkBoundary.horizontal != 'ok') {
 	                var newDesiredPosition = PopupUtils.alignInsideBoundary(desiredPosition, checkBoundary);
-	                PopupUtils.positionPopup(popUp, nextTo, boundary, newDesiredPosition, checkForBoundary + 1);
+	                PopupUtils.positionPopup(popUp, nextTo, boundary, appendTo, newDesiredPosition, checkForBoundary + 1);
 	            }
 	        }
 	    };
 	    PopupUtils.finalAdjustement = function (popUpOffSet, popUpPosition, popUp, desiredPosition) {
+	        var position = Dom_1.$$(popUp).position();
 	        popUp.style.position = 'absolute';
-	        popUp.style.top = (desiredPosition.verticalOffset + popUpPosition.top) + 'px';
-	        popUp.style.left = (desiredPosition.horizontalOffset + popUpPosition.left) + 'px';
+	        popUp.style.top = (position.top + desiredPosition.verticalOffset) - (popUpOffSet.top - popUpPosition.top) + 'px';
+	        popUp.style.left = (position.left + desiredPosition.horizontalOffset) - (popUpOffSet.left - popUpPosition.left) + 'px';
 	    };
 	    PopupUtils.basicVerticalAlignment = function (popUpPosition, popUp, nextTo, desiredPosition) {
 	        switch (desiredPosition.vertical) {
@@ -7315,7 +7392,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return (nextTo.offsetWidth - popUp.offsetWidth) / 2;
 	    };
 	    PopupUtils.getBoundary = function (element) {
-	        var boundaryOffset = element.getBoundingClientRect();
+	        var boundaryOffset = Dom_1.$$(element).offset();
 	        var toAddVertically;
 	        if (element.tagName.toLowerCase() == 'body') {
 	            toAddVertically = Math.max(element.scrollHeight, element.offsetHeight);
@@ -7351,10 +7428,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            ret.horizontal = 'right';
 	        }
 	        return ret;
-	    };
-	    PopupUtils.getPositionRelativeToOffsetParent = function (el) {
-	        var rect = { left: el.offsetLeft, top: el.offsetTop };
-	        return rect;
 	    };
 	    return PopupUtils;
 	}());
@@ -8874,7 +8947,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var request = {
 	            allowedValues: typedByUser.concat(this.alwaysInclude).concat(this.alwaysExclude),
 	            maximumNumberOfValues: nbResults,
-	            completeFacetWithStandardValues: true,
+	            completeFacetWithStandardValues: this.facet.options.lookupField ? false : true,
 	            field: this.facet.options.field,
 	            sortCriteria: this.facet.options.sortCriteria || this.sortCriteria,
 	            injectionDepth: this.facet.options.injectionDepth,
@@ -10180,7 +10253,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    for (var _i = 1; _i < arguments.length; _i++) {
 	        args[_i - 1] = arguments[_i];
 	    }
-	    return state(element, args);
+	    if (args.length != 0) {
+	        return state.apply(undefined, [element].concat(args));
+	    }
+	    else {
+	        return state.apply(undefined, [element]);
+	    }
 	});
 	/**
 	 * Get the component bound on the given HTMLElement
@@ -10671,7 +10749,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var namedMethodHandler = Initialization.namedMethods[methodName];
 	        Assert_1.Assert.exists(namedMethodHandler);
 	        Initialization.logger.trace('Dispatching named method call of ' + methodName, element, args);
-	        return namedMethodHandler.apply(null, [element].concat(args));
+	        if (args.length != 0) {
+	            return namedMethodHandler.apply(null, [element].concat(args));
+	        }
+	        else {
+	            return namedMethodHandler.apply(null, [element]);
+	        }
 	    };
 	    Initialization.dispatchNamedMethodCallOrComponentCreation = function (token, element, args) {
 	        Assert_1.Assert.isNonEmptyString(token);
@@ -18266,10 +18349,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Strings_1 = __webpack_require__(28);
 	var FacetQueryController_1 = __webpack_require__(76);
 	var FacetSearch_1 = __webpack_require__(133);
-	var FacetSettings_1 = __webpack_require__(137);
-	var FacetSort_1 = __webpack_require__(138);
-	var FacetValuesList_1 = __webpack_require__(139);
-	var FacetHeader_1 = __webpack_require__(140);
+	var FacetSettings_1 = __webpack_require__(138);
+	var FacetSort_1 = __webpack_require__(139);
+	var FacetValuesList_1 = __webpack_require__(140);
+	var FacetHeader_1 = __webpack_require__(141);
 	var FacetUtils_1 = __webpack_require__(78);
 	var InitializationEvents_1 = __webpack_require__(43);
 	var QueryEvents_1 = __webpack_require__(46);
@@ -18277,21 +18360,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Dom_1 = __webpack_require__(55);
 	var AnalyticsActionListMeta_1 = __webpack_require__(102);
 	var Utils_1 = __webpack_require__(21);
-	var BreadcrumbValueElement_1 = __webpack_require__(141);
-	var BreadcrumbValuesList_1 = __webpack_require__(142);
-	var FacetValueElement_1 = __webpack_require__(134);
-	var FacetSearchValuesList_1 = __webpack_require__(143);
+	var BreadcrumbValueElement_1 = __webpack_require__(142);
+	var BreadcrumbValuesList_1 = __webpack_require__(143);
+	var FacetValueElement_1 = __webpack_require__(135);
+	var FacetSearchValuesList_1 = __webpack_require__(144);
 	var Defer_1 = __webpack_require__(25);
 	var QueryStateModel_1 = __webpack_require__(85);
 	var Model_1 = __webpack_require__(83);
 	var OmniboxEvents_1 = __webpack_require__(44);
-	var OmniboxValueElement_1 = __webpack_require__(144);
-	var OmniboxValuesList_1 = __webpack_require__(145);
-	var ValueElementRenderer_1 = __webpack_require__(136);
+	var OmniboxValueElement_1 = __webpack_require__(145);
+	var OmniboxValuesList_1 = __webpack_require__(146);
+	var ValueElementRenderer_1 = __webpack_require__(137);
 	var FacetSearchParameters_1 = __webpack_require__(77);
 	var Initialization_1 = __webpack_require__(89);
 	var BreadcrumbEvents_1 = __webpack_require__(40);
-	var ResponsiveFacets_1 = __webpack_require__(146);
+	var ResponsiveFacets_1 = __webpack_require__(147);
 	/**
 	 * This component displays a facet of the results for the current query. A facet consists of a list of values for a given field occurring in the results, ordered using a configurable criteria.<br/>
 	 * The list of values is obtained using a {@link IGroupByRequest} operation performed at the same time as the main query.<br/>
@@ -18652,7 +18735,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.element.appendChild(this.facetValuesList.build());
 	    };
 	    Facet.prototype.initFacetSearch = function () {
-	        this.facetSearch = new FacetSearch_1.FacetSearch(this, FacetSearchValuesList_1.FacetSearchValuesList);
+	        this.facetSearch = new FacetSearch_1.FacetSearch(this, FacetSearchValuesList_1.FacetSearchValuesList, this.root);
 	        this.element.appendChild(this.facetSearch.build());
 	    };
 	    Facet.prototype.facetValueHasChanged = function () {
@@ -19833,39 +19916,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Utils_1 = __webpack_require__(21);
 	var InitializationEvents_1 = __webpack_require__(43);
 	var DeviceUtils_1 = __webpack_require__(32);
+	var EventsUtils_1 = __webpack_require__(134);
 	var FacetSearchParameters_1 = __webpack_require__(77);
 	var AnalyticsActionListMeta_1 = __webpack_require__(102);
 	var Component_1 = __webpack_require__(90);
 	var DomUtils_1 = __webpack_require__(56);
+	var PopupUtils_1 = __webpack_require__(68);
 	var Strings_1 = __webpack_require__(28);
 	var Assert_1 = __webpack_require__(19);
 	var KeyboardUtils_1 = __webpack_require__(65);
 	var FacetUtils_1 = __webpack_require__(78);
 	var FacetValues_1 = __webpack_require__(132);
 	var StringUtils_1 = __webpack_require__(58);
-	var FacetValueElement_1 = __webpack_require__(134);
+	var FacetValueElement_1 = __webpack_require__(135);
 	/**
 	 * Used by the {@link Facet} component to render and handle the facet search part of each facet.
 	 */
 	var FacetSearch = (function () {
-	    function FacetSearch(facet, facetSearchValuesListKlass) {
+	    function FacetSearch(facet, facetSearchValuesListKlass, root) {
 	        var _this = this;
 	        this.facet = facet;
 	        this.facetSearchValuesListKlass = facetSearchValuesListKlass;
+	        this.root = root;
 	        this.showingFacetSearchWaitAnimation = false;
 	        this.moreValuesToFetch = true;
+	        this.searchBarIsAnimating = false;
 	        this.searchResults = document.createElement('ul');
 	        Dom_1.$$(this.searchResults).addClass('coveo-facet-search-results');
-	        this.onResize = function () {
+	        this.onResize = _.debounce(function () {
 	            if (!_this.isMobileDevice()) {
 	                _this.positionSearchResults();
 	            }
-	        };
-	        this.onDocClick = function (e) {
+	        }, 250);
+	        this.onDocumentClick = function (e) {
 	            _this.handleClickElsewhere(e);
 	        };
 	        window.addEventListener('resize', function () { return _this.onResize(); });
-	        document.addEventListener('click', function (e) { return _this.onDocClick(e); });
+	        document.addEventListener('click', function (e) { return _this.onDocumentClick(e); });
 	        Dom_1.$$(facet.root).on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
 	    }
 	    FacetSearch.prototype.isMobileDevice = function () {
@@ -19887,26 +19974,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Position the search results at the footer of the facet.
 	     */
 	    FacetSearch.prototype.positionSearchResults = function () {
-	        if (this.searchResults != null && this.searchResults.parentElement) {
-	            if (this.isMobileDevice()) {
-	                Dom_1.$$(this.searchResults).insertAfter(this.search);
+	        if (this.searchResults != null) {
+	            if (!this.isMobileDevice()) {
+	                this.searchResults.style.display = 'block';
+	                this.searchResults.style.width = this.facet.element.clientWidth - 40 + 'px';
+	            }
+	            var searchBar = Dom_1.$$(this.search);
+	            if (searchBar.css('display') == 'none' || this.searchBarIsAnimating) {
+	                var self_1 = this;
+	                EventsUtils_1.EventsUtils.addPrefixedEvent(this.search, 'AnimationEnd', function (evt) {
+	                    PopupUtils_1.PopupUtils.positionPopup(self_1.searchResults, self_1.search, self_1.root, self_1.root, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
+	                    EventsUtils_1.EventsUtils.removePrefixedEvent(self_1.search, 'AnimationEnd', this);
+	                });
 	            }
 	            else {
-	                this.searchResults.style.display = 'block';
-	                this.searchResults.style.position = 'absolute';
-	                this.searchResults.style.width = this.facet.element.clientWidth - 40 + 'px';
-	                this.searchResults.style.left = '20px';
-	                Dom_1.$$(this.searchResults).insertAfter(this.search);
+	                PopupUtils_1.PopupUtils.positionPopup(this.searchResults, this.search, this.root, this.root, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
 	            }
 	        }
 	    };
-	    /**
+	    /*
 	     * Dismiss the search results
 	     */
 	    FacetSearch.prototype.completelyDismissSearch = function () {
 	        this.cancelAnyPendingSearchOperation();
 	        this.facet.unfadeInactiveValuesInMainList();
 	        Dom_1.$$(this.searchResults).empty();
+	        Dom_1.$$(this.searchResults).detach();
 	        this.moreValuesToFetch = true;
 	        Dom_1.$$(this.search).removeClass('coveo-facet-search-no-results');
 	        Dom_1.$$(this.facet.element).removeClass('coveo-facet-searching');
@@ -19987,6 +20080,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Dom_1.$$(this.input).on('keyup', function (e) { return _this.handleFacetSearchKeyUp(e); });
 	        Dom_1.$$(this.clear).on('click', function (e) { return _this.handleFacetSearchClear(); });
 	        Dom_1.$$(this.input).on('focus', function (e) { return _this.handleFacetSearchFocus(); });
+	        this.detectSearchBarAnimation();
 	        return this.search;
 	    };
 	    FacetSearch.prototype.buildSearchMobile = function () {
@@ -20025,7 +20119,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    FacetSearch.prototype.handleNuke = function () {
 	        window.removeEventListener('resize', this.onResize);
-	        document.removeEventListener('click', this.onDocClick);
+	        document.removeEventListener('click', this.onDocumentClick);
 	    };
 	    FacetSearch.prototype.handleFacetSearchFocus = function () {
 	        if (!this.isMobileDevice()) {
@@ -20046,6 +20140,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.input.value = '';
 	        Dom_1.$$(this.clear).hide();
 	        this.completelyDismissSearch();
+	    };
+	    FacetSearch.prototype.handleDocumentScroll = function () {
+	        if (this.currentlyDisplayedResults) {
+	            this.positionSearchResults();
+	        }
 	    };
 	    FacetSearch.prototype.showOrHideClearElement = function (isEmpty) {
 	        if (!isEmpty) {
@@ -20244,7 +20343,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return params;
 	    };
 	    FacetSearch.prototype.showSearchResultsElement = function () {
-	        this.facet.root.appendChild(this.searchResults);
 	        this.positionSearchResults();
 	    };
 	    FacetSearch.prototype.hideSearchResultsElement = function () {
@@ -20354,6 +20452,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Dom_1.$$(this.wait).hide();
 	        this.showingFacetSearchWaitAnimation = false;
 	    };
+	    FacetSearch.prototype.detectSearchBarAnimation = function () {
+	        var _this = this;
+	        EventsUtils_1.EventsUtils.addPrefixedEvent(this.search, 'AnimationStart', function (event) {
+	            if (event.animationName == 'grow') {
+	                _this.searchBarIsAnimating = true;
+	            }
+	        });
+	        EventsUtils_1.EventsUtils.addPrefixedEvent(this.search, 'AnimationEnd', function (event) {
+	            if (event.animationName == 'grow') {
+	                _this.searchBarIsAnimating = false;
+	            }
+	        });
+	    };
 	    return FacetSearch;
 	}());
 	exports.FacetSearch = FacetSearch;
@@ -20361,6 +20472,39 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var _ = __webpack_require__(22);
+	var EventsUtils = (function () {
+	    function EventsUtils() {
+	    }
+	    // eventName must be in PascalCase
+	    EventsUtils.addPrefixedEvent = function (element, pascalCaseEventName, callback) {
+	        _.each(this.prefixes, function (prefix) {
+	            if (prefix == '') {
+	                pascalCaseEventName = pascalCaseEventName.toLowerCase();
+	            }
+	            element.addEventListener(prefix + pascalCaseEventName, callback, false);
+	        });
+	    };
+	    // eventName must be in PascalCase
+	    EventsUtils.removePrefixedEvent = function (element, pascalCaseEventName, callback) {
+	        _.each(this.prefixes, function (prefix) {
+	            if (prefix == '') {
+	                pascalCaseEventName = pascalCaseEventName.toLowerCase();
+	            }
+	            element.removeEventListener(prefix + pascalCaseEventName, callback, false);
+	        });
+	    };
+	    EventsUtils.prefixes = ['webkit', 'moz', 'MS', 'o', ''];
+	    return EventsUtils;
+	}());
+	exports.EventsUtils = EventsUtils;
+
+
+/***/ },
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
@@ -20372,7 +20516,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	var QueryEvents_1 = __webpack_require__(46);
 	var Dom_1 = __webpack_require__(55);
-	var ValueElement_1 = __webpack_require__(135);
+	var ValueElement_1 = __webpack_require__(136);
 	var FacetValueElement = (function (_super) {
 	    __extends(FacetValueElement, _super);
 	    function FacetValueElement(facet, facetValue, keepDisplayedValueNextTime) {
@@ -20396,11 +20540,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ValueElementRenderer_1 = __webpack_require__(136);
+	var ValueElementRenderer_1 = __webpack_require__(137);
 	var Utils_1 = __webpack_require__(21);
 	var AnalyticsActionListMeta_1 = __webpack_require__(102);
 	var Dom_1 = __webpack_require__(55);
@@ -20560,7 +20704,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20760,7 +20904,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 137 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20769,7 +20913,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FacetSort_1 = __webpack_require__(138);
+	var FacetSort_1 = __webpack_require__(139);
 	var Dom_1 = __webpack_require__(55);
 	var LocalStorageUtils_1 = __webpack_require__(66);
 	var Utils_1 = __webpack_require__(21);
@@ -20889,7 +21033,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    FacetSettings.prototype.open = function () {
 	        var _this = this;
-	        PopupUtils_1.PopupUtils.positionPopup(this.settingsPopup, this.settingsButton, this.facet.root, this.getPopupAlignment());
+	        PopupUtils_1.PopupUtils.positionPopup(this.settingsPopup, this.settingsButton, this.facet.root, this.facet.root, this.getPopupAlignment());
 	        Dom_1.$$(this.hideSection).toggle(!Dom_1.$$(this.facet.element).hasClass('coveo-facet-collapsed'));
 	        Dom_1.$$(this.showSection).toggle(Dom_1.$$(this.facet.element).hasClass('coveo-facet-collapsed'));
 	        if (this.facet.options.enableSettingsFacetState) {
@@ -21252,12 +21396,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Strings_1 = __webpack_require__(28);
-	var FacetSettings_1 = __webpack_require__(137);
+	var FacetSettings_1 = __webpack_require__(138);
 	var Utils_1 = __webpack_require__(21);
 	var StringUtils_1 = __webpack_require__(58);
 	var FacetSort = (function () {
@@ -21381,12 +21525,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	"use strict";
-	var FacetValueElement_1 = __webpack_require__(134);
+	var FacetValueElement_1 = __webpack_require__(135);
 	var Dom_1 = __webpack_require__(55);
 	var FacetValues_1 = __webpack_require__(132);
 	var Utils_1 = __webpack_require__(21);
@@ -21522,7 +21666,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 140 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
@@ -21723,7 +21867,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 141 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
@@ -21784,7 +21928,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 142 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21910,7 +22054,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -21936,7 +22080,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
@@ -21946,7 +22090,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var ValueElement_1 = __webpack_require__(135);
+	var ValueElement_1 = __webpack_require__(136);
 	var OmniboxValueElement = (function (_super) {
 	    __extends(OmniboxValueElement, _super);
 	    function OmniboxValueElement(facet, facetValue, eventArg, onSelect, onExclude) {
@@ -21964,7 +22108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22067,17 +22211,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Dom_1 = __webpack_require__(55);
 	var InitializationEvents_1 = __webpack_require__(43);
-	var ResponsiveComponentsManager_1 = __webpack_require__(147);
-	var EventsUtils_1 = __webpack_require__(150);
+	var ResponsiveComponentsManager_1 = __webpack_require__(148);
+	var EventsUtils_1 = __webpack_require__(134);
 	var SearchInterface_1 = __webpack_require__(91);
 	var Component_1 = __webpack_require__(90);
-	var Utils_1 = __webpack_require__(21);
 	var Logger_1 = __webpack_require__(20);
 	var Strings_1 = __webpack_require__(28);
 	var PopupUtils_1 = __webpack_require__(68);
@@ -22095,6 +22238,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.tabSection = Dom_1.$$(this.coveoRoot.find('.coveo-tab-section'));
 	        this.buildDropdownContent();
 	        this.buildDropdownHeader();
+	        this.bindDropdownContentEvents();
 	        this.bindDropdownHeaderEvents();
 	        this.bindDropdownContentEvents();
 	        this.buildPopupBackground();
@@ -22171,15 +22315,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    ResponsiveFacets.prototype.bindDropdownContentEvents = function () {
 	        var _this = this;
-	        this.documentClickListener = function (event) {
-	            if (Utils_1.Utils.isHtmlElement(event.target)) {
-	                var eventTarget = Dom_1.$$(event.target);
-	                if (_this.shouldCloseFacetDropdown(eventTarget)) {
-	                    _this.closeDropdown();
+	        this.dropdownContent.on('scroll', _.debounce(function () {
+	            _.each(_this.facets, function (facet) {
+	                var facetSearch = facet.facetSearch;
+	                if (facetSearch && facetSearch.currentlyDisplayedResults && !_this.isFacetSearchScrolledIntoView(facetSearch.search)) {
+	                    facetSearch.completelyDismissSearch();
 	                }
-	            }
-	        };
-	        Dom_1.$$(document.documentElement).on('click', this.documentClickListener);
+	                else if (facetSearch && facet.facetSearch.currentlyDisplayedResults) {
+	                    facet.facetSearch.positionSearchResults();
+	                }
+	            });
+	        }, ResponsiveFacets.DEBOUNCE_SCROLL_WAIT));
 	    };
 	    ResponsiveFacets.prototype.buildPopupBackground = function () {
 	        var _this = this;
@@ -22226,7 +22372,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            width = ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH;
 	        }
 	        this.dropdownContent.el.style.width = width.toString() + 'px';
-	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
+	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
 	    };
 	    ResponsiveFacets.prototype.closeDropdown = function () {
 	        // Because of DOM manipulation, sometimes the animation will not trigger. Accessing the computed styles makes sure
@@ -22237,6 +22383,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.dropdownContent.el.style.display = 'none';
 	        this.dropdownContent.removeClass('coveo-facet-dropdown-content');
 	        this.dropdownHeader.removeClass('coveo-dropdown-header-active');
+	        this.dismissFacetSearches();
+	    };
+	    ResponsiveFacets.prototype.dismissFacetSearches = function () {
+	        _.each(this.facets, function (facet) {
+	            if (facet.facetSearch && facet.facetSearch.currentlyDisplayedResults) {
+	                facet.facetSearch.completelyDismissSearch();
+	            }
+	        });
 	    };
 	    ResponsiveFacets.prototype.cleanUpDropdown = function () {
 	        this.closeDropdown();
@@ -22251,9 +22405,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    };
 	    ResponsiveFacets.prototype.disableFacetPreservePosition = function () {
-	        _.each(this.facets, function (facet) {
-	            facet.options.preservePosition = false;
-	        });
+	        _.each(this.facets, function (facet) { return facet.options.preservePosition = false; });
 	    };
 	    ResponsiveFacets.prototype.bindNukeEvents = function () {
 	        var _this = this;
@@ -22262,14 +22414,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    };
 	    ResponsiveFacets.prototype.drawFacetSliderGraphs = function () {
-	        _.each(this.facetSliders, function (facetSlider) {
-	            facetSlider.drawDelayedGraphData();
-	        });
+	        _.each(this.facetSliders, function (facetSlider) { return facetSlider.drawDelayedGraphData(); });
+	    };
+	    ResponsiveFacets.prototype.isFacetSearchScrolledIntoView = function (facetSearchElement) {
+	        var facetTop = facetSearchElement.getBoundingClientRect().top;
+	        var facetBottom = facetSearchElement.getBoundingClientRect().bottom;
+	        var dropdownTop = this.dropdownContent.el.getBoundingClientRect().top;
+	        var dropdownBottom = this.dropdownContent.el.getBoundingClientRect().bottom;
+	        dropdownTop = dropdownTop >= 0 ? dropdownTop : 0;
+	        var isVisible = (facetTop >= dropdownTop) && (facetBottom <= dropdownBottom);
+	        return isVisible;
 	    };
 	    ResponsiveFacets.ACTIVE_FACET_HEADER_Z_INDEX = '20';
 	    ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH = 280;
 	    ResponsiveFacets.FACET_DROPDOWN_WIDTH_RATIO = 0.35; // Used to set the width relative to the coveo root.
 	    ResponsiveFacets.TRANSPARENT_BACKGROUND_OPACITY = '0.9';
+	    ResponsiveFacets.DEBOUNCE_SCROLL_WAIT = 150;
 	    ResponsiveFacets.ROOT_MIN_WIDTH = 800;
 	    return ResponsiveFacets;
 	}());
@@ -22277,14 +22437,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Dom_1 = __webpack_require__(55);
 	var InitializationEvents_1 = __webpack_require__(43);
 	var Component_1 = __webpack_require__(90);
-	var Tab_1 = __webpack_require__(148);
+	var Tab_1 = __webpack_require__(149);
 	var Facet_1 = __webpack_require__(131);
 	var FacetSlider_1 = __webpack_require__(151);
 	var _ = __webpack_require__(22);
@@ -22425,7 +22585,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22434,7 +22594,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var ResponsiveTabs_ts_1 = __webpack_require__(149);
+	var ResponsiveTabs_ts_1 = __webpack_require__(150);
 	var Component_1 = __webpack_require__(90);
 	var ComponentOptions_1 = __webpack_require__(92);
 	var Model_1 = __webpack_require__(83);
@@ -22682,19 +22842,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Dom_1 = __webpack_require__(55);
 	var InitializationEvents_1 = __webpack_require__(43);
 	var PopupUtils_1 = __webpack_require__(68);
-	var EventsUtils_1 = __webpack_require__(150);
+	var EventsUtils_1 = __webpack_require__(134);
 	var Utils_1 = __webpack_require__(21);
 	var Logger_1 = __webpack_require__(20);
 	var Component_1 = __webpack_require__(90);
 	var SearchInterface_1 = __webpack_require__(91);
-	var ResponsiveComponentsManager_1 = __webpack_require__(147);
+	var ResponsiveComponentsManager_1 = __webpack_require__(148);
 	var Strings_1 = __webpack_require__(28);
 	var _ = __webpack_require__(22);
 	var ResponsiveTabs = (function () {
@@ -22975,7 +23135,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    };
 	    ResponsiveTabs.prototype.positionPopup = function () {
-	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.dropdownHeader.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERLEFT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
+	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.dropdownHeader.el, this.coveoRoot.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERLEFT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
 	    };
 	    ResponsiveTabs.prototype.getTabsInTabSection = function () {
 	        var _this = this;
@@ -23004,39 +23164,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 150 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var _ = __webpack_require__(22);
-	var EventsUtils = (function () {
-	    function EventsUtils() {
-	    }
-	    // eventName must be in CamelCase
-	    EventsUtils.addPrefixedEvent = function (element, eventName, callback) {
-	        _.each(this.prefixes, function (prefix) {
-	            if (prefix == '') {
-	                eventName = eventName.toLowerCase();
-	            }
-	            element.addEventListener(prefix + eventName, callback, false);
-	        });
-	    };
-	    // eventName must be in CamelCase
-	    EventsUtils.removePrefixedEvent = function (element, eventName, callback) {
-	        _.each(this.prefixes, function (prefix) {
-	            if (prefix == '') {
-	                eventName = eventName.toLowerCase();
-	            }
-	            element.removeEventListener(prefix + eventName, callback, false);
-	        });
-	    };
-	    EventsUtils.prefixes = ['webkit', 'moz', 'MS', 'o', ''];
-	    return EventsUtils;
-	}());
-	exports.EventsUtils = EventsUtils;
-
-
-/***/ },
 /* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -23051,8 +23178,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Slider_1 = __webpack_require__(152);
 	var Component_1 = __webpack_require__(90);
 	var ComponentOptions_1 = __webpack_require__(92);
-	var ResponsiveFacets_1 = __webpack_require__(146);
-	var FacetHeader_1 = __webpack_require__(140);
+	var ResponsiveFacets_1 = __webpack_require__(147);
+	var FacetHeader_1 = __webpack_require__(141);
 	var Strings_1 = __webpack_require__(28);
 	var InitializationEvents_1 = __webpack_require__(43);
 	var FeatureDetectionUtils_1 = __webpack_require__(61);
@@ -36141,7 +36268,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.facetQueryController = new HierarchicalFacetQueryController_1.HierarchicalFacetQueryController(this);
 	    };
 	    HierarchicalFacet.prototype.initFacetSearch = function () {
-	        this.facetSearch = new HierarchicalFacetSearch_1.HierarchicalFacetSearch(this, HierarchicalFacetSearchValuesList_1.HierarchicalFacetSearchValuesList);
+	        this.facetSearch = new HierarchicalFacetSearch_1.HierarchicalFacetSearch(this, HierarchicalFacetSearchValuesList_1.HierarchicalFacetSearchValuesList, this.root);
 	        this.element.appendChild(this.facetSearch.build());
 	    };
 	    HierarchicalFacet.prototype.handleDeferredQuerySuccess = function (data) {
@@ -36611,7 +36738,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FacetValuesList_1 = __webpack_require__(139);
+	var FacetValuesList_1 = __webpack_require__(140);
 	var HierarchicalFacetValuesList = (function (_super) {
 	    __extends(HierarchicalFacetValuesList, _super);
 	    function HierarchicalFacetValuesList(facet, facetValueElementKlass) {
@@ -36638,7 +36765,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FacetSearchValuesList_1 = __webpack_require__(143);
+	var FacetSearchValuesList_1 = __webpack_require__(144);
 	var HierarchicalFacetSearchValueElement_1 = __webpack_require__(169);
 	var HierarchicalFacetSearchValuesList = (function (_super) {
 	    __extends(HierarchicalFacetSearchValuesList, _super);
@@ -36661,7 +36788,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FacetValueElement_1 = __webpack_require__(134);
+	var FacetValueElement_1 = __webpack_require__(135);
 	var HierarchicalFacetSearchValueElement = (function (_super) {
 	    __extends(HierarchicalFacetSearchValueElement, _super);
 	    function HierarchicalFacetSearchValueElement(facet, facetValue, keepDisplayedValueNextTime) {
@@ -36700,8 +36827,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Utils_1 = __webpack_require__(21);
 	var HierarchicalFacetSearch = (function (_super) {
 	    __extends(HierarchicalFacetSearch, _super);
-	    function HierarchicalFacetSearch(facet, facetSearchValuesListKlass) {
-	        _super.call(this, facet, facetSearchValuesListKlass);
+	    function HierarchicalFacetSearch(facet, facetSearchValuesListKlass, root) {
+	        _super.call(this, facet, facetSearchValuesListKlass, root);
 	        this.facet = facet;
 	        this.facetSearchValuesListKlass = facetSearchValuesListKlass;
 	    }
@@ -36771,7 +36898,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var BreadcrumbValuesList_1 = __webpack_require__(142);
+	var BreadcrumbValuesList_1 = __webpack_require__(143);
 	var HierarchicalBreadcrumbValueElement_1 = __webpack_require__(172);
 	var HierarchicalBreadcrumbValuesList = (function (_super) {
 	    __extends(HierarchicalBreadcrumbValuesList, _super);
@@ -36796,7 +36923,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var BreadcrumbValueElement_1 = __webpack_require__(141);
+	var BreadcrumbValueElement_1 = __webpack_require__(142);
 	var _ = __webpack_require__(22);
 	var HierarchicalBreadcrumbValueElement = (function (_super) {
 	    __extends(HierarchicalBreadcrumbValueElement, _super);
@@ -36832,7 +36959,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OmniboxValuesList_1 = __webpack_require__(145);
+	var OmniboxValuesList_1 = __webpack_require__(146);
 	var OmniboxHierarchicalValueElement_1 = __webpack_require__(174);
 	var OmniboxHierarchicalValuesList = (function (_super) {
 	    __extends(OmniboxHierarchicalValuesList, _super);
@@ -36858,7 +36985,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OmniboxValueElement_1 = __webpack_require__(144);
+	var OmniboxValueElement_1 = __webpack_require__(145);
 	var OmniboxHierarchicalValueElement = (function (_super) {
 	    __extends(OmniboxHierarchicalValueElement, _super);
 	    function OmniboxHierarchicalValueElement(facet, facetValue, eventArg) {
@@ -36891,7 +37018,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FacetValueElement_1 = __webpack_require__(134);
+	var FacetValueElement_1 = __webpack_require__(135);
 	var HierarchicalFacetValueElement = (function (_super) {
 	    __extends(HierarchicalFacetValueElement, _super);
 	    function HierarchicalFacetValueElement(facet, facetValue, keepDisplayedValueNextTime) {
@@ -40094,7 +40221,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.menu = this.buildMenu();
 	        Dom_1.$$(this.menu).on('mouseleave', function () { return _this.mouseleave(); });
 	        Dom_1.$$(this.menu).on('mouseenter', function () { return _this.mouseenter(); });
-	        PopupUtils_1.PopupUtils.positionPopup(this.menu, this.element, this.root, this.getPopupPositioning());
+	        PopupUtils_1.PopupUtils.positionPopup(this.menu, this.element, this.root, this.root, this.getPopupPositioning());
 	    };
 	    /**
 	     * Close the settings popup
@@ -42051,7 +42178,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Model_1 = __webpack_require__(83);
 	var QueryStateModel_1 = __webpack_require__(85);
 	var Utils_1 = __webpack_require__(21);
-	var Tab_1 = __webpack_require__(148);
+	var Tab_1 = __webpack_require__(149);
 	var Assert_1 = __webpack_require__(19);
 	var Initialization_1 = __webpack_require__(89);
 	var Dom_1 = __webpack_require__(55);
@@ -42468,13 +42595,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	function jQueryIsDefined() {
 	    return window['$'] != undefined && window['$'].fn != undefined && window['$'].fn.jquery != undefined;
 	}
+	exports.jQueryIsDefined = jQueryIsDefined;
 
 
 /***/ },
 /* 210 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+	var CoveoJQuery_1 = __webpack_require__(209);
 	if (underscoreIsDefined()) {
 	    setCoveoUnderscore();
 	}
@@ -42485,6 +42614,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            setCoveoUnderscore();
 	        }
 	    });
+	    if (CoveoJQuery_1.jQueryIsDefined()) {
+	        $(function () {
+	            if (underscoreIsDefined()) {
+	                setCoveoUnderscore();
+	            }
+	        });
+	    }
 	}
 	function setCoveoUnderscore() {
 	    if (window['Coveo'] == undefined) {
@@ -43043,7 +43179,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.message.toggleClass('coveo-subscriptions-messages-error', error);
 	        var closeButton = this.message.find('.coveo-subscriptions-messages-info-close');
 	        Dom_1.$$(closeButton).on('click', function () { return _this.close(); });
-	        PopupUtils_1.PopupUtils.positionPopup(this.message.el, dom.el, this.root, {
+	        PopupUtils_1.PopupUtils.positionPopup(this.message.el, dom.el, this.root, this.root, {
 	            horizontal: PopupUtils_1.HorizontalAlignment.INNERLEFT,
 	            vertical: PopupUtils_1.VerticalAlignment.BOTTOM,
 	            verticalOffset: 12,
