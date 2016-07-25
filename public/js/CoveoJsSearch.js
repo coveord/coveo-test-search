@@ -718,6 +718,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "Attach": "Attach",
 	    "Attached": "Attached",
 	    "Detach": "Detach",
+	    "Details": "Details",
 	    "AdditionalFilters": "Additional filters",
 	    "SelectNonContextualSearch": "Remove the context from the current record to broaden your search",
 	    "CopyPasteToSupport": "Copy paste this message to Coveo Support team for more information.",
@@ -2164,8 +2165,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.22',
-	    'product': '1.667.22',
+	    'lib': '1.667.23',
+	    'product': '1.667.23',
 	    'supportedApiVersion': 2
 	};
 
@@ -7297,9 +7298,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	var PopupUtils = (function () {
 	    function PopupUtils() {
 	    }
-	    PopupUtils.positionPopup = function (popUp, nextTo, appendTo, boundary, desiredPosition, checkForBoundary) {
+	    PopupUtils.positionPopup = function (popUp, nextTo, boundary, desiredPosition, appendTo, checkForBoundary) {
 	        if (checkForBoundary === void 0) { checkForBoundary = 0; }
-	        Dom_1.$$(appendTo).prepend(popUp);
+	        if (appendTo) {
+	            Dom_1.$$(appendTo).prepend(popUp);
+	        }
 	        desiredPosition.verticalOffset = desiredPosition.verticalOffset ? desiredPosition.verticalOffset : 0;
 	        desiredPosition.horizontalOffset = desiredPosition.horizontalOffset ? desiredPosition.horizontalOffset : 0;
 	        var popUpPosition = Dom_1.$$(nextTo).offset();
@@ -7323,7 +7326,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            if (checkBoundary.vertical != 'ok' || checkBoundary.horizontal != 'ok') {
 	                var newDesiredPosition = PopupUtils.alignInsideBoundary(desiredPosition, checkBoundary);
-	                PopupUtils.positionPopup(popUp, nextTo, boundary, appendTo, newDesiredPosition, checkForBoundary + 1);
+	                PopupUtils.positionPopup(popUp, nextTo, boundary, newDesiredPosition, appendTo, checkForBoundary + 1);
 	            }
 	        }
 	    };
@@ -19944,7 +19947,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.searchResults = document.createElement('ul');
 	        Dom_1.$$(this.searchResults).addClass('coveo-facet-search-results');
 	        this.onResize = _.debounce(function () {
-	            if (!_this.isMobileDevice()) {
+	            if (!_this.isMobileDevice() && !_this.facet.searchInterface.isSmallInterface()) {
 	                _this.positionSearchResults();
 	            }
 	        }, 250);
@@ -19973,22 +19976,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Position the search results at the footer of the facet.
 	     */
-	    FacetSearch.prototype.positionSearchResults = function () {
+	    FacetSearch.prototype.positionSearchResults = function (nextTo) {
+	        if (nextTo === void 0) { nextTo = this.search; }
 	        if (this.searchResults != null) {
 	            if (!this.isMobileDevice()) {
 	                this.searchResults.style.display = 'block';
 	                this.searchResults.style.width = this.facet.element.clientWidth - 40 + 'px';
 	            }
+	            if (Dom_1.$$(this.searchResults).css('display') == 'none') {
+	                this.searchResults.style.display = '';
+	            }
 	            var searchBar = Dom_1.$$(this.search);
 	            if (searchBar.css('display') == 'none' || this.searchBarIsAnimating) {
+	                if (Dom_1.$$(this.searchResults).css('display') == 'none') {
+	                    this.searchResults.style.display = '';
+	                }
 	                var self_1 = this;
 	                EventsUtils_1.EventsUtils.addPrefixedEvent(this.search, 'AnimationEnd', function (evt) {
-	                    PopupUtils_1.PopupUtils.positionPopup(self_1.searchResults, self_1.search, self_1.root, self_1.root, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
+	                    PopupUtils_1.PopupUtils.positionPopup(self_1.searchResults, nextTo, self_1.root, { horizontal: PopupUtils_1.HorizontalAlignment.CENTER, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
 	                    EventsUtils_1.EventsUtils.removePrefixedEvent(self_1.search, 'AnimationEnd', this);
 	                });
 	            }
 	            else {
-	                PopupUtils_1.PopupUtils.positionPopup(this.searchResults, this.search, this.root, this.root, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
+	                PopupUtils_1.PopupUtils.positionPopup(this.searchResults, nextTo, this.root, { horizontal: PopupUtils_1.HorizontalAlignment.CENTER, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
 	            }
 	        }
 	    };
@@ -19999,7 +20009,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.cancelAnyPendingSearchOperation();
 	        this.facet.unfadeInactiveValuesInMainList();
 	        Dom_1.$$(this.searchResults).empty();
-	        Dom_1.$$(this.searchResults).detach();
 	        this.moreValuesToFetch = true;
 	        Dom_1.$$(this.search).removeClass('coveo-facet-search-no-results');
 	        Dom_1.$$(this.facet.element).removeClass('coveo-facet-searching');
@@ -20081,6 +20090,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Dom_1.$$(this.clear).on('click', function (e) { return _this.handleFacetSearchClear(); });
 	        Dom_1.$$(this.input).on('focus', function (e) { return _this.handleFacetSearchFocus(); });
 	        this.detectSearchBarAnimation();
+	        this.root.appendChild(this.searchResults);
+	        this.searchResults.style.display = 'none';
 	        return this.search;
 	    };
 	    FacetSearch.prototype.buildSearchMobile = function () {
@@ -20346,7 +20357,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.positionSearchResults();
 	    };
 	    FacetSearch.prototype.hideSearchResultsElement = function () {
-	        this.searchResults.remove();
+	        this.searchResults.style.display = 'none';
 	    };
 	    FacetSearch.prototype.highlightCurrentQueryWithinSearchResults = function () {
 	        var _this = this;
@@ -21033,7 +21044,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    FacetSettings.prototype.open = function () {
 	        var _this = this;
-	        PopupUtils_1.PopupUtils.positionPopup(this.settingsPopup, this.settingsButton, this.facet.root, this.facet.root, this.getPopupAlignment());
+	        PopupUtils_1.PopupUtils.positionPopup(this.settingsPopup, this.settingsButton, this.facet.root, this.getPopupAlignment(), this.facet.root);
 	        Dom_1.$$(this.hideSection).toggle(!Dom_1.$$(this.facet.element).hasClass('coveo-facet-collapsed'));
 	        Dom_1.$$(this.showSection).toggle(Dom_1.$$(this.facet.element).hasClass('coveo-facet-collapsed'));
 	        if (this.facet.options.enableSettingsFacetState) {
@@ -22319,7 +22330,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _.each(_this.facets, function (facet) {
 	                var facetSearch = facet.facetSearch;
 	                if (facetSearch && facetSearch.currentlyDisplayedResults && !_this.isFacetSearchScrolledIntoView(facetSearch.search)) {
-	                    facetSearch.completelyDismissSearch();
+	                    facet.facetSearch.positionSearchResults(_this.dropdownContent.el);
 	                }
 	                else if (facetSearch && facet.facetSearch.currentlyDisplayedResults) {
 	                    facet.facetSearch.positionSearchResults();
@@ -22372,7 +22383,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            width = ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH;
 	        }
 	        this.dropdownContent.el.style.width = width.toString() + 'px';
-	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
+	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM }, this.coveoRoot.el);
 	    };
 	    ResponsiveFacets.prototype.closeDropdown = function () {
 	        // Because of DOM manipulation, sometimes the animation will not trigger. Accessing the computed styles makes sure
@@ -22422,14 +22433,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var dropdownTop = this.dropdownContent.el.getBoundingClientRect().top;
 	        var dropdownBottom = this.dropdownContent.el.getBoundingClientRect().bottom;
 	        dropdownTop = dropdownTop >= 0 ? dropdownTop : 0;
-	        var isVisible = (facetTop >= dropdownTop) && (facetBottom <= dropdownBottom);
-	        return isVisible;
+	        return (facetTop >= dropdownTop) && (facetBottom <= dropdownBottom);
 	    };
 	    ResponsiveFacets.ACTIVE_FACET_HEADER_Z_INDEX = '20';
 	    ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH = 280;
 	    ResponsiveFacets.FACET_DROPDOWN_WIDTH_RATIO = 0.35; // Used to set the width relative to the coveo root.
 	    ResponsiveFacets.TRANSPARENT_BACKGROUND_OPACITY = '0.9';
-	    ResponsiveFacets.DEBOUNCE_SCROLL_WAIT = 150;
+	    ResponsiveFacets.DEBOUNCE_SCROLL_WAIT = 250;
 	    ResponsiveFacets.ROOT_MIN_WIDTH = 800;
 	    return ResponsiveFacets;
 	}());
@@ -23135,7 +23145,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    };
 	    ResponsiveTabs.prototype.positionPopup = function () {
-	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.dropdownHeader.el, this.coveoRoot.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERLEFT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM });
+	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.dropdownHeader.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERLEFT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM }, this.coveoRoot.el);
 	    };
 	    ResponsiveTabs.prototype.getTabsInTabSection = function () {
 	        var _this = this;
@@ -38526,12 +38536,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * Specifies the caption to show on the minimize link (when the table is expanded).<br/>
 	         * By default, it is set to the localized version of "Details".
 	         */
-	        expandedTitle: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: 'Details'.toLocaleString(), depend: 'allowMinimization' }),
+	        expandedTitle: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: 'Details', depend: 'allowMinimization' }),
 	        /**
 	         * Specifies the caption to show on the expand link (when the table is minimized).<br/>
 	         * By default, it is set to the localized version of "Details".
 	         */
-	        minimizedTitle: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: 'Details'.toLocaleString(), depend: 'allowMinimization' }),
+	        minimizedTitle: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: 'Details', depend: 'allowMinimization' }),
 	        /**
 	         * Specifies whether the table is minimized by default.
 	         */
@@ -40221,7 +40231,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.menu = this.buildMenu();
 	        Dom_1.$$(this.menu).on('mouseleave', function () { return _this.mouseleave(); });
 	        Dom_1.$$(this.menu).on('mouseenter', function () { return _this.mouseenter(); });
-	        PopupUtils_1.PopupUtils.positionPopup(this.menu, this.element, this.root, this.root, this.getPopupPositioning());
+	        PopupUtils_1.PopupUtils.positionPopup(this.menu, this.element, this.root, this.getPopupPositioning(), this.root);
 	    };
 	    /**
 	     * Close the settings popup
@@ -43179,12 +43189,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.message.toggleClass('coveo-subscriptions-messages-error', error);
 	        var closeButton = this.message.find('.coveo-subscriptions-messages-info-close');
 	        Dom_1.$$(closeButton).on('click', function () { return _this.close(); });
-	        PopupUtils_1.PopupUtils.positionPopup(this.message.el, dom.el, this.root, this.root, {
+	        PopupUtils_1.PopupUtils.positionPopup(this.message.el, dom.el, this.root, {
 	            horizontal: PopupUtils_1.HorizontalAlignment.INNERLEFT,
 	            vertical: PopupUtils_1.VerticalAlignment.BOTTOM,
 	            verticalOffset: 12,
 	            horizontalClip: true
-	        });
+	        }, this.root);
 	        this.startCloseDelay();
 	        this.message.on('mouseleave', function () {
 	            _this.startCloseDelay();
