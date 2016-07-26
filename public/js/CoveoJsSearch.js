@@ -2165,8 +2165,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.23',
-	    'product': '1.667.23',
+	    'lib': '1.667.24',
+	    'product': '1.667.24',
 	    'supportedApiVersion': 2
 	};
 
@@ -7300,8 +7300,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    PopupUtils.positionPopup = function (popUp, nextTo, boundary, desiredPosition, appendTo, checkForBoundary) {
 	        if (checkForBoundary === void 0) { checkForBoundary = 0; }
+	        popUp.style.position = 'absolute';
 	        if (appendTo) {
-	            Dom_1.$$(appendTo).prepend(popUp);
+	            Dom_1.$$(appendTo).append(popUp);
 	        }
 	        desiredPosition.verticalOffset = desiredPosition.verticalOffset ? desiredPosition.verticalOffset : 0;
 	        desiredPosition.horizontalOffset = desiredPosition.horizontalOffset ? desiredPosition.horizontalOffset : 0;
@@ -7332,7 +7333,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    PopupUtils.finalAdjustement = function (popUpOffSet, popUpPosition, popUp, desiredPosition) {
 	        var position = Dom_1.$$(popUp).position();
-	        popUp.style.position = 'absolute';
 	        popUp.style.top = (position.top + desiredPosition.verticalOffset) - (popUpOffSet.top - popUpPosition.top) + 'px';
 	        popUp.style.left = (position.left + desiredPosition.horizontalOffset) - (popUpOffSet.left - popUpPosition.left) + 'px';
 	    };
