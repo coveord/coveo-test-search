@@ -2165,8 +2165,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.25',
-	    'product': '1.667.25',
+	    'lib': '1.667.26',
+	    'product': '1.667.26',
 	    'supportedApiVersion': 2
 	};
 
@@ -11905,7 +11905,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (loadFromAttribute != null) {
 	                value = loadFromAttribute(element, name_1, optionDefinition);
 	            }
-	            if (_.isEmpty(value) && values[name_1] != undefined) {
+	            if (Utils_1.Utils.isNullOrUndefined(value) && values[name_1] != undefined) {
 	                value = values[name_1];
 	            }
 	            if (value == null && values[name_1] == undefined) {
