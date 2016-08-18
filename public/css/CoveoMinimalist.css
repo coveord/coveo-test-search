@@ -3982,8 +3982,7 @@
   .coveo-sprites-searchButton-searchbutton,
   .ie8or9 .coveo-executing-query .CoveoSearchButton > .coveo-icon,
   .CoveoSearchButton > .coveo-icon,
-  .coveo-sprites-menu-menu_sortby,
-  .coveo-facet-settings-section-sort .coveo-icon,
+  .coveo-sprites-menu-menu_searchin,
   .coveo-sprites-common-delete,
   .coveo-sprites-common-doritos,
   .coveo-sprites-box-icon_external,
@@ -4089,22 +4088,23 @@
   .coveo-sprites-fileType-formats-zip,
   .coveo-icon.filetype.zip,
   .coveo-icon.sysfiletype.zip,
+  .coveo-sprites-pager-next,
+  .coveo-pager-next > a > span,
+  .coveo-sprites-pager-previous,
+  .coveo-pager-previous > a > span,
   .coveo-sprites-menu-menu_avancedsearch,
   .coveo-sprites-menu-menu_opencontactinfoin,
   .coveo-sprites-menu-menu_saveoption,
   .coveo-facet-settings-section-save-state .coveo-icon,
   .coveo-settings-item.coveo-export-to-excel .coveo-icon,
-  .coveo-sprites-menu-menu_searchin,
-  .coveo-sprites-menu-menu_shareresult,
   .coveo-sprites-fileType-formats-xml,
   .coveo-icon.filetype.xml,
   .coveo-icon.sysfiletype.xml,
+  .coveo-sprites-menu-menu_shareresult,
+  .coveo-sprites-menu-menu_sortby,
+  .coveo-facet-settings-section-sort .coveo-icon,
   .coveo-sprites-menu-menu_sortdirection,
   .coveo-facet-settings-section-direction .coveo-icon,
-  .coveo-sprites-pager-next,
-  .coveo-pager-next > a > span,
-  .coveo-sprites-pager-previous,
-  .coveo-pager-previous > a > span,
   .coveo-sprites-preferencesPanel-menu_preferences,
   .coveo-settings-item.coveo-preferences-panel .coveo-icon,
   .coveo-sprites-preferencesPanel-table-apply,
@@ -4394,7 +4394,7 @@
     width: 18px;
     height: 18px;
     text-indent: 18px; }
-  .coveo-sprites-menu-menu_sortby, .coveo-facet-settings-section-sort .coveo-icon {
+  .coveo-sprites-menu-menu_searchin {
     background-position: -341px -54px;
     width: 16px;
     height: 16px;
@@ -4589,27 +4589,27 @@
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-menu-menu_avancedsearch {
+  .coveo-sprites-pager-next, .coveo-pager-next > a > span {
     background-position: -446px 0px;
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-menu-menu_opencontactinfoin {
+  .coveo-sprites-pager-previous, .coveo-pager-previous > a > span {
     background-position: -446px -16px;
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-menu-menu_saveoption, .coveo-facet-settings-section-save-state .coveo-icon, .coveo-settings-item.coveo-export-to-excel .coveo-icon {
+  .coveo-sprites-menu-menu_avancedsearch {
     background-position: -446px -32px;
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-menu-menu_searchin {
+  .coveo-sprites-menu-menu_opencontactinfoin {
     background-position: -446px -48px;
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-menu-menu_shareresult {
+  .coveo-sprites-menu-menu_saveoption, .coveo-facet-settings-section-save-state .coveo-icon, .coveo-settings-item.coveo-export-to-excel .coveo-icon {
     background-position: -446px -64px;
     width: 16px;
     height: 16px;
@@ -4619,17 +4619,17 @@
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-menu-menu_sortdirection, .coveo-facet-settings-section-direction .coveo-icon {
+  .coveo-sprites-menu-menu_shareresult {
     background-position: -446px -96px;
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-pager-next, .coveo-pager-next > a > span {
+  .coveo-sprites-menu-menu_sortby, .coveo-facet-settings-section-sort .coveo-icon {
     background-position: -462px 0px;
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-pager-previous, .coveo-pager-previous > a > span {
+  .coveo-sprites-menu-menu_sortdirection, .coveo-facet-settings-section-direction .coveo-icon {
     background-position: -462px -16px;
     width: 16px;
     height: 16px;

@@ -2206,8 +2206,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.27',
-	    'product': '1.667.27',
+	    'lib': '1.667.28',
+	    'product': '1.667.28',
 	    'supportedApiVersion': 2
 	};
 
@@ -22387,10 +22387,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                _this.popupBackground.detach();
 	            }
 	        });
-	    };
-	    ResponsiveFacets.prototype.shouldCloseFacetDropdown = function (eventTarget) {
-	        return !eventTarget.closest('coveo-facet-column') && !eventTarget.closest('coveo-facet-dropdown-header')
-	            && this.searchInterface.isSmallInterface() && !eventTarget.closest('coveo-facet-settings-popup');
+	        this.popupBackground.on('click', function () { return _this.closeDropdown(); });
 	    };
 	    ResponsiveFacets.prototype.saveFacetsPosition = function () {
 	        this.previousSibling = this.dropdownContent.el.previousSibling ? Dom_1.$$(this.dropdownContent.el.previousSibling) : null;
