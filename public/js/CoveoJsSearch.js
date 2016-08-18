@@ -2206,8 +2206,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.28',
-	    'product': '1.667.28',
+	    'lib': '1.667.30',
+	    'product': '1.667.30',
 	    'supportedApiVersion': 2
 	};
 
@@ -7341,7 +7341,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    PopupUtils.positionPopup = function (popUp, nextTo, boundary, desiredPosition, appendTo, checkForBoundary) {
 	        if (checkForBoundary === void 0) { checkForBoundary = 0; }
-	        popUp.style.position = 'absolute';
 	        if (appendTo) {
 	            Dom_1.$$(appendTo).append(popUp);
 	        }
@@ -7373,6 +7372,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    PopupUtils.finalAdjustement = function (popUpOffSet, popUpPosition, popUp, desiredPosition) {
+	        popUp.style.position = 'absolute';
 	        var position = Dom_1.$$(popUp).position();
 	        popUp.style.top = (position.top + desiredPosition.verticalOffset) - (popUpOffSet.top - popUpPosition.top) + 'px';
 	        popUp.style.left = (position.left + desiredPosition.horizontalOffset) - (popUpOffSet.left - popUpPosition.left) + 'px';
@@ -19987,8 +19987,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.searchBarIsAnimating = false;
 	        this.searchResults = document.createElement('ul');
 	        Dom_1.$$(this.searchResults).addClass('coveo-facet-search-results');
+	        // Mitigate issues in UT where the window in phantom js might get resized in the scope of another test.
+	        // These would point to random instance of a test karma object, and not a real search interface.
 	        this.onResize = _.debounce(function () {
-	            if (!_this.isMobileDevice() && !_this.facet.searchInterface.isSmallInterface()) {
+	            if (!_this.isMobileDevice() && !_this.facet.searchInterface.isSmallInterface() && Dom_1.$$(_this.facet.element).hasClass('coveo-facet-searching')) {
 	                _this.positionSearchResults();
 	            }
 	        }, 250);
