@@ -2206,8 +2206,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.667.30',
-	    'product': '1.667.30',
+	    'lib': '1.667.32',
+	    'product': '1.667.32',
 	    'supportedApiVersion': 2
 	};
 
@@ -14502,13 +14502,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // monitor those before sending the data.
 	        this.searchPromises.push(args.promise);
 	        // TODO: Maybe a better way to grab the search interface?
+	        // TODO: Maybe a better way to grab the search interface?
 	        var eventTarget;
-	        if (window['jQuery'] && evt instanceof window['jQuery'].Event) {
-	            eventTarget = evt.target;
-	        }
-	        else {
-	            eventTarget = evt.srcElement;
-	        }
+	        eventTarget = evt.target;
 	        var searchInterface = Component_1.Component.get(eventTarget, SearchInterface_1.SearchInterface);
 	        Assert_1.Assert.exists(searchInterface);
 	        // TODO: Maybe a better way to grab the query controller?
