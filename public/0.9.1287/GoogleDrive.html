@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Google Drive</title>
+  <meta about="Search Google Drive content."/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0">
+  <script src="js/CoveoJsSearch.WithDependencies.js"></script>
+  <script src="js/templates/templates.js"></script>
+  <link rel="stylesheet" href="css/CoveoFullSearch.css"/>
+
+  <script type="text/javascript">
+    $(function () {
+      Coveo.Rest.SearchEndpoint.configureSampleEndpoint();
+
+      /*
+
+       // Use this code to use a cloud index
+       Coveo.Rest.SearchEndpoint.configureCloudEndpoint('OrganizationName');
+
+       // Use this code to use an on-premise index
+       Coveo.Rest.SearchEndpoint.configureOnPremiseEndpoint('http://server:8080/Coveo/Rest');
+
+       // Use this code to use a custom endpoint
+       Coveo.Rest.SearchEndpoint.endpoints["default"] = new Coveo.Rest.SearchEndpoint({
+       restUri: 'http://server:8080/Coveo/Rest'
+       });
+
+       */
+
+      $('#search').coveo('init');
+    });
+  </script>
+</head>
+
+<body id="search" class='CoveoSearchInterface' data-enable-history="true">
+
+<div class="coveo-tab-section">
+  <a class="CoveoTab"
+     data-id="GoogleDrive"
+     data-caption="Google Drive"
+     data-icon="coveo-sprites-tab-googledrive"
+     data-expression="@sysconnectortype==GoogleDriveCrawler"></a>
+</div>
+
+<div class="coveo-search-section">
+  <div class="coveo-logo-column">
+    <div class="coveo-logo"></div>
+  </div>
+  <div class="coveo-searchBox-column">
+    <div class="coveo-search-section-wrapper">
+      <div class="CoveoSettings" data-include-in-menu=".CoveoShareQuery,.CoveoPreferencesPanel"></div>
+      <div class="CoveoSearchBox" data-activate-omnibox="true"></div>
+    </div>
+  </div>
+</div>
+
+<div class="coveo-results-section">
+  <div class="coveo-facet-column">
+      <div class="CoveoFacet"
+         data-title="File Type"
+         data-field="@sysfiletype"
+         data-tab="GoogleDrive"></div>
+
+    <div class="CoveoFacet"
+         data-title="Origin"
+         data-field="@gdfilesource"
+         data-custom-sort="My Drive,Shared with Me, Shared Globally"
+         data-tab="GoogleDrive"></div>
+
+    <div class="CoveoFacet"
+         data-title="Owner"
+         data-field="@sysauthor"
+         data-tab="GoogleDrive"></div>
+
+    <div class="CoveoFacet"
+         data-title="Last modified by"
+         data-field="@gdfilelastmodifyinguserdisplayname"
+         data-tab="GoogleDrive"></div>
+
+    <div class="CoveoFacet"
+         data-title="Shared To"
+         data-field="@systo"
+         data-allow-toggling-operator="true"
+         data-is-multi-value="true"
+         data-tab="GoogleDrive"></div>
+
+    <div class="CoveoFacet"
+         data-title="Shared From"
+         data-field="@sysfrom"
+         data-tab="GoogleDrive"></div>
+
+    <div class="CoveoFacet"
+         data-title="Year"
+         data-field="@sysyear"
+         data-tab="GoogleDrive"></div>
+
+    <div class="CoveoFacet"
+         data-title="Month"
+         data-field="@sysmonth"
+         data-tab="GoogleDrive"></div>
+  </div>
+
+  <div class="coveo-results-column">
+    <div class="CoveoShareQuery"></div>
+    <div class="CoveoPreferencesPanel">
+      <div class="CoveoResultsPreferences"></div>
+      <div class="CoveoResultsFiltersPreferences"></div>
+    </div>
+    <div class="CoveoBreadcrumb"></div>
+
+    <div class="coveo-results-header">
+      <div class="coveo-summary-section">
+        <span class="CoveoQuerySummary"></span>
+        <span class="CoveoQueryDuration"></span>
+      </div>
+      <div class="coveo-sort-section">
+        <span class="CoveoSort"
+              data-sort-criteria="relevancy"
+              data-caption="Relevance"></span>
+        <span class="CoveoSort"
+              data-sort-criteria="date descending,date ascending"
+              data-caption="Date"></span>
+      </div>
+      <div class="coveo-clear"></div>
+    </div>
+
+    <div class="CoveoHiddenQuery"></div>
+    <div class="CoveoDidYouMean"></div>
+    <div class="CoveoErrorReport" data-pop-up="false"></div>
+
+    <div class="CoveoResultList" data-wait-animation="fade">
+      <script class="result-template" type="application/json" data-template-id="GoogleDrive">
+        {
+          "fields": []
+        }
+      </script>
+    </div>
+    <div class="CoveoPager"></div>
+  </div>
+</div>
+</body>
+
+</html>
