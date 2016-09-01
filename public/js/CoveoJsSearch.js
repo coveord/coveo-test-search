@@ -2058,8 +2058,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.9',
-	    'product': '1.1276.9',
+	    'lib': '1.1276.10',
+	    'product': '1.1276.10',
 	    'supportedApiVersion': 2
 	};
 
@@ -2256,7 +2256,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Assert_1.Assert.exists(query);
 	        callParams.requestData = query;
 	        this.logger.info('Performing REST query', query);
-	        return this.performOneCall(callParams).then(function (results) {
+	        return this.performOneCall(callParams, callOptions).then(function (results) {
 	            _this.logger.info('REST query successful', results, query);
 	            // Version check
 	            // If the SearchAPI doesn't give us any apiVersion info, we assume version 1 (before apiVersion was implemented)
@@ -2394,6 +2394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        callParams.queryString = callParams.queryString.concat(queryString);
 	        queryString = this.buildViewAsHtmlQueryString(documentUniqueID, callOptions);
 	        callParams.queryString = callParams.queryString.concat(queryString);
+	        callParams.queryString = _.uniq(callParams.queryString);
 	        return callParams.url + '?' + callParams.queryString.join('&');
 	    };
 	    SearchEndpoint.prototype.batchFieldValues = function (request, callOptions, callParams) {
@@ -2600,13 +2601,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        callOptions = _.extend({}, callOptions);
 	        var queryString = [];
 	        for (var name_1 in this.options.queryStringArguments) {
-	            // The mapping workgroup --> organizationId is necessary for backwards compatibility
-	            if (name_1 == 'workgroup') {
-	                queryString.push('organizationId' + '=' + encodeURIComponent(this.options.queryStringArguments[name_1]));
-	            }
-	            else {
-	                queryString.push(name_1 + '=' + encodeURIComponent(this.options.queryStringArguments[name_1]));
-	            }
+	            queryString.push(name_1 + '=' + encodeURIComponent(this.options.queryStringArguments[name_1]));
 	        }
 	        if (callOptions && _.isArray(callOptions.authentication) && callOptions.authentication.length != 0) {
 	            queryString.push('authentication=' + callOptions.authentication.join(','));
@@ -2635,7 +2630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    SearchEndpoint.prototype.buildViewAsHtmlQueryString = function (uniqueId, callOptions) {
 	        callOptions = _.extend({}, callOptions);
-	        var queryString = [];
+	        var queryString = this.buildBaseQueryString(callOptions);
 	        queryString.push('uniqueId=' + encodeURIComponent(uniqueId));
 	        if (callOptions.query || callOptions.queryObject) {
 	            queryString.push('enableNavigation=true');
@@ -2653,6 +2648,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (autoRenewToken === void 0) { autoRenewToken = true; }
 	        var queryString = this.buildBaseQueryString(callOptions);
 	        params.queryString = params.queryString.concat(queryString);
+	        params.queryString = _.uniq(params.queryString);
 	        return this.caller.call(params)
 	            .then(function (response) {
 	            if (response.data && response.data.clientDuration) {
@@ -3223,7 +3219,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        _this.handleSuccessfulResponseThatMightBeAnError(requestInfo, data, resolve, reject);
 	                    }
 	                    else {
-	                        _this.handleError(requestInfo, xmlHttpRequest.status, undefined, reject);
+	                        _this.handleError(requestInfo, xmlHttpRequest.status, data, reject);
 	                    }
 	                }
 	            };
@@ -14911,11 +14907,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.buildingQuery, function (e, args) { return _this.handleRecommendationBuildingQuery(args); });
 	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.querySuccess, function (e, args) { return _this.handleRecommendationQuerySuccess(args); });
+	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.noResults, function (e, args) { return _this.hide(); });
+	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.queryError, function (e, args) { return _this.hide(); });
 	        // This is done to allow the component to be included in another search interface without triggering the parent events.
 	        this.preventEventPropagation();
 	    }
 	    Recommendation.prototype.getId = function () {
 	        return this.options.id;
+	    };
+	    Recommendation.prototype.hide = function () {
+	        this.displayStyle = this.element.style.display;
+	        Dom_1.$$(this.element).hide();
+	    };
+	    Recommendation.prototype.show = function () {
+	        if (!this.displayStyle) {
+	            this.displayStyle = this.element.style.display;
+	        }
+	        this.element.style.display = this.displayStyle;
 	    };
 	    Recommendation.prototype.bindToMainSearchInterface = function () {
 	        var _this = this;
@@ -14933,11 +14941,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Recommendation.prototype.handleRecommendationQuerySuccess = function (data) {
 	        if (this.options.hideIfNoResults) {
 	            if (data.results.totalCount === 0) {
-	                this.displayStyle = this.element.style.display;
-	                Dom_1.$$(this.element).hide();
+	                this.hide();
 	            }
 	            else {
-	                this.element.style.display = this.displayStyle;
+	                this.show();
 	            }
 	        }
 	    };
@@ -17007,7 +17014,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _super.apply(this, arguments);
 	    }
 	    DefaultRecommendationTemplate.prototype.instantiateToString = function (object) {
-	        var template = "<div class=\"coveo-result-frame\">\n        <div class=\"coveo-result-row\" style=\"align-items: center\">\n          <div class=\"coveo-result-cell\" style=\"flex-basis:40px; flex-shrink: 0; flex-grow: 0; text-align:center;\">\n            <span class=\"CoveoIcon\" data-small=\"true\">\n            </span>\n          </div>\n          <div class=\"coveo-result-cell\" style=\"padding:0 0 3px 5px;font-size:10pt; min-width: 0\">\n            <a class=\"CoveoResultLink\" style=\"display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis\">\n            </a>\n          </div>\n        </div>\n      </div>";
+	        var template = "<div class=\"coveo-result-frame\">\n        <div class=\"coveo-result-row\">\n          <div class=\"coveo-result-cell\" style=\"width:40px;text-align:center;vertical-align:middle;\">\n            <span class=\"CoveoIcon\" data-small=\"true\">\n            </span>\n          </div>\n          <div class=\"coveo-result-cell\" style=\"padding:0 0 3px 5px;vertical-align:middle\">\n            <div class=\"coveo-result-row\">\n              <div class=\"coveo-result-cell\" style=\"font-size:10pt;\">\n                <a class=\"CoveoResultLink\" style=\"display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis\">\n                </a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>";
 	        return template;
 	    };
 	    DefaultRecommendationTemplate.prototype.instantiateToElement = function (object) {
@@ -40348,7 +40355,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _.each([inputCaption, filtersTabSelect, filtersExpression, saveAndCloseContainer.el, formSubmit.el], function (el) {
 	            _this.advancedFilterFormValidate.appendChild(el);
 	        });
-	        saveFormButton.on('click', function () { return formSubmit.trigger('click'); });
+	        saveFormButton.on('click', function () {
+	            formSubmit.el.click();
+	        });
 	        closeFormButton.on('click', function () { return Dom_1.$$(_this.advancedFiltersBuilder).toggleClass('coveo-active'); });
 	        Dom_1.$$(Dom_1.$$(this.advancedFilterFormValidate).find('textarea')).on('keyup', function (e) {
 	            if (e.keyCode == KeyboardUtils_1.KEYBOARD.ENTER) {
@@ -42354,7 +42363,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        args.options.authentication.push(this.options.name);
 	    };
 	    AuthenticationProvider.prototype.handleQueryError = function (args) {
-	        if (args.error['provider'] === this.options.name && this.redirectCount < 2 && this.redirectCount !== -1) {
+	        var missingAuthError = args.error;
+	        if (missingAuthError.isMissingAuthentication && missingAuthError.provider === this.options.name && this.redirectCount < 2 && this.redirectCount !== -1) {
 	            ++this.redirectCount;
 	            this.authenticateWithProvider();
 	        }
