@@ -1854,8 +1854,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.10',
-	    'product': '1.1276.10',
+	    'lib': '1.1276.11',
+	    'product': '1.1276.11',
 	    'supportedApiVersion': 2
 	};
 

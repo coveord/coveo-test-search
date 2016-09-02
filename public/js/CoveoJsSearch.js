@@ -2058,8 +2058,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.10',
-	    'product': '1.1276.10',
+	    'lib': '1.1276.11',
+	    'product': '1.1276.11',
 	    'supportedApiVersion': 2
 	};
 
@@ -35169,13 +35169,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _super.call(this, element, ResultsPerPage.ID, bindings);
 	        this.element = element;
 	        this.options = options;
-	        this.ignoreNextQuerySuccess = false;
 	        this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, ResultsPerPage, options);
 	        this.currentResultsPerPage = this.options.choicesDisplayed[0];
 	        this.queryController.options.resultsPerPage = this.currentResultsPerPage;
 	        this.bind.onRootElement(QueryEvents_1.QueryEvents.querySuccess, function (args) { return _this.handleQuerySuccess(args); });
 	        this.bind.onRootElement(QueryEvents_1.QueryEvents.queryError, function () { return _this.handleQueryError(); });
-	        this.bind.onRootElement(QueryEvents_1.QueryEvents.noResults, function (args) { return _this.handleNoResults(args); });
+	        this.bind.onRootElement(QueryEvents_1.QueryEvents.noResults, function (args) { return _this.handleNoResults(); });
 	        this.initComponent(element);
 	    }
 	    /**
@@ -35207,42 +35206,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }).el;
 	        element.appendChild(this.list);
 	    };
+	    ResultsPerPage.prototype.render = function () {
+	        var _this = this;
+	        Dom_1.$$(this.span).removeClass('coveo-results-per-page-no-results');
+	        var numResultsList = this.options.choicesDisplayed;
+	        var _loop_1 = function() {
+	            var listItem = Dom_1.$$('li', {
+	                className: 'coveo-results-per-page-list-item'
+	            });
+	            if (numResultsList[i] == this_1.currentResultsPerPage) {
+	                listItem.addClass('coveo-active');
+	            }
+	            (function (resultsPerPage) {
+	                listItem.on('click', function () {
+	                    _this.handleClickPage(numResultsList[resultsPerPage]);
+	                });
+	            })(i);
+	            listItem.el.appendChild(Dom_1.$$('a', {
+	                className: 'coveo-results-per-page-list-item-text'
+	            }, numResultsList[i].toString()).el);
+	            this_1.list.appendChild(listItem.el);
+	        };
+	        var this_1 = this;
+	        for (var i = 0; i < numResultsList.length; i++) {
+	            _loop_1();
+	        }
+	    };
 	    ResultsPerPage.prototype.handleQueryError = function () {
 	        this.reset();
 	    };
-	    ResultsPerPage.prototype.handleNoResults = function (data) {
+	    ResultsPerPage.prototype.handleNoResults = function () {
 	        this.reset();
 	    };
 	    ResultsPerPage.prototype.handleQuerySuccess = function (data) {
-	        var _this = this;
-	        if (this.ignoreNextQuerySuccess) {
-	            this.ignoreNextQuerySuccess = false;
-	        }
-	        else {
+	        if (data.results.results.length != 0) {
 	            this.reset();
-	            Dom_1.$$(this.span).removeClass('coveo-results-per-page-no-results');
-	            var numResultsList_1 = this.options.choicesDisplayed;
-	            var _loop_1 = function() {
-	                var listItem = Dom_1.$$('li', {
-	                    className: 'coveo-results-per-page-list-item'
-	                });
-	                if (numResultsList_1[i] == this_1.currentResultsPerPage) {
-	                    listItem.addClass('coveo-active');
-	                }
-	                (function (resultsPerPage) {
-	                    listItem.on('click', function () {
-	                        _this.handleClickPage(numResultsList_1[resultsPerPage]);
-	                    });
-	                })(i);
-	                listItem.el.appendChild(Dom_1.$$('a', {
-	                    className: 'coveo-results-per-page-list-item-text'
-	                }, numResultsList_1[i].toString()).el);
-	                this_1.list.appendChild(listItem.el);
-	            };
-	            var this_1 = this;
-	            for (var i = 0; i < numResultsList_1.length; i++) {
-	                _loop_1();
-	            }
+	            this.render();
 	        }
 	    };
 	    ResultsPerPage.prototype.handleClickPage = function (resultsPerPage) {
@@ -35250,7 +35249,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.setResultsPerPage(resultsPerPage);
 	    };
 	    ResultsPerPage.prototype.reset = function () {
-	        this.ignoreNextQuerySuccess = true;
 	        Dom_1.$$(this.span).addClass('coveo-results-per-page-no-results');
 	        Dom_1.$$(this.list).empty();
 	    };
