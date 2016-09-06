@@ -3917,9 +3917,9 @@
   .coveo-facet-settings-section-clear-state .coveo-icon,
   .coveo-sprites-common-poweredbycoveo,
   .coveo-powered-by,
-  .coveo-sprites-caseCreation-edit-picklist,
-  .coveo-sprites-box-settings_gray,
+  .coveo-sprites-box-icon_external,
   .coveo-sprites-caseCreation-edit,
+  .coveo-sprites-box-settings_gray,
   .coveo-sprites-common-clear-mobile,
   .CoveoBreadcrumb.coveo-small-display .coveo-breadcrumb-clear-all .coveo-icon,
   .coveo-sprites-common-tagging_tag,
@@ -3928,10 +3928,6 @@
   .coveo-facet-breadcrumb-multi-icon.coveo-selected,
   .coveo-sprites-facet-resume_disable,
   .coveo-facet-breadcrumb-multi-icon.coveo-excluded,
-  .coveo-sprites-sort-sortby_bottom,
-  .CoveoSort.coveo-selected .coveo-icon,
-  .coveo-sprites-sort-sortby_top,
-  .CoveoSort.coveo-selected.coveo-ascending .coveo-icon,
   .coveo-sprites-common-star_inactive,
   .coveo-settings-item.coveo-follow-query .coveo-icon,
   .coveo-top-suggestion-header-icon,
@@ -3946,6 +3942,10 @@
   .coveo-sprites-common-lock,
   .coveo-sprites-common-login_user,
   .coveo-sprites-common-star_placeholder,
+  .coveo-sprites-sort-sortby_bottom,
+  .CoveoSort.coveo-selected .coveo-icon,
+  .coveo-sprites-sort-sortby_top,
+  .CoveoSort.coveo-selected.coveo-ascending .coveo-icon,
   .coveo-sprites-preferencesPanel-toggle_off,
   .CoveoResultsPreferences .coveo-input-icon,
   .CoveoResultsFiltersPreferences .coveo-input-icon,
@@ -3986,7 +3986,7 @@
   .coveo-facet-settings-section-sort .coveo-icon,
   .coveo-sprites-common-delete,
   .coveo-sprites-common-doritos,
-  .coveo-sprites-box-icon_external,
+  .coveo-sprites-caseCreation-edit-picklist,
   .coveo-sprites-fileType-salesforce-item,
   .coveo-icon.filetype.saleforceitem,
   .coveo-icon.sysfiletype.saleforceitem,
@@ -4229,51 +4229,41 @@
     width: 90px;
     height: 32px;
     text-indent: 90px; }
-  .coveo-sprites-caseCreation-edit-picklist {
+  .coveo-sprites-box-icon_external {
     background-position: -160px -103px;
+    width: 13px;
+    height: 12px;
+    text-indent: 13px; }
+  .coveo-sprites-caseCreation-edit {
+    background-position: -173px -103px;
     width: 12px;
     height: 12px;
     text-indent: 12px; }
   .coveo-sprites-box-settings_gray {
-    background-position: -172px -103px;
-    width: 12px;
-    height: 12px;
-    text-indent: 12px; }
-  .coveo-sprites-caseCreation-edit {
-    background-position: -184px -103px;
+    background-position: -185px -103px;
     width: 12px;
     height: 12px;
     text-indent: 12px; }
   .coveo-sprites-common-clear-mobile, .CoveoBreadcrumb.coveo-small-display .coveo-breadcrumb-clear-all .coveo-icon {
-    background-position: -196px -103px;
+    background-position: -197px -103px;
     width: 12px;
     height: 12px;
     text-indent: 12px; }
   .coveo-sprites-common-tagging_tag, .coveo-result-tagging-add-tag-icon {
-    background-position: -208px -103px;
+    background-position: -209px -103px;
     width: 12px;
     height: 12px;
     text-indent: 12px; }
   .coveo-sprites-facet-resume_selected, .coveo-facet-breadcrumb-multi-icon.coveo-selected {
-    background-position: -220px -103px;
+    background-position: -221px -103px;
     width: 12px;
     height: 12px;
     text-indent: 12px; }
   .coveo-sprites-facet-resume_disable, .coveo-facet-breadcrumb-multi-icon.coveo-excluded {
-    background-position: -232px -103px;
+    background-position: -233px -103px;
     width: 12px;
     height: 12px;
     text-indent: 12px; }
-  .coveo-sprites-sort-sortby_bottom, .CoveoSort.coveo-selected .coveo-icon {
-    background-position: -244px -103px;
-    width: 6px;
-    height: 6px;
-    text-indent: 6px; }
-  .coveo-sprites-sort-sortby_top, .CoveoSort.coveo-selected.coveo-ascending .coveo-icon {
-    background-position: -244px -109px;
-    width: 6px;
-    height: 6px;
-    text-indent: 6px; }
   .coveo-sprites-common-star_inactive, .coveo-settings-item.coveo-follow-query .coveo-icon, .coveo-top-suggestion-header-icon, .coveo-top-field-suggestion-header .coveo-icon-top-field, .coveo-top-analytics-suggestion-header .coveo-icon-top-analytics, .coveo-omnibox-result-list-header .coveo-icon-omnibox-result-list {
     background-position: -250px -71px;
     width: 18px;
@@ -4314,6 +4304,16 @@
     width: 18px;
     height: 18px;
     text-indent: 18px; }
+  .coveo-sprites-sort-sortby_bottom, .CoveoSort.coveo-selected .coveo-icon {
+    background-position: -318px -44px;
+    width: 6px;
+    height: 6px;
+    text-indent: 6px; }
+  .coveo-sprites-sort-sortby_top, .CoveoSort.coveo-selected.coveo-ascending .coveo-icon {
+    background-position: -324px -44px;
+    width: 6px;
+    height: 6px;
+    text-indent: 6px; }
   .coveo-sprites-preferencesPanel-toggle_off, .CoveoResultsPreferences .coveo-input-icon, .CoveoResultsFiltersPreferences .coveo-input-icon, .CoveoPreferencePanelItem .coveo-input-icon {
     background-position: -270px -50px;
     width: 42px;
@@ -4409,11 +4409,11 @@
     width: 16px;
     height: 16px;
     text-indent: 16px; }
-  .coveo-sprites-box-icon_external {
+  .coveo-sprites-caseCreation-edit-picklist {
     background-position: -341px -102px;
-    width: 13px;
+    width: 12px;
     height: 12px;
-    text-indent: 13px; }
+    text-indent: 12px; }
   .coveo-sprites-fileType-salesforce-item, .coveo-icon.filetype.saleforceitem, .coveo-icon.sysfiletype.saleforceitem {
     background-position: -359px 0px;
     width: 16px;
