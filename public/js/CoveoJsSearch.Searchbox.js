@@ -1854,8 +1854,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.12',
-	    'product': '1.1276.12',
+	    'lib': '1.1276.14',
+	    'product': '1.1276.14',
 	    'supportedApiVersion': 2
 	};
 
@@ -8713,7 +8713,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    onResult(_.first(valuesCropped_1, params.nbResults));
 	                }
 	                else {
-	                    return queryResults.groupByResults[0];
+	                    resolve(queryResults.groupByResults[0].values);
 	                }
 	            })
 	                .catch(function (error) {

@@ -2058,8 +2058,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.12',
-	    'product': '1.1276.12',
+	    'lib': '1.1276.14',
+	    'product': '1.1276.14',
 	    'supportedApiVersion': 2
 	};
 
@@ -8917,7 +8917,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    onResult(_.first(valuesCropped_1, params.nbResults));
 	                }
 	                else {
-	                    return queryResults.groupByResults[0];
+	                    resolve(queryResults.groupByResults[0].values);
 	                }
 	            })
 	                .catch(function (error) {
@@ -20444,7 +20444,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // Mitigate issues in UT where the window in phantom js might get resized in the scope of another test.
 	            // These would point to random instance of a test karma object, and not a real search interface.
 	            if (_this.facet instanceof Facet_1.Facet && _this.facet.searchInterface instanceof SearchInterface_1.SearchInterface) {
-	                if (!_this.isMobileDevice() && !_this.facet.searchInterface.isSmallInterface()) {
+	                if (!_this.isMobileDevice() && !_this.facet.searchInterface.isSmallInterface() && Dom_1.$$(_this.facet.element).hasClass('coveo-facet-searching')) {
 	                    _this.positionSearchResults();
 	                }
 	            }
@@ -22745,7 +22745,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.ID = ID;
 	        this.coveoRoot = root;
 	        this.searchInterface = Component_1.Component.get(root.el, SearchInterface_1.SearchInterface, false);
-	        this.tabSection = Dom_1.$$(this.coveoRoot.find('.coveo-tab-section'));
 	        this.buildDropdownContent();
 	        this.buildDropdownHeader();
 	        this.bindDropdownContentEvents();
@@ -22766,10 +22765,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return this.coveoRoot.width() <= ResponsiveFacets.ROOT_MIN_WIDTH;
 	    };
 	    ResponsiveFacets.prototype.changeToSmallMode = function () {
+	        if (!Dom_1.$$(this.coveoRoot).find('.coveo-tab-section')) {
+	            ResponsiveFacets.logger.info('No element with class coveo-tab-section. Responsive facets cannot be enabled');
+	            return;
+	        }
 	        this.positionPopup();
 	        this.closeDropdown();
 	        this.disableFacetPreservePosition();
-	        this.tabSection.el.appendChild(this.dropdownHeader.el);
+	        Dom_1.$$(this.coveoRoot.find('.coveo-tab-section')).el.appendChild(this.dropdownHeader.el);
 	        this.dropdownContent.el.style.display = 'none';
 	    };
 	    ResponsiveFacets.prototype.changeToLargeMode = function () {
@@ -22876,7 +22879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            width = ResponsiveFacets.FACET_DROPDOWN_MIN_WIDTH;
 	        }
 	        this.dropdownContent.el.style.width = width.toString() + 'px';
-	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM }, this.coveoRoot.el);
+	        PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, Dom_1.$$(this.coveoRoot.find('.coveo-tab-section')).el, this.coveoRoot.el, { horizontal: PopupUtils_1.HorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.VerticalAlignment.BOTTOM }, this.coveoRoot.el);
 	    };
 	    ResponsiveFacets.prototype.closeDropdown = function () {
 	        // Because of DOM manipulation, sometimes the animation will not trigger. Accessing the computed styles makes sure
