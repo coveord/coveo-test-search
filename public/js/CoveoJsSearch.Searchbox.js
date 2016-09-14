@@ -69,9 +69,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	__export(__webpack_require__(118));
 	var Analytics_ts_1 = __webpack_require__(109);
 	exports.Analytics = Analytics_ts_1.Analytics;
-	var AnalyticsSuggestions_ts_1 = __webpack_require__(208);
+	var AnalyticsSuggestions_ts_1 = __webpack_require__(209);
 	exports.AnalyticsSuggestions = AnalyticsSuggestions_ts_1.AnalyticsSuggestions;
-	var FieldSuggestions_ts_1 = __webpack_require__(209);
+	var FieldSuggestions_ts_1 = __webpack_require__(210);
 	exports.FieldSuggestions = FieldSuggestions_ts_1.FieldSuggestions;
 	var Omnibox_ts_1 = __webpack_require__(132);
 	exports.Omnibox = Omnibox_ts_1.Omnibox;
@@ -1854,8 +1854,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.14',
-	    'product': '1.1276.14',
+	    'lib': '1.1276.17',
+	    'product': '1.1276.17',
 	    'supportedApiVersion': 2
 	};
 
@@ -16312,25 +16312,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (this.cache[text] != null) {
 	            return this.cache[text];
 	        }
-	        if (this.currentPromise == null) {
-	            var promise = this.getRevealQuerySuggest(text);
-	            this.cache[text] = promise;
-	            promise.catch(function () {
-	                delete _this.cache[text];
-	            });
-	        }
-	        else {
-	            if (this.waitingRequest != null) {
-	                this.waitingRequest = null;
-	            }
-	            this.waitingRequest = {
-	                text: text
-	            };
-	        }
+	        var promise = this.getRevealQuerySuggest(text);
+	        this.cache[text] = promise;
+	        promise.catch(function () {
+	            delete _this.cache[text];
+	        });
 	        return this.cache[text];
 	    };
 	    RevealQuerySuggestAddon.prototype.getRevealQuerySuggest = function (text) {
-	        var _this = this;
 	        var payload = { q: text }, language = String['locale'], searchHub = this.omnibox.getBindings().componentOptionsModel.get(ComponentOptionsModel_1.ComponentOptionsModel.attributesEnum.searchHub), pipeline = this.omnibox.getBindings().searchInterface.options.pipeline;
 	        if (language) {
 	            payload.language = language;
@@ -16341,7 +16330,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (pipeline) {
 	            payload.pipeline = pipeline;
 	        }
-	        this.currentPromise = this.omnibox.queryController.getEndpoint()
+	        return this.omnibox.queryController.getEndpoint()
 	            .getRevealQuerySuggest(payload)
 	            .then(function (result) {
 	            var completions = result.completions;
@@ -16355,14 +16344,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            });
 	            return results;
 	        });
-	        this.currentPromise.finally(function () {
-	            _this.currentPromise = null;
-	            if (_this.waitingRequest != null) {
-	                _this.getRevealQuerySuggest(_this.waitingRequest.text);
-	                _this.waitingRequest = null;
-	            }
-	        });
-	        return this.currentPromise;
 	    };
 	    RevealQuerySuggestAddon.INDEX = 60;
 	    RevealQuerySuggestAddon.suggestiontHtmlTemplate = _.template('<span<%= className? \' class="\'+className+\'"\':\'\' %>><%- text %></span>');
@@ -16593,7 +16574,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 204 */,
 /* 205 */,
 /* 206 */,
-/* 207 */
+/* 207 */,
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16649,7 +16631,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16658,7 +16640,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(207);
+	var SuggestionForOmnibox_1 = __webpack_require__(208);
 	var ComponentOptions_1 = __webpack_require__(97);
 	var Component_1 = __webpack_require__(95);
 	var Assert_1 = __webpack_require__(18);
@@ -16833,7 +16815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16842,7 +16824,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(207);
+	var SuggestionForOmnibox_1 = __webpack_require__(208);
 	var Component_1 = __webpack_require__(95);
 	var ComponentOptions_1 = __webpack_require__(97);
 	var Assert_1 = __webpack_require__(18);
