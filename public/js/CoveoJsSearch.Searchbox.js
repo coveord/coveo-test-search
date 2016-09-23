@@ -69,9 +69,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	__export(__webpack_require__(118));
 	var Analytics_ts_1 = __webpack_require__(109);
 	exports.Analytics = Analytics_ts_1.Analytics;
-	var AnalyticsSuggestions_ts_1 = __webpack_require__(209);
+	var AnalyticsSuggestions_ts_1 = __webpack_require__(210);
 	exports.AnalyticsSuggestions = AnalyticsSuggestions_ts_1.AnalyticsSuggestions;
-	var FieldSuggestions_ts_1 = __webpack_require__(210);
+	var FieldSuggestions_ts_1 = __webpack_require__(211);
 	exports.FieldSuggestions = FieldSuggestions_ts_1.FieldSuggestions;
 	var Omnibox_ts_1 = __webpack_require__(132);
 	exports.Omnibox = Omnibox_ts_1.Omnibox;
@@ -1854,8 +1854,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.17',
-	    'product': '1.1276.17',
+	    'lib': '1.1276.19',
+	    'product': '1.1276.19',
 	    'supportedApiVersion': 2
 	};
 
@@ -11339,15 +11339,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    SearchInterface.prototype.isNewDesign = function () {
 	        return this.isNewDesignAttribute;
 	    };
-	    SearchInterface.prototype.isSmallInterface = function () {
-	        return Dom_1.$$(this.root).hasClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
-	    };
-	    SearchInterface.prototype.setSmallInterface = function () {
-	        Dom_1.$$(this.root).addClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
-	    };
-	    SearchInterface.prototype.unsetSmallInterface = function () {
-	        Dom_1.$$(this.root).removeClass(SearchInterface.SMALL_INTERFACE_CLASS_NAME);
-	    };
 	    SearchInterface.prototype.initializeAnalytics = function () {
 	        var analyticsRef = BaseComponent_1.BaseComponent.getComponentRef('Analytics');
 	        if (analyticsRef) {
@@ -14703,7 +14694,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.buildingQuery, function (e, args) { return _this.handleRecommendationBuildingQuery(args); });
 	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.querySuccess, function (e, args) { return _this.handleRecommendationQuerySuccess(args); });
-	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.noResults, function (e, args) { return _this.hide(); });
+	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.noResults, function (e, args) {
+	            if (_this.options.hideIfNoResults) {
+	                _this.hide();
+	            }
+	        });
 	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.queryError, function (e, args) { return _this.hide(); });
 	        // This is done to allow the component to be included in another search interface without triggering the parent events.
 	        this.preventEventPropagation();
@@ -14821,7 +14816,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        userContext: ComponentOptions_1.ComponentOptions.buildJsonOption(),
 	        /**
-	         * Specifies the id of the inteface.
+	         * Specifies the id of the interface.
 	         * It is used by the analytics to know which recommendation interface was selected.
 	         * The default value is "Recommendation" for the first one and "Recommendation_{number}" where {number} depends on the number of recommendation interface with default ids in the page for the others.
 	         */
@@ -15219,7 +15214,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * The default value is true.
 	         */
 	        triggerQueryOnClear: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
+	        /**
+	        * Specifies a placeholder for input.
+	        */
 	        placeholder: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	        /**
+	        * Specifies whether the `QueryBox` gets the focus and is selected on initialization.
+	        * The default value is `true`.
+	        */
 	        autoFocus: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true })
 	    };
 	    return Querybox;
@@ -16575,7 +16577,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 205 */,
 /* 206 */,
 /* 207 */,
-/* 208 */
+/* 208 */,
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16631,7 +16634,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16640,7 +16643,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(208);
+	var SuggestionForOmnibox_1 = __webpack_require__(209);
 	var ComponentOptions_1 = __webpack_require__(97);
 	var Component_1 = __webpack_require__(95);
 	var Assert_1 = __webpack_require__(18);
@@ -16815,7 +16818,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16824,7 +16827,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(208);
+	var SuggestionForOmnibox_1 = __webpack_require__(209);
 	var Component_1 = __webpack_require__(95);
 	var ComponentOptions_1 = __webpack_require__(97);
 	var Assert_1 = __webpack_require__(18);
