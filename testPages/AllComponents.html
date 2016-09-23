@@ -19,6 +19,12 @@
 
     <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css" />
     <title>Coveo Search Test</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        Coveo.SearchEndpoint.configureSampleEndpoint();
+        Coveo.init(document.body);
+      })
+    </script>
 </head>
 <body>
 
