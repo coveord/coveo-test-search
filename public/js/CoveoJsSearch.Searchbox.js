@@ -62,24 +62,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	__export(__webpack_require__(30));
 	__export(__webpack_require__(36));
 	__export(__webpack_require__(39));
-	__export(__webpack_require__(53));
-	__export(__webpack_require__(73));
-	__export(__webpack_require__(89));
-	__export(__webpack_require__(93));
-	__export(__webpack_require__(119));
-	var Analytics_ts_1 = __webpack_require__(110);
+	__export(__webpack_require__(54));
+	__export(__webpack_require__(74));
+	__export(__webpack_require__(90));
+	__export(__webpack_require__(94));
+	__export(__webpack_require__(122));
+	var Analytics_ts_1 = __webpack_require__(112);
 	exports.Analytics = Analytics_ts_1.Analytics;
-	var AnalyticsSuggestions_ts_1 = __webpack_require__(211);
+	var AnalyticsSuggestions_ts_1 = __webpack_require__(222);
 	exports.AnalyticsSuggestions = AnalyticsSuggestions_ts_1.AnalyticsSuggestions;
-	var FieldSuggestions_ts_1 = __webpack_require__(212);
+	var FieldSuggestions_ts_1 = __webpack_require__(223);
 	exports.FieldSuggestions = FieldSuggestions_ts_1.FieldSuggestions;
-	var Omnibox_ts_1 = __webpack_require__(133);
+	var Omnibox_ts_1 = __webpack_require__(136);
 	exports.Omnibox = Omnibox_ts_1.Omnibox;
-	var Querybox_ts_1 = __webpack_require__(129);
+	var Querybox_ts_1 = __webpack_require__(132);
 	exports.Querybox = Querybox_ts_1.Querybox;
-	var SearchButton_ts_1 = __webpack_require__(131);
+	var SearchButton_ts_1 = __webpack_require__(134);
 	exports.SearchButton = SearchButton_ts_1.SearchButton;
-	var Searchbox_ts_1 = __webpack_require__(132);
+	var Searchbox_ts_1 = __webpack_require__(135);
 	exports.Searchbox = Searchbox_ts_1.Searchbox;
 
 
@@ -397,6 +397,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "SortBy": "Sort by",
 	    "BoxCreateArticle": "Create Article",
 	    "Facets": "Facets",
+	    "AdvancedSearch": "Advanced Search",
+	    "Keywords": "Keywords",
+	    "AllTheseWords": "All these words",
+	    "ExactPhrase": "This exact phrase",
+	    "AnyOfTheseWords": "Any of these words",
+	    "NoneOfTheseWords": "None of these words",
+	    "Anytime": "Anytime",
+	    "InTheLast": "In the last",
+	    "Days": "days",
+	    "Months": "months",
+	    "Between": "Between",
+	    "Language": "Language",
+	    "Size": "Size",
+	    "AtLeast": "at least",
+	    "AtMost": "at most",
+	    "Contains": "contains",
+	    "DoesNotContain": "does not contain",
+	    "Matches": "matches",
+	    "Bytes": "bytes",
 	    "objecttype_people": "People",
 	    "objecttype_message": "Message",
 	    "objecttype_feed": "RSS Feed",
@@ -1854,8 +1873,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	exports.version = {
-	    'lib': '1.1276.20',
-	    'product': '1.1276.20',
+	    'lib': '1.1550.0',
+	    'product': '1.1550.0',
 	    'supportedApiVersion': 2
 	};
 
@@ -1951,6 +1970,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    /**
+	     * Configure an endpoint that will point to a Coveo Cloud index V2, which contains a set of public sources with no security on them.<br/>
+	     * Used for demo purposes and ease of setup.
+	     * @param otherOptions A set of additional options to use when configuring this endpoint
+	     */
+	    SearchEndpoint.configureSampleEndpointV2 = function (optionsOPtions) {
+	        SearchEndpoint.endpoints['default'] = new SearchEndpoint(_.extend({
+	            restUri: 'https://platform.cloud.coveo.com/rest/search',
+	            accessToken: 'xx564559b1-0045-48e1-953c-3addd1ee4457',
+	            queryStringArguments: {
+	                organizationID: 'searchuisamples'
+	            }
+	        }));
+	    };
+	    /**
 	     * Configure an endpoint to a Coveo Cloud index.
 	     * @param organization The organization id of your Coveo cloud index
 	     * @param token The token to use to execute query. If null, you will most probably need to login when querying.
@@ -1966,6 +1999,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        };
 	        var merged = SearchEndpoint.mergeConfigOptions(options, otherOptions);
 	        SearchEndpoint.endpoints['default'] = new SearchEndpoint(SearchEndpoint.removeUndefinedConfigOption(merged));
+	    };
+	    SearchEndpoint.configureCloudV2Endpoint = function (organization, token, uri, otherOptions) {
+	        if (uri === void 0) { uri = 'https://platform.cloud.coveo.com/rest/search'; }
+	        return SearchEndpoint.configureCloudEndpoint(organization, token, uri, otherOptions);
 	    };
 	    /**
 	     * Configure an endpoint to a Coveo on premise index.
@@ -1995,6 +2032,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    SearchEndpoint.prototype.reset = function () {
 	        this.createEndpointCaller();
+	    };
+	    /**
+	     * Set a function which will allow external code to modify all endpoint call parameters before they are sent by the browser.
+	     *
+	     * Used in very specific scenario where the network infrastructure require special request headers to be added or removed, for example.
+	     * @param requestModifier
+	     */
+	    SearchEndpoint.prototype.setRequestModifier = function (requestModifier) {
+	        this.caller.options.requestModifier = requestModifier;
 	    };
 	    /**
 	     * Return the base uri of the endpoint to perform search
@@ -2349,6 +2395,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        callParams.url += subscription.id;
 	        return this.performOneCall(callParams);
 	    };
+	    SearchEndpoint.prototype.logError = function (sentryLog, callOptions, callParams) {
+	        callParams.requestData = sentryLog;
+	        return this.performOneCall(callParams, callOptions)
+	            .then(function () {
+	            return true;
+	        })
+	            .catch(function () {
+	            return false;
+	        });
+	    };
 	    SearchEndpoint.prototype.nuke = function () {
 	        window.removeEventListener('beforeunload', this.onUnload);
 	    };
@@ -2477,8 +2533,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (this.isMissingAuthenticationProviderStatus(errorResponse.statusCode)) {
 	            return new MissingAuthenticationError_1.MissingAuthenticationError(errorResponse.data['provider']);
 	        }
-	        else if (errorResponse.data && errorResponse.data.message) {
+	        else if (errorResponse.data && errorResponse.data.message && errorResponse.data.type) {
 	            return new QueryError_1.QueryError(errorResponse);
+	        }
+	        else if (errorResponse.data && errorResponse.data.message) {
+	            return new AjaxError_1.AjaxError("Request Error : " + errorResponse.data.message, errorResponse.statusCode);
 	        }
 	        else {
 	            return new AjaxError_1.AjaxError('Request Error', errorResponse.statusCode);
@@ -2627,6 +2686,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        requestDataType('application/json'),
 	        responseType('text')
 	    ], SearchEndpoint.prototype, "deleteSubscription", null);
+	    __decorate([
+	        path('/log'),
+	        method('POST')
+	    ], SearchEndpoint.prototype, "logError", null);
 	    return SearchEndpoint;
 	}());
 	exports.SearchEndpoint = SearchEndpoint;
@@ -2914,6 +2977,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            begun: new Date(),
 	            method: params.method
 	        };
+	        requestInfo.headers = this.buildRequestHeaders(requestInfo);
+	        if (_.isFunction(this.options.requestModifier)) {
+	            requestInfo = this.options.requestModifier(requestInfo);
+	        }
 	        this.logger.trace('Performing REST request', requestInfo);
 	        var urlObject = this.parseURL(requestInfo.url);
 	        // In IE8, hostname and port return "" when we are on the same domain.
@@ -2957,22 +3024,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	                if (xmlHttpRequest.readyState == XMLHttpRequestStatus.OPENED && !sent) {
 	                    sent = true;
 	                    xmlHttpRequest.withCredentials = true;
-	                    // Set authentication depending on what we're using
-	                    if (_this.options.accessToken) {
-	                        xmlHttpRequest.setRequestHeader('Authorization', 'Bearer ' + _this.options.accessToken);
-	                    }
-	                    else if (_this.options.username && _this.options.password) {
-	                        xmlHttpRequest.setRequestHeader('Authorization', 'Basic ' + btoa(_this.options.username + ':' + _this.options.password));
-	                    }
+	                    _.each(requestInfo.headers, function (headerValue, headerKey) {
+	                        xmlHttpRequest.setRequestHeader(headerKey, headerValue);
+	                    });
 	                    if (requestInfo.method == 'GET') {
 	                        xmlHttpRequest.send();
 	                    }
 	                    else if (requestInfo.requestDataType.indexOf('application/json') === 0) {
-	                        xmlHttpRequest.setRequestHeader('Content-Type', 'application/json; charset="UTF-8"');
 	                        xmlHttpRequest.send(JSON.stringify(requestInfo.requestData));
 	                    }
 	                    else {
-	                        xmlHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset="UTF-8"');
 	                        xmlHttpRequest.send(_this.convertJsonToFormBody(requestInfo.requestData));
 	                    }
 	                }
@@ -3179,6 +3240,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else {
 	            return false;
 	        }
+	    };
+	    EndpointCaller.prototype.buildRequestHeaders = function (requestInfo) {
+	        var headers = {};
+	        if (this.options.accessToken) {
+	            headers['Authorization'] = "Bearer " + this.options.accessToken;
+	        }
+	        else if (this.options.username && this.options.password) {
+	            headers['Authorization'] = "Basic " + btoa(this.options.username + ':' + this.options.password);
+	        }
+	        if (requestInfo.method == 'GET') {
+	            return headers;
+	        }
+	        if (requestInfo.requestDataType.indexOf('application/json') === 0) {
+	            headers['Content-Type'] = 'application/json; charset="UTF-8"';
+	        }
+	        else {
+	            headers['Content-Type'] = 'application/x-www-form-urlencoded; charset="UTF-8"';
+	        }
+	        return headers;
 	    };
 	    return EndpointCaller;
 	}());
@@ -4157,8 +4237,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(_) {var __extends=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var s in e)e.hasOwnProperty(s)&&(t[s]=e[s]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){var s=this;this.expression=e,this.input=n,_.isString(t)?this.value=t:_.isArray(t)&&(this.subResults=t,_.forEach(this.subResults,function(t){t.parent=s}))}return e.prototype.isSuccess=function(){return null!=this.value||null!=this.subResults&&_.all(this.subResults,function(t){return t.isSuccess()})},e.prototype.path=function(t){var e=null!=this.parent&&this.parent!=t?this.parent.path(t):[];return e.push(this),e},e.prototype.findParent=function(t){for(var e=this,n=_.isString(t)?function(e){return t==e.expression.id}:t;null!=e&&!n(e);)e=e.parent;return e},e.prototype.find=function(t){var e=_.isString(t)?function(e){return t==e.expression.id}:t;if(e(this))return this;if(this.subResults)for(var n=0;n<this.subResults.length;n++){var s=this.subResults[n].find(e);if(s)return s}return null},e.prototype.findAll=function(t){var e=[],n=_.isString(t)?function(e){return t==e.expression.id}:t;return n(this)&&e.push(this),this.subResults&&(e=_.reduce(this.subResults,function(t,e){return t.concat(e.findAll(n))},e)),e},e.prototype.resultAt=function(t,e){if(0>t||t>this.getLength())return[];if(null!=e){if(_.isString(e)){if(e==this.expression.id)return[this]}else if(e(this))return[this]}else{var n=null==this.value&&null==this.subResults?this.input:this.value;if(null!=n)return[this]}if(null!=this.subResults){for(var s=[],i=0;i<this.subResults.length;i++){var o=this.subResults[i];if(s=s.concat(o.resultAt(t,e)),t-=o.getLength(),0>t)break}return s}return[]},e.prototype.getExpect=function(){return null==this.value&&null==this.subResults?[this]:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t.concat(e.getExpect())},[]):[]},e.prototype.getBestExpect=function(){var t=this.getExpect(),e=_.groupBy(t,function(t){return t.input}),n=_.last(_.keys(e).sort(function(t,e){return e.length-t.length})),s=e[n],e=_.groupBy(s,function(t){return t.expression.id});return _.map(e,function(t){return _.chain(t).map(function(t){return{path:t.path().length,result:t}}).sortBy("path").pluck("result").first().value()})},e.prototype.getHumanReadableExpect=function(){var t=this.getBestExpect(),e=t.length>0?_.last(t).input:"";return"Expected "+_.map(t,function(t){return t.getHumanReadable()}).join(" or ")+" but "+(e.length>0?JSON.stringify(e[0]):"end of input")+" found."},e.prototype.before=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return this.parent.before()+_.chain(this.parent.subResults).first(t).map(function(t){return t.toString()}).join("").value()},e.prototype.after=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return _.chain(this.parent.subResults).last(this.parent.subResults.length-t-1).map(function(t){return t.toString()}).join("").value()+this.parent.after()},e.prototype.getLength=function(){return null!=this.value?this.value.length:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t+e.getLength()},0):this.input.length},e.prototype.toHtmlElement=function(){var t=document.createElement("span"),e=null!=this.expression?this.expression.id:null;if(null!=e){var n=document.createAttribute("data-id");n.value=e,t.setAttributeNode(n)}var s=document.createAttribute("data-success");if(s.value=this.isSuccess().toString(),t.setAttributeNode(s),null!=this.value){t.appendChild(document.createTextNode(this.value));var i=document.createAttribute("data-value");i.value=this.value,t.setAttributeNode(i)}else if(null!=this.subResults)_.each(this.subResults,function(e){t.appendChild(e.toHtmlElement())});else{t.appendChild(document.createTextNode(this.input));var o=document.createAttribute("data-input");o.value=this.input,t.setAttributeNode(o),t.className="magic-box-error"+(this.input.length>0?"":" magic-box-error-empty")}return t.result=this,t},e.prototype.clean=function(t){if(null!=t||!this.isSuccess()){t=t||_.last(this.getBestExpect()).path(this);var n=_.first(t);if(null!=n){var s=_.indexOf(this.subResults,n),i=-1==s?[]:_.map(_.first(this.subResults,s),function(t){return t.clean()});return i.push(n.clean(_.rest(t))),new e(i,this.expression,this.input)}return new e(null,this.expression,this.input)}return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clean()}),this.expression,this.input):void 0},e.prototype.clone=function(){return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clone()}),this.expression,this.input):new e(null,this.expression,this.input)},e.prototype.toString=function(){return null!=this.value?this.value:null!=this.subResults?_.map(this.subResults,function(t){return t.toString()}).join(""):this.input},e.prototype.getHumanReadable=function(){return this.expression instanceof t.ExpressionConstant?JSON.stringify(this.expression.value):this.expression.id},e}();t.Result=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(n){e.call(this,[n],t.ExpressionEndOfInput,n.input);var s=new t.Result(null,t.ExpressionEndOfInput,n.input.substr(n.getLength()));s.parent=this,this.subResults.push(s)}return __extends(n,e),n}(t.Result);t.EndOfInputResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){var o=this;e.call(this,null!=t?[t]:null,n,s),this.result=t,this.expression=n,this.input=s,this.failAttempt=i,_.forEach(this.failAttempt,function(t){t.parent=o})}return __extends(n,e),n.prototype.getExpect=function(){var t=this,e=[];return null!=this.result&&(e=this.result.getExpect()),e=_.reduce(this.failAttempt,function(t,e){return t.concat(e.getExpect())},e),e.length>0&&_.all(e,function(e){return e.input==t.input})?[this]:e},n.prototype.clean=function(e){if(null!=e||!this.isSuccess()){e=_.rest(e||_.last(this.getBestExpect()).path(this));var n=_.first(e);return null==n?new t.Result(null,this.expression,this.input):new t.Result([n.clean(_.rest(e))],this.expression,this.input)}return new t.Result(_.map(this.result.subResults,function(t){return t.clean()}),this.expression,this.input)},n}(t.Result);t.OptionResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){e.call(this,t,n,s),this.results=t,this.expression=n,this.input=s,_.last(t)!=i&&(this.failAttempt=i,null!=this.failAttempt&&(this.failAttempt.parent=this))}return __extends(n,e),n.prototype.getExpect=function(){var t=e.prototype.getExpect.call(this);return null!=this.failAttempt?t.concat(this.failAttempt.getExpect()):t},n.prototype.clean=function(n){if(null!=this.failAttempt&&(null!=n||!this.isSuccess())){n=n||_.last(this.getBestExpect()).path(this);var s=_.first(n);if(null!=s&&s==this.failAttempt){var i=_.last(this.subResults),o=_.map(null!=i&&i.isSuccess()?this.subResults:_.initial(this.subResults),function(t){return t.clean()});return o.push(s.clean(_.rest(n))),new t.Result(o,this.expression,this.input)}}return e.prototype.clean.call(this,n)},n}(t.Result);t.RefResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=0==e.indexOf(this.value),i=new t.Result(s?this.value:null,this,e);return s&&n&&e.length>this.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.value},e}();t.ExpressionConstant=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.ExpressionEndOfInput={id:"end of input",parse:null}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function t(t,e,n){this.func=t,this.id=e,this.grammar=n}return t.prototype.parse=function(t,e){return this.func(t,e,this)},t.prototype.toString=function(){return this.id},t}();t.ExpressionFunction=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){if(this.parts=t,this.id=e,0==t.length)throw JSON.stringify(e)+" should have at least 1 parts"}return e.prototype.parse=function(e,n){for(var s,i=[],o=e,r=0;r<this.parts.length;r++){var u=this.parts[r];if(s=u.parse(o,n&&r==this.parts.length-1),i.push(s),!s.isSuccess())break;o=o.substr(s.getLength())}return new t.Result(i,this,e)},e.prototype.toString=function(){return this.id},e}();t.ExpressionList=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.parts=t,this.id=e}return e.prototype.parse=function(e,n){for(var s=[],i=0;i<this.parts.length;i++){var o=this.parts[i].parse(e,n);if(o.isSuccess())return new t.OptionResult(o,this,e,s);s.push(o)}return new t.OptionResult(null,this,e,s)},e.prototype.toString=function(){return this.id},e}();t.ExpressionOptions=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n,s){this.ref=t,this.occurrence=e,this.id=n,this.grammar=s}return e.prototype.parse=function(t,e){var n=this.grammar.getExpression(this.ref);if(null==n)throw"Expression not found:"+this.ref;return"?"==this.occurrence||null==this.occurrence?this.parseOnce(t,e,n):this.parseMany(t,e,n)},e.prototype.parseOnce=function(e,n,s){var i=s.parse(e,n),o=i.isSuccess();return o||"?"!=this.occurrence?new t.RefResult([i],this,e,o?null:i):n?0==e.length?new t.RefResult([],this,e,i):_.all(i.getBestExpect(),function(e){return e.expression==t.ExpressionEndOfInput})?new t.RefResult([new t.Result(null,t.ExpressionEndOfInput,e)],this,e,i):i:new t.RefResult([],this,e,null)},e.prototype.parseMany=function(e,n,s){var i,o,r=[],u=e;do i=s.parse(u,!1),o=i.isSuccess(),o&&(r.push(i),u=u.substr(i.getLength()));while(o&&i.input!=u);var a=_.isNumber(this.occurrence)?this.occurrence:"+"==this.occurrence?1:0;if(r.length<a)r.push(i);else if(n)if(r.length>0){var l=_.last(r);i=s.parse(l.input,!0),i.isSuccess()?r[r.length-1]=i:(r.push(new t.Result(null,t.ExpressionEndOfInput,l.input.substr(l.getLength()))),i=s.parse(l.input.substr(l.getLength()),!0))}else if(0!=e.length){var c=new t.Result(null,t.ExpressionEndOfInput,e);return new t.RefResult([c],this,e,i)}return new t.RefResult(r,this,e,i)},e.prototype.toString=function(){return this.id},e}();t.ExpressionRef=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=e.match(this.value);null!=s&&0!=s.index&&(s=null);var i=new t.Result(null!=s?s[0]:null,this,e);return i.isSuccess()&&n&&e.length>i.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.id},e}();t.ExpressionRegExp=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){void 0===n&&(n={}),this.expressions={},this.start=new t.ExpressionRef(e,null,"start",this),this.addExpressions(n)}return e.prototype.addExpressions=function(t){var e=this;_.each(t,function(t,n){e.addExpression(n,t)})},e.prototype.addExpression=function(t,n){if(t in this.expressions)throw"Grammar already contain the id:"+t;this.expressions[t]=e.buildExpression(n,t,this)},e.prototype.getExpression=function(t){return this.expressions[t]},e.prototype.parse=function(t){return this.start.parse(t,!0)},e.buildExpression=function(e,n,s){var i=typeof e;if("undefined"==i)throw"Invalid Expression: "+e;if(_.isString(e))return this.buildStringExpression(e,n,s);if(_.isArray(e))return new t.ExpressionOptions(_.map(e,function(e,i){return new t.ExpressionRef(e,null,n+"_"+i,s)}),n);if(_.isRegExp(e))return new t.ExpressionRegExp(e,n,s);if(_.isFunction(e))return new t.ExpressionFunction(e,n,s);throw"Invalid Expression: "+e},e.buildStringExpression=function(n,s,i){var o=e.stringMatch(n,e.spliter),r=_.map(o,function(e,n){if(e[1]){var o=e[1],r=e[3]?Number(e[3]):e[2]||null;return new t.ExpressionRef(o,r,s+"_"+n,i)}return new t.ExpressionConstant(e[4],s+"_"+n)});if(1==r.length){var u=r[0];return u.id=s,u}return new t.ExpressionList(r,s)},e.stringMatch=function(t,e){for(var n,s=[],i=new RegExp(e.source,"g");null!==(n=i.exec(t));)s.push(n);return s},e.spliter=/\[(\w+)(\*|\+|\?|\{([1-9][0-9]*)\})?\]|(.[^\[]*)/,e}();t.Grammar=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.element=t,this.onchange=e,this.hasFocus=!1,this.underlay=document.createElement("div"),this.underlay.className="magic-box-underlay",t.appendChild(this.underlay),this.highlightContainer=document.createElement("span"),this.highlightContainer.className="magic-box-highlight-container",this.underlay.appendChild(this.highlightContainer),this.ghostTextContainer=document.createElement("span"),this.ghostTextContainer.className="magic-box-ghost-text",this.underlay.appendChild(this.ghostTextContainer),this.input=document.createElement("input"),this.input.spellcheck=!1,this.input.setAttribute("form","coveo-dummy-form"),t.appendChild(this.input),this.setupHandler()}return e.prototype.updateInput=function(){this.input.value!=this.result.input&&(this.input.value=this.result.input)},e.prototype.updateHighlight=function(){this.highlightContainer.innerHTML="",this.highlightContainer.appendChild(this.result.toHtmlElement())},e.prototype.updateWordCompletion=function(){this.ghostTextContainer.innerHTML="",null!=this.wordCompletion&&this.ghostTextContainer.appendChild(document.createTextNode(this.wordCompletion.substr(this.result.input.length)))},e.prototype.updateScroll=function(e){var n=this;void 0===e&&(e=!0);var s=function(){n.underlay.clientWidth<n.underlay.scrollWidth&&(n.underlay.style.visibility="hidden",n.underlay.scrollLeft=n.input.scrollLeft,n.underlay.scrollTop=n.input.scrollTop,n.underlay.style.visibility="visible"),n.updateScrollDefer=null,n.hasFocus&&n.updateScroll()};e?null==this.updateScrollDefer&&(this.updateScrollDefer=t.requestAnimationFrame(s)):s()},e.prototype.setResult=function(t,e){this.result=t,this.updateInput(),this.updateHighlight(),_.isUndefined(e)&&null!=this.wordCompletion&&0==this.wordCompletion.indexOf(this.result.input)?this.updateWordCompletion():this.setWordCompletion(e),this.updateScroll()},e.prototype.setWordCompletion=function(t){null!=t&&0!=t.toLowerCase().indexOf(this.result.input.toLowerCase())&&(t=null),this.wordCompletion=t,this.updateWordCompletion(),this.updateScroll()},e.prototype.setCursor=function(t){if(this.input.focus(),this.input.createTextRange){var e=this.input.createTextRange();e.move("character",t),e.select()}else null!=this.input.selectionStart&&(this.input.focus(),this.input.setSelectionRange(t,t))},e.prototype.getCursor=function(){return this.input.selectionStart},e.prototype.setupHandler=function(){var t=this;this.input.onblur=function(){t.hasFocus=!1,setTimeout(function(){t.hasFocus||t.onblur&&t.onblur()},300),t.updateScroll()},this.input.onfocus=function(){t.hasFocus||(t.hasFocus=!0,t.updateScroll(),t.onfocus&&t.onfocus())},this.input.onkeydown=function(e){t.keydown(e)},this.input.onkeyup=function(e){t.keyup(e)},this.input.onclick=function(){t.onchangecursor()},this.input.select=function(){t.onchangecursor()},this.input.oncut=function(){setTimeout(function(){t.onInputChange()})},this.input.onpaste=function(){setTimeout(function(){t.onInputChange()})}},e.prototype.focus=function(){var t=this;this.hasFocus=!0,setTimeout(function(){t.input.focus()})},e.prototype.blur=function(){this.hasFocus&&this.input.blur()},e.prototype.keydown=function(e){var n=this;switch(e.keyCode||e.which){case 9:e.preventDefault();break;default:e.stopPropagation(),null==this.onkeydown||this.onkeydown(e.keyCode||e.which)?t.requestAnimationFrame(function(){n.onInputChange()}):e.preventDefault()}},e.prototype.keyup=function(t){switch(t.keyCode||t.which){case 9:this.tabPress();break;case 37:case 39:this.onchangecursor();break;default:null==this.onkeydown||this.onkeyup(t.keyCode||t.which)?this.onInputChange():t.preventDefault()}},e.prototype.tabPress=function(){null!=this.wordCompletion&&(this.input.value=this.wordCompletion,this.ontabpress&&this.ontabpress(),this.onchange(this.wordCompletion,!0))},e.prototype.onInputChange=function(){this.result.input!=this.input.value&&this.onchange(this.input.value,!1)},e.prototype.getValue=function(){return this.input.value},e.prototype.getWordCompletion=function(){return this.wordCompletion},e}();t.InputManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){var s=this;this.element=e,this.options=_.defaults(n,{selectableClass:"magic-box-suggestion",selectedClass:"magic-box-selected"}),void 0==this.options.timeout&&(this.options.timeout=500),this.element.onmouseover=function(e){if(t.$$(e.target).hasClass(s.options.selectableClass)){for(var n=s.element.getElementsByClassName(s.options.selectedClass),i=0;i<n.length;i++){var o=n.item(i);t.$$(o).removeClass(s.options.selectedClass)}t.$$(e.target).addClass(s.options.selectedClass)}},this.element.onmouseout=function(e){t.$$(e.target).hasClass(s.options.selectableClass)&&t.$$(e.target).removeClass(s.options.selectedClass)}}return e.prototype.moveDown=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=-1==s?0:s+1}else s=0;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),e&&e.suggestion},e.prototype.moveUp=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=-1==s?n.length-1:s-1}else s=n.length-1;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),e&&e.suggestion},e.prototype.select=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0);return null!=e&&t.$$(e).trigger("keyboardSelect"),e},e.prototype.mergeSuggestions=function(t,e){var n,s=this,i=[];t=_.compact(t);var o=this.pendingSuggestion=new Promise(function(e,r){_.each(t,function(t){var e=!1;setTimeout(function(){e=!0},s.options.timeout),t.then(function(t){!e&&t&&(i=i.concat(t))})});var u=function(){n&&clearTimeout(n),0==i.length?e([]):o==s.pendingSuggestion||null==s.pendingSuggestion?e(i.sort(function(t,e){return e.index-t.index})):r("new request queued")};0==t.length&&u(),void 0==t&&u(),n=setTimeout(function(){u()},s.options.timeout),Promise.all(t).then(function(){return u()})});o.then(function(t){return e&&e(t),s.updateSuggestions(t),t})["catch"](function(){return null})},e.prototype.updateSuggestions=function(e){var n=this;this.element.innerHTML="",this.element.className="magic-box-suggestions",_.each(e,function(e){var s=e.dom;if(s){t.$$(s).removeClass(n.options.selectedClass);var i=t.$$(s).find("."+n.options.selectableClass);t.$$(i).removeClass(n.options.selectedClass)}else{if(s=document.createElement("div"),s.className="magic-box-suggestion",null!=e.html)s.innerHTML=e.html;else if(null!=e.text)s.appendChild(document.createTextNode(e.text));else if(null!=e.separator){s.className="magic-box-suggestion-seperator";var o=document.createElement("div");o.className="magic-box-suggestion-seperator-label",o.appendChild(document.createTextNode(e.separator)),s.appendChild(o)}t.$$(s).on("click",function(){e.onSelect()}),t.$$(s).on("keyboardSelect",function(){e.onSelect()}),t.$$(s).addClass(n.options.selectableClass)}s.suggestion=e,n.element.appendChild(s)}),e.length>0?t.$$(this.element).addClass("magic-box-hasSuggestion"):t.$$(this.element).removeClass("magic-box-hasSuggestion")},e}();t.SuggestionsManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t){return t.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,"\\$&")}function s(t,e,s,o,r){if(void 0===s&&(s=!1),void 0===o&&(o="magic-box-hightlight"),void 0===r&&(r=""),0==e.length)return t;var u=n(e),a="("+u+")|(.*?(?="+u+")|.+)",l=new RegExp(a,s?"gi":"g");return t.replace(l,function(t,e,n){return i(null!=e?o:r,t)})}var i=function(t,e){return'<span class="'+t+'">'+_.escape(e)+"</span>"};e.highlightText=s;var o=function(){function e(t){this.el=t}return e.prototype.text=function(t){return t?void(void 0!=this.el.innerText?this.el.innerText=t:void 0!=this.el.textContent&&(this.el.textContent=t)):this.el.innerText||this.el.textContent},e.prototype.nodeListToArray=function(t){for(var e=t.length,n=new Array(e);e--;)n[e]=t.item(e);return n},e.prototype.empty=function(){for(;this.el.firstChild;)this.el.removeChild(this.el.firstChild)},e.prototype.show=function(){this.el.style.display="visible"},e.prototype.hide=function(){this.el.style.display="none"},e.prototype.toggle=function(t){void 0===t?"visible"==this.el.style.display?this.hide():this.show():t?this.show():this.hide()},e.prototype.find=function(t){return this.el.querySelector(t)},e.prototype.is=function(t){return this.el.tagName.toLowerCase()==t.toLowerCase()?!0:"."==t[0]&&this.hasClass(t.substr(1))?!0:"#"==t[0]&&this.el.getAttribute("id")==t.substr(1)},e.prototype.closest=function(e){for(var n=this.el,s=!1;!s&&(t.$$(n).hasClass(e)&&(s=!0),"body"!=n.tagName.toLowerCase())&&null!=n.parentElement;)s||(n=n.parentElement);return s?n:void 0},e.prototype.findAll=function(t){return this.nodeListToArray(this.el.querySelectorAll(t))},e.prototype.findClass=function(t){return"getElementsByClassName"in this.el?this.nodeListToArray(this.el.getElementsByClassName(t)):this.nodeListToArray(this.el.querySelectorAll("."+t))},e.prototype.findId=function(t){return document.getElementById(t)},e.prototype.addClass=function(t){this.hasClass(t)||(this.el.className?this.el.className+=" "+t:this.el.className=t)},e.prototype.removeClass=function(t){this.el.className=this.el.className.replace(new RegExp("(^|\\s)"+t+"(\\s|\\b)","g"),"$1")},e.prototype.toggleClass=function(t,e){e?this.addClass(t):this.removeClass(t)},e.prototype.getClass=function(){return this.el.className.match(e.CLASS_NAME_REGEX)||[]},e.prototype.hasClass=function(t){return _.contains(this.getClass(),t)},e.prototype.detach=function(){this.el.parentElement&&this.el.parentElement.removeChild(this.el)},e.prototype.on=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.on(t,n)});else{var i=this.getJQuery();if(i)i(this.el).on(t,n);else if(this.el.addEventListener){var o=function(t){n(t,t.detail)};e.handlers.push({eventHandle:n,fn:o}),this.el.addEventListener(t,o,!1)}else this.el.on&&this.el.on("on"+t,n)}},e.prototype.one=function(t,e){var n=this;if(_.isArray(t))_.each(t,function(t){n.one(t,e)});else{var s=function(i){return n.off(t,s),e(i)};this.on(t,s)}},e.prototype.off=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.off(t,n)});else{var i=this.getJQuery();if(i)i(this.el).off(t,n);else if(this.el.removeEventListener){var o=0,r=_.find(e.handlers,function(t,e){return t.eventHandle==n?(o=e,!0):void 0});r&&(this.el.removeEventListener(t,r.fn,!1),e.handlers.splice(o,1))}else this.el.off&&this.el.off("on"+t,n)}},e.prototype.trigger=function(t,e){var n=this.getJQuery();if(n)n(this.el).trigger(t,e);else if(void 0!==CustomEvent){var s=new CustomEvent(t,{detail:e,bubbles:!0});this.el.dispatchEvent(s)}},e.prototype.isEmpty=function(){return e.ONLY_WHITE_SPACE_REGEX.test(this.el.innerHTML)},e.prototype.isDescendant=function(t){for(var e=this.el.parentNode;null!=e;){if(e==t)return!0;e=e.parentNode}return!1},e.prototype.getJQuery=function(){return void 0!=window.jQuery?window.jQuery:!1},e.CLASS_NAME_REGEX=/-?[_a-zA-Z]+[_a-zA-Z0-9-]*/g,e.ONLY_WHITE_SPACE_REGEX=/^\s*$/,e.handlers=[],e}();e.Dom=o}(e=t.Utils||(t.Utils={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.$$=function(e){return new t.Utils.Dom(e)}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t,e,n,s){_.each(s.expressions,function(e){_.contains(t,e)||t.push(e)}),_.each(s.basicExpressions,function(t){_.contains(e,t)||e.push(t)}),_.each(s.grammars,function(t,e){if(e in n){if(!_.isArray(n[e])||!_.isArray(t))throw _.each(t,function(t){n[e].push(t)}),"Can not merge "+e+"("+new String(t)+" => "+new String(n[e])+")";_.each(t,function(t){n[e].push(t)})}else n[e]=t})}function s(){for(var t=[],e=0;e<arguments.length;e++)t[e-0]=arguments[e];for(var s=[],i=[],o={Start:["Expressions","Empty"],Expressions:"[OptionalSpaces][Expression][ExpressionsList*][OptionalSpaces]",ExpressionsList:"[Spaces][Expression]",Expression:s,BasicExpression:i,OptionalSpaces:/ */,Spaces:/ +/,Empty:/(?!.)/},r=0;r<t.length;r++)n(s,i,o,t[r]),_.each(t[r].include,function(e){_.contains(t,e)||t.push(e)});return s.push("BasicExpression"),{start:"Start",expressions:o}}function i(){for(var e=[],n=0;n<arguments.length;n++)e[n-0]=arguments[n];var i=s.apply(this,e);return new t.Grammar(i.start,i.expressions)}e.Expressions=s,e.ExpressionsGrammar=i}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){e.notWordStart=" ()[],$@'\"",e.notInWord=" ()[],:",e.Basic={basicExpressions:["Word","DoubleQuoted"],grammars:{DoubleQuoted:'"[NotDoubleQuote]"',NotDoubleQuote:/[^"]*/,SingleQuoted:"'[NotSingleQuote]'",NotSingleQuote:/[^']*/,Number:/[0-9]+/,Word:function(n,s,i){var o=new RegExp("[^"+e.notWordStart.replace(/(.)/g,"\\$1")+"][^"+e.notInWord.replace(/(.)/g,"\\$1")+"]*"),r=n.match(o);null!=r&&0!=r.index&&(r=null);var u=new t.Result(null!=r?r[0]:null,i,n);return u.isSuccess()&&s&&n.length>u.value.length?new t.EndOfInputResult(u):u}}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.SubExpression={basicExpressions:["SubExpression"],grammars:{SubExpression:"([Expressions])"}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Date={grammars:{Date:"[DateYear]/[DateMonth]/[DateDay]",DateYear:/([0-9]{4})/,DateMonth:/(1[0-2]|0?[1-9])/,DateDay:/([1-2][0-9]|3[0-1]|0?[1-9])/,DateRange:"[Date][Spaces?]..[Spaces?][Date]",DateRelative:["DateRelativeNegative","DateRelativeTerm"],DateRelativeTerm:/now|today|yesterday/,DateRelativeNegative:"[DateRelativeTerm][DateRelativeNegativeRef]",DateRelativeNegativeRef:/([\-\+][0-9]+(s|m|h|d|mo|y))/},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Field={basicExpressions:["FieldSimpleQuery","FieldQuery","Field"],grammars:{FieldQuery:"[Field][OptionalSpaces][FieldQueryOperation]",FieldQueryOperation:["FieldQueryValue","FieldQueryNumeric"],FieldQueryValue:"[FieldOperator][OptionalSpaces][FieldValue]",FieldQueryNumeric:"[FieldOperatorNumeric][OptionalSpaces][FieldValueNumeric]",FieldSimpleQuery:"[FieldName]:[OptionalSpaces][FieldValue]",Field:"@[FieldName]",FieldName:/[a-zA-Z][a-zA-Z0-9\.\_]*/,FieldOperator:/==|=|<>/,FieldOperatorNumeric:/<=|>=|<|>/,FieldValue:["DateRange","NumberRange","DateRelative","Date","Number","FieldValueList","FieldValueString"],FieldValueNumeric:["DateRelative","Date","Number"],FieldValueString:["DoubleQuoted","FieldValueNotQuoted"],FieldValueList:"([FieldValueString][FieldValueStringList*])",FieldValueStringList:"[FieldValueSeparator][FieldValueString]",FieldValueSeparator:/ *, */,FieldValueNotQuoted:/[^ \(\),]+/,NumberRange:"[Number][Spaces?]..[Spaces?][Number]"},include:[t.Date,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.QueryExtension={basicExpressions:["QueryExtension"],grammars:{QueryExtension:"$[QueryExtensionName]([QueryExtensionArguments])",QueryExtensionName:/\w+/,QueryExtensionArguments:"[QueryExtensionArgumentList*][QueryExtensionArgument]",QueryExtensionArgumentList:"[QueryExtensionArgument][Spaces?],[Spaces?]",QueryExtensionArgument:"[QueryExtensionArgumentName]:[Spaces?][QueryExtensionArgumentValue]",QueryExtensionArgumentName:/\w+/,QueryExtensionArgumentValue:["SingleQuoted","Expressions"]},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.NestedQuery={basicExpressions:["NestedQuery"],grammars:{NestedQuery:"[[NestedField][OptionalSpaces][Expressions]]",NestedField:"[[Field]]",FieldValue:["NestedQuery"]},include:[t.Field]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Complete={include:[t.NestedQuery,t.QueryExtension,t.SubExpression,t.Field,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){function e(t,e,n){return new s(t,e,n)}function n(t){return"requestAnimationFrame"in window?window.requestAnimationFrame(t):setTimeout(t)}var s=function(){function e(e,n,s){var i=this;void 0===s&&(s={}),this.element=e,this.grammar=n,this.options=s,this.lastSuggestions=[],_.isUndefined(this.options.inline)&&(this.options.inline=!1),t.$$(e).addClass("magic-box"),this.options.inline&&t.$$(e).addClass("magic-box-inline"),this.result=this.grammar.parse(""),this.displayedResult=this.result.clean(),this.clearDom=document.createElement("div"),this.clearDom.className="magic-box-clear",this.element.appendChild(this.clearDom);var o=document.createElement("div");o.className="magic-box-icon",this.clearDom.appendChild(o);var r=document.createElement("div");r.className="magic-box-input",e.appendChild(r),this.inputManager=new t.InputManager(r,function(t,e){e?(i.setText(t),i.onselect&&i.onselect(i.getFirstSuggestionText())):(i.setText(t),i.showSuggestion(),i.onchange&&i.onchange())}),this.inputManager.ontabpress=function(){i.ontabpress&&i.ontabpress()},this.inputManager.setResult(this.displayedResult);var u=document.createElement("div");u.className="magic-box-suggestions",this.element.appendChild(u),this.suggestionsManager=new t.SuggestionsManager(u,{selectableClass:this.options.selectableSuggestionClass,selectedClass:this.options.selectedSuggestionClass,timeout:this.options.suggestionTimeout}),this.setupHandler()}return e.prototype.getResult=function(){return this.result},e.prototype.getDisplayedResult=function(){return this.displayedResult},e.prototype.setText=function(e){t.$$(this.element).toggleClass("magic-box-notEmpty",e.length>0),this.result=this.grammar.parse(e),this.displayedResult=this.result.clean(),this.inputManager.setResult(this.displayedResult)},e.prototype.setCursor=function(t){this.inputManager.setCursor(t)},e.prototype.getCursor=function(){return this.inputManager.getCursor()},e.prototype.resultAtCursor=function(t){return this.displayedResult.resultAt(this.getCursor(),t)},e.prototype.setupHandler=function(){var e=this;this.inputManager.onblur=function(){t.$$(e.element).removeClass("magic-box-hasFocus"),e.onblur&&e.onblur(),e.options.inline||e.clearSuggestion()},this.inputManager.onfocus=function(){t.$$(e.element).addClass("magic-box-hasFocus"),e.showSuggestion(),e.onfocus&&e.onfocus()},this.inputManager.onkeydown=function(t){if(38==t||40==t)return!1;if(13==t){var n=e.suggestionsManager.select();
-	return null==n&&e.onsubmit&&e.onsubmit(),!1}return 27==t&&e.clearSuggestion(),!0},this.inputManager.onchangecursor=function(){e.showSuggestion()},this.inputManager.onkeyup=function(t){if(38==t)e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveUp()),e.onchange&&e.onchange();else{if(40!=t)return!0;e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveDown()),e.onchange&&e.onchange()}return!1},this.clearDom.onclick=function(){e.clear()}},e.prototype.showSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions(null!=this.getSuggestions?this.getSuggestions():[],function(e){t.updateSuggestion(e)})},e.prototype.updateSuggestion=function(t){var e=this;this.lastSuggestions=t;var n=this.getFirstSuggestionText();this.inputManager.setWordCompletion(n&&n.text),this.onsuggestions&&this.onsuggestions(t),_.each(t,function(t){null==t.onSelect&&null!=t.text&&(t.onSelect=function(){e.setText(t.text),e.onselect&&e.onselect(t)})})},e.prototype.focus=function(){t.$$(this.element).addClass("magic-box-hasFocus"),this.inputManager.focus()},e.prototype.blur=function(){this.inputManager.blur()},e.prototype.clearSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions([],function(e){t.updateSuggestion(e)}),this.inputManager.setWordCompletion(null)},e.prototype.focusOnSuggestion=function(t){null==t||null==t.text?(t=this.getFirstSuggestionText(),this.inputManager.setResult(this.displayedResult,t&&t.text)):this.inputManager.setResult(this.grammar.parse(t.text).clean(),t.text)},e.prototype.getFirstSuggestionText=function(){return _.find(this.lastSuggestions,function(t){return null!=t.text})},e.prototype.getText=function(){return this.inputManager.getValue()},e.prototype.getWordCompletion=function(){return this.inputManager.getWordCompletion()},e.prototype.clear=function(){this.setText(""),this.showSuggestion(),this.focus(),this.onclear&&this.onclear()},e}();t.Instance=s,t.create=e,t.requestAnimationFrame=n}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));
+	/* WEBPACK VAR INJECTION */(function(_) {var __extends=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var s in e)e.hasOwnProperty(s)&&(t[s]=e[s]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){var s=this;this.expression=e,this.input=n,_.isString(t)?this.value=t:_.isArray(t)&&(this.subResults=t,_.forEach(this.subResults,function(t){t.parent=s}))}return e.prototype.isSuccess=function(){return null!=this.value||null!=this.subResults&&_.all(this.subResults,function(t){return t.isSuccess()})},e.prototype.path=function(t){var e=null!=this.parent&&this.parent!=t?this.parent.path(t):[];return e.push(this),e},e.prototype.findParent=function(t){for(var e=this,n=_.isString(t)?function(e){return t==e.expression.id}:t;null!=e&&!n(e);)e=e.parent;return e},e.prototype.find=function(t){var e=_.isString(t)?function(e){return t==e.expression.id}:t;if(e(this))return this;if(this.subResults)for(var n=0;n<this.subResults.length;n++){var s=this.subResults[n].find(e);if(s)return s}return null},e.prototype.findAll=function(t){var e=[],n=_.isString(t)?function(e){return t==e.expression.id}:t;return n(this)&&e.push(this),this.subResults&&(e=_.reduce(this.subResults,function(t,e){return t.concat(e.findAll(n))},e)),e},e.prototype.resultAt=function(t,e){if(t<0||t>this.getLength())return[];if(null!=e){if(_.isString(e)){if(e==this.expression.id)return[this]}else if(e(this))return[this]}else{var n=null==this.value&&null==this.subResults?this.input:this.value;if(null!=n)return[this]}if(null!=this.subResults){for(var s=[],i=0;i<this.subResults.length;i++){var o=this.subResults[i];if(s=s.concat(o.resultAt(t,e)),t-=o.getLength(),t<0)break}return s}return[]},e.prototype.getExpect=function(){return null==this.value&&null==this.subResults?[this]:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t.concat(e.getExpect())},[]):[]},e.prototype.getBestExpect=function(){var t=this.getExpect(),e=_.groupBy(t,function(t){return t.input}),n=_.last(_.keys(e).sort(function(t,e){return e.length-t.length})),s=e[n],e=_.groupBy(s,function(t){return t.expression.id});return _.map(e,function(t){return _.chain(t).map(function(t){return{path:t.path().length,result:t}}).sortBy("path").pluck("result").first().value()})},e.prototype.getHumanReadableExpect=function(){var t=this.getBestExpect(),e=t.length>0?_.last(t).input:"";return"Expected "+_.map(t,function(t){return t.getHumanReadable()}).join(" or ")+" but "+(e.length>0?JSON.stringify(e[0]):"end of input")+" found."},e.prototype.before=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return this.parent.before()+_.chain(this.parent.subResults).first(t).map(function(t){return t.toString()}).join("").value()},e.prototype.after=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return _.chain(this.parent.subResults).last(this.parent.subResults.length-t-1).map(function(t){return t.toString()}).join("").value()+this.parent.after()},e.prototype.getLength=function(){return null!=this.value?this.value.length:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t+e.getLength()},0):this.input.length},e.prototype.toHtmlElement=function(){var t=document.createElement("span"),e=null!=this.expression?this.expression.id:null;if(null!=e){var n=document.createAttribute("data-id");n.value=e,t.setAttributeNode(n)}var s=document.createAttribute("data-success");if(s.value=this.isSuccess().toString(),t.setAttributeNode(s),null!=this.value){t.appendChild(document.createTextNode(this.value));var i=document.createAttribute("data-value");i.value=this.value,t.setAttributeNode(i)}else if(null!=this.subResults)_.each(this.subResults,function(e){t.appendChild(e.toHtmlElement())});else{t.appendChild(document.createTextNode(this.input));var o=document.createAttribute("data-input");o.value=this.input,t.setAttributeNode(o),t.className="magic-box-error"+(this.input.length>0?"":" magic-box-error-empty")}return t.result=this,t},e.prototype.clean=function(t){if(null!=t||!this.isSuccess()){t=t||_.last(this.getBestExpect()).path(this);var n=_.first(t);if(null!=n){var s=_.indexOf(this.subResults,n),i=s==-1?[]:_.map(_.first(this.subResults,s),function(t){return t.clean()});return i.push(n.clean(_.rest(t))),new e(i,this.expression,this.input)}return new e(null,this.expression,this.input)}return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clean()}),this.expression,this.input):void 0},e.prototype.clone=function(){return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clone()}),this.expression,this.input):new e(null,this.expression,this.input)},e.prototype.toString=function(){return null!=this.value?this.value:null!=this.subResults?_.map(this.subResults,function(t){return t.toString()}).join(""):this.input},e.prototype.getHumanReadable=function(){return this.expression instanceof t.ExpressionConstant?JSON.stringify(this.expression.value):this.expression.id},e}();t.Result=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(n){e.call(this,[n],t.ExpressionEndOfInput,n.input);var s=new t.Result(null,t.ExpressionEndOfInput,n.input.substr(n.getLength()));s.parent=this,this.subResults.push(s)}return __extends(n,e),n}(t.Result);t.EndOfInputResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){var o=this;e.call(this,null!=t?[t]:null,n,s),this.result=t,this.expression=n,this.input=s,this.failAttempt=i,_.forEach(this.failAttempt,function(t){t.parent=o})}return __extends(n,e),n.prototype.getExpect=function(){var t=this,e=[];return null!=this.result&&(e=this.result.getExpect()),e=_.reduce(this.failAttempt,function(t,e){return t.concat(e.getExpect())},e),e.length>0&&_.all(e,function(e){return e.input==t.input})?[this]:e},n.prototype.clean=function(e){if(null!=e||!this.isSuccess()){e=_.rest(e||_.last(this.getBestExpect()).path(this));var n=_.first(e);return null==n?new t.Result(null,this.expression,this.input):new t.Result([n.clean(_.rest(e))],this.expression,this.input)}return new t.Result(_.map(this.result.subResults,function(t){return t.clean()}),this.expression,this.input)},n}(t.Result);t.OptionResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){e.call(this,t,n,s),this.results=t,this.expression=n,this.input=s,_.last(t)!=i&&(this.failAttempt=i,null!=this.failAttempt&&(this.failAttempt.parent=this))}return __extends(n,e),n.prototype.getExpect=function(){var t=e.prototype.getExpect.call(this);return null!=this.failAttempt?t.concat(this.failAttempt.getExpect()):t},n.prototype.clean=function(n){if(null!=this.failAttempt&&(null!=n||!this.isSuccess())){n=n||_.last(this.getBestExpect()).path(this);var s=_.first(n);if(null!=s&&s==this.failAttempt){var i=_.last(this.subResults),o=_.map(null!=i&&i.isSuccess()?this.subResults:_.initial(this.subResults),function(t){return t.clean()});return o.push(s.clean(_.rest(n))),new t.Result(o,this.expression,this.input)}}return e.prototype.clean.call(this,n)},n}(t.Result);t.RefResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=0==e.indexOf(this.value),i=new t.Result(s?this.value:null,this,e);return s&&n&&e.length>this.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.value},e}();t.ExpressionConstant=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.ExpressionEndOfInput={id:"end of input",parse:null}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function t(t,e,n){this.func=t,this.id=e,this.grammar=n}return t.prototype.parse=function(t,e){return this.func(t,e,this)},t.prototype.toString=function(){return this.id},t}();t.ExpressionFunction=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){if(this.parts=t,this.id=e,0==t.length)throw JSON.stringify(e)+" should have at least 1 parts"}return e.prototype.parse=function(e,n){for(var s,i=[],o=e,r=0;r<this.parts.length;r++){var u=this.parts[r];if(s=u.parse(o,n&&r==this.parts.length-1),i.push(s),!s.isSuccess())break;o=o.substr(s.getLength())}return new t.Result(i,this,e)},e.prototype.toString=function(){return this.id},e}();t.ExpressionList=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.parts=t,this.id=e}return e.prototype.parse=function(e,n){for(var s=[],i=0;i<this.parts.length;i++){var o=this.parts[i].parse(e,n);if(o.isSuccess())return new t.OptionResult(o,this,e,s);s.push(o)}return new t.OptionResult(null,this,e,s)},e.prototype.toString=function(){return this.id},e}();t.ExpressionOptions=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n,s){this.ref=t,this.occurrence=e,this.id=n,this.grammar=s}return e.prototype.parse=function(t,e){var n=this.grammar.getExpression(this.ref);if(null==n)throw"Expression not found:"+this.ref;return"?"==this.occurrence||null==this.occurrence?this.parseOnce(t,e,n):this.parseMany(t,e,n)},e.prototype.parseOnce=function(e,n,s){var i=s.parse(e,n),o=i.isSuccess();return o||"?"!=this.occurrence?new t.RefResult([i],this,e,o?null:i):n?0==e.length?new t.RefResult([],this,e,i):_.all(i.getBestExpect(),function(e){return e.expression==t.ExpressionEndOfInput})?new t.RefResult([new t.Result(null,t.ExpressionEndOfInput,e)],this,e,i):i:new t.RefResult([],this,e,null)},e.prototype.parseMany=function(e,n,s){var i,o,r=[],u=e;do i=s.parse(u,!1),o=i.isSuccess(),o&&(r.push(i),u=u.substr(i.getLength()));while(o&&i.input!=u);var a=_.isNumber(this.occurrence)?this.occurrence:"+"==this.occurrence?1:0;if(r.length<a)r.push(i);else if(n)if(r.length>0){var l=_.last(r);i=s.parse(l.input,!0),i.isSuccess()?r[r.length-1]=i:(r.push(new t.Result(null,t.ExpressionEndOfInput,l.input.substr(l.getLength()))),i=s.parse(l.input.substr(l.getLength()),!0))}else if(0!=e.length){var c=new t.Result(null,t.ExpressionEndOfInput,e);return new t.RefResult([c],this,e,i)}return new t.RefResult(r,this,e,i)},e.prototype.toString=function(){return this.id},e}();t.ExpressionRef=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=e.match(this.value);null!=s&&0!=s.index&&(s=null);var i=new t.Result(null!=s?s[0]:null,this,e);return i.isSuccess()&&n&&e.length>i.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.id},e}();t.ExpressionRegExp=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){void 0===n&&(n={}),this.expressions={},this.start=new t.ExpressionRef(e,null,"start",this),this.addExpressions(n)}return e.prototype.addExpressions=function(t){var e=this;_.each(t,function(t,n){e.addExpression(n,t)})},e.prototype.addExpression=function(t,n){if(t in this.expressions)throw"Grammar already contain the id:"+t;this.expressions[t]=e.buildExpression(n,t,this)},e.prototype.getExpression=function(t){return this.expressions[t]},e.prototype.parse=function(t){return this.start.parse(t,!0)},e.buildExpression=function(e,n,s){var i=typeof e;if("undefined"==i)throw"Invalid Expression: "+e;if(_.isString(e))return this.buildStringExpression(e,n,s);if(_.isArray(e))return new t.ExpressionOptions(_.map(e,function(e,i){return new t.ExpressionRef(e,null,n+"_"+i,s)}),n);if(_.isRegExp(e))return new t.ExpressionRegExp(e,n,s);if(_.isFunction(e))return new t.ExpressionFunction(e,n,s);throw"Invalid Expression: "+e},e.buildStringExpression=function(n,s,i){var o=e.stringMatch(n,e.spliter),r=_.map(o,function(e,n){if(e[1]){var o=e[1],r=e[3]?Number(e[3]):e[2]||null;return new t.ExpressionRef(o,r,s+"_"+n,i)}return new t.ExpressionConstant(e[4],s+"_"+n)});if(1==r.length){var u=r[0];return u.id=s,u}return new t.ExpressionList(r,s)},e.stringMatch=function(t,e){for(var n,s=[],i=new RegExp(e.source,"g");null!==(n=i.exec(t));)s.push(n);return s},e.spliter=/\[(\w+)(\*|\+|\?|\{([1-9][0-9]*)\})?\]|(.[^\[]*)/,e}();t.Grammar=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){this.element=t,this.onchange=e,this.magicBox=n,this.hasFocus=!1,this.underlay=document.createElement("div"),this.underlay.className="magic-box-underlay",t.appendChild(this.underlay),this.highlightContainer=document.createElement("span"),this.highlightContainer.className="magic-box-highlight-container",this.underlay.appendChild(this.highlightContainer),this.ghostTextContainer=document.createElement("span"),this.ghostTextContainer.className="magic-box-ghost-text",this.underlay.appendChild(this.ghostTextContainer),this.input=document.createElement("input"),this.input.spellcheck=!1,this.input.setAttribute("form","coveo-dummy-form"),t.appendChild(this.input),this.setupHandler()}return e.prototype.updateInput=function(){this.input.value!=this.result.input&&(this.input.value=this.result.input)},e.prototype.updateHighlight=function(){this.highlightContainer.innerHTML="",this.highlightContainer.appendChild(this.result.toHtmlElement())},e.prototype.updateWordCompletion=function(){this.ghostTextContainer.innerHTML="",null!=this.wordCompletion&&this.ghostTextContainer.appendChild(document.createTextNode(this.wordCompletion.substr(this.result.input.length)))},e.prototype.updateScroll=function(e){var n=this;void 0===e&&(e=!0);var s=function(){n.underlay.clientWidth<n.underlay.scrollWidth&&(n.underlay.style.visibility="hidden",n.underlay.scrollLeft=n.input.scrollLeft,n.underlay.scrollTop=n.input.scrollTop,n.underlay.style.visibility="visible"),n.updateScrollDefer=null,n.hasFocus&&n.updateScroll()};e?null==this.updateScrollDefer&&(this.updateScrollDefer=t.requestAnimationFrame(s)):s()},e.prototype.setResult=function(t,e){this.result=t,this.updateInput(),this.updateHighlight(),_.isUndefined(e)&&null!=this.wordCompletion&&0==this.wordCompletion.indexOf(this.result.input)?this.updateWordCompletion():this.setWordCompletion(e),this.updateScroll()},e.prototype.setWordCompletion=function(t){null!=t&&0!=t.toLowerCase().indexOf(this.result.input.toLowerCase())&&(t=null),this.wordCompletion=t,this.updateWordCompletion(),this.updateScroll()},e.prototype.setCursor=function(t){if(this.input.focus(),this.input.createTextRange){var e=this.input.createTextRange();e.move("character",t),e.select()}else null!=this.input.selectionStart&&(this.input.focus(),this.input.setSelectionRange(t,t))},e.prototype.getCursor=function(){return this.input.selectionStart},e.prototype.setupHandler=function(){var t=this;this.input.onblur=function(){t.hasFocus=!1,setTimeout(function(){t.hasFocus||t.onblur&&t.onblur()},300),t.updateScroll()},this.input.onfocus=function(){t.hasFocus||(t.hasFocus=!0,t.updateScroll(),t.onfocus&&t.onfocus())},this.input.onkeydown=function(e){t.keydown(e)},this.input.onkeyup=function(e){t.keyup(e)},this.input.onclick=function(){t.onchangecursor()},this.input.select=function(){t.onchangecursor()},this.input.oncut=function(){setTimeout(function(){t.onInputChange()})},this.input.onpaste=function(){setTimeout(function(){t.onInputChange()})}},e.prototype.focus=function(){var t=this;this.hasFocus=!0,setTimeout(function(){t.input.focus()})},e.prototype.blur=function(){this.hasFocus&&this.input.blur()},e.prototype.keydown=function(e){var n=this;switch(e.keyCode||e.which){case 9:this.magicBox.hasSuggestions()&&e.preventDefault();break;default:e.stopPropagation(),null==this.onkeydown||this.onkeydown(e.keyCode||e.which)?t.requestAnimationFrame(function(){n.onInputChange()}):e.preventDefault()}},e.prototype.keyup=function(t){switch(t.keyCode||t.which){case 9:this.tabPress();break;case 37:case 39:this.onchangecursor();break;default:null==this.onkeydown||this.onkeyup(t.keyCode||t.which)?this.onInputChange():t.preventDefault()}},e.prototype.tabPress=function(){null!=this.wordCompletion&&(this.input.value=this.wordCompletion,this.ontabpress&&this.ontabpress(),this.onchange(this.wordCompletion,!0))},e.prototype.onInputChange=function(){this.result.input!=this.input.value&&this.onchange(this.input.value,!1)},e.prototype.getValue=function(){return this.input.value},e.prototype.getWordCompletion=function(){return this.wordCompletion},e}();t.InputManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){var s=this;this.element=e,this.options=_.defaults(n,{selectableClass:"magic-box-suggestion",selectedClass:"magic-box-selected"}),void 0==this.options.timeout&&(this.options.timeout=500),this.hasSuggestions=!1,this.element.onmouseover=function(e){if(t.$$(e.target).hasClass(s.options.selectableClass)){for(var n=s.element.getElementsByClassName(s.options.selectedClass),i=0;i<n.length;i++){var o=n.item(i);t.$$(o).removeClass(s.options.selectedClass)}t.$$(e.target).addClass(s.options.selectedClass)}},this.element.onmouseout=function(e){t.$$(e.target).hasClass(s.options.selectableClass)&&t.$$(e.target).removeClass(s.options.selectedClass)}}return e.prototype.moveDown=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=s==-1?0:s+1}else s=0;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),e&&e.suggestion},e.prototype.moveUp=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=s==-1?n.length-1:s-1}else s=n.length-1;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),e&&e.suggestion},e.prototype.select=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0);return null!=e&&t.$$(e).trigger("keyboardSelect"),e},e.prototype.mergeSuggestions=function(t,e){var n,s=this,i=[];t=_.compact(t);var o=this.pendingSuggestion=new Promise(function(e,r){_.each(t,function(t){var e=!1;setTimeout(function(){e=!0},s.options.timeout),t.then(function(t){!e&&t&&(i=i.concat(t))})});var u=function(){n&&clearTimeout(n),0==i.length?e([]):o==s.pendingSuggestion||null==s.pendingSuggestion?e(i.sort(function(t,e){return e.index-t.index})):r("new request queued")};0==t.length&&u(),void 0==t&&u(),n=setTimeout(function(){u()},s.options.timeout),Promise.all(t).then(function(){return u()})});o.then(function(t){return e&&e(t),s.updateSuggestions(t),t})["catch"](function(){return null})},e.prototype.updateSuggestions=function(e){var n=this;this.element.innerHTML="",this.element.className="magic-box-suggestions",_.each(e,function(e){var s=e.dom;if(s){t.$$(s).removeClass(n.options.selectedClass);var i=t.$$(s).find("."+n.options.selectableClass);t.$$(i).removeClass(n.options.selectedClass)}else{if(s=document.createElement("div"),s.className="magic-box-suggestion",null!=e.html)s.innerHTML=e.html;else if(null!=e.text)s.appendChild(document.createTextNode(e.text));else if(null!=e.separator){s.className="magic-box-suggestion-seperator";var o=document.createElement("div");o.className="magic-box-suggestion-seperator-label",o.appendChild(document.createTextNode(e.separator)),s.appendChild(o)}t.$$(s).on("click",function(){e.onSelect()}),t.$$(s).on("keyboardSelect",function(){e.onSelect()}),t.$$(s).addClass(n.options.selectableClass)}s.suggestion=e,n.element.appendChild(s)}),e.length>0?(t.$$(this.element).addClass("magic-box-hasSuggestion"),this.hasSuggestions=!0):(t.$$(this.element).removeClass("magic-box-hasSuggestion"),this.hasSuggestions=!1)},e}();t.SuggestionsManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t){return t.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,"\\$&")}function s(t,e,s,o,r){if(void 0===s&&(s=!1),void 0===o&&(o="magic-box-hightlight"),void 0===r&&(r=""),0==e.length)return t;var u=n(e),a="("+u+")|(.*?(?="+u+")|.+)",l=new RegExp(a,s?"gi":"g");return t.replace(l,function(t,e,n){return i(null!=e?o:r,t)})}var i=function(t,e){return'<span class="'+t+'">'+_.escape(e)+"</span>"};e.highlightText=s;var o=function(){function e(t){this.el=t}return e.prototype.text=function(t){return t?void(void 0!=this.el.innerText?this.el.innerText=t:void 0!=this.el.textContent&&(this.el.textContent=t)):this.el.innerText||this.el.textContent},e.prototype.nodeListToArray=function(t){for(var e=t.length,n=new Array(e);e--;)n[e]=t.item(e);return n},e.prototype.empty=function(){for(;this.el.firstChild;)this.el.removeChild(this.el.firstChild)},e.prototype.show=function(){this.el.style.display="visible"},e.prototype.hide=function(){this.el.style.display="none"},e.prototype.toggle=function(t){void 0===t?"visible"==this.el.style.display?this.hide():this.show():t?this.show():this.hide()},e.prototype.find=function(t){return this.el.querySelector(t)},e.prototype.is=function(t){return this.el.tagName.toLowerCase()==t.toLowerCase()||(!("."!=t[0]||!this.hasClass(t.substr(1)))||"#"==t[0]&&this.el.getAttribute("id")==t.substr(1))},e.prototype.closest=function(e){for(var n=this.el,s=!1;!s&&(t.$$(n).hasClass(e)&&(s=!0),"body"!=n.tagName.toLowerCase())&&null!=n.parentElement;)s||(n=n.parentElement);if(s)return n},e.prototype.findAll=function(t){return this.nodeListToArray(this.el.querySelectorAll(t))},e.prototype.findClass=function(t){return"getElementsByClassName"in this.el?this.nodeListToArray(this.el.getElementsByClassName(t)):this.nodeListToArray(this.el.querySelectorAll("."+t))},e.prototype.findId=function(t){return document.getElementById(t)},e.prototype.addClass=function(t){this.hasClass(t)||(this.el.className?this.el.className+=" "+t:this.el.className=t)},e.prototype.removeClass=function(t){this.el.className=this.el.className.replace(new RegExp("(^|\\s)"+t+"(\\s|\\b)","g"),"$1")},e.prototype.toggleClass=function(t,e){e?this.addClass(t):this.removeClass(t)},e.prototype.getClass=function(){return this.el.className.match(e.CLASS_NAME_REGEX)||[]},e.prototype.hasClass=function(t){return _.contains(this.getClass(),t)},e.prototype.detach=function(){this.el.parentElement&&this.el.parentElement.removeChild(this.el)},e.prototype.on=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.on(t,n)});else{var i=this.getJQuery();if(i)i(this.el).on(t,n);else if(this.el.addEventListener){var o=function(t){n(t,t.detail)};e.handlers.push({eventHandle:n,fn:o}),this.el.addEventListener(t,o,!1)}else this.el.on&&this.el.on("on"+t,n)}},e.prototype.one=function(t,e){var n=this;if(_.isArray(t))_.each(t,function(t){n.one(t,e)});else{var s=function(i){return n.off(t,s),e(i)};this.on(t,s)}},e.prototype.off=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.off(t,n)});else{var i=this.getJQuery();if(i)i(this.el).off(t,n);else if(this.el.removeEventListener){var o=0,r=_.find(e.handlers,function(t,e){if(t.eventHandle==n)return o=e,!0});r&&(this.el.removeEventListener(t,r.fn,!1),e.handlers.splice(o,1))}else this.el.off&&this.el.off("on"+t,n)}},e.prototype.trigger=function(t,e){var n=this.getJQuery();if(n)n(this.el).trigger(t,e);else if(void 0!==CustomEvent){var s=new CustomEvent(t,{detail:e,bubbles:!0});this.el.dispatchEvent(s)}},e.prototype.isEmpty=function(){return e.ONLY_WHITE_SPACE_REGEX.test(this.el.innerHTML)},e.prototype.isDescendant=function(t){for(var e=this.el.parentNode;null!=e;){if(e==t)return!0;e=e.parentNode}return!1},e.prototype.getJQuery=function(){return void 0!=window.jQuery&&window.jQuery},e.CLASS_NAME_REGEX=/-?[_a-zA-Z]+[_a-zA-Z0-9-]*/g,e.ONLY_WHITE_SPACE_REGEX=/^\s*$/,e.handlers=[],e}();e.Dom=o}(e=t.Utils||(t.Utils={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.$$=function(e){return new t.Utils.Dom(e)}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t,e,n,s){_.each(s.expressions,function(e){_.contains(t,e)||t.push(e)}),_.each(s.basicExpressions,function(t){_.contains(e,t)||e.push(t)}),_.each(s.grammars,function(t,e){if(e in n){if(!_.isArray(n[e])||!_.isArray(t))throw _.each(t,function(t){n[e].push(t)}),"Can not merge "+e+"("+new String(t)+" => "+new String(n[e])+")";_.each(t,function(t){n[e].push(t)})}else n[e]=t})}function s(){for(var t=[],e=0;e<arguments.length;e++)t[e-0]=arguments[e];for(var s=[],i=[],o={Start:["Expressions","Empty"],Expressions:"[OptionalSpaces][Expression][ExpressionsList*][OptionalSpaces]",ExpressionsList:"[Spaces][Expression]",Expression:s,BasicExpression:i,OptionalSpaces:/ */,Spaces:/ +/,Empty:/(?!.)/},r=0;r<t.length;r++)n(s,i,o,t[r]),_.each(t[r].include,function(e){_.contains(t,e)||t.push(e)});return s.push("BasicExpression"),{start:"Start",expressions:o}}function i(){for(var e=[],n=0;n<arguments.length;n++)e[n-0]=arguments[n];var i=s.apply(this,e);return new t.Grammar(i.start,i.expressions)}e.Expressions=s,e.ExpressionsGrammar=i}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){e.notWordStart=" ()[],$@'\"",e.notInWord=" ()[],:",e.Basic={basicExpressions:["Word","DoubleQuoted"],grammars:{DoubleQuoted:'"[NotDoubleQuote]"',NotDoubleQuote:/[^"]*/,SingleQuoted:"'[NotSingleQuote]'",NotSingleQuote:/[^']*/,Number:/[0-9]+/,Word:function(n,s,i){var o=new RegExp("[^"+e.notWordStart.replace(/(.)/g,"\\$1")+"][^"+e.notInWord.replace(/(.)/g,"\\$1")+"]*"),r=n.match(o);null!=r&&0!=r.index&&(r=null);var u=new t.Result(null!=r?r[0]:null,i,n);return u.isSuccess()&&s&&n.length>u.value.length?new t.EndOfInputResult(u):u}}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.SubExpression={basicExpressions:["SubExpression"],grammars:{SubExpression:"([Expressions])"}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Date={grammars:{Date:"[DateYear]/[DateMonth]/[DateDay]",DateYear:/([0-9]{4})/,DateMonth:/(1[0-2]|0?[1-9])/,DateDay:/([1-2][0-9]|3[0-1]|0?[1-9])/,DateRange:"[Date][Spaces?]..[Spaces?][Date]",DateRelative:["DateRelativeNegative","DateRelativeTerm"],DateRelativeTerm:/now|today|yesterday/,DateRelativeNegative:"[DateRelativeTerm][DateRelativeNegativeRef]",DateRelativeNegativeRef:/([\-\+][0-9]+(s|m|h|d|mo|y))/},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Field={basicExpressions:["FieldSimpleQuery","FieldQuery","Field"],grammars:{FieldQuery:"[Field][OptionalSpaces][FieldQueryOperation]",FieldQueryOperation:["FieldQueryValue","FieldQueryNumeric"],FieldQueryValue:"[FieldOperator][OptionalSpaces][FieldValue]",FieldQueryNumeric:"[FieldOperatorNumeric][OptionalSpaces][FieldValueNumeric]",FieldSimpleQuery:"[FieldName]:[OptionalSpaces][FieldValue]",Field:"@[FieldName]",FieldName:/[a-zA-Z][a-zA-Z0-9\.\_]*/,FieldOperator:/==|=|<>/,FieldOperatorNumeric:/<=|>=|<|>/,FieldValue:["DateRange","NumberRange","DateRelative","Date","Number","FieldValueList","FieldValueString"],FieldValueNumeric:["DateRelative","Date","Number"],FieldValueString:["DoubleQuoted","FieldValueNotQuoted"],FieldValueList:"([FieldValueString][FieldValueStringList*])",FieldValueStringList:"[FieldValueSeparator][FieldValueString]",FieldValueSeparator:/ *, */,FieldValueNotQuoted:/[^ \(\),]+/,NumberRange:"[Number][Spaces?]..[Spaces?][Number]"},include:[t.Date,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.QueryExtension={basicExpressions:["QueryExtension"],grammars:{QueryExtension:"$[QueryExtensionName]([QueryExtensionArguments])",QueryExtensionName:/\w+/,QueryExtensionArguments:"[QueryExtensionArgumentList*][QueryExtensionArgument]",QueryExtensionArgumentList:"[QueryExtensionArgument][Spaces?],[Spaces?]",QueryExtensionArgument:"[QueryExtensionArgumentName]:[Spaces?][QueryExtensionArgumentValue]",QueryExtensionArgumentName:/\w+/,QueryExtensionArgumentValue:["SingleQuoted","Expressions"]},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.NestedQuery={basicExpressions:["NestedQuery"],grammars:{NestedQuery:"[[NestedField][OptionalSpaces][Expressions]]",NestedField:"[[Field]]",FieldValue:["NestedQuery"]},include:[t.Field]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Complete={include:[t.NestedQuery,t.QueryExtension,t.SubExpression,t.Field,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){function e(t,e,n){return new s(t,e,n)}function n(t){return"requestAnimationFrame"in window?window.requestAnimationFrame(t):setTimeout(t)}var s=function(){function e(e,n,s){var i=this;void 0===s&&(s={}),this.element=e,this.grammar=n,this.options=s,this.lastSuggestions=[],_.isUndefined(this.options.inline)&&(this.options.inline=!1),t.$$(e).addClass("magic-box"),this.options.inline&&t.$$(e).addClass("magic-box-inline"),this.result=this.grammar.parse(""),this.displayedResult=this.result.clean(),this.clearDom=document.createElement("div"),this.clearDom.className="magic-box-clear",this.element.appendChild(this.clearDom);var o=document.createElement("div");o.className="magic-box-icon",this.clearDom.appendChild(o);var r=document.createElement("div");r.className="magic-box-input",e.appendChild(r),this.inputManager=new t.InputManager(r,function(t,e){e?(i.setText(t),i.onselect&&i.onselect(i.getFirstSuggestionText())):(i.setText(t),i.showSuggestion(),i.onchange&&i.onchange())},this),this.inputManager.ontabpress=function(){i.ontabpress&&i.ontabpress()},this.inputManager.setResult(this.displayedResult);var u=document.createElement("div");u.className="magic-box-suggestions",this.element.appendChild(u),this.suggestionsManager=new t.SuggestionsManager(u,{selectableClass:this.options.selectableSuggestionClass,selectedClass:this.options.selectedSuggestionClass,timeout:this.options.suggestionTimeout}),this.setupHandler()}return e.prototype.getResult=function(){return this.result},e.prototype.getDisplayedResult=function(){return this.displayedResult},e.prototype.setText=function(e){t.$$(this.element).toggleClass("magic-box-notEmpty",e.length>0),this.result=this.grammar.parse(e),this.displayedResult=this.result.clean(),this.inputManager.setResult(this.displayedResult)},e.prototype.setCursor=function(t){this.inputManager.setCursor(t)},e.prototype.getCursor=function(){return this.inputManager.getCursor()},e.prototype.resultAtCursor=function(t){return this.displayedResult.resultAt(this.getCursor(),t)},e.prototype.setupHandler=function(){var e=this;this.inputManager.onblur=function(){t.$$(e.element).removeClass("magic-box-hasFocus"),e.onblur&&e.onblur(),e.options.inline||e.clearSuggestion()},this.inputManager.onfocus=function(){t.$$(e.element).addClass("magic-box-hasFocus"),e.showSuggestion(),e.onfocus&&e.onfocus();
+	},this.inputManager.onkeydown=function(t){if(38==t||40==t)return!1;if(13==t){var n=e.suggestionsManager.select();return null==n&&e.onsubmit&&e.onsubmit(),!1}return 27==t&&e.clearSuggestion(),!0},this.inputManager.onchangecursor=function(){e.showSuggestion()},this.inputManager.onkeyup=function(t){if(38==t)e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveUp()),e.onchange&&e.onchange();else{if(40!=t)return!0;e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveDown()),e.onchange&&e.onchange()}return!1},this.clearDom.onclick=function(){e.clear()}},e.prototype.showSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions(null!=this.getSuggestions?this.getSuggestions():[],function(e){t.updateSuggestion(e)})},e.prototype.updateSuggestion=function(t){var e=this;this.lastSuggestions=t;var n=this.getFirstSuggestionText();this.inputManager.setWordCompletion(n&&n.text),this.onsuggestions&&this.onsuggestions(t),_.each(t,function(t){null==t.onSelect&&null!=t.text&&(t.onSelect=function(){e.setText(t.text),e.onselect&&e.onselect(t)})})},e.prototype.focus=function(){t.$$(this.element).addClass("magic-box-hasFocus"),this.inputManager.focus()},e.prototype.blur=function(){this.inputManager.blur()},e.prototype.clearSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions([],function(e){t.updateSuggestion(e)}),this.inputManager.setWordCompletion(null)},e.prototype.focusOnSuggestion=function(t){null==t||null==t.text?(t=this.getFirstSuggestionText(),this.inputManager.setResult(this.displayedResult,t&&t.text)):this.inputManager.setResult(this.grammar.parse(t.text).clean(),t.text)},e.prototype.getFirstSuggestionText=function(){return _.find(this.lastSuggestions,function(t){return null!=t.text})},e.prototype.getText=function(){return this.inputManager.getValue()},e.prototype.getWordCompletion=function(){return this.inputManager.getWordCompletion()},e.prototype.clear=function(){this.setText(""),this.showSuggestion(),this.focus(),this.onclear&&this.onclear()},e.prototype.hasSuggestions=function(){return this.suggestionsManager.hasSuggestions},e}();t.Instance=s,t.create=e,t.requestAnimationFrame=n}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));
 	
 	/*** EXPORTS FROM exports-loader ***/
 	module.exports = Coveo.MagicBox;
@@ -4570,36 +4650,64 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AnalyticsEvents_1 = __webpack_require__(40);
+	var AdvancedSearchEvents_1 = __webpack_require__(40);
+	exports.AdvancedSearchEvents = AdvancedSearchEvents_1.AdvancedSearchEvents;
+	var AnalyticsEvents_1 = __webpack_require__(41);
 	exports.AnalyticsEvents = AnalyticsEvents_1.AnalyticsEvents;
-	var BreadcrumbEvents_1 = __webpack_require__(41);
+	var BreadcrumbEvents_1 = __webpack_require__(42);
 	exports.BreadcrumbEvents = BreadcrumbEvents_1.BreadcrumbEvents;
-	var DebugEvents_1 = __webpack_require__(42);
+	var DebugEvents_1 = __webpack_require__(43);
 	exports.DebugEvents = DebugEvents_1.DebugEvents;
-	var ImageResultListEvents_1 = __webpack_require__(43);
+	var ImageResultListEvents_1 = __webpack_require__(44);
 	exports.ImageResultListEvents = ImageResultListEvents_1.ImageResultListEvents;
-	var InitializationEvents_1 = __webpack_require__(44);
+	var InitializationEvents_1 = __webpack_require__(45);
 	exports.InitializationEvents = InitializationEvents_1.InitializationEvents;
-	var OmniboxEvents_1 = __webpack_require__(45);
+	var OmniboxEvents_1 = __webpack_require__(46);
 	exports.OmniboxEvents = OmniboxEvents_1.OmniboxEvents;
-	var PreferencesPanelEvents_1 = __webpack_require__(46);
+	var PreferencesPanelEvents_1 = __webpack_require__(47);
 	exports.PreferencesPanelEvents = PreferencesPanelEvents_1.PreferencesPanelEvents;
-	var QueryEvents_1 = __webpack_require__(47);
+	var QueryEvents_1 = __webpack_require__(48);
 	exports.QueryEvents = QueryEvents_1.QueryEvents;
-	var ResultListEvents_1 = __webpack_require__(48);
+	var ResultListEvents_1 = __webpack_require__(49);
 	exports.ResultListEvents = ResultListEvents_1.ResultListEvents;
-	var SearchAlertEvents_1 = __webpack_require__(49);
+	var SearchAlertEvents_1 = __webpack_require__(50);
 	exports.SearchAlertsEvents = SearchAlertEvents_1.SearchAlertsEvents;
-	var SettingsEvents_1 = __webpack_require__(50);
+	var SettingsEvents_1 = __webpack_require__(51);
 	exports.SettingsEvents = SettingsEvents_1.SettingsEvents;
-	var SliderEvents_1 = __webpack_require__(51);
+	var SliderEvents_1 = __webpack_require__(52);
 	exports.SliderEvents = SliderEvents_1.SliderEvents;
-	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(52);
+	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(53);
 	exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents_1.StandaloneSearchInterfaceEvents;
 
 
 /***/ },
 /* 40 */
+/***/ function(module, exports) {
+
+	"use strict";
+	/**
+	 * This static class is there to contains the different string definition for all the events related to the {@link AdvancedSearch} component.
+	 */
+	var AdvancedSearchEvents = (function () {
+	    function AdvancedSearchEvents() {
+	    }
+	    /**
+	     * Triggered when the advanced search component is being built.
+	     *
+	     * Allows external code to add new sections in the advanced search panel.
+	     *
+	     * All handlers bound will receive {@link IBuildingAdvancedSearchEventArgs} as an argument
+	     * @type {string}
+	     */
+	    AdvancedSearchEvents.buildingAdvancedSearch = 'buildingAdvancedSearch';
+	    AdvancedSearchEvents.executeAdvancedSearch = 'executeAdvancedSearch';
+	    return AdvancedSearchEvents;
+	}());
+	exports.AdvancedSearchEvents = AdvancedSearchEvents;
+
+
+/***/ },
+/* 41 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4616,7 +4724,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4645,7 +4753,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4659,7 +4767,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4673,17 +4781,65 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports) {
 
 	"use strict";
+	/**
+	 * This static class is there to contain the different string definitions for all the events related to initialization.
+	 *
+	 * Note that these events will only be triggered when the {@link init} function is called.
+	 *
+	 * This means these events are normally called only once when the search interface is initialized.
+	 */
 	var InitializationEvents = (function () {
 	    function InitializationEvents() {
 	    }
+	    /**
+	     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
+	     *
+	     * The string value is `beforeInitialization`.
+	     * @type {string}
+	     */
 	    InitializationEvents.beforeInitialization = 'beforeInitialization';
+	    /**
+	     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
+	     * but before their state is set from the hash portion of the URL (e.g., http://mysearchinterface#q=myQuery ).
+	     *
+	     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
+	     *
+	     * The string value is `afterComponentsInitialization`.
+	     * @type {string}
+	     */
 	    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
+	    /**
+	     * Triggered right before the state from the URL (e.g., http://mysearchinterface#q=myQuery ) gets applied in the interface.
+	     *
+	     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
+	     *
+	     * The string value is `restoreHistoryState`.
+	     * @type {string}
+	     */
 	    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
+	    /**
+	     * Triggered right after the UI is fully initialized.
+	     *
+	     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., http://mysearchinterface#q=myquery) has been applied.
+	     *
+	     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
+	     *
+	     * The string value is `afterInitialization`.
+	     * @type {string}
+	     */
 	    InitializationEvents.afterInitialization = 'afterInitialization';
+	    /**
+	     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
+	     *
+	     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
+	     *
+	     * The string value is `nuke`.
+	     * @type {string}
+	     */
 	    InitializationEvents.nuke = 'nuke';
 	    return InitializationEvents;
 	}());
@@ -4691,7 +4847,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4709,7 +4865,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4724,7 +4880,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4739,98 +4895,122 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Triggered when a new query is launched.
 	     *
-	     * All handlers bound will receive {@link INewQueryEventArgs} as an argument
+	     * All bound handlers will receive {@link INewQueryEventArgs} as an argument.
+	     *
+	     * The string value is `newQuery`.
 	     * @type {string}
 	     */
 	    QueryEvents.newQuery = 'newQuery';
 	    /**
 	     * Triggered when the query is being built.
 	     *
-	     * This is typically where all components will contribute their part to the {@link IQuery} using the {@link QueryBuilder}
+	     * This is typically where all components will contribute their part to the {@link IQuery} using the {@link QueryBuilder}.
 	     *
-	     * All handlers bound will receive {@link IBuildingQueryEventArgs} as an argument
+	     * All bound handlers will receive {@link IBuildingQueryEventArgs} as an argument.
+	     *
+	     * The string value is `buildingQuery`.
 	     * @type {string}
 	     */
 	    QueryEvents.buildingQuery = 'buildingQuery';
 	    /**
 	     * Triggered when the query is done being built.
 	     *
-	     * This is typically where the facet will add their {@link IGroupByRequest} to the {@link IQuery}.
+	     * This is typically where the facet will add it's {@link IGroupByRequest} to the {@link IQuery}.
 	     *
-	     * All handlers bound will receive {@link IDoneBuildingQueryEventArgs} as an argument
+	     * All bound handlers will receive {@link IDoneBuildingQueryEventArgs} as an argument.
+	     *
+	     * The string value is `doneBuildingQuery`.
 	     * @type {string}
 	     */
 	    QueryEvents.doneBuildingQuery = 'doneBuildingQuery';
 	    /**
-	     * Triggered when the query is being executed on the search API.
+	     * Triggered when the query is being executed on the Search API.
 	     *
-	     * All handlers bound will receive {@link IDuringQueryEventArgs} as an argument
+	     * All bound handlers will receive {@link IDuringQueryEventArgs} as an argument.
+	     *
+	     * The string value is `duringQuery`.
 	     * @type {string}
 	     */
 	    QueryEvents.duringQuery = 'duringQuery';
 	    /**
-	     * Triggered when more results is being fetched on the search API (think : Infinite scrolling, or pager).
+	     * Triggered when more results are being fetched on the Search API (think : infinite scrolling, or pager).
 	     *
-	     * All handlers bound will receive {@link IDuringQueryEventArgs} as an argument
+	     * All bound handlers will receive {@link IDuringQueryEventArgs} as an argument.
+	     *
+	     * The string value is `duringFetchMoreQuery`.
 	     * @type {string}
 	     */
 	    QueryEvents.duringFetchMoreQuery = 'duringFetchMoreQuery';
 	    /**
-	     * Triggered when a query successfully return from the search API.
+	     * Triggered when a query successfully returns from the Search API.
 	     *
-	     * All handlers bound will receive {@link IQuerySuccessEventArgs} as an argument
+	     * All bound handlers will receive {@link IQuerySuccessEventArgs} as an argument.
+	     *
+	     * The string value is `querySuccess`.
 	     * @type {string}
 	     */
 	    QueryEvents.querySuccess = 'querySuccess';
 	    /**
-	     * Triggered when a more results were successfully returned from the search API. (think : Infinite scrolling, or page).
+	     * Triggered when a more results were successfully returned from the Search API. (think : infinite scrolling, or pager).
 	     *
-	     * All handlers bound will receive {@link IFetchMoreSuccessEventArgs} as an argument
+	     * All bound handlers will receive {@link IFetchMoreSuccessEventArgs} as an argument.
+	     *
+	     * The string value is `fetchMoreSuccess`.
 	     * @type {string}
 	     */
 	    QueryEvents.fetchMoreSuccess = 'fetchMoreSuccess';
 	    /**
 	     * Triggered after the main query success event has finished executing.
 	     *
-	     * This is typically where facet will process the {@link IGroupByResult} and render themselves.
+	     * This is typically where facets will process the {@link IGroupByResult} and render themselves.
 	     *
-	     * All handlers bound will receive {@link IQuerySuccessEventArgs} as an argument
+	     * All bound handlers will receive {@link IQuerySuccessEventArgs} as an argument.
+	     *
+	     * The string value is `deferredQuerySuccess`.
 	     * @type {string}
 	     */
 	    QueryEvents.deferredQuerySuccess = 'deferredQuerySuccess';
 	    /**
-	     * Triggered when there was an error executing a query on the search API.
+	     * Triggered when there was an error executing a query on the Search API.
 	     *
-	     * All handlers bound will receive {@link IQueryErrorEventArgs} as an argument
+	     * All bound handlers will receive {@link IQueryErrorEventArgs} as an argument.
+	     *
+	     * The string value is `queryError`.
 	     * @type {string}
 	     */
 	    QueryEvents.queryError = 'queryError';
 	    /**
 	     * Triggered before the {@link QueryEvents.querySuccess} event.
 	     *
-	     * This allow external code to modify the results before rendering them.
+	     * This allows external code to modify the results before rendering them.
 	     *
 	     * For example, the {@link Folding} component might use this event to construct a coherent parent child relationship between query results.
 	     *
-	     * All handlers bound will receive {@link IPreprocessResultsEventArgs} as an argument
+	     * All bound handlers will receive {@link IPreprocessResultsEventArgs} as an argument.
+	     *
+	     * The string value is `preprocessResults`.
 	     * @type {string}
 	     */
 	    QueryEvents.preprocessResults = 'preprocessResults';
 	    /**
 	     * Triggered before the {@link QueryEvents.fetchMoreSuccess} event.
 	     *
-	     * This allow external code to modify the results before rendering them.
+	     * This allows external code to modify the results before rendering them.
 	     *
 	     * For example, the {@link Folding} component might use this event to construct a coherent parent child relationship between query results.
 	     *
-	     * All handlers bound will receive {@link IPreprocessResultsEventArgs} as an argument
+	     * All bound handlers will receive {@link IPreprocessResultsEventArgs} as an argument.
+	     *
+	     * The string value is `preprocessMoreResults`.
 	     * @type {string}
 	     */
 	    QueryEvents.preprocessMoreResults = 'preprocessMoreResults';
 	    /**
-	     * Triggered when there is no results for a particular query.
+	     * Triggered when there is no result for a particular query.
 	     *
-	     * All handlers bound will receive {@link INoResultsEventArgs} as an argument
+	     * All bound handlers will receive {@link INoResultsEventArgs} as an argument.
+	     *
+	     * The string value is `noResults`.
 	     * @type {string}
 	     */
 	    QueryEvents.noResults = 'noResults';
@@ -4841,7 +5021,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4857,7 +5037,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4873,7 +5053,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4887,7 +5067,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4904,7 +5084,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4918,53 +5098,53 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ColorUtils_1 = __webpack_require__(54);
+	var ColorUtils_1 = __webpack_require__(55);
 	exports.ColorUtils = ColorUtils_1.ColorUtils;
 	var CookieUtils_1 = __webpack_require__(38);
 	exports.Cookie = CookieUtils_1.Cookie;
-	var CurrencyUtils_1 = __webpack_require__(55);
+	var CurrencyUtils_1 = __webpack_require__(56);
 	exports.CurrencyUtils = CurrencyUtils_1.CurrencyUtils;
-	var DateUtils_1 = __webpack_require__(56);
+	var DateUtils_1 = __webpack_require__(57);
 	exports.DateUtils = DateUtils_1.DateUtils;
 	var DeviceUtils_1 = __webpack_require__(21);
 	exports.DeviceUtils = DeviceUtils_1.DeviceUtils;
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	exports.Dom = Dom_1.Dom;
 	exports.$$ = Dom_1.$$;
-	var DomUtils_1 = __webpack_require__(59);
+	var DomUtils_1 = __webpack_require__(60);
 	exports.DomUtils = DomUtils_1.DomUtils;
-	var EmailActionsUtils_1 = __webpack_require__(62);
+	var EmailActionsUtils_1 = __webpack_require__(63);
 	exports.EmailActionsUtils = EmailActionsUtils_1.EmailActionsUtils;
-	var EmailUtils_1 = __webpack_require__(63);
+	var EmailUtils_1 = __webpack_require__(64);
 	exports.EmailUtils = EmailUtils_1.EmailUtils;
-	var FeatureDetectionUtils_1 = __webpack_require__(64);
+	var FeatureDetectionUtils_1 = __webpack_require__(65);
 	exports.FeatureDetectionUtils = FeatureDetectionUtils_1.FeatureDetectionUtils;
-	var HashUtils_1 = __webpack_require__(65);
+	var HashUtils_1 = __webpack_require__(66);
 	exports.HashUtils = HashUtils_1.HashUtils;
-	var HighlightUtils_1 = __webpack_require__(66);
+	var HighlightUtils_1 = __webpack_require__(67);
 	exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
 	exports.StringAndHoles = HighlightUtils_1.StringAndHoles;
-	var HtmlUtils_1 = __webpack_require__(67);
+	var HtmlUtils_1 = __webpack_require__(68);
 	exports.HTMLUtils = HtmlUtils_1.HTMLUtils;
-	var KeyboardUtils_1 = __webpack_require__(68);
+	var KeyboardUtils_1 = __webpack_require__(69);
 	exports.KEYBOARD = KeyboardUtils_1.KEYBOARD;
 	exports.KeyboardUtils = KeyboardUtils_1.KeyboardUtils;
-	var LocalStorageUtils_1 = __webpack_require__(69);
+	var LocalStorageUtils_1 = __webpack_require__(70);
 	exports.LocalStorageUtils = LocalStorageUtils_1.LocalStorageUtils;
-	var OSUtils_1 = __webpack_require__(70);
+	var OSUtils_1 = __webpack_require__(71);
 	exports.OSUtils = OSUtils_1.OSUtils;
 	exports.OS_NAME = OSUtils_1.OS_NAME;
-	var PopupUtils_1 = __webpack_require__(71);
+	var PopupUtils_1 = __webpack_require__(72);
 	exports.PopupUtils = PopupUtils_1.PopupUtils;
 	var QueryUtils_1 = __webpack_require__(24);
 	exports.QueryUtils = QueryUtils_1.QueryUtils;
-	var StreamHighlightUtils_1 = __webpack_require__(72);
+	var StreamHighlightUtils_1 = __webpack_require__(73);
 	exports.StreamHighlightUtils = StreamHighlightUtils_1.StreamHighlightUtils;
-	var StringUtils_1 = __webpack_require__(61);
+	var StringUtils_1 = __webpack_require__(62);
 	exports.StringUtils = StringUtils_1.StringUtils;
 	var TimeSpanUtils_1 = __webpack_require__(20);
 	exports.TimeSpan = TimeSpanUtils_1.TimeSpan;
@@ -4973,7 +5153,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -5040,7 +5220,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5086,7 +5266,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -5132,6 +5312,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else {
 	            return undefined;
 	        }
+	    };
+	    DateUtils.dateForQuery = function (date) {
+	        return date.getFullYear() + '/' + DateUtils.padNumber((date.getMonth() + 1).toString()) + '/' + DateUtils.padNumber(date.getDate().toString());
+	    };
+	    DateUtils.padNumber = function (num, length) {
+	        if (length === void 0) { length = 2; }
+	        while (num.length < length) {
+	            num = '0' + num;
+	        }
+	        return num;
 	    };
 	    DateUtils.keepOnlyDatePart = function (date) {
 	        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -5250,12 +5440,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var Utils_1 = __webpack_require__(19);
-	var JQueryutils_1 = __webpack_require__(58);
+	var JQueryutils_1 = __webpack_require__(59);
 	var Assert_1 = __webpack_require__(18);
 	var Logger_1 = __webpack_require__(17);
 	/**
@@ -5334,16 +5524,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @returns {string}
 	     */
 	    Dom.prototype.text = function (txt) {
-	        if (txt) {
+	        if (Utils_1.Utils.isUndefined(txt)) {
+	            return this.el.innerText || this.el.textContent;
+	        }
+	        else {
 	            if (this.el.innerText != undefined) {
 	                this.el.innerText = txt;
 	            }
 	            else if (this.el.textContent != undefined) {
 	                this.el.textContent = txt;
 	            }
-	        }
-	        else {
-	            return this.el.innerText || this.el.textContent;
 	        }
 	    };
 	    /**
@@ -5454,33 +5644,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return false;
 	    };
 	    /**
-	     * Get the first element that matches the classname by testing the element itself and traversing up through its ancestors in the DOM tree.<br/>
+	     * Get the first element that matches the classname by testing the element itself and traversing up through its ancestors in the DOM tree.
+	     *
 	     * Stops at the body of the document
 	     * @param className A CSS classname
 	     */
 	    Dom.prototype.closest = function (className) {
-	        if (className.indexOf('.') == 0) {
-	            className = className.substr(1);
+	        return this.traverseAncestorForClass(this.el, className);
+	    };
+	    /**
+	     * Get the first element that matches the classname by testing the element itself and traversing up through its ancestors in the DOM tree.
+	     *
+	     * Stops at the body of the document
+	     * @returns {any}
+	     */
+	    Dom.prototype.parent = function (className) {
+	        if (this.el.parentElement == undefined) {
+	            return undefined;
 	        }
-	        var current = this.el, found = false;
-	        while (!found) {
-	            if ($$(current).hasClass(className)) {
-	                found = true;
-	            }
-	            if (current.tagName.toLowerCase() == 'body') {
-	                break;
-	            }
-	            if (current.parentElement == null) {
-	                break;
-	            }
-	            if (!found) {
-	                current = current.parentElement;
-	            }
+	        return this.traverseAncestorForClass(this.el.parentElement, className);
+	    };
+	    /**
+	     *  Get all the ancestors of the current element that match the given className
+	     *
+	     *  Return an empty array if none found.
+	     * @param className
+	     * @returns {HTMLElement[]}
+	     */
+	    Dom.prototype.parents = function (className) {
+	        var parentsFound = [];
+	        var parentFound = this.parent(className);
+	        while (parentFound) {
+	            parentsFound.push(parentFound);
+	            parentFound = new Dom(parentFound).parent(className);
 	        }
-	        if (found) {
-	            return current;
-	        }
-	        return undefined;
+	        return parentsFound;
 	    };
 	    /**
 	     * Return all children
@@ -5843,6 +6041,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Dom.prototype.height = function () {
 	        return this.el.offsetHeight;
 	    };
+	    Dom.prototype.traverseAncestorForClass = function (current, className) {
+	        if (current === void 0) { current = this.el; }
+	        if (className.indexOf('.') == 0) {
+	            className = className.substr(1);
+	        }
+	        var found = false;
+	        while (!found) {
+	            if ($$(current).hasClass(className)) {
+	                found = true;
+	            }
+	            if (current.tagName.toLowerCase() == 'body') {
+	                break;
+	            }
+	            if (current.parentElement == null) {
+	                break;
+	            }
+	            if (!found) {
+	                current = current.parentElement;
+	            }
+	        }
+	        if (found) {
+	            return current;
+	        }
+	        return undefined;
+	    };
 	    Dom.CLASS_NAME_REGEX = /-?[_a-zA-Z]+[_a-zA-Z0-9-]*/g;
 	    Dom.ONLY_WHITE_SPACE_REGEX = /^\s*$/;
 	    Dom.handlers = [];
@@ -5908,7 +6131,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -5941,15 +6164,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Dom_1 = __webpack_require__(57);
-	var DateUtils_1 = __webpack_require__(56);
-	var FileTypes_1 = __webpack_require__(60);
+	var Dom_1 = __webpack_require__(58);
+	var DateUtils_1 = __webpack_require__(57);
+	var FileTypes_1 = __webpack_require__(61);
 	var Utils_1 = __webpack_require__(19);
-	var StringUtils_1 = __webpack_require__(61);
+	var StringUtils_1 = __webpack_require__(62);
 	var DomUtils = (function () {
 	    function DomUtils() {
 	    }
@@ -6004,7 +6227,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -6085,12 +6308,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var Assert_1 = __webpack_require__(18);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	var StringUtils = (function () {
 	    function StringUtils() {
 	    }
@@ -6224,7 +6447,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -6400,7 +6623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -6472,7 +6695,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6488,7 +6711,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -6691,7 +6914,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -6970,7 +7193,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -7058,10 +7281,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var Utils_1 = __webpack_require__(19);
 	(function (KEYBOARD) {
 	    KEYBOARD[KEYBOARD["BACKSPACE"] = 8] = "BACKSPACE";
@@ -7125,13 +7348,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	    KeyboardUtils.isLetterKeyPushed = function (keycode) {
 	        return keycode > 64 && keycode < 91;
 	    };
+	    // Return a keyboard event listener that only executes the function if certain keys are pressed.
+	    KeyboardUtils.keypressAction = function (keyCode, action) {
+	        return function (e) {
+	            var data = [];
+	            for (var _i = 1; _i < arguments.length; _i++) {
+	                data[_i - 1] = arguments[_i];
+	            }
+	            var eventCode = (e.charCode || e.keyCode);
+	            if (_.isArray(keyCode) && _.contains(keyCode, eventCode)) {
+	                action(e);
+	            }
+	            else if (eventCode === keyCode) {
+	                action(e);
+	            }
+	            return false;
+	        };
+	    };
 	    return KeyboardUtils;
 	}());
 	exports.KeyboardUtils = KeyboardUtils;
-
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -7186,7 +7427,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -7227,11 +7468,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	(function (VerticalAlignment) {
 	    VerticalAlignment[VerticalAlignment["TOP"] = 0] = "TOP";
 	    VerticalAlignment[VerticalAlignment["MIDDLE"] = 1] = "MIDDLE";
@@ -7391,7 +7632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -7401,11 +7642,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Options_1 = __webpack_require__(34);
-	var HighlightUtils_1 = __webpack_require__(66);
-	var StringUtils_1 = __webpack_require__(61);
+	var HighlightUtils_1 = __webpack_require__(67);
+	var StringUtils_1 = __webpack_require__(62);
 	var Utils_1 = __webpack_require__(19);
+	var Dom_1 = __webpack_require__(58);
 	// \u2011: http://graphemica.com/%E2%80%91
-	var nonWordBoundary = '[\\.\\-\\u2011\\s~=,.\\|\\/:\'`’;_()]';
+	var nonWordBoundary = '[\\.\\-\\u2011\\s~=,.\\|\\/:\'`’;_()!?]';
 	var regexStart = '(' + nonWordBoundary + '|^)(';
 	var DefaultStreamHighlightOptions = (function (_super) {
 	    __extends(DefaultStreamHighlightOptions, _super);
@@ -7426,11 +7668,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    StreamHighlightUtils.highlightStreamHTML = function (stream, termsToHighlight, phrasesToHighlight, options) {
 	        var opts = new DefaultStreamHighlightOptions().merge(options);
 	        var container = createStreamHTMLContainer(stream);
-	        container.find('*').each(function (i, elem) {
-	            var text = $(elem).text();
-	            $(elem).html(HighlightUtils_1.HighlightUtils.highlightString(text, getRestHighlightsForAllTerms(text, termsToHighlight, phrasesToHighlight, opts), [], opts.cssClass));
+	        _.each(Dom_1.$$(container).findAll('*'), function (elem, i) {
+	            var text = Dom_1.$$(elem).text();
+	            elem.innerHTML = HighlightUtils_1.HighlightUtils.highlightString(text, getRestHighlightsForAllTerms(text, termsToHighlight, phrasesToHighlight, opts), [], opts.cssClass);
 	        });
-	        return container.html();
+	        return container.innerHTML;
 	    };
 	    StreamHighlightUtils.highlightStreamText = function (stream, termsToHighlight, phrasesToHighlight, options) {
 	        var opts = new DefaultStreamHighlightOptions().merge(options);
@@ -7495,36 +7737,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return first.length - second.length;
 	}
 	function createStreamHTMLContainer(stream) {
-	    var container = $('<div />');
-	    container.get(0).innerHTML = stream;
+	    var container = Dom_1.$$('div').el;
+	    container.innerHTML = stream;
 	    return container;
 	}
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var QueryController_1 = __webpack_require__(74);
+	var QueryController_1 = __webpack_require__(75);
 	exports.QueryController = QueryController_1.QueryController;
-	var FacetQueryController_1 = __webpack_require__(80);
+	var FacetQueryController_1 = __webpack_require__(81);
 	exports.FacetQueryController = FacetQueryController_1.FacetQueryController;
-	var FacetRangeQueryController_1 = __webpack_require__(83);
+	var FacetRangeQueryController_1 = __webpack_require__(84);
 	exports.FacetRangeQueryController = FacetRangeQueryController_1.FacetRangeQueryController;
-	var FacetSliderQueryController_1 = __webpack_require__(84);
+	var FacetSliderQueryController_1 = __webpack_require__(85);
 	exports.FacetSliderQueryController = FacetSliderQueryController_1.FacetSliderQueryController;
-	var HierarchicalFacetQueryController_1 = __webpack_require__(85);
+	var HierarchicalFacetQueryController_1 = __webpack_require__(86);
 	exports.HierarchicalFacetQueryController = HierarchicalFacetQueryController_1.HierarchicalFacetQueryController;
-	var HistoryController_1 = __webpack_require__(86);
+	var HistoryController_1 = __webpack_require__(87);
 	exports.HistoryController = HistoryController_1.HistoryController;
-	var LocalStorageHistoryController_1 = __webpack_require__(88);
+	var LocalStorageHistoryController_1 = __webpack_require__(89);
 	exports.LocalStorageHistoryController = LocalStorageHistoryController_1.LocalStorageHistoryController;
 
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -7533,18 +7775,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var RootComponent_1 = __webpack_require__(75);
-	var QueryBuilder_1 = __webpack_require__(77);
-	var LocalStorageUtils_1 = __webpack_require__(69);
+	var RootComponent_1 = __webpack_require__(76);
+	var QueryBuilder_1 = __webpack_require__(78);
+	var LocalStorageUtils_1 = __webpack_require__(70);
 	var Assert_1 = __webpack_require__(18);
-	var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(79);
-	var QueryEvents_1 = __webpack_require__(47);
+	var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(80);
+	var QueryEvents_1 = __webpack_require__(48);
 	var QueryUtils_1 = __webpack_require__(24);
 	var Defer_1 = __webpack_require__(32);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	var Utils_1 = __webpack_require__(19);
 	var es6_promise_1 = __webpack_require__(8);
-	var BaseComponent_1 = __webpack_require__(76);
+	var BaseComponent_1 = __webpack_require__(77);
 	var ExternalModulesShim_1 = __webpack_require__(26);
 	var DefaultQueryOptions = (function () {
 	    function DefaultQueryOptions() {
@@ -8022,7 +8264,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8031,7 +8273,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var BaseComponent_1 = __webpack_require__(76);
+	var BaseComponent_1 = __webpack_require__(77);
 	var RootComponent = (function (_super) {
 	    __extends(RootComponent, _super);
 	    function RootComponent(element, type) {
@@ -8045,13 +8287,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Assert_1 = __webpack_require__(18);
-	var Dom_1 = __webpack_require__(57);
-	var DebugEvents_1 = __webpack_require__(42);
+	var Dom_1 = __webpack_require__(58);
+	var DebugEvents_1 = __webpack_require__(43);
 	var Logger_1 = __webpack_require__(17);
 	/**
 	 * Every component in the framework ultimately inherits from this base component class.
@@ -8061,7 +8303,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.element = element;
 	        this.type = type;
 	        /**
-	         * A disabled component will not participate in the query, or listen to {@link ComponentEvents}
+	         * A disabled component will not participate in the query, or listen to {@link ComponentEvents}.
 	         * @type {boolean}
 	         */
 	        this.disabled = false;
@@ -8072,7 +8314,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        BaseComponent.bindComponentToElement(element, this);
 	    }
 	    /**
-	     * Return the debug info about this component
+	     * Return the debug info about this component.
 	     * @returns {any}
 	     */
 	    BaseComponent.prototype.debugInfo = function () {
@@ -8082,7 +8324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Disable the component.
-	     * Normally this means that the component won't execute handlers for the framework events (query events, for example).
+	     * Normally this means that the component will not execute handlers for the framework events (query events, for example).
 	     * Component are enabled by default on creation.
 	     */
 	    BaseComponent.prototype.disable = function () {
@@ -8141,11 +8383,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var ExpressionBuilder_1 = __webpack_require__(78);
+	var ExpressionBuilder_1 = __webpack_require__(79);
 	var QueryUtils_1 = __webpack_require__(24);
 	/**
 	 * The QueryBuilder is used to build a {@link IQuery} that will be able to be executed using the Search API.<br/>
@@ -8167,13 +8409,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.advancedExpression = new ExpressionBuilder_1.ExpressionBuilder();
 	        /**
 	         * Used to build the advanced part of the query expression.<br/>
-	         * This part is similar to advancedExpression, but its content is interpreted as a constant expression by the index and it takes advantage of special caching features.
+	         * This part is similar to `advancedExpression`, but its content is interpreted as a constant expression by the index and it takes advantage of special caching features.
 	         * @type {Coveo.ExpressionBuilder}
 	         */
 	        this.constantExpression = new ExpressionBuilder_1.ExpressionBuilder();
 	        /**
 	         * Used to build the disjunctive part of the query expression.<br/>
-	         * When present, this part is evaluated separately from the other expressions and the matching results are merged to those matching expression, advancedExpression and constantExpression.<br/>
+	         * When present, this part is evaluated separately from the other expressions and the matching results are merged to those matching expressions, `advancedExpression` and `constantExpression`.<br/>
 	         * The final boolean expression for the query is thus (basic advanced constant) OR (disjunction).
 	         * @type {Coveo.ExpressionBuilder}
 	         */
@@ -8181,7 +8423,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Whether to disable the special query syntax such as field references for the basic query expression (parameter q).
 	         * It is equivalent to a No syntax block applied to the basic query expression.
-	         * If not specified, the parameter defaults to false
+	         * If not specified, the parameter defaults to false.
 	         */
 	        this.disableQuerySyntax = false;
 	        /**
@@ -8197,23 +8439,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.requiredFields = [];
 	        this.includeRequiredFields = false;
 	        /**
-	         * Whether to enable query corrections on this query. See {@link DidYouMean}
+	         * Whether to enable query corrections on this query (see {@link DidYouMean}).
 	         */
 	        this.enableDidYouMean = false;
 	        /**
 	         * Whether to enable debug info on the query.<br/>
 	         * This will return additional information on the resulting JSON response from the Search API.<br/>
-	         * Mostly : execution report (a detailed breakdown of the parsed and executed query)
+	         * Mostly: execution report (a detailed breakdown of the parsed and executed query).
 	         */
 	        this.enableDebug = false;
 	        /**
-	         * This specifies the sort criterion(s) to use to sort results. If not specified, this parameter defaults to Relevancy.<br/>
+	         * This specifies the sort criterion(s) to use to sort results. If not specified, this parameter defaults to relevancy.<br/>
 	         * Possible values are : <br/>
 	         * -- relevancy :  This uses all the configured ranking weights as well as any specified ranking expressions to rank results.<br/>
-	         * -- dateascending / datedescending : Sort using the value of the @date field, which is typically the last modification date of an item in the index.<br/>
-	         * -- qre : Sort using only the weights applied through ranking expressions. This is much like using Relevancy except that automatic weights based on keyword proximity etc, are not computed.<br/>
+	         * -- dateascending / datedescending Sort using the value of the `@date` field, which is typically the last modification date of an item in the index.<br/>
+	         * -- qre : Sort using only the weights applied through ranking expressions. This is much like using `relevancy` except that automatic weights based on keyword proximity etc, are not computed.<br/>
 	         * -- nosort : Do not sort the results. The order in which items are returned is essentially random.<br/>
-	         * -- @field ascending / @field descending : Sort using the value of a custom field.
+	         * -- @field ascending / @field descending Sort using the value of a custom field.
 	         */
 	        this.sortCriteria = 'relevancy';
 	        this.retrieveFirstSentences = true;
@@ -8223,18 +8465,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        this.queryFunctions = [];
 	        /**
-	         * This specifies an array of Ranking Function operations that will be executed on the result
+	         * This specifies an array of Ranking Function operations that will be executed on the results.
 	         */
 	        this.rankingFunctions = [];
 	        /**
-	         * This specifies an array of Group By operations that can be performed on the query results to extract facets
+	         * This specifies an array of Group By operations that can be performed on the query results to extract facets.
 	         */
 	        this.groupByRequests = [];
 	        this.enableDuplicateFiltering = false;
 	    }
 	    /**
-	     * Build the current content or state of the query builder and return a {@link IQuery}<br/>
-	     * build can be called multiple time on the same QueryBuilder.
+	     * Build the current content or state of the query builder and return a {@link IQuery}.<br/>
+	     * build can be called multiple times on the same QueryBuilder.
 	     * @returns {IQuery}
 	     */
 	    QueryBuilder.prototype.build = function () {
@@ -8283,14 +8525,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Return only the expression(s) part(s) of the query, as a string.<br/>
-	     * This means the basic, advanced and constant part in a complete expression {@link IQuery.q}, {@link IQuery.aq}, {@link IQuery.cq}
+	     * This means the basic, advanced and constant part in a complete expression {@link IQuery.q}, {@link IQuery.aq}, {@link IQuery.cq}.
 	     * @returns {string}
 	     */
 	    QueryBuilder.prototype.computeCompleteExpression = function () {
 	        return this.computeCompleteExpressionParts().full;
 	    };
 	    /**
-	     * Return only the expression(s) part(s) of the query, as an object
+	     * Return only the expression(s) part(s) of the query, as an object.
 	     * @returns {{full: string, withoutConstant: string, constant: string}}
 	     */
 	    QueryBuilder.prototype.computeCompleteExpressionParts = function () {
@@ -8337,7 +8579,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Add fields to specifically include when the results return.<br/>
-	     * This can be used to accelerate the execution time of every query, as there is much less data to process if you whitelist specific fields
+	     * This can be used to accelerate the execution time of every query, as there is much less data to process if you whitelist specific fields.
 	     * @param fields
 	     */
 	    QueryBuilder.prototype.addFieldsToInclude = function (fields) {
@@ -8348,7 +8590,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Add fields to specifically exclude when the results return.<br/>
-	     * This can be used to accelerate the execution time of every query, as there is much less data to process if you blacklist specific fields
+	     * This can be used to accelerate the execution time of every query, as there is much less data to process if you blacklist specific fields.
 	     * @param fields
 	     */
 	    QueryBuilder.prototype.addFieldsToExclude = function (fields) {
@@ -8393,14 +8635,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var Assert_1 = __webpack_require__(18);
 	var QueryUtils_1 = __webpack_require__(24);
 	/**
-	 * An ExpressionBuilder that is mostly used by the {@link QueryBuilder}<br/>
+	 * An `ExpressionBuilder` that is mostly used by the {@link QueryBuilder}.<br/>
 	 * It is used to build a single query expression.<br/>
 	 * It allows combining multiple expression parts into a single string and provides utilities to generate common expression parts.
 	 */
@@ -8418,7 +8660,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.parts.push(expression);
 	    };
 	    /**
-	     * Take another ExpressionBuilder, and copy it.
+	     * Take another `ExpressionBuilder`, and copy it.
 	     * @param expression
 	     */
 	    ExpressionBuilder.prototype.fromExpressionBuilder = function (expression) {
@@ -8426,10 +8668,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Add a new part to the expression, but specific for field values<br/>
-	     * eg @field=(value1,value2,value3)
-	     * @param field The field for which to create an expression eg: @foo
-	     * @param operator The operator to use eg: = (equal) == (strict equal) <> (not equal)
-	     * @param values The values to put in the expression
+	     * eg @field=(value1,value2,value3).
+	     * @param field The field for which to create an expression (e.g.: @foo).
+	     * @param operator The operator to use e.g.: = (equal) == (strict equal) <> (not equal).
+	     * @param values The values to put in the expression.
 	     */
 	    ExpressionBuilder.prototype.addFieldExpression = function (field, operator, values) {
 	        Assert_1.Assert.isNonEmptyString(field);
@@ -8440,9 +8682,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Add a new part to the expression, but specific for field values<br/>
-	     * eg : NOT @field==(value1, value2, value3)
-	     * @param field The field for which to create an expression eg: @foo
-	     * @param values The values to put in the expression
+	     * eg : NOT @field==(value1, value2, value3).
+	     * @param field The field for which to create an expression (e.g.: @foo)
+	     * @param values The values to put in the expression.
 	     */
 	    ExpressionBuilder.prototype.addFieldNotEqualExpression = function (field, values) {
 	        Assert_1.Assert.isNonEmptyString(field);
@@ -8470,7 +8712,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Builds the expression string by combining all the parts together.<br/>
-	     * @param exp expression to join the different parts, default to a space
+	     * @param exp expression to join the different parts, default to a space.
 	     * @returns {any}
 	     */
 	    ExpressionBuilder.prototype.build = function (exp) {
@@ -8489,8 +8731,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    /**
-	     * Merges several ExpressionBuilder together.
-	     * @param builders Builders that should be merged
+	     * Merges several `ExpressionBuilder` together.
+	     * @param builders Builders that should be merged.
 	     * @returns {Coveo.ExpressionBuilder}
 	     */
 	    ExpressionBuilder.merge = function () {
@@ -8505,8 +8747,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return merged;
 	    };
 	    /**
-	     * Merges several ExpressionBuilder together, using the OR operator
-	     * @param builders Builders that should be merged
+	     * Merges several `ExpressionBuilder` together, using the OR operator.
+	     * @param builders Builders that should be merged.
 	     * @returns {Coveo.ExpressionBuilder}
 	     */
 	    ExpressionBuilder.mergeUsingOr = function () {
@@ -8532,7 +8774,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -8608,6 +8850,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    SearchEndpointWithDefaultCallOptions.prototype.deleteSubscription = function (subscription) {
 	        return this.endpoint.deleteSubscription(subscription);
 	    };
+	    SearchEndpointWithDefaultCallOptions.prototype.logError = function (sentryLog) {
+	        return this.endpoint.logError(sentryLog);
+	    };
 	    SearchEndpointWithDefaultCallOptions.prototype.enrichCallOptions = function (callOptions) {
 	        return _.extend({}, callOptions, this.callOptions);
 	    };
@@ -8618,16 +8863,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {/// <reference path='../ui/Facet/Facet.ts' />
 	"use strict";
-	var ExpressionBuilder_1 = __webpack_require__(78);
+	var ExpressionBuilder_1 = __webpack_require__(79);
 	var Utils_1 = __webpack_require__(19);
-	var FacetSearchParameters_1 = __webpack_require__(81);
+	var FacetSearchParameters_1 = __webpack_require__(82);
 	var Assert_1 = __webpack_require__(18);
-	var FacetUtils_1 = __webpack_require__(82);
+	var FacetUtils_1 = __webpack_require__(83);
 	var FacetQueryController = (function () {
 	    function FacetQueryController(facet) {
 	        this.facet = facet;
@@ -8888,15 +9133,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {/// <reference path="Facet.ts" />
 	"use strict";
 	var Utils_1 = __webpack_require__(19);
-	var FacetUtils_1 = __webpack_require__(82);
-	var QueryBuilder_1 = __webpack_require__(77);
-	var Dom_1 = __webpack_require__(57);
+	var FacetUtils_1 = __webpack_require__(83);
+	var QueryBuilder_1 = __webpack_require__(78);
+	var Dom_1 = __webpack_require__(58);
 	var FacetSearchParameters = (function () {
 	    function FacetSearchParameters(facet) {
 	        this.facet = facet;
@@ -9003,16 +9248,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var StringUtils_1 = __webpack_require__(61);
+	var StringUtils_1 = __webpack_require__(62);
 	var QueryUtils_1 = __webpack_require__(24);
-	var FileTypes_1 = __webpack_require__(60);
-	var DateUtils_1 = __webpack_require__(56);
+	var FileTypes_1 = __webpack_require__(61);
+	var DateUtils_1 = __webpack_require__(57);
 	var Utils_1 = __webpack_require__(19);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	var FacetUtils = (function () {
 	    function FacetUtils() {
 	    }
@@ -9147,7 +9392,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="../ui/FacetRange/FacetRange.ts" />
@@ -9157,7 +9402,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FacetQueryController_1 = __webpack_require__(80);
+	var FacetQueryController_1 = __webpack_require__(81);
 	var Utils_1 = __webpack_require__(19);
 	var FacetRangeQueryController = (function (_super) {
 	    __extends(FacetRangeQueryController, _super);
@@ -9195,14 +9440,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {/// <reference path="../ui/FacetSlider/FacetSlider.ts" />
 	"use strict";
-	var QueryEvents_1 = __webpack_require__(47);
-	var ExpressionBuilder_1 = __webpack_require__(78);
-	var DateUtils_1 = __webpack_require__(56);
+	var QueryEvents_1 = __webpack_require__(48);
+	var ExpressionBuilder_1 = __webpack_require__(79);
+	var DateUtils_1 = __webpack_require__(57);
 	var FacetSliderQueryController = (function () {
 	    function FacetSliderQueryController(facet) {
 	        var _this = this;
@@ -9442,7 +9687,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/// <reference path="../ui/HierarchicalFacet/HierarchicalFacet.ts" />
@@ -9453,7 +9698,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FacetQueryController_1 = __webpack_require__(80);
+	var FacetQueryController_1 = __webpack_require__(81);
 	var HierarchicalFacetQueryController = (function (_super) {
 	    __extends(HierarchicalFacetQueryController, _super);
 	    function HierarchicalFacetQueryController(facet) {
@@ -9466,7 +9711,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -9476,12 +9721,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Assert_1 = __webpack_require__(18);
-	var Model_1 = __webpack_require__(87);
-	var InitializationEvents_1 = __webpack_require__(44);
-	var Dom_1 = __webpack_require__(57);
-	var HashUtils_1 = __webpack_require__(65);
+	var Model_1 = __webpack_require__(88);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var Dom_1 = __webpack_require__(58);
+	var HashUtils_1 = __webpack_require__(66);
 	var Defer_1 = __webpack_require__(32);
-	var RootComponent_1 = __webpack_require__(75);
+	var RootComponent_1 = __webpack_require__(76);
 	/**
 	 * This component is instantiated automatically by the framework on the root if the {@link SearchInterface}.<br/>
 	 * When the {@link SearchInterface.options.enableHistory} option is set to true, this component is instantiated.<br/>
@@ -9609,7 +9854,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -9618,10 +9863,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	var Assert_1 = __webpack_require__(18);
 	var Utils_1 = __webpack_require__(19);
-	var BaseComponent_1 = __webpack_require__(76);
+	var BaseComponent_1 = __webpack_require__(77);
 	exports.MODEL_EVENTS = {
 	    PREPROCESS: 'preprocess',
 	    CHANGE_ONE: 'change:',
@@ -9817,7 +10062,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -9826,13 +10071,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var LocalStorageUtils_1 = __webpack_require__(69);
-	var Model_1 = __webpack_require__(87);
+	var LocalStorageUtils_1 = __webpack_require__(70);
+	var Model_1 = __webpack_require__(88);
 	var Logger_1 = __webpack_require__(17);
 	var Assert_1 = __webpack_require__(18);
-	var InitializationEvents_1 = __webpack_require__(44);
-	var RootComponent_1 = __webpack_require__(75);
-	var Dom_1 = __webpack_require__(57);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var RootComponent_1 = __webpack_require__(76);
+	var Dom_1 = __webpack_require__(58);
 	/**
 	 * This component acts like the {@link HistoryController} excepts that is saves the {@link QueryStateModel} in the local storage.<br/>
 	 * This will not allow 'back' and 'forward' navigation in the history, like the standard {@link HistoryController} allows. Instead, it load the query state only on page load.<br/>
@@ -9901,22 +10146,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Model_1 = __webpack_require__(87);
+	var Model_1 = __webpack_require__(88);
 	exports.Model = Model_1.Model;
-	var QueryStateModel_1 = __webpack_require__(90);
+	var QueryStateModel_1 = __webpack_require__(91);
 	exports.QueryStateModel = QueryStateModel_1.QueryStateModel;
-	var ComponentOptionsModel_1 = __webpack_require__(91);
+	var ComponentOptionsModel_1 = __webpack_require__(92);
 	exports.ComponentOptionsModel = ComponentOptionsModel_1.ComponentOptionsModel;
-	var ComponentStateModel_1 = __webpack_require__(92);
+	var ComponentStateModel_1 = __webpack_require__(93);
 	exports.ComponentStateModel = ComponentStateModel_1.ComponentStateModel;
 
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -9925,7 +10170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Model_1 = __webpack_require__(87);
+	var Model_1 = __webpack_require__(88);
 	var Assert_1 = __webpack_require__(18);
 	var Utils_1 = __webpack_require__(19);
 	exports.QUERY_STATE_ATTRIBUTES = {
@@ -10044,7 +10289,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -10053,7 +10298,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Model_1 = __webpack_require__(87);
+	var Model_1 = __webpack_require__(88);
 	var ComponentOptionsModel = (function (_super) {
 	    __extends(ComponentOptionsModel, _super);
 	    function ComponentOptionsModel(element, attributes) {
@@ -10076,7 +10321,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10085,7 +10330,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Model_1 = __webpack_require__(87);
+	var Model_1 = __webpack_require__(88);
 	var ComponentStateModel = (function (_super) {
 	    __extends(ComponentStateModel, _super);
 	    function ComponentStateModel(element) {
@@ -10107,49 +10352,55 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(94));
-	var ComponentOptions_1 = __webpack_require__(98);
+	__export(__webpack_require__(95));
+	var ComponentOptions_1 = __webpack_require__(99);
 	exports.ComponentOptions = ComponentOptions_1.ComponentOptions;
 	exports.ComponentOptionsType = ComponentOptions_1.ComponentOptionsType;
-	var Component_1 = __webpack_require__(96);
+	var Component_1 = __webpack_require__(97);
 	exports.Component = Component_1.Component;
-	var BaseComponent_1 = __webpack_require__(76);
+	var BaseComponent_1 = __webpack_require__(77);
 	exports.BaseComponent = BaseComponent_1.BaseComponent;
-	var RootComponent_1 = __webpack_require__(75);
+	var RootComponent_1 = __webpack_require__(76);
 	exports.RootComponent = RootComponent_1.RootComponent;
-	var QueryBuilder_1 = __webpack_require__(77);
+	var QueryBuilder_1 = __webpack_require__(78);
 	exports.QueryBuilder = QueryBuilder_1.QueryBuilder;
-	var ExpressionBuilder_1 = __webpack_require__(78);
+	var ExpressionBuilder_1 = __webpack_require__(79);
 	exports.ExpressionBuilder = ExpressionBuilder_1.ExpressionBuilder;
-	var Initialization_1 = __webpack_require__(95);
+	// Export Initialization under both name, for legacy reason and old code in the wild that
+	// reference the old CoveoJQuery module
+	var Initialization_1 = __webpack_require__(96);
 	exports.Initialization = Initialization_1.Initialization;
+	var Initialization_2 = __webpack_require__(96);
+	exports.CoveoJQuery = Initialization_2.Initialization;
+	var CoveoJQuery_1 = __webpack_require__(121);
+	exports.initCoveoJQuery = CoveoJQuery_1.initCoveoJQuery;
 
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var Initialization_1 = __webpack_require__(95);
+	var Initialization_1 = __webpack_require__(96);
 	var Assert_1 = __webpack_require__(18);
-	var QueryController_1 = __webpack_require__(74);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var Analytics_1 = __webpack_require__(110);
-	var InitializationEvents_1 = __webpack_require__(44);
-	var Dom_1 = __webpack_require__(57);
-	var Component_1 = __webpack_require__(96);
+	var QueryController_1 = __webpack_require__(75);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var Analytics_1 = __webpack_require__(112);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var Dom_1 = __webpack_require__(58);
+	var Component_1 = __webpack_require__(97);
 	/**
 	 * Initialize the framework with a basic search interface. Calls {@link Initialization.initSearchInterface}.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('init');</code>
-	 * @param element The root of the interface to initialize
-	 * @param options JSON options for the framework eg : <code>{Searchbox : {enableSearchAsYouType: true}}</code>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('init');</code>.
+	 * @param element The root of the interface to initialize.
+	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType : true}}</code>).
 	 */
 	function init(element, options) {
 	    if (options === void 0) { options = {}; }
@@ -10164,10 +10415,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	/**
 	 * Initialize the framework with a standalone search box. Calls {@link Initialize.initStandaloneSearchInterface}.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initSearchbox');</code>
-	 * @param element The root of the interface to initialize
-	 * @param searchPageUri The search page on which to redirect when there is a query
-	 * @param options JSON options for the framework eg : <code>{Searchbox : {enableSearchAsYouType: true}}</code>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initSearchbox');</code>.
+	 * @param element The root of the interface to initialize.
+	 * @param searchPageUri The search page on which to redirect when there is a query.
+	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType : true}}</code>).
 	 */
 	function initSearchbox(element, searchPageUri, options) {
 	    if (options === void 0) { options = {}; }
@@ -10189,11 +10440,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	/**
 	 * Initialize the framework with a recommendation interface. Calls {@link Initialization.initRecommendationInterface}.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initRecommendation');</code>
-	 * @param element The root of the interface to initialize
-	 * @param mainSearchInterface The search interface to link with the recommendation interface. View {@link Recommendation}
-	 * @param userContext The user context to pass with the query generated in the recommendation interface. View {@link Recommendation}
-	 * @param options JSON options for the framework eg : <code>{Searchbox : {enableSearchAsYouType: true}}</code>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initRecommendation');</code>.
+	 * @param element The root of the interface to initialize.
+	 * @param mainSearchInterface The search interface to link with the recommendation interface (see {@link Recommendation}).
+	 * @param userContext The user context to pass with the query generated in the recommendation interface (see {@link Recommendation}).
+	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType: true}}</code>).
 	 */
 	function initRecommendation(element, mainSearchInterface, userContext, options) {
 	    if (options === void 0) { options = {}; }
@@ -10215,9 +10466,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Execute a standard query. Active component in the interface will react to events/ push data in the query / handle the query success or failure as needed.<br/>
 	 * It triggers a standard query flow for which the standard component will perform their expected behavior.<br/>
-	 * If you wish to only perform a query on the index to retrieve result (without the component reacting), look into {@link SearchInterface.search} instead.<br/>
-	 * Calling this method is the same as calling {@link QueryController.executeQuery}
-	 * @param element The root of the interface to initialize
+	 * If you wish to only perform a query on the index to retrieve results (without the component reacting), look into {@link SearchInterface} instead.<br/>
+	 * Calling this method is the same as calling {@link QueryController.executeQuery}.
+	 * @param element The root of the interface to initialize.
 	 */
 	function executeQuery(element) {
 	    Assert_1.Assert.exists(element);
@@ -10231,12 +10482,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	/**
 	 * Perform operation on the state ({@link QueryStateModel} of the interface.<br/>
-	 * Get the complete {@link QueryStateModel} object : <code>Coveo.state(element)</code><br/>
-	 * Get an attribute from the {@link QueryStateModel} : <code>Coveo.state(element, 'q')</code> Can be any attribute.<br/>
-	 * Set an attribute on the {@link QueryStateModel} : <code>Coveo.state(element, 'q', 'foobar')</code> Can be any attribute.<br/>
-	 * Set multiple attribute on the {@link QueryStateModel} : <code>Coveo.state(element, {'q' : 'foobar' , sort : 'relevancy'})</code> Can be any attribute.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('state');</code>
-	 * @param element The root of the interface for which to access the {@link QueryStateModel}
+	 * Get the complete {@link QueryStateModel} object: <code>Coveo.state(element)</code><br/>.
+	 * Get an attribute from the {@link QueryStateModel}: <code>Coveo.state(element, 'q')</code> Can be any attribute.<br/>
+	 * Set an attribute on the {@link QueryStateModel}: <code>Coveo.state(element, 'q', 'foobar')</code>. Can be any attribute.<br/>
+	 * Set multiple attribute on the {@link QueryStateModel}: <code>Coveo.state(element, {'q' : 'foobar' , sort : 'relevancy'})</code>. Can be any attribute.<br/>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('state');</code>.
+	 * @param element The root of the interface for which to access the {@link QueryStateModel}.
 	 * @param args
 	 * @returns {any}
 	 */
@@ -10263,10 +10514,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	});
 	/**
-	 * Get the component bound on the given HTMLElement
-	 * @param element The HTMLElement for which to get the component instance
-	 * @param componentClass If multiple component are bound to a single HTMLElement, you need to specify which component you wish to get
-	 * @param noThrow By default, the get method will throw if there is no component bound, or if there are multiple component and no componentClass is specified. This suppress the error if set to true.
+	 * Get the component bound on the given `HTMLElement`.
+	 * @param element The `HTMLElement` for which to get the component instance.
+	 * @param componentClass If multiple components are bound to a single `HTMLElement`, you need to specify which components you wish to get.
+	 * @param noThrow By default, the GET method will throw if there is no component bound, or if there are multiple component and no `componentClass` is specified. This deletes the error if set to true.
 	 * @returns {Component}
 	 */
 	function get(element, componentClass, noThrow) {
@@ -10277,9 +10528,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerNamedMethod('get', function (element, componentClass, noThrow) {
 	    return get(element, componentClass, noThrow);
 	});
-	Initialization_1.Initialization.registerNamedMethod('result', function (element, noThrow) {
+	function result(element, noThrow) {
 	    Assert_1.Assert.exists(element);
 	    return Component_1.Component.getResult(element, noThrow);
+	}
+	exports.result = result;
+	Initialization_1.Initialization.registerNamedMethod('result', function (element, noThrow) {
+	    return result(element, noThrow);
 	});
 	function getCoveoAnalyticsClient(element) {
 	    var analytics = getCoveoAnalytics(element);
@@ -10301,9 +10556,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	/**
 	 * Log a custom event on the Coveo Usage Analytics service.
-	 * @param element The root of the interface for which to log analytics event
-	 * @param customEventCause The cause of the event
-	 * @param metadata The metadata associated with the event (JSON key value)
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param customEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
 	 */
 	function logCustomEvent(element, customEventCause, metadata) {
 	    var client = getCoveoAnalyticsClient(element);
@@ -10316,10 +10571,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    logCustomEvent(element, customEventCause, metadata);
 	});
 	/**
-	 * Log a search event on the Coveo Usage Analytics service
-	 * @param element The root of the interface for which to log analytics event
-	 * @param searchEventCause The cause of the event
-	 * @param metadata The metadata associated with the event (JSON key value)
+	 * Log a `SearchEvent` on the Coveo Usage Analytics service.
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param searchEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
 	 */
 	function logSearchEvent(element, searchEventCause, metadata) {
 	    var client = getCoveoAnalyticsClient(element);
@@ -10332,11 +10587,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    logSearchEvent(element, searchEventCause, metadata);
 	});
 	/**
-	 * Log a search as you type event on the Coveo Usage Analytics service.<br/>
-	 * It is a bit different from a standard search event, as it will wait 5 second before sending the final search as you type event.
-	 * @param element The root of the interface for which to log analytics event
-	 * @param searchAsYouTypeEventCause The cause of the event
-	 * @param metadata The metadata associated with the event (JSON key value)
+	 * Log a `SearchAsYouTypeEvent` on the Coveo Usage Analytics service.<br/>
+	 * It is a bit different from a standard search event, as it will wait 5 seconds before sending the final `SearchAsYouType` event.
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param searchAsYouTypeEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
 	 */
 	function logSearchAsYouTypeEvent(element, searchAsYouTypeEventCause, metadata) {
 	    var client = getCoveoAnalyticsClient(element);
@@ -10349,11 +10604,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    logSearchAsYouTypeEvent(element, searchAsYouTypeEventCause, metadata);
 	});
 	/**
-	 * Log a click event on the Coveo Usage Analytics service.
-	 * @param element The root of the interface for which to log analytics event
-	 * @param clickEventCause The cause of the event
-	 * @param metadata The metadata associated with the event (JSON key value)
-	 * @param result The result that was clicked
+	 * Log a `ClickEvent` on the Coveo Usage Analytics service.
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param clickEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
+	 * @param result The result that was clicked.
 	 */
 	function logClickEvent(element, clickEventCause, metadata, result) {
 	    var client = getCoveoAnalyticsClient(element);
@@ -10367,9 +10622,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	/**
 	 * Pass options to the framework, before it is initialized ({@link init}).<br/>
-	 * All the options passed with this calls will be merged together on initialization
-	 * @param element The root of the interface for which you wish to set options
-	 * @param optionsToSet JSON options for the framework eg : <code>{Searchbox : {enableSearchAsYouType: true}}</code>
+	 * All the options passed with this calls will be merged together on initialization.
+	 * @param element The root of the interface for which you wish to set options.
+	 * @param optionsToSet JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType: true}}</code>).
 	 */
 	function options(element, optionsToSet) {
 	    if (optionsToSet === void 0) { optionsToSet = {}; }
@@ -10381,7 +10636,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    options(element, optionsToSet);
 	});
 	/**
-	 * Patch the given methodName on an instance of a component bound to an HTMLElement with a new handler
+	 * Patch the given `methodName` on an instance of a component bound to an `HTMLElement` with a new handler.
 	 * @param element
 	 * @param methodName
 	 * @param handler
@@ -10450,27 +10705,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var Logger_1 = __webpack_require__(17);
-	var Component_1 = __webpack_require__(96);
+	var Component_1 = __webpack_require__(97);
 	var Utils_1 = __webpack_require__(19);
 	var Assert_1 = __webpack_require__(18);
-	var Dom_1 = __webpack_require__(57);
-	var InitializationEvents_1 = __webpack_require__(44);
-	var SearchInterface_1 = __webpack_require__(97);
-	var QueryController_1 = __webpack_require__(74);
-	var HashUtils_1 = __webpack_require__(65);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var ComponentStateModel_1 = __webpack_require__(92);
-	var ComponentOptionsModel_1 = __webpack_require__(91);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
+	var Dom_1 = __webpack_require__(58);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var SearchInterface_1 = __webpack_require__(98);
+	var QueryController_1 = __webpack_require__(75);
+	var HashUtils_1 = __webpack_require__(66);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var ComponentStateModel_1 = __webpack_require__(93);
+	var ComponentOptionsModel_1 = __webpack_require__(92);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
 	/**
-	 * The main purpose of this class is to initialize the framework (a.k.a the code executed when calling Coveo.init).<br/>
+	 * The main purpose of this class is to initialize the framework (a.k.a the code executed when calling `Coveo.init`).<br/>
 	 * It's also in charge or registering the available components, as well as the method that we expost to the global Coveo scope.<br/>
-	 * For example, the Coveo.executeQuery function will be registed in this class by the {@link QueryController}.
+	 * For example, the `Coveo.executeQuery` function will be registed in this class by the {@link QueryController}.
 	 */
 	var Initialization = (function () {
 	    function Initialization() {
@@ -10478,7 +10733,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Register a new set of options for a given element.<br/>
 	     * When the element is eventually initialized as a component, those options will be used / merged to create the final option set to use for this component.<br/>
-	     * Note that this function should not normally be called directly, but instead using the global Coveo.options function
+	     * Note that this function should not normally be called directly, but instead using the global `Coveo.options` function
 	     * @param element
 	     * @param options
 	     */
@@ -10505,7 +10760,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Register a new Component to be recognized by the framework.<br/>
-	     * This essentially mean that when we call Coveo.init, the Initialization class will scan the DOM for known component (which have registed themselves with this call) and create a new component on each element.
+	     * This essentially mean that when we call `Coveo.init`, the Initialization class will scan the DOM for known component (which have registed themselves with this call) and create a new component on each element.
 	     * @param componentClass
 	     */
 	    Initialization.registerAutoCreateComponent = function (componentClass) {
@@ -10516,7 +10771,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Initialization.autoCreateComponents[componentClass.ID] = componentClass;
 	    };
 	    /**
-	     * Check if a component is already registed, using it's ID (eg : 'Facet')
+	     * Check if a component is already registed, using it's ID (e.g. : 'Facet').
 	     * @param componentClassId
 	     * @returns {boolean}
 	     */
@@ -10524,14 +10779,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return Utils_1.Utils.exists(Initialization.autoCreateComponents[componentClassId]);
 	    };
 	    /**
-	     * Return the list of all known components (the list of ID for each component)
+	     * Return the list of all known components (the list of ID for each component).
 	     * @returns {string[]}
 	     */
 	    Initialization.getListOfRegisteredComponents = function () {
 	        return _.keys(Initialization.autoCreateComponents);
 	    };
 	    /**
-	     * Return the component class definition, using it's ID (eg : 'CoveoFacet')
+	     * Return the component class definition, using it's ID (e.g. : 'CoveoFacet').
 	     * @param name
 	     * @returns {IComponentDefinition}
 	     */
@@ -10539,10 +10794,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return Initialization.autoCreateComponents[name];
 	    };
 	    /**
-	     * Initialize the framework. Note that this function should not normally be called directly, but instead using a globally registered function (eg: Coveo.init), or {@link Initialization.initSearchInterface} or {@link Initialization.initStandaloneSearchInterface} <br/>
-	     * Eg : Coveo.init or Coveo.initSearchbox
-	     * @param element The element on which to initialize the interface
-	     * @param options The options for all component (eg: {Searchbox : {enableSearchAsYouType : true}})
+	     * Initialize the framework. Note that this function should not normally be called directly, but instead using a globally registered function (e.g.: Coveo.init), or {@link Initialization.initSearchInterface} or {@link Initialization.initStandaloneSearchInterface} <br/>
+	     * (e.g. : `Coveo.init` or `Coveo.initSearchbox`).
+	     * @param element The element on which to initialize the interface.
+	     * @param options The options for all components (eg: {Searchbox : {enableSearchAsYouType : true}}).
 	     * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
 	     */
 	    Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
@@ -10578,7 +10833,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    /**
-	     * Create a new standard search interface. This is the function executed when calling Coveo.init
+	     * Create a new standard search interface. This is the function executed when calling `Coveo.init`.
 	     * @param element
 	     * @param options
 	     */
@@ -10591,36 +10846,54 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Initialization.automaticallyCreateComponentsInside(element, initParameters);
 	    };
 	    /**
-	     * Create a new standalone search interface ( standalone search box ). This is the function executed when calling Coveo.initSearchbox
+	     * Create a new standalone search interface (standalone search box). This is the function executed when calling `Coveo.initSearchbox`.
 	     * @param element
 	     * @param options
 	     */
 	    Initialization.initStandaloneSearchInterface = function (element, options) {
 	        if (options === void 0) { options = {}; }
 	        options = Initialization.resolveDefaultOptions(element, options);
+	        // Set trigger query on clear to false for standalone search interface automatically
+	        // Take care of not overriding any options that could have been set by external code.
+	        if (!options.Querybox) {
+	            options.Querybox = {};
+	        }
+	        if (!options.Omnibox) {
+	            options.Omnibox = {};
+	        }
+	        if (!options.Searchbox) {
+	            options.Searchbox = {};
+	        }
+	        if (!options.Querybox.triggerQueryOnClear || !options.Omnibox.triggerQueryOnClear || !options.Searchbox.triggerOnQueryClear) {
+	            options.Querybox.triggerQueryOnClear = false;
+	            options.Omnibox.triggerQueryOnClear = false;
+	            options.Searchbox.triggerQueryOnClear = false;
+	        }
 	        var searchInterface = new SearchInterface_1.StandaloneSearchInterface(element, options.StandaloneSearchInterface, options.Analytics);
 	        searchInterface.options.originalOptionsObject = options;
 	        var initParameters = { options: options, bindings: searchInterface.getBindings() };
 	        Initialization.automaticallyCreateComponentsInside(element, initParameters);
 	    };
 	    /**
-	     * Create a new recommendation search interface. This is the function executed when calling Coveo.initRecommendation
+	     * Create a new recommendation search interface. This is the function executed when calling `Coveo.initRecommendation`.
 	     * @param element
 	     * @param options
 	     */
 	    Initialization.initRecommendationInterface = function (element, options) {
 	        if (options === void 0) { options = {}; }
 	        options = Initialization.resolveDefaultOptions(element, options);
-	        var recommendation = new window['Coveo']['Recommendation'](element, options.Recommendation, options.Analytics);
+	        // Since a recommendation interface inherits from a search interface, we need to merge those if passed on init
+	        var optionsForRecommendation = _.extend({}, options.SearchInterface, options.Recommendation);
+	        var recommendation = new window['Coveo']['Recommendation'](element, optionsForRecommendation, options.Analytics);
 	        recommendation.options.originalOptionsObject = options;
 	        var initParameters = { options: options, bindings: recommendation.getBindings() };
 	        Initialization.automaticallyCreateComponentsInside(element, initParameters);
 	    };
 	    /**
-	     * Scan the element and all it's children for known component. Initialize every known component found
-	     * @param element The element for which to scan it's children
-	     * @param initParameters Needed parameters to initialize all the children components
-	     * @param ignore An optional list of component ID to ignore and skip when scanning for known components
+	     * Scan the element and all its children for known components. Initialize every known component found.
+	     * @param element The element for which to scan it's children.
+	     * @param initParameters Needed parameters to initialize all the children components.
+	     * @param ignore An optional list of component ID to ignore and skip when scanning for known components.
 	     */
 	    Initialization.automaticallyCreateComponentsInside = function (element, initParameters, ignore) {
 	        Assert_1.Assert.exists(element);
@@ -10652,10 +10925,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _.each(codeToExecute, function (code) { return code(); });
 	    };
 	    /**
-	     * Create a new component on the given element
-	     * @param componentClassId The ID of the component to initialize (eg : 'CoveoFacet')
-	     * @param element The HTMLElement on which to initialize
-	     * @param initParameters Needed parameters to initialize the component
+	     * Create a new component on the given element.
+	     * @param componentClassId The ID of the component to initialize (e.g. : 'CoveoFacet').
+	     * @param element The HTMLElement on which to initialize.
+	     * @param initParameters Needed parameters to initialize the component.
 	     * @returns {Component}
 	     */
 	    Initialization.createComponentOfThisClassOnElement = function (componentClassId, element, initParameters) {
@@ -10677,9 +10950,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return new componentClass(element, options, bindings, result);
 	    };
 	    /**
-	     * Register a new globally available method in the Coveo namespace. (eg: Coveo.init)
-	     * @param methodName The method name to register
-	     * @param handler The function to execute when the method is called
+	     * Register a new globally available method in the Coveo namespace (e.g.: `Coveo.init`).
+	     * @param methodName The method name to register.
+	     * @param handler The function to execute when the method is called.
 	     */
 	    Initialization.registerNamedMethod = function (methodName, handler) {
 	        Assert_1.Assert.isNonEmptyString(methodName);
@@ -10689,7 +10962,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Initialization.namedMethods[methodName] = handler;
 	    };
 	    /**
-	     * Check if the method is already registed
+	     * Check if the method is already registed.
 	     * @param methodName
 	     * @returns {boolean}
 	     */
@@ -10697,7 +10970,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return Utils_1.Utils.exists(Initialization.namedMethods[methodName]);
 	    };
 	    /**
-	     * 'Monkey patch' (replace the function with a new one) a given method on a component instance
+	     * 'Monkey patch' (replace the function with a new one) a given method on a component instance.
 	     * @param methodName
 	     * @param element
 	     * @param handler
@@ -10883,7 +11156,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -10894,26 +11167,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	var Assert_1 = __webpack_require__(18);
 	var Utils_1 = __webpack_require__(19);
-	var JQueryutils_1 = __webpack_require__(58);
-	var Dom_1 = __webpack_require__(57);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var ComponentStateModel_1 = __webpack_require__(92);
-	var ComponentOptionsModel_1 = __webpack_require__(91);
-	var QueryController_1 = __webpack_require__(74);
-	var SearchInterface_1 = __webpack_require__(97);
-	var NoopAnalyticsClient_1 = __webpack_require__(105);
-	var BaseComponent_1 = __webpack_require__(76);
+	var JQueryutils_1 = __webpack_require__(59);
+	var Dom_1 = __webpack_require__(58);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var ComponentStateModel_1 = __webpack_require__(93);
+	var ComponentOptionsModel_1 = __webpack_require__(92);
+	var QueryController_1 = __webpack_require__(75);
+	var SearchInterface_1 = __webpack_require__(98);
+	var NoopAnalyticsClient_1 = __webpack_require__(106);
+	var BaseComponent_1 = __webpack_require__(77);
 	/**
-	 * The base class for every Component in the framework
+	 * The base class for every component in the framework.
 	 */
 	var Component = (function (_super) {
 	    __extends(Component, _super);
 	    /**
 	     * Create a new Component. Resolve all {@link IComponentBindings} if not provided.<br/>
 	     * Create a new Logger for this component.
-	     * Attach the component to the {@link SearchInterface}<br/>
+	     * Attach the component to the {@link SearchInterface}.<br/>
 	     * @param element The HTMLElement on which to create the component. Used to bind data on the element.
-	     * @param type The unique identifier for this component. See : {@link IComponentDefinition.ID}. Used to generate the unique Coveo CSS class associated with every component
+	     * @param type The unique identifier for this component. See : {@link IComponentDefinition.ID}. Used to generate the unique Coveo CSS class associated with every component.
 	     * @param bindings The environment for every component. Optional, but omitting to provide one will impact performance.
 	     */
 	    function Component(element, type, bindings) {
@@ -10940,7 +11213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }
 	    /**
-	     * Return the bindings, or environment, for the current component
+	     * Return the bindings, or environment, for the current component.
 	     * @returns {IComponentBindings}
 	     */
 	    Component.prototype.getBindings = function () {
@@ -10984,11 +11257,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return Component.getResult(this.element);
 	    };
 	    /**
-	     * Get the bound component to the given HTMLElement. Throws an assert if the HTMLElement has no component bound, unless using the noThrow argument<br/>
-	     * If there is multiple component bound to the current HTMLElement, you must specify the component class
-	     * @param element HTMLElement for which to get the bound component
-	     * @param componentClass Optional component class. If the HTMLElement has multiple components bound, you must specify which one you are targeting
-	     * @param noThrow Boolean option to tell the method to not throw on error
+	     * Get the bound component to the given HTMLElement. Throws an assert if the HTMLElement has no component bound, unless using the noThrow argument.<br/>
+	     * If there is multiple component bound to the current HTMLElement, you must specify the component class.
+	     * @param element HTMLElement for which to get the bound component.
+	     * @param componentClass Optional component class. If the HTMLElement has multiple components bound, you must specify which one you are targeting.
+	     * @param noThrow Boolean option to tell the method to not throw on error.
 	     * @returns {Component}
 	     */
 	    Component.get = function (element, componentClass, noThrow) {
@@ -11051,10 +11324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    Component.pointElementsToDummyForm = function (element) {
-	        var inputs = [];
-	        if (Dom_1.$$(element).is('input')) {
-	            inputs.push(element);
-	        }
+	        var inputs = Dom_1.$$(element).is('input') ? [element] : [];
 	        inputs = inputs.concat(Dom_1.$$(element).findAll('input'));
 	        _.each(_.compact(inputs), function (input) {
 	            input.setAttribute('form', 'coveo-dummy-form');
@@ -11067,14 +11337,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Used by the various Coveo Component to trigger and bind event.<br/>
 	 * It adds a small logic to execute handler or triggers only when the component is "enabled".<br/>
 	 * A component is disabled by calling {Component.disable}<br/>
-	 * Typically, a Component is disabled when it is not active in the current {Tab}.<br/>
+	 * Typically, a component is disabled when it is not active in the current {Tab}.<br/>
 	 * It can also be disabled by external code.<br/>
 	 * The class serves as a way to not execute handler on component that are invisible and inactive in the query.
 	 */
 	var ComponentEvents = (function () {
 	    /**
-	     * Create a new ComponentEvents for the given {@link Component}
-	     * @param owner The {@link Component} which owns those events handler and trigger
+	     * Create a new `ComponentEvents` for the given {@link Component}.
+	     * @param owner The {@link Component} which owns those events handler and trigger.
 	     */
 	    function ComponentEvents(owner) {
 	        this.owner = owner;
@@ -11101,20 +11371,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    /**
-	     * Bind on the "root" of the Component. The root is typically the {@link SearchInterface}<br/>
+	     * Bind on the "root" of the Component. The root is typically the {@link SearchInterface}.<br/>
 	     * Bind an event using native javascript code.
-	     * @param event The event for which to register an handler
-	     * @param handler The function to execute when the event is triggered
+	     * @param event The event for which to register an handler.
+	     * @param handler The function to execute when the event is triggered.
 	     */
 	    ComponentEvents.prototype.onRootElement = function (event, handler) {
 	        this.on(this.owner.root, event, handler);
 	    };
 	    /**
-	     * Bind on the "root" of the Component. The root is typically the {@link SearchInterface}<br/>
+	     * Bind on the "root" of the Component. The root is typically the {@link SearchInterface}.<br/>
 	     * Bind an event using native javascript code.
 	     * The handler will execute only ONE time.
-	     * @param event The event for which to register an handler
-	     * @param handler The function to execute when the event is triggered
+	     * @param event The event for which to register an handler.
+	     * @param handler The function to execute when the event is triggered.
 	     */
 	    ComponentEvents.prototype.oneRootElement = function (event, handler) {
 	        this.one(this.owner.root, event, handler);
@@ -11122,9 +11392,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Bind an event related specially to the query state model.<br/>
 	     * This will build the correct string event and execute the handler only if the component is activated.
-	     * @param eventType The event type for which to register an event
-	     * @param attribute The attribute for which to register an event
-	     * @param handler The handler to execute when the query state event is triggered
+	     * @param eventType The event type for which to register an event.
+	     * @param attribute The attribute for which to register an event.
+	     * @param handler The handler to execute when the query state event is triggered.
 	     */
 	    ComponentEvents.prototype.onQueryState = function (eventType, attribute, handler) {
 	        this.onRootElement(this.getQueryStateEventName(eventType, attribute), handler);
@@ -11133,9 +11403,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Bind an event related specially to the query state model.<br/>
 	     * This will build the correct string event and execute the handler only if the component is activated.<br/>
 	     * Will execute only once.
-	     * @param eventType The event type for which to register an event
-	     * @param attribute The attribute for which to register an event
-	     * @param handler The handler to execute when the query state event is triggered
+	     * @param eventType The event type for which to register an event.
+	     * @param attribute The attribute for which to register an event.
+	     * @param handler The handler to execute when the query state event is triggered.
 	     */
 	    ComponentEvents.prototype.oneQueryState = function (eventType, attribute, handler) {
 	        this.oneRootElement(this.getQueryStateEventName(eventType, attribute), handler);
@@ -11153,8 +11423,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        })(args);
 	    };
 	    /**
-	     * Execute the function only if the component is enabled
-	     * @param func The function to execute if the component is enabled
+	     * Execute the function only if the component is enabled.
+	     * @param func The function to execute if the component is enabled.
 	     * @returns {function(...[any]): *}
 	     */
 	    ComponentEvents.prototype.wrapToCallIfEnabled = function (func) {
@@ -11199,7 +11469,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -11209,34 +11479,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var SearchEndpoint_1 = __webpack_require__(15);
-	var ComponentOptions_1 = __webpack_require__(98);
+	var ComponentOptions_1 = __webpack_require__(99);
 	var DeviceUtils_1 = __webpack_require__(21);
-	var Dom_1 = __webpack_require__(57);
-	var DomUtils_1 = __webpack_require__(59);
+	var Dom_1 = __webpack_require__(58);
+	var DomUtils_1 = __webpack_require__(60);
 	var Assert_1 = __webpack_require__(18);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var ComponentStateModel_1 = __webpack_require__(92);
-	var ComponentOptionsModel_1 = __webpack_require__(91);
-	var QueryController_1 = __webpack_require__(74);
-	var Model_1 = __webpack_require__(87);
-	var QueryEvents_1 = __webpack_require__(47);
-	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(52);
-	var HistoryController_1 = __webpack_require__(86);
-	var LocalStorageHistoryController_1 = __webpack_require__(88);
-	var InitializationEvents_1 = __webpack_require__(44);
-	var NoopAnalyticsClient_1 = __webpack_require__(105);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var ComponentStateModel_1 = __webpack_require__(93);
+	var ComponentOptionsModel_1 = __webpack_require__(92);
+	var QueryController_1 = __webpack_require__(75);
+	var Model_1 = __webpack_require__(88);
+	var QueryEvents_1 = __webpack_require__(48);
+	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(53);
+	var HistoryController_1 = __webpack_require__(87);
+	var LocalStorageHistoryController_1 = __webpack_require__(89);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var NoopAnalyticsClient_1 = __webpack_require__(106);
 	var Utils_1 = __webpack_require__(19);
-	var RootComponent_1 = __webpack_require__(75);
-	var BaseComponent_1 = __webpack_require__(76);
-	var Debug_1 = __webpack_require__(106);
-	var HashUtils_1 = __webpack_require__(65);
-	var FastClick = __webpack_require__(107);
-	var timezone = __webpack_require__(108);
+	var RootComponent_1 = __webpack_require__(76);
+	var BaseComponent_1 = __webpack_require__(77);
+	var Debug_1 = __webpack_require__(107);
+	var HashUtils_1 = __webpack_require__(66);
+	var FastClick = __webpack_require__(108);
+	var timezone = __webpack_require__(109);
+	var SentryLogger_1 = __webpack_require__(110);
 	/**
 	 * This component is the root and main component of your search interface.<br/>
 	 * You should place every other component inside this component.<br/>
 	 * It is also on this component that you call the initialization function.<br/>
-	 * Since this component is the root of your search UI, it is recommended that you give it a unique HTML id attribute in order to reference it easily.
+	 * Since this component is the root of your Search UI, it is recommended that you give it a unique HTML id attribute in order to reference it easily.
 	 */
 	var SearchInterface = (function (_super) {
 	    __extends(SearchInterface, _super);
@@ -11244,9 +11515,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Create a new search interface. Initialize letious singleton for the interface (eg : Usage analytic, query controller, state model, etc.)<br/>
 	     * Bind event related to the query.<br/>
 	     * Will hide and show the loading animation, if activated.<br/>
-	     * @param element The HTMLElement on which the element will be instantiated. This cannot be an HTMLInputElement for technical reason
+	     * @param element The `HTMLElement` on which the element will be instantiated. This cannot be an `HTMLInputElement` for technical reasons.
 	     * @param options The options for the querybox.
-	     * @param analyticsOptions The options for the analytics component. Since the analytics component is normally global, it needs to be passed at initialization of the whole interface
+	     * @param analyticsOptions The options for the analytics component. Since the analytics component is normally global, it needs to be passed at initialization of the whole interface.
 	     * @param _window The window object for the search interface. Used for unit tests, which can pass a mock. Default is the global window object.
 	     */
 	    function SearchInterface(element, options, analyticsOptions, _window) {
@@ -11273,6 +11544,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.componentOptionsModel = new ComponentOptionsModel_1.ComponentOptionsModel(element);
 	        this.usageAnalytics = this.initializeAnalytics();
 	        this.queryController = new QueryController_1.QueryController(element, this.options, this.usageAnalytics, this);
+	        new SentryLogger_1.SentryLogger(this.queryController);
 	        var eventName = this.queryStateModel.getEventName(Model_1.Model.eventTypes.preprocess);
 	        Dom_1.$$(this.element).on(eventName, function (e, args) { return _this.handlePreprocessQueryStateModel(args); });
 	        Dom_1.$$(this.element).on(QueryEvents_1.QueryEvents.buildingQuery, function (e, args) { return _this.handleBuildingQuery(args); });
@@ -11298,7 +11570,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * Display the first query animation.<br/>
-	     * This is normally the Coveo logo with a css animation (which can be customized with options or css)
+	     * This is normally the Coveo logo with a CSS animation (which can be customized with options or CSS).
 	     */
 	    SearchInterface.prototype.showWaitAnimation = function () {
 	        Dom_1.$$(this.options.firstLoadingAnimation).detach();
@@ -11307,24 +11579,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Hide the first query animation.<br/>
-	     * This is normally the Coveo logo with a css animation (which can be customized with options or css)
+	     * This is normally the Coveo logo with a CSS animation (which can be customized with options or CSS).
 	     */
 	    SearchInterface.prototype.hideWaitAnimation = function () {
 	        Dom_1.$$(this.options.firstLoadingAnimation).detach();
 	        Dom_1.$$(this.element).removeClass('coveo-waiting-for-first-query');
 	    };
 	    /**
-	     * Attach a component to the interface. This allows the interface to easily list and traverse it's component.
-	     * @param type Normally a unique identifier without the Coveo prefix. Eg : CoveoFacet -> Facet, CoveoPager -> Pager, CoveoQuerybox -> Querybox, etc.
-	     * @param component The component instance to attach
+	     * Attach a component to the interface. This allows the interface to easily list and traverse its component.
+	     * @param type Normally a unique identifier without the Coveo prefix (e.g.: CoveoFacet -> Facet, CoveoPager -> Pager, CoveoQuerybox -> Querybox, etc.)
+	     * @param component The component instance to attach.
 	     */
 	    SearchInterface.prototype.attachComponent = function (type, component) {
 	        this.getComponents(type).push(component);
 	    };
 	    /**
 	     * Detach a component from the interface.
-	     * @param type Normally a unique identifier without the Coveo prefix. Eg : CoveoFacet -> Facet, CoveoPager -> Pager, CoveoQuerybox -> Querybox, etc.
-	     * @param component The component instance to detach
+	     * @param type Normally a unique identifier without the Coveo prefix (e.g.: CoveoFacet -> Facet, CoveoPager -> Pager, CoveoQuerybox -> Querybox, etc.)
+	     * @param component The component instance to detach.
 	     */
 	    SearchInterface.prototype.detachComponent = function (type, component) {
 	        var components = this.getComponents(type);
@@ -11350,7 +11622,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    /**
 	     * Get all the components for a given type
-	     * @param type Normally a unique identifier without the Coveo prefix. Eg : CoveoFacet -> Facet, CoveoPager -> Pager, CoveoQuerybox -> Querybox, etc.
+	     * @param type Normally a unique identifier without the Coveo prefix (e.g.: CoveoFacet -> Facet, CoveoPager -> Pager, CoveoQuerybox -> Querybox, etc.)
 	     */
 	    SearchInterface.prototype.getComponents = function (type) {
 	        if (this.attachedComponents == null) {
@@ -11614,7 +11886,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        enableHistory: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
-	         * Specifies wether the UI should use an automatic responsive mode (eg : The tab(s) and facet(s) being placed automatically under the search box)<br/>
+	         * Specifies whether the UI should use an automatic responsive mode (eg : The tab(s) and facet(s) being placed automatically under the search box)<br/>
 	         * This can be disabled for design reasons, if it does not fit with the implementation needs.<br/>
 	         * The default value is `true`
 	         */
@@ -11622,7 +11894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Specifies that you wish to use the local storage of the browser to store the state of the interface.<br/>
 	         * This can be used for very specific purpose, and only if you know what you are doing.<br/>
-	         * Default value is false.
+	         * Default value is `false`.
 	         */
 	        useLocalStorageForHistory: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
@@ -11638,31 +11910,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        excerptLength: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 200, min: 0 }),
 	        /**
 	         * Specifies an expression to add to each query.<br/>
-	         * This should be use if you wish to add a global filter for your whole search interface that applies for all tab.<br/>
-	         * Do not use this for security concern ... (It's javascript after all).<br/>
+	         * This should be use if you wish to add a global filter for your whole search interface that applies for all tabs.<br/>
+	         * Do not use this for security concern ... (It is JavaScript after all).<br/>
 	         * By default none is added.
 	         */
 	        expression: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '' }),
 	        /**
 	         * Specifies the name of a field to use as a custom filter when executing the query (also referred to as 'folding').<br/>
 	         * Setting this option causes the index to return only one result having any particular value inside the filter field. Any other matching result is 'folded' inside the childResults member of each JSON query result.<br/>
-	         * This feature is typically used with threaded conversations to include only one top-level result per conversation. Thus, the field specified in this option typically is a value unique to each thread that is shared by all items (e.g., posts, emails, etc.) in the thread.<br/>
+	         * This feature is typically used with threaded conversations to include only one top-level result per conversation. Thus, the field specified in this option typically is a value unique to each thread that is shared by all items (e.g.: posts, emails, etc.) in the thread.<br/>
 	         * This is obviously an advanced feature. Instead, look into using the {@link Folding} component, which covers a lot of different use cases.<br/>
 	         * By default none is added
 	         */
 	        filterField: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '' }),
 	        /**
 	         * Specifies whether the interface should display a loading animation before the first query has completed successfully.<br/>
-	         * Note that if you set autoTriggerQuery to false, this means that the loading animation won't go away automatically.<br/>
+	         * Note that if you set autoTriggerQuery to false, this means that the loading animation will not go away automatically.<br/>
 	         * Default is true.
 	         */
 	        hideUntilFirstQuery: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
 	        /**
 	         * Specifies the animation that you wish to use for your interface.<br/>
-	         * This can be either a selector, or an element that matches the correct css class.<br/>
+	         * This can be a selector or an element that matches the correct CSS class.<br/>
 	         * Eg : firstLoadingAnimation : '.CustomFirstLoadingAnimation' / data-first-loading-animation='.CustomFirstLoadingAnimation'.</br>
 	         * Eg : &lt;element class='CoveoSearchInterface'&gt;&lt;element class='coveo-first-loading-animation'/&gt;&lt;/element&gt;<br/>
-	         * By default, this will be a Coveo CSS animation (which can also be customized with css)
+	         * By default, this will be a Coveo CSS animation (which can also be customized with CSS).
 	         */
 	        firstLoadingAnimation: ComponentOptions_1.ComponentOptions.buildChildHtmlElementOption({
 	            childSelector: '.coveo-first-loading-animation',
@@ -11671,7 +11943,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Specifies whether the init function should trigger the first query automatically when the page is loaded.<br/>
 	         * Note that if you set this to false, then the hideUntilFirstQuery option still applies. This means that the animation will still show until a query is triggered.<br/>
-	         * Default is true.
+	         * Default is `true`.
 	         */
 	        autoTriggerQuery: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
 	        endpoint: ComponentOptions_1.ComponentOptions.buildCustomOption(function (endpoint) { return endpoint != null && endpoint in SearchEndpoint_1.SearchEndpoint.endpoints ? SearchEndpoint_1.SearchEndpoint.endpoints[endpoint] : null; }, { defaultFunction: function () { return SearchEndpoint_1.SearchEndpoint.endpoints['default']; } }),
@@ -11684,25 +11956,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Specifies whether to enable the feature that allows users to ALT + double click on any results to get the Debug page with a detailed view of all the properties and fields for a given result.<br/>
 	         * This has no security concern (as all those informations are visible to users through the browser developer console or by calling the Coveo API directly).<br/>
-	         * The default value is true.
+	         * The default value is `true`.
 	         */
 	        enableDebugInfo: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
 	        /**
 	         * Specifies whether to enable the collaborative rating for the index and and include the user rating on each results to the normal index ranking.<br/>
 	         * If activated, this option can be leveraged with the {@link ResultRating} component.<br/>
-	         * The default value is false.
+	         * The default value is `false`.
 	         */
 	        enableCollaborativeRating: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
 	         * Specifies whether to filter duplicates on the search results.<br/>
 	         * When true, duplicates do not appear in search results, but they however are included in facet counts, which can be sometimes confusing for the users. This is a limitation of the index.<br/>
 	         * Example: The user narrows a query to one document that has a duplicate. Only one document appears in search results, but the facet count is 2.<br/>
-	         * The default value is false.
+	         * The default value is `false`.
 	         */
 	        enableDuplicateFiltering: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
 	         * Specifies the name of the query pipeline to use for the queries. If not specified, the default value is default, which means the default query pipeline will be used.<br/>
-	         * You can use this parameter for example when your index is in a Coveo Cloud Organization where you created pipelines (see https://onlinehelp.coveo.com/en/cloud/creating_and_managing_query_pipelines.htm).<br/>
+	         * You can use this parameter when your index is in a Coveo Cloud organization where you created pipelines (see https://onlinehelp.coveo.com/en/cloud/creating_and_managing_query_pipelines.htm).<br/>
 	         * Default value is 'default'.
 	         */
 	        pipeline: ComponentOptions_1.ComponentOptions.buildStringOption(),
@@ -11710,7 +11982,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * Specifies the maximum age in milliseconds that cached query results can have in order to be used (instead of performing a new query on the index).<br/>
 	         * If cached results are available but are older than the specified age, a new query will be performed on the index.<br/>
 	         * On high-volume public web sites, having a larger maximum age can greatly improve query response time at the cost of result freshness.<br/>
-	         * By default, the Coveo Search API will determine the cache length. This is typically 15 minutes.
+	         * By default, the Coveo Search API will determine the cache length. This typically takes 15 minutes.
 	         */
 	        maximumAge: ComponentOptions_1.ComponentOptions.buildNumberOption(),
 	        /**
@@ -11774,16 +12046,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var Assert_1 = __webpack_require__(18);
-	var Dom_1 = __webpack_require__(57);
-	var TemplateCache_1 = __webpack_require__(99);
-	var TemplateList_1 = __webpack_require__(103);
-	var UnderscoreTemplate_1 = __webpack_require__(101);
-	var HtmlTemplate_1 = __webpack_require__(102);
+	var Logger_1 = __webpack_require__(17);
+	var Dom_1 = __webpack_require__(58);
+	var TemplateCache_1 = __webpack_require__(100);
+	var TemplateList_1 = __webpack_require__(104);
+	var UnderscoreTemplate_1 = __webpack_require__(102);
+	var HtmlTemplate_1 = __webpack_require__(103);
 	var Utils_1 = __webpack_require__(19);
 	var Strings_1 = __webpack_require__(35);
 	(function (ComponentOptionsType) {
@@ -11919,6 +12192,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return ComponentOptions.initOptions(element, component.options, values, component.ID);
 	    };
 	    ComponentOptions.initOptions = function (element, options, values, componentID) {
+	        var logger = new Logger_1.Logger(this);
 	        if (values == null) {
 	            values = {};
 	        }
@@ -11931,7 +12205,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (loadFromAttribute != null) {
 	                value = loadFromAttribute(element, name_1, optionDefinition);
 	                if (value && optionDefinition.deprecated) {
-	                    console.log(componentID + '.' + name_1 + ' : ' + optionDefinition.deprecated);
+	                    logger.warn(componentID + '.' + name_1 + ' : ' + optionDefinition.deprecated);
 	                }
 	            }
 	            if (Utils_1.Utils.isNullOrUndefined(value) && values[name_1] != undefined) {
@@ -11954,6 +12228,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	            }
 	            if (value != null) {
+	                if (optionDefinition.validator) {
+	                    var isValid = optionDefinition.validator(value);
+	                    if (!isValid) {
+	                        logger.warn(componentID + " ." + name_1 + " has invalid value :  " + value);
+	                        if (optionDefinition.required) {
+	                            logger.error(componentID + " ." + name_1 + " is required and has an invalid value : " + value + ". ***THIS COMPONENT WILL NOT WORK***");
+	                        }
+	                        delete values[name_1];
+	                        continue;
+	                    }
+	                }
 	                if (optionDefinition.type == ComponentOptionsType.OBJECT && values[name_1] != null) {
 	                    values[name_1] = _.extend(values[name_1], value);
 	                }
@@ -12162,14 +12447,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var Template_1 = __webpack_require__(100);
+	var Template_1 = __webpack_require__(101);
 	var Assert_1 = __webpack_require__(18);
-	var UnderscoreTemplate_1 = __webpack_require__(101);
-	var HtmlTemplate_1 = __webpack_require__(102);
+	var UnderscoreTemplate_1 = __webpack_require__(102);
+	var HtmlTemplate_1 = __webpack_require__(103);
 	/**
 	 * Holds a reference to all template available in the framework
 	 */
@@ -12203,7 +12488,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    /**
-	     * Return a template by it's name/id.
+	     * Return a template by its name/ID.
 	     * @param name
 	     * @returns {Template}
 	     */
@@ -12287,15 +12572,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var Logger_1 = __webpack_require__(17);
-	var StringUtils_1 = __webpack_require__(61);
-	var Initialization_1 = __webpack_require__(95);
-	var Dom_1 = __webpack_require__(57);
-	var BaseComponent_1 = __webpack_require__(76);
+	var StringUtils_1 = __webpack_require__(62);
+	var Initialization_1 = __webpack_require__(96);
+	var Dom_1 = __webpack_require__(58);
+	var BaseComponent_1 = __webpack_require__(77);
 	var Template = (function () {
 	    function Template(dataToString, condition) {
 	        this.dataToString = dataToString;
@@ -12348,7 +12633,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -12357,11 +12642,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Template_1 = __webpack_require__(100);
+	var Template_1 = __webpack_require__(101);
 	var Assert_1 = __webpack_require__(18);
-	var ComponentOptions_1 = __webpack_require__(98);
+	var ComponentOptions_1 = __webpack_require__(99);
 	var Utils_1 = __webpack_require__(19);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	_.templateSettings = {
 	    evaluate: /(?:<%|{{)([\s\S]+?)(?:%>|}})/g,
 	    interpolate: /(?:<%|{{)=([\s\S]+?)(?:%>|}})/g,
@@ -12437,7 +12722,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -12446,10 +12731,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Template_1 = __webpack_require__(100);
-	var ComponentOptions_1 = __webpack_require__(98);
+	var Template_1 = __webpack_require__(101);
+	var ComponentOptions_1 = __webpack_require__(99);
 	var Assert_1 = __webpack_require__(18);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	var HtmlTemplate = (function (_super) {
 	    __extends(HtmlTemplate, _super);
 	    function HtmlTemplate(element) {
@@ -12506,7 +12791,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -12515,8 +12800,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Template_1 = __webpack_require__(100);
-	var DefaultResultTemplate_1 = __webpack_require__(104);
+	var Template_1 = __webpack_require__(101);
+	var DefaultResultTemplate_1 = __webpack_require__(105);
 	var TemplateList = (function (_super) {
 	    __extends(TemplateList, _super);
 	    function TemplateList(templates) {
@@ -12555,7 +12840,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -12564,9 +12849,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Template_1 = __webpack_require__(100);
-	var UnderscoreTemplate_1 = __webpack_require__(101);
-	var TemplateCache_1 = __webpack_require__(99);
+	var Template_1 = __webpack_require__(101);
+	var UnderscoreTemplate_1 = __webpack_require__(102);
+	var TemplateCache_1 = __webpack_require__(100);
 	var Assert_1 = __webpack_require__(18);
 	var DefaultResultTemplate = (function (_super) {
 	    __extends(DefaultResultTemplate, _super);
@@ -12618,7 +12903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12672,7 +12957,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -12682,28 +12967,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	/// <reference path="../../../node_modules/modal-box/bin/ModalBox.d.ts" />
-	var ComponentOptions_1 = __webpack_require__(98);
-	var LocalStorageUtils_1 = __webpack_require__(69);
-	var QueryEvents_1 = __webpack_require__(47);
-	var ResultListEvents_1 = __webpack_require__(48);
-	var DebugEvents_1 = __webpack_require__(42);
-	var Dom_1 = __webpack_require__(57);
-	var StringUtils_1 = __webpack_require__(61);
+	var ComponentOptions_1 = __webpack_require__(99);
+	var LocalStorageUtils_1 = __webpack_require__(70);
+	var QueryEvents_1 = __webpack_require__(48);
+	var ResultListEvents_1 = __webpack_require__(49);
+	var DebugEvents_1 = __webpack_require__(43);
+	var Dom_1 = __webpack_require__(58);
+	var StringUtils_1 = __webpack_require__(62);
 	var SearchEndpoint_1 = __webpack_require__(15);
-	var Template_1 = __webpack_require__(100);
+	var Template_1 = __webpack_require__(101);
 	var es6_promise_1 = __webpack_require__(8);
-	var RootComponent_1 = __webpack_require__(75);
-	var BaseComponent_1 = __webpack_require__(76);
+	var RootComponent_1 = __webpack_require__(76);
+	var BaseComponent_1 = __webpack_require__(77);
 	var ExternalModulesShim_1 = __webpack_require__(26);
 	var Globalize = __webpack_require__(6);
+	var KeyboardUtils_1 = __webpack_require__(69);
+	var InitializationEvents_1 = __webpack_require__(45);
 	var Debug = (function (_super) {
 	    __extends(Debug, _super);
-	    function Debug(element, queryController, options) {
+	    function Debug(element, queryController, options, modalBox) {
 	        var _this = this;
+	        if (modalBox === void 0) { modalBox = ExternalModulesShim_1.ModalBox; }
 	        _super.call(this, element, Debug.ID);
 	        this.element = element;
 	        this.queryController = queryController;
 	        this.options = options;
+	        this.modalBox = modalBox;
 	        this.debug = false;
 	        this.highlightRecommendation = false;
 	        this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, Debug, options);
@@ -12714,18 +13003,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Dom_1.$$(this.element).on(DebugEvents_1.DebugEvents.showDebugPanel, function (e, args) {
 	            _this.handleShowDebugPanel(args);
 	        });
+	        Dom_1.$$(this.element).on(InitializationEvents_1.InitializationEvents.nuke, function () {
+	            _this.unbindEscapeEvent();
+	        });
 	        this.localStorageDebug = new LocalStorageUtils_1.LocalStorageUtils('DebugPanel');
 	        this.collapsedSections = this.localStorageDebug.load() || [];
 	    }
 	    Debug.prototype.showDebugPanel = function (builder) {
 	        var _this = this;
 	        var build = builder();
-	        var modalbox = ExternalModulesShim_1.ModalBox.open(build.body, {
+	        var modalbox = this.modalBox.open(build.body, {
 	            title: '',
 	            className: 'coveo-debug',
 	            titleClose: true,
-	            overlayClose: true
+	            overlayClose: true,
+	            validation: function () {
+	                _this.unbindEscapeEvent();
+	                return true;
+	            }
 	        });
+	        this.bindEscapeEvent();
 	        var title = Dom_1.$$(modalbox.wrapper).find('.coveo-title');
 	        var search = this.buildSearchBox(build.body);
 	        var downloadLink = Dom_1.$$('a', { download: 'debug.json', 'href': this.downloadHref(build.json) }, 'Download');
@@ -12738,6 +13035,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title.appendChild(this.buildEnableDebugCheckbox(build.body, search, bodyBuilder));
 	        title.appendChild(search);
 	        title.appendChild(downloadLink.el);
+	    };
+	    Debug.prototype.handleEscapeEvent = function (e) {
+	        if (e.keyCode == KeyboardUtils_1.KEYBOARD.ESCAPE) {
+	            if (this.modalBox) {
+	                this.modalBox.close();
+	            }
+	        }
+	    };
+	    Debug.prototype.bindEscapeEvent = function () {
+	        this.boundEscapeKey = this.handleEscapeEvent.bind(this);
+	        Dom_1.$$(document.body).on('keyup', this.boundEscapeKey);
+	    };
+	    Debug.prototype.unbindEscapeEvent = function () {
+	        if (this.boundEscapeKey) {
+	            Dom_1.$$(document.body).off('keyup', this.boundEscapeKey);
+	        }
+	        this.boundEscapeKey = null;
 	    };
 	    Debug.prototype.handleShowDebugPanel = function (info) {
 	        var _this = this;
@@ -13330,19 +13644,79 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!function(){"use strict";function t(e,o){function i(t,e){return function(){return t.apply(e,arguments)}}var r;if(o=o||{},this.trackingClick=!1,this.trackingClickStart=0,this.targetElement=null,this.touchStartX=0,this.touchStartY=0,this.lastTouchIdentifier=0,this.touchBoundary=o.touchBoundary||10,this.layer=e,this.tapDelay=o.tapDelay||200,this.tapTimeout=o.tapTimeout||700,!t.notNeeded(e)){for(var a=["onMouse","onClick","onTouchStart","onTouchMove","onTouchEnd","onTouchCancel"],c=this,s=0,u=a.length;u>s;s++)c[a[s]]=i(c[a[s]],c);n&&(e.addEventListener("mouseover",this.onMouse,!0),e.addEventListener("mousedown",this.onMouse,!0),e.addEventListener("mouseup",this.onMouse,!0)),e.addEventListener("click",this.onClick,!0),e.addEventListener("touchstart",this.onTouchStart,!1),e.addEventListener("touchmove",this.onTouchMove,!1),e.addEventListener("touchend",this.onTouchEnd,!1),e.addEventListener("touchcancel",this.onTouchCancel,!1),Event.prototype.stopImmediatePropagation||(e.removeEventListener=function(t,n,o){var i=Node.prototype.removeEventListener;"click"===t?i.call(e,t,n.hijacked||n,o):i.call(e,t,n,o)},e.addEventListener=function(t,n,o){var i=Node.prototype.addEventListener;"click"===t?i.call(e,t,n.hijacked||(n.hijacked=function(t){t.propagationStopped||n(t)}),o):i.call(e,t,n,o)}),"function"==typeof e.onclick&&(r=e.onclick,e.addEventListener("click",function(t){r(t)},!1),e.onclick=null)}}var e=navigator.userAgent.indexOf("Windows Phone")>=0,n=navigator.userAgent.indexOf("Android")>0&&!e,o=/iP(ad|hone|od)/.test(navigator.userAgent)&&!e,i=o&&/OS 4_\d(_\d)?/.test(navigator.userAgent),r=o&&/OS [6-7]_\d/.test(navigator.userAgent),a=navigator.userAgent.indexOf("BB10")>0;t.prototype.needsClick=function(t){switch(t.nodeName.toLowerCase()){case"button":case"select":case"textarea":if(t.disabled)return!0;break;case"input":if(o&&"file"===t.type||t.disabled)return!0;break;case"label":case"iframe":case"video":return!0}return/\bneedsclick\b/.test(t.className)},t.prototype.needsFocus=function(t){switch(t.nodeName.toLowerCase()){case"textarea":return!0;case"select":return!n;case"input":switch(t.type){case"button":case"checkbox":case"file":case"image":case"radio":case"submit":return!1}return!t.disabled&&!t.readOnly;default:return/\bneedsfocus\b/.test(t.className)}},t.prototype.sendClick=function(t,e){var n,o;document.activeElement&&document.activeElement!==t&&document.activeElement.blur(),o=e.changedTouches[0],n=document.createEvent("MouseEvents"),n.initMouseEvent(this.determineEventType(t),!0,!0,window,1,o.screenX,o.screenY,o.clientX,o.clientY,!1,!1,!1,!1,0,null),n.forwardedTouchEvent=!0,t.dispatchEvent(n)},t.prototype.determineEventType=function(t){return n&&"select"===t.tagName.toLowerCase()?"mousedown":"click"},t.prototype.focus=function(t){var e;o&&t.setSelectionRange&&0!==t.type.indexOf("date")&&"time"!==t.type&&"month"!==t.type?(e=t.value.length,t.setSelectionRange(e,e)):t.focus()},t.prototype.updateScrollParent=function(t){var e,n;if(e=t.fastClickScrollParent,!e||!e.contains(t)){n=t;do{if(n.scrollHeight>n.offsetHeight){e=n,t.fastClickScrollParent=n;break}n=n.parentElement}while(n)}e&&(e.fastClickLastScrollTop=e.scrollTop)},t.prototype.getTargetElementFromEventTarget=function(t){return t.nodeType===Node.TEXT_NODE?t.parentNode:t},t.prototype.onTouchStart=function(t){var e,n,r;if(t.targetTouches.length>1)return!0;if(e=this.getTargetElementFromEventTarget(t.target),n=t.targetTouches[0],o){if(r=window.getSelection(),r.rangeCount&&!r.isCollapsed)return!0;if(!i){if(n.identifier&&n.identifier===this.lastTouchIdentifier)return t.preventDefault(),!1;this.lastTouchIdentifier=n.identifier,this.updateScrollParent(e)}}return this.trackingClick=!0,this.trackingClickStart=t.timeStamp,this.targetElement=e,this.touchStartX=n.pageX,this.touchStartY=n.pageY,t.timeStamp-this.lastClickTime<this.tapDelay&&t.preventDefault(),!0},t.prototype.touchHasMoved=function(t){var e=t.changedTouches[0],n=this.touchBoundary;return Math.abs(e.pageX-this.touchStartX)>n||Math.abs(e.pageY-this.touchStartY)>n?!0:!1},t.prototype.onTouchMove=function(t){return this.trackingClick?((this.targetElement!==this.getTargetElementFromEventTarget(t.target)||this.touchHasMoved(t))&&(this.trackingClick=!1,this.targetElement=null),!0):!0},t.prototype.findControl=function(t){return void 0!==t.control?t.control:t.htmlFor?document.getElementById(t.htmlFor):t.querySelector("button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea")},t.prototype.onTouchEnd=function(t){var e,a,c,s,u,l=this.targetElement;if(!this.trackingClick)return!0;if(t.timeStamp-this.lastClickTime<this.tapDelay)return this.cancelNextClick=!0,!0;if(t.timeStamp-this.trackingClickStart>this.tapTimeout)return!0;if(this.cancelNextClick=!1,this.lastClickTime=t.timeStamp,a=this.trackingClickStart,this.trackingClick=!1,this.trackingClickStart=0,r&&(u=t.changedTouches[0],l=document.elementFromPoint(u.pageX-window.pageXOffset,u.pageY-window.pageYOffset)||l,l.fastClickScrollParent=this.targetElement.fastClickScrollParent),c=l.tagName.toLowerCase(),"label"===c){if(e=this.findControl(l)){if(this.focus(l),n)return!1;l=e}}else if(this.needsFocus(l))return t.timeStamp-a>100||o&&window.top!==window&&"input"===c?(this.targetElement=null,!1):(this.focus(l),this.sendClick(l,t),o&&"select"===c||(this.targetElement=null,t.preventDefault()),!1);return o&&!i&&(s=l.fastClickScrollParent,s&&s.fastClickLastScrollTop!==s.scrollTop)?!0:(this.needsClick(l)||(t.preventDefault(),this.sendClick(l,t)),!1)},t.prototype.onTouchCancel=function(){this.trackingClick=!1,this.targetElement=null},t.prototype.onMouse=function(t){return this.targetElement?t.forwardedTouchEvent?!0:t.cancelable?!this.needsClick(this.targetElement)||this.cancelNextClick?(t.stopImmediatePropagation?t.stopImmediatePropagation():t.propagationStopped=!0,t.stopPropagation(),t.preventDefault(),!1):!0:!0:!0},t.prototype.onClick=function(t){var e;return this.trackingClick?(this.targetElement=null,this.trackingClick=!1,!0):"submit"===t.target.type&&0===t.detail?!0:(e=this.onMouse(t),e||(this.targetElement=null),e)},t.prototype.destroy=function(){var t=this.layer;n&&(t.removeEventListener("mouseover",this.onMouse,!0),t.removeEventListener("mousedown",this.onMouse,!0),t.removeEventListener("mouseup",this.onMouse,!0)),t.removeEventListener("click",this.onClick,!0),t.removeEventListener("touchstart",this.onTouchStart,!1),t.removeEventListener("touchmove",this.onTouchMove,!1),t.removeEventListener("touchend",this.onTouchEnd,!1),t.removeEventListener("touchcancel",this.onTouchCancel,!1)},t.notNeeded=function(t){var e,o,i,r;if("undefined"==typeof window.ontouchstart)return!0;if(o=+(/Chrome\/([0-9]+)/.exec(navigator.userAgent)||[,0])[1]){if(!n)return!0;if(e=document.querySelector("meta[name=viewport]")){if(-1!==e.content.indexOf("user-scalable=no"))return!0;if(o>31&&document.documentElement.scrollWidth<=window.outerWidth)return!0}}if(a&&(i=navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/),i[1]>=10&&i[2]>=3&&(e=document.querySelector("meta[name=viewport]")))){if(-1!==e.content.indexOf("user-scalable=no"))return!0;if(document.documentElement.scrollWidth<=window.outerWidth)return!0}return"none"===t.style.msTouchAction||"manipulation"===t.style.touchAction?!0:(r=+(/Firefox\/([0-9]+)/.exec(navigator.userAgent)||[,0])[1],r>=27&&(e=document.querySelector("meta[name=viewport]"),e&&(-1!==e.content.indexOf("user-scalable=no")||document.documentElement.scrollWidth<=window.outerWidth))?!0:"none"===t.style.touchAction||"manipulation"===t.style.touchAction?!0:!1)},t.attach=function(e,n){return new t(e,n)}, true?!(__WEBPACK_AMD_DEFINE_RESULT__ = function(){return t}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):"undefined"!=typeof module&&module.exports?(module.exports=t.attach,module.exports.FastClick=t):window.FastClick=t}();
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function(e){var t=function(){"use strict";var e="s",n=2011,r=function(e){var t=-e.getTimezoneOffset();return t!==null?t:0},i=function(e,t,n){var r=new Date;return e!==undefined&&r.setFullYear(e),r.setDate(n),r.setMonth(t),r},s=function(e){return r(i(e,0,2))},o=function(e){return r(i(e,5,2))},u=function(e){var t=e.getMonth()>7?o(e.getFullYear()):s(e.getFullYear()),n=r(e);return t-n!==0},a=function(){var t=s(n),r=o(n),i=t-r;return i<0?t+",1":i>0?r+",1,"+e:t+",0"},f=function(){var e=a();return new t.TimeZone(t.olson.timezones[e])},l=function(e){var t=new Date(2010,6,15,1,0,0,0),n={"America/Denver":new Date(2011,2,13,3,0,0,0),"America/Mazatlan":new Date(2011,3,3,3,0,0,0),"America/Chicago":new Date(2011,2,13,3,0,0,0),"America/Mexico_City":new Date(2011,3,3,3,0,0,0),"America/Asuncion":new Date(2012,9,7,3,0,0,0),"America/Santiago":new Date(2012,9,3,3,0,0,0),"America/Campo_Grande":new Date(2012,9,21,5,0,0,0),"America/Montevideo":new Date(2011,9,2,3,0,0,0),"America/Sao_Paulo":new Date(2011,9,16,5,0,0,0),"America/Los_Angeles":new Date(2011,2,13,8,0,0,0),"America/Santa_Isabel":new Date(2011,3,5,8,0,0,0),"America/Havana":new Date(2012,2,10,2,0,0,0),"America/New_York":new Date(2012,2,10,7,0,0,0),"Asia/Beirut":new Date(2011,2,27,1,0,0,0),"Europe/Helsinki":new Date(2011,2,27,4,0,0,0),"Europe/Istanbul":new Date(2011,2,28,5,0,0,0),"Asia/Damascus":new Date(2011,3,1,2,0,0,0),"Asia/Jerusalem":new Date(2011,3,1,6,0,0,0),"Asia/Gaza":new Date(2009,2,28,0,30,0,0),"Africa/Cairo":new Date(2009,3,25,0,30,0,0),"Pacific/Auckland":new Date(2011,8,26,7,0,0,0),"Pacific/Fiji":new Date(2010,10,29,23,0,0,0),"America/Halifax":new Date(2011,2,13,6,0,0,0),"America/Goose_Bay":new Date(2011,2,13,2,1,0,0),"America/Miquelon":new Date(2011,2,13,5,0,0,0),"America/Godthab":new Date(2011,2,27,1,0,0,0),"Europe/Moscow":t,"Asia/Yekaterinburg":t,"Asia/Omsk":t,"Asia/Krasnoyarsk":t,"Asia/Irkutsk":t,"Asia/Yakutsk":t,"Asia/Vladivostok":t,"Asia/Kamchatka":t,"Europe/Minsk":t,"Pacific/Apia":new Date(2010,10,1,1,0,0,0),"Australia/Perth":new Date(2008,10,1,1,0,0,0)};return n[e]};return{determine:f,date_is_dst:u,dst_start_for:l}}();t.TimeZone=function(e){"use strict";var n={"America/Denver":["America/Denver","America/Mazatlan"],"America/Chicago":["America/Chicago","America/Mexico_City"],"America/Santiago":["America/Santiago","America/Asuncion","America/Campo_Grande"],"America/Montevideo":["America/Montevideo","America/Sao_Paulo"],"Asia/Beirut":["Asia/Beirut","Europe/Helsinki","Europe/Istanbul","Asia/Damascus","Asia/Jerusalem","Asia/Gaza"],"Pacific/Auckland":["Pacific/Auckland","Pacific/Fiji"],"America/Los_Angeles":["America/Los_Angeles","America/Santa_Isabel"],"America/New_York":["America/Havana","America/New_York"],"America/Halifax":["America/Goose_Bay","America/Halifax"],"America/Godthab":["America/Miquelon","America/Godthab"],"Asia/Dubai":["Europe/Moscow"],"Asia/Dhaka":["Asia/Yekaterinburg"],"Asia/Jakarta":["Asia/Omsk"],"Asia/Shanghai":["Asia/Krasnoyarsk","Australia/Perth"],"Asia/Tokyo":["Asia/Irkutsk"],"Australia/Brisbane":["Asia/Yakutsk"],"Pacific/Noumea":["Asia/Vladivostok"],"Pacific/Tarawa":["Asia/Kamchatka"],"Pacific/Tongatapu":["Pacific/Apia"],"Africa/Johannesburg":["Asia/Gaza","Africa/Cairo"],"Asia/Baghdad":["Europe/Minsk"]},r=e,i=function(){var e=n[r],i=e.length,s=0,o=e[0];for(;s<i;s+=1){o=e[s];if(t.date_is_dst(t.dst_start_for(o))){r=o;return}}},s=function(){return typeof n[r]!="undefined"};return s()&&i(),{name:function(){return r}}},t.olson={},t.olson.timezones={"-720,0":"Pacific/Majuro","-660,0":"Pacific/Pago_Pago","-600,1":"America/Adak","-600,0":"Pacific/Honolulu","-570,0":"Pacific/Marquesas","-540,0":"Pacific/Gambier","-540,1":"America/Anchorage","-480,1":"America/Los_Angeles","-480,0":"Pacific/Pitcairn","-420,0":"America/Phoenix","-420,1":"America/Denver","-360,0":"America/Guatemala","-360,1":"America/Chicago","-360,1,s":"Pacific/Easter","-300,0":"America/Bogota","-300,1":"America/New_York","-270,0":"America/Caracas","-240,1":"America/Halifax","-240,0":"America/Santo_Domingo","-240,1,s":"America/Santiago","-210,1":"America/St_Johns","-180,1":"America/Godthab","-180,0":"America/Argentina/Buenos_Aires","-180,1,s":"America/Montevideo","-120,0":"America/Noronha","-120,1":"America/Noronha","-60,1":"Atlantic/Azores","-60,0":"Atlantic/Cape_Verde","0,0":"UTC","0,1":"Europe/London","60,1":"Europe/Berlin","60,0":"Africa/Lagos","60,1,s":"Africa/Windhoek","120,1":"Asia/Beirut","120,0":"Africa/Johannesburg","180,0":"Asia/Baghdad","180,1":"Europe/Moscow","210,1":"Asia/Tehran","240,0":"Asia/Dubai","240,1":"Asia/Baku","270,0":"Asia/Kabul","300,1":"Asia/Yekaterinburg","300,0":"Asia/Karachi","330,0":"Asia/Kolkata","345,0":"Asia/Kathmandu","360,0":"Asia/Dhaka","360,1":"Asia/Omsk","390,0":"Asia/Rangoon","420,1":"Asia/Krasnoyarsk","420,0":"Asia/Jakarta","480,0":"Asia/Shanghai","480,1":"Asia/Irkutsk","525,0":"Australia/Eucla","525,1,s":"Australia/Eucla","540,1":"Asia/Yakutsk","540,0":"Asia/Tokyo","570,0":"Australia/Darwin","570,1,s":"Australia/Adelaide","600,0":"Australia/Brisbane","600,1":"Asia/Vladivostok","600,1,s":"Australia/Sydney","630,1,s":"Australia/Lord_Howe","660,1":"Asia/Kamchatka","660,0":"Pacific/Noumea","690,0":"Pacific/Norfolk","720,1,s":"Pacific/Auckland","720,0":"Pacific/Tarawa","765,1,s":"Pacific/Chatham","780,0":"Pacific/Tongatapu","780,1,s":"Pacific/Apia","840,0":"Pacific/Kiritimati"}, true?exports.jstz=t:e.jstz=t})(this);
 
 /***/ },
-/* 109 */
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
+	var Logger_1 = __webpack_require__(17);
+	var DeviceUtils_1 = __webpack_require__(21);
+	var SentryLogger = (function () {
+	    function SentryLogger(queryController, windoh) {
+	        if (windoh === void 0) { windoh = window; }
+	        this.queryController = queryController;
+	        this.windoh = windoh;
+	        this.logger = new Logger_1.Logger(this);
+	        this.bindErrorHandler();
+	    }
+	    SentryLogger.prototype.bindErrorHandler = function () {
+	        var _this = this;
+	        // take care of not overriding any existing onerror handler that might be already present in the page.
+	        var oldHandler = this.windoh.onerror;
+	        if (_.isFunction(oldHandler)) {
+	            this.windoh.onerror = function () {
+	                var args = [];
+	                for (var _i = 0; _i < arguments.length; _i++) {
+	                    args[_i - 0] = arguments[_i];
+	                }
+	                oldHandler.apply(oldHandler, args);
+	                _this.handleError.apply(_this, args);
+	            };
+	        }
+	        else {
+	            this.windoh.onerror = this.handleError.bind(this);
+	        }
+	    };
+	    SentryLogger.prototype.handleError = function (message, filename, lineno, colno, error) {
+	        // try not to log irrelevant errors ...
+	        if (!filename.toLowerCase().match(/coveo/) || this.windoh.location.host.toLowerCase().match(/localhost/)) {
+	            return;
+	        }
+	        var errorInfo = {
+	            message: message,
+	            filename: filename,
+	            line: lineno,
+	            column: colno,
+	            error: error.toString(),
+	            errorStack: error['stack'],
+	            device: DeviceUtils_1.DeviceUtils.getDeviceName()
+	        };
+	        var sentryLog = {
+	            level: 'DEBUG',
+	            title: this.windoh.location.href,
+	            message: JSON.stringify(errorInfo)
+	        };
+	        this.queryController.getEndpoint().logError(sentryLog);
+	    };
+	    return SentryLogger;
+	}());
+	exports.SentryLogger = SentryLogger;
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 111 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -13641,7 +14015,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 110 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -13650,44 +14024,45 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Component_1 = __webpack_require__(96);
-	var ComponentOptions_1 = __webpack_require__(98);
+	var Component_1 = __webpack_require__(97);
+	var ComponentOptions_1 = __webpack_require__(99);
 	var AnalyticsEndpoint_1 = __webpack_require__(37);
 	var SearchEndpoint_1 = __webpack_require__(15);
 	var Assert_1 = __webpack_require__(18);
-	var QueryEvents_1 = __webpack_require__(47);
-	var ComponentOptionsModel_1 = __webpack_require__(91);
-	var Dom_1 = __webpack_require__(57);
-	var Model_1 = __webpack_require__(87);
+	var QueryEvents_1 = __webpack_require__(48);
+	var ComponentOptionsModel_1 = __webpack_require__(92);
+	var Dom_1 = __webpack_require__(58);
+	var Model_1 = __webpack_require__(88);
 	var Utils_1 = __webpack_require__(19);
-	var NoopAnalyticsClient_1 = __webpack_require__(105);
-	var LiveAnalyticsClient_1 = __webpack_require__(111);
-	var MultiAnalyticsClient_1 = __webpack_require__(115);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var SearchInterface_1 = __webpack_require__(97);
-	var Recommendation_1 = __webpack_require__(116);
-	var RecommendationAnalyticsClient_1 = __webpack_require__(118);
+	var NoopAnalyticsClient_1 = __webpack_require__(106);
+	var LiveAnalyticsClient_1 = __webpack_require__(113);
+	var MultiAnalyticsClient_1 = __webpack_require__(117);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var SearchInterface_1 = __webpack_require__(98);
+	var Recommendation_1 = __webpack_require__(118);
+	var RecommendationAnalyticsClient_1 = __webpack_require__(120);
 	/**
 	 * This component logs all user actions performed in the search interface and sends them to a REST web service exposed through the Coveo Cloud platform.<br/>
-	 * You can use this data to evaluate how users are interacting with the search interface, improve relevance and produce analytics dashboards in the Coveo platform.
+	 * You can use data to evaluate how users are interacting with the search interface, improve relevance and produce analytics dashboards in the Coveo platform.
 	 *
-	 * # Sending Custom Events
-	 * In some scenarios, you want to send custom data to the Coveo Cloud analytics (see Coveo Cloud Usage Analytics). The Coveo JavaScript Search Framework offers helpers to communicate with the Coveo Analytics REST API, so you do not have to write code to call the API directly.
+	 * # Send Custom Events
+	 * In some scenarios, you want to send custom data to the Coveo Cloud analytics (see [Coveo Cloud Usage Analytics](http://www.coveo.com/go?dest=cloudhelp&lcid=9&context=89)). The Coveo JavaScript Search Framework offers helpers to communicate with the Coveo Analytics REST API, so you do not have to write code to call the API directly.
 	 *
-	 * 1. First, you need to craft your custom event cause and meta.
+	 * 1. First, you need to craft your custom event cause and meta.<br/>**NB: The event names must be unique.**
 	 * ```
+	 *   // customEventType allows to regroup similar event types together when doing reporting (e.g., search box).
 	 *   var customEventCause = {name: 'customEventName', type:'customEventType'};
 	 *   var metadata = {key1: "value1", key2:"value2"};
 	 * ```
 	 *
-	 * 2. Sending a custom event.
+	 * 2. Send your custom event.
 	 * ```
 	 *   Coveo.logCustomEvent(document.querySelector('#search'), customEventCause, metadata);
 	 *      // OR (using the jquery extension)
 	 *   $('#search').coveo('logCustomEvent', customEventCause, metadata);
 	 * ```
 	 *
-	 * 3. Sending a custom search event<br/>(**NB : If you want to log a searchEvent, be sure to always call the helper before you call executeQuery.**)
+	 * 3. Send your custom search event<br/>**NB: If you want to log a `searchEvent`, be sure to always call the helper before you call `executeQuery`.**
 	 * ```
 	 * function myCustomButtonWasClicked() {
 	 *      Coveo.logSearchEvent(document.querySelector('#search'), customEventCause, metadata);
@@ -13698,7 +14073,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * }
 	 * ```
 	 *
-	 * 4. Sending a custom searchAsYouType event<br/>(NB : **If you want to log a searchAsYouTypeEvent, be sure to always call the helper before you call executeQuery.**)
+	 * 4. Send a custom `searchAsYouType` event<br/>**NB: If you want to log a `searchAsYouTypeEvent`, be sure to always call the helper before you call `executeQuery`.**
 	 * ```
 	 * function myCustomButtonWasClicked() {
 	 *      Coveo.logSearchAsYouTypeEvent(document.querySelector('#search'), customEventCause, metadata);
@@ -13709,20 +14084,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * }
 	 * ```
 	 *
-	 * 5. Sending a custom click event
+	 * 5. Send a custom click event.
 	 * ```
 	 * Coveo.logClickEvent(document.querySelector('#search'), customEventCause, metadata, result);
-	 * // OR (using the jquery extension)
+	 * // OR (using the jQuery extension)
 	 * $('#search').coveo('logClickEvent', customEventCause, metadata, result);
 	 * ```
 	 */
 	var Analytics = (function (_super) {
 	    __extends(Analytics, _super);
 	    /**
-	     * Create a new Analytics component. Create the {@link IAnalyticsClient}
+	     * Create a new Analytics component. Create the {@link IAnalyticsClient}.
 	     * @param element The HTMLElement on which the component will be instantiated.
 	     * @param options The options for the Analytics.
-	     * @param bindings The bindings that the component requires to function normally. If not set, will automatically resolve them (With slower execution time)
+	     * @param bindings The bindings that the component requires to function normally. If not set, it will automatically resolve them (with slower execution time).
 	     */
 	    function Analytics(element, options, bindings) {
 	        var _this = this;
@@ -13737,7 +14112,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Assert_1.Assert.exists(this.client);
 	        this.bind.onRootElement(QueryEvents_1.QueryEvents.buildingQuery, function (data) { return _this.handleBuildingQuery(data); });
 	        this.bind.onRootElement(QueryEvents_1.QueryEvents.queryError, function (data) { return _this.handleQueryError(data); });
-	        // Analytics component is a bit special : It can be higher in the dom tree than the search interface
+	        // Analytics component is a bit special: It can be higher in the dom tree than the search interface
 	        // Need to resolve down to find the componentOptionsModel if we need to.
 	        if (!this.componentOptionsModel) {
 	            var cmpOptionElement = Dom_1.$$(element).find('.' + Component_1.Component.computeCssClassName(ComponentOptionsModel_1.ComponentOptionsModel));
@@ -13754,12 +14129,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Log a search event on the service, using a cause and a meta object.<br/>
 	     * Note that the event will be sent on the service when a query successfully return, not immediately after calling this method.<br/>
-	     * Normally, this should be called using the following "format" : <br/>
+	     * Normally, this should be called using the following "format": <br/>
 	     * usageAnalytics.logSearchEvent<SomeMeta>({name : 'foo', type : 'bar'}, <SomeMeta>{'key':'value'});<br/>
 	     * this.queryController.executeQuery();<br/>
-	     * This will queue up an analytics search event. Then the query is executed. The search event will be sent to the service when the query successfully complete.<br/>
+	     * This will queue up an analytics search event. Then the query is executed. The search event will be sent to the service when the query is successfully completed.<br/>
 	     * @param actionCause
-	     * @param meta Can be an empty object ( {} )
+	     * @param meta Can be an empty object ( {} ).
 	     */
 	    Analytics.prototype.logSearchEvent = function (actionCause, meta) {
 	        this.client.logSearchEvent(actionCause, meta);
@@ -13767,16 +14142,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Log a search as you type event on the service, using a cause and a meta object.<br/>
 	     * This is extremely similar to a search event, except that search as you type, by definition, will be frequently called.<br/>
-	     * The {@link PendingSearchAsYouTypeEvent} will take care of logging only the "relevant" last event : After 5 seconds of no event logged, or after another search event is triggered somewhere else in the interface.<br/>
+	     * The `PendingSearchAsYouTypeEvent` will take care of logging only the "relevant" last event: After 5 seconds of no event logged, or after another search event is triggered somewhere else in the interface.<br/>
 	     * This is to ensure that we do not needlessly log every single partial query, which would make the reporting very confusing.
 	     * @param actionCause
-	     * @param meta Can be an empty object ( {} )
+	     * @param meta Can be an empty object ( {} ).
 	     */
 	    Analytics.prototype.logSearchAsYouType = function (actionCause, meta) {
 	        this.client.logSearchAsYouType(actionCause, meta);
 	    };
 	    /**
-	     * Log a custom event on the service. A custom event can be used to create customized report, or to track events which are not queries or document view.
+	     * Log a custom event on the service. A custom event can be used to create customized report, or to track events which are not queries or document views.
 	     * @param actionCause
 	     * @param meta
 	     * @param element The HTMLElement that was interacted with for this custom event.
@@ -13790,9 +14165,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * eg : Clicking on a result link of opening a quickview.<br/>
 	     * This event will be logged immediately on the service.
 	     * @param actionCause
-	     * @param meta Can be an empty object ( {} )
-	     * @param result The result that was clicked
-	     * @param element The HTMLElement that was clicked in the interface
+	     * @param meta Can be an empty object ( {} ).
+	     * @param result The result that was clicked.
+	     * @param element The HTMLElement that was clicked in the interface.
 	     */
 	    Analytics.prototype.logClickEvent = function (actionCause, meta, result, element) {
 	        if (element === void 0) { element = this.element; }
@@ -13887,7 +14262,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    };
 	    Analytics.getClient = function (element, options, bindings) {
-	        // This check if an element is already initialized as an analytics component
+	        // This check if an element is already initialized as an analytics component.
 	        // If that's the case, return the client on that element.
 	        // Otherwise, init and return.
 	        var foundOnElement = Component_1.Component.get(element, Analytics, true);
@@ -13899,7 +14274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    Analytics.ID = 'Analytics';
-	    // NOTE: The default values for some of those options (organization, endpoint, searchHub) can be
+	    // NOTE: The default values for some of those options (`organization`, `endpoint`, `searchHub`) can be
 	    // overridden by generated code when using hosted search pages.
 	    /**
 	     * Options for the component
@@ -13926,7 +14301,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Specifies whether the search user identities are converted in a unique hash in the logged analytics data to prevent analytics reviewers and managers to identify who performs which queries.<br/>
 	         * When enabled, the Coveo Analytics Platform can still properly identify sessions made by anonymous users, versus ones from users that are authenticated in some way with the site containing the search page.<br/>
-	         * The default value is false.
+	         * The default value is `false`.
 	         */
 	        anonymous: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
@@ -13961,22 +14336,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 111 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	var DeviceUtils_1 = __webpack_require__(21);
-	var PendingSearchEvent_1 = __webpack_require__(112);
-	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(114);
+	var PendingSearchEvent_1 = __webpack_require__(114);
+	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(116);
 	var Assert_1 = __webpack_require__(18);
 	var Logger_1 = __webpack_require__(17);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
 	var Defer_1 = __webpack_require__(32);
-	var Dom_1 = __webpack_require__(57);
-	var AnalyticsEvents_1 = __webpack_require__(40);
-	var APIAnalyticsBuilder_1 = __webpack_require__(113);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var Component_1 = __webpack_require__(96);
+	var Dom_1 = __webpack_require__(58);
+	var AnalyticsEvents_1 = __webpack_require__(41);
+	var APIAnalyticsBuilder_1 = __webpack_require__(115);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var Component_1 = __webpack_require__(97);
 	var Version_1 = __webpack_require__(14);
 	var LiveAnalyticsClient = (function () {
 	    function LiveAnalyticsClient(endpoint, rootElement, userId, userDisplayName, anonymous, splitTestRunName, splitTestRunVersion, originLevel1, sendToCloud) {
@@ -14103,8 +14478,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.triggerChangeAnalyticsCustomData('SearchEvent', metaObject, searchEvent);
 	            var pendingSearchEvent = this.pendingSearchEvent = new PendingSearchEvent_1.PendingSearchEvent(this.rootElement, this.endpoint, searchEvent, this.sendToCloud);
 	            Defer_1.Defer.defer(function () {
-	                // At this point all duringQuery events should have been fired, so we can forget
-	                // about the pending search event. It'll finish processing automatically when
+	                // At this point all `duringQuery` events should have been fired, so we can forget
+	                // about the pending search event. It will finish processing automatically when
 	                // all the deferred that were caught terminate.
 	                _this.pendingSearchEvent = undefined;
 	                pendingSearchEvent.stopRecording();
@@ -14238,8 +14613,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            originLevel3: event.originLevel3
 	        };
 	        // This is for backward compatibility. Before the analytics were using either numbered
-	        // metas in metaDataAsNumber of later on named metas in metaDataAsString. Thus we still
-	        // provide those properties in a deprecated way. Below we're moving any data that's put
+	        // metas in `metaDataAsNumber` of later on named metas in `metaDataAsString`. Thus we still
+	        // provide those properties in a deprecated way. Below we are moving any data that put
 	        // in them to the root.
 	        metaObject['metaDataAsString'] = {};
 	        metaObject['metaDataAsNumber'] = {};
@@ -14256,7 +14631,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        event.originLevel3 = args.originLevel3;
 	        event.customData = metaObject;
 	        // This is for backward compatibility. Before the analytics were using either numbered
-	        // metas in metaDataAsNumber of later on named metas in metaDataAsString. I'm now putting
+	        // metas in `metaDataAsNumber` of later on named metas in `metaDataAsString`. We are now putting
 	        // them all at the root, and if I encounter the older properties I move them to the top
 	        // level after issuing a warning.
 	        var metaDataAsString = event.customData['metaDataAsString'];
@@ -14282,21 +14657,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 112 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var QueryEvents_1 = __webpack_require__(47);
+	var QueryEvents_1 = __webpack_require__(48);
 	var Assert_1 = __webpack_require__(18);
-	var Dom_1 = __webpack_require__(57);
-	var SearchInterface_1 = __webpack_require__(97);
-	var Component_1 = __webpack_require__(96);
-	var QueryController_1 = __webpack_require__(74);
+	var Dom_1 = __webpack_require__(58);
+	var SearchInterface_1 = __webpack_require__(98);
+	var Component_1 = __webpack_require__(97);
+	var QueryController_1 = __webpack_require__(75);
 	var Defer_1 = __webpack_require__(32);
-	var APIAnalyticsBuilder_1 = __webpack_require__(113);
-	var AnalyticsEvents_1 = __webpack_require__(40);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var QueryStateModel_1 = __webpack_require__(90);
+	var APIAnalyticsBuilder_1 = __webpack_require__(115);
+	var AnalyticsEvents_1 = __webpack_require__(41);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var QueryStateModel_1 = __webpack_require__(91);
 	var PendingSearchEvent = (function () {
 	    function PendingSearchEvent(root, endpoint, templateSearchEvent, sendToCloud) {
 	        var _this = this;
@@ -14421,7 +14796,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 113 */
+/* 115 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -14494,7 +14869,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 114 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -14503,9 +14878,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var PendingSearchEvent_1 = __webpack_require__(112);
-	var Dom_1 = __webpack_require__(57);
-	var InitializationEvents_1 = __webpack_require__(44);
+	var PendingSearchEvent_1 = __webpack_require__(114);
+	var Dom_1 = __webpack_require__(58);
+	var InitializationEvents_1 = __webpack_require__(45);
 	var _ = __webpack_require__(2);
 	var PendingSearchAsYouTypeSearchEvent = (function (_super) {
 	    __extends(PendingSearchAsYouTypeSearchEvent, _super);
@@ -14597,7 +14972,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 115 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -14669,7 +15044,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 116 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -14678,21 +15053,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SearchInterface_1 = __webpack_require__(97);
-	var ComponentOptions_1 = __webpack_require__(98);
-	var QueryEvents_1 = __webpack_require__(47);
-	var OmniboxEvents_1 = __webpack_require__(45);
-	var ResultListEvents_1 = __webpack_require__(48);
-	var SettingsEvents_1 = __webpack_require__(50);
-	var PreferencesPanelEvents_1 = __webpack_require__(46);
-	var AnalyticsEvents_1 = __webpack_require__(40);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var BreadcrumbEvents_1 = __webpack_require__(41);
-	var QuickviewEvents_1 = __webpack_require__(117);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var Model_1 = __webpack_require__(87);
+	var SearchInterface_1 = __webpack_require__(98);
+	var ComponentOptions_1 = __webpack_require__(99);
+	var QueryEvents_1 = __webpack_require__(48);
+	var OmniboxEvents_1 = __webpack_require__(46);
+	var ResultListEvents_1 = __webpack_require__(49);
+	var SettingsEvents_1 = __webpack_require__(51);
+	var PreferencesPanelEvents_1 = __webpack_require__(47);
+	var AnalyticsEvents_1 = __webpack_require__(41);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var BreadcrumbEvents_1 = __webpack_require__(42);
+	var QuickviewEvents_1 = __webpack_require__(119);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var Model_1 = __webpack_require__(88);
 	var Utils_1 = __webpack_require__(19);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	/**
 	 * This component is a {@link SearchInterface} that will display recommendations based on the user history.
 	 * To get recommendations, the page view script must also be included in the page. View: https://github.com/coveo/coveo.analytics.js
@@ -14802,7 +15177,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Recommendation.prototype.preventEventPropagationOn = function (eventType, eventName) {
 	        if (eventName === void 0) { eventName = function (event) { return event; }; }
 	        for (var event_1 in eventType) {
-	            Dom_1.$$(this.root).on(eventName(event_1), function (e) { e.stopPropagation(); });
+	            Dom_1.$$(this.root).on(eventName(event_1), function (e) { return e.stopPropagation(); });
 	        }
 	    };
 	    Recommendation.prototype.getAllModelEvents = function () {
@@ -14852,7 +15227,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * Ex: <code data-options-to-use="expression, advancedExpression"></code> would add the expression and the advanced expression parts from the main query in the triggered query.
 	         * The default value is undefined.
 	         */
-	        optionsToUse: ComponentOptions_1.ComponentOptions.buildListOption(),
+	        optionsToUse: ComponentOptions_1.ComponentOptions.buildListOption({ defaultValue: ['expression'] }),
 	        /**
 	         * Specifies whether or not to send the actions history along with the triggered query.
 	         * Disabling this option means this component won't be able to get Reveal recommendations.
@@ -14874,7 +15249,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 117 */
+/* 119 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -14889,7 +15264,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 118 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -14898,10 +15273,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var LiveAnalyticsClient_1 = __webpack_require__(111);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var Component_1 = __webpack_require__(96);
-	var SearchInterface_1 = __webpack_require__(97);
+	var LiveAnalyticsClient_1 = __webpack_require__(113);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var Component_1 = __webpack_require__(97);
+	var SearchInterface_1 = __webpack_require__(98);
 	var RecommendationAnalyticsClient = (function (_super) {
 	    __extends(RecommendationAnalyticsClient, _super);
 	    function RecommendationAnalyticsClient(endpoint, rootElement, userId, userDisplayName, anonymous, splitTestRunName, splitTestRunVersion, originLevel1, sendToCloud, bindings) {
@@ -14945,30 +15320,101 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 119 */
+/* 121 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
+	var Initialization_1 = __webpack_require__(96);
+	if (!initCoveoJQuery()) {
+	    // Adding a check in case jQuery was added after the jsSearch
+	    // Since this event listener is registered before the Coveo.init call, JQuery should always be initiated before the Coveo.init call  
+	    document.addEventListener('DOMContentLoaded', function () {
+	        initCoveoJQuery();
+	    });
+	}
+	function initCoveoJQuery() {
+	    if (!jQueryIsDefined()) {
+	        return false;
+	    }
+	    exports.jQueryInstance = getJQuery();
+	    if (window['Coveo'] == undefined) {
+	        window['Coveo'] = {};
+	    }
+	    if (window['Coveo']['$'] == undefined) {
+	        window['Coveo']['$'] = exports.jQueryInstance;
+	    }
+	    exports.jQueryInstance.fn.coveo = function () {
+	        var args = [];
+	        for (var _i = 0; _i < arguments.length; _i++) {
+	            args[_i - 0] = arguments[_i];
+	        }
+	        var returnValue;
+	        this.each(function (index, element) {
+	            var returnValueForThisElement;
+	            if (_.isString(args[0])) {
+	                var token = args[0];
+	                returnValueForThisElement = Initialization_1.Initialization.dispatchNamedMethodCallOrComponentCreation(token, element, args.slice(1));
+	            }
+	            else {
+	                // Invoking with no method name is a shortcut for the 'get' method (from Component).
+	                returnValueForThisElement = Initialization_1.Initialization.dispatchNamedMethodCall('get', element, args);
+	            }
+	            // Keep only the first return value we encounter
+	            returnValue = returnValue || returnValueForThisElement;
+	        });
+	        return returnValue;
+	    };
+	    return true;
+	}
+	exports.initCoveoJQuery = initCoveoJQuery;
+	function jQueryIsDefined() {
+	    return jQueryDefinedOnWindow() || jQueryDefinedOnCoveoObject();
+	}
+	exports.jQueryIsDefined = jQueryIsDefined;
+	function jQueryDefinedOnCoveoObject() {
+	    return window['Coveo'] != undefined && window['Coveo']['$'] != undefined;
+	}
+	function jQueryDefinedOnWindow() {
+	    return window['$'] != undefined && window['$'].fn != undefined && window['$'].fn.jquery != undefined;
+	}
+	function getJQuery() {
+	    var jQueryInstance;
+	    if (window['$']) {
+	        jQueryInstance = window['$'];
+	    }
+	    else {
+	        jQueryInstance = window['Coveo']['$'];
+	    }
+	    return jQueryInstance;
+	}
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var TemplateHelpers_1 = __webpack_require__(120);
+	var TemplateHelpers_1 = __webpack_require__(123);
 	exports.TemplateHelpers = TemplateHelpers_1.TemplateHelpers;
-	var TemplateCache_1 = __webpack_require__(99);
+	var TemplateCache_1 = __webpack_require__(100);
 	exports.TemplateCache = TemplateCache_1.TemplateCache;
-	var HtmlTemplate_1 = __webpack_require__(102);
+	var HtmlTemplate_1 = __webpack_require__(103);
 	exports.HtmlTemplate = HtmlTemplate_1.HtmlTemplate;
-	var UnderscoreTemplate_1 = __webpack_require__(101);
+	var UnderscoreTemplate_1 = __webpack_require__(102);
 	exports.UnderscoreTemplate = UnderscoreTemplate_1.UnderscoreTemplate;
 
 
 /***/ },
-/* 120 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Assert_1 = __webpack_require__(18);
-	var UnderscoreTemplate_1 = __webpack_require__(101);
+	var UnderscoreTemplate_1 = __webpack_require__(102);
 	var Utils_1 = __webpack_require__(19);
 	/**
-	 * Allow to register and return template helpers (essentially : Utility functions that can be executed in the context of a template to render complex elements)
+	 * Allow to register and return template helpers (essentially: Utility functions that can be executed in the context of a template to render complex elements).
 	 */
 	var TemplateHelpers = (function () {
 	    function TemplateHelpers() {
@@ -15016,15 +15462,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 121 */,
-/* 122 */,
-/* 123 */,
 /* 124 */,
 /* 125 */,
 /* 126 */,
 /* 127 */,
 /* 128 */,
-/* 129 */
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -15033,21 +15479,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Initialization_1 = __webpack_require__(95);
-	var Component_1 = __webpack_require__(96);
-	var ComponentOptions_1 = __webpack_require__(98);
-	var QueryEvents_1 = __webpack_require__(47);
-	var Model_1 = __webpack_require__(87);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(52);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var Dom_1 = __webpack_require__(57);
+	var Initialization_1 = __webpack_require__(96);
+	var Component_1 = __webpack_require__(97);
+	var ComponentOptions_1 = __webpack_require__(99);
+	var QueryEvents_1 = __webpack_require__(48);
+	var Model_1 = __webpack_require__(88);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(53);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var Dom_1 = __webpack_require__(58);
 	var Assert_1 = __webpack_require__(18);
-	var QueryboxQueryParameters_1 = __webpack_require__(130);
+	var QueryboxQueryParameters_1 = __webpack_require__(133);
 	/**
 	 * A component that allows a user to enter a query inside an input.<br/>
 	 * The component will trigger a query when submitted (the 'Enter' keypress) and log the proper analytics data.<br/>
-	 * It must be instantiated on a div (and not directly on an input element) : This is for styling purpose (ghost type ahead, for example).
+	 * It must be instantiated on a div (and not directly on an input element): This is for styling purpose (ghost type ahead, for example).
 	 */
 	var Querybox = (function (_super) {
 	    __extends(Querybox, _super);
@@ -15055,9 +15501,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Create a new Querybox.<br/>
 	     * Create a new Coveo.Magicbox instance and wrap magic box method (on blur, on submit etc).<br/>
 	     * Bind event on buildingQuery and on redirection (for standalone box).
-	     * @param element The HTMLElement on which the element will be instantiated. This cannot be an HTMLInputElement for technical reason
+	     * @param element The `HTMLElement` on which the element will be instantiated. This cannot be an `HTMLInputElement` for technical reasons.
 	     * @param options The options for the querybox.
-	     * @param bindings The bindings that the component requires to function normally. If not set, will automatically resolve them (With slower execution time)
+	     * @param bindings The bindings that the component requires to function normally. If not set, will automatically resolve them (with slower execution time).
 	     */
 	    function Querybox(element, options, bindings) {
 	        var _this = this;
@@ -15104,7 +15550,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }
 	    /**
-	     * Trigger a query. The current input content will be added to the query<br/>
+	     * Trigger a query. The current input content will be added to the query.<br/>
 	     * If the content of the input has not changed since the last submit, no new query will be triggered.
 	     */
 	    Querybox.prototype.submit = function () {
@@ -15190,39 +15636,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Querybox.options = {
 	        /**
 	         * Specify if search as you type should be enabled.<br/>
-	         * Default to false.
+	         * Default to `false`.
 	         */
 	        enableSearchAsYouType: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
-	         * If enableSearchAsYouType is enabled, this option specify the delay (in ms) between a keypress and a query being triggered<br/>
-	         * Default to 500 ms
+	         * If `enableSearchAsYouType` is enabled, this option specify the delay (in ms) between a keypress and a query being triggered<br/>
+	         * Default to 500 ms.
 	         */
 	        searchAsYouTypeDelay: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 500, min: 0 }),
 	        /**
 	         * Specifies whether the Coveo Platform does try to interpret special query syntax such as field references in the query entered through the query box.<br/>
-	         * This means that a
-	         * The default value is true.
+	         * The default value is `true`.
 	         */
 	        enableQuerySyntax: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
 	        /**
 	         * Specifies whether the Coveo Platform expands keywords containing wildcard characters (*) to the possible matching keywords to broaden the query.<br/>
-	         * The default value is false.
+	         * The default value is `false`.
 	         */
 	        enableWildcards: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
 	         * Specifies whether the Coveo Platform expands keywords containing question mark characters (?) to the possible matching keywords to broaden the query.<br/>
-	         * The default value is false.
+	         * The default value is `false`.
 	         */
 	        enableQuestionMarks: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
 	         * If true, the or and and keywords in the query box will be treated as boolean operators for the query when they are typed in lowercase.<br/>
 	         * This applies for all operators<br/>
-	         * Default value is false
+	         * Default value is `false`.
 	         */
 	        enableLowercaseOperators: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
 	         * Specifies whether a query containing a large number of keywords (see partialMatchKeywords) is automatically converted to a partial match expression in order to match documents containing only a subset of the keywords (see partialMatchThreshold for defining the subset).<br/>
-	         * The default value is false.
+	         * The default value is `false`.
 	         */
 	        enablePartialMatch: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
@@ -15237,17 +15682,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	        partialMatchThreshold: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '50%' }),
 	        /**
 	         * Specifies whether or not to trigger a query when the searchbox is cleared.
-	         * The default value is true.
+	         * The default value is `true`.
 	         */
 	        triggerQueryOnClear: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
 	        /**
-	        * Specifies a placeholder for input.
-	        */
+	         *  Specifies a placeholder for input.
+	         */
 	        placeholder: ComponentOptions_1.ComponentOptions.buildStringOption(),
 	        /**
-	        * Specifies whether the `QueryBox` gets the focus and is selected on initialization.
-	        * The default value is `true`.
-	        */
+	         * Specifies whether the `QueryBox` gets the focus and is selected on initialization.
+	         * The default value is `true`.
+	         */
 	        autoFocus: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true })
 	    };
 	    return Querybox;
@@ -15257,7 +15702,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 130 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -15296,7 +15741,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 131 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -15305,21 +15750,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Component_1 = __webpack_require__(96);
+	var Component_1 = __webpack_require__(97);
 	var Utils_1 = __webpack_require__(19);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	var Strings_1 = __webpack_require__(35);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var Initialization_1 = __webpack_require__(95);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var Initialization_1 = __webpack_require__(96);
 	/**
 	 * A component that allows user to trigger a query by clicking on it.<br/>
 	 * This component will instantiate on an element and add a search icon.<br/>
-	 * It will also sends an analytics event to the coveo platform when clicked.
+	 * It will also sends an analytics event to the Coveo platform when clicked.
 	 */
 	var SearchButton = (function (_super) {
 	    __extends(SearchButton, _super);
 	    /**
-	     * Create a new SearchButton on the given element with the given options
+	     * Create a new SearchButton on the given element with the given options.
 	     * Bind a click event on the element
 	     * Adds a search icon on the element
 	     * @param element
@@ -15357,7 +15802,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 132 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -15366,27 +15811,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Component_1 = __webpack_require__(96);
-	var Omnibox_1 = __webpack_require__(133);
-	var ComponentOptions_1 = __webpack_require__(98);
-	var SearchButton_1 = __webpack_require__(131);
-	var Querybox_1 = __webpack_require__(129);
-	var Dom_1 = __webpack_require__(57);
-	var Initialization_1 = __webpack_require__(95);
+	var Component_1 = __webpack_require__(97);
+	var Omnibox_1 = __webpack_require__(136);
+	var ComponentOptions_1 = __webpack_require__(99);
+	var SearchButton_1 = __webpack_require__(134);
+	var Querybox_1 = __webpack_require__(132);
+	var Dom_1 = __webpack_require__(58);
+	var Initialization_1 = __webpack_require__(96);
 	/**
-	 * This component is mostly used for simplicity purpose because it creates 2 component that are very frequently used together.<br/>
-	 * This component attaches itself to a div and takes care of instantiating a {@link Querybox} Component or a {@link Omnibox} Component, depending on the options.<br/>
-	 * Add a {@link SearchButton} Component if desired, and appends them to the same div.
+	 * This component is mostly used for simplicity purpose because it creates 2 components that are very frequently used together.<br/>
+	 * This component attaches itself to a div and takes care of instantiating a {@link Querybox} component or a {@link Omnibox} component, depending on the options.<br/>
+	 * Add a {@link SearchButton} component if desired, and appends them to the same div.
 	 */
 	var Searchbox = (function (_super) {
 	    __extends(Searchbox, _super);
 	    /**
 	     * Create a new Searchbox<br/>
-	     * Create a new Coveo.Magicbox instance and wrap magic box method (on blur, on submit etc)<br/>
-	     * Bind event on buildingQuery and on redirection (for standalone box)
-	     * @param element The HTMLElement on which the element will be instantiated. This cannot be an HTMLInputElement for technical reason
-	     * @param options The options for the component. Will be merged with the options from the component set directly on the HTMLElement
-	     * @param bindings The bindings that the component requires to function normally. If not set, will automatically resolve them (With slower execution time)
+	     * Create a new Coveo.Magicbox instance and wrap magic box method (on blur, on submit etc).<br/>
+	     * Bind event on `buildingQuery` and on redirection (for standalone box).
+	     * @param element The `HTMLElement` on which the element will be instantiated. This cannot be an `HTMLInputElement` for technical reason
+	     * @param options The options for the component. Will be merged with the options from the component set directly on the `HTMLElement`.
+	     * @param bindings The bindings that the component requires to function normally. If not set, will automatically resolve them (with slower execution time).
 	     */
 	    function Searchbox(element, options, bindings) {
 	        _super.call(this, element, Searchbox.ID, bindings);
@@ -15419,13 +15864,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Searchbox.options = {
 	        /**
 	         * Specifies whether the search box instantiates a {@link SearchButton}.<br/>
-	         * Default value is true.
+	         * Default value is `true`.
 	         */
 	        addSearchButton: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
 	        /**
-	         * Specifies whether the search box instantiates a {@link Omnibox} Component.<br/>
-	         * Otherwise, the search box instantiates a {@link Querybox} Component.<br/>
-	         * Default value is false.
+	         * Specifies whether the search box instantiates a {@link Omnibox} component.<br/>
+	         * Otherwise, the search box instantiates a {@link Querybox} component.<br/>
+	         * Default value is `false`.
 	         */
 	        enableOmnibox: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false })
 	    };
@@ -15444,7 +15889,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 133 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -15453,37 +15898,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Component_1 = __webpack_require__(96);
-	var ComponentOptions_1 = __webpack_require__(98);
-	var QueryEvents_1 = __webpack_require__(47);
-	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(52);
-	var Model_1 = __webpack_require__(87);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var OmniboxEvents_1 = __webpack_require__(45);
-	var Dom_1 = __webpack_require__(57);
+	var Component_1 = __webpack_require__(97);
+	var ComponentOptions_1 = __webpack_require__(99);
+	var QueryEvents_1 = __webpack_require__(48);
+	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(53);
+	var Model_1 = __webpack_require__(88);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var OmniboxEvents_1 = __webpack_require__(46);
+	var Dom_1 = __webpack_require__(58);
 	var Assert_1 = __webpack_require__(18);
-	var QueryStateModel_2 = __webpack_require__(90);
-	var Initialization_1 = __webpack_require__(95);
-	var Querybox_1 = __webpack_require__(129);
-	var FieldAddon_1 = __webpack_require__(134);
-	var QueryExtensionAddon_1 = __webpack_require__(135);
-	var RevealQuerySuggestAddon_1 = __webpack_require__(136);
-	var OldOmniboxAddon_1 = __webpack_require__(137);
-	var QueryboxQueryParameters_1 = __webpack_require__(130);
-	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(114);
+	var QueryStateModel_2 = __webpack_require__(91);
+	var Initialization_1 = __webpack_require__(96);
+	var Querybox_1 = __webpack_require__(132);
+	var FieldAddon_1 = __webpack_require__(137);
+	var QueryExtensionAddon_1 = __webpack_require__(138);
+	var RevealQuerySuggestAddon_1 = __webpack_require__(139);
+	var OldOmniboxAddon_1 = __webpack_require__(140);
+	var QueryboxQueryParameters_1 = __webpack_require__(133);
+	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(116);
 	var Utils_1 = __webpack_require__(19);
 	var ExternalModulesShim_1 = __webpack_require__(26);
 	/**
-	 * This component is very similar to the simpler {@link Querybox} Component and support all the same options/behavior except for the search-as-you-type feature.<br/>
+	 * This component is very similar to the simpler {@link Querybox} component and support all the same options/behavior except for the search-as-you-type feature.<br/>
 	 * In addition, it takes care of adding a type-ahead capability. The type-ahead and the suggestions it displays are customizable and extensible by any custom component.<br/>
-	 * The type-ahead is configurable by activating addon which are provided OOTB (facets, analytics suggestions, reveal suggestions, and advanced coveo syntax suggestions).<br/>
+	 * The type-ahead is configurable by activating addon which are provided OOTB (facets, analytics suggestions, Reveal suggestions, and advanced Coveo syntax suggestions).<br/>
 	 * It is also possible for external code to provide suggestions.
 	 */
 	var Omnibox = (function (_super) {
 	    __extends(Omnibox, _super);
 	    /**
-	     * Create a new omnibox with, enable required addons, and bind events on letious query events
+	     * Create a new omnibox with, enable required addons, and bind events on letious query events.
 	     */
 	    function Omnibox(element, options, bindings) {
 	        var _this = this;
@@ -15534,7 +15979,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.setupMagicBox();
 	    }
 	    /**
-	     * Trigger a query. The current input content will be added to the query<br/>
+	     * Trigger a query. The current input content will be added to the query.<br/>
 	     * If the content of the input has not changed since the last submit, no new query will be triggered.
 	     */
 	    Omnibox.prototype.submit = function () {
@@ -15567,7 +16012,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.magicBox.clear();
 	    };
 	    /**
-	     * Get the HTMLInputElement of the omnibox
+	     * Get the `HTMLInputElement` of the omnibox
 	     */
 	    Omnibox.prototype.getInput = function () {
 	        return this.magicBox.element.querySelector('input');
@@ -15900,14 +16345,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Omnibox.options = {
 	        /**
 	         * Specifies that suggestions appearing in the omnibox should push the result down, instead of appearing over the results.<br/>
-	         * Activate this as well a searchAsYouType + reveal suggestions for a cool effect !<br/>
+	         * Activate this as well a `SearchAsYouType` + Reveal suggestions for a cool effect!<br/>
 	         * Default value is false
 	         */
 	        inline: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
 	         * Specifies whether a new query is automatically triggered whenever the user types new text inside the query box.<br/>
-	         * Activate this as well a inline + reveal suggestions for a cool effect !<br/>
-	         * The default is false.
+	         * Activate this as well a inline + Reveal suggestions for a cool effect!<br/>
+	         * The default is `false`.
 	         */
 	        enableSearchAsYouType: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
 	        /**
@@ -15922,7 +16367,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Specifies whether the field addon should be enabled.<br/>
 	         * The field addon allows the search box to highlight and complete field syntax.<br/>
-	         * Default value is false
+	         * Default value is `false`.
 	         *
 	         * > Example:
 	         * > You want to filter on a file type. You start typing @sysf and matching fields are proposed. You select the @sysfiletype suggestion, enter = and the available matching file types are proposed.
@@ -15931,15 +16376,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        enableSimpleFieldAddon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, depend: 'enableFieldAddon' }),
 	        listOfFields: ComponentOptions_1.ComponentOptions.buildFieldsOption({ depend: 'enableFieldAddon' }),
 	        /**
-	         * Specifies whether the reveal query suggestions should be enabled.<br/>
-	         * This implies that your integration has a proper reveal integration configured.<br/>
-	         * Default value is false
+	         * Specifies whether the Reveal query suggestions should be enabled.<br/>
+	         * This implies that your integration has a proper Reveal integration configured.<br/>
+	         * Default value is `false`.
 	         */
 	        enableRevealQuerySuggestAddon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, alias: 'enableTopQueryAddon' }),
 	        /**
 	         * Specifies whether the query extension addon should be enabled.<br/>
 	         * This allows the omnibox to complete the syntax for query extensions.<br/>
-	         * Default value is false
+	         * Default value is `false`.
 	         */
 	        enableQueryExtensionAddon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, depend: 'enableQuerySyntax' }),
 	        /**
@@ -15948,7 +16393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        placeholder: ComponentOptions_1.ComponentOptions.buildStringOption(),
 	        /**
 	         * Specifies a timeout before rejecting suggestions in the omnibox.<br/>
-	         * Default value is 2000 (2 seconds)
+	         * Default value is 2000 (2 seconds).
 	         */
 	        omniboxTimeout: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 2000 })
 	    };
@@ -15961,11 +16406,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 134 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var OmniboxEvents_1 = __webpack_require__(45);
+	var OmniboxEvents_1 = __webpack_require__(46);
 	var ExternalModulesShim_1 = __webpack_require__(26);
 	var FieldAddon = (function () {
 	    function FieldAddon(omnibox) {
@@ -16154,12 +16599,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 135 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
 	///<reference path='Omnibox.ts'/>
-	var OmniboxEvents_1 = __webpack_require__(45);
+	var OmniboxEvents_1 = __webpack_require__(46);
 	var ExternalModulesShim_1 = __webpack_require__(26);
 	var QueryExtensionAddon = (function () {
 	    function QueryExtensionAddon(omnibox) {
@@ -16288,14 +16733,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 136 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var Dom_1 = __webpack_require__(57);
-	var ComponentOptionsModel_1 = __webpack_require__(91);
-	var OmniboxEvents_1 = __webpack_require__(45);
-	var StringUtils_1 = __webpack_require__(61);
+	var Dom_1 = __webpack_require__(58);
+	var ComponentOptionsModel_1 = __webpack_require__(92);
+	var OmniboxEvents_1 = __webpack_require__(46);
+	var StringUtils_1 = __webpack_require__(62);
 	var RevealQuerySuggestAddon = (function () {
 	    function RevealQuerySuggestAddon(omnibox) {
 	        var _this = this;
@@ -16382,12 +16827,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 137 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var OmniboxEvents_1 = __webpack_require__(45);
-	var Dom_1 = __webpack_require__(57);
+	var OmniboxEvents_1 = __webpack_require__(46);
+	var Dom_1 = __webpack_require__(58);
 	var Utils_1 = __webpack_require__(19);
 	var OldOmniboxAddon = (function () {
 	    function OldOmniboxAddon(omnibox) {
@@ -16532,9 +16977,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 138 */,
-/* 139 */,
-/* 140 */,
 /* 141 */,
 /* 142 */,
 /* 143 */,
@@ -16604,12 +17046,23 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 207 */,
 /* 208 */,
 /* 209 */,
-/* 210 */
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
-	var DomUtils_1 = __webpack_require__(59);
-	var Dom_1 = __webpack_require__(57);
+	var DomUtils_1 = __webpack_require__(60);
+	var Dom_1 = __webpack_require__(58);
 	var SuggestionForOmnibox = (function () {
 	    function SuggestionForOmnibox(structure, onSelect) {
 	        this.structure = structure;
@@ -16660,7 +17113,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 211 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16669,17 +17122,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(210);
-	var ComponentOptions_1 = __webpack_require__(98);
-	var Component_1 = __webpack_require__(96);
+	var SuggestionForOmnibox_1 = __webpack_require__(221);
+	var ComponentOptions_1 = __webpack_require__(99);
+	var Component_1 = __webpack_require__(97);
 	var Assert_1 = __webpack_require__(18);
-	var OmniboxEvents_1 = __webpack_require__(45);
-	var QueryEvents_1 = __webpack_require__(47);
+	var OmniboxEvents_1 = __webpack_require__(46);
+	var QueryEvents_1 = __webpack_require__(48);
 	var Strings_1 = __webpack_require__(35);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
-	var Initialization_1 = __webpack_require__(95);
-	var Dom_1 = __webpack_require__(57);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
+	var Initialization_1 = __webpack_require__(96);
+	var Dom_1 = __webpack_require__(58);
 	/**
 	 * This component is used to provide query suggestions based on the most commonly logged queries by a Coveo Analytics service.
 	 * In order to provide relevant suggestions, they are shown in order of successful document views: thus, queries resulting in no clicks from users or that require refinements are not suggested if better options exist.
@@ -16823,7 +17276,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    AnalyticsSuggestions.options = {
 	        /**
 	         * The index at which the suggestions should render in the omnibox. Higher value = placed first.<br/>
-	         * The default value is `52`
+	         * The default value is `52`.
 	         */
 	        omniboxZIndex: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 52, min: 0 }),
 	        /**
@@ -16832,7 +17285,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        headerTitle: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: Strings_1.l('SuggestedQueries') }),
 	        /**
 	         * The number of suggestions that should be requested and displayed in the omnibox.<br/>
-	         * The default value is `5`
+	         * The default value is `5`.
 	         */
 	        numberOfSuggestions: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 5, min: 1 })
 	    };
@@ -16844,7 +17297,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 212 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {"use strict";
@@ -16853,17 +17306,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var SuggestionForOmnibox_1 = __webpack_require__(210);
-	var Component_1 = __webpack_require__(96);
-	var ComponentOptions_1 = __webpack_require__(98);
+	var SuggestionForOmnibox_1 = __webpack_require__(221);
+	var Component_1 = __webpack_require__(97);
+	var ComponentOptions_1 = __webpack_require__(99);
 	var Assert_1 = __webpack_require__(18);
 	var Utils_1 = __webpack_require__(19);
-	var OmniboxEvents_1 = __webpack_require__(45);
-	var QueryStateModel_1 = __webpack_require__(90);
-	var Initialization_1 = __webpack_require__(95);
-	var AnalyticsActionListMeta_1 = __webpack_require__(109);
+	var OmniboxEvents_1 = __webpack_require__(46);
+	var QueryStateModel_1 = __webpack_require__(91);
+	var Initialization_1 = __webpack_require__(96);
+	var AnalyticsActionListMeta_1 = __webpack_require__(111);
 	var Strings_1 = __webpack_require__(35);
-	var Dom_1 = __webpack_require__(57);
+	var Dom_1 = __webpack_require__(58);
 	/**
 	 * This component provides query suggestions based on a particular facet field.
 	 * For example, this can be used to provide auto-complete suggestions when you type in document titles.
@@ -16871,7 +17324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var FieldSuggestions = (function (_super) {
 	    __extends(FieldSuggestions, _super);
 	    /**
-	     * Create a new FieldSuggestions component
+	     * Create a new `FieldSuggestions` component
 	     * @param element
 	     * @param options
 	     * @param bindings
@@ -16973,16 +17426,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    FieldSuggestions.options = {
 	        /**
 	         * Specifies the field from which suggestions are provided.<br/>
-	         * This is a required option
+	         * This is a required option.
 	         */
 	        field: ComponentOptions_1.ComponentOptions.buildFieldOption({ required: true }),
 	        /**
-	         * Specifies a query override (any query expression) which should be applied when retrieving suggestions
+	         * Specifies a query override (any query expression) which should be applied when retrieving suggestions.
 	         */
 	        queryOverride: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '' }),
 	        /**
 	         * Specifies the position at which the suggestions should render when there are multiple suggestions providers. (eg : {@link Facet} or {@link AnalyticsSuggestions}).<br/>
-	         * The default value is `51`
+	         * The default value is 51.
 	         */
 	        omniboxZIndex: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 51, min: 0 }),
 	        /**
@@ -16991,7 +17444,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        headerTitle: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: Strings_1.l('SuggestedResults') }),
 	        /**
 	         * Specifies the number of suggestions that should be rendered in the omnibox.<br/>
-	         * Default value is `5`
+	         * Default value is 5.
 	         */
 	        numberOfSuggestions: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 5, min: 1 }),
 	        /**
@@ -17010,7 +17463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         *    }
 	         * })
 	         *
-	         * // OR using the jquery extension
+	         * // OR using the jQuery extension
 	         *
 	         * $('#mySearch').coveo('init', {
 	         *    FieldSuggestions : {
