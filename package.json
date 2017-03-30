@@ -8,7 +8,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cheerio": "^0.20.0",
-    "coveo-search-ui": "1.1550.x",
+    "coveo-search-ui": "latest",
     "express": "4.x",
     "foreman": "1.4.1",
     "json5": "^0.5.0",
@@ -20,6 +20,6 @@
     "gulp-debug":"2.1.2"
   },
   "scripts": {
-    "start": "nf start"
+    "start": "node gulpfile.js"
   }
 }
