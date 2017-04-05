@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AllComponent</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height" >
+        <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css"/>
+        <script src="../js/CoveoJsSearch.js"></script>
+        <script src="../js/CoveoJsSearch.Dependencies.js"></script>
+        <script src="../js/templates/templatesNew.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                Coveo.SearchEndpoint.configureSampleEndpoint();
+                Coveo.initRecommendation(document.querySelector('#recommendationYoutube'), document.querySelector('#search'));
+                Coveo.init(document.querySelector('#search'));
+            })
+        </script>
+
+    </head>
+    <body >
+        <div id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new">
+            <div class="CoveoAnalytics"></div>  
+            <div class="coveo-tab-section">
+                <a class="CoveoTab" data-id="All" data-caption="All Content" data-responsive-breakpoint="1000"></a>
+                <a class="CoveoTab" data-id="YouTube" data-caption="YouTube" data-expression="@filetype==&quot;youtubevideo&quot;">
+                </a> 
+                <a class="CoveoTab" data-id="Dropbox" data-caption="Dropbox" data-expression="@connectortype==DropboxCrawler">
+                </a>
+                <a class="CoveoTab" data-id="Email" data-caption="Email" data-expression="@mailbox" data-sort="date descending">
+                </a>
+                <a class="CoveoTab" data-id="GoogleDrive" data-caption="Google Drive" data-expression="@connectortype==GoogleDriveCrawler">
+                </a>
+                <a class="CoveoTab" data-id="Jira" data-caption="Jira" data-expression="@jisourcetype AND NOT @jidocumenttype=&quot;WorkLog&quot;">
+                </a>
+                <a class="CoveoTab" data-id="People" data-caption="People" data-expression="@fullname">
+                </a>
+                <a class="CoveoTab" data-id="Salesforce" data-caption="Salesforce" data-expression="@sfid">
+                </a>
+                <a class="CoveoTab" data-id="SalesforceCase" data-caption="Cases" data-expression="@sfcaseid">
+                </a>
+                <a class="CoveoTab" data-id="Chatter" data-caption="Chatter" data-expression="@objecttype==(FeedItem,FeedComment)">
+                </a>
+                <a class="CoveoTab" data-id="Lithium" data-caption="Lithium" data-expression="@litopicid @filetype==lithiummessage" data-sort="date descending"></a>
+
+            </div>
+            <div class='coveo-search-section'>
+                <div class="CoveoSettings"></div>
+                <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-reveal-query-suggest-addon="false" data-enable-search-as-you-type="true" data-placeholder='Enter your query here'></div>
+            </div>
+            <div id="coveo-recommendation-main-section" class="coveo-main-section">
+                <div id="coveo-recommendation-facet-column" class="coveo-facet-column">
+                    <div class="CoveoHierarchicalFacet" data-title="Product" data-field="@hierarchicfield" data-level-start="1" data-injection-depth="100000" data-enable-settings="true" data-id="Product" data-is-multi-value-field="true" data-tab="All">
+                    </div>
+                    <div class="CoveoFacetSlider" data-title="Youtube Views Slider" data-field="@ytviewcount" data-start="500" data-end="5000" data-graph-steps="0"></div>
+                    <div class="CoveoFacetRange" data-title="Date Range" data-field="@date" data-date-field="true" data-number-of-values="10"></div>
+                    <div class="CoveoFacet" data-title="Here is my Source Facet Long Long" data-enable-settings-facet-state="true" data-field="@source" data-number-of-values="5" data-enable-collapse="true" data-responsive-breakpoint="1000" data-enable-toggling-operator="true" data-include-in-omnibox="false"></div>
+                    <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-responsive-breakpoint="1000" data-enable-toggling-operator="true" data-include-in-omnibox="false" data-enable-settings-facet-state="true" ></div>
+                    <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-enable-toggling-operator="true" data-include-in-omnibox="false" data-enable-settings-facet-state="true" ></div>
+                    <div class="CoveoFacet" data-title="Author" data-field="@author" data-enable-toggling-operator="true" data-include-in-omnibox="false" data-enable-settings-facet-state="true" ></div>
+                    <div class="CoveoFacet" data-title="Language" data-field="@language"></div>
+                    <div class="CoveoFacet" data-title="Year" data-field="@year"></div>
+                    <div class="CoveoFacet" data-title="Month" data-field="@month"></div>
+                    <div class="CoveoFacet" data-title="Industry" data-field="@sfindustry" data-computed-field="@sfannualrevenue" data-sort-criteria="AlphaDescending" data-tab="Salesforce"></div>
+                    <div class="CoveoFacet" data-title="Close quarter" data-field="@sfopportunityclosedquarterc" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="AlphaDescending" data-tab="Salesforce"></div>
+                    <div class="CoveoFacet" data-title="Salesforce Account" data-field="@sfaccountname" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="7" data-tab="Salesforce"></div>
+                    <div class="CoveoFacet" data-title="Salesforce Owner" data-field="@sfownername" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="7" data-tab="Salesforce"></div>
+                    <div class="CoveoFacet" data-title="Opportunity Type" data-field="@sfopportunitytype" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="5" data-tab="Salesforce"></div>
+                    <div class="CoveoFacet" data-title="Opportunity Stage" data-field="@sfopportunitystagename" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-tab="Salesforce"></div>
+                    <div class="CoveoFacet" data-title="Lead Source" data-field="@sfleadsource" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="5" data-tab="Salesforce"></div>
+
+                </div>
+                <div  id="coveo-recommendation-results-column" class="coveo-results-column">
+                    <div class="CoveoShareQuery"></div>
+                    <div class="CoveoExportToExcel" data-fields-to-include='@source,@language,@author' data-number-of-results='20'></div>
+                    <div class="CoveoPreferencesPanel">
+                        <div class="CoveoResultsPreferences"></div>
+                        <div class="CoveoResultsFiltersPreferences"></div>
+                    </div>
+                    <div class="CoveoAdvancedSearch"></div>
+                    <div class="CoveoSearchAlerts"></div>
+                    <div class="CoveoBreadcrumb"></div>
+                    <div class="coveo-results-header">
+                        <div class="coveo-summary-section">
+                            <span class="CoveoQuerySummary"></span>
+                            <span class="CoveoQueryDuration"></span>
+                        </div>
+                        <div class="coveo-result-layout-section">
+                            <span class="CoveoResultLayout"></span>
+                        </div>
+                        <div class="coveo-sort-section">
+                            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+                            <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+                        </div>
+                    </div>
+                    <div class="CoveoHiddenQuery"></div>
+                    <div class="CoveoDidYouMean"></div>
+                    <div class="CoveoErrorReport"></div>
+                    <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="false">
+
+                    </div>
+                    <div class="CoveoResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="false"></div>
+                    <div class="CoveoPager"></div>
+                    <div class="CoveoLogo"></div>
+                    <div class="CoveoResultsPerPage"></div>
+                </div>
+                <div class="coveo-recommendation-column">
+                    <div id="recommendationYoutube" class="CoveoRecommendation" data-design="new" data-results-per-page="5" data-hide-if-no-results="true">
+                        <div class="CoveoAnalytics"></div>
+                        <script class="CoveoRecommendationQuery" type="text/x-query-generic">@sysfiletype=YoutubeVideo</script>
+                        <div class="coveo-recommendation-header">
+                            <div class="coveo-recommendation-title">Videos</div>
+                        </div>
+                        <div class="coveo-recommendation-body">
+                            <div class="CoveoResultList"  data-open-quickview="true">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
