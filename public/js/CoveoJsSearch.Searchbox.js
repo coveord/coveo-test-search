@@ -52,12 +52,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var CoveoUnderscore_1 = __webpack_require__(255);
 	exports._ = CoveoUnderscore_1.underscoreInstance;
 	__export(__webpack_require__(2));
@@ -65,37 +66,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	__export(__webpack_require__(36));
 	__export(__webpack_require__(39));
 	__export(__webpack_require__(55));
-	__export(__webpack_require__(74));
+	__export(__webpack_require__(73));
 	__export(__webpack_require__(100));
-	__export(__webpack_require__(132));
-	__export(__webpack_require__(177));
-	var Analytics_1 = __webpack_require__(134);
+	__export(__webpack_require__(104));
+	__export(__webpack_require__(175));
+	var Analytics_1 = __webpack_require__(127);
 	exports.Analytics = Analytics_1.Analytics;
 	var AnalyticsSuggestions_1 = __webpack_require__(246);
 	exports.AnalyticsSuggestions = AnalyticsSuggestions_1.AnalyticsSuggestions;
 	var FieldSuggestions_1 = __webpack_require__(247);
 	exports.FieldSuggestions = FieldSuggestions_1.FieldSuggestions;
-	var Omnibox_1 = __webpack_require__(192);
+	var Omnibox_1 = __webpack_require__(190);
 	exports.Omnibox = Omnibox_1.Omnibox;
-	var Querybox_1 = __webpack_require__(188);
+	var Querybox_1 = __webpack_require__(186);
 	exports.Querybox = Querybox_1.Querybox;
-	var SearchButton_1 = __webpack_require__(190);
+	var SearchButton_1 = __webpack_require__(188);
 	exports.SearchButton = SearchButton_1.SearchButton;
-	var Searchbox_1 = __webpack_require__(191);
+	var Searchbox_1 = __webpack_require__(189);
 	exports.Searchbox = Searchbox_1.Searchbox;
-	var SwapVar_1 = __webpack_require__(404);
+	var SwapVar_1 = __webpack_require__(411);
 	SwapVar_1.swapVar(this);
 
 
-/***/ },
+/***/ }),
 /* 1 */,
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var PromisesShim_1 = __webpack_require__(3);
 	PromisesShim_1.shim();
 	var CustomEventPolyfill_1 = __webpack_require__(7);
@@ -113,11 +115,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.setLanguageAfterPageLoaded = DefaultLanguage_2.setLanguageAfterPageLoaded;
 
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var es6_promise_1 = __webpack_require__(4);
 	function shim() {
 	    es6_promise_1.Promise.prototype['finally'] = function finallyPolyfill(callback) {
@@ -157,9 +160,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.shim = shim;
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var require;/* WEBPACK VAR INJECTION */(function(process, global) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
@@ -1317,9 +1320,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), (function() { return this; }())))
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// shim for using process in browser
 	var process = module.exports = {};
@@ -1491,6 +1494,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	process.removeListener = noop;
 	process.removeAllListeners = noop;
 	process.emit = noop;
+	process.prependListener = noop;
+	process.prependOnceListener = noop;
+	
+	process.listeners = function (name) { return [] }
 	
 	process.binding = function (name) {
 	    throw new Error('process.binding is not supported');
@@ -1503,17 +1510,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	process.umask = function() { return 0; };
 
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* (ignored) */
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	// CustomEvent polyfill from MDN
 	// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
 	function customEventPolyfill() {
@@ -1534,21 +1542,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.customEventPolyfill = customEventPolyfill;
 
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.version = {
-	    'lib': '1.2359.7',
-	    'product': '1.2359.7',
+	    'lib': '1.2537.19',
+	    'product': '1.2537.19',
 	    'supportedApiVersion': 2
 	};
 
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1557,6 +1566,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
 	    return c > 3 && r && Object.defineProperty(target, key, r), r;
 	};
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var EndpointCaller_1 = __webpack_require__(10);
 	var Logger_1 = __webpack_require__(11);
 	var Assert_1 = __webpack_require__(12);
@@ -1995,7 +2005,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    };
 	    /**
-	     * Return a list of reveal query suggestions, based on the given request
+	     * Returns a list of Coveo Machine Learning query suggestions, based on the given request
 	     * @param request query and number of suggestions to return
 	     * @param callOptions Additional set of options to use for this call.
 	     * @param callParams Options injected by the applied decorators.
@@ -2564,11 +2574,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Logger_1 = __webpack_require__(11);
 	var Assert_1 = __webpack_require__(12);
 	var TimeSpanUtils_1 = __webpack_require__(15);
@@ -2670,7 +2681,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var _this = this;
 	        if (responseType === void 0) { responseType = 'text'; }
 	        return new es6_promise_1.Promise(function (resolve, reject) {
-	            var xmlHttpRequest = new XMLHttpRequest();
+	            var xmlHttpRequest = _this.getXmlHttpRequest();
 	            // Beware, most stuff must be set on the event that says the request is OPENED.
 	            // Otherwise it'll bork on some browsers. Gotta love standards.
 	            // This sent variable allowed to remove the second call of onreadystatechange with the state OPENED in IE11
@@ -2691,6 +2702,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    else {
 	                        xmlHttpRequest.send(_this.convertJsonToFormBody(requestInfo.requestData));
 	                    }
+	                    // The "responseType" varies if the request is a success or not.
+	                    // Therefore we postpone setting "responseType" until we know if the
+	                    // request is a success or not. Doing so, we avoid this potential
+	                    // error in Chrome:
+	                    //
+	                    //   Uncaught InvalidStateError: Failed to read the 'responseText'
+	                    //   property from 'XMLHttpRequest': The value is only accessible if
+	                    //   the object's 'responseType' is '' or 'text' (was 'document').
+	                    //
 	                }
 	                else if (xmlHttpRequest.readyState == XMLHttpRequestStatus.HEADERS_RECEIVED) {
 	                    var status = xmlHttpRequest.status;
@@ -2714,6 +2734,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    data = JSON.parse(data);
 	                                }
 	                                catch (e) {
+	                                    // Do nothing, it probably means the data was JSON already
 	                                }
 	                            }
 	                            break;
@@ -2816,6 +2837,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        urlObject.href = url;
 	        return urlObject;
 	    };
+	    EndpointCaller.prototype.getXmlHttpRequest = function () {
+	        var newXmlHttpRequest = this.options.xmlHttpRequest || XMLHttpRequest;
+	        return new newXmlHttpRequest();
+	    };
 	    EndpointCaller.prototype.convertJsonToQueryString = function (json) {
 	        Assert_1.Assert.exists(json);
 	        var result = [];
@@ -2869,7 +2894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return 'XDomainRequest' in window;
 	    };
 	    EndpointCaller.prototype.isCORSSupported = function () {
-	        return 'withCredentials' in new XMLHttpRequest();
+	        return 'withCredentials' in this.getXmlHttpRequest();
 	    };
 	    EndpointCaller.prototype.isSuccessHttpStatus = function (status) {
 	        return status >= 200 && status < 300 || status === 304;
@@ -2925,11 +2950,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.EndpointCaller = EndpointCaller;
 
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	// Ensure that we're not going to get console is undefined error in IE8-9
 	if (!window['console']) {
 	    console = {
@@ -3052,16 +3078,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Logger = Logger;
 
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Logger_1 = __webpack_require__(11);
 	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
@@ -3151,11 +3183,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.PreconditionFailedException = PreconditionFailedException;
 
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	var isCoveoFieldRegex = /^@[a-zA-Z0-9_\.]+$/;
 	var Utils = (function () {
@@ -3515,9 +3548,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Utils = Utils;
 
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
 	//     http://underscorejs.org
@@ -5069,11 +5102,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	}.call(this));
 
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var TimeSpan = (function () {
 	    function TimeSpan(time, isMilliseconds) {
@@ -5129,11 +5163,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.TimeSpan = TimeSpan;
 
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	// Not sure about this : In year 2033 who's to say that this list won't be 50 pages long !
 	var ResponsiveComponents_1 = __webpack_require__(17);
 	var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -5210,11 +5245,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.DeviceUtils = DeviceUtils;
 
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	exports.MEDIUM_SCREEN_WIDTH = 800;
 	exports.SMALL_SCREEN_WIDTH = 480;
@@ -5311,11 +5347,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveComponents = ResponsiveComponents;
 
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var JQueryUtils = (function () {
 	    function JQueryUtils() {
 	    }
@@ -5344,11 +5381,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.JQueryUtils = JQueryUtils;
 
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var AjaxError = (function () {
 	    function AjaxError(message, status) {
@@ -5363,11 +5401,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.AjaxError = AjaxError;
 
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var MissingAuthenticationError = (function () {
 	    function MissingAuthenticationError(provider) {
 	        this.provider = provider;
@@ -5379,11 +5418,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.MissingAuthenticationError = MissingAuthenticationError;
 
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
@@ -5391,7 +5431,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function QueryUtils() {
 	    }
 	    QueryUtils.createGuid = function () {
-	        return (typeof (crypto) != 'undefined' && typeof (crypto.getRandomValues) != 'undefined') ? QueryUtils.generateWithCrypto() : QueryUtils.generateWithRandom();
+	        var guid;
+	        var success = false;
+	        if ((typeof (crypto) != 'undefined' && typeof (crypto.getRandomValues) != 'undefined')) {
+	            try {
+	                guid = QueryUtils.generateWithCrypto();
+	                success = true;
+	            }
+	            catch (e) {
+	                success = false;
+	            }
+	        }
+	        if (!success) {
+	            guid = QueryUtils.generateWithRandom();
+	        }
+	        return guid;
 	    };
 	    // This method is a fallback as it's generate a lot of collisions in Chrome.
 	    QueryUtils.generateWithRandom = function () {
@@ -5473,17 +5527,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    QueryUtils.getLanguage = function (result) {
 	        return result.raw['language'];
 	    };
-	    QueryUtils.getUniqueId = function (result) {
+	    QueryUtils.getPermanentId = function (result) {
 	        var fieldValue;
 	        var fieldUsed;
-	        var uniqueId = result.raw['uniqueid'];
-	        if (uniqueId) {
-	            fieldUsed = 'uniqueid';
-	            fieldValue = uniqueId;
+	        var permanentId = Utils_1.Utils.getFieldValue(result, 'permanentid');
+	        if (permanentId) {
+	            fieldUsed = 'permanentid';
+	            fieldValue = permanentId;
 	        }
 	        else {
 	            fieldUsed = 'urihash';
-	            fieldValue = result.raw['urihash'];
+	            fieldValue = Utils_1.Utils.getFieldValue(result, 'urihash');
 	        }
 	        return {
 	            fieldValue: fieldValue,
@@ -5586,11 +5640,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryUtils = QueryUtils;
 
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var QueryError = (function () {
 	    function QueryError(errorResponse) {
@@ -5607,49 +5662,51 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryError = QueryError;
 
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.ModalBox = __webpack_require__(24);
 	exports.MagicBox = __webpack_require__(25);
 	exports.LocaleString = __webpack_require__(26);
 
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	var Coveo;!function(e){var o;!function(e){function o(e,o){void 0===o&&(o={});var n=o.body||document.body;n.className?n.className.indexOf("coveo-modalBox-opened")==-1&&(n.className+=" coveo-modalBox-opened"):n.className="coveo-modalBox-opened";var c=document.createElement("div");c.className="coveo-modalBox",n.appendChild(c),o.fullscreen===!0&&(c.className+=" coveo-fullscreen");var d=document.createElement("div");d.className="coveo-overlay",c.appendChild(d);var s=document.createElement("div");if(s.className="coveo-wrapper",c.appendChild(s),null!=o.title){var r=document.createElement("div");r.className="coveo-title",s.appendChild(r),r.innerHTML=o.title,o.titleClose===!0&&r.addEventListener("click",function(){return v()})}e.className+=" coveo-body",s.appendChild(e);var i,v=function(e,t){void 0===e&&(e=0),void 0===t&&(t=!1);var d=null==o.validation||o.validation(e);if(d!==!1||t){c.parentElement&&c.parentElement.removeChild(c);var s=l.indexOf(v);return s>=0&&l.splice(s,1),null==n.querySelector(".coveo-modalBox")&&a(n,"coveo-modalBox-opened"),!0}return!1},u=function(e,o){var n=document.createElement("div");n.className="coveo-button",n.textContent=e,n.addEventListener("click",function(){return v(o)}),i.appendChild(n)};return null!=o.buttons&&(i=document.createElement("div"),i.className="coveo-buttons",s.appendChild(i),o.buttons&t.OK&&u("Ok",t.OK),o.buttons&t.APPLY&&u("Apply",t.APPLY),o.buttons&t.YES&&u("Yes",t.YES),o.buttons&t.NO&&u("No",t.NO),o.buttons&t.CANCEL&&u("Cancel",t.CANCEL)),l.push(v),o.overlayClose===!0&&d.addEventListener("click",function(e){return v()}),null!=o.className&&(c.className+=" "+o.className),{modalBox:c,overlay:d,wrapper:s,buttons:i,content:e,close:v}}function n(e){void 0===e&&(e=!1);for(var o=0;l.length>o;){var n=l[o](0,e);n||o++}}function a(e,o){e.className=e.className.replace(new RegExp("(^|\\s)"+o+"(\\s|\\b)","g"),"$1")}!function(e){e[e.OK=1]="OK",e[e.APPLY=2]="APPLY",e[e.YES=4]="YES",e[e.NO=8]="NO",e[e.CANCEL=16]="CANCEL"}(e.BUTTON||(e.BUTTON={}));var t=e.BUTTON,l=[];e.open=o,e.close=n}(o=e.ModalBox||(e.ModalBox={}))}(Coveo||(Coveo={}));
 	
 	/*** EXPORTS FROM exports-loader ***/
 	module.exports = Coveo.ModalBox;
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
-	var __extends=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var s in e)e.hasOwnProperty(s)&&(t[s]=e[s]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){var s=this;this.expression=e,this.input=n,_.isString(t)?this.value=t:_.isArray(t)&&(this.subResults=t,_.forEach(this.subResults,function(t){t.parent=s}))}return e.prototype.isSuccess=function(){return null!=this.value||null!=this.subResults&&_.all(this.subResults,function(t){return t.isSuccess()})},e.prototype.path=function(t){var e=null!=this.parent&&this.parent!=t?this.parent.path(t):[];return e.push(this),e},e.prototype.findParent=function(t){for(var e=this,n=_.isString(t)?function(e){return t==e.expression.id}:t;null!=e&&!n(e);)e=e.parent;return e},e.prototype.find=function(t){var e=_.isString(t)?function(e){return t==e.expression.id}:t;if(e(this))return this;if(this.subResults)for(var n=0;n<this.subResults.length;n++){var s=this.subResults[n].find(e);if(s)return s}return null},e.prototype.findAll=function(t){var e=[],n=_.isString(t)?function(e){return t==e.expression.id}:t;return n(this)&&e.push(this),this.subResults&&(e=_.reduce(this.subResults,function(t,e){return t.concat(e.findAll(n))},e)),e},e.prototype.resultAt=function(t,e){if(t<0||t>this.getLength())return[];if(null!=e){if(_.isString(e)){if(e==this.expression.id)return[this]}else if(e(this))return[this]}else{var n=null==this.value&&null==this.subResults?this.input:this.value;if(null!=n)return[this]}if(null!=this.subResults){for(var s=[],i=0;i<this.subResults.length;i++){var o=this.subResults[i];if(s=s.concat(o.resultAt(t,e)),t-=o.getLength(),t<0)break}return s}return[]},e.prototype.getExpect=function(){return null==this.value&&null==this.subResults?[this]:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t.concat(e.getExpect())},[]):[]},e.prototype.getBestExpect=function(){var t=this.getExpect(),e=_.groupBy(t,function(t){return t.input}),n=_.last(_.keys(e).sort(function(t,e){return e.length-t.length})),s=e[n],e=_.groupBy(s,function(t){return t.expression.id});return _.map(e,function(t){return _.chain(t).map(function(t){return{path:t.path().length,result:t}}).sortBy("path").pluck("result").first().value()})},e.prototype.getHumanReadableExpect=function(){var t=this.getBestExpect(),e=t.length>0?_.last(t).input:"";return"Expected "+_.map(t,function(t){return t.getHumanReadable()}).join(" or ")+" but "+(e.length>0?JSON.stringify(e[0]):"end of input")+" found."},e.prototype.before=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return this.parent.before()+_.chain(this.parent.subResults).first(t).map(function(t){return t.toString()}).join("").value()},e.prototype.after=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return _.chain(this.parent.subResults).last(this.parent.subResults.length-t-1).map(function(t){return t.toString()}).join("").value()+this.parent.after()},e.prototype.getLength=function(){return null!=this.value?this.value.length:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t+e.getLength()},0):this.input.length},e.prototype.toHtmlElement=function(){var t=document.createElement("span"),e=null!=this.expression?this.expression.id:null;if(null!=e){var n=document.createAttribute("data-id");n.value=e,t.setAttributeNode(n)}var s=document.createAttribute("data-success");if(s.value=this.isSuccess().toString(),t.setAttributeNode(s),null!=this.value){t.appendChild(document.createTextNode(this.value));var i=document.createAttribute("data-value");i.value=this.value,t.setAttributeNode(i)}else if(null!=this.subResults)_.each(this.subResults,function(e){t.appendChild(e.toHtmlElement())});else{t.appendChild(document.createTextNode(this.input));var o=document.createAttribute("data-input");o.value=this.input,t.setAttributeNode(o),t.className="magic-box-error"+(this.input.length>0?"":" magic-box-error-empty")}return t.result=this,t},e.prototype.clean=function(t){if(null!=t||!this.isSuccess()){t=t||_.last(this.getBestExpect()).path(this);var n=_.first(t);if(null!=n){var s=_.indexOf(this.subResults,n),i=s==-1?[]:_.map(_.first(this.subResults,s),function(t){return t.clean()});return i.push(n.clean(_.rest(t))),new e(i,this.expression,this.input)}return new e(null,this.expression,this.input)}return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clean()}),this.expression,this.input):void 0},e.prototype.clone=function(){return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clone()}),this.expression,this.input):new e(null,this.expression,this.input)},e.prototype.toString=function(){return null!=this.value?this.value:null!=this.subResults?_.map(this.subResults,function(t){return t.toString()}).join(""):this.input},e.prototype.getHumanReadable=function(){return this.expression instanceof t.ExpressionConstant?JSON.stringify(this.expression.value):this.expression.id},e}();t.Result=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(n){e.call(this,[n],t.ExpressionEndOfInput,n.input);var s=new t.Result(null,t.ExpressionEndOfInput,n.input.substr(n.getLength()));s.parent=this,this.subResults.push(s)}return __extends(n,e),n}(t.Result);t.EndOfInputResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){var o=this;e.call(this,null!=t?[t]:null,n,s),this.result=t,this.expression=n,this.input=s,this.failAttempt=i,_.forEach(this.failAttempt,function(t){t.parent=o})}return __extends(n,e),n.prototype.getExpect=function(){var t=this,e=[];return null!=this.result&&(e=this.result.getExpect()),e=_.reduce(this.failAttempt,function(t,e){return t.concat(e.getExpect())},e),e.length>0&&_.all(e,function(e){return e.input==t.input})?[this]:e},n.prototype.clean=function(e){if(null!=e||!this.isSuccess()){e=_.rest(e||_.last(this.getBestExpect()).path(this));var n=_.first(e);return null==n?new t.Result(null,this.expression,this.input):new t.Result([n.clean(_.rest(e))],this.expression,this.input)}return new t.Result(_.map(this.result.subResults,function(t){return t.clean()}),this.expression,this.input)},n}(t.Result);t.OptionResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){e.call(this,t,n,s),this.results=t,this.expression=n,this.input=s,_.last(t)!=i&&(this.failAttempt=i,null!=this.failAttempt&&(this.failAttempt.parent=this))}return __extends(n,e),n.prototype.getExpect=function(){var t=e.prototype.getExpect.call(this);return null!=this.failAttempt?t.concat(this.failAttempt.getExpect()):t},n.prototype.clean=function(n){if(null!=this.failAttempt&&(null!=n||!this.isSuccess())){n=n||_.last(this.getBestExpect()).path(this);var s=_.first(n);if(null!=s&&s==this.failAttempt){var i=_.last(this.subResults),o=_.map(null!=i&&i.isSuccess()?this.subResults:_.initial(this.subResults),function(t){return t.clean()});return o.push(s.clean(_.rest(n))),new t.Result(o,this.expression,this.input)}}return e.prototype.clean.call(this,n)},n}(t.Result);t.RefResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=0==e.indexOf(this.value),i=new t.Result(s?this.value:null,this,e);return s&&n&&e.length>this.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.value},e}();t.ExpressionConstant=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.ExpressionEndOfInput={id:"end of input",parse:null}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function t(t,e,n){this.func=t,this.id=e,this.grammar=n}return t.prototype.parse=function(t,e){return this.func(t,e,this)},t.prototype.toString=function(){return this.id},t}();t.ExpressionFunction=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){if(this.parts=t,this.id=e,0==t.length)throw JSON.stringify(e)+" should have at least 1 parts"}return e.prototype.parse=function(e,n){for(var s,i=[],o=e,r=0;r<this.parts.length;r++){var u=this.parts[r];if(s=u.parse(o,n&&r==this.parts.length-1),i.push(s),!s.isSuccess())break;o=o.substr(s.getLength())}return new t.Result(i,this,e)},e.prototype.toString=function(){return this.id},e}();t.ExpressionList=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.parts=t,this.id=e}return e.prototype.parse=function(e,n){for(var s=[],i=0;i<this.parts.length;i++){var o=this.parts[i].parse(e,n);if(o.isSuccess())return new t.OptionResult(o,this,e,s);s.push(o)}return new t.OptionResult(null,this,e,s)},e.prototype.toString=function(){return this.id},e}();t.ExpressionOptions=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n,s){this.ref=t,this.occurrence=e,this.id=n,this.grammar=s}return e.prototype.parse=function(t,e){var n=this.grammar.getExpression(this.ref);if(null==n)throw"Expression not found:"+this.ref;return"?"==this.occurrence||null==this.occurrence?this.parseOnce(t,e,n):this.parseMany(t,e,n)},e.prototype.parseOnce=function(e,n,s){var i=s.parse(e,n),o=i.isSuccess();return o||"?"!=this.occurrence?new t.RefResult([i],this,e,o?null:i):n?0==e.length?new t.RefResult([],this,e,i):_.all(i.getBestExpect(),function(e){return e.expression==t.ExpressionEndOfInput})?new t.RefResult([new t.Result(null,t.ExpressionEndOfInput,e)],this,e,i):i:new t.RefResult([],this,e,null)},e.prototype.parseMany=function(e,n,s){var i,o,r=[],u=e;do i=s.parse(u,!1),o=i.isSuccess(),o&&(r.push(i),u=u.substr(i.getLength()));while(o&&i.input!=u);var a=_.isNumber(this.occurrence)?this.occurrence:"+"==this.occurrence?1:0;if(r.length<a)r.push(i);else if(n)if(r.length>0){var l=_.last(r);i=s.parse(l.input,!0),i.isSuccess()?r[r.length-1]=i:(r.push(new t.Result(null,t.ExpressionEndOfInput,l.input.substr(l.getLength()))),i=s.parse(l.input.substr(l.getLength()),!0))}else if(0!=e.length){var c=new t.Result(null,t.ExpressionEndOfInput,e);return new t.RefResult([c],this,e,i)}return new t.RefResult(r,this,e,i)},e.prototype.toString=function(){return this.id},e}();t.ExpressionRef=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=e.match(this.value);null!=s&&0!=s.index&&(s=null);var i=new t.Result(null!=s?s[0]:null,this,e);return i.isSuccess()&&n&&e.length>i.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.id},e}();t.ExpressionRegExp=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){void 0===n&&(n={}),this.expressions={},this.start=new t.ExpressionRef(e,null,"start",this),this.addExpressions(n)}return e.prototype.addExpressions=function(t){var e=this;_.each(t,function(t,n){e.addExpression(n,t)})},e.prototype.addExpression=function(t,n){if(t in this.expressions)throw"Grammar already contain the id:"+t;this.expressions[t]=e.buildExpression(n,t,this)},e.prototype.getExpression=function(t){return this.expressions[t]},e.prototype.parse=function(t){return this.start.parse(t,!0)},e.buildExpression=function(e,n,s){var i=typeof e;if("undefined"==i)throw"Invalid Expression: "+e;if(_.isString(e))return this.buildStringExpression(e,n,s);if(_.isArray(e))return new t.ExpressionOptions(_.map(e,function(e,i){return new t.ExpressionRef(e,null,n+"_"+i,s)}),n);if(_.isRegExp(e))return new t.ExpressionRegExp(e,n,s);if(_.isFunction(e))return new t.ExpressionFunction(e,n,s);throw"Invalid Expression: "+e},e.buildStringExpression=function(n,s,i){var o=e.stringMatch(n,e.spliter),r=_.map(o,function(e,n){if(e[1]){var o=e[1],r=e[3]?Number(e[3]):e[2]||null;return new t.ExpressionRef(o,r,s+"_"+n,i)}return new t.ExpressionConstant(e[4],s+"_"+n)});if(1==r.length){var u=r[0];return u.id=s,u}return new t.ExpressionList(r,s)},e.stringMatch=function(t,e){for(var n,s=[],i=new RegExp(e.source,"g");null!==(n=i.exec(t));)s.push(n);return s},e.spliter=/\[(\w+)(\*|\+|\?|\{([1-9][0-9]*)\})?\]|(.[^\[]*)/,e}();t.Grammar=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){this.element=t,this.onchange=e,this.magicBox=n,this.hasFocus=!1,this.justPressedTab=!1,this.underlay=document.createElement("div"),this.underlay.className="magic-box-underlay",t.appendChild(this.underlay),this.highlightContainer=document.createElement("span"),this.highlightContainer.className="magic-box-highlight-container",this.underlay.appendChild(this.highlightContainer),this.ghostTextContainer=document.createElement("span"),this.ghostTextContainer.className="magic-box-ghost-text",this.underlay.appendChild(this.ghostTextContainer),this.input=document.createElement("input"),this.input.spellcheck=!1,this.input.setAttribute("form","coveo-dummy-form"),this.input.setAttribute("autocomplete","off"),t.appendChild(this.input),this.setupHandler()}return e.prototype.updateInput=function(){this.input.value!=this.result.input&&(this.input.value=this.result.input,this.hasFocus&&this.setCursor(this.getValue().length))},e.prototype.updateHighlight=function(){this.highlightContainer.innerHTML="",this.highlightContainer.appendChild(this.result.toHtmlElement())},e.prototype.updateWordCompletion=function(){this.ghostTextContainer.innerHTML="",null!=this.wordCompletion&&this.ghostTextContainer.appendChild(document.createTextNode(this.wordCompletion.substr(this.result.input.length)))},e.prototype.updateScroll=function(e){var n=this;void 0===e&&(e=!0);var s=function(){n.underlay.clientWidth<n.underlay.scrollWidth&&(n.underlay.style.visibility="hidden",n.underlay.scrollLeft=n.input.scrollLeft,n.underlay.scrollTop=n.input.scrollTop,n.underlay.style.visibility="visible"),n.updateScrollDefer=null,n.hasFocus&&n.updateScroll()};e?null==this.updateScrollDefer&&(this.updateScrollDefer=t.requestAnimationFrame(s)):s()},e.prototype.setResult=function(t,e){this.result=t,this.updateInput(),this.updateHighlight(),_.isUndefined(e)&&null!=this.wordCompletion&&0==this.wordCompletion.indexOf(this.result.input)?this.updateWordCompletion():this.setWordCompletion(e),this.updateScroll()},e.prototype.setWordCompletion=function(t){null!=t&&0!=t.toLowerCase().indexOf(this.result.input.toLowerCase())&&(t=null),this.wordCompletion=t,this.updateWordCompletion(),this.updateScroll()},e.prototype.setCursor=function(t){if(this.input.focus(),this.input.createTextRange){var e=this.input.createTextRange();e.move("character",t),e.select()}else null!=this.input.selectionStart&&(this.input.focus(),this.input.setSelectionRange(t,t))},e.prototype.getCursor=function(){return this.input.selectionStart},e.prototype.setupHandler=function(){var t=this;this.input.onblur=function(){t.hasFocus=!1,setTimeout(function(){t.hasFocus||t.onblur&&t.onblur()},300),t.updateScroll()},this.input.onfocus=function(){t.hasFocus||(t.hasFocus=!0,t.updateScroll(),t.onfocus&&t.onfocus())},this.input.onkeydown=function(e){t.keydown(e)},this.input.onkeyup=function(e){t.keyup(e)},this.input.onclick=function(){t.onchangecursor()},this.input.select=function(){t.onchangecursor()},this.input.oncut=function(){setTimeout(function(){t.onInputChange()})},this.input.onpaste=function(){setTimeout(function(){t.onInputChange()})}},e.prototype.focus=function(){var t=this;this.hasFocus=!0,setTimeout(function(){t.input.focus(),t.setCursor(t.getValue().length)})},e.prototype.blur=function(){this.hasFocus&&this.input.blur()},e.prototype.keydown=function(e){var n=this;switch(e.keyCode||e.which){case 9:this.justPressedTab?this.blur():this.magicBox.hasSuggestions()&&e.preventDefault(),this.justPressedTab=!0;break;default:e.stopPropagation(),this.justPressedTab=!1,null==this.onkeydown||this.onkeydown(e.keyCode||e.which)?t.requestAnimationFrame(function(){n.onInputChange()}):e.preventDefault()}},e.prototype.keyup=function(t){switch(t.keyCode||t.which){case 9:this.tabPress();break;case 37:case 39:this.onchangecursor();break;default:null==this.onkeydown||this.onkeyup(t.keyCode||t.which)?this.onInputChange():t.preventDefault()}},e.prototype.tabPress=function(){null!=this.wordCompletion&&(this.input.value=this.wordCompletion),this.ontabpress&&this.ontabpress(),this.magicBox.showSuggestion()},e.prototype.onInputChange=function(){this.result.input!=this.input.value&&this.onchange(this.input.value,!1)},e.prototype.getValue=function(){return this.input.value},e.prototype.getWordCompletion=function(){return this.wordCompletion},e}();t.InputManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){var s=this;this.element=e,this.options=_.defaults(n,{selectableClass:"magic-box-suggestion",selectedClass:"magic-box-selected"}),void 0==this.options.timeout&&(this.options.timeout=500),this.hasSuggestions=!1,this.element.onmouseover=function(e){if(t.$$(e.target).hasClass(s.options.selectableClass)){for(var n=s.element.getElementsByClassName(s.options.selectedClass),i=0;i<n.length;i++){var o=n.item(i);t.$$(o).removeClass(s.options.selectedClass)}t.$$(e.target).addClass(s.options.selectedClass)}},this.element.onmouseout=function(e){t.$$(e.target).hasClass(s.options.selectableClass)&&t.$$(e.target).removeClass(s.options.selectedClass)}}return e.prototype.moveDown=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=s==-1?0:s+1}else s=0;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),this.returnMoved(e)},e.prototype.moveUp=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=s==-1?n.length-1:s-1}else s=n.length-1;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),this.returnMoved(e)},e.prototype.returnMoved=function(e){if(null!=e){if(e.suggestion)return e.suggestion;if(e["no-text-suggestion"])return null;if(e instanceof HTMLElement)return{text:t.$$(e).text()}}return null},e.prototype.select=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0);return null!=e&&t.$$(e).trigger("keyboardSelect"),e},e.prototype.mergeSuggestions=function(t,e){var n,s=this,i=[];t=_.compact(t);var o=this.pendingSuggestion=new Promise(function(e,r){_.each(t,function(t){var e=!1;setTimeout(function(){e=!0},s.options.timeout),t.then(function(t){!e&&t&&(i=i.concat(t))})});var u=function(){n&&clearTimeout(n),0==i.length?e([]):o==s.pendingSuggestion||null==s.pendingSuggestion?e(i.sort(function(t,e){return e.index-t.index})):r("new request queued")};0==t.length&&u(),void 0==t&&u(),n=setTimeout(function(){u()},s.options.timeout),Promise.all(t).then(function(){return u()})});o.then(function(t){return e&&e(t),s.updateSuggestions(t),t})["catch"](function(){return null})},e.prototype.updateSuggestions=function(e){var n=this;this.element.innerHTML="",this.element.className="magic-box-suggestions",_.each(e,function(e){var s=e.dom;if(s){t.$$(s).removeClass(n.options.selectedClass);var i=t.$$(s).find("."+n.options.selectableClass);t.$$(i).removeClass(n.options.selectedClass)}else{if(s=document.createElement("div"),s.className="magic-box-suggestion",null!=e.html)s.innerHTML=e.html;else if(null!=e.text)s.appendChild(document.createTextNode(e.text));else if(null!=e.separator){s.className="magic-box-suggestion-seperator";var o=document.createElement("div");o.className="magic-box-suggestion-seperator-label",o.appendChild(document.createTextNode(e.separator)),s.appendChild(o)}t.$$(s).on("click",function(){e.onSelect()}),t.$$(s).on("keyboardSelect",function(){e.onSelect()}),t.$$(s).addClass(n.options.selectableClass)}s.suggestion=e,n.element.appendChild(s)}),e.length>0?(t.$$(this.element).addClass("magic-box-hasSuggestion"),this.hasSuggestions=!0):(t.$$(this.element).removeClass("magic-box-hasSuggestion"),this.hasSuggestions=!1)},e}();t.SuggestionsManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t){return t.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,"\\$&")}function s(t,e,s,o,r){if(void 0===s&&(s=!1),void 0===o&&(o="magic-box-hightlight"),void 0===r&&(r=""),0==e.length)return t;var u=n(e),a="("+u+")|(.*?(?="+u+")|.+)",l=new RegExp(a,s?"gi":"g");return t.replace(l,function(t,e,n){return i(null!=e?o:r,t)})}var i=function(t,e){return'<span class="'+t+'">'+_.escape(e)+"</span>"};e.highlightText=s;var o=function(){function e(t){this.el=t}return e.prototype.text=function(t){return t?void(void 0!=this.el.innerText?this.el.innerText=t:void 0!=this.el.textContent&&(this.el.textContent=t)):this.el.innerText||this.el.textContent},e.prototype.nodeListToArray=function(t){for(var e=t.length,n=new Array(e);e--;)n[e]=t.item(e);return n},e.prototype.empty=function(){for(;this.el.firstChild;)this.el.removeChild(this.el.firstChild)},e.prototype.show=function(){this.el.style.display="visible"},e.prototype.hide=function(){this.el.style.display="none"},e.prototype.toggle=function(t){void 0===t?"visible"==this.el.style.display?this.hide():this.show():t?this.show():this.hide()},e.prototype.find=function(t){return this.el.querySelector(t)},e.prototype.is=function(t){return this.el.tagName.toLowerCase()==t.toLowerCase()||(!("."!=t[0]||!this.hasClass(t.substr(1)))||"#"==t[0]&&this.el.getAttribute("id")==t.substr(1))},e.prototype.closest=function(e){for(var n=this.el,s=!1;!s&&(t.$$(n).hasClass(e)&&(s=!0),"body"!=n.tagName.toLowerCase())&&null!=n.parentElement;)s||(n=n.parentElement);if(s)return n},e.prototype.findAll=function(t){return this.nodeListToArray(this.el.querySelectorAll(t))},e.prototype.findClass=function(t){return"getElementsByClassName"in this.el?this.nodeListToArray(this.el.getElementsByClassName(t)):this.nodeListToArray(this.el.querySelectorAll("."+t))},e.prototype.findId=function(t){return document.getElementById(t)},e.prototype.addClass=function(t){this.hasClass(t)||(this.el.className?this.el.className+=" "+t:this.el.className=t)},e.prototype.removeClass=function(t){this.el.className=this.el.className.replace(new RegExp("(^|\\s)"+t+"(\\s|\\b)","g"),"$1")},e.prototype.toggleClass=function(t,e){e?this.addClass(t):this.removeClass(t)},e.prototype.getClass=function(){return this.el.className.match(e.CLASS_NAME_REGEX)||[]},e.prototype.hasClass=function(t){return _.contains(this.getClass(),t)},e.prototype.detach=function(){this.el.parentElement&&this.el.parentElement.removeChild(this.el)},e.prototype.on=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.on(t,n)});else{var i=this.getJQuery();if(i)i(this.el).on(t,n);else if(this.el.addEventListener){var o=function(t){n(t,t.detail)};e.handlers.push({eventHandle:n,fn:o}),this.el.addEventListener(t,o,!1)}else this.el.on&&this.el.on("on"+t,n)}},e.prototype.one=function(t,e){var n=this;if(_.isArray(t))_.each(t,function(t){n.one(t,e)});else{var s=function(i){return n.off(t,s),e(i)};this.on(t,s)}},e.prototype.off=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.off(t,n)});else{var i=this.getJQuery();if(i)i(this.el).off(t,n);else if(this.el.removeEventListener){var o=0,r=_.find(e.handlers,function(t,e){if(t.eventHandle==n)return o=e,!0});r&&(this.el.removeEventListener(t,r.fn,!1),e.handlers.splice(o,1))}else this.el.off&&this.el.off("on"+t,n)}},e.prototype.trigger=function(t,e){var n=this.getJQuery();if(n)n(this.el).trigger(t,e);else if(void 0!==CustomEvent){var s=new CustomEvent(t,{detail:e,bubbles:!0});this.el.dispatchEvent(s)}},e.prototype.isEmpty=function(){return e.ONLY_WHITE_SPACE_REGEX.test(this.el.innerHTML)},e.prototype.isDescendant=function(t){for(var e=this.el.parentNode;null!=e;){if(e==t)return!0;e=e.parentNode}return!1},e.prototype.getJQuery=function(){return void 0!=window.jQuery&&window.jQuery},e.CLASS_NAME_REGEX=/-?[_a-zA-Z]+[_a-zA-Z0-9-]*/g,e.ONLY_WHITE_SPACE_REGEX=/^\s*$/,e.handlers=[],e}();e.Dom=o}(e=t.Utils||(t.Utils={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.$$=function(e){return window.Coveo&&window.Coveo.$$?window.Coveo.$$(e):new t.Utils.Dom(e)}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t,e,n,s){_.each(s.expressions,function(e){_.contains(t,e)||t.push(e)}),_.each(s.basicExpressions,function(t){_.contains(e,t)||e.push(t)}),_.each(s.grammars,function(t,e){if(e in n){if(!_.isArray(n[e])||!_.isArray(t))throw _.each(t,function(t){n[e].push(t)}),"Can not merge "+e+"("+new String(t)+" => "+new String(n[e])+")";_.each(t,function(t){n[e].push(t)})}else n[e]=t})}function s(){for(var t=[],e=0;e<arguments.length;e++)t[e-0]=arguments[e];for(var s=[],i=[],o={Start:["Expressions","Empty"],Expressions:"[OptionalSpaces][Expression][ExpressionsList*][OptionalSpaces]",ExpressionsList:"[Spaces][Expression]",Expression:s,BasicExpression:i,OptionalSpaces:/ */,Spaces:/ +/,Empty:/(?!.)/},r=0;r<t.length;r++)n(s,i,o,t[r]),_.each(t[r].include,function(e){_.contains(t,e)||t.push(e)});return s.push("BasicExpression"),{start:"Start",expressions:o}}function i(){for(var e=[],n=0;n<arguments.length;n++)e[n-0]=arguments[n];var i=s.apply(this,e);return new t.Grammar(i.start,i.expressions)}e.Expressions=s,e.ExpressionsGrammar=i}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){e.notWordStart=" ()[],$@'\"",e.notInWord=" ()[],:",e.Basic={basicExpressions:["Word","DoubleQuoted"],grammars:{DoubleQuoted:'"[NotDoubleQuote]"',NotDoubleQuote:/[^"]*/,SingleQuoted:"'[NotSingleQuote]'",NotSingleQuote:/[^']*/,Number:/[0-9]+/,Word:function(n,s,i){var o=new RegExp("[^"+e.notWordStart.replace(/(.)/g,"\\$1")+"][^"+e.notInWord.replace(/(.)/g,"\\$1")+"]*"),r=n.match(o);null!=r&&0!=r.index&&(r=null);var u=new t.Result(null!=r?r[0]:null,i,n);return u.isSuccess()&&s&&n.length>u.value.length?new t.EndOfInputResult(u):u}}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.SubExpression={basicExpressions:["SubExpression"],grammars:{SubExpression:"([Expressions])"}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Date={grammars:{Date:"[DateYear]/[DateMonth]/[DateDay]",DateYear:/([0-9]{4})/,DateMonth:/(1[0-2]|0?[1-9])/,DateDay:/([1-2][0-9]|3[0-1]|0?[1-9])/,DateRange:"[Date][Spaces?]..[Spaces?][Date]",DateRelative:["DateRelativeNegative","DateRelativeTerm"],DateRelativeTerm:/now|today|yesterday/,DateRelativeNegative:"[DateRelativeTerm][DateRelativeNegativeRef]",DateRelativeNegativeRef:/([\-\+][0-9]+(s|m|h|d|mo|y))/},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Field={basicExpressions:["FieldSimpleQuery","FieldQuery","Field"],grammars:{FieldQuery:"[Field][OptionalSpaces][FieldQueryOperation]",FieldQueryOperation:["FieldQueryValue","FieldQueryNumeric"],FieldQueryValue:"[FieldOperator][OptionalSpaces][FieldValue]",FieldQueryNumeric:"[FieldOperatorNumeric][OptionalSpaces][FieldValueNumeric]",FieldSimpleQuery:"[FieldName]:[OptionalSpaces][FieldValue]",Field:"@[FieldName]",FieldName:/[a-zA-Z][a-zA-Z0-9\.\_]*/,FieldOperator:/==|=|<>/,FieldOperatorNumeric:/<=|>=|<|>/,FieldValue:["DateRange","NumberRange","DateRelative","Date","Number","FieldValueList","FieldValueString"],FieldValueNumeric:["DateRelative","Date","Number"],FieldValueString:["DoubleQuoted","FieldValueNotQuoted"],FieldValueList:"([FieldValueString][FieldValueStringList*])",FieldValueStringList:"[FieldValueSeparator][FieldValueString]",FieldValueSeparator:/ *, */,FieldValueNotQuoted:/[^ \(\),]+/,NumberRange:"[Number][Spaces?]..[Spaces?][Number]"},include:[t.Date,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.QueryExtension={basicExpressions:["QueryExtension"],grammars:{QueryExtension:"$[QueryExtensionName]([QueryExtensionArguments])",QueryExtensionName:/\w+/,QueryExtensionArguments:"[QueryExtensionArgumentList*][QueryExtensionArgument]",QueryExtensionArgumentList:"[QueryExtensionArgument][Spaces?],[Spaces?]",QueryExtensionArgument:"[QueryExtensionArgumentName]:[Spaces?][QueryExtensionArgumentValue]",QueryExtensionArgumentName:/\w+/,QueryExtensionArgumentValue:["SingleQuoted","Expressions"]},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.NestedQuery={basicExpressions:["NestedQuery"],grammars:{NestedQuery:"[[NestedField][OptionalSpaces][Expressions]]",NestedField:"[[Field]]",FieldValue:["NestedQuery"]},include:[t.Field]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Complete={include:[t.NestedQuery,t.QueryExtension,t.SubExpression,t.Field,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){function e(t,e,n){return new s(t,e,n)}function n(t){return"requestAnimationFrame"in window?window.requestAnimationFrame(t):setTimeout(t)}var s=function(){function e(e,n,s){var i=this;void 0===s&&(s={}),this.element=e,this.grammar=n,this.options=s,this.lastSuggestions=[],_.isUndefined(this.options.inline)&&(this.options.inline=!1),t.$$(e).addClass("magic-box"),this.options.inline&&t.$$(e).addClass("magic-box-inline"),this.result=this.grammar.parse(""),this.displayedResult=this.result.clean(),this.clearDom=document.createElement("div"),this.clearDom.className="magic-box-clear",this.element.appendChild(this.clearDom);var o=document.createElement("div");o.className="magic-box-icon",this.clearDom.appendChild(o);var r=document.createElement("div");r.className="magic-box-input",e.appendChild(r),this.inputManager=new t.InputManager(r,function(t,e){e?(i.setText(t),i.onselect&&i.onselect(i.getFirstSuggestionText())):(i.setText(t),i.showSuggestion(),i.onchange&&i.onchange())},this),this.inputManager.ontabpress=function(){i.ontabpress&&i.ontabpress()},this.inputManager.setResult(this.displayedResult);var u=document.createElement("div");u.className="magic-box-suggestions",this.element.appendChild(u),this.suggestionsManager=new t.SuggestionsManager(u,{selectableClass:this.options.selectableSuggestionClass,selectedClass:this.options.selectedSuggestionClass,timeout:this.options.suggestionTimeout}),this.setupHandler()}return e.prototype.getResult=function(){return this.result},e.prototype.getDisplayedResult=function(){return this.displayedResult},e.prototype.setText=function(e){t.$$(this.element).toggleClass("magic-box-notEmpty",e.length>0),this.result=this.grammar.parse(e),this.displayedResult=this.result.clean(),this.inputManager.setResult(this.displayedResult)},e.prototype.setCursor=function(t){this.inputManager.setCursor(t);
-	},e.prototype.getCursor=function(){return this.inputManager.getCursor()},e.prototype.resultAtCursor=function(t){return this.displayedResult.resultAt(this.getCursor(),t)},e.prototype.setupHandler=function(){var e=this;this.inputManager.onblur=function(){t.$$(e.element).removeClass("magic-box-hasFocus"),e.onblur&&e.onblur(),e.options.inline||e.clearSuggestion()},this.inputManager.onfocus=function(){t.$$(e.element).addClass("magic-box-hasFocus"),e.showSuggestion(),e.onfocus&&e.onfocus()},this.inputManager.onkeydown=function(t){if(38==t||40==t)return!1;if(13==t){var n=e.suggestionsManager.select();return null==n&&e.onsubmit&&e.onsubmit(),!1}return 27==t&&(e.clearSuggestion(),e.blur()),!0},this.inputManager.onchangecursor=function(){e.showSuggestion()},this.inputManager.onkeyup=function(t){if(38==t)e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveUp()),e.onchange&&e.onchange();else{if(40!=t)return!0;e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveDown()),e.onchange&&e.onchange()}return!1},this.clearDom.onclick=function(){e.clear()}},e.prototype.showSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions(null!=this.getSuggestions?this.getSuggestions():[],function(e){t.updateSuggestion(e)})},e.prototype.updateSuggestion=function(t){var e=this;this.lastSuggestions=t;var n=this.getFirstSuggestionText();this.inputManager.setWordCompletion(n&&n.text),this.onsuggestions&&this.onsuggestions(t),_.each(t,function(t){null==t.onSelect&&null!=t.text&&(t.onSelect=function(){e.setText(t.text),e.onselect&&e.onselect(t)})})},e.prototype.focus=function(){t.$$(this.element).addClass("magic-box-hasFocus"),this.inputManager.focus()},e.prototype.blur=function(){this.inputManager.blur()},e.prototype.clearSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions([],function(e){t.updateSuggestion(e)}),this.inputManager.setWordCompletion(null)},e.prototype.focusOnSuggestion=function(t){null==t||null==t.text?(t=this.getFirstSuggestionText(),this.inputManager.setResult(this.displayedResult,t&&t.text)):this.inputManager.setResult(this.grammar.parse(t.text).clean(),t.text)},e.prototype.getFirstSuggestionText=function(){return _.find(this.lastSuggestions,function(t){return null!=t.text})},e.prototype.getText=function(){return this.inputManager.getValue()},e.prototype.getWordCompletion=function(){return this.inputManager.getWordCompletion()},e.prototype.clear=function(){this.setText(""),this.showSuggestion(),this.focus(),this.onclear&&this.onclear()},e.prototype.hasSuggestions=function(){return this.suggestionsManager.hasSuggestions},e}();t.Instance=s,t.create=e,t.requestAnimationFrame=n}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));
+	var __extends=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var s in e)e.hasOwnProperty(s)&&(t[s]=e[s]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){var s=this;this.expression=e,this.input=n,_.isString(t)?this.value=t:_.isArray(t)&&(this.subResults=t,_.forEach(this.subResults,function(t){t.parent=s}))}return e.prototype.isSuccess=function(){return null!=this.value||null!=this.subResults&&_.all(this.subResults,function(t){return t.isSuccess()})},e.prototype.path=function(t){var e=null!=this.parent&&this.parent!=t?this.parent.path(t):[];return e.push(this),e},e.prototype.findParent=function(t){for(var e=this,n=_.isString(t)?function(e){return t==e.expression.id}:t;null!=e&&!n(e);)e=e.parent;return e},e.prototype.find=function(t){var e=_.isString(t)?function(e){return t==e.expression.id}:t;if(e(this))return this;if(this.subResults)for(var n=0;n<this.subResults.length;n++){var s=this.subResults[n].find(e);if(s)return s}return null},e.prototype.findAll=function(t){var e=[],n=_.isString(t)?function(e){return t==e.expression.id}:t;return n(this)&&e.push(this),this.subResults&&(e=_.reduce(this.subResults,function(t,e){return t.concat(e.findAll(n))},e)),e},e.prototype.resultAt=function(t,e){if(t<0||t>this.getLength())return[];if(null!=e){if(_.isString(e)){if(e==this.expression.id)return[this]}else if(e(this))return[this]}else{var n=null==this.value&&null==this.subResults?this.input:this.value;if(null!=n)return[this]}if(null!=this.subResults){for(var s=[],i=0;i<this.subResults.length;i++){var o=this.subResults[i];if(s=s.concat(o.resultAt(t,e)),t-=o.getLength(),t<0)break}return s}return[]},e.prototype.getExpect=function(){return null==this.value&&null==this.subResults?[this]:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t.concat(e.getExpect())},[]):[]},e.prototype.getBestExpect=function(){var t=this.getExpect(),e=_.groupBy(t,function(t){return t.input}),n=_.last(_.keys(e).sort(function(t,e){return e.length-t.length})),s=e[n],e=_.groupBy(s,function(t){return t.expression.id});return _.map(e,function(t){return _.chain(t).map(function(t){return{path:t.path().length,result:t}}).sortBy("path").pluck("result").first().value()})},e.prototype.getHumanReadableExpect=function(){var t=this.getBestExpect(),e=t.length>0?_.last(t).input:"";return"Expected "+_.map(t,function(t){return t.getHumanReadable()}).join(" or ")+" but "+(e.length>0?JSON.stringify(e[0]):"end of input")+" found."},e.prototype.before=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return this.parent.before()+_.chain(this.parent.subResults).first(t).map(function(t){return t.toString()}).join("").value()},e.prototype.after=function(){if(null==this.parent)return"";var t=_.indexOf(this.parent.subResults,this);return _.chain(this.parent.subResults).last(this.parent.subResults.length-t-1).map(function(t){return t.toString()}).join("").value()+this.parent.after()},e.prototype.getLength=function(){return null!=this.value?this.value.length:null!=this.subResults?_.reduce(this.subResults,function(t,e){return t+e.getLength()},0):this.input.length},e.prototype.toHtmlElement=function(){var t=document.createElement("span"),e=null!=this.expression?this.expression.id:null;return null!=e&&t.setAttribute("data-id",e),t.setAttribute("data-success",this.isSuccess().toString()),null!=this.value?(t.appendChild(document.createTextNode(this.value)),t.setAttribute("data-value",this.value)):null!=this.subResults?_.each(this.subResults,function(e){t.appendChild(e.toHtmlElement())}):(t.appendChild(document.createTextNode(this.input)),t.setAttribute("data-input",this.input),t.className="magic-box-error"+(this.input.length>0?"":" magic-box-error-empty")),t.result=this,t},e.prototype.clean=function(t){if(null!=t||!this.isSuccess()){t=t||_.last(this.getBestExpect()).path(this);var n=_.first(t);if(null!=n){var s=_.indexOf(this.subResults,n),i=s==-1?[]:_.map(_.first(this.subResults,s),function(t){return t.clean()});return i.push(n.clean(_.rest(t))),new e(i,this.expression,this.input)}return new e(null,this.expression,this.input)}return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clean()}),this.expression,this.input):void 0},e.prototype.clone=function(){return null!=this.value?new e(this.value,this.expression,this.input):null!=this.subResults?new e(_.map(this.subResults,function(t){return t.clone()}),this.expression,this.input):new e(null,this.expression,this.input)},e.prototype.toString=function(){return null!=this.value?this.value:null!=this.subResults?_.map(this.subResults,function(t){return t.toString()}).join(""):this.input},e.prototype.getHumanReadable=function(){return this.expression instanceof t.ExpressionConstant?JSON.stringify(this.expression.value):this.expression.id},e}();t.Result=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(n){e.call(this,[n],t.ExpressionEndOfInput,n.input);var s=new t.Result(null,t.ExpressionEndOfInput,n.input.substr(n.getLength()));s.parent=this,this.subResults.push(s)}return __extends(n,e),n}(t.Result);t.EndOfInputResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){var o=this;e.call(this,null!=t?[t]:null,n,s),this.result=t,this.expression=n,this.input=s,this.failAttempt=i,_.forEach(this.failAttempt,function(t){t.parent=o})}return __extends(n,e),n.prototype.getExpect=function(){var t=this,e=[];return null!=this.result&&(e=this.result.getExpect()),e=_.reduce(this.failAttempt,function(t,e){return t.concat(e.getExpect())},e),e.length>0&&_.all(e,function(e){return e.input==t.input})?[this]:e},n.prototype.clean=function(e){if(null!=e||!this.isSuccess()){e=_.rest(e||_.last(this.getBestExpect()).path(this));var n=_.first(e);return null==n?new t.Result(null,this.expression,this.input):new t.Result([n.clean(_.rest(e))],this.expression,this.input)}return new t.Result(_.map(this.result.subResults,function(t){return t.clean()}),this.expression,this.input)},n}(t.Result);t.OptionResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(e){function n(t,n,s,i){e.call(this,t,n,s),this.results=t,this.expression=n,this.input=s,_.last(t)!=i&&(this.failAttempt=i,null!=this.failAttempt&&(this.failAttempt.parent=this))}return __extends(n,e),n.prototype.getExpect=function(){var t=e.prototype.getExpect.call(this);return null!=this.failAttempt?t.concat(this.failAttempt.getExpect()):t},n.prototype.clean=function(n){if(null!=this.failAttempt&&(null!=n||!this.isSuccess())){n=n||_.last(this.getBestExpect()).path(this);var s=_.first(n);if(null!=s&&s==this.failAttempt){var i=_.last(this.subResults),o=_.map(null!=i&&i.isSuccess()?this.subResults:_.initial(this.subResults),function(t){return t.clean()});return o.push(s.clean(_.rest(n))),new t.Result(o,this.expression,this.input)}}return e.prototype.clean.call(this,n)},n}(t.Result);t.RefResult=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=0==e.indexOf(this.value),i=new t.Result(s?this.value:null,this,e);return s&&n&&e.length>this.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.value},e}();t.ExpressionConstant=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.ExpressionEndOfInput={id:"end of input",parse:null}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function t(t,e,n){this.func=t,this.id=e,this.grammar=n}return t.prototype.parse=function(t,e){return this.func(t,e,this)},t.prototype.toString=function(){return this.id},t}();t.ExpressionFunction=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){if(this.parts=t,this.id=e,0==t.length)throw JSON.stringify(e)+" should have at least 1 parts"}return e.prototype.parse=function(e,n){for(var s,i=[],o=e,r=0;r<this.parts.length;r++){var u=this.parts[r];if(s=u.parse(o,n&&r==this.parts.length-1),i.push(s),!s.isSuccess())break;o=o.substr(s.getLength())}return new t.Result(i,this,e)},e.prototype.toString=function(){return this.id},e}();t.ExpressionList=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e){this.parts=t,this.id=e}return e.prototype.parse=function(e,n){for(var s=[],i=0;i<this.parts.length;i++){var o=this.parts[i].parse(e,n);if(o.isSuccess())return new t.OptionResult(o,this,e,s);s.push(o)}return new t.OptionResult(null,this,e,s)},e.prototype.toString=function(){return this.id},e}();t.ExpressionOptions=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n,s){this.ref=t,this.occurrence=e,this.id=n,this.grammar=s}return e.prototype.parse=function(t,e){var n=this.grammar.getExpression(this.ref);if(null==n)throw"Expression not found:"+this.ref;return"?"==this.occurrence||null==this.occurrence?this.parseOnce(t,e,n):this.parseMany(t,e,n)},e.prototype.parseOnce=function(e,n,s){var i=s.parse(e,n),o=i.isSuccess();return o||"?"!=this.occurrence?new t.RefResult([i],this,e,o?null:i):n?0==e.length?new t.RefResult([],this,e,i):_.all(i.getBestExpect(),function(e){return e.expression==t.ExpressionEndOfInput})?new t.RefResult([new t.Result(null,t.ExpressionEndOfInput,e)],this,e,i):i:new t.RefResult([],this,e,null)},e.prototype.parseMany=function(e,n,s){var i,o,r=[],u=e;do i=s.parse(u,!1),o=i.isSuccess(),o&&(r.push(i),u=u.substr(i.getLength()));while(o&&i.input!=u);var a=_.isNumber(this.occurrence)?this.occurrence:"+"==this.occurrence?1:0;if(r.length<a)r.push(i);else if(n)if(r.length>0){var l=_.last(r);i=s.parse(l.input,!0),i.isSuccess()?r[r.length-1]=i:(r.push(new t.Result(null,t.ExpressionEndOfInput,l.input.substr(l.getLength()))),i=s.parse(l.input.substr(l.getLength()),!0))}else if(0!=e.length){var p=new t.Result(null,t.ExpressionEndOfInput,e);return new t.RefResult([p],this,e,i)}return new t.RefResult(r,this,e,i)},e.prototype.toString=function(){return this.id},e}();t.ExpressionRef=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(t,e,n){this.value=t,this.id=e}return e.prototype.parse=function(e,n){var s=e.match(this.value);null!=s&&0!=s.index&&(s=null);var i=new t.Result(null!=s?s[0]:null,this,e);return i.isSuccess()&&n&&e.length>i.value.length?new t.EndOfInputResult(i):i},e.prototype.toString=function(){return this.id},e}();t.ExpressionRegExp=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){void 0===n&&(n={}),this.expressions={},this.start=new t.ExpressionRef(e,null,"start",this),this.addExpressions(n)}return e.prototype.addExpressions=function(t){var e=this;_.each(t,function(t,n){e.addExpression(n,t)})},e.prototype.addExpression=function(t,n){if(t in this.expressions)throw"Grammar already contain the id:"+t;this.expressions[t]=e.buildExpression(n,t,this)},e.prototype.getExpression=function(t){return this.expressions[t]},e.prototype.parse=function(t){return this.start.parse(t,!0)},e.buildExpression=function(e,n,s){var i=typeof e;if("undefined"==i)throw"Invalid Expression: "+e;if(_.isString(e))return this.buildStringExpression(e,n,s);if(_.isArray(e))return new t.ExpressionOptions(_.map(e,function(e,i){return new t.ExpressionRef(e,null,n+"_"+i,s)}),n);if(_.isRegExp(e))return new t.ExpressionRegExp(e,n,s);if(_.isFunction(e))return new t.ExpressionFunction(e,n,s);throw"Invalid Expression: "+e},e.buildStringExpression=function(n,s,i){var o=e.stringMatch(n,e.spliter),r=_.map(o,function(e,n){if(e[1]){var o=e[1],r=e[3]?Number(e[3]):e[2]||null;return new t.ExpressionRef(o,r,s+"_"+n,i)}return new t.ExpressionConstant(e[4],s+"_"+n)});if(1==r.length){var u=r[0];return u.id=s,u}return new t.ExpressionList(r,s)},e.stringMatch=function(t,e){for(var n,s=[],i=new RegExp(e.source,"g");null!==(n=i.exec(t));)s.push(n);return s},e.spliter=/\[(\w+)(\*|\+|\?|\{([1-9][0-9]*)\})?\]|(.[^\[]*)/,e}();t.Grammar=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n,s){this.element=e,this.onchange=n,this.magicBox=s,this.hasFocus=!1,this.justPressedTab=!1,this.underlay=document.createElement("div"),this.underlay.className="magic-box-underlay",this.highlightContainer=document.createElement("span"),this.highlightContainer.className="magic-box-highlight-container",this.underlay.appendChild(this.highlightContainer),this.ghostTextContainer=document.createElement("span"),this.ghostTextContainer.className="magic-box-ghost-text",this.underlay.appendChild(this.ghostTextContainer),this.input=t.$$(e).find("input"),this.input?e.insertBefore(this.underlay,this.input):(this.input=document.createElement("input"),e.appendChild(this.underlay),e.appendChild(this.input)),this.input.spellcheck=!1,this.input.setAttribute("form","coveo-dummy-form"),this.input.setAttribute("autocomplete","off"),this.setupHandler()}return e.prototype.updateInput=function(){this.input.value!=this.result.input&&(this.input.value=this.result.input,this.hasFocus&&this.setCursor(this.getValue().length))},e.prototype.updateHighlight=function(){this.highlightContainer.innerHTML="",this.highlightContainer.appendChild(this.result.toHtmlElement())},e.prototype.updateWordCompletion=function(){this.ghostTextContainer.innerHTML="",null!=this.wordCompletion&&this.ghostTextContainer.appendChild(document.createTextNode(this.wordCompletion.substr(this.result.input.length)))},e.prototype.updateScroll=function(e){var n=this;void 0===e&&(e=!0);var s=function(){n.underlay.clientWidth<n.underlay.scrollWidth&&(n.underlay.style.visibility="hidden",n.underlay.scrollLeft=n.input.scrollLeft,n.underlay.scrollTop=n.input.scrollTop,n.underlay.style.visibility="visible"),n.updateScrollDefer=null,n.hasFocus&&n.updateScroll()};e?null==this.updateScrollDefer&&(this.updateScrollDefer=t.requestAnimationFrame(s)):s()},e.prototype.setResult=function(t,e){this.result=t,this.updateInput(),this.updateHighlight(),_.isUndefined(e)&&null!=this.wordCompletion&&0==this.wordCompletion.indexOf(this.result.input)?this.updateWordCompletion():this.setWordCompletion(e),this.updateScroll()},e.prototype.setWordCompletion=function(t){null!=t&&0!=t.toLowerCase().indexOf(this.result.input.toLowerCase())&&(t=null),this.wordCompletion=t,this.updateWordCompletion(),this.updateScroll()},e.prototype.setCursor=function(t){if(this.input.focus(),this.input.createTextRange){var e=this.input.createTextRange();e.move("character",t),e.select()}else null!=this.input.selectionStart&&(this.input.focus(),this.input.setSelectionRange(t,t))},e.prototype.getCursor=function(){return this.input.selectionStart},e.prototype.setupHandler=function(){var t=this;this.input.onblur=function(){t.hasFocus=!1,setTimeout(function(){t.hasFocus||t.onblur&&t.onblur()},300),t.updateScroll()},this.input.onfocus=function(){t.hasFocus||(t.hasFocus=!0,t.updateScroll(),t.onfocus&&t.onfocus())},this.input.onkeydown=function(e){t.keydown(e)},this.input.onkeyup=function(e){t.keyup(e)},this.input.onclick=function(){t.onchangecursor()},this.input.oncut=function(){setTimeout(function(){t.onInputChange()})},this.input.onpaste=function(){setTimeout(function(){t.onInputChange()})}},e.prototype.focus=function(){var t=this;this.hasFocus=!0,setTimeout(function(){t.input.focus(),t.setCursor(t.getValue().length)})},e.prototype.blur=function(){this.hasFocus&&this.input.blur()},e.prototype.keydown=function(e){var n=this;switch(e.keyCode||e.which){case 9:this.justPressedTab?this.blur():this.magicBox.hasSuggestions()&&e.preventDefault(),this.justPressedTab=!0;break;default:e.stopPropagation(),this.justPressedTab=!1,null==this.onkeydown||this.onkeydown(e.keyCode||e.which)?t.requestAnimationFrame(function(){n.onInputChange()}):e.preventDefault()}},e.prototype.keyup=function(t){switch(t.keyCode||t.which){case 9:this.tabPress();break;case 37:case 39:this.onchangecursor();break;default:null==this.onkeydown||this.onkeyup(t.keyCode||t.which)?this.onInputChange():t.preventDefault()}},e.prototype.tabPress=function(){null!=this.wordCompletion&&(this.input.value=this.wordCompletion),this.ontabpress&&this.ontabpress(),this.magicBox.showSuggestion()},e.prototype.onInputChange=function(){this.result.input!=this.input.value&&this.onchange(this.input.value,!1)},e.prototype.getValue=function(){return this.input.value},e.prototype.getWordCompletion=function(){return this.wordCompletion},e}();t.InputManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e=function(){function e(e,n){var s=this;this.element=e,this.options=_.defaults(n,{selectableClass:"magic-box-suggestion",selectedClass:"magic-box-selected"}),void 0==this.options.timeout&&(this.options.timeout=500),this.hasSuggestions=!1,t.$$(this.element).on("mouseover",function(t){s.handleMouseOver(t)}),t.$$(this.element).on("mouseout",function(t){s.handleMouseOut(t)})}return e.prototype.handleMouseOver=function(e){var n=t.$$(e.target),s=n.parents(this.options.selectableClass);n.hasClass(this.options.selectableClass)?this.addSelectedClass(n.el):s.length>0&&this.element.contains(s[0])&&this.addSelectedClass(s[0])},e.prototype.handleMouseOut=function(e){var n=t.$$(e.target),s=n.parents(this.options.selectableClass);if(e.relatedTarget){var i=t.$$(e.relatedTarget).parents(this.options.selectableClass);n.hasClass(this.options.selectedClass)&&!t.$$(e.relatedTarget).hasClass(this.options.selectableClass)?n.removeClass(this.options.selectedClass):0==i.length&&s.length>0&&t.$$(s[0]).removeClass(this.options.selectedClass)}else n.hasClass(this.options.selectedClass)?n.removeClass(this.options.selectedClass):s.length>0&&t.$$(s[0]).removeClass(this.options.selectedClass)},e.prototype.moveDown=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=s==-1?0:s+1}else s=0;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),this.returnMoved(e)},e.prototype.moveUp=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0),n=this.element.getElementsByClassName(this.options.selectableClass),s=-1;if(null!=e){t.$$(e).removeClass(this.options.selectedClass);for(var i=0;i<n.length;i++)if(e==n.item(i)){s=i;break}s=s==-1?n.length-1:s-1}else s=n.length-1;return e=n.item(s),null!=e&&t.$$(e).addClass(this.options.selectedClass),this.returnMoved(e)},e.prototype.select=function(){var e=this.element.getElementsByClassName(this.options.selectedClass).item(0);return null!=e&&t.$$(e).trigger("keyboardSelect"),e},e.prototype.mergeSuggestions=function(t,e){var n,s=this,i=[];t=_.compact(t);var o=this.pendingSuggestion=new Promise(function(e,r){_.each(t,function(t){var e=!1;setTimeout(function(){e=!0},s.options.timeout),t.then(function(t){!e&&t&&(i=i.concat(t))})});var u=function(){n&&clearTimeout(n),0==i.length?e([]):o==s.pendingSuggestion||null==s.pendingSuggestion?e(i.sort(function(t,e){return e.index-t.index})):r("new request queued")};0==t.length&&u(),void 0==t&&u(),n=setTimeout(function(){u()},s.options.timeout),Promise.all(t).then(function(){return u()})});o.then(function(t){return e&&e(t),s.updateSuggestions(t),t})["catch"](function(){return null})},e.prototype.updateSuggestions=function(e){var n=this;this.element.innerHTML="",this.element.className="magic-box-suggestions",_.each(e,function(e){var s=e.dom;if(s){t.$$(s).removeClass(n.options.selectedClass);var i=t.$$(s).find("."+n.options.selectableClass);t.$$(i).removeClass(n.options.selectedClass)}else{if(s=document.createElement("div"),s.className="magic-box-suggestion",null!=e.html)s.innerHTML=e.html;else if(null!=e.text)s.appendChild(document.createTextNode(e.text));else if(null!=e.separator){s.className="magic-box-suggestion-seperator";var o=document.createElement("div");o.className="magic-box-suggestion-seperator-label",o.appendChild(document.createTextNode(e.separator)),s.appendChild(o)}t.$$(s).on("click",function(){e.onSelect()}),t.$$(s).on("keyboardSelect",function(){e.onSelect()}),t.$$(s).addClass(n.options.selectableClass)}s.suggestion=e,n.element.appendChild(s)}),e.length>0?(t.$$(this.element).addClass("magic-box-hasSuggestion"),this.hasSuggestions=!0):(t.$$(this.element).removeClass("magic-box-hasSuggestion"),this.hasSuggestions=!1)},e.prototype.returnMoved=function(e){if(null!=e){if(e.suggestion)return e.suggestion;if(e["no-text-suggestion"])return null;if(e instanceof HTMLElement)return{text:t.$$(e).text()}}return null},e.prototype.addSelectedClass=function(e){for(var n=this.element.getElementsByClassName(this.options.selectedClass),s=0;s<n.length;s++){var i=n.item(s);t.$$(i).removeClass(this.options.selectedClass)}t.$$(e).addClass(this.options.selectedClass)},e}();t.SuggestionsManager=e}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t){return t.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,"\\$&")}function s(t,e,s,o,r){if(void 0===s&&(s=!1),void 0===o&&(o="magic-box-hightlight"),void 0===r&&(r=""),0==e.length)return t;var u=n(e),a="("+u+")|(.*?(?="+u+")|.+)",l=new RegExp(a,s?"gi":"g");return t.replace(l,function(t,e,n){return i(null!=e?o:r,t)})}var i=function(t,e){return'<span class="'+t+'">'+_.escape(e)+"</span>"};e.highlightText=s;var o=function(){function e(t){this.el=t}return e.prototype.text=function(t){return t?void(void 0!=this.el.innerText?this.el.innerText=t:void 0!=this.el.textContent&&(this.el.textContent=t)):this.el.innerText||this.el.textContent},e.prototype.nodeListToArray=function(t){for(var e=t.length,n=new Array(e);e--;)n[e]=t.item(e);return n},e.prototype.empty=function(){for(;this.el.firstChild;)this.el.removeChild(this.el.firstChild)},e.prototype.show=function(){this.el.style.display="visible"},e.prototype.hide=function(){this.el.style.display="none"},e.prototype.toggle=function(t){void 0===t?"visible"==this.el.style.display?this.hide():this.show():t?this.show():this.hide()},e.prototype.find=function(t){return this.el.querySelector(t)},e.prototype.is=function(t){return this.el.tagName.toLowerCase()==t.toLowerCase()||(!("."!=t[0]||!this.hasClass(t.substr(1)))||"#"==t[0]&&this.el.getAttribute("id")==t.substr(1))},e.prototype.closest=function(e){for(var n=this.el,s=!1;!s&&(t.$$(n).hasClass(e)&&(s=!0),"body"!=n.tagName.toLowerCase())&&null!=n.parentElement;)s||(n=n.parentElement);if(s)return n},e.prototype.parent=function(t){if(void 0!=this.el.parentElement)return this.traverseAncestorForClass(this.el.parentElement,t)},e.prototype.parents=function(t){for(var n=[],s=this.parent(t);s;)n.push(s),s=new e(s).parent(t);return n},e.prototype.findAll=function(t){return this.nodeListToArray(this.el.querySelectorAll(t))},e.prototype.findClass=function(t){return"getElementsByClassName"in this.el?this.nodeListToArray(this.el.getElementsByClassName(t)):this.nodeListToArray(this.el.querySelectorAll("."+t))},e.prototype.findId=function(t){return document.getElementById(t)},e.prototype.addClass=function(t){this.hasClass(t)||(this.el.className?this.el.className+=" "+t:this.el.className=t)},e.prototype.removeClass=function(t){this.el.className=this.el.className.replace(new RegExp("(^|\\s)"+t+"(\\s|\\b)","g"),"$1")},e.prototype.toggleClass=function(t,e){e?this.addClass(t):this.removeClass(t)},e.prototype.getClass=function(){return this.el.className.match(e.CLASS_NAME_REGEX)||[]},e.prototype.hasClass=function(t){return _.contains(this.getClass(),t)},e.prototype.detach=function(){this.el.parentElement&&this.el.parentElement.removeChild(this.el)},e.prototype.on=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.on(t,n)});else{var i=this.getJQuery();if(i)i(this.el).on(t,n);else if(this.el.addEventListener){var o=function(t){n(t,t.detail)};e.handlers.push({eventHandle:n,fn:o}),this.el.addEventListener(t,o,!1)}else this.el.on&&this.el.on("on"+t,n)}},e.prototype.one=function(t,e){var n=this;if(_.isArray(t))_.each(t,function(t){n.one(t,e)});else{var s=function(i){return n.off(t,s),e(i)};this.on(t,s)}},e.prototype.off=function(t,n){var s=this;if(_.isArray(t))_.each(t,function(t){s.off(t,n)});else{var i=this.getJQuery();if(i)i(this.el).off(t,n);else if(this.el.removeEventListener){var o=0,r=_.find(e.handlers,function(t,e){if(t.eventHandle==n)return o=e,!0});r&&(this.el.removeEventListener(t,r.fn,!1),e.handlers.splice(o,1))}else this.el.off&&this.el.off("on"+t,n)}},e.prototype.trigger=function(t,e){var n=this.getJQuery();if(n)n(this.el).trigger(t,e);else if(void 0!==CustomEvent){var s=new CustomEvent(t,{detail:e,bubbles:!0});this.el.dispatchEvent(s)}},e.prototype.isEmpty=function(){return e.ONLY_WHITE_SPACE_REGEX.test(this.el.innerHTML)},e.prototype.isDescendant=function(t){for(var e=this.el.parentNode;null!=e;){if(e==t)return!0;e=e.parentNode}return!1},e.prototype.traverseAncestorForClass=function(e,n){void 0===e&&(e=this.el),0==n.indexOf(".")&&(n=n.substr(1));for(var s=!1;!s&&(t.$$(e).hasClass(n)&&(s=!0),"body"!=e.tagName.toLowerCase())&&null!=e.parentElement;)s||(e=e.parentElement);if(s)return e},e.prototype.getJQuery=function(){return void 0!=window.jQuery&&window.jQuery},e.CLASS_NAME_REGEX=/-?[_a-zA-Z]+[_a-zA-Z0-9-]*/g,e.ONLY_WHITE_SPACE_REGEX=/^\s*$/,e.handlers=[],e}();e.Dom=o}(e=t.Utils||(t.Utils={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){t.$$=function(e){return window.Coveo&&window.Coveo.$$?window.Coveo.$$(e):new t.Utils.Dom(e)}}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){function n(t,e,n,s){_.each(s.expressions,function(e){_.contains(t,e)||t.push(e)}),_.each(s.basicExpressions,function(t){_.contains(e,t)||e.push(t)}),_.each(s.grammars,function(t,e){if(e in n){if(!_.isArray(n[e])||!_.isArray(t))throw _.each(t,function(t){n[e].push(t)}),"Can not merge "+e+"("+new String(t)+" => "+new String(n[e])+")";_.each(t,function(t){n[e].push(t)})}else n[e]=t})}function s(){for(var t=[],e=0;e<arguments.length;e++)t[e-0]=arguments[e];for(var s=[],i=[],o={Start:["Expressions","Empty"],Expressions:"[OptionalSpaces][Expression][ExpressionsList*][OptionalSpaces]",ExpressionsList:"[Spaces][Expression]",Expression:s,BasicExpression:i,OptionalSpaces:/ */,Spaces:/ +/,Empty:/(?!.)/},r=0;r<t.length;r++)n(s,i,o,t[r]),_.each(t[r].include,function(e){_.contains(t,e)||t.push(e)});return s.push("BasicExpression"),{start:"Start",expressions:o}}function i(){for(var e=[],n=0;n<arguments.length;n++)e[n-0]=arguments[n];var i=s.apply(this,e);return new t.Grammar(i.start,i.expressions)}e.Expressions=s,e.ExpressionsGrammar=i}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(e){e.notWordStart=" ()[],$@'\"",e.notInWord=" ()[],:",e.Basic={basicExpressions:["Word","DoubleQuoted"],grammars:{DoubleQuoted:'"[NotDoubleQuote]"',NotDoubleQuote:/[^"]*/,SingleQuoted:"'[NotSingleQuote]'",NotSingleQuote:/[^']*/,Number:/[0-9]+/,Word:function(n,s,i){var o=new RegExp("[^"+e.notWordStart.replace(/(.)/g,"\\$1")+"][^"+e.notInWord.replace(/(.)/g,"\\$1")+"]*"),r=n.match(o);null!=r&&0!=r.index&&(r=null);var u=new t.Result(null!=r?r[0]:null,i,n);return u.isSuccess()&&s&&n.length>u.value.length?new t.EndOfInputResult(u):u}}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.SubExpression={basicExpressions:["SubExpression"],grammars:{SubExpression:"([Expressions])"}}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Date={grammars:{Date:"[DateYear]/[DateMonth]/[DateDay]",DateYear:/([0-9]{4})/,DateMonth:/(1[0-2]|0?[1-9])/,DateDay:/([1-2][0-9]|3[0-1]|0?[1-9])/,DateRange:"[Date][Spaces?]..[Spaces?][Date]",DateRelative:["DateRelativeNegative","DateRelativeTerm"],DateRelativeTerm:/now|today|yesterday/,DateRelativeNegative:"[DateRelativeTerm][DateRelativeNegativeRef]",DateRelativeNegativeRef:/([\-\+][0-9]+(s|m|h|d|mo|y))/},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Field={basicExpressions:["FieldSimpleQuery","FieldQuery","Field"],grammars:{FieldQuery:"[Field][OptionalSpaces][FieldQueryOperation]",FieldQueryOperation:["FieldQueryValue","FieldQueryNumeric"],FieldQueryValue:"[FieldOperator][OptionalSpaces][FieldValue]",FieldQueryNumeric:"[FieldOperatorNumeric][OptionalSpaces][FieldValueNumeric]",FieldSimpleQuery:"[FieldName]:[OptionalSpaces][FieldValue]",Field:"@[FieldName]",FieldName:/[a-zA-Z][a-zA-Z0-9\.\_]*/,FieldOperator:/==|=|<>/,FieldOperatorNumeric:/<=|>=|<|>/,FieldValue:["DateRange","NumberRange","DateRelative","Date","Number","FieldValueList","FieldValueString"],FieldValueNumeric:["DateRelative","Date","Number"],FieldValueString:["DoubleQuoted","FieldValueNotQuoted"],FieldValueList:"([FieldValueString][FieldValueStringList*])",FieldValueStringList:"[FieldValueSeparator][FieldValueString]",FieldValueSeparator:/ *, */,FieldValueNotQuoted:/[^ \(\),]+/,NumberRange:"[Number][Spaces?]..[Spaces?][Number]"},include:[t.Date,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.QueryExtension={basicExpressions:["QueryExtension"],grammars:{QueryExtension:"$[QueryExtensionName]([QueryExtensionArguments])",QueryExtensionName:/\w+/,QueryExtensionArguments:"[QueryExtensionArgumentList*][QueryExtensionArgument]",QueryExtensionArgumentList:"[QueryExtensionArgument][Spaces?],[Spaces?]",QueryExtensionArgument:"[QueryExtensionArgumentName]:[Spaces?][QueryExtensionArgumentValue]",QueryExtensionArgumentName:/\w+/,QueryExtensionArgumentValue:["SingleQuoted","Expressions"]},include:[t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.NestedQuery={basicExpressions:["NestedQuery"],grammars:{NestedQuery:"[[NestedField][OptionalSpaces][Expressions]]",NestedField:"[[Field]]",FieldValue:["NestedQuery"]},include:[t.Field]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){var e;!function(t){t.Complete={include:[t.NestedQuery,t.QueryExtension,t.SubExpression,t.Field,t.Basic]}}(e=t.Grammars||(t.Grammars={}))}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));var Coveo;!function(t){var e;!function(t){function e(t,e,n){return new s(t,e,n)}function n(t){return"requestAnimationFrame"in window?window.requestAnimationFrame(t):setTimeout(t)}var s=function(){function e(e,n,s){var i=this;void 0===s&&(s={}),this.element=e,this.grammar=n,this.options=s,this.lastSuggestions=[],_.isUndefined(this.options.inline)&&(this.options.inline=!1),t.$$(e).addClass("magic-box"),this.options.inline&&t.$$(e).addClass("magic-box-inline"),this.result=this.grammar.parse(""),this.displayedResult=this.result.clean(),this.clearDom=document.createElement("div"),this.clearDom.className="magic-box-clear";var o=document.createElement("div");o.className="magic-box-icon",this.clearDom.appendChild(o);var r=t.$$(e).find(".magic-box-input");r?e.insertBefore(this.clearDom,r):(r=document.createElement("div"),
+	r.className="magic-box-input",e.appendChild(this.clearDom),e.appendChild(r)),this.inputManager=new t.InputManager(r,function(t,e){e?(i.setText(t),i.onselect&&i.onselect(i.getFirstSuggestionText())):(i.setText(t),i.showSuggestion(),i.onchange&&i.onchange())},this),this.inputManager.ontabpress=function(){i.ontabpress&&i.ontabpress()};var u=this.inputManager.getValue();u&&(this.displayedResult.input=u),this.inputManager.setResult(this.displayedResult);var a=document.createElement("div");a.className="magic-box-suggestions",this.element.appendChild(a),this.suggestionsManager=new t.SuggestionsManager(a,{selectableClass:this.options.selectableSuggestionClass,selectedClass:this.options.selectedSuggestionClass,timeout:this.options.suggestionTimeout}),this.setupHandler()}return e.prototype.getResult=function(){return this.result},e.prototype.getDisplayedResult=function(){return this.displayedResult},e.prototype.setText=function(e){t.$$(this.element).toggleClass("magic-box-notEmpty",e.length>0),this.result=this.grammar.parse(e),this.displayedResult=this.result.clean(),this.inputManager.setResult(this.displayedResult)},e.prototype.setCursor=function(t){this.inputManager.setCursor(t)},e.prototype.getCursor=function(){return this.inputManager.getCursor()},e.prototype.resultAtCursor=function(t){return this.displayedResult.resultAt(this.getCursor(),t)},e.prototype.setupHandler=function(){var e=this;this.inputManager.onblur=function(){t.$$(e.element).removeClass("magic-box-hasFocus"),e.onblur&&e.onblur(),e.options.inline||e.clearSuggestion()},this.inputManager.onfocus=function(){t.$$(e.element).addClass("magic-box-hasFocus"),e.showSuggestion(),e.onfocus&&e.onfocus()},this.inputManager.onkeydown=function(t){if(38==t||40==t)return!1;if(13==t){var n=e.suggestionsManager.select();return null==n&&e.onsubmit&&e.onsubmit(),!1}return 27==t&&(e.clearSuggestion(),e.blur()),!0},this.inputManager.onchangecursor=function(){e.showSuggestion()},this.inputManager.onkeyup=function(t){if(38==t)e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveUp()),e.onchange&&e.onchange();else{if(40!=t)return!0;e.onmove&&e.onmove(),e.focusOnSuggestion(e.suggestionsManager.moveDown()),e.onchange&&e.onchange()}return!1},this.clearDom.onclick=function(){e.clear()}},e.prototype.showSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions(null!=this.getSuggestions?this.getSuggestions():[],function(e){t.updateSuggestion(e)})},e.prototype.updateSuggestion=function(t){var e=this;this.lastSuggestions=t;var n=this.getFirstSuggestionText();this.inputManager.setWordCompletion(n&&n.text),this.onsuggestions&&this.onsuggestions(t),_.each(t,function(t){null==t.onSelect&&null!=t.text&&(t.onSelect=function(){e.setText(t.text),e.onselect&&e.onselect(t)})})},e.prototype.focus=function(){t.$$(this.element).addClass("magic-box-hasFocus"),this.inputManager.focus()},e.prototype.blur=function(){this.inputManager.blur()},e.prototype.clearSuggestion=function(){var t=this;this.suggestionsManager.mergeSuggestions([],function(e){t.updateSuggestion(e)}),this.inputManager.setWordCompletion(null)},e.prototype.focusOnSuggestion=function(t){null==t||null==t.text?(t=this.getFirstSuggestionText(),this.inputManager.setResult(this.displayedResult,t&&t.text)):this.inputManager.setResult(this.grammar.parse(t.text).clean(),t.text)},e.prototype.getFirstSuggestionText=function(){return _.find(this.lastSuggestions,function(t){return null!=t.text})},e.prototype.getText=function(){return this.inputManager.getValue()},e.prototype.getWordCompletion=function(){return this.inputManager.getWordCompletion()},e.prototype.clear=function(){this.setText(""),this.showSuggestion(),this.focus(),this.onclear&&this.onclear()},e.prototype.hasSuggestions=function(){return this.suggestionsManager.hasSuggestions},e}();t.Instance=s,t.create=e,t.requestAnimationFrame=n}(e=t.MagicBox||(t.MagicBox={}))}(Coveo||(Coveo={}));
 	
 	/*** EXPORTS FROM exports-loader ***/
 	module.exports = Coveo.MagicBox;
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	!function(){"use strict";var t,e,n="undefined",r="string",i=self.navigator,o=String,a=Object.prototype.hasOwnProperty,l={},u={},s=!1,f=!0,c=/^\s*application\/(?:vnd\.oftn\.|x-)?l10n\+json\s*(?:$|;)/i,p="locale",g="defaultLocale",h="toLocaleString",y="toLowerCase",v=Array.prototype.indexOf||function(t){for(var e=this.length,n=0;e>n;n++)if(n in this&&this[n]===t)return n;return-1},d=function(e){var n=new t;return n.open("GET",e,s),n.send(null),200!==n.status?(setTimeout(function(){var t=new Error("Unable to load localization data: "+e);throw t.name="Localization Error",t},0),{}):JSON.parse(n.responseText)},m=o[h]=function(t){if(arguments.length>0&&"number"!=typeof t)if(typeof t===r)m(d(t));else if(t===s)u={};else{var e,n,i;for(e in t)if(a.call(t,e)){if(n=t[e],e=e[y](),e in u&&n!==s||(u[e]={}),n===s)continue;if(typeof n===r){if(0!==o[p][y]().indexOf(e)){e in l||(l[e]=[]),l[e].push(n);continue}n=d(n)}for(i in n)a.call(n,i)&&(u[e][i]=n[i])}}return Function.prototype[h].apply(o,arguments)},w=function(t){for(var e,n=l[t],r=0,i=n.length;i>r;r++)e={},e[t]=d(n[r]),m(e);delete l[t]},b=o.prototype[h]=function(){var t,n=e,r=o[n?g:p],i=r[y]().split("-"),a=i.length,c=this.valueOf();e=s;do if(t=i.slice(0,a).join("-"),t in l&&w(t),t in u&&c in u[t])return u[t][c];while(a-->1);return!n&&o[g]?(e=f,b.call(c)):c};if(typeof XMLHttpRequest===n&&typeof ActiveXObject!==n){var L=ActiveXObject;t=function(){try{return new L("Msxml2.XMLHTTP.6.0")}catch(t){}try{return new L("Msxml2.XMLHTTP.3.0")}catch(e){}try{return new L("Msxml2.XMLHTTP")}catch(n){}throw new Error("XMLHttpRequest not supported by this browser.")}}else t=XMLHttpRequest;if(o[g]=o[g]||"",o[p]=i&&(i.language||i.userLanguage)||"",typeof document!==n)for(var T,M=document.getElementsByTagName("link"),O=M.length;O--;){var X=M[O],x=(X.getAttribute("rel")||"")[y]().split(/\s+/);c.test(X.type)&&(-1!==v.call(x,"localizations")?m(X.getAttribute("href")):-1!==v.call(x,"localization")&&(T={},T[(X.getAttribute("hreflang")||"")[y]()]=X.getAttribute("href"),m(T)))}}();
 	
 	/*** EXPORTS FROM exports-loader ***/
 	module.exports = window.String.toLocaleString;
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Globalize = __webpack_require__(28);
 	var merge = function (obj1, obj2) {
 	    var obj3 = {};
@@ -5714,6 +5771,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "AlphaDescending": "Value Descending",
 	    "ChiSquare": "Chi Square",
 	    "Nosort": "No Sort",
+	    "NosortDescription": "Do not sort the values. The values will be returned in a random order.",
 	    "RelativeFrequency": "Relative Frequency",
 	    "RelativeFrequencyDescription": "Sort based on the relative frequency of values. Less common values will appear higher.",
 	    "DateDistribution": "Date distribution",
@@ -5934,6 +5992,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "DoesNotContain": "does not contain",
 	    "Matches": "matches",
 	    "Bytes": "bytes",
+	    "List": "List",
+	    "Card": "Card",
+	    "Table": "Table",
 	    "objecttype_people": "People",
 	    "objecttype_message": "Message",
 	    "objecttype_feed": "RSS Feed",
@@ -5945,6 +6006,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "objecttype_annotation": "Note",
 	    "objecttype_campaign": "Campaign",
 	    "objecttype_case": "Case",
+	    "objecttype_contentversion": "Salesforce File",
 	    "objecttype_contact": "Contact",
 	    "objecttype_contract": "Contract",
 	    "objecttype_event": "Event",
@@ -5980,6 +6042,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "objecttype_kbarticle": "Article",
 	    "objecttype_kbarticlecomment": "Article Comment",
 	    "objecttype_knowledgearticle": "Knowledge Article",
+	    "filetype_box user": "Box User",
 	    "filetype_html": "HTML File",
 	    "filetype_wiki": "Wiki",
 	    "filetype_webscraperwebpage": "Web Page",
@@ -5987,15 +6050,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "filetype_folder": "Folder",
 	    "filetype_txt": "Text",
 	    "filetype_zip": "Zip File",
+	    "filetype_olefile": "OLE file",
+	    "filetype_gmailmessage": "Gmail Message",
 	    "filetype_pdf": "PDF File",
+	    "filetype_swf": "Flash File",
 	    "filetype_xml": "XML File",
+	    "filetype_vsd": "Visio",
+	    "filetype_svg": "SVG",
+	    "filetype_svm": "Open Office",
+	    "filetype_rssitem": "RSS feed",
 	    "filetype_doc": "Document",
+	    "filetype_docx": "Microsoft Word Document",
 	    "filetype_xls": "Spreadsheet Document",
 	    "filetype_ppt": "Presentation Document",
 	    "filetype_video": "Video",
 	    "filetype_youtube": "YouTube video",
 	    "filetype_saleforceitem": "Salesforce",
 	    "filetype_dynamicscrmitem": "Dynamics CRM",
+	    "filetype_salesforceitem": "Salesforce",
+	    "filetype_odt": "Open Text Document",
+	    "filetype_cfpage": "Confluence Page",
+	    "filetype_cfcomment": "Confluence Comment",
+	    "filetype_cfspace": "Confluence Space",
+	    "filetype_cfblogentry": "Confluence Blog Entry",
+	    "filetype_confluencespace": "Confluence Space",
 	    "filetype_exchangemessage": "Message",
 	    "filetype_exchangeappointment": "Appointment",
 	    "filetype_exchangenote": "Note",
@@ -6011,11 +6089,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "filetype_exchangerssfeed": "RSS Feed",
 	    "filetype_exchangejunkmessage": "Junk Email",
 	    "filetype_exchangeofficecom": "Communications",
-	    "filetype_lithiummessage": "Message",
-	    "filetype_lithiumthread": "Thread",
-	    "filetype_lithiumboard": "Board",
-	    "filetype_lithiumcategory": "Category",
-	    "filetype_lithiumcommunity": "Community",
+	    "filetype_lithiummessage": "Lithium Message",
+	    "filetype_lithiumthread": "Lithium Thread",
+	    "filetype_lithiumboard": "Lithium Board",
+	    "filetype_lithiumcategory": "Lithium Category",
+	    "filetype_lithiumcommunity": "Lithium Community",
 	    "filetype_spportal": "Portal",
 	    "filetype_spsite": "Site",
 	    "filetype_spuserprofile": "SharePoint User",
@@ -6152,27 +6230,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.setLanguageAfterPageLoaded = setLanguageAfterPageLoaded;
 
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Globalize"] = __webpack_require__(29);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
-/***/ },
+/***/ }),
 /* 29 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*! globalize - v0.1.1 - 2013-04-30
 	* https://github.com/jquery/globalize
 	* Copyright 2013 ; Licensed MIT */
 	var Globalize = (function(e,r){var t,n,a,s,u,l,i,c,o,f,d,p,h,g,b,m,y,M,v,k,z,F,A,x;t=function(e){return new t.prototype.init(e)}, true?module.exports=t:e.Globalize=t,t.cultures={},t.prototype={constructor:t,init:function(e){return this.cultures=t.cultures,this.cultureSelector=e,this}},t.prototype.init.prototype=t.prototype,t.cultures["default"]={name:"en",englishName:"English",nativeName:"English",isRTL:!1,language:"en",numberFormat:{pattern:["-n"],decimals:2,",":",",".":".",groupSizes:[3],"+":"+","-":"-",NaN:"NaN",negativeInfinity:"-Infinity",positiveInfinity:"Infinity",percent:{pattern:["-n %","n %"],decimals:2,groupSizes:[3],",":",",".":".",symbol:"%"},currency:{pattern:["($n)","$n"],decimals:2,groupSizes:[3],",":",",".":".",symbol:"$"}},calendars:{standard:{name:"Gregorian_USEnglish","/":"/",":":":",firstDay:0,days:{names:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],namesAbbr:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],namesShort:["Su","Mo","Tu","We","Th","Fr","Sa"]},months:{names:["January","February","March","April","May","June","July","August","September","October","November","December",""],namesAbbr:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""]},AM:["AM","am","AM"],PM:["PM","pm","PM"],eras:[{name:"A.D.",start:null,offset:0}],twoDigitYearMax:2029,patterns:{d:"M/d/yyyy",D:"dddd, MMMM dd, yyyy",t:"h:mm tt",T:"h:mm:ss tt",f:"dddd, MMMM dd, yyyy h:mm tt",F:"dddd, MMMM dd, yyyy h:mm:ss tt",M:"MMMM dd",Y:"yyyy MMMM",S:"yyyy'-'MM'-'dd'T'HH':'mm':'ss"}}},messages:{}},t.cultures["default"].calendar=t.cultures["default"].calendars.standard,t.cultures.en=t.cultures["default"],t.cultureSelector="en",n=/^0x[a-f0-9]+$/i,a=/^[+\-]?infinity$/i,s=/^[+\-]?\d*\.?\d*(e[+\-]?\d+)?$/,u=/^\s+|\s+$/g,l=function(e,r){if(e.indexOf)return e.indexOf(r);for(var t=0,n=e.length;n>t;t++)if(e[t]===r)return t;return-1},i=function(e,r){return e.substr(e.length-r.length)===r},c=function(){var e,t,n,a,s,u,l=arguments[0]||{},i=1,p=arguments.length,h=!1;for("boolean"==typeof l&&(h=l,l=arguments[1]||{},i=2),"object"==typeof l||f(l)||(l={});p>i;i++)if(null!=(e=arguments[i]))for(t in e)n=l[t],a=e[t],l!==a&&(h&&a&&(d(a)||(s=o(a)))?(s?(s=!1,u=n&&o(n)?n:[]):u=n&&d(n)?n:{},l[t]=c(h,u,a)):a!==r&&(l[t]=a));return l},o=Array.isArray||function(e){return"[object Array]"===Object.prototype.toString.call(e)},f=function(e){return"[object Function]"===Object.prototype.toString.call(e)},d=function(e){return"[object Object]"===Object.prototype.toString.call(e)},p=function(e,r){return 0===e.indexOf(r)},h=function(e){return(e+"").replace(u,"")},g=function(e){return isNaN(e)?0/0:Math[0>e?"ceil":"floor"](e)},b=function(e,r,t){var n;for(n=e.length;r>n;n+=1)e=t?"0"+e:e+"0";return e},m=function(e,r){for(var t=0,n=!1,a=0,s=e.length;s>a;a++){var u=e.charAt(a);switch(u){case"'":n?r.push("'"):t++,n=!1;break;case"\\":n&&r.push("\\"),n=!n;break;default:r.push(u),n=!1}}return t},y=function(e,r){r=r||"F";var t,n=e.patterns,a=r.length;if(1===a){if(t=n[r],!t)throw"Invalid date format string '"+r+"'.";r=t}else 2===a&&"%"===r.charAt(0)&&(r=r.charAt(1));return r},M=function(e,r,t){function n(e,r){var t,n=e+"";return r>1&&r>n.length?(t=v[r-2]+n,t.substr(t.length-r,r)):t=n}function a(){return h||g?h:(h=A.test(r),g=!0,h)}function s(e,r){if(b)return b[r];switch(r){case 0:return e.getFullYear();case 1:return e.getMonth();case 2:return e.getDate();default:throw"Invalid part value "+r}}var u,l=t.calendar,i=l.convert;if(!r||!r.length||"i"===r){if(t&&t.name.length)if(i)u=M(e,l.patterns.F,t);else{var c=new Date(e.getTime()),o=z(e,l.eras);c.setFullYear(F(e,l,o)),u=c.toLocaleString()}else u=""+e;return u}var f=l.eras,d="s"===r;r=y(l,r),u=[];var p,h,g,b,v=["0","00","000"],A=/([^d]|^)(d|dd)([^d]|$)/g,x=0,I=k();for(!d&&i&&(b=i.fromGregorian(e));;){var S=I.lastIndex,w=I.exec(r),C=r.slice(S,w?w.index:r.length);if(x+=m(C,u),!w)break;if(x%2)u.push(w[0]);else{var D=w[0],H=D.length;switch(D){case"ddd":case"dddd":var O=3===H?l.days.namesAbbr:l.days.names;u.push(O[e.getDay()]);break;case"d":case"dd":h=!0,u.push(n(s(e,2),H));break;case"MMM":case"MMMM":var N=s(e,1);u.push(l.monthsGenitive&&a()?l.monthsGenitive[3===H?"namesAbbr":"names"][N]:l.months[3===H?"namesAbbr":"names"][N]);break;case"M":case"MM":u.push(n(s(e,1)+1,H));break;case"y":case"yy":case"yyyy":N=b?b[0]:F(e,l,z(e,f),d),4>H&&(N%=100),u.push(n(N,H));break;case"h":case"hh":p=e.getHours()%12,0===p&&(p=12),u.push(n(p,H));break;case"H":case"HH":u.push(n(e.getHours(),H));break;case"m":case"mm":u.push(n(e.getMinutes(),H));break;case"s":case"ss":u.push(n(e.getSeconds(),H));break;case"t":case"tt":N=12>e.getHours()?l.AM?l.AM[0]:" ":l.PM?l.PM[0]:" ",u.push(1===H?N.charAt(0):N);break;case"f":case"ff":case"fff":u.push(n(e.getMilliseconds(),3).substr(0,H));break;case"z":case"zz":p=e.getTimezoneOffset()/60,u.push((0>=p?"+":"-")+n(Math.floor(Math.abs(p)),H));break;case"zzz":p=e.getTimezoneOffset()/60,u.push((0>=p?"+":"-")+n(Math.floor(Math.abs(p)),2)+":"+n(Math.abs(e.getTimezoneOffset()%60),2));break;case"g":case"gg":l.eras&&u.push(l.eras[z(e,f)].name);break;case"/":u.push(l["/"]);break;default:throw"Invalid date format pattern '"+D+"'."}}}return u.join("")},function(){var e;e=function(e,r,t){var n=t.groupSizes,a=n[0],s=1,u=Math.pow(10,r),l=Math.round(e*u)/u;isFinite(l)||(l=e),e=l;var i=e+"",c="",o=i.split(/e/i),f=o.length>1?parseInt(o[1],10):0;i=o[0],o=i.split("."),i=o[0],c=o.length>1?o[1]:"",f>0?(c=b(c,f,!1),i+=c.slice(0,f),c=c.substr(f)):0>f&&(f=-f,i=b(i,f+1,!0),c=i.slice(-f,i.length)+c,i=i.slice(0,-f)),c=r>0?t["."]+(c.length>r?c.slice(0,r):b(c,r)):"";for(var d=i.length-1,p=t[","],h="";d>=0;){if(0===a||a>d)return i.slice(0,d+1)+(h.length?p+h+c:c);h=i.slice(d-a+1,d+1)+(h.length?p+h:""),d-=a,n.length>s&&(a=n[s],s++)}return i.slice(0,d+1)+p+h+c},v=function(r,t,n){if(!isFinite(r))return 1/0===r?n.numberFormat.positiveInfinity:r===-1/0?n.numberFormat.negativeInfinity:n.numberFormat.NaN;if(!t||"i"===t)return n.name.length?r.toLocaleString():""+r;t=t||"D";var a,s=n.numberFormat,u=Math.abs(r),l=-1;t.length>1&&(l=parseInt(t.slice(1),10));var i,c=t.charAt(0).toUpperCase();switch(c){case"D":a="n",u=g(u),-1!==l&&(u=b(""+u,l,!0)),0>r&&(u="-"+u);break;case"N":i=s;case"C":i=i||s.currency;case"P":i=i||s.percent,a=0>r?i.pattern[0]:i.pattern[1]||"n",-1===l&&(l=i.decimals),u=e(u*("P"===c?100:1),l,i);break;default:throw"Bad number format specifier: "+c}for(var o=/n|\$|-|%/g,f="";;){var d=o.lastIndex,p=o.exec(a);if(f+=a.slice(d,p?p.index:a.length),!p)break;switch(p[0]){case"n":f+=u;break;case"$":f+=s.currency.symbol;break;case"-":/[1-9]/.test(u)&&(f+=s["-"]);break;case"%":f+=s.percent.symbol}}return f}}(),k=function(){return/\/|dddd|ddd|dd|d|MMMM|MMM|MM|M|yyyy|yy|y|hh|h|HH|H|mm|m|ss|s|tt|t|fff|ff|f|zzz|zz|z|gg|g/g},z=function(e,r){if(!r)return 0;for(var t,n=e.getTime(),a=0,s=r.length;s>a;a++)if(t=r[a].start,null===t||n>=t)return a;return 0},F=function(e,r,t,n){var a=e.getFullYear();return!n&&r.eras&&(a-=r.eras[t].offset),a},function(){var e,r,t,n,a,s,u;e=function(e,r){if(100>r){var t=new Date,n=z(t),a=F(t,e,n),s=e.twoDigitYearMax;s="string"==typeof s?(new Date).getFullYear()%100+parseInt(s,10):s,r+=a-a%100,r>s&&(r-=100)}return r},r=function(e,r,t){var n,a=e.days,i=e._upperDays;return i||(e._upperDays=i=[u(a.names),u(a.namesAbbr),u(a.namesShort)]),r=s(r),t?(n=l(i[1],r),-1===n&&(n=l(i[2],r))):n=l(i[0],r),n},t=function(e,r,t){var n=e.months,a=e.monthsGenitive||e.months,i=e._upperMonths,c=e._upperMonthsGen;i||(e._upperMonths=i=[u(n.names),u(n.namesAbbr)],e._upperMonthsGen=c=[u(a.names),u(a.namesAbbr)]),r=s(r);var o=l(t?i[1]:i[0],r);return 0>o&&(o=l(t?c[1]:c[0],r)),o},n=function(e,r){var t=e._parseRegExp;if(t){var n=t[r];if(n)return n}else e._parseRegExp=t={};for(var a,s=y(e,r).replace(/([\^\$\.\*\+\?\|\[\]\(\)\{\}])/g,"\\\\$1"),u=["^"],l=[],i=0,c=0,o=k();null!==(a=o.exec(s));){var f=s.slice(i,a.index);if(i=o.lastIndex,c+=m(f,u),c%2)u.push(a[0]);else{var d,p=a[0],h=p.length;switch(p){case"dddd":case"ddd":case"MMMM":case"MMM":case"gg":case"g":d="(\\D+)";break;case"tt":case"t":d="(\\D*)";break;case"yyyy":case"fff":case"ff":case"f":d="(\\d{"+h+"})";break;case"dd":case"d":case"MM":case"M":case"yy":case"y":case"HH":case"H":case"hh":case"h":case"mm":case"m":case"ss":case"s":d="(\\d\\d?)";break;case"zzz":d="([+-]?\\d\\d?:\\d{2})";break;case"zz":case"z":d="([+-]?\\d\\d?)";break;case"/":d="(\\/)";break;default:throw"Invalid date format pattern '"+p+"'."}d&&u.push(d),l.push(a[0])}}m(s.slice(i),u),u.push("$");var g=u.join("").replace(/\s+/g,"\\s+"),b={regExp:g,groups:l};return t[r]=b},a=function(e,r,t){return r>e||e>t},s=function(e){return e.split("\u00a0").join(" ").toUpperCase()},u=function(e){for(var r=[],t=0,n=e.length;n>t;t++)r[t]=s(e[t]);return r},A=function(s,u,l){s=h(s);var i=l.calendar,c=n(i,u),o=RegExp(c.regExp).exec(s);if(null===o)return null;for(var f,d=c.groups,g=null,b=null,m=null,y=null,M=null,v=0,k=0,z=0,F=0,A=null,x=!1,I=0,S=d.length;S>I;I++){var w=o[I+1];if(w){var C=d[I],D=C.length,H=parseInt(w,10);switch(C){case"dd":case"d":if(y=H,a(y,1,31))return null;break;case"MMM":case"MMMM":if(m=t(i,w,3===D),a(m,0,11))return null;break;case"M":case"MM":if(m=H-1,a(m,0,11))return null;break;case"y":case"yy":case"yyyy":if(b=4>D?e(i,H):H,a(b,0,9999))return null;break;case"h":case"hh":if(v=H,12===v&&(v=0),a(v,0,11))return null;break;case"H":case"HH":if(v=H,a(v,0,23))return null;break;case"m":case"mm":if(k=H,a(k,0,59))return null;break;case"s":case"ss":if(z=H,a(z,0,59))return null;break;case"tt":case"t":if(x=i.PM&&(w===i.PM[0]||w===i.PM[1]||w===i.PM[2]),!x&&(!i.AM||w!==i.AM[0]&&w!==i.AM[1]&&w!==i.AM[2]))return null;break;case"f":case"ff":case"fff":if(F=H*Math.pow(10,3-D),a(F,0,999))return null;break;case"ddd":case"dddd":if(M=r(i,w,3===D),a(M,0,6))return null;break;case"zzz":var O=w.split(/:/);if(2!==O.length)return null;if(f=parseInt(O[0],10),a(f,-12,13))return null;var N=parseInt(O[1],10);if(a(N,0,59))return null;A=60*f+(p(w,"-")?-N:N);break;case"z":case"zz":if(f=H,a(f,-12,13))return null;A=60*f;break;case"g":case"gg":var T=w;if(!T||!i.eras)return null;T=h(T.toLowerCase());for(var j=0,$=i.eras.length;$>j;j++)if(T===i.eras[j].name.toLowerCase()){g=j;break}if(null===g)return null}}}var P,G=new Date,E=i.convert;if(P=E?E.fromGregorian(G)[0]:G.getFullYear(),null===b?b=P:i.eras&&(b+=i.eras[g||0].offset),null===m&&(m=0),null===y&&(y=1),E){if(G=E.toGregorian(b,m,y),null===G)return null}else{if(G.setFullYear(b,m,y),G.getDate()!==y)return null;if(null!==M&&G.getDay()!==M)return null}if(x&&12>v&&(v+=12),G.setHours(v,k,z,F),null!==A){var Y=G.getMinutes()-(A+G.getTimezoneOffset());G.setHours(G.getHours()+parseInt(Y/60,10),Y%60)}return G}}(),x=function(e,r,t){var n,a=r["-"],s=r["+"];switch(t){case"n -":a=" "+a,s=" "+s;case"n-":i(e,a)?n=["-",e.substr(0,e.length-a.length)]:i(e,s)&&(n=["+",e.substr(0,e.length-s.length)]);break;case"- n":a+=" ",s+=" ";case"-n":p(e,a)?n=["-",e.substr(a.length)]:p(e,s)&&(n=["+",e.substr(s.length)]);break;case"(n)":p(e,"(")&&i(e,")")&&(n=["-",e.substr(1,e.length-2)])}return n||["",e]},t.prototype.findClosestCulture=function(e){return t.findClosestCulture.call(this,e)},t.prototype.format=function(e,r,n){return t.format.call(this,e,r,n)},t.prototype.localize=function(e,r){return t.localize.call(this,e,r)},t.prototype.parseInt=function(e,r,n){return t.parseInt.call(this,e,r,n)},t.prototype.parseFloat=function(e,r,n){return t.parseFloat.call(this,e,r,n)},t.prototype.culture=function(e){return t.culture.call(this,e)},t.addCultureInfo=function(e,r,t){var n={},a=!1;"string"!=typeof e?(t=e,e=this.culture().name,n=this.cultures[e]):"string"!=typeof r?(t=r,a=null==this.cultures[e],n=this.cultures[e]||this.cultures["default"]):(a=!0,n=this.cultures[r]),this.cultures[e]=c(!0,{},n,t),a&&(this.cultures[e].calendar=this.cultures[e].calendars.standard)},t.findClosestCulture=function(e){var r;if(!e)return this.findClosestCulture(this.cultureSelector)||this.cultures["default"];if("string"==typeof e&&(e=e.split(",")),o(e)){var t,n,a=this.cultures,s=e,u=s.length,l=[];for(n=0;u>n;n++){e=h(s[n]);var i,c=e.split(";");t=h(c[0]),1===c.length?i=1:(e=h(c[1]),0===e.indexOf("q=")?(e=e.substr(2),i=parseFloat(e),i=isNaN(i)?0:i):i=1),l.push({lang:t,pri:i})}for(l.sort(function(e,r){return e.pri<r.pri?1:e.pri>r.pri?-1:0}),n=0;u>n;n++)if(t=l[n].lang,r=a[t])return r;for(n=0;u>n;n++)for(t=l[n].lang;;){var f=t.lastIndexOf("-");if(-1===f)break;if(t=t.substr(0,f),r=a[t])return r}for(n=0;u>n;n++){t=l[n].lang;for(var d in a){var p=a[d];if(p.language===t)return p}}}else if("object"==typeof e)return e;return r||null},t.format=function(e,r,t){var n=this.findClosestCulture(t);return e instanceof Date?e=M(e,r,n):"number"==typeof e&&(e=v(e,r,n)),e},t.localize=function(e,r){return this.findClosestCulture(r).messages[e]||this.cultures["default"].messages[e]},t.parseDate=function(e,r,t){t=this.findClosestCulture(t);var n,a,s;if(r){if("string"==typeof r&&(r=[r]),r.length)for(var u=0,l=r.length;l>u;u++){var i=r[u];if(i&&(n=A(e,i,t)))break}}else{s=t.calendar.patterns;for(a in s)if(n=A(e,s[a],t))break}return n||null},t.parseInt=function(e,r,n){return g(t.parseFloat(e,r,n))},t.parseFloat=function(e,r,t){"number"!=typeof r&&(t=r,r=10);var u=this.findClosestCulture(t),l=0/0,i=u.numberFormat;if(e.indexOf(u.numberFormat.currency.symbol)>-1&&(e=e.replace(u.numberFormat.currency.symbol,""),e=e.replace(u.numberFormat.currency["."],u.numberFormat["."])),e.indexOf(u.numberFormat.percent.symbol)>-1&&(e=e.replace(u.numberFormat.percent.symbol,"")),e=e.replace(/ /g,""),a.test(e))l=parseFloat(e);else if(!r&&n.test(e))l=parseInt(e,16);else{var c=x(e,i,i.pattern[0]),o=c[0],f=c[1];""===o&&"(n)"!==i.pattern[0]&&(c=x(e,i,"(n)"),o=c[0],f=c[1]),""===o&&"-n"!==i.pattern[0]&&(c=x(e,i,"-n"),o=c[0],f=c[1]),o=o||"+";var d,p,h=f.indexOf("e");0>h&&(h=f.indexOf("E")),0>h?(p=f,d=null):(p=f.substr(0,h),d=f.substr(h+1));var g,b,m=i["."],y=p.indexOf(m);0>y?(g=p,b=null):(g=p.substr(0,y),b=p.substr(y+m.length));var M=i[","];g=g.split(M).join("");var v=M.replace(/\u00A0/g," ");M!==v&&(g=g.split(v).join(""));var k=o+g;if(null!==b&&(k+="."+b),null!==d){var z=x(d,i,"-n");k+="e"+(z[0]||"+")+z[1]}s.test(k)&&(l=parseFloat(k))}return l},t.culture=function(e){return e!==r&&(this.cultureSelector=e),this.findClosestCulture(e)||this.cultures["default"]}; return Globalize;}(this));
 
-/***/ },
+/***/ }),
 /* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	exports.Assert = Assert_1.Assert;
 	var Cache_1 = __webpack_require__(31);
@@ -6189,11 +6268,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.l = Strings_1.l;
 
 
-/***/ },
+/***/ }),
 /* 31 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Cache = (function () {
 	    function Cache(onEmpty) {
 	        this.onEmpty = onEmpty;
@@ -6215,11 +6295,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Cache = Cache;
 
 
-/***/ },
+/***/ }),
 /* 32 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	var Defer = (function () {
 	    function Defer() {
@@ -6256,11 +6337,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Defer = Defer;
 
 
-/***/ },
+/***/ }),
 /* 33 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var ExternalModulesShim_1 = __webpack_require__(23);
 	var _ = __webpack_require__(14);
 	String.toLocaleString = ExternalModulesShim_1.LocaleString;
@@ -6297,11 +6379,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
+/***/ }),
 /* 34 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
 	var Options = (function () {
@@ -6318,11 +6401,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Options = Options;
 
 
-/***/ },
+/***/ }),
 /* 35 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var L10N_1 = __webpack_require__(33);
 	function l() {
 	    var params = [];
@@ -6335,11 +6419,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	;
 
 
-/***/ },
+/***/ }),
 /* 36 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var AnalyticsEndpoint_1 = __webpack_require__(37);
 	exports.AnalyticsEndpoint = AnalyticsEndpoint_1.AnalyticsEndpoint;
 	var EndpointCaller_1 = __webpack_require__(10);
@@ -6348,11 +6433,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryError = QueryError_1.QueryError;
 
 
-/***/ },
+/***/ }),
 /* 37 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Logger_1 = __webpack_require__(11);
 	var EndpointCaller_1 = __webpack_require__(10);
 	var Assert_1 = __webpack_require__(12);
@@ -6490,11 +6576,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.AnalyticsEndpoint = AnalyticsEndpoint;
 
 
-/***/ },
+/***/ }),
 /* 38 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	// Code originally taken from : https://developers.livechatinc.com/blog/setting-cookies-to-subdomains-in-javascript/
 	var Cookie = (function () {
 	    function Cookie() {
@@ -6560,11 +6647,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Cookie = Cookie;
 
 
-/***/ },
+/***/ }),
 /* 39 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var AdvancedSearchEvents_1 = __webpack_require__(40);
 	exports.AdvancedSearchEvents = AdvancedSearchEvents_1.AdvancedSearchEvents;
 	var AnalyticsEvents_1 = __webpack_require__(41);
@@ -6597,11 +6685,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents_1.StandaloneSearchInterfaceEvents;
 
 
-/***/ },
+/***/ }),
 /* 40 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	/**
 	 * This static class is there to contains the different string definition for all the events related to the {@link AdvancedSearch} component.
 	 */
@@ -6624,11 +6713,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.AdvancedSearchEvents = AdvancedSearchEvents;
 
 
-/***/ },
+/***/ }),
 /* 41 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	/**
 	 * This static class is there to contains the different string definition for all the events related to analytics.
 	 */
@@ -6651,11 +6741,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.AnalyticsEvents = AnalyticsEvents;
 
 
-/***/ },
+/***/ }),
 /* 42 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	/**
 	 * This static class is there to contains the different string definition for all the events related to {@link Breadcrumb}.
 	 */
@@ -6680,11 +6771,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.BreadcrumbEvents = BreadcrumbEvents;
 
 
-/***/ },
+/***/ }),
 /* 43 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var DebugEvents = (function () {
 	    function DebugEvents() {
 	    }
@@ -6694,11 +6786,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.DebugEvents = DebugEvents;
 
 
-/***/ },
+/***/ }),
 /* 44 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var ImageResultListEvents = (function () {
 	    function ImageResultListEvents() {
 	    }
@@ -6708,11 +6801,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ImageResultListEvents = ImageResultListEvents;
 
 
-/***/ },
+/***/ }),
 /* 45 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	/**
 	 * This static class is there to contain the different string definitions for all the events related to initialization.
 	 *
@@ -6774,12 +6868,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.InitializationEvents = InitializationEvents;
 
 
-/***/ },
+/***/ }),
 /* 46 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/// <reference path="../../lib/magic-box/index.d.ts" />
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var OmniboxEvents = (function () {
 	    function OmniboxEvents() {
 	    }
@@ -6793,11 +6888,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.OmniboxEvents = OmniboxEvents;
 
 
-/***/ },
+/***/ }),
 /* 47 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var PreferencesPanelEvents = (function () {
 	    function PreferencesPanelEvents() {
 	    }
@@ -6808,11 +6904,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.PreferencesPanelEvents = PreferencesPanelEvents;
 
 
-/***/ },
+/***/ }),
 /* 48 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	/**
 	 * This static class is there to contains the different string definition for all the events related to query.
 	 *
@@ -6949,11 +7046,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryEvents = QueryEvents;
 
 
-/***/ },
+/***/ }),
 /* 49 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var ResultListEvents = (function () {
 	    function ResultListEvents() {
 	    }
@@ -6966,11 +7064,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResultListEvents = ResultListEvents;
 
 
-/***/ },
+/***/ }),
 /* 50 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var ResultLayoutEvents = (function () {
 	    function ResultLayoutEvents() {
 	    }
@@ -6980,11 +7079,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResultLayoutEvents = ResultLayoutEvents;
 
 
-/***/ },
+/***/ }),
 /* 51 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var SearchAlertsEvents = (function () {
 	    function SearchAlertsEvents() {
 	    }
@@ -6997,11 +7097,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.SearchAlertsEvents = SearchAlertsEvents;
 
 
-/***/ },
+/***/ }),
 /* 52 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var SettingsEvents = (function () {
 	    function SettingsEvents() {
 	    }
@@ -7011,11 +7112,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.SettingsEvents = SettingsEvents;
 
 
-/***/ },
+/***/ }),
 /* 53 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var SliderEvents = (function () {
 	    function SliderEvents() {
 	    }
@@ -7028,11 +7130,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.SliderEvents = SliderEvents;
 
 
-/***/ },
+/***/ }),
 /* 54 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var StandaloneSearchInterfaceEvents = (function () {
 	    function StandaloneSearchInterfaceEvents() {
 	    }
@@ -7042,11 +7145,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents;
 
 
-/***/ },
+/***/ }),
 /* 55 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var ColorUtils_1 = __webpack_require__(56);
 	exports.ColorUtils = ColorUtils_1.ColorUtils;
 	var CookieUtils_1 = __webpack_require__(38);
@@ -7062,30 +7166,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.$$ = Dom_1.$$;
 	var DomUtils_1 = __webpack_require__(60);
 	exports.DomUtils = DomUtils_1.DomUtils;
-	var EmailActionsUtils_1 = __webpack_require__(64);
-	exports.EmailActionsUtils = EmailActionsUtils_1.EmailActionsUtils;
-	var EmailUtils_1 = __webpack_require__(65);
+	var EmailUtils_1 = __webpack_require__(64);
 	exports.EmailUtils = EmailUtils_1.EmailUtils;
-	var HashUtils_1 = __webpack_require__(66);
+	var HashUtils_1 = __webpack_require__(65);
 	exports.HashUtils = HashUtils_1.HashUtils;
-	var HighlightUtils_1 = __webpack_require__(67);
+	var HighlightUtils_1 = __webpack_require__(66);
 	exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
 	exports.StringAndHoles = HighlightUtils_1.StringAndHoles;
-	var HtmlUtils_1 = __webpack_require__(68);
+	var HtmlUtils_1 = __webpack_require__(67);
 	exports.HTMLUtils = HtmlUtils_1.HTMLUtils;
-	var KeyboardUtils_1 = __webpack_require__(69);
+	var KeyboardUtils_1 = __webpack_require__(68);
 	exports.KEYBOARD = KeyboardUtils_1.KEYBOARD;
 	exports.KeyboardUtils = KeyboardUtils_1.KeyboardUtils;
-	var LocalStorageUtils_1 = __webpack_require__(70);
+	var LocalStorageUtils_1 = __webpack_require__(69);
 	exports.LocalStorageUtils = LocalStorageUtils_1.LocalStorageUtils;
-	var OSUtils_1 = __webpack_require__(71);
+	var OSUtils_1 = __webpack_require__(70);
 	exports.OSUtils = OSUtils_1.OSUtils;
 	exports.OS_NAME = OSUtils_1.OS_NAME;
-	var PopupUtils_1 = __webpack_require__(72);
+	var PopupUtils_1 = __webpack_require__(71);
 	exports.PopupUtils = PopupUtils_1.PopupUtils;
 	var QueryUtils_1 = __webpack_require__(21);
 	exports.QueryUtils = QueryUtils_1.QueryUtils;
-	var StreamHighlightUtils_1 = __webpack_require__(73);
+	var StreamHighlightUtils_1 = __webpack_require__(72);
 	exports.StreamHighlightUtils = StreamHighlightUtils_1.StreamHighlightUtils;
 	var StringUtils_1 = __webpack_require__(62);
 	exports.StringUtils = StringUtils_1.StringUtils;
@@ -7095,11 +7197,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Utils = Utils_1.Utils;
 
 
-/***/ },
+/***/ }),
 /* 56 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var ColorUtils = (function () {
 	    function ColorUtils() {
 	    }
@@ -7162,16 +7265,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ColorUtils = ColorUtils;
 
 
-/***/ },
+/***/ }),
 /* 57 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Options_1 = __webpack_require__(34);
 	var Utils_1 = __webpack_require__(13);
@@ -7209,16 +7318,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.CurrencyUtils = CurrencyUtils;
 
 
-/***/ },
+/***/ }),
 /* 58 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Options_1 = __webpack_require__(34);
 	var Utils_1 = __webpack_require__(13);
 	var Strings_1 = __webpack_require__(35);
@@ -7384,11 +7499,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
+/***/ }),
 /* 59 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
 	var JQueryutils_1 = __webpack_require__(18);
 	var Assert_1 = __webpack_require__(12);
@@ -7875,7 +7991,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.el.dispatchEvent(event);
 	        }
 	        else {
-	            // TODO Support for older browser ?
 	            new Logger_1.Logger(this).error('CANNOT TRIGGER EVENT FOR OLDER BROWSER');
 	        }
 	    };
@@ -8076,11 +8191,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.$$ = $$;
 
 
-/***/ },
+/***/ }),
 /* 60 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var DateUtils_1 = __webpack_require__(58);
 	var FileTypes_1 = __webpack_require__(61);
@@ -8119,8 +8235,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return StringUtils_1.StringUtils.htmlEncode(initialString.slice(0, firstChar)) + "<span class='coveo-highlight'>" + StringUtils_1.StringUtils.htmlEncode(initialString.slice(firstChar, lastChar)) + "</span>" + StringUtils_1.StringUtils.htmlEncode(initialString.slice(lastChar));
 	    };
 	    DomUtils.getLoadingSpinner = function () {
-	        var loading = Dom_1.$$('div');
-	        loading.addClass('coveo-loading-spinner');
+	        var loading = Dom_1.$$('div', {
+	            className: 'coveo-loading-spinner'
+	        });
 	        return loading.el;
 	    };
 	    DomUtils.getModalBoxHeader = function (title) {
@@ -8131,7 +8248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    DomUtils.getQuickviewHeader = function (result, options, bindings) {
 	        var date = '';
 	        if (options.showDate) {
-	            date = DateUtils_1.DateUtils.dateTimeToString(new Date(result.raw.date));
+	            date = DateUtils_1.DateUtils.dateTimeToString(new Date(Utils_1.Utils.getFieldValue(result, 'date')));
 	        }
 	        var fileType = FileTypes_1.FileTypes.get(result);
 	        var header = Dom_1.$$('div');
@@ -8144,11 +8261,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.DomUtils = DomUtils;
 
 
-/***/ },
+/***/ }),
 /* 61 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
 	var Strings_1 = __webpack_require__(35);
 	var Assert_1 = __webpack_require__(12);
@@ -8160,8 +8278,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function FileTypes() {
 	    }
 	    FileTypes.get = function (result) {
-	        var objecttype = result.raw.objecttype;
-	        var filetype = result.raw.filetype;
+	        var objecttype = Utils_1.Utils.getFieldValue(result, 'objecttype');
+	        var filetype = Utils_1.Utils.getFieldValue(result, 'filetype');
 	        // When @objecttype is File we fallback on @filetype for icons and such
 	        if (Utils_1.Utils.isNonEmptyString(objecttype) && objecttype.toLowerCase() != 'file') {
 	            return FileTypes.getObjectType(objecttype);
@@ -8181,11 +8299,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // We must use lowercase filetypes because that's how the CSS classes
 	        // are generated (they are case sensitive, alas).
 	        objecttype = objecttype.toLowerCase();
+	        var variableValue = "objecttype_" + objecttype;
 	        // Most object types have a set of localized strings in the main dictionary
-	        var localizedString = Strings_1.l('objecttype_' + objecttype);
+	        var localizedString = Strings_1.l(variableValue);
 	        return {
-	            'icon': 'coveo-icon objecttype ' + objecttype,
-	            caption: localizedString != 'objecttype_' + objecttype ? localizedString : objecttype
+	            'icon': 'coveo-icon objecttype ' + objecttype.replace(' ', '-'),
+	            caption: localizedString != variableValue ? localizedString : objecttype
 	        };
 	    };
 	    FileTypes.getFileType = function (filetype) {
@@ -8197,11 +8316,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (filetype[0] == '.') {
 	            filetype = filetype.substring(1);
 	        }
+	        var variableValue = "filetype_" + filetype;
 	        // Most filetypes have a set of localized strings in the main dictionary
-	        var localizedString = Strings_1.l('filetype_' + filetype);
+	        var localizedString = Strings_1.l(variableValue);
 	        return {
-	            'icon': 'coveo-icon filetype ' + filetype,
-	            caption: localizedString != 'filetype_' + filetype ? localizedString : filetype
+	            'icon': 'coveo-icon filetype ' + filetype.replace(' ', '-'),
+	            caption: localizedString != variableValue ? localizedString : filetype
 	        };
 	    };
 	    FileTypes.getFileTypeCaptions = function () {
@@ -8225,11 +8345,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FileTypes = FileTypes;
 
 
-/***/ },
+/***/ }),
 /* 62 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Dom_1 = __webpack_require__(59);
 	var latinize = __webpack_require__(63);
@@ -8363,9 +8484,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.StringUtils = StringUtils;
 
 
-/***/ },
+/***/ }),
 /* 63 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {
 	  if (true) {
@@ -9288,187 +9409,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 
-/***/ },
+/***/ }),
 /* 64 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Strings_1 = __webpack_require__(35);
-	var _ = __webpack_require__(14);
-	var EmailActionsUtils = (function () {
-	    function EmailActionsUtils() {
-	    }
-	    EmailActionsUtils.buildMailToString = function (options) {
-	        var mailTo = options.to ? 'mailto:' + encodeURIComponent(options.to) : 'mailto:';
-	        var parameters = EmailActionsUtils.buildMailToParametersString(options.subject, options.cc, options.bcc, options.body, mailTo);
-	        if (parameters) {
-	            mailTo += '?' + parameters;
-	        }
-	        return mailTo;
-	    };
-	    EmailActionsUtils.buildMailToParametersString = function (subject, cc, bcc, body, mailTo) {
-	        var parametersArray = [];
-	        if (subject) {
-	            parametersArray.push(EmailActionsUtils.buildMailToParameter('subject', subject));
-	        }
-	        if (cc) {
-	            parametersArray.push(EmailActionsUtils.buildMailToParameter('cc', cc));
-	        }
-	        if (bcc) {
-	            parametersArray.push(EmailActionsUtils.buildMailToParameter('bcc', bcc));
-	        }
-	        if (body) {
-	            var shortenBody = EmailActionsUtils.getShortenBody(body, mailTo + '?' + parametersArray.join('&'));
-	            if (shortenBody) {
-	                parametersArray.push(EmailActionsUtils.buildMailToParameter('body', shortenBody));
-	            }
-	        }
-	        return parametersArray.join('&');
-	    };
-	    EmailActionsUtils.getShortenBody = function (body, mailTo) {
-	        var shortenBody = body;
-	        if (mailTo.length < MailTo.maxLength) {
-	            var maxBodyLength = MailTo.maxLength - mailTo.length - '&body='.length;
-	            shortenBody = EmailActionsUtils.shortenString(body, maxBodyLength);
-	        }
-	        return shortenBody;
-	    };
-	    EmailActionsUtils.buildMailToParameter = function (name, param) {
-	        return param ? encodeURIComponent(name) + '=' + encodeURIComponent(param) : '';
-	    };
-	    EmailActionsUtils.shortenString = function (str, maxLength, encodeShortenBodyIndication) {
-	        if (encodeShortenBodyIndication === void 0) { encodeShortenBodyIndication = false; }
-	        /* There is a size limit on mailto url,
-	         * Depending on the browser, the mailto will not open if too large. */
-	        var shortenBodyIndicator = encodeShortenBodyIndication ? encodeURIComponent(MailTo.shortenBodyIndicator) : MailTo.shortenBodyIndicator;
-	        maxLength = maxLength - MailTo.shortenBodyIndicator.length;
-	        var sliced = str.length > maxLength ? true : false;
-	        var shortenStr = str.substring(0, maxLength);
-	        shortenStr += sliced ? shortenBodyIndicator : '';
-	        return shortenStr;
-	    };
-	    EmailActionsUtils.appendShortenBodyToMailToString = function (mailTo, body) {
-	        var shortenBody = EmailActionsUtils.getShortenBody(body, mailTo);
-	        return mailTo.indexOf('?') >= 0 ? mailTo + '&body=' + shortenBody : mailTo + '?body=' + shortenBody;
-	    };
-	    EmailActionsUtils.removeCurrentUserEmailFromString = function (currentUserEmail, str) {
-	        if (str && currentUserEmail) {
-	            return _.filter(str.split(';'), function (email) {
-	                return email.indexOf(currentUserEmail) == -1;
-	            }).join(';');
-	        }
-	        else {
-	            return str;
-	        }
-	    };
-	    EmailActionsUtils.buildReplyMailToFromResult = function (result, currentUserEmail) {
-	        return new MailTo({
-	            currentUserEmail: currentUserEmail,
-	            originalFrom: result.raw.from,
-	            to: result.raw.from,
-	            subject: result.raw.conversationsubject,
-	        });
-	    };
-	    EmailActionsUtils.buildReplyAllMailToFromResult = function (result, currentUserEmail) {
-	        return new MailTo({
-	            currentUserEmail: currentUserEmail,
-	            originalFrom: result.raw.from,
-	            to: result.raw.from + ';' + result.raw.to,
-	            subject: result.raw.conversationsubject,
-	            cc: result.raw.cc,
-	        });
-	    };
-	    EmailActionsUtils.buildForwardMailToFromResult = function (result, currentUserEmail) {
-	        return new MailTo({
-	            currentUserEmail: currentUserEmail,
-	            originalFrom: result.raw.from,
-	            subject: result.raw.conversationsubject,
-	        });
-	    };
-	    EmailActionsUtils.encodeMailToBody = function (body) {
-	        var linesArray = body.split('\n');
-	        _.each(linesArray, function (line, index) {
-	            linesArray[index] = encodeURIComponent(linesArray[index]);
-	        });
-	        return linesArray.join(MailTo.enter);
-	    };
-	    return EmailActionsUtils;
-	}());
-	exports.EmailActionsUtils = EmailActionsUtils;
-	var DefaultMailToOptions = (function () {
-	    function DefaultMailToOptions() {
-	        this.currentUserEmail = '';
-	        this.originalFrom = '';
-	        this.to = '';
-	        this.subject = '';
-	        this.cc = '';
-	        this.bcc = '';
-	        this.body = '';
-	    }
-	    return DefaultMailToOptions;
-	}());
-	exports.DefaultMailToOptions = DefaultMailToOptions;
-	var MailTo = (function () {
-	    function MailTo(options) {
-	        this.options = options;
-	        this.bodyHeader = '';
-	        this.options = _.extend(new DefaultMailToOptions(), options);
-	        this.removeCurrentUserFromParameters();
-	        if (this.options.originalFrom) {
-	            this.bodyHeader = this.options.bodyIsHTML ? '<p><br/><br/><br/>' + Strings_1.l('From') + ': ' + this.options.originalFrom + '<hr></p>' :
-	                '\n\n\n' + Strings_1.l('From') + ': ' + this.options.originalFrom + '\n_________________________________\n';
-	        }
-	    }
-	    MailTo.prototype.removeCurrentUserFromParameters = function () {
-	        this.options.to = EmailActionsUtils.removeCurrentUserEmailFromString(this.options.currentUserEmail, this.options.to);
-	        this.options.cc = EmailActionsUtils.removeCurrentUserEmailFromString(this.options.currentUserEmail, this.options.cc);
-	        this.options.bcc = EmailActionsUtils.removeCurrentUserEmailFromString(this.options.currentUserEmail, this.options.bcc);
-	    };
-	    MailTo.prototype.open = function () {
-	        this.ensureValueIsSet();
-	        window.location.href = this.value;
-	    };
-	    MailTo.prototype.ensureValueIsSet = function () {
-	        if (!this.value) {
-	            this.setValue();
-	        }
-	        else if (!this.valueBodyIsSet()) {
-	            this.setValueBody();
-	        }
-	    };
-	    MailTo.prototype.setValue = function () {
-	        this.value = EmailActionsUtils.buildMailToString(this.options);
-	        if (this.value && !this.valueBodyIsSet()) {
-	            this.setValueBody();
-	        }
-	    };
-	    MailTo.prototype.setValueBody = function () {
-	        this.value = EmailActionsUtils.appendShortenBodyToMailToString(this.value, this.body);
-	    };
-	    MailTo.prototype.setMailToBodyFromText = function (text) {
-	        if (text === void 0) { text = ''; }
-	        this.body = text;
-	    };
-	    MailTo.prototype.valueBodyIsSet = function () {
-	        return this.value.indexOf('body=') >= 0;
-	    };
-	    MailTo.prototype.bodyIsSet = function () {
-	        return this.body ? true : false;
-	    };
-	    return MailTo;
-	}());
-	MailTo.enter = '%0D%0A'; // \r\n
-	MailTo.shortenBodyIndicator = '\r\n\r\n...';
-	// Arbitrary numbers :
-	MailTo.maxLength = 1000;
-	exports.MailTo = MailTo;
-
-
-/***/ },
-/* 65 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
 	var Strings_1 = __webpack_require__(35);
 	var _ = __webpack_require__(14);
@@ -9536,11 +9482,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.EmailUtils = EmailUtils;
 
 
-/***/ },
-/* 66 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
@@ -9742,11 +9689,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.HashUtils = HashUtils;
 
 
-/***/ },
-/* 67 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
 	var Assert_1 = __webpack_require__(12);
 	var _ = __webpack_require__(14);
@@ -10003,11 +9951,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.HighlightUtils = HighlightUtils;
 
 
-/***/ },
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var DeviceUtils_1 = __webpack_require__(16);
 	var _ = __webpack_require__(14);
 	var HTMLUtils = (function () {
@@ -10091,11 +10040,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ImageUtils = ImageUtils;
 
 
-/***/ },
-/* 69 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
 	var KEYBOARD;
@@ -10186,11 +10136,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.KeyboardUtils = KeyboardUtils;
 
 
-/***/ },
-/* 70 */
-/***/ function(module, exports) {
+/***/ }),
+/* 69 */
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var localStorage = window.localStorage;
 	var LocalStorageUtils = (function () {
 	    function LocalStorageUtils(id) {
@@ -10241,11 +10192,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.LocalStorageUtils = LocalStorageUtils;
 
 
-/***/ },
-/* 71 */
-/***/ function(module, exports) {
+/***/ }),
+/* 70 */
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var OS_NAME;
 	(function (OS_NAME) {
 	    OS_NAME[OS_NAME["WINDOWS"] = 0] = "WINDOWS";
@@ -10282,11 +10234,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.OSUtils = OSUtils;
 
 
-/***/ },
-/* 72 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var VerticalAlignment;
 	(function (VerticalAlignment) {
@@ -10446,18 +10399,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.PopupUtils = PopupUtils;
 
 
-/***/ },
-/* 73 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Options_1 = __webpack_require__(34);
-	var HighlightUtils_1 = __webpack_require__(67);
+	var HighlightUtils_1 = __webpack_require__(66);
 	var StringUtils_1 = __webpack_require__(62);
 	var Utils_1 = __webpack_require__(13);
 	var Dom_1 = __webpack_require__(59);
@@ -10509,6 +10468,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var sortedTerms = _.keys(termsToHighlight).sort(termsSorting);
 	    _.each(sortedTerms, function (term) {
 	        var termsToIterate = _.compact([term].concat(termsToHighlight[term]).sort(termsSorting));
+	        termsToIterate = _.map(termsToIterate, function (term) { return Utils_1.Utils.escapeRegexCharacter(term); });
 	        var regex = regexStart;
 	        regex += termsToIterate.join('|') + ')(?=(?:' + nonWordBoundary + '|$)+)';
 	        var indexesFound = StringUtils_1.StringUtils.getHighlights(toHighlight, new RegExp(regex, opts.regexFlags), term);
@@ -10566,12 +10526,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
-/* 74 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var QueryController_1 = __webpack_require__(75);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var QueryController_1 = __webpack_require__(74);
 	exports.QueryController = QueryController_1.QueryController;
 	var FacetQueryController_1 = __webpack_require__(91);
 	exports.FacetQueryController = FacetQueryController_1.FacetQueryController;
@@ -10587,30 +10548,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.LocalStorageHistoryController = LocalStorageHistoryController_1.LocalStorageHistoryController;
 
 
-/***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var RootComponent_1 = __webpack_require__(76);
-	var QueryBuilder_1 = __webpack_require__(78);
-	var LocalStorageUtils_1 = __webpack_require__(70);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var RootComponent_1 = __webpack_require__(75);
+	var QueryBuilder_1 = __webpack_require__(77);
+	var LocalStorageUtils_1 = __webpack_require__(69);
 	var Assert_1 = __webpack_require__(12);
-	var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(80);
+	var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(79);
 	var QueryEvents_1 = __webpack_require__(48);
 	var QueryUtils_1 = __webpack_require__(21);
 	var Defer_1 = __webpack_require__(32);
 	var Dom_1 = __webpack_require__(59);
 	var Utils_1 = __webpack_require__(13);
 	var es6_promise_1 = __webpack_require__(4);
-	var BaseComponent_1 = __webpack_require__(77);
+	var BaseComponent_1 = __webpack_require__(76);
 	var ExternalModulesShim_1 = __webpack_require__(23);
-	var coveo_analytics_1 = __webpack_require__(81);
+	var coveo_analytics_1 = __webpack_require__(80);
 	var _ = __webpack_require__(14);
 	var DefaultQueryOptions = (function () {
 	    function DefaultQueryOptions() {
@@ -11092,17 +11059,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryController = QueryController;
 
 
-/***/ },
-/* 76 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var BaseComponent_1 = __webpack_require__(77);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var BaseComponent_1 = __webpack_require__(76);
 	var RootComponent = (function (_super) {
 	    __extends(RootComponent, _super);
 	    function RootComponent(element, type) {
@@ -11116,11 +11089,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.RootComponent = RootComponent;
 
 
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Dom_1 = __webpack_require__(59);
 	var Logger_1 = __webpack_require__(11);
@@ -11200,13 +11174,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.BaseComponent = BaseComponent;
 
 
-/***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ExpressionBuilder_1 = __webpack_require__(79);
-	var QueryUtils_1 = __webpack_require__(21);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ExpressionBuilder_1 = __webpack_require__(78);
 	var _ = __webpack_require__(14);
 	/**
 	 * The QueryBuilder is used to build a {@link IQuery} that will be able to be executed using the Search API.<br/>
@@ -11234,7 +11208,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.constantExpression = new ExpressionBuilder_1.ExpressionBuilder();
 	        /**
 	         * The contextual text.<br/>
-	         * This is the contextual text part of the query. It uses Reveal to pick key keywords from the text and add them to the basic expression.
+	         * This is the contextual text part of the query. It uses the Coveo Machine Learning service to pick key keywords from the text and add them to the basic expression.
 	         * This field is mainly used to pass context such a case description, long textual query or any other form of text that might help in
 	         * refining the query.
 	         */
@@ -11285,7 +11259,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        this.sortCriteria = 'relevancy';
 	        this.retrieveFirstSentences = true;
-	        this.queryUid = QueryUtils_1.QueryUtils.createGuid();
 	        /**
 	         * This specifies an array of Query Function operation that will be executed on the results.
 	         */
@@ -11460,11 +11433,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryBuilder = QueryBuilder;
 
 
-/***/ },
-/* 79 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var QueryUtils_1 = __webpack_require__(21);
 	var _ = __webpack_require__(14);
@@ -11599,11 +11573,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ExpressionBuilder = ExpressionBuilder;
 
 
-/***/ },
-/* 80 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	var SearchEndpointWithDefaultCallOptions = (function () {
 	    function SearchEndpointWithDefaultCallOptions(endpoint, callOptions) {
@@ -11688,30 +11663,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.SearchEndpointWithDefaultCallOptions = SearchEndpointWithDefaultCallOptions;
 
 
-/***/ },
-/* 81 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var analytics = __webpack_require__(82);
+	var analytics = __webpack_require__(81);
 	exports.analytics = analytics;
 	var SimpleAnalytics = __webpack_require__(87);
 	exports.SimpleAnalytics = SimpleAnalytics;
-	var history = __webpack_require__(83);
+	var history = __webpack_require__(82);
 	exports.history = history;
 	var donottrack = __webpack_require__(90);
 	exports.donottrack = donottrack;
-	var storage = __webpack_require__(84);
+	var storage = __webpack_require__(83);
 	exports.storage = storage;
 
 
-/***/ },
-/* 82 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var history_1 = __webpack_require__(83);
-	var detector_1 = __webpack_require__(85);
+	var history_1 = __webpack_require__(82);
+	var detector_1 = __webpack_require__(84);
+	__webpack_require__(86);
 	exports.Version = 'v15';
 	exports.Endpoints = {
 	    default: 'https://usageanalytics.coveo.com',
@@ -11796,13 +11772,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Client;
 
 
-/***/ },
-/* 83 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var storage_1 = __webpack_require__(84);
-	var detector = __webpack_require__(85);
+	var storage_1 = __webpack_require__(83);
+	var detector = __webpack_require__(84);
 	exports.STORE_KEY = '__coveo.analytics.history';
 	exports.MAX_NUMBER_OF_HISTORY_ELEMENTS = 20;
 	exports.MIN_THRESHOLD_FOR_DUPLICATE_VALUE = 1000 * 60;
@@ -11887,13 +11863,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = HistoryStore;
 
 
-/***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var detector = __webpack_require__(85);
-	var cookieutils_1 = __webpack_require__(86);
+	var detector = __webpack_require__(84);
+	var cookieutils_1 = __webpack_require__(85);
 	exports.preferredStorage = null;
 	function getAvailableStorage() {
 	    if (exports.preferredStorage) {
@@ -11937,9 +11913,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.NullStorage = NullStorage;
 
 
-/***/ },
-/* 85 */
-/***/ function(module, exports) {
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
 
 	"use strict";
 	function hasLocalStorage() {
@@ -11979,9 +11955,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	;
 
 
-/***/ },
-/* 86 */
-/***/ function(module, exports) {
+/***/ }),
+/* 85 */
+/***/ (function(module, exports) {
 
 	"use strict";
 	var Cookie = (function () {
@@ -12032,12 +12008,479 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Cookie = Cookie;
 
 
-/***/ },
+/***/ }),
+/* 86 */
+/***/ (function(module, exports) {
+
+	(function(self) {
+	  'use strict';
+	
+	  if (self.fetch) {
+	    return
+	  }
+	
+	  var support = {
+	    searchParams: 'URLSearchParams' in self,
+	    iterable: 'Symbol' in self && 'iterator' in Symbol,
+	    blob: 'FileReader' in self && 'Blob' in self && (function() {
+	      try {
+	        new Blob()
+	        return true
+	      } catch(e) {
+	        return false
+	      }
+	    })(),
+	    formData: 'FormData' in self,
+	    arrayBuffer: 'ArrayBuffer' in self
+	  }
+	
+	  if (support.arrayBuffer) {
+	    var viewClasses = [
+	      '[object Int8Array]',
+	      '[object Uint8Array]',
+	      '[object Uint8ClampedArray]',
+	      '[object Int16Array]',
+	      '[object Uint16Array]',
+	      '[object Int32Array]',
+	      '[object Uint32Array]',
+	      '[object Float32Array]',
+	      '[object Float64Array]'
+	    ]
+	
+	    var isDataView = function(obj) {
+	      return obj && DataView.prototype.isPrototypeOf(obj)
+	    }
+	
+	    var isArrayBufferView = ArrayBuffer.isView || function(obj) {
+	      return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1
+	    }
+	  }
+	
+	  function normalizeName(name) {
+	    if (typeof name !== 'string') {
+	      name = String(name)
+	    }
+	    if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
+	      throw new TypeError('Invalid character in header field name')
+	    }
+	    return name.toLowerCase()
+	  }
+	
+	  function normalizeValue(value) {
+	    if (typeof value !== 'string') {
+	      value = String(value)
+	    }
+	    return value
+	  }
+	
+	  // Build a destructive iterator for the value list
+	  function iteratorFor(items) {
+	    var iterator = {
+	      next: function() {
+	        var value = items.shift()
+	        return {done: value === undefined, value: value}
+	      }
+	    }
+	
+	    if (support.iterable) {
+	      iterator[Symbol.iterator] = function() {
+	        return iterator
+	      }
+	    }
+	
+	    return iterator
+	  }
+	
+	  function Headers(headers) {
+	    this.map = {}
+	
+	    if (headers instanceof Headers) {
+	      headers.forEach(function(value, name) {
+	        this.append(name, value)
+	      }, this)
+	    } else if (Array.isArray(headers)) {
+	      headers.forEach(function(header) {
+	        this.append(header[0], header[1])
+	      }, this)
+	    } else if (headers) {
+	      Object.getOwnPropertyNames(headers).forEach(function(name) {
+	        this.append(name, headers[name])
+	      }, this)
+	    }
+	  }
+	
+	  Headers.prototype.append = function(name, value) {
+	    name = normalizeName(name)
+	    value = normalizeValue(value)
+	    var oldValue = this.map[name]
+	    this.map[name] = oldValue ? oldValue+','+value : value
+	  }
+	
+	  Headers.prototype['delete'] = function(name) {
+	    delete this.map[normalizeName(name)]
+	  }
+	
+	  Headers.prototype.get = function(name) {
+	    name = normalizeName(name)
+	    return this.has(name) ? this.map[name] : null
+	  }
+	
+	  Headers.prototype.has = function(name) {
+	    return this.map.hasOwnProperty(normalizeName(name))
+	  }
+	
+	  Headers.prototype.set = function(name, value) {
+	    this.map[normalizeName(name)] = normalizeValue(value)
+	  }
+	
+	  Headers.prototype.forEach = function(callback, thisArg) {
+	    for (var name in this.map) {
+	      if (this.map.hasOwnProperty(name)) {
+	        callback.call(thisArg, this.map[name], name, this)
+	      }
+	    }
+	  }
+	
+	  Headers.prototype.keys = function() {
+	    var items = []
+	    this.forEach(function(value, name) { items.push(name) })
+	    return iteratorFor(items)
+	  }
+	
+	  Headers.prototype.values = function() {
+	    var items = []
+	    this.forEach(function(value) { items.push(value) })
+	    return iteratorFor(items)
+	  }
+	
+	  Headers.prototype.entries = function() {
+	    var items = []
+	    this.forEach(function(value, name) { items.push([name, value]) })
+	    return iteratorFor(items)
+	  }
+	
+	  if (support.iterable) {
+	    Headers.prototype[Symbol.iterator] = Headers.prototype.entries
+	  }
+	
+	  function consumed(body) {
+	    if (body.bodyUsed) {
+	      return Promise.reject(new TypeError('Already read'))
+	    }
+	    body.bodyUsed = true
+	  }
+	
+	  function fileReaderReady(reader) {
+	    return new Promise(function(resolve, reject) {
+	      reader.onload = function() {
+	        resolve(reader.result)
+	      }
+	      reader.onerror = function() {
+	        reject(reader.error)
+	      }
+	    })
+	  }
+	
+	  function readBlobAsArrayBuffer(blob) {
+	    var reader = new FileReader()
+	    var promise = fileReaderReady(reader)
+	    reader.readAsArrayBuffer(blob)
+	    return promise
+	  }
+	
+	  function readBlobAsText(blob) {
+	    var reader = new FileReader()
+	    var promise = fileReaderReady(reader)
+	    reader.readAsText(blob)
+	    return promise
+	  }
+	
+	  function readArrayBufferAsText(buf) {
+	    var view = new Uint8Array(buf)
+	    var chars = new Array(view.length)
+	
+	    for (var i = 0; i < view.length; i++) {
+	      chars[i] = String.fromCharCode(view[i])
+	    }
+	    return chars.join('')
+	  }
+	
+	  function bufferClone(buf) {
+	    if (buf.slice) {
+	      return buf.slice(0)
+	    } else {
+	      var view = new Uint8Array(buf.byteLength)
+	      view.set(new Uint8Array(buf))
+	      return view.buffer
+	    }
+	  }
+	
+	  function Body() {
+	    this.bodyUsed = false
+	
+	    this._initBody = function(body) {
+	      this._bodyInit = body
+	      if (!body) {
+	        this._bodyText = ''
+	      } else if (typeof body === 'string') {
+	        this._bodyText = body
+	      } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+	        this._bodyBlob = body
+	      } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+	        this._bodyFormData = body
+	      } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+	        this._bodyText = body.toString()
+	      } else if (support.arrayBuffer && support.blob && isDataView(body)) {
+	        this._bodyArrayBuffer = bufferClone(body.buffer)
+	        // IE 10-11 can't handle a DataView body.
+	        this._bodyInit = new Blob([this._bodyArrayBuffer])
+	      } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
+	        this._bodyArrayBuffer = bufferClone(body)
+	      } else {
+	        throw new Error('unsupported BodyInit type')
+	      }
+	
+	      if (!this.headers.get('content-type')) {
+	        if (typeof body === 'string') {
+	          this.headers.set('content-type', 'text/plain;charset=UTF-8')
+	        } else if (this._bodyBlob && this._bodyBlob.type) {
+	          this.headers.set('content-type', this._bodyBlob.type)
+	        } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+	          this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8')
+	        }
+	      }
+	    }
+	
+	    if (support.blob) {
+	      this.blob = function() {
+	        var rejected = consumed(this)
+	        if (rejected) {
+	          return rejected
+	        }
+	
+	        if (this._bodyBlob) {
+	          return Promise.resolve(this._bodyBlob)
+	        } else if (this._bodyArrayBuffer) {
+	          return Promise.resolve(new Blob([this._bodyArrayBuffer]))
+	        } else if (this._bodyFormData) {
+	          throw new Error('could not read FormData body as blob')
+	        } else {
+	          return Promise.resolve(new Blob([this._bodyText]))
+	        }
+	      }
+	
+	      this.arrayBuffer = function() {
+	        if (this._bodyArrayBuffer) {
+	          return consumed(this) || Promise.resolve(this._bodyArrayBuffer)
+	        } else {
+	          return this.blob().then(readBlobAsArrayBuffer)
+	        }
+	      }
+	    }
+	
+	    this.text = function() {
+	      var rejected = consumed(this)
+	      if (rejected) {
+	        return rejected
+	      }
+	
+	      if (this._bodyBlob) {
+	        return readBlobAsText(this._bodyBlob)
+	      } else if (this._bodyArrayBuffer) {
+	        return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer))
+	      } else if (this._bodyFormData) {
+	        throw new Error('could not read FormData body as text')
+	      } else {
+	        return Promise.resolve(this._bodyText)
+	      }
+	    }
+	
+	    if (support.formData) {
+	      this.formData = function() {
+	        return this.text().then(decode)
+	      }
+	    }
+	
+	    this.json = function() {
+	      return this.text().then(JSON.parse)
+	    }
+	
+	    return this
+	  }
+	
+	  // HTTP methods whose capitalization should be normalized
+	  var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT']
+	
+	  function normalizeMethod(method) {
+	    var upcased = method.toUpperCase()
+	    return (methods.indexOf(upcased) > -1) ? upcased : method
+	  }
+	
+	  function Request(input, options) {
+	    options = options || {}
+	    var body = options.body
+	
+	    if (input instanceof Request) {
+	      if (input.bodyUsed) {
+	        throw new TypeError('Already read')
+	      }
+	      this.url = input.url
+	      this.credentials = input.credentials
+	      if (!options.headers) {
+	        this.headers = new Headers(input.headers)
+	      }
+	      this.method = input.method
+	      this.mode = input.mode
+	      if (!body && input._bodyInit != null) {
+	        body = input._bodyInit
+	        input.bodyUsed = true
+	      }
+	    } else {
+	      this.url = String(input)
+	    }
+	
+	    this.credentials = options.credentials || this.credentials || 'omit'
+	    if (options.headers || !this.headers) {
+	      this.headers = new Headers(options.headers)
+	    }
+	    this.method = normalizeMethod(options.method || this.method || 'GET')
+	    this.mode = options.mode || this.mode || null
+	    this.referrer = null
+	
+	    if ((this.method === 'GET' || this.method === 'HEAD') && body) {
+	      throw new TypeError('Body not allowed for GET or HEAD requests')
+	    }
+	    this._initBody(body)
+	  }
+	
+	  Request.prototype.clone = function() {
+	    return new Request(this, { body: this._bodyInit })
+	  }
+	
+	  function decode(body) {
+	    var form = new FormData()
+	    body.trim().split('&').forEach(function(bytes) {
+	      if (bytes) {
+	        var split = bytes.split('=')
+	        var name = split.shift().replace(/\+/g, ' ')
+	        var value = split.join('=').replace(/\+/g, ' ')
+	        form.append(decodeURIComponent(name), decodeURIComponent(value))
+	      }
+	    })
+	    return form
+	  }
+	
+	  function parseHeaders(rawHeaders) {
+	    var headers = new Headers()
+	    rawHeaders.split(/\r?\n/).forEach(function(line) {
+	      var parts = line.split(':')
+	      var key = parts.shift().trim()
+	      if (key) {
+	        var value = parts.join(':').trim()
+	        headers.append(key, value)
+	      }
+	    })
+	    return headers
+	  }
+	
+	  Body.call(Request.prototype)
+	
+	  function Response(bodyInit, options) {
+	    if (!options) {
+	      options = {}
+	    }
+	
+	    this.type = 'default'
+	    this.status = 'status' in options ? options.status : 200
+	    this.ok = this.status >= 200 && this.status < 300
+	    this.statusText = 'statusText' in options ? options.statusText : 'OK'
+	    this.headers = new Headers(options.headers)
+	    this.url = options.url || ''
+	    this._initBody(bodyInit)
+	  }
+	
+	  Body.call(Response.prototype)
+	
+	  Response.prototype.clone = function() {
+	    return new Response(this._bodyInit, {
+	      status: this.status,
+	      statusText: this.statusText,
+	      headers: new Headers(this.headers),
+	      url: this.url
+	    })
+	  }
+	
+	  Response.error = function() {
+	    var response = new Response(null, {status: 0, statusText: ''})
+	    response.type = 'error'
+	    return response
+	  }
+	
+	  var redirectStatuses = [301, 302, 303, 307, 308]
+	
+	  Response.redirect = function(url, status) {
+	    if (redirectStatuses.indexOf(status) === -1) {
+	      throw new RangeError('Invalid status code')
+	    }
+	
+	    return new Response(null, {status: status, headers: {location: url}})
+	  }
+	
+	  self.Headers = Headers
+	  self.Request = Request
+	  self.Response = Response
+	
+	  self.fetch = function(input, init) {
+	    return new Promise(function(resolve, reject) {
+	      var request = new Request(input, init)
+	      var xhr = new XMLHttpRequest()
+	
+	      xhr.onload = function() {
+	        var options = {
+	          status: xhr.status,
+	          statusText: xhr.statusText,
+	          headers: parseHeaders(xhr.getAllResponseHeaders() || '')
+	        }
+	        options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL')
+	        var body = 'response' in xhr ? xhr.response : xhr.responseText
+	        resolve(new Response(body, options))
+	      }
+	
+	      xhr.onerror = function() {
+	        reject(new TypeError('Network request failed'))
+	      }
+	
+	      xhr.ontimeout = function() {
+	        reject(new TypeError('Network request failed'))
+	      }
+	
+	      xhr.open(request.method, request.url, true)
+	
+	      if (request.credentials === 'include') {
+	        xhr.withCredentials = true
+	      }
+	
+	      if ('responseType' in xhr && support.blob) {
+	        xhr.responseType = 'blob'
+	      }
+	
+	      request.headers.forEach(function(value, name) {
+	        xhr.setRequestHeader(name, value)
+	      })
+	
+	      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit)
+	    })
+	  }
+	  self.fetch.polyfill = true
+	})(typeof self !== 'undefined' ? self : this);
+
+
+/***/ }),
 /* 87 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var analytics = __webpack_require__(82);
+	var analytics = __webpack_require__(81);
 	var objectassign_1 = __webpack_require__(88);
 	var utils_1 = __webpack_require__(89);
 	var SimpleAPI = (function () {
@@ -12109,9 +12552,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = exports.SimpleAnalytics;
 
 
-/***/ },
+/***/ }),
 /* 88 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 	var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -12150,9 +12593,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = exports.assign;
 
 
-/***/ },
+/***/ }),
 /* 89 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 	function popFromObject(object, key) {
@@ -12165,9 +12608,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.popFromObject = popFromObject;
 
 
-/***/ },
+/***/ }),
 /* 90 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 	exports.doNotTrack = [true, 'yes', '1'].indexOf(navigator.doNotTrack || navigator.msDoNotTrack || window.doNotTrack);
@@ -12175,13 +12618,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = exports.doNotTrack;
 
 
-/***/ },
+/***/ }),
 /* 91 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path='../ui/Facet/Facet.ts' />
 	"use strict";
-	var ExpressionBuilder_1 = __webpack_require__(79);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ExpressionBuilder_1 = __webpack_require__(78);
 	var Utils_1 = __webpack_require__(13);
 	var FacetSearchParameters_1 = __webpack_require__(92);
 	var Assert_1 = __webpack_require__(12);
@@ -12459,15 +12903,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetQueryController = FacetQueryController;
 
 
-/***/ },
+/***/ }),
 /* 92 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
 	var FacetUtils_1 = __webpack_require__(93);
-	var QueryBuilder_1 = __webpack_require__(78);
+	var QueryBuilder_1 = __webpack_require__(77);
 	var Dom_1 = __webpack_require__(59);
 	var _ = __webpack_require__(14);
 	var FacetSearchParameters = (function () {
@@ -12485,6 +12930,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    FacetSearchParameters.prototype.setValueToSearch = function (value) {
 	        this.valueToSearch = value;
 	        if (Utils_1.Utils.isNonEmptyString(value)) {
+	            this.valueToSearch = this.valueToSearch.trim();
 	            this.alwaysInclude = this.alwaysInclude.concat(FacetUtils_1.FacetUtils.getValuesToUseForSearchInFacet(this.valueToSearch, this.facet));
 	        }
 	        return this;
@@ -12574,11 +13020,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetSearchParameters = FacetSearchParameters;
 
 
-/***/ },
+/***/ }),
 /* 93 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var StringUtils_1 = __webpack_require__(62);
 	var QueryUtils_1 = __webpack_require__(21);
 	var FileTypes_1 = __webpack_require__(61);
@@ -12653,7 +13100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    FacetUtils.tryToGetTranslatedCaption = function (field, value) {
 	        var found;
 	        if (QueryUtils_1.QueryUtils.isStratusAgnosticField(field.toLowerCase(), '@filetype')) {
-	            found = FileTypes_1.FileTypes.getFileTypeCaptions()[value.toLowerCase()];
+	            found = FileTypes_1.FileTypes.getFileType(value.toLowerCase()).caption;
 	        }
 	        else if (QueryUtils_1.QueryUtils.isStratusAgnosticField(field.toLowerCase(), '@month')) {
 	            try {
@@ -12661,6 +13108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                found = DateUtils_1.DateUtils.monthToString(month - 1);
 	            }
 	            catch (ex) {
+	                // Do nothing
 	            }
 	        }
 	        return found != undefined && Utils_1.Utils.isNonEmptyString(found) ? found : value;
@@ -12718,17 +13166,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetUtils = FacetUtils;
 
 
-/***/ },
+/***/ }),
 /* 94 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="../ui/FacetRange/FacetRange.ts" />
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var FacetQueryController_1 = __webpack_require__(91);
 	var Utils_1 = __webpack_require__(13);
 	var FacetRangeQueryController = (function (_super) {
@@ -12767,14 +13221,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetRangeQueryController = FacetRangeQueryController;
 
 
-/***/ },
+/***/ }),
 /* 95 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="../ui/FacetSlider/FacetSlider.ts" />
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var QueryEvents_1 = __webpack_require__(48);
-	var ExpressionBuilder_1 = __webpack_require__(79);
+	var ExpressionBuilder_1 = __webpack_require__(78);
 	var DateUtils_1 = __webpack_require__(58);
 	var Logger_1 = __webpack_require__(11);
 	var QueryUtils_1 = __webpack_require__(21);
@@ -12794,19 +13249,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        this.putGroupByForSliderIntoQueryBuilder(queryBuilder);
 	    };
-	    FacetSliderQueryController.prototype.createBasicGroupByRequest = function (allowedValues, addComputedField) {
-	        if (addComputedField === void 0) { addComputedField = true; }
+	    FacetSliderQueryController.prototype.createBasicGroupByRequest = function () {
 	        var groupByQuery = {
 	            field: this.facet.options.field,
-	            completeFacetWithStandardValues: true
+	            completeFacetWithStandardValues: true,
+	            allowedValues: undefined
 	        };
-	        groupByQuery.allowedValues = undefined;
-	        if (this.facet.options.graph) {
-	            groupByQuery = this.buildGroupByQueryForSlider(groupByQuery);
-	        }
-	        else {
-	            groupByQuery = this.buildGroupByQueryForAutomaticRanges(groupByQuery);
-	        }
 	        return groupByQuery;
 	    };
 	    FacetSliderQueryController.prototype.computeOurFilterExpression = function (boundary) {
@@ -12888,36 +13336,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.addFilterExpressionWithOuterBoundsIncluded(start, end, builder);
 	        }
 	    };
-	    FacetSliderQueryController.prototype.buildGroupByQueryForSlider = function (groupByQuery) {
-	        if (this.facet.options.start != undefined && this.facet.options.end != undefined) {
-	            var start = this.facet.options.start;
-	            var end = this.facet.options.end;
-	            if (this.facet.options.dateField || this.facet.options.dateField) {
-	                start = this.getISOFormat(start);
-	                end = this.getISOFormat(end);
-	            }
-	            groupByQuery.rangeValues = [{
-	                    start: start,
-	                    end: end,
-	                    endInclusive: true,
-	                    label: 'Slider'
-	                }];
-	            return groupByQuery;
-	        }
-	        else {
-	            return this.buildGroupByQueryForAutomaticRanges(groupByQuery);
-	        }
-	    };
-	    FacetSliderQueryController.prototype.buildGroupByQueryForAutomaticRanges = function (groupByQuery) {
-	        groupByQuery.generateAutomaticRanges = true;
-	        return groupByQuery;
-	    };
 	    FacetSliderQueryController.prototype.putGroupByForGraphIntoQueryBuilder = function (queryBuilder) {
 	        this.graphGroupByQueriesIndex = queryBuilder.groupByRequests.length;
 	        var basicGroupByRequestForGraph = this.createBasicGroupByRequest();
-	        if (basicGroupByRequestForGraph.rangeValues) {
-	            var basicRangeRequest = basicGroupByRequestForGraph.rangeValues[0];
-	            basicGroupByRequestForGraph.rangeValues = this.createRangeValuesForGraph(basicRangeRequest);
+	        if (this.facet.isSimpleSliderConfig()) {
+	            basicGroupByRequestForGraph.rangeValues = this.createRangeValuesForGraphUsingStartAndEnd();
+	            basicGroupByRequestForGraph.generateAutomaticRanges = false;
+	        }
+	        else {
+	            basicGroupByRequestForGraph.generateAutomaticRanges = true;
 	        }
 	        var filter = this.computeOurFilterExpression(this.facet.getSliderBoundaryForQuery());
 	        if (filter != undefined) {
@@ -12942,15 +13369,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    FacetSliderQueryController.prototype.putGroupByForSliderIntoQueryBuilder = function (queryBuilder) {
 	        this.lastGroupByRequestIndex = queryBuilder.groupByRequests.length;
+	        var maximumNumberOfValues = 1;
+	        if (this.facet.hasAGraph()) {
+	            maximumNumberOfValues = this.facet.options.graph.steps;
+	        }
+	        var rangeValues = undefined;
+	        if (this.facet.isSimpleSliderConfig()) {
+	            rangeValues = [{
+	                    start: this.facet.options.start,
+	                    end: this.facet.options.end,
+	                    label: 'slider',
+	                    endInclusive: false
+	                }];
+	        }
 	        var basicGroupByRequestForSlider = this.createBasicGroupByRequest();
-	        basicGroupByRequestForSlider.maximumNumberOfValues = this.facet.options.graph != null ? this.facet.options.graph.steps || 1 : 1;
+	        basicGroupByRequestForSlider.maximumNumberOfValues = maximumNumberOfValues;
 	        basicGroupByRequestForSlider.queryOverride = this.facet.options.queryOverride || '@uri';
 	        basicGroupByRequestForSlider.sortCriteria = 'nosort';
-	        basicGroupByRequestForSlider.generateAutomaticRanges = true;
-	        basicGroupByRequestForSlider.rangeValues = undefined;
+	        basicGroupByRequestForSlider.generateAutomaticRanges = !this.facet.isSimpleSliderConfig();
+	        basicGroupByRequestForSlider.rangeValues = rangeValues;
 	        queryBuilder.groupByRequests.push(basicGroupByRequestForSlider);
 	    };
-	    FacetSliderQueryController.prototype.createRangeValuesForGraph = function (basicRangeRequest) {
+	    FacetSliderQueryController.prototype.createRangeValuesForGraphUsingStartAndEnd = function () {
+	        var start = this.facet.options.start;
+	        var end = this.facet.options.end;
+	        if (this.facet.options.dateField) {
+	            start = this.getISOFormat(start);
+	            end = this.getISOFormat(end);
+	        }
+	        var oneRange = {
+	            start: start,
+	            end: end,
+	            endInclusive: true,
+	            label: 'Slider'
+	        };
 	        if (this.facet.options.graph.steps == undefined) {
 	            this.facet.options.graph.steps = 10;
 	        }
@@ -12961,10 +13413,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.facet.options.end = new Date(this.facet.options.end).getTime();
 	        }
 	        if (this.rangeValuesForGraphToUse != undefined) {
-	            return this.usePrebuiltRange(basicRangeRequest);
+	            return this.usePrebuiltRange(oneRange);
 	        }
 	        else {
-	            return this.buildRange(basicRangeRequest);
+	            return this.buildRange(oneRange);
 	        }
 	    };
 	    FacetSliderQueryController.prototype.usePrebuiltRange = function (basicRangeRequest) {
@@ -13032,18 +13484,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetSliderQueryController = FacetSliderQueryController;
 
 
-/***/ },
+/***/ }),
 /* 96 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="../ui/HierarchicalFacet/HierarchicalFacet.ts" />
 	/// <reference path="./FacetQueryController.ts" />
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var FacetQueryController_1 = __webpack_require__(91);
 	var FacetUtils_1 = __webpack_require__(93);
 	var _ = __webpack_require__(14);
@@ -13080,23 +13538,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.HierarchicalFacetQueryController = HierarchicalFacetQueryController;
 
 
-/***/ },
+/***/ }),
 /* 97 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Model_1 = __webpack_require__(98);
 	var InitializationEvents_1 = __webpack_require__(45);
 	var Dom_1 = __webpack_require__(59);
-	var HashUtils_1 = __webpack_require__(66);
+	var HashUtils_1 = __webpack_require__(65);
 	var Defer_1 = __webpack_require__(32);
-	var RootComponent_1 = __webpack_require__(76);
+	var RootComponent_1 = __webpack_require__(75);
 	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
 	/**
@@ -13234,20 +13698,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.HistoryController = HistoryController;
 
 
-/***/ },
+/***/ }),
 /* 98 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
-	var BaseComponent_1 = __webpack_require__(77);
+	var BaseComponent_1 = __webpack_require__(76);
 	var _ = __webpack_require__(14);
 	exports.MODEL_EVENTS = {
 	    PREPROCESS: 'preprocess',
@@ -13548,22 +14018,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Model = Model;
 
 
-/***/ },
+/***/ }),
 /* 99 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var LocalStorageUtils_1 = __webpack_require__(70);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var LocalStorageUtils_1 = __webpack_require__(69);
 	var Model_1 = __webpack_require__(98);
 	var Logger_1 = __webpack_require__(11);
 	var Assert_1 = __webpack_require__(12);
 	var InitializationEvents_1 = __webpack_require__(45);
-	var RootComponent_1 = __webpack_require__(76);
+	var RootComponent_1 = __webpack_require__(75);
 	var Dom_1 = __webpack_require__(59);
 	var _ = __webpack_require__(14);
 	/**
@@ -13632,35 +14108,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.LocalStorageHistoryController = LocalStorageHistoryController;
 
 
-/***/ },
+/***/ }),
 /* 100 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Model_1 = __webpack_require__(98);
 	exports.Model = Model_1.Model;
 	var QueryStateModel_1 = __webpack_require__(101);
 	exports.QueryStateModel = QueryStateModel_1.QueryStateModel;
-	var ComponentOptionsModel_1 = __webpack_require__(105);
+	var ComponentOptionsModel_1 = __webpack_require__(102);
 	exports.ComponentOptionsModel = ComponentOptionsModel_1.ComponentOptionsModel;
-	var ComponentStateModel_1 = __webpack_require__(104);
+	var ComponentStateModel_1 = __webpack_require__(103);
 	exports.ComponentStateModel = ComponentStateModel_1.ComponentStateModel;
 
 
-/***/ },
+/***/ }),
 /* 101 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Model_1 = __webpack_require__(98);
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
-	var ResultLayout_1 = __webpack_require__(102);
 	var _ = __webpack_require__(14);
 	exports.QUERY_STATE_ATTRIBUTES = {
 	    Q: 'q',
@@ -13738,7 +14220,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    hd: '',
 	    hq: '',
 	    sort: '',
-	    layout: ResultLayout_1.defaultLayout,
+	    layout: 'list',
 	    tg: '',
 	    quickview: ''
 	};
@@ -13782,308 +14264,950 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.setState = setState;
 
 
-/***/ },
+/***/ }),
 /* 102 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
-	var QueryEvents_1 = __webpack_require__(48);
-	var Initialization_1 = __webpack_require__(111);
-	var InitializationEvents_1 = __webpack_require__(45);
-	var Assert_1 = __webpack_require__(12);
-	var ResultListEvents_1 = __webpack_require__(49);
-	var ResultLayoutEvents_1 = __webpack_require__(50);
-	var Dom_1 = __webpack_require__(59);
-	var QueryStateModel_1 = __webpack_require__(101);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Model_1 = __webpack_require__(98);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var KeyboardUtils_1 = __webpack_require__(69);
-	var ResponsiveResultLayout_1 = __webpack_require__(126);
-	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
-	exports.defaultLayout = 'list';
-	/**
-	 * The ResultLayout component allows the end user to switch between multiple {@link ResultList} components that have
-	 * different {@link ResultList.options.layout} values.
-	 *
-	 * This component automatically populates itself with buttons to switch between the ResultList components that have a
-	 * valid layout value (see the {@link ValidLayout} type).
-	 *
-	 * See also the [Result Layouts](https://developers.coveo.com/x/yQUvAg) documentation.
-	 */
-	var ResultLayout = (function (_super) {
-	    __extends(ResultLayout, _super);
-	    /**
-	     * Creates a new ResultLayout component.
-	     * @param element The HTMLElement on which to instantiate the component.
-	     * @param options The options for the ResultLayout component.
-	     * @param bindings The bindings that the component requires to function normally. If not set, these will be
-	     * automatically resolved (with a slower execution time).
-	     */
-	    function ResultLayout(element, options, bindings) {
-	        var _this = _super.call(this, element, ResultLayout.ID, bindings) || this;
-	        _this.element = element;
-	        _this.options = options;
-	        _this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, ResultLayout, options);
-	        _this.currentActiveLayouts = {};
-	        _this.bind.onQueryState(Model_1.MODEL_EVENTS.CHANGE_ONE, QueryStateModel_1.QUERY_STATE_ATTRIBUTES.LAYOUT, _this.handleQueryStateChanged.bind(_this));
-	        _this.bind.onRootElement(QueryEvents_1.QueryEvents.querySuccess, function (args) { return _this.handleQuerySuccess(args); });
-	        _this.bind.onRootElement(QueryEvents_1.QueryEvents.queryError, function (args) { return _this.handleQueryError(args); });
-	        _this.resultLayoutSection = Dom_1.$$(_this.element).closest('.coveo-result-layout-section');
-	        _this.bind.oneRootElement(InitializationEvents_1.InitializationEvents.afterComponentsInitialization, function () { return _this.populate(); });
-	        _this.bind.oneRootElement(InitializationEvents_1.InitializationEvents.afterInitialization, function () { return _this.handleQueryStateChanged(); });
-	        ResponsiveResultLayout_1.ResponsiveResultLayout.init(_this.root, _this, _this.options);
+	var ComponentOptionsModel = (function (_super) {
+	    __extends(ComponentOptionsModel, _super);
+	    function ComponentOptionsModel(element, attributes) {
+	        var _this = this;
+	        var merged = _.extend({}, ComponentOptionsModel.defaultAttributes, attributes);
+	        _this = _super.call(this, element, ComponentOptionsModel.ID, merged) || this;
 	        return _this;
 	    }
-	    /**
-	     * Changes the current layout.
-	     *
-	     * Also logs a `resultLayoutChange` event in the usage analytics with the new layout as metadeta.
-	     *
-	     * Triggers a new query.
-	     *
-	     * @param layout The new layout. The page must contain a valid {@link ResultList} component with a matching
-	     * {@link ResultList.options.layout} value for this method to work.
-	     */
-	    ResultLayout.prototype.changeLayout = function (layout) {
-	        Assert_1.Assert.check(this.isLayoutDisplayedByButton(layout), 'Layout not available or invalid');
-	        if (layout !== this.currentLayout || this.getModelValue() === '') {
-	            this.setModelValue(layout);
-	            var lastResults = this.queryController.getLastResults();
-	            this.setLayout(layout, lastResults);
-	            if (lastResults) {
-	                this.usageAnalytics.logCustomEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.resultsLayoutChange, {
-	                    resultsLayoutChangeTo: layout
-	                }, this.element);
-	            }
-	            else {
-	                this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.resultsLayoutChange, {
-	                    resultsLayoutChangeTo: layout
-	                });
-	                this.queryController.executeQuery();
-	            }
-	        }
-	    };
-	    /**
-	     * Gets the current layout (`list`, `card` or `table`).
-	     * @returns {string} The current current layout.
-	     */
-	    ResultLayout.prototype.getCurrentLayout = function () {
-	        return this.currentLayout;
-	    };
-	    ResultLayout.prototype.disableLayouts = function (layouts) {
-	        var _this = this;
-	        if (Utils_1.Utils.isNonEmptyArray(layouts)) {
-	            _.each(layouts, function (layout) {
-	                _this.disableLayout(layout);
-	            });
-	            var remainingValidLayouts = _.difference(_.keys(this.currentActiveLayouts), layouts);
-	            if (remainingValidLayouts && remainingValidLayouts[0]) {
-	                this.changeLayout(remainingValidLayouts[0]);
-	            }
-	            else {
-	                this.logger.error('Cannot disable the last valid layout ... Re-enabling the first one possible');
-	                var firstPossibleValidLayout = _.keys(this.currentActiveLayouts)[0];
-	                this.enableLayout(firstPossibleValidLayout);
-	                this.setLayout(firstPossibleValidLayout);
-	            }
-	        }
-	    };
-	    ResultLayout.prototype.enableLayouts = function (layouts) {
-	        var _this = this;
-	        _.each(layouts, function (layout) {
-	            _this.enableLayout(layout);
-	        });
-	    };
-	    ResultLayout.prototype.disableLayout = function (layout) {
-	        if (this.isLayoutDisplayedByButton(layout)) {
-	            this.hideButton(layout);
-	        }
-	    };
-	    ResultLayout.prototype.enableLayout = function (layout) {
-	        if (this.isLayoutDisplayedByButton(layout)) {
-	            this.showButton(layout);
-	            this.updateSelectorAppearance();
-	        }
-	    };
-	    ResultLayout.prototype.hideButton = function (layout) {
-	        if (this.isLayoutDisplayedByButton(layout)) {
-	            var btn = this.currentActiveLayouts[layout].button;
-	            Dom_1.$$(btn.el).hide();
-	            btn.visible = false;
-	            this.updateSelectorAppearance();
-	        }
-	    };
-	    ResultLayout.prototype.showButton = function (layout) {
-	        if (this.isLayoutDisplayedByButton(layout)) {
-	            var btn = this.currentActiveLayouts[layout].button;
-	            Dom_1.$$(btn.el).show();
-	            btn.visible = true;
-	        }
-	    };
-	    ResultLayout.prototype.setLayout = function (layout, results) {
-	        this.isLayoutDisplayedByButton(layout);
-	        if (this.currentLayout) {
-	            Dom_1.$$(this.currentActiveLayouts[this.currentLayout].button.el).removeClass('coveo-selected');
-	        }
-	        Dom_1.$$(this.currentActiveLayouts[layout].button.el).addClass('coveo-selected');
-	        this.currentLayout = layout;
-	        Dom_1.$$(this.element).trigger(ResultListEvents_1.ResultListEvents.changeLayout, { layout: layout, results: results });
-	    };
-	    ResultLayout.prototype.handleQuerySuccess = function (args) {
-	        if (args.results.results.length === 0 || !this.shouldShowSelector()) {
-	            this.hide();
-	        }
-	        else {
-	            this.show();
-	        }
-	    };
-	    ResultLayout.prototype.handleQueryStateChanged = function (args) {
-	        var modelLayout = this.getModelValue();
-	        var newLayout = _.find(_.keys(this.currentActiveLayouts), function (l) { return l === modelLayout; });
-	        if (newLayout !== undefined) {
-	            this.setLayout(newLayout);
-	        }
-	        else {
-	            this.setLayout(_.keys(this.currentActiveLayouts)[0]);
-	        }
-	    };
-	    ResultLayout.prototype.handleQueryError = function (args) {
-	        this.hide();
-	    };
-	    ResultLayout.prototype.updateSelectorAppearance = function () {
-	        if (this.shouldShowSelector()) {
-	            this.show();
-	        }
-	        else {
-	            this.hide();
-	        }
-	    };
-	    ResultLayout.prototype.populate = function () {
-	        var _this = this;
-	        var populateArgs = { layouts: [] };
-	        Dom_1.$$(this.root).trigger(ResultLayoutEvents_1.ResultLayoutEvents.populateResultLayout, populateArgs);
-	        _.each(populateArgs.layouts, function (l) { return Assert_1.Assert.check(_.contains(ResultLayout.validLayouts, l), 'Invalid layout'); });
-	        if (!_.isEmpty(populateArgs.layouts)) {
-	            _.each(populateArgs.layouts, function (l) { return _this.addButton(l); });
-	            if (!this.shouldShowSelector()) {
-	                this.hide();
-	            }
-	        }
-	    };
-	    ResultLayout.prototype.addButton = function (layout) {
-	        var _this = this;
-	        var btn = Dom_1.$$('span', { className: 'coveo-result-layout-selector', tabindex: 0 }, layout);
-	        btn.prepend(Dom_1.$$('span', { className: "coveo-icon coveo-sprites-" + layout + "-layout" }).el);
-	        if (layout === this.currentLayout) {
-	            btn.addClass('coveo-selected');
-	        }
-	        var activateAction = function () { return _this.changeLayout(layout); };
-	        btn.on('click', activateAction);
-	        btn.on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, activateAction));
-	        Dom_1.$$(this.element).append(btn.el);
-	        this.currentActiveLayouts[layout] = {
-	            button: {
-	                visible: true,
-	                el: btn.el
-	            },
-	            enabled: true
-	        };
-	    };
-	    ResultLayout.prototype.hide = function () {
-	        var elem = this.resultLayoutSection || this.element;
-	        Dom_1.$$(elem).addClass('coveo-result-layout-hidden');
-	    };
-	    ResultLayout.prototype.show = function () {
-	        var elem = this.resultLayoutSection || this.element;
-	        Dom_1.$$(elem).removeClass('coveo-result-layout-hidden');
-	    };
-	    ResultLayout.prototype.getModelValue = function () {
-	        return this.queryStateModel.get(QueryStateModel_1.QueryStateModel.attributesEnum.layout);
-	    };
-	    ResultLayout.prototype.setModelValue = function (val) {
-	        this.queryStateModel.set(QueryStateModel_1.QueryStateModel.attributesEnum.layout, val);
-	    };
-	    ResultLayout.prototype.shouldShowSelector = function () {
-	        return _.keys(this.currentActiveLayouts).length > 1 && _.filter(this.currentActiveLayouts, function (activeLayout) { return activeLayout.button.visible; }).length > 1;
-	    };
-	    ResultLayout.prototype.isLayoutDisplayedByButton = function (layout) {
-	        return _.contains(_.keys(this.currentActiveLayouts), layout);
-	    };
-	    return ResultLayout;
-	}(Component_1.Component));
-	ResultLayout.ID = 'ResultLayout';
-	ResultLayout.validLayouts = ['list', 'card', 'table'];
-	ResultLayout.options = {
-	    /**
-	     * Specifies the layouts that should be available when the search page is displayed in mobile mode.
-	     *
-	     * By default, the mobile mode breakpoint is at 480 px screen width.
-	     *
-	     * When the breakpoint is reached, layouts that are not specified becomes inactive and the linked result list will be disabled.
-	     *
-	     * The possible values for layouts are `list`, `card`, `table`.
-	     *
-	     * The default value is `card`, `table`.
-	     */
-	    mobileLayouts: ComponentOptions_1.ComponentOptions.buildListOption({ defaultValue: ['card', 'table'] }),
-	    /**
-	     * Specifies the layouts that should be available when the search page is displayed in tablet mode.
-	     *
-	     * By default, the tablet mode breakpoint is at 800 px screen width.
-	     *
-	     *  When the breakpoint is reached, layouts that are not specified becomes inactive and the linked result list will be disabled.
-	     *
-	     * The possible values for layouts are `list`, `card`, `table`.
-	     *
-	     * The default value is `list`, `card`, `table`.
-	     */
-	    tabletLayouts: ComponentOptions_1.ComponentOptions.buildListOption({ defaultValue: ['list', 'card', 'table'] }),
-	    /**
-	     * Specifies the layouts that should be available when the search page is displayed in desktop mode.
-	     *
-	     * By default, the desktop mode breakpoint is any screen size over 800 px.
-	     *
-	     *  When the breakpoint is reached, layouts that are not specified becomes inactive and the linked result list will be disabled.
-	     *
-	     * The possible values for layouts are `list`, `card`, `table`.
-	     *
-	     * The default value is `list`, `card`, `table`.
-	     */
-	    desktopLayouts: ComponentOptions_1.ComponentOptions.buildListOption({ defaultValue: ['list', 'card', 'table'] })
+	    return ComponentOptionsModel;
+	}(Model_1.Model));
+	ComponentOptionsModel.ID = 'ComponentOptions';
+	ComponentOptionsModel.defaultAttributes = {
+	    resultLink: undefined,
+	    searchHub: undefined
 	};
-	exports.ResultLayout = ResultLayout;
-	Initialization_1.Initialization.registerAutoCreateComponent(ResultLayout);
+	ComponentOptionsModel.attributesEnum = {
+	    resultLink: 'resultLink',
+	    searchHub: 'searchHub'
+	};
+	exports.ComponentOptionsModel = ComponentOptionsModel;
 
 
-/***/ },
+/***/ }),
 /* 103 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Model_1 = __webpack_require__(98);
+	var ComponentStateModel = (function (_super) {
+	    __extends(ComponentStateModel, _super);
+	    function ComponentStateModel(element) {
+	        return _super.call(this, element, ComponentStateModel.ID, {}) || this;
+	    }
+	    ComponentStateModel.prototype.registerComponent = function (componentId, component) {
+	        var currentAttribute = this.attributes[componentId];
+	        if (currentAttribute == undefined) {
+	            this.attributes[componentId] = [component];
+	        }
+	        else {
+	            this.attributes[componentId].push(component);
+	        }
+	    };
+	    return ComponentStateModel;
+	}(Model_1.Model));
+	ComponentStateModel.ID = 'ComponentState';
+	exports.ComponentStateModel = ComponentStateModel;
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	function __export(m) {
+	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+	}
+	Object.defineProperty(exports, "__esModule", { value: true });
+	__export(__webpack_require__(105));
+	var ComponentOptions_1 = __webpack_require__(109);
+	exports.ComponentOptions = ComponentOptions_1.ComponentOptions;
+	exports.ComponentOptionsType = ComponentOptions_1.ComponentOptionsType;
+	var Component_1 = __webpack_require__(107);
+	exports.Component = Component_1.Component;
+	var BaseComponent_1 = __webpack_require__(76);
+	exports.BaseComponent = BaseComponent_1.BaseComponent;
+	var RootComponent_1 = __webpack_require__(75);
+	exports.RootComponent = RootComponent_1.RootComponent;
+	var QueryBuilder_1 = __webpack_require__(77);
+	exports.QueryBuilder = QueryBuilder_1.QueryBuilder;
+	var ExpressionBuilder_1 = __webpack_require__(78);
+	exports.ExpressionBuilder = ExpressionBuilder_1.ExpressionBuilder;
+	// Export Initialization under both name, for legacy reason and old code in the wild that
+	// reference the old CoveoJQuery module
+	var Initialization_1 = __webpack_require__(106);
+	exports.Initialization = Initialization_1.Initialization;
+	var Initialization_2 = __webpack_require__(106);
+	exports.CoveoJQuery = Initialization_2.Initialization;
+	var CoveoJQuery_1 = __webpack_require__(174);
+	exports.initCoveoJQuery = CoveoJQuery_1.initCoveoJQuery;
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Initialization_1 = __webpack_require__(106);
+	var Assert_1 = __webpack_require__(12);
+	var QueryController_1 = __webpack_require__(74);
+	var QueryStateModel_1 = __webpack_require__(101);
+	var Analytics_1 = __webpack_require__(127);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var Dom_1 = __webpack_require__(59);
+	var Component_1 = __webpack_require__(107);
+	var _ = __webpack_require__(14);
+	/**
+	 * Initialize the framework with a basic search interface. Calls {@link Initialization.initSearchInterface}.<br/>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('init');</code>.
+	 * @param element The root of the interface to initialize.
+	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType : true}}</code>).
+	 */
+	function init(element, options) {
+	    if (options === void 0) { options = {}; }
+	    Initialization_1.Initialization.initializeFramework(element, options, function () {
+	        Initialization_1.Initialization.initSearchInterface(element, options);
+	    });
+	}
+	exports.init = init;
+	Initialization_1.Initialization.registerNamedMethod('init', function (element, options) {
+	    if (options === void 0) { options = {}; }
+	    init(element, options);
+	});
+	/**
+	 * Initialize the framework with a standalone search box. Calls {@link Initialize.initStandaloneSearchInterface}.<br/>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initSearchbox');</code>.
+	 * @param element The root of the interface to initialize.
+	 * @param searchPageUri The search page on which to redirect when there is a query.
+	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType : true}}</code>).
+	 */
+	function initSearchbox(element, searchPageUri, options) {
+	    if (options === void 0) { options = {}; }
+	    Assert_1.Assert.isNonEmptyString(searchPageUri);
+	    var searchInterfaceOptions = {};
+	    searchInterfaceOptions.searchPageUri = searchPageUri;
+	    searchInterfaceOptions.autoTriggerQuery = false;
+	    searchInterfaceOptions.hideUntilFirstQuery = false;
+	    searchInterfaceOptions.enableHistory = false;
+	    options = _.extend({}, options, { StandaloneSearchInterface: searchInterfaceOptions });
+	    Initialization_1.Initialization.initializeFramework(element, options, function () {
+	        Initialization_1.Initialization.initStandaloneSearchInterface(element, options);
+	    });
+	}
+	exports.initSearchbox = initSearchbox;
+	Initialization_1.Initialization.registerNamedMethod('initSearchbox', function (element, searchPageUri, options) {
+	    if (options === void 0) { options = {}; }
+	    initSearchbox(element, searchPageUri, options);
+	});
+	/**
+	 * Initialize the framework with a recommendation interface. Calls {@link Initialization.initRecommendationInterface}.<br/>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initRecommendation');</code>.
+	 * @param element The root of the interface to initialize.
+	 * @param mainSearchInterface The search interface to link with the recommendation interface (see {@link Recommendation}).
+	 * @param userContext The user context to pass with the query generated in the recommendation interface (see {@link Recommendation}).
+	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType: true}}</code>).
+	 */
+	function initRecommendation(element, mainSearchInterface, userContext, options) {
+	    if (options === void 0) { options = {}; }
+	    var recommendationOptions = {};
+	    recommendationOptions.mainSearchInterface = mainSearchInterface;
+	    recommendationOptions.userContext = JSON.stringify(userContext);
+	    recommendationOptions.enableHistory = false;
+	    options = _.extend({}, options, { Recommendation: recommendationOptions });
+	    Initialization_1.Initialization.initializeFramework(element, options, function () {
+	        Initialization_1.Initialization.initRecommendationInterface(element, options);
+	    });
+	}
+	exports.initRecommendation = initRecommendation;
+	Initialization_1.Initialization.registerNamedMethod('initRecommendation', function (element, mainSearchInterface, userContext, options) {
+	    if (userContext === void 0) { userContext = {}; }
+	    if (options === void 0) { options = {}; }
+	    initRecommendation(element, mainSearchInterface, userContext, options);
+	});
+	/**
+	 * Execute a standard query. Active component in the interface will react to events/ push data in the query / handle the query success or failure as needed.<br/>
+	 * It triggers a standard query flow for which the standard component will perform their expected behavior.<br/>
+	 * If you wish to only perform a query on the index to retrieve results (without the component reacting), look into {@link SearchInterface} instead.<br/>
+	 * Calling this method is the same as calling {@link QueryController.executeQuery}.
+	 * @param element The root of the interface to initialize.
+	 */
+	function executeQuery(element) {
+	    Assert_1.Assert.exists(element);
+	    var queryController = Component_1.Component.resolveBinding(element, QueryController_1.QueryController);
+	    Assert_1.Assert.exists(queryController);
+	    return queryController.executeQuery();
+	}
+	exports.executeQuery = executeQuery;
+	Initialization_1.Initialization.registerNamedMethod('executeQuery', function (element) {
+	    return executeQuery(element);
+	});
+	/**
+	 * Perform operation on the state ({@link QueryStateModel} of the interface.<br/>
+	 * Get the complete {@link QueryStateModel} object: <code>Coveo.state(element)</code><br/>.
+	 * Get an attribute from the {@link QueryStateModel}: <code>Coveo.state(element, 'q')</code> Can be any attribute.<br/>
+	 * Set an attribute on the {@link QueryStateModel}: <code>Coveo.state(element, 'q', 'foobar')</code>. Can be any attribute.<br/>
+	 * Set multiple attribute on the {@link QueryStateModel}: <code>Coveo.state(element, {'q' : 'foobar' , sort : 'relevancy'})</code>. Can be any attribute.<br/>
+	 * If using the jQuery extension, this is called using <code>$('#root').coveo('state');</code>.
+	 * @param element The root of the interface for which to access the {@link QueryStateModel}.
+	 * @param args
+	 * @returns {any}
+	 */
+	function state(element) {
+	    var args = [];
+	    for (var _i = 1; _i < arguments.length; _i++) {
+	        args[_i - 1] = arguments[_i];
+	    }
+	    Assert_1.Assert.exists(element);
+	    var model = Component_1.Component.resolveBinding(element, QueryStateModel_1.QueryStateModel);
+	    return QueryStateModel_1.setState(model, args);
+	}
+	exports.state = state;
+	Initialization_1.Initialization.registerNamedMethod('state', function (element) {
+	    var args = [];
+	    for (var _i = 1; _i < arguments.length; _i++) {
+	        args[_i - 1] = arguments[_i];
+	    }
+	    if (args.length != 0) {
+	        return state.apply(undefined, [element].concat(args));
+	    }
+	    else {
+	        return state.apply(undefined, [element]);
+	    }
+	});
+	/**
+	 * Get the component bound on the given `HTMLElement`.
+	 * @param element The `HTMLElement` for which to get the component instance.
+	 * @param componentClass If multiple components are bound to a single `HTMLElement`, you need to specify which components you wish to get.
+	 * @param noThrow By default, the GET method will throw if there is no component bound, or if there are multiple component and no `componentClass` is specified. This deletes the error if set to true.
+	 * @returns {Component}
+	 */
+	function get(element, componentClass, noThrow) {
+	    Assert_1.Assert.exists(element);
+	    return Component_1.Component.get(element, componentClass, noThrow);
+	}
+	exports.get = get;
+	Initialization_1.Initialization.registerNamedMethod('get', function (element, componentClass, noThrow) {
+	    return get(element, componentClass, noThrow);
+	});
+	function result(element, noThrow) {
+	    Assert_1.Assert.exists(element);
+	    return Component_1.Component.getResult(element, noThrow);
+	}
+	exports.result = result;
+	Initialization_1.Initialization.registerNamedMethod('result', function (element, noThrow) {
+	    return result(element, noThrow);
+	});
+	function getCoveoAnalyticsClient(element) {
+	    var analytics = getCoveoAnalytics(element);
+	    if (analytics) {
+	        return analytics.client;
+	    }
+	    else {
+	        return undefined;
+	    }
+	}
+	function getCoveoAnalytics(element) {
+	    var analyticsElement = Dom_1.$$(element).find('.' + Component_1.Component.computeCssClassName(Analytics_1.Analytics));
+	    if (analyticsElement) {
+	        return Component_1.Component.get(analyticsElement);
+	    }
+	    else {
+	        return undefined;
+	    }
+	}
+	/**
+	 * Log a custom event on the Coveo Usage Analytics service.
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param customEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
+	 */
+	function logCustomEvent(element, customEventCause, metadata) {
+	    var client = getCoveoAnalyticsClient(element);
+	    if (client) {
+	        client.logCustomEvent(customEventCause, metadata, element);
+	    }
+	}
+	exports.logCustomEvent = logCustomEvent;
+	Initialization_1.Initialization.registerNamedMethod('logCustomEvent', function (element, customEventCause, metadata) {
+	    logCustomEvent(element, customEventCause, metadata);
+	});
+	/**
+	 * Log a `SearchEvent` on the Coveo Usage Analytics service.
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param searchEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
+	 */
+	function logSearchEvent(element, searchEventCause, metadata) {
+	    var client = getCoveoAnalyticsClient(element);
+	    if (client) {
+	        client.logSearchEvent(searchEventCause, metadata);
+	    }
+	}
+	exports.logSearchEvent = logSearchEvent;
+	Initialization_1.Initialization.registerNamedMethod('logSearchEvent', function (element, searchEventCause, metadata) {
+	    logSearchEvent(element, searchEventCause, metadata);
+	});
+	/**
+	 * Log a `SearchAsYouTypeEvent` on the Coveo Usage Analytics service.<br/>
+	 * It is a bit different from a standard search event, as it will wait 5 seconds before sending the final `SearchAsYouType` event.
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param searchAsYouTypeEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
+	 */
+	function logSearchAsYouTypeEvent(element, searchAsYouTypeEventCause, metadata) {
+	    var client = getCoveoAnalyticsClient(element);
+	    if (client) {
+	        client.logSearchAsYouType(searchAsYouTypeEventCause, metadata);
+	    }
+	}
+	exports.logSearchAsYouTypeEvent = logSearchAsYouTypeEvent;
+	Initialization_1.Initialization.registerNamedMethod('logSearchAsYouTypeEvent', function (element, searchAsYouTypeEventCause, metadata) {
+	    logSearchAsYouTypeEvent(element, searchAsYouTypeEventCause, metadata);
+	});
+	/**
+	 * Log a `ClickEvent` on the Coveo Usage Analytics service.
+	 * @param element The root of the interface for which to log analytics events.
+	 * @param clickEventCause The cause of the event.
+	 * @param metadata The metadata associated with the event (JSON key value).
+	 * @param result The result that was clicked.
+	 */
+	function logClickEvent(element, clickEventCause, metadata, result) {
+	    var client = getCoveoAnalyticsClient(element);
+	    if (client) {
+	        client.logClickEvent(clickEventCause, metadata, result, element);
+	    }
+	}
+	exports.logClickEvent = logClickEvent;
+	Initialization_1.Initialization.registerNamedMethod('logClickEvent', function (element, clickEventCause, metadata, result) {
+	    logClickEvent(element, clickEventCause, metadata, result);
+	});
+	/**
+	 * Pass options to the framework, before it is initialized ({@link init}).<br/>
+	 * All the options passed with this calls will be merged together on initialization.
+	 * @param element The root of the interface for which you wish to set options.
+	 * @param optionsToSet JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType: true}}</code>).
+	 */
+	function options(element, optionsToSet) {
+	    if (optionsToSet === void 0) { optionsToSet = {}; }
+	    Initialization_1.Initialization.registerDefaultOptions(element, optionsToSet);
+	}
+	exports.options = options;
+	Initialization_1.Initialization.registerNamedMethod('options', function (element, optionsToSet) {
+	    if (optionsToSet === void 0) { optionsToSet = {}; }
+	    options(element, optionsToSet);
+	});
+	/**
+	 * Patch the given `methodName` on an instance of a component bound to an `HTMLElement` with a new handler.
+	 * @param element
+	 * @param methodName
+	 * @param handler
+	 */
+	function patch(element, methodName, handler) {
+	    Initialization_1.Initialization.monkeyPatchComponentMethod(methodName, element, handler);
+	}
+	exports.patch = patch;
+	Initialization_1.Initialization.registerNamedMethod('patch', function (element, methodName, handler) {
+	    patch(element, methodName, handler);
+	});
+	function initBox(element) {
+	    var args = [];
+	    for (var _i = 1; _i < arguments.length; _i++) {
+	        args[_i - 1] = arguments[_i];
+	    }
+	    var type, options = {}, injectMarkup;
+	    // This means : initBox, no type (no injection) and no options
+	    if (args.length == 0) {
+	        type = 'Standard';
+	        injectMarkup = false;
+	    }
+	    else if (args.length == 1) {
+	        // This mean a type (with injection) and no options
+	        if (typeof args[0] == 'string') {
+	            type = args[0];
+	            injectMarkup = true;
+	        }
+	        else if (typeof args[0] == 'object') {
+	            type = 'Standard';
+	            injectMarkup = false;
+	            options = args[0];
+	        }
+	        else {
+	            Assert_1.Assert.fail('Invalid parameters to init a box');
+	        }
+	    }
+	    else if (args.length == 2) {
+	        type = args[0];
+	        options = args[1];
+	        injectMarkup = true;
+	    }
+	    var merged = {};
+	    merged[type || 'Container'] = _.extend({}, options.SearchInterface, options[type]);
+	    options = _.extend({}, options, merged);
+	    Initialization_1.Initialization.initializeFramework(element, options, function () {
+	        Initialization_1.Initialization.initBoxInterface(element, options, type, injectMarkup);
+	    });
+	}
+	exports.initBox = initBox;
+	Initialization_1.Initialization.registerNamedMethod('initBox', function (element) {
+	    var args = [];
+	    for (var _i = 1; _i < arguments.length; _i++) {
+	        args[_i - 1] = arguments[_i];
+	    }
+	    initBox(element, args);
+	});
+	function nuke(element) {
+	    Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.nuke);
+	}
+	exports.nuke = nuke;
+	Initialization_1.Initialization.registerNamedMethod('nuke', function (element) {
+	    nuke(element);
+	});
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Logger_1 = __webpack_require__(11);
+	var Component_1 = __webpack_require__(107);
+	var Utils_1 = __webpack_require__(13);
+	var Assert_1 = __webpack_require__(12);
+	var Dom_1 = __webpack_require__(59);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var SearchInterface_1 = __webpack_require__(108);
+	var QueryController_1 = __webpack_require__(74);
+	var HashUtils_1 = __webpack_require__(65);
+	var QueryStateModel_1 = __webpack_require__(101);
+	var ComponentStateModel_1 = __webpack_require__(103);
+	var ComponentOptionsModel_1 = __webpack_require__(102);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var JQueryutils_1 = __webpack_require__(18);
+	var _ = __webpack_require__(14);
+	/**
+	 * The main purpose of this class is to initialize the framework (a.k.a the code executed when calling `Coveo.init`).<br/>
+	 * It's also in charge or registering the available components, as well as the method that we expost to the global Coveo scope.<br/>
+	 * For example, the `Coveo.executeQuery` function will be registed in this class by the {@link QueryController}.
+	 */
+	var Initialization = (function () {
+	    function Initialization() {
+	    }
+	    /**
+	     * Register a new set of options for a given element.<br/>
+	     * When the element is eventually initialized as a component, those options will be used / merged to create the final option set to use for this component.<br/>
+	     * Note that this function should not normally be called directly, but instead using the global `Coveo.options` function
+	     * @param element
+	     * @param options
+	     */
+	    Initialization.registerDefaultOptions = function (element, options) {
+	        var existing = element['CoveoDefaultOptions'] || {};
+	        var updated = Utils_1.Utils.extendDeep(existing, options);
+	        element['CoveoDefaultOptions'] = updated;
+	    };
+	    Initialization.resolveDefaultOptions = function (element, options) {
+	        var optionsForThisElement = element['CoveoDefaultOptions'];
+	        var optionsSoFar;
+	        if (Utils_1.Utils.exists(optionsForThisElement)) {
+	            optionsSoFar = Utils_1.Utils.extendDeep(optionsForThisElement, options);
+	        }
+	        else {
+	            optionsSoFar = options;
+	        }
+	        if (element.parentElement) {
+	            return Initialization.resolveDefaultOptions(element.parentElement, optionsSoFar);
+	        }
+	        else {
+	            return optionsSoFar;
+	        }
+	    };
+	    /**
+	     * Register a new Component to be recognized by the framework.<br/>
+	     * This essentially mean that when we call `Coveo.init`, the Initialization class will scan the DOM for known component (which have registed themselves with this call) and create a new component on each element.
+	     * @param componentClass
+	     */
+	    Initialization.registerAutoCreateComponent = function (componentClass) {
+	        Assert_1.Assert.exists(componentClass);
+	        Assert_1.Assert.exists(componentClass.ID);
+	        Assert_1.Assert.doesNotExists(Initialization.autoCreateComponents[componentClass.ID]);
+	        Assert_1.Assert.doesNotExists(Initialization.namedMethods[componentClass.ID]);
+	        Initialization.autoCreateComponents[componentClass.ID] = componentClass;
+	    };
+	    /**
+	     * Check if a component is already registed, using it's ID (e.g. : 'Facet').
+	     * @param componentClassId
+	     * @returns {boolean}
+	     */
+	    Initialization.isComponentClassIdRegistered = function (componentClassId) {
+	        return Utils_1.Utils.exists(Initialization.autoCreateComponents[componentClassId]);
+	    };
+	    /**
+	     * Return the list of all known components (the list of ID for each component).
+	     * @returns {string[]}
+	     */
+	    Initialization.getListOfRegisteredComponents = function () {
+	        return _.keys(Initialization.autoCreateComponents);
+	    };
+	    /**
+	     * Return the component class definition, using it's ID (e.g. : 'CoveoFacet').
+	     * @param name
+	     * @returns {IComponentDefinition}
+	     */
+	    Initialization.getRegisteredComponent = function (name) {
+	        return Initialization.autoCreateComponents[name];
+	    };
+	    /**
+	     * Initialize the framework. Note that this function should not normally be called directly, but instead using a globally registered function (e.g.: Coveo.init), or {@link Initialization.initSearchInterface} or {@link Initialization.initStandaloneSearchInterface} <br/>
+	     * (e.g. : `Coveo.init` or `Coveo.initSearchbox`).
+	     * @param element The element on which to initialize the interface.
+	     * @param options The options for all components (eg: {Searchbox : {enableSearchAsYouType : true}}).
+	     * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
+	     */
+	    Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
+	        Assert_1.Assert.exists(element);
+	        var alreadyInitialized = Component_1.Component.get(element, QueryController_1.QueryController, true);
+	        if (alreadyInitialized) {
+	            this.logger.error('This DOM element has already been initialized as a search interface, skipping initialization', element);
+	            return;
+	        }
+	        options = Initialization.resolveDefaultOptions(element, options);
+	        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.beforeInitialization);
+	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.beforeInitialization);
+	        initSearchInterfaceFunction(element, options);
+	        Initialization.initExternalComponents(element, options);
+	        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
+	        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
+	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterInitialization);
+	        var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
+	        // Elements that have the coveo-hide-until-loaded class are hidden by default.
+	        // Now that we're loaded (and before the first query returns), we can remove
+	        // the class. Also, we add a class that gives the opportunity for an animation
+	        // to apply at startup, such as a fade-in that comes in by default.
+	        var elemsHidden = Dom_1.$$(element).findAll('.coveo-hide-until-loaded');
+	        _.each(elemsHidden, function (e) {
+	            Dom_1.$$(e).removeClass('coveo-hide-until-loaded');
+	            Dom_1.$$(e).addClass('coveo-show-after-loaded');
+	        });
+	        if (searchInterface.options.autoTriggerQuery) {
+	            Initialization.logFirstQueryCause(searchInterface);
+	            var shouldLogInActionHistory = true;
+	            // We should not log an action history if the interface is a standalone recommendation component.
+	            if (Coveo['Recommendation']) {
+	                shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
+	            }
+	            Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
+	                logInActionsHistory: shouldLogInActionHistory,
+	                isFirstQuery: true
+	            });
+	        }
+	    };
+	    /**
+	     * Create a new standard search interface. This is the function executed when calling `Coveo.init`.
+	     * @param element
+	     * @param options
+	     */
+	    Initialization.initSearchInterface = function (element, options) {
+	        if (options === void 0) { options = {}; }
+	        options = Initialization.resolveDefaultOptions(element, options);
+	        var searchInterface = new SearchInterface_1.SearchInterface(element, options.SearchInterface, options.Analytics);
+	        searchInterface.options.originalOptionsObject = options;
+	        var initParameters = { options: options, bindings: searchInterface.getBindings() };
+	        Initialization.automaticallyCreateComponentsInside(element, initParameters, ['Recommendation']);
+	    };
+	    /**
+	     * Create a new standalone search interface (standalone search box). This is the function executed when calling `Coveo.initSearchbox`.
+	     * @param element
+	     * @param options
+	     */
+	    Initialization.initStandaloneSearchInterface = function (element, options) {
+	        if (options === void 0) { options = {}; }
+	        options = Initialization.resolveDefaultOptions(element, options);
+	        // Set trigger query on clear to false for standalone search interface automatically
+	        // Take care of not overriding any options that could have been set by external code.
+	        if (!options.Querybox) {
+	            options.Querybox = {};
+	        }
+	        if (!options.Omnibox) {
+	            options.Omnibox = {};
+	        }
+	        if (!options.Searchbox) {
+	            options.Searchbox = {};
+	        }
+	        if (!options.Querybox.triggerQueryOnClear || !options.Omnibox.triggerQueryOnClear || !options.Searchbox.triggerOnQueryClear) {
+	            options.Querybox.triggerQueryOnClear = false;
+	            options.Omnibox.triggerQueryOnClear = false;
+	            options.Searchbox.triggerQueryOnClear = false;
+	        }
+	        var searchInterface = new SearchInterface_1.StandaloneSearchInterface(element, options.StandaloneSearchInterface, options.Analytics);
+	        searchInterface.options.originalOptionsObject = options;
+	        var initParameters = { options: options, bindings: searchInterface.getBindings() };
+	        Initialization.automaticallyCreateComponentsInside(element, initParameters);
+	    };
+	    /**
+	     * Create a new recommendation search interface. This is the function executed when calling `Coveo.initRecommendation`.
+	     * @param element
+	     * @param options
+	     */
+	    Initialization.initRecommendationInterface = function (element, options) {
+	        if (options === void 0) { options = {}; }
+	        options = Initialization.resolveDefaultOptions(element, options);
+	        // Since a recommendation interface inherits from a search interface, we need to merge those if passed on init
+	        var optionsForRecommendation = _.extend({}, options.SearchInterface, options.Recommendation);
+	        // If there is a main search interface, modify the loading animation for the recommendation interface to a "noop" element
+	        // We don't want 2 animation overlapping
+	        if (optionsForRecommendation.mainSearchInterface) {
+	            optionsForRecommendation.firstLoadingAnimation = Dom_1.$$('span').el;
+	        }
+	        var recommendation = new window['Coveo']['Recommendation'](element, optionsForRecommendation, options.Analytics);
+	        recommendation.options.originalOptionsObject = options;
+	        var initParameters = { options: options, bindings: recommendation.getBindings() };
+	        Initialization.automaticallyCreateComponentsInside(element, initParameters);
+	    };
+	    /**
+	     * Scan the element and all its children for known components. Initialize every known component found.
+	     * @param element The element for which to scan it's children.
+	     * @param initParameters Needed parameters to initialize all the children components.
+	     * @param ignore An optional list of component ID to ignore and skip when scanning for known components.
+	     */
+	    Initialization.automaticallyCreateComponentsInside = function (element, initParameters, ignore) {
+	        Assert_1.Assert.exists(element);
+	        var codeToExecute = [];
+	        var htmlElementsToIgnore = [];
+	        // Scan for elements to ignore which can be a container component (with other component inside)
+	        // When a component is ignored, all it's children component should be ignored too.
+	        // Add them to the array of html elements that should be skipped.
+	        _.each(ignore, function (toIgnore) {
+	            var rootToIgnore = Dom_1.$$(element).find("." + Component_1.Component.computeCssClassNameForType(toIgnore));
+	            if (rootToIgnore) {
+	                var childsElementsToIgnore = Dom_1.$$(rootToIgnore).findAll('*');
+	                htmlElementsToIgnore = htmlElementsToIgnore.concat(childsElementsToIgnore);
+	            }
+	        });
+	        for (var componentClassId in Initialization.autoCreateComponents) {
+	            if (!_.contains(ignore, componentClassId)) {
+	                var componentClass = Initialization.autoCreateComponents[componentClassId];
+	                var classname = Component_1.Component.computeCssClassName(componentClass);
+	                var elements = Dom_1.$$(element).findAll('.' + classname);
+	                // From all the component we found which match the current className, remove those that should be ignored
+	                elements = _.difference(elements, htmlElementsToIgnore);
+	                if (Dom_1.$$(element).hasClass(classname) && !_.contains(htmlElementsToIgnore, element)) {
+	                    elements.push(element);
+	                }
+	                if (elements.length != 0) {
+	                    // Queue the code that will scan the now resolved selector to after we've
+	                    // finished evaluating all selectors. This ensures that if a component
+	                    // constructor adds child components under his tags, those won't get auto-
+	                    // initialize by this invocation of this method. Components inserting child
+	                    // components are responsible of invoking this method again if they want
+	                    // child components to be auto-initialized.
+	                    //
+	                    // Explanation: If we don't do that, child components for which selector have
+	                    // already been evaluated won't be initialized, whereas those that are next
+	                    // in the list will be.
+	                    codeToExecute.push(Initialization.createFunctionThatInitializesComponentOnElements(elements, componentClassId, componentClass, initParameters));
+	                }
+	            }
+	        }
+	        // Now that all selectors are executed, let's really initialize the components.
+	        _.each(codeToExecute, function (code) { return code(); });
+	    };
+	    /**
+	     * Create a new component on the given element.
+	     * @param componentClassId The ID of the component to initialize (e.g. : 'CoveoFacet').
+	     * @param element The HTMLElement on which to initialize.
+	     * @param initParameters Needed parameters to initialize the component.
+	     * @returns {Component}
+	     */
+	    Initialization.createComponentOfThisClassOnElement = function (componentClassId, element, initParameters) {
+	        Assert_1.Assert.isNonEmptyString(componentClassId);
+	        Assert_1.Assert.exists(element);
+	        var componentClass = Initialization.autoCreateComponents[componentClassId];
+	        Assert_1.Assert.exists(componentClass);
+	        var bindings = {};
+	        var options = {};
+	        var result = undefined;
+	        if (initParameters != undefined) {
+	            _.each(initParameters.bindings, function (value, key) {
+	                bindings[key] = value;
+	            });
+	            options = initParameters.options;
+	            result = initParameters.result;
+	        }
+	        Initialization.logger.trace('Creating component of class ' + componentClassId, element, options);
+	        return new componentClass(element, options, bindings, result);
+	    };
+	    /**
+	     * Register a new globally available method in the Coveo namespace (e.g.: `Coveo.init`).
+	     * @param methodName The method name to register.
+	     * @param handler The function to execute when the method is called.
+	     */
+	    Initialization.registerNamedMethod = function (methodName, handler) {
+	        Assert_1.Assert.isNonEmptyString(methodName);
+	        Assert_1.Assert.doesNotExists(Initialization.autoCreateComponents[methodName]);
+	        Assert_1.Assert.doesNotExists(Initialization.namedMethods[methodName]);
+	        Assert_1.Assert.exists(handler);
+	        Initialization.namedMethods[methodName] = handler;
+	    };
+	    /**
+	     * Check if the method is already registed.
+	     * @param methodName
+	     * @returns {boolean}
+	     */
+	    Initialization.isNamedMethodRegistered = function (methodName) {
+	        return Utils_1.Utils.exists(Initialization.namedMethods[methodName]);
+	    };
+	    /**
+	     * 'Monkey patch' (replace the function with a new one) a given method on a component instance.
+	     * @param methodName
+	     * @param element
+	     * @param handler
+	     */
+	    Initialization.monkeyPatchComponentMethod = function (methodName, element, handler) {
+	        Assert_1.Assert.isNonEmptyString(methodName);
+	        Assert_1.Assert.exists(handler);
+	        var componentClass;
+	        if (methodName.indexOf('.') > 0) {
+	            var splitArg = methodName.split('.');
+	            Assert_1.Assert.check(splitArg.length == 2, 'Invalid method name, correct syntax is CoveoComponent.methodName.');
+	            componentClass = splitArg[0];
+	            methodName = splitArg[1];
+	        }
+	        var boundComponent = Component_1.Component.get(element, componentClass);
+	        Assert_1.Assert.exists(boundComponent);
+	        Assert_1.Assert.exists(boundComponent[methodName]);
+	        var originalMethodName = '__' + methodName;
+	        if (!Utils_1.Utils.exists(boundComponent[originalMethodName])) {
+	            boundComponent[originalMethodName] = boundComponent[methodName];
+	        }
+	        boundComponent[methodName] = handler;
+	    };
+	    Initialization.initBoxInterface = function (element, options, type, injectMarkup) {
+	        if (options === void 0) { options = {}; }
+	        if (type === void 0) { type = 'Standard'; }
+	        if (injectMarkup === void 0) { injectMarkup = true; }
+	        options = Initialization.resolveDefaultOptions(element, options);
+	        var fromInitTypeToBoxReference = 'Box';
+	        if (type != 'Standard') {
+	            fromInitTypeToBoxReference += 'For' + type;
+	        }
+	        var boxRef = Component_1.Component.getComponentRef(fromInitTypeToBoxReference);
+	        if (boxRef) {
+	            new Logger_1.Logger(element).info('Initializing box of type ' + fromInitTypeToBoxReference);
+	            var injectFunction = injectMarkup ? boxRef.getInjection : function () {
+	            };
+	            var box = new boxRef(element, options[fromInitTypeToBoxReference], options.Analytics, injectFunction, options);
+	            box.options.originalOptionsObject = options;
+	            var initParameters = { options: options, bindings: box.getBindings() };
+	            Initialization.automaticallyCreateComponentsInside(element, initParameters);
+	        }
+	        else {
+	            new Logger_1.Logger(element).error('Trying to initialize box of type : ' + fromInitTypeToBoxReference + ' but not found in code (not compiled)!');
+	            Assert_1.Assert.fail('Cannot initialize unknown type of box');
+	        }
+	    };
+	    Initialization.dispatchNamedMethodCall = function (methodName, element, args) {
+	        Assert_1.Assert.isNonEmptyString(methodName);
+	        Assert_1.Assert.exists(element);
+	        var namedMethodHandler = Initialization.namedMethods[methodName];
+	        Assert_1.Assert.exists(namedMethodHandler);
+	        Initialization.logger.trace('Dispatching named method call of ' + methodName, element, args);
+	        if (args.length != 0) {
+	            return namedMethodHandler.apply(null, [element].concat(args));
+	        }
+	        else {
+	            return namedMethodHandler.apply(null, [element]);
+	        }
+	    };
+	    Initialization.dispatchNamedMethodCallOrComponentCreation = function (token, element, args) {
+	        Assert_1.Assert.isNonEmptyString(token);
+	        Assert_1.Assert.exists(element);
+	        if (Initialization.isNamedMethodRegistered(token)) {
+	            return Initialization.dispatchNamedMethodCall(token, element, args);
+	        }
+	        else if (Initialization.isComponentClassIdRegistered(token)) {
+	            return Initialization.createComponentOfThisClassOnElement(token, element, args[0]);
+	        }
+	        else if (Initialization.isThereASingleComponentBoundToThisElement(element)) {
+	            return Initialization.dispatchMethodCallOnBoundComponent(token, element, args);
+	        }
+	        else {
+	            Assert_1.Assert.fail('No method or component named ' + token + ' are registered.');
+	        }
+	    };
+	    Initialization.isSearchFromLink = function (searchInterface) {
+	        return Utils_1.Utils.isNonEmptyString(searchInterface.getBindings().queryStateModel.get('q'));
+	    };
+	    Initialization.isThereASingleComponentBoundToThisElement = function (element) {
+	        Assert_1.Assert.exists(element);
+	        return Utils_1.Utils.exists(Component_1.Component.get(element));
+	    };
+	    Initialization.dispatchMethodCallOnBoundComponent = function (methodName, element, args) {
+	        Assert_1.Assert.isNonEmptyString(methodName);
+	        Assert_1.Assert.exists(element);
+	        var boundComponent = Component_1.Component.get(element);
+	        Assert_1.Assert.exists(boundComponent);
+	        var method = boundComponent[methodName];
+	        if (Utils_1.Utils.exists(method)) {
+	            return method.apply(boundComponent, args);
+	        }
+	        else {
+	            Assert_1.Assert.fail('No method named ' + methodName + ' exist on component ' + boundComponent.type);
+	        }
+	    };
+	    Initialization.logFirstQueryCause = function (searchInterface) {
+	        var firstQueryCause = HashUtils_1.HashUtils.getValue('firstQueryCause', HashUtils_1.HashUtils.getHash());
+	        if (firstQueryCause != null) {
+	            var meta = HashUtils_1.HashUtils.getValue('firstQueryMeta', HashUtils_1.HashUtils.getHash()) || {};
+	            searchInterface.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList[firstQueryCause], meta);
+	        }
+	        else {
+	            if (Initialization.isSearchFromLink(searchInterface)) {
+	                searchInterface.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.searchFromLink, {});
+	            }
+	            else {
+	                searchInterface.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.interfaceLoad, {});
+	            }
+	        }
+	    };
+	    Initialization.performInitFunctionsOption = function (options, event) {
+	        if (Utils_1.Utils.exists(options)) {
+	            Initialization.performFunctions(options[event]);
+	        }
+	    };
+	    Initialization.performFunctions = function (option) {
+	        if (Utils_1.Utils.exists(option)) {
+	            _.each(option, function (func) {
+	                if (typeof func == 'function') {
+	                    func();
+	                }
+	            });
+	        }
+	    };
+	    Initialization.initExternalComponents = function (element, options) {
+	        if (options && options['externalComponents']) {
+	            var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
+	            var queryStateModel = Component_1.Component.get(element, QueryStateModel_1.QueryStateModel);
+	            var componentStateModel = Component_1.Component.get(element, ComponentStateModel_1.ComponentStateModel);
+	            var queryController = Component_1.Component.get(element, QueryController_1.QueryController);
+	            var componentOptionsModel = Component_1.Component.get(element, ComponentOptionsModel_1.ComponentOptionsModel);
+	            var usageAnalytics = searchInterface.usageAnalytics;
+	            Assert_1.Assert.exists(searchInterface);
+	            Assert_1.Assert.exists(queryStateModel);
+	            Assert_1.Assert.exists(queryController);
+	            Assert_1.Assert.exists(componentStateModel);
+	            Assert_1.Assert.exists(usageAnalytics);
+	            var initParameters_1 = {
+	                options: options,
+	                bindings: {
+	                    searchInterface: searchInterface,
+	                    queryStateModel: queryStateModel,
+	                    queryController: queryController,
+	                    usageAnalytics: usageAnalytics,
+	                    componentStateModel: componentStateModel,
+	                    componentOptionsModel: componentOptionsModel,
+	                    root: element
+	                }
+	            };
+	            _.each(options['externalComponents'], function (externalComponent) {
+	                var elementToInstantiate = externalComponent;
+	                if (Utils_1.Utils.isHtmlElement(elementToInstantiate)) {
+	                    Initialization.automaticallyCreateComponentsInside(elementToInstantiate, initParameters_1);
+	                }
+	                else if (JQueryutils_1.JQueryUtils.isInstanceOfJQuery(elementToInstantiate)) {
+	                    Initialization.automaticallyCreateComponentsInside((elementToInstantiate.get(0)), initParameters_1);
+	                }
+	            });
+	        }
+	    };
+	    Initialization.createFunctionThatInitializesComponentOnElements = function (elements, componentClassId, componentClass, initParameters) {
+	        return function () {
+	            _.each(elements, function (matchingElement) {
+	                if (Component_1.Component.get(matchingElement, componentClassId) == null) {
+	                    // If options were provided, lookup options for this component class and
+	                    // also for the element id. Merge them and pass those to the factory method.
+	                    var optionsToUse = undefined;
+	                    if (Utils_1.Utils.exists(initParameters.options)) {
+	                        var optionsForComponentClass = initParameters.options[componentClassId];
+	                        var optionsForElementId = initParameters.options[matchingElement.id];
+	                        var initOptions = initParameters.options['initOptions'] ? initParameters.options['initOptions'][componentClassId] : {};
+	                        optionsToUse = Utils_1.Utils.extendDeep(optionsForElementId, initOptions);
+	                        optionsToUse = Utils_1.Utils.extendDeep(optionsForComponentClass, optionsToUse);
+	                    }
+	                    var initParamToUse = _.extend({}, initParameters, { options: optionsToUse });
+	                    Initialization.createComponentOfThisClassOnElement(componentClass['ID'], matchingElement, initParamToUse);
+	                }
+	            });
+	        };
+	    };
+	    return Initialization;
+	}());
+	Initialization.logger = new Logger_1.Logger('Initialization');
+	Initialization.autoCreateComponents = {};
+	Initialization.namedMethods = {};
+	exports.Initialization = Initialization;
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
 	var JQueryutils_1 = __webpack_require__(18);
 	var Dom_1 = __webpack_require__(59);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var ComponentStateModel_1 = __webpack_require__(104);
-	var ComponentOptionsModel_1 = __webpack_require__(105);
-	var QueryController_1 = __webpack_require__(75);
-	var SearchInterface_1 = __webpack_require__(106);
+	var ComponentStateModel_1 = __webpack_require__(103);
+	var ComponentOptionsModel_1 = __webpack_require__(102);
+	var QueryController_1 = __webpack_require__(74);
+	var SearchInterface_1 = __webpack_require__(108);
 	var NoopAnalyticsClient_1 = __webpack_require__(119);
-	var BaseComponent_1 = __webpack_require__(77);
+	var BaseComponent_1 = __webpack_require__(76);
 	var DebugEvents_1 = __webpack_require__(43);
 	var _ = __webpack_require__(14);
 	/**
@@ -14393,91 +15517,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ComponentEvents = ComponentEvents;
 
 
-/***/ },
-/* 104 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Model_1 = __webpack_require__(98);
-	var ComponentStateModel = (function (_super) {
-	    __extends(ComponentStateModel, _super);
-	    function ComponentStateModel(element) {
-	        return _super.call(this, element, ComponentStateModel.ID, {}) || this;
-	    }
-	    ComponentStateModel.prototype.registerComponent = function (componentId, component) {
-	        var currentAttribute = this.attributes[componentId];
-	        if (currentAttribute == undefined) {
-	            this.attributes[componentId] = [component];
-	        }
-	        else {
-	            this.attributes[componentId].push(component);
-	        }
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	    };
-	    return ComponentStateModel;
-	}(Model_1.Model));
-	ComponentStateModel.ID = 'ComponentState';
-	exports.ComponentStateModel = ComponentStateModel;
-
-
-/***/ },
-/* 105 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Model_1 = __webpack_require__(98);
-	var _ = __webpack_require__(14);
-	var ComponentOptionsModel = (function (_super) {
-	    __extends(ComponentOptionsModel, _super);
-	    function ComponentOptionsModel(element, attributes) {
-	        var _this = this;
-	        var merged = _.extend({}, ComponentOptionsModel.defaultAttributes, attributes);
-	        _this = _super.call(this, element, ComponentOptionsModel.ID, merged) || this;
-	        return _this;
-	    }
-	    return ComponentOptionsModel;
-	}(Model_1.Model));
-	ComponentOptionsModel.ID = 'ComponentOptions';
-	ComponentOptionsModel.defaultAttributes = {
-	    resultLink: undefined,
-	    searchHub: undefined
-	};
-	ComponentOptionsModel.attributesEnum = {
-	    resultLink: 'resultLink',
-	    searchHub: 'searchHub'
-	};
-	exports.ComponentOptionsModel = ComponentOptionsModel;
-
-
-/***/ },
-/* 106 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var SearchEndpoint_1 = __webpack_require__(9);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var Dom_1 = __webpack_require__(59);
 	var DomUtils_1 = __webpack_require__(60);
 	var Assert_1 = __webpack_require__(12);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var ComponentStateModel_1 = __webpack_require__(104);
-	var ComponentOptionsModel_1 = __webpack_require__(105);
-	var QueryController_1 = __webpack_require__(75);
+	var ComponentStateModel_1 = __webpack_require__(103);
+	var ComponentOptionsModel_1 = __webpack_require__(102);
+	var QueryController_1 = __webpack_require__(74);
 	var Model_1 = __webpack_require__(98);
 	var QueryEvents_1 = __webpack_require__(48);
 	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(54);
@@ -14486,14 +15551,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var InitializationEvents_1 = __webpack_require__(45);
 	var NoopAnalyticsClient_1 = __webpack_require__(119);
 	var Utils_1 = __webpack_require__(13);
-	var RootComponent_1 = __webpack_require__(76);
-	var BaseComponent_1 = __webpack_require__(77);
+	var RootComponent_1 = __webpack_require__(75);
+	var BaseComponent_1 = __webpack_require__(76);
 	var Debug_1 = __webpack_require__(120);
-	var HashUtils_1 = __webpack_require__(66);
+	var HashUtils_1 = __webpack_require__(65);
 	var fastclick = __webpack_require__(121);
 	var jstz = __webpack_require__(122);
 	var SentryLogger_1 = __webpack_require__(125);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var ResponsiveComponents_1 = __webpack_require__(17);
 	var _ = __webpack_require__(14);
 	/**
@@ -14544,7 +15609,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Creates a new SearchInterface. Initialize various singletons for the interface (e.g., usage analytics, query
 	     * controller, state model, etc.). Binds events related to the query. Hides and shows the loading animation, if
-	     * activated (see {@link SearchInterface.options.hideUntilFirstQuery}).
+	     * activated (see the [hideUntilFirstQuery]{@link SearchInterface.options.hideUntilFirstQuery} option).
 	     * @param element The HTMLElement on which to instantiate the component. This cannot be an `HTMLInputElement` for
 	     * technical reasons.
 	     * @param options The options for the SearchInterface.
@@ -14606,7 +15671,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return _this;
 	    }
 	    /**
-	     * Displays the first query animation (see {@link SearchInterface.options.firstLoadingAnimation}).
+	     * Displays the first query animation (see the
+	     * [firstLoadingAnimation]{@link SearchInterface.options.firstLoadingAnimation} option).
 	     *
 	     * By default, this is the Coveo logo with a CSS animation (which can be customized with options or CSS).
 	     */
@@ -14616,7 +15682,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.element.appendChild(this.options.firstLoadingAnimation);
 	    };
 	    /**
-	     * Hides the first query animation (see {@link SearchInterface.options.firstLoadingAnimation}).
+	     * Hides the first query animation (see the
+	     * [firstLoadingAnimation]{@link SearchInterface.options.firstLoadingAnimation} option).
 	     *
 	     * By default, this is the Coveo logo with a CSS animation (which can be customized with options or CSS).
 	     */
@@ -14940,7 +16007,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Specifies whether to enable automatic responsive mode (i.e., automatically placing {@link Facet} and {@link Tab}
 	     * components in dropdown menus under the search box when the width of the SearchInterface HTML element reaches or
-	     * falls behind certain pixel thresholds).
+	     * falls behind a certain pixel threshold).
 	     *
 	     * You might want to set this option to `false` if automatic responsive mode does not suit the specific design needs
 	     * of your implementation.
@@ -14953,9 +16020,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * >
 	     * > In addition, you can specify the label you wish to display on the dropdown buttons (see
 	     * > {@link Facet.options.dropdownHeaderLabel} and {@link Tab.options.dropdownHeaderLabel}).
-	     * >
-	     * > Furthermore, it is possible to specify the pixel threshold at which Facet components will go in responsive
-	     * > mode (see {@link Facet.options.responsiveBreakpoint}.
 	     *
 	     * Default value is `true`.
 	     */
@@ -15015,7 +16079,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * For more advanced features, see the {@link Folding} component.
 	     *
-	     * Default value is `''`
+	     * Default value is the empty string (`''`).
 	     */
 	    filterField: ComponentOptions_1.ComponentOptions.buildFieldOption({ defaultValue: '' }),
 	    /**
@@ -15024,38 +16088,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * **Note:**
 	     *
 	     * > If you do not set this options to `false`, the loading animation will still run until the first query
-	     * > successfully returns even if {@link SearchInterface.options.autoTriggerQuery} is `false`.
+	     * > successfully returns even if the [autoTriggerQuery]{@link SearchInterface.options.autoTriggerQuery} option is
+	     * `false`.
+	     *
+	     * See also the [firstLoadingAnimation]{@link SearchInterface.options.firstLoadingAnimation} option.
 	     *
 	     * Default value is `true`.
 	     */
 	    hideUntilFirstQuery: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
 	    /**
-	     * Specifies the animation that you wish to use for your interface.
+	     * Specifies the animation that you wish to display while your interface is loading.
 	     *
-	     * This can be a selector or an HTML element that matches the correct CSS class (`coveo-first-loading-animation`).
+	     * You can either specify the CSS selector of an HTML element that matches the default CSS class
+	     * (`coveo-first-loading-animation`), or add `-selector` to the markup attribute of this option to specify the CSS
+	     * selector of an HTML element that matches any CSS class.
+	     *
+	     * See also the [hideUntilFirstQuery]{@link SearchInterface.options.hideUntilFirstQuery} option.
 	     *
 	     * **Examples:**
 	     *
-	     * Specifying the animation using a CSS selector in the {@link init} call:
-	     * ```javascript
-	     * Coveo.init(document.querySelector('#search'), {
-	     *   SearchInterface : {
-	     *     firstLoadingAnimation : '.CustomFirstLoadingAnimation'
-	     *   }
-	     * }
+	     * In this first case, the SearchInterface uses the HTML element whose `id` attribute is `MyAnimation` as the
+	     * loading animation only if the `class` attribute of this element also matches `coveo-first-loading-animation`.
+	     * Default loading animation CSS, which you can customize as you see fit, applies to this HTML element.
+	     * ```html
+	     * <div class='CoveoSearchInterface' data-first-loading-animation='#MyAnimation'>
+	     *   <div id='MyAnimation' class='coveo-first-loading-animation'>
+	     *     <!-- ... -->
+	     *   </div>
+	     *   <!-- ... -->
+	     * </div>
 	     * ```
 	     *
-	     * Specifying the animation using a CSS selector in the markup:
+	     * In this second case, the SearchInterface uses the HTML element whose `id` attribute is `MyAnimation` as the
+	     * loading animation no matter what CSS class it matches. However, if the `class` attribute of the HTML element does
+	     * not match `coveo-first-loading-animation`, no default loading animation CSS applies to this HTML element.
+	     * Normally, you should only use `data-first-loading-animation-selector` if you want to completely override the
+	     * default loading animation CSS.
 	     * ```html
-	     * <element id='search' class='CoveoSearchInterface data-first-loading-animation='.CustomFirstLoadingAnimation'>
+	     * <div class='CoveoSearchInterface' data-first-loading-animation-selector='#MyAnimation'>
+	     *   <div id='MyAnimation' class='my-custom-loading-animation-class'>
+	     *     <!-- ... -->
+	     *   </div>
+	     *   <!-- ... -->
+	     * </div>
 	     * ```
 	     *
-	     * Specifying the animation using an HTML element matching the correct CSS class:
-	     * ```html
-	     *   <element id='search' class='CoveoSearchInterface'>
-	     *     <element class='coveo-first-loading-animation'/>
-	     *   </element>
-	     * ```
+	     * See [Branding Customization](https://developers.coveo.com/x/EoGfAQ).
 	     *
 	     * By default, the loading animation is a Coveo CSS animation (which you can customize with CSS).
 	     */
@@ -15069,8 +16147,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * **Note:**
 	     *
-	     * > If you set this option to `false` while {@link SearchInterface.options.hideUntilFirstQuery} is `true`, the
-	     * > loading animation will still run until the first query successfully returns.
+	     * > If you set this option to `false` while the
+	     * > [hideUntilFirstQuery]{@link SearchInterface.options.hideUntilFirstQuery} option is `true`, the loading
+	     * > animation will still run until the first query successfully returns.
 	     *
 	     * Default value is `true`.
 	     */
@@ -15231,15 +16310,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.StandaloneSearchInterface = StandaloneSearchInterface;
 
 
-/***/ },
-/* 107 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Logger_1 = __webpack_require__(11);
 	var Dom_1 = __webpack_require__(59);
-	var TemplateCache_1 = __webpack_require__(108);
+	var TemplateCache_1 = __webpack_require__(110);
 	var TemplateList_1 = __webpack_require__(118);
 	var UnderscoreTemplate_1 = __webpack_require__(114);
 	var HtmlTemplate_1 = __webpack_require__(117);
@@ -15616,9 +16696,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        var numberValue = option.float === true ? Utils_1.Utils.parseFloatIfNotUndefined(attributeValue) : Utils_1.Utils.parseIntIfNotUndefined(attributeValue);
 	        if (option.min != null && option.min > numberValue) {
+	            new Logger_1.Logger(element).info("Value for option " + name + " is less than the possible minimum (Value is " + numberValue + ", minimum is " + option.min + "). It has been forced to it's minimum value.", option);
 	            numberValue = option.min;
 	        }
 	        if (option.max != null && option.max < numberValue) {
+	            new Logger_1.Logger(element).info("Value for option " + name + " is higher than the possible maximum (Value is " + numberValue + ", maximum is " + option.max + "). It has been forced to it's maximum value.", option);
 	            numberValue = option.max;
 	        }
 	        return numberValue;
@@ -15754,12 +16836,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ComponentOptions = ComponentOptions;
 
 
-/***/ },
-/* 108 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Template_1 = __webpack_require__(109);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Template_1 = __webpack_require__(111);
 	var Assert_1 = __webpack_require__(12);
 	var UnderscoreTemplate_1 = __webpack_require__(114);
 	var HtmlTemplate_1 = __webpack_require__(117);
@@ -15776,10 +16859,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param template
 	     * @param publicTemplate
 	     * @param defaultTemplate
+	     * @param pageTemplate
 	     */
-	    TemplateCache.registerTemplate = function (name, template, publicTemplate, defaultTemplate) {
+	    TemplateCache.registerTemplate = function (name, template, publicTemplate, defaultTemplate, resultListTemplate) {
 	        if (publicTemplate === void 0) { publicTemplate = true; }
 	        if (defaultTemplate === void 0) { defaultTemplate = false; }
+	        if (resultListTemplate === void 0) { resultListTemplate = false; }
 	        Assert_1.Assert.isNonEmptyString(name);
 	        Assert_1.Assert.exists(template);
 	        if (!(template instanceof Template_1.Template)) {
@@ -15791,6 +16876,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        TemplateCache.templates[name] = template;
 	        if (publicTemplate && !_.contains(TemplateCache.templateNames, name)) {
 	            TemplateCache.templateNames.push(name);
+	        }
+	        if (resultListTemplate && !_.contains(TemplateCache.resultListTemplateNames, name)) {
+	            TemplateCache.resultListTemplateNames.push(name);
 	        }
 	        if (defaultTemplate) {
 	            TemplateCache.defaultTemplates[name] = template;
@@ -15838,6 +16926,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    TemplateCache.getTemplateNames = function () {
 	        return TemplateCache.templateNames;
+	    };
+	    /**
+	     * Get all page templates name currently registered in the framework.
+	     * @returns {string[]}
+	     */
+	    TemplateCache.getResultListTemplateNames = function () {
+	        return TemplateCache.resultListTemplateNames;
 	    };
 	    /**
 	     * Get all the "default" templates in the framework.
@@ -15896,6 +16991,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}());
 	TemplateCache.templates = {};
 	TemplateCache.templateNames = [];
+	TemplateCache.resultListTemplateNames = [];
 	TemplateCache.defaultTemplates = {};
 	exports.TemplateCache = TemplateCache;
 	document.addEventListener('DOMContentLoaded', function () {
@@ -15903,14 +16999,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 
-/***/ },
-/* 109 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Logger_1 = __webpack_require__(11);
 	var Dom_1 = __webpack_require__(59);
-	var TemplateConditionEvaluator_1 = __webpack_require__(110);
+	var TemplateConditionEvaluator_1 = __webpack_require__(112);
 	var TemplateFieldsEvaluator_1 = __webpack_require__(113);
 	var ResponsiveComponents_1 = __webpack_require__(17);
 	var _ = __webpack_require__(14);
@@ -16052,14 +17149,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Template = Template;
 
 
-/***/ },
-/* 110 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var StringUtils_1 = __webpack_require__(62);
-	var Initialization_1 = __webpack_require__(111);
-	var BaseComponent_1 = __webpack_require__(77);
+	var Initialization_1 = __webpack_require__(106);
+	var BaseComponent_1 = __webpack_require__(76);
 	var ResponsiveComponents_1 = __webpack_require__(17);
 	var _ = __webpack_require__(14);
 	var TemplateConditionEvaluator = (function () {
@@ -16125,831 +17223,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.TemplateConditionEvaluator = TemplateConditionEvaluator;
 
 
-/***/ },
-/* 111 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var Logger_1 = __webpack_require__(11);
-	var Component_1 = __webpack_require__(103);
-	var Utils_1 = __webpack_require__(13);
-	var Assert_1 = __webpack_require__(12);
-	var Dom_1 = __webpack_require__(59);
-	var InitializationEvents_1 = __webpack_require__(45);
-	var SearchInterface_1 = __webpack_require__(106);
-	var QueryController_1 = __webpack_require__(75);
-	var HashUtils_1 = __webpack_require__(66);
-	var QueryStateModel_1 = __webpack_require__(101);
-	var ComponentStateModel_1 = __webpack_require__(104);
-	var ComponentOptionsModel_1 = __webpack_require__(105);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var JQueryutils_1 = __webpack_require__(18);
-	var _ = __webpack_require__(14);
-	/**
-	 * The main purpose of this class is to initialize the framework (a.k.a the code executed when calling `Coveo.init`).<br/>
-	 * It's also in charge or registering the available components, as well as the method that we expost to the global Coveo scope.<br/>
-	 * For example, the `Coveo.executeQuery` function will be registed in this class by the {@link QueryController}.
-	 */
-	var Initialization = (function () {
-	    function Initialization() {
-	    }
-	    /**
-	     * Register a new set of options for a given element.<br/>
-	     * When the element is eventually initialized as a component, those options will be used / merged to create the final option set to use for this component.<br/>
-	     * Note that this function should not normally be called directly, but instead using the global `Coveo.options` function
-	     * @param element
-	     * @param options
-	     */
-	    Initialization.registerDefaultOptions = function (element, options) {
-	        var existing = element['CoveoDefaultOptions'] || {};
-	        var updated = Utils_1.Utils.extendDeep(existing, options);
-	        element['CoveoDefaultOptions'] = updated;
-	    };
-	    Initialization.resolveDefaultOptions = function (element, options) {
-	        var optionsForThisElement = element['CoveoDefaultOptions'];
-	        var optionsSoFar;
-	        if (Utils_1.Utils.exists(optionsForThisElement)) {
-	            optionsSoFar = Utils_1.Utils.extendDeep(optionsForThisElement, options);
-	        }
-	        else {
-	            optionsSoFar = options;
-	        }
-	        if (element.parentElement) {
-	            return Initialization.resolveDefaultOptions(element.parentElement, optionsSoFar);
-	        }
-	        else {
-	            return optionsSoFar;
-	        }
-	    };
-	    /**
-	     * Register a new Component to be recognized by the framework.<br/>
-	     * This essentially mean that when we call `Coveo.init`, the Initialization class will scan the DOM for known component (which have registed themselves with this call) and create a new component on each element.
-	     * @param componentClass
-	     */
-	    Initialization.registerAutoCreateComponent = function (componentClass) {
-	        Assert_1.Assert.exists(componentClass);
-	        Assert_1.Assert.exists(componentClass.ID);
-	        Assert_1.Assert.doesNotExists(Initialization.autoCreateComponents[componentClass.ID]);
-	        Assert_1.Assert.doesNotExists(Initialization.namedMethods[componentClass.ID]);
-	        Initialization.autoCreateComponents[componentClass.ID] = componentClass;
-	    };
-	    /**
-	     * Check if a component is already registed, using it's ID (e.g. : 'Facet').
-	     * @param componentClassId
-	     * @returns {boolean}
-	     */
-	    Initialization.isComponentClassIdRegistered = function (componentClassId) {
-	        return Utils_1.Utils.exists(Initialization.autoCreateComponents[componentClassId]);
-	    };
-	    /**
-	     * Return the list of all known components (the list of ID for each component).
-	     * @returns {string[]}
-	     */
-	    Initialization.getListOfRegisteredComponents = function () {
-	        return _.keys(Initialization.autoCreateComponents);
-	    };
-	    /**
-	     * Return the component class definition, using it's ID (e.g. : 'CoveoFacet').
-	     * @param name
-	     * @returns {IComponentDefinition}
-	     */
-	    Initialization.getRegisteredComponent = function (name) {
-	        return Initialization.autoCreateComponents[name];
-	    };
-	    /**
-	     * Initialize the framework. Note that this function should not normally be called directly, but instead using a globally registered function (e.g.: Coveo.init), or {@link Initialization.initSearchInterface} or {@link Initialization.initStandaloneSearchInterface} <br/>
-	     * (e.g. : `Coveo.init` or `Coveo.initSearchbox`).
-	     * @param element The element on which to initialize the interface.
-	     * @param options The options for all components (eg: {Searchbox : {enableSearchAsYouType : true}}).
-	     * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
-	     */
-	    Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
-	        Assert_1.Assert.exists(element);
-	        var alreadyInitialized = Component_1.Component.get(element, QueryController_1.QueryController, true);
-	        if (alreadyInitialized) {
-	            this.logger.error('This DOM element has already been initialized as a search interface, skipping initialization', element);
-	            return;
-	        }
-	        options = Initialization.resolveDefaultOptions(element, options);
-	        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.beforeInitialization);
-	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.beforeInitialization);
-	        initSearchInterfaceFunction(element, options);
-	        Initialization.initExternalComponents(element, options);
-	        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
-	        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
-	        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterInitialization);
-	        var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
-	        // Elements that have the coveo-hide-until-loaded class are hidden by default.
-	        // Now that we're loaded (and before the first query returns), we can remove
-	        // the class. Also, we add a class that gives the opportunity for an animation
-	        // to apply at startup, such as a fade-in that comes in by default.
-	        var elemsHidden = Dom_1.$$(element).findAll('.coveo-hide-until-loaded');
-	        _.each(elemsHidden, function (e) {
-	            Dom_1.$$(e).removeClass('coveo-hide-until-loaded');
-	            Dom_1.$$(e).addClass('coveo-show-after-loaded');
-	        });
-	        if (searchInterface.options.autoTriggerQuery) {
-	            Initialization.logFirstQueryCause(searchInterface);
-	            Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
-	                logInActionsHistory: Coveo['Recommendation'] && searchInterface instanceof Coveo['Recommendation'],
-	                isFirstQuery: true
-	            });
-	        }
-	    };
-	    /**
-	     * Create a new standard search interface. This is the function executed when calling `Coveo.init`.
-	     * @param element
-	     * @param options
-	     */
-	    Initialization.initSearchInterface = function (element, options) {
-	        if (options === void 0) { options = {}; }
-	        options = Initialization.resolveDefaultOptions(element, options);
-	        var searchInterface = new SearchInterface_1.SearchInterface(element, options.SearchInterface, options.Analytics);
-	        searchInterface.options.originalOptionsObject = options;
-	        var initParameters = { options: options, bindings: searchInterface.getBindings() };
-	        Initialization.automaticallyCreateComponentsInside(element, initParameters, ['Recommendation']);
-	    };
-	    /**
-	     * Create a new standalone search interface (standalone search box). This is the function executed when calling `Coveo.initSearchbox`.
-	     * @param element
-	     * @param options
-	     */
-	    Initialization.initStandaloneSearchInterface = function (element, options) {
-	        if (options === void 0) { options = {}; }
-	        options = Initialization.resolveDefaultOptions(element, options);
-	        // Set trigger query on clear to false for standalone search interface automatically
-	        // Take care of not overriding any options that could have been set by external code.
-	        if (!options.Querybox) {
-	            options.Querybox = {};
-	        }
-	        if (!options.Omnibox) {
-	            options.Omnibox = {};
-	        }
-	        if (!options.Searchbox) {
-	            options.Searchbox = {};
-	        }
-	        if (!options.Querybox.triggerQueryOnClear || !options.Omnibox.triggerQueryOnClear || !options.Searchbox.triggerOnQueryClear) {
-	            options.Querybox.triggerQueryOnClear = false;
-	            options.Omnibox.triggerQueryOnClear = false;
-	            options.Searchbox.triggerQueryOnClear = false;
-	        }
-	        var searchInterface = new SearchInterface_1.StandaloneSearchInterface(element, options.StandaloneSearchInterface, options.Analytics);
-	        searchInterface.options.originalOptionsObject = options;
-	        var initParameters = { options: options, bindings: searchInterface.getBindings() };
-	        Initialization.automaticallyCreateComponentsInside(element, initParameters);
-	    };
-	    /**
-	     * Create a new recommendation search interface. This is the function executed when calling `Coveo.initRecommendation`.
-	     * @param element
-	     * @param options
-	     */
-	    Initialization.initRecommendationInterface = function (element, options) {
-	        if (options === void 0) { options = {}; }
-	        options = Initialization.resolveDefaultOptions(element, options);
-	        // Since a recommendation interface inherits from a search interface, we need to merge those if passed on init
-	        var optionsForRecommendation = _.extend({}, options.SearchInterface, options.Recommendation);
-	        // If there is a main search interface, modify the loading animation for the recommendation interface to a "noop" element
-	        // We don't want 2 animation overlapping
-	        if (optionsForRecommendation.mainSearchInterface) {
-	            optionsForRecommendation.firstLoadingAnimation = Dom_1.$$('span').el;
-	        }
-	        var recommendation = new window['Coveo']['Recommendation'](element, optionsForRecommendation, options.Analytics);
-	        recommendation.options.originalOptionsObject = options;
-	        var initParameters = { options: options, bindings: recommendation.getBindings() };
-	        Initialization.automaticallyCreateComponentsInside(element, initParameters);
-	    };
-	    /**
-	     * Scan the element and all its children for known components. Initialize every known component found.
-	     * @param element The element for which to scan it's children.
-	     * @param initParameters Needed parameters to initialize all the children components.
-	     * @param ignore An optional list of component ID to ignore and skip when scanning for known components.
-	     */
-	    Initialization.automaticallyCreateComponentsInside = function (element, initParameters, ignore) {
-	        Assert_1.Assert.exists(element);
-	        var codeToExecute = [];
-	        var htmlElementsToIgnore = [];
-	        // Scan for elements to ignore which can be a container component (with other component inside)
-	        // When a component is ignored, all it's children component should be ignored too.
-	        // Add them to the array of html elements that should be skipped.
-	        _.each(ignore, function (toIgnore) {
-	            var rootToIgnore = Dom_1.$$(element).find("." + Component_1.Component.computeCssClassNameForType(toIgnore));
-	            if (rootToIgnore) {
-	                var childsElementsToIgnore = Dom_1.$$(rootToIgnore).findAll('*');
-	                htmlElementsToIgnore = htmlElementsToIgnore.concat(childsElementsToIgnore);
-	            }
-	        });
-	        for (var componentClassId in Initialization.autoCreateComponents) {
-	            if (!_.contains(ignore, componentClassId)) {
-	                var componentClass = Initialization.autoCreateComponents[componentClassId];
-	                var classname = Component_1.Component.computeCssClassName(componentClass);
-	                var elements = Dom_1.$$(element).findAll('.' + classname);
-	                // From all the component we found which match the current className, remove those that should be ignored
-	                elements = _.difference(elements, htmlElementsToIgnore);
-	                if (Dom_1.$$(element).hasClass(classname) && !_.contains(htmlElementsToIgnore, element)) {
-	                    elements.push(element);
-	                }
-	                if (elements.length != 0) {
-	                    // Queue the code that will scan the now resolved selector to after we've
-	                    // finished evaluating all selectors. This ensures that if a component
-	                    // constructor adds child components under his tags, those won't get auto-
-	                    // initialize by this invocation of this method. Components inserting child
-	                    // components are responsible of invoking this method again if they want
-	                    // child components to be auto-initialized.
-	                    //
-	                    // Explanation: If we don't do that, child components for which selector have
-	                    // already been evaluated won't be initialized, whereas those that are next
-	                    // in the list will be.
-	                    codeToExecute.push(Initialization.createFunctionThatInitializesComponentOnElements(elements, componentClassId, componentClass, initParameters));
-	                }
-	            }
-	        }
-	        // Now that all selectors are executed, let's really initialize the components.
-	        _.each(codeToExecute, function (code) { return code(); });
-	    };
-	    /**
-	     * Create a new component on the given element.
-	     * @param componentClassId The ID of the component to initialize (e.g. : 'CoveoFacet').
-	     * @param element The HTMLElement on which to initialize.
-	     * @param initParameters Needed parameters to initialize the component.
-	     * @returns {Component}
-	     */
-	    Initialization.createComponentOfThisClassOnElement = function (componentClassId, element, initParameters) {
-	        Assert_1.Assert.isNonEmptyString(componentClassId);
-	        Assert_1.Assert.exists(element);
-	        var componentClass = Initialization.autoCreateComponents[componentClassId];
-	        Assert_1.Assert.exists(componentClass);
-	        var bindings = {};
-	        var options = {};
-	        var result = undefined;
-	        if (initParameters != undefined) {
-	            _.each(initParameters.bindings, function (value, key) {
-	                bindings[key] = value;
-	            });
-	            options = initParameters.options;
-	            result = initParameters.result;
-	        }
-	        Initialization.logger.trace('Creating component of class ' + componentClassId, element, options);
-	        return new componentClass(element, options, bindings, result);
-	    };
-	    /**
-	     * Register a new globally available method in the Coveo namespace (e.g.: `Coveo.init`).
-	     * @param methodName The method name to register.
-	     * @param handler The function to execute when the method is called.
-	     */
-	    Initialization.registerNamedMethod = function (methodName, handler) {
-	        Assert_1.Assert.isNonEmptyString(methodName);
-	        Assert_1.Assert.doesNotExists(Initialization.autoCreateComponents[methodName]);
-	        Assert_1.Assert.doesNotExists(Initialization.namedMethods[methodName]);
-	        Assert_1.Assert.exists(handler);
-	        Initialization.namedMethods[methodName] = handler;
-	    };
-	    /**
-	     * Check if the method is already registed.
-	     * @param methodName
-	     * @returns {boolean}
-	     */
-	    Initialization.isNamedMethodRegistered = function (methodName) {
-	        return Utils_1.Utils.exists(Initialization.namedMethods[methodName]);
-	    };
-	    /**
-	     * 'Monkey patch' (replace the function with a new one) a given method on a component instance.
-	     * @param methodName
-	     * @param element
-	     * @param handler
-	     */
-	    Initialization.monkeyPatchComponentMethod = function (methodName, element, handler) {
-	        Assert_1.Assert.isNonEmptyString(methodName);
-	        Assert_1.Assert.exists(handler);
-	        var componentClass;
-	        if (methodName.indexOf('.') > 0) {
-	            var splitArg = methodName.split('.');
-	            Assert_1.Assert.check(splitArg.length == 2, 'Invalid method name, correct syntax is CoveoComponent.methodName.');
-	            componentClass = splitArg[0];
-	            methodName = splitArg[1];
-	        }
-	        var boundComponent = Component_1.Component.get(element, componentClass);
-	        Assert_1.Assert.exists(boundComponent);
-	        Assert_1.Assert.exists(boundComponent[methodName]);
-	        var originalMethodName = '__' + methodName;
-	        if (!Utils_1.Utils.exists(boundComponent[originalMethodName])) {
-	            boundComponent[originalMethodName] = boundComponent[methodName];
-	        }
-	        boundComponent[methodName] = handler;
-	    };
-	    Initialization.initBoxInterface = function (element, options, type, injectMarkup) {
-	        if (options === void 0) { options = {}; }
-	        if (type === void 0) { type = 'Standard'; }
-	        if (injectMarkup === void 0) { injectMarkup = true; }
-	        options = Initialization.resolveDefaultOptions(element, options);
-	        var fromInitTypeToBoxReference = 'Box';
-	        if (type != 'Standard') {
-	            fromInitTypeToBoxReference += 'For' + type;
-	        }
-	        var boxRef = Component_1.Component.getComponentRef(fromInitTypeToBoxReference);
-	        if (boxRef) {
-	            new Logger_1.Logger(element).info('Initializing box of type ' + fromInitTypeToBoxReference);
-	            var injectFunction = injectMarkup ? boxRef.getInjection : function () {
-	            };
-	            var box = new boxRef(element, options[fromInitTypeToBoxReference], options.Analytics, injectFunction, options);
-	            box.options.originalOptionsObject = options;
-	            var initParameters = { options: options, bindings: box.getBindings() };
-	            Initialization.automaticallyCreateComponentsInside(element, initParameters);
-	        }
-	        else {
-	            new Logger_1.Logger(element).error('Trying to initialize box of type : ' + fromInitTypeToBoxReference + ' but not found in code (not compiled)!');
-	            Assert_1.Assert.fail('Cannot initialize unknown type of box');
-	        }
-	    };
-	    Initialization.dispatchNamedMethodCall = function (methodName, element, args) {
-	        Assert_1.Assert.isNonEmptyString(methodName);
-	        Assert_1.Assert.exists(element);
-	        var namedMethodHandler = Initialization.namedMethods[methodName];
-	        Assert_1.Assert.exists(namedMethodHandler);
-	        Initialization.logger.trace('Dispatching named method call of ' + methodName, element, args);
-	        if (args.length != 0) {
-	            return namedMethodHandler.apply(null, [element].concat(args));
-	        }
-	        else {
-	            return namedMethodHandler.apply(null, [element]);
-	        }
-	    };
-	    Initialization.dispatchNamedMethodCallOrComponentCreation = function (token, element, args) {
-	        Assert_1.Assert.isNonEmptyString(token);
-	        Assert_1.Assert.exists(element);
-	        if (Initialization.isNamedMethodRegistered(token)) {
-	            return Initialization.dispatchNamedMethodCall(token, element, args);
-	        }
-	        else if (Initialization.isComponentClassIdRegistered(token)) {
-	            return Initialization.createComponentOfThisClassOnElement(token, element, args[0]);
-	        }
-	        else if (Initialization.isThereASingleComponentBoundToThisElement(element)) {
-	            return Initialization.dispatchMethodCallOnBoundComponent(token, element, args);
-	        }
-	        else {
-	            Assert_1.Assert.fail('No method or component named ' + token + ' are registered.');
-	        }
-	    };
-	    Initialization.isSearchFromLink = function (searchInterface) {
-	        return Utils_1.Utils.isNonEmptyString(searchInterface.getBindings().queryStateModel.get('q'));
-	    };
-	    Initialization.isThereASingleComponentBoundToThisElement = function (element) {
-	        Assert_1.Assert.exists(element);
-	        return Utils_1.Utils.exists(Component_1.Component.get(element));
-	    };
-	    Initialization.dispatchMethodCallOnBoundComponent = function (methodName, element, args) {
-	        Assert_1.Assert.isNonEmptyString(methodName);
-	        Assert_1.Assert.exists(element);
-	        var boundComponent = Component_1.Component.get(element);
-	        Assert_1.Assert.exists(boundComponent);
-	        var method = boundComponent[methodName];
-	        if (Utils_1.Utils.exists(method)) {
-	            return method.apply(boundComponent, args);
-	        }
-	        else {
-	            Assert_1.Assert.fail('No method named ' + methodName + ' exist on component ' + boundComponent.type);
-	        }
-	    };
-	    Initialization.logFirstQueryCause = function (searchInterface) {
-	        var firstQueryCause = HashUtils_1.HashUtils.getValue('firstQueryCause', HashUtils_1.HashUtils.getHash());
-	        if (firstQueryCause != null) {
-	            var meta = HashUtils_1.HashUtils.getValue('firstQueryMeta', HashUtils_1.HashUtils.getHash()) || {};
-	            searchInterface.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList[firstQueryCause], meta);
-	        }
-	        else {
-	            if (Initialization.isSearchFromLink(searchInterface)) {
-	                searchInterface.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.searchFromLink, {});
-	            }
-	            else {
-	                searchInterface.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.interfaceLoad, {});
-	            }
-	        }
-	    };
-	    Initialization.performInitFunctionsOption = function (options, event) {
-	        if (Utils_1.Utils.exists(options)) {
-	            Initialization.performFunctions(options[event]);
-	        }
-	    };
-	    Initialization.performFunctions = function (option) {
-	        if (Utils_1.Utils.exists(option)) {
-	            _.each(option, function (func) {
-	                if (typeof func == 'function') {
-	                    func();
-	                }
-	            });
-	        }
-	    };
-	    Initialization.initExternalComponents = function (element, options) {
-	        if (options && options['externalComponents']) {
-	            var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
-	            var queryStateModel = Component_1.Component.get(element, QueryStateModel_1.QueryStateModel);
-	            var componentStateModel = Component_1.Component.get(element, ComponentStateModel_1.ComponentStateModel);
-	            var queryController = Component_1.Component.get(element, QueryController_1.QueryController);
-	            var componentOptionsModel = Component_1.Component.get(element, ComponentOptionsModel_1.ComponentOptionsModel);
-	            var usageAnalytics = searchInterface.usageAnalytics;
-	            Assert_1.Assert.exists(searchInterface);
-	            Assert_1.Assert.exists(queryStateModel);
-	            Assert_1.Assert.exists(queryController);
-	            Assert_1.Assert.exists(componentStateModel);
-	            Assert_1.Assert.exists(usageAnalytics);
-	            var initParameters_1 = {
-	                options: options,
-	                bindings: {
-	                    searchInterface: searchInterface,
-	                    queryStateModel: queryStateModel,
-	                    queryController: queryController,
-	                    usageAnalytics: usageAnalytics,
-	                    componentStateModel: componentStateModel,
-	                    componentOptionsModel: componentOptionsModel,
-	                    root: element
-	                }
-	            };
-	            _.each(options['externalComponents'], function (externalComponent) {
-	                var elementToInstantiate = externalComponent;
-	                if (Utils_1.Utils.isHtmlElement(elementToInstantiate)) {
-	                    Initialization.automaticallyCreateComponentsInside(elementToInstantiate, initParameters_1);
-	                }
-	                else if (JQueryutils_1.JQueryUtils.isInstanceOfJQuery(elementToInstantiate)) {
-	                    Initialization.automaticallyCreateComponentsInside((elementToInstantiate.get(0)), initParameters_1);
-	                }
-	            });
-	        }
-	    };
-	    Initialization.createFunctionThatInitializesComponentOnElements = function (elements, componentClassId, componentClass, initParameters) {
-	        return function () {
-	            _.each(elements, function (matchingElement) {
-	                if (Component_1.Component.get(matchingElement, componentClassId) == null) {
-	                    // If options were provided, lookup options for this component class and
-	                    // also for the element id. Merge them and pass those to the factory method.
-	                    var optionsToUse = undefined;
-	                    if (Utils_1.Utils.exists(initParameters.options)) {
-	                        var optionsForComponentClass = initParameters.options[componentClassId];
-	                        var optionsForElementId = initParameters.options[matchingElement.id];
-	                        var initOptions = initParameters.options['initOptions'] ? initParameters.options['initOptions'][componentClassId] : {};
-	                        optionsToUse = Utils_1.Utils.extendDeep(optionsForElementId, initOptions);
-	                        optionsToUse = Utils_1.Utils.extendDeep(optionsForComponentClass, optionsToUse);
-	                    }
-	                    var initParamToUse = _.extend({}, initParameters, { options: optionsToUse });
-	                    Initialization.createComponentOfThisClassOnElement(componentClass['ID'], matchingElement, initParamToUse);
-	                }
-	            });
-	        };
-	    };
-	    return Initialization;
-	}());
-	Initialization.logger = new Logger_1.Logger('Initialization');
-	Initialization.autoCreateComponents = {};
-	Initialization.namedMethods = {};
-	exports.Initialization = Initialization;
-
-
-/***/ },
-/* 112 */
-/***/ function(module, exports) {
-
-	"use strict";
-	exports.analyticsActionCauseList = {
-	    interfaceLoad: {
-	        name: 'interfaceLoad',
-	        type: 'interface'
-	    },
-	    interfaceChange: {
-	        name: 'interfaceChange',
-	        type: 'interface',
-	        metaMap: { interfaceChangeTo: 1 }
-	    },
-	    contextRemove: {
-	        name: 'contextRemove',
-	        type: 'misc',
-	        metaMap: { contextName: 1 }
-	    },
-	    didyoumeanAutomatic: {
-	        name: 'didyoumeanAutomatic',
-	        type: 'misc'
-	    },
-	    didyoumeanClick: {
-	        name: 'didyoumeanClick',
-	        type: 'misc'
-	    },
-	    resultsSort: {
-	        name: 'resultsSort',
-	        type: 'misc',
-	        metaMap: { resultsSortBy: 1 }
-	    },
-	    searchboxSubmit: {
-	        name: 'searchboxSubmit',
-	        type: 'search box'
-	    },
-	    searchboxClear: {
-	        name: 'searchboxClear',
-	        type: 'search box'
-	    },
-	    searchboxAsYouType: {
-	        name: 'searchboxAsYouType',
-	        type: 'search box'
-	    },
-	    breadcrumbFacet: {
-	        name: 'breadcrumbFacet',
-	        type: 'breadcrumb',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    breadcrumbResetAll: {
-	        name: 'breadcrumbResetAll',
-	        type: 'breadcrumb',
-	    },
-	    documentTag: {
-	        name: 'documentTag',
-	        type: 'document',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    documentField: {
-	        name: 'documentField',
-	        type: 'document',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    documentQuickview: {
-	        name: 'documentQuickview',
-	        type: 'document',
-	        metaMap: { documentTitle: 1, documentURL: 2 }
-	    },
-	    documentOpen: {
-	        name: 'documentOpen',
-	        type: 'document',
-	        metaMap: { documentTitle: 1, documentURL: 2 }
-	    },
-	    omniboxFacetSelect: {
-	        name: 'omniboxFacetSelect',
-	        type: 'omnibox',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    omniboxFacetExclude: {
-	        name: 'omniboxFacetExclude',
-	        type: 'omnibox',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    omniboxFacetDeselect: {
-	        name: 'omniboxFacetDeselect',
-	        type: 'omnibox',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    omniboxFacetUnexclude: {
-	        name: 'omniboxFacetUnexclude',
-	        type: 'omnibox',
-	        metaMap: { faceId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    omniboxAnalytics: {
-	        name: 'omniboxAnalytics',
-	        type: 'omnibox',
-	        metaMap: {
-	            partialQuery: 1,
-	            suggestionRanking: 2,
-	            partialQueries: 3,
-	            suggestions: 4
-	        }
-	    },
-	    omniboxFromLink: {
-	        name: 'omniboxFromLink',
-	        type: 'omnibox',
-	        metaMap: {
-	            partialQuery: 1,
-	            suggestionRanking: 2,
-	            partialQueries: 3,
-	            suggestions: 4
-	        }
-	    },
-	    omniboxField: {
-	        name: 'omniboxField',
-	        type: 'omnibox'
-	    },
-	    facetClearAll: {
-	        name: 'facetClearAll',
-	        type: 'facet',
-	        metaMap: { facetId: 1 }
-	    },
-	    facetSearch: {
-	        name: 'facetSearch',
-	        type: 'facet',
-	        metaMap: { facetId: 1 }
-	    },
-	    facetToggle: {
-	        name: 'facetToggle',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetOperatorBefore: 2, facetOperatorAfter: 3 }
-	    },
-	    facetRangeSlider: {
-	        name: 'facetRangeSlider',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetRangeStart: 2, facetRangeEnd: 3 }
-	    },
-	    facetRangeGraph: {
-	        name: 'facetRangeGraph',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetRangeStart: 2, facetRangeEnd: 3 }
-	    },
-	    facetSelect: {
-	        name: 'facetSelect',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    facetSelectAll: {
-	        name: 'facetSelectAll',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    facetDeselect: {
-	        name: 'facetDeselect',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    facetExclude: {
-	        name: 'facetExclude',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    facetUnexclude: {
-	        name: 'facetUnexclude',
-	        type: 'facet',
-	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
-	    },
-	    errorBack: {
-	        name: 'errorBack',
-	        type: 'errors'
-	    },
-	    errorClearQuery: {
-	        name: 'errorClearQuery',
-	        type: 'errors'
-	    },
-	    errorRetry: {
-	        name: 'errorRetry',
-	        type: 'errors'
-	    },
-	    noResultsBack: {
-	        name: 'noResultsBack',
-	        type: 'noResults'
-	    },
-	    expandToFullUI: {
-	        name: 'expandToFullUI',
-	        type: 'interface'
-	    },
-	    caseCreationInputChange: {
-	        name: 'inputChange',
-	        type: 'caseCreation'
-	    },
-	    caseCreationSubmitButton: {
-	        name: 'submitButton',
-	        type: 'caseCreation'
-	    },
-	    caseCreationCancelButton: {
-	        name: 'cancelButton',
-	        type: 'caseCreation'
-	    },
-	    caseCreationUnloadPage: {
-	        name: 'unloadPage',
-	        type: 'caseCreation'
-	    },
-	    casecontextAdd: {
-	        name: 'casecontextAdd',
-	        type: 'casecontext',
-	        metaMap: { caseID: 5 }
-	    },
-	    casecontextRemove: {
-	        name: 'casecontextRemove',
-	        type: 'casecontext',
-	        metaMap: { caseID: 5 }
-	    },
-	    preferencesChange: {
-	        name: 'preferencesChange',
-	        type: 'preferences',
-	        metaMap: { preferenceName: 1, preferenceType: 2 }
-	    },
-	    getUserHistory: {
-	        name: 'getUserHistory',
-	        type: 'userHistory'
-	    },
-	    userActionDocumentClick: {
-	        name: 'userActionDocumentClick',
-	        type: 'userHistory'
-	    },
-	    caseAttach: {
-	        name: 'caseAttach',
-	        type: 'case',
-	        metaMap: { documentTitle: 1, resultUriHash: 3, articleID: 4, caseID: 5 }
-	    },
-	    caseDetach: {
-	        name: 'caseDetach',
-	        type: 'case',
-	        metaMap: { documentTitle: 1, resultUriHash: 3, articleID: 4, caseID: 5 }
-	    },
-	    customfiltersChange: {
-	        name: 'customfiltersChange',
-	        type: 'customfilters',
-	        metaMap: { customFilterName: 1, customFilterType: 2, customFilterExpression: 3 }
-	    },
-	    pagerNumber: {
-	        name: 'pagerNumber',
-	        type: 'getMoreResults',
-	        metaMap: { 'pagerNumber': 1 }
-	    },
-	    pagerNext: {
-	        name: 'pagerNext',
-	        type: 'getMoreResults',
-	        metaMap: { 'pagerNumber': 1 }
-	    },
-	    pagerPrevious: {
-	        name: 'pagerPrevious',
-	        type: 'getMoreResults',
-	        metaMap: { 'pagerNumber': 1 }
-	    },
-	    pagerScrolling: {
-	        name: 'pagerScrolling',
-	        type: 'getMoreResults'
-	    },
-	    pagerResize: {
-	        name: 'pagerResize',
-	        type: 'getMoreResults'
-	    },
-	    searchFromLink: {
-	        name: 'searchFromLink',
-	        type: 'interface'
-	    },
-	    triggerNotify: {
-	        name: 'notify',
-	        type: 'queryPipelineTriggers'
-	    },
-	    triggerExecute: {
-	        name: 'execute',
-	        type: 'queryPipelineTriggers'
-	    },
-	    triggerQuery: {
-	        name: 'query',
-	        type: 'queryPipelineTriggers'
-	    },
-	    triggerRedirect: {
-	        name: 'redirect',
-	        type: 'queryPipelineTriggers'
-	    },
-	    queryError: {
-	        name: 'query',
-	        type: 'errors',
-	        metaMap: { 'query': 1, 'aq': 2, 'cq': 3, 'dq': 4, 'errorType': 5, 'errorMessage': 6 }
-	    },
-	    exportToExcel: {
-	        name: 'exportToExcel',
-	        type: 'misc'
-	    },
-	    recommendation: {
-	        name: 'recommendation',
-	        type: 'recommendation'
-	    },
-	    recommendationInterfaceLoad: {
-	        name: 'recommendationInterfaceLoad',
-	        type: 'recommendation'
-	    },
-	    recommendationOpen: {
-	        name: 'recommendationOpen',
-	        type: 'recommendation'
-	    },
-	    advancedSearch: {
-	        name: 'advancedSearch',
-	        type: 'advancedSearch'
-	    },
-	    searchAlertsFollowDocument: {
-	        name: 'followDocument',
-	        type: 'searchAlerts'
-	    },
-	    searchAlertsFollowQuery: {
-	        name: 'followQuery',
-	        type: 'searchAlerts'
-	    },
-	    searchAlertsUpdateSubscription: {
-	        name: 'updateSubscription',
-	        type: 'searchAlerts'
-	    },
-	    searchAlertsDeleteSubscription: {
-	        name: 'deleteSubscription',
-	        type: 'searchAlerts'
-	    },
-	    searchAlertsUnfollowDocument: {
-	        name: 'unfollowDocument',
-	        type: 'searchAlerts'
-	    },
-	    searchAlertsUnfollowQuery: {
-	        name: 'unfollowQuery',
-	        type: 'searchAlerts'
-	    },
-	    resultsLayoutChange: {
-	        name: 'changeResultsLayout',
-	        type: 'resultsLayout'
-	    }
-	};
-
-
-/***/ },
+/***/ }),
 /* 113 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	var TemplateFieldsEvaluator = (function () {
 	    function TemplateFieldsEvaluator() {
@@ -16977,17 +17256,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.TemplateFieldsEvaluator = TemplateFieldsEvaluator;
 
 
-/***/ },
+/***/ }),
 /* 114 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Template_1 = __webpack_require__(109);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Template_1 = __webpack_require__(111);
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
 	var Logger_1 = __webpack_require__(11);
@@ -17062,14 +17347,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.UnderscoreTemplate = UnderscoreTemplate;
 
 
-/***/ },
+/***/ }),
 /* 115 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Utils_1 = __webpack_require__(13);
-	var TemplateConditionEvaluator_1 = __webpack_require__(110);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var TemplateConditionEvaluator_1 = __webpack_require__(112);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var Dom_1 = __webpack_require__(59);
 	var _ = __webpack_require__(14);
 	var TemplateFromAScriptTag = (function () {
@@ -17092,7 +17378,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.template.mobile = this.parseScreenSize('data-mobile');
 	        this.template.tablet = this.parseScreenSize('data-tablet');
 	        this.template.desktop = this.parseScreenSize('data-desktop');
-	        this.template.fields = TemplateConditionEvaluator_1.TemplateConditionEvaluator.getFieldFromString(scriptTag.innerHTML + ' ' + condition);
+	        this.template.fields = TemplateConditionEvaluator_1.TemplateConditionEvaluator.getFieldFromString(scriptTag.innerHTML + " " + (condition ? condition : ''));
 	        var additionalFields = ComponentOptions_1.ComponentOptions.loadFieldsOption(scriptTag, 'fields', { includeInResults: true });
 	        if (additionalFields != null) {
 	            // remove the @
@@ -17103,9 +17389,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }));
 	    }
 	    TemplateFromAScriptTag.prototype.toHtmlElement = function () {
-	        var script = Dom_1.$$('script');
-	        script.setAttribute('data-condition', Dom_1.$$(this.scriptTag).getAttribute('data-condition'));
-	        script.text(this.scriptTag.innerHTML);
+	        var script = Dom_1.$$('code');
+	        var condition = Dom_1.$$(this.scriptTag).getAttribute('data-condition');
+	        if (condition) {
+	            script.setAttribute('data-condition', condition);
+	        }
+	        script.setHtml(this.scriptTag.innerHTML);
 	        return script.el;
 	    };
 	    TemplateFromAScriptTag.prototype.parseFieldsAttributes = function () {
@@ -17115,7 +17404,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var match = key.match(/field([a-z0-9]*)/i);
 	            if (match) {
 	                var values = void 0;
-	                if (value != null && value != 'null') {
+	                if (value != null && value != 'null' && value != '') {
 	                    values = value.split(',');
 	                }
 	                return {
@@ -17139,8 +17428,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    TemplateFromAScriptTag.fromString = function (template, properties) {
 	        if (properties === void 0) { properties = {}; }
-	        var script = document.createElement('script');
-	        script.text = template;
+	        var script = document.createElement('code');
+	        script.innerHTML = template;
 	        if (properties.condition != null) {
 	            script.setAttribute('data-condition', properties.condition);
 	        }
@@ -17176,19 +17465,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.TemplateFromAScriptTag = TemplateFromAScriptTag;
 
 
-/***/ },
+/***/ }),
 /* 116 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Template_1 = __webpack_require__(109);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Template_1 = __webpack_require__(111);
 	var UnderscoreTemplate_1 = __webpack_require__(114);
-	var TemplateCache_1 = __webpack_require__(108);
+	var TemplateCache_1 = __webpack_require__(110);
 	var Assert_1 = __webpack_require__(12);
 	var Dom_1 = __webpack_require__(59);
 	var _ = __webpack_require__(14);
@@ -17262,20 +17557,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.DefaultResultTemplate = DefaultResultTemplate;
 
 
-/***/ },
+/***/ }),
 /* 117 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Template_1 = __webpack_require__(109);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Template_1 = __webpack_require__(111);
 	var Assert_1 = __webpack_require__(12);
 	var TemplateFromAScriptTag_1 = __webpack_require__(115);
-	var _ = __webpack_require__(14);
 	var HtmlTemplate = (function (_super) {
 	    __extends(HtmlTemplate, _super);
 	    function HtmlTemplate(element) {
@@ -17286,7 +17586,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    HtmlTemplate.prototype.toHtmlElement = function () {
 	        var script = this.templateFromAScriptTag.toHtmlElement();
-	        script.setAttribute('type', _.first(HtmlTemplate.mimeTypes));
+	        // We don't set the type attribute for 2 reasons:
+	        // 1) LockerService doesn't like when we set it.
+	        // 2) The HTML Template is the default one.
 	        return script;
 	    };
 	    HtmlTemplate.prototype.getType = function () {
@@ -17301,7 +17603,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    HtmlTemplate.fromString = function (template, properties) {
 	        var script = TemplateFromAScriptTag_1.TemplateFromAScriptTag.fromString(template, properties);
-	        script.setAttribute('type', HtmlTemplate.mimeTypes[0]);
+	        // We don't set the type attribute for 2 reasons:
+	        // 1) LockerService doesn't like when we set it.
+	        // 2) The HTML Template is the default one.
 	        return new HtmlTemplate(script);
 	    };
 	    return HtmlTemplate;
@@ -17313,17 +17617,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.HtmlTemplate = HtmlTemplate;
 
 
-/***/ },
+/***/ }),
 /* 118 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Template_1 = __webpack_require__(109);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Template_1 = __webpack_require__(111);
 	var DefaultResultTemplate_1 = __webpack_require__(116);
 	var _ = __webpack_require__(14);
 	var TemplateList = (function (_super) {
@@ -17366,11 +17676,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.TemplateList = TemplateList;
 
 
-/***/ },
+/***/ }),
 /* 119 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var es6_promise_1 = __webpack_require__(4);
 	var NoopAnalyticsClient = (function () {
 	    function NoopAnalyticsClient() {
@@ -17419,6 +17730,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    NoopAnalyticsClient.prototype.getPendingSearchEvent = function () {
 	        return null;
 	    };
+	    NoopAnalyticsClient.prototype.setOriginContext = function (originContext) {
+	    };
 	    NoopAnalyticsClient.prototype.setNoopCauseAndMeta = function (cause, meta) {
 	        this.currentEventCause = cause;
 	        this.currentEventMeta = meta;
@@ -17428,31 +17741,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.NoopAnalyticsClient = NoopAnalyticsClient;
 
 
-/***/ },
+/***/ }),
 /* 120 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var ComponentOptions_1 = __webpack_require__(107);
-	var LocalStorageUtils_1 = __webpack_require__(70);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ComponentOptions_1 = __webpack_require__(109);
+	var LocalStorageUtils_1 = __webpack_require__(69);
 	var QueryEvents_1 = __webpack_require__(48);
 	var ResultListEvents_1 = __webpack_require__(49);
 	var DebugEvents_1 = __webpack_require__(43);
 	var Dom_1 = __webpack_require__(59);
 	var StringUtils_1 = __webpack_require__(62);
 	var SearchEndpoint_1 = __webpack_require__(9);
-	var Template_1 = __webpack_require__(109);
+	var Template_1 = __webpack_require__(111);
 	var es6_promise_1 = __webpack_require__(4);
-	var RootComponent_1 = __webpack_require__(76);
-	var BaseComponent_1 = __webpack_require__(77);
+	var RootComponent_1 = __webpack_require__(75);
+	var BaseComponent_1 = __webpack_require__(76);
 	var ExternalModulesShim_1 = __webpack_require__(23);
 	var Globalize = __webpack_require__(28);
-	var KeyboardUtils_1 = __webpack_require__(69);
+	var KeyboardUtils_1 = __webpack_require__(68);
 	var InitializationEvents_1 = __webpack_require__(45);
 	var _ = __webpack_require__(14);
 	var Debug = (function (_super) {
@@ -18121,9 +18440,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Debug = Debug;
 
 
-/***/ },
+/***/ }),
 /* 121 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
 		'use strict';
@@ -18968,9 +19287,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}());
 
 
-/***/ },
+/***/ }),
 /* 122 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root) {/*global exports, Intl*/
 	/**
@@ -20407,26 +20726,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	}());
 
 
-/***/ },
+/***/ }),
 /* 123 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
-/***/ },
+/***/ }),
 /* 124 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
 
-/***/ },
+/***/ }),
 /* 125 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Logger_1 = __webpack_require__(11);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var _ = __webpack_require__(14);
@@ -20482,78 +20802,2052 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.SentryLogger = SentryLogger;
 
 
-/***/ },
+/***/ }),
 /* 126 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 	"use strict";
-	var ResponsiveComponentsManager_1 = __webpack_require__(127);
-	var Dom_1 = __webpack_require__(59);
-	var Component_1 = __webpack_require__(103);
-	var ResultLayout_1 = __webpack_require__(102);
-	var Logger_1 = __webpack_require__(11);
-	var SearchInterface_1 = __webpack_require__(106);
-	var _ = __webpack_require__(14);
-	var ResponsiveResultLayout = (function () {
-	    function ResponsiveResultLayout(coveoRoot, ID, options, responsiveDropdown) {
-	        this.coveoRoot = coveoRoot;
-	        this.ID = ID;
-	        this.searchInterface = Component_1.Component.get(this.coveoRoot.el, SearchInterface_1.SearchInterface, false);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.analyticsActionCauseList = {
+	    interfaceLoad: {
+	        name: 'interfaceLoad',
+	        type: 'interface'
+	    },
+	    interfaceChange: {
+	        name: 'interfaceChange',
+	        type: 'interface',
+	        metaMap: { interfaceChangeTo: 1 }
+	    },
+	    contextRemove: {
+	        name: 'contextRemove',
+	        type: 'misc',
+	        metaMap: { contextName: 1 }
+	    },
+	    didyoumeanAutomatic: {
+	        name: 'didyoumeanAutomatic',
+	        type: 'misc'
+	    },
+	    didyoumeanClick: {
+	        name: 'didyoumeanClick',
+	        type: 'misc'
+	    },
+	    resultsSort: {
+	        name: 'resultsSort',
+	        type: 'misc',
+	        metaMap: { resultsSortBy: 1 }
+	    },
+	    searchboxSubmit: {
+	        name: 'searchboxSubmit',
+	        type: 'search box'
+	    },
+	    searchboxClear: {
+	        name: 'searchboxClear',
+	        type: 'search box'
+	    },
+	    searchboxAsYouType: {
+	        name: 'searchboxAsYouType',
+	        type: 'search box'
+	    },
+	    breadcrumbFacet: {
+	        name: 'breadcrumbFacet',
+	        type: 'breadcrumb',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    breadcrumbResetAll: {
+	        name: 'breadcrumbResetAll',
+	        type: 'breadcrumb',
+	    },
+	    documentTag: {
+	        name: 'documentTag',
+	        type: 'document',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    documentField: {
+	        name: 'documentField',
+	        type: 'document',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    documentQuickview: {
+	        name: 'documentQuickview',
+	        type: 'document',
+	        metaMap: { documentTitle: 1, documentURL: 2 }
+	    },
+	    documentOpen: {
+	        name: 'documentOpen',
+	        type: 'document',
+	        metaMap: { documentTitle: 1, documentURL: 2 }
+	    },
+	    omniboxFacetSelect: {
+	        name: 'omniboxFacetSelect',
+	        type: 'omnibox',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    omniboxFacetExclude: {
+	        name: 'omniboxFacetExclude',
+	        type: 'omnibox',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    omniboxFacetDeselect: {
+	        name: 'omniboxFacetDeselect',
+	        type: 'omnibox',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    omniboxFacetUnexclude: {
+	        name: 'omniboxFacetUnexclude',
+	        type: 'omnibox',
+	        metaMap: { faceId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    omniboxAnalytics: {
+	        name: 'omniboxAnalytics',
+	        type: 'omnibox',
+	        metaMap: {
+	            partialQuery: 1,
+	            suggestionRanking: 2,
+	            partialQueries: 3,
+	            suggestions: 4
+	        }
+	    },
+	    omniboxFromLink: {
+	        name: 'omniboxFromLink',
+	        type: 'omnibox',
+	        metaMap: {
+	            partialQuery: 1,
+	            suggestionRanking: 2,
+	            partialQueries: 3,
+	            suggestions: 4
+	        }
+	    },
+	    omniboxField: {
+	        name: 'omniboxField',
+	        type: 'omnibox'
+	    },
+	    facetClearAll: {
+	        name: 'facetClearAll',
+	        type: 'facet',
+	        metaMap: { facetId: 1 }
+	    },
+	    facetSearch: {
+	        name: 'facetSearch',
+	        type: 'facet',
+	        metaMap: { facetId: 1 }
+	    },
+	    facetToggle: {
+	        name: 'facetToggle',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetOperatorBefore: 2, facetOperatorAfter: 3 }
+	    },
+	    facetRangeSlider: {
+	        name: 'facetRangeSlider',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetRangeStart: 2, facetRangeEnd: 3 }
+	    },
+	    facetRangeGraph: {
+	        name: 'facetRangeGraph',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetRangeStart: 2, facetRangeEnd: 3 }
+	    },
+	    facetSelect: {
+	        name: 'facetSelect',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    facetSelectAll: {
+	        name: 'facetSelectAll',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    facetDeselect: {
+	        name: 'facetDeselect',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    facetExclude: {
+	        name: 'facetExclude',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    facetUnexclude: {
+	        name: 'facetUnexclude',
+	        type: 'facet',
+	        metaMap: { facetId: 1, facetValue: 2, facetTitle: 3 }
+	    },
+	    errorBack: {
+	        name: 'errorBack',
+	        type: 'errors'
+	    },
+	    errorClearQuery: {
+	        name: 'errorClearQuery',
+	        type: 'errors'
+	    },
+	    errorRetry: {
+	        name: 'errorRetry',
+	        type: 'errors'
+	    },
+	    noResultsBack: {
+	        name: 'noResultsBack',
+	        type: 'noResults'
+	    },
+	    expandToFullUI: {
+	        name: 'expandToFullUI',
+	        type: 'interface'
+	    },
+	    caseCreationInputChange: {
+	        name: 'inputChange',
+	        type: 'caseCreation'
+	    },
+	    caseCreationSubmitButton: {
+	        name: 'submitButton',
+	        type: 'caseCreation'
+	    },
+	    caseCreationCancelButton: {
+	        name: 'cancelButton',
+	        type: 'caseCreation'
+	    },
+	    caseCreationUnloadPage: {
+	        name: 'unloadPage',
+	        type: 'caseCreation'
+	    },
+	    casecontextAdd: {
+	        name: 'casecontextAdd',
+	        type: 'casecontext',
+	        metaMap: { caseID: 5 }
+	    },
+	    casecontextRemove: {
+	        name: 'casecontextRemove',
+	        type: 'casecontext',
+	        metaMap: { caseID: 5 }
+	    },
+	    preferencesChange: {
+	        name: 'preferencesChange',
+	        type: 'preferences',
+	        metaMap: { preferenceName: 1, preferenceType: 2 }
+	    },
+	    getUserHistory: {
+	        name: 'getUserHistory',
+	        type: 'userHistory'
+	    },
+	    userActionDocumentClick: {
+	        name: 'userActionDocumentClick',
+	        type: 'userHistory'
+	    },
+	    caseAttach: {
+	        name: 'caseAttach',
+	        type: 'case',
+	        metaMap: { documentTitle: 1, resultUriHash: 3, articleID: 4, caseID: 5 }
+	    },
+	    caseDetach: {
+	        name: 'caseDetach',
+	        type: 'case',
+	        metaMap: { documentTitle: 1, resultUriHash: 3, articleID: 4, caseID: 5 }
+	    },
+	    customfiltersChange: {
+	        name: 'customfiltersChange',
+	        type: 'customfilters',
+	        metaMap: { customFilterName: 1, customFilterType: 2, customFilterExpression: 3 }
+	    },
+	    pagerNumber: {
+	        name: 'pagerNumber',
+	        type: 'getMoreResults',
+	        metaMap: { 'pagerNumber': 1 }
+	    },
+	    pagerNext: {
+	        name: 'pagerNext',
+	        type: 'getMoreResults',
+	        metaMap: { 'pagerNumber': 1 }
+	    },
+	    pagerPrevious: {
+	        name: 'pagerPrevious',
+	        type: 'getMoreResults',
+	        metaMap: { 'pagerNumber': 1 }
+	    },
+	    pagerScrolling: {
+	        name: 'pagerScrolling',
+	        type: 'getMoreResults'
+	    },
+	    pagerResize: {
+	        name: 'pagerResize',
+	        type: 'getMoreResults'
+	    },
+	    searchFromLink: {
+	        name: 'searchFromLink',
+	        type: 'interface'
+	    },
+	    triggerNotify: {
+	        name: 'notify',
+	        type: 'queryPipelineTriggers'
+	    },
+	    triggerExecute: {
+	        name: 'execute',
+	        type: 'queryPipelineTriggers'
+	    },
+	    triggerQuery: {
+	        name: 'query',
+	        type: 'queryPipelineTriggers'
+	    },
+	    triggerRedirect: {
+	        name: 'redirect',
+	        type: 'queryPipelineTriggers'
+	    },
+	    queryError: {
+	        name: 'query',
+	        type: 'errors',
+	        metaMap: { 'query': 1, 'aq': 2, 'cq': 3, 'dq': 4, 'errorType': 5, 'errorMessage': 6 }
+	    },
+	    exportToExcel: {
+	        name: 'exportToExcel',
+	        type: 'misc'
+	    },
+	    recommendation: {
+	        name: 'recommendation',
+	        type: 'recommendation'
+	    },
+	    recommendationInterfaceLoad: {
+	        name: 'recommendationInterfaceLoad',
+	        type: 'recommendation'
+	    },
+	    recommendationOpen: {
+	        name: 'recommendationOpen',
+	        type: 'recommendation'
+	    },
+	    advancedSearch: {
+	        name: 'advancedSearch',
+	        type: 'advancedSearch'
+	    },
+	    searchAlertsFollowDocument: {
+	        name: 'followDocument',
+	        type: 'searchAlerts'
+	    },
+	    searchAlertsFollowQuery: {
+	        name: 'followQuery',
+	        type: 'searchAlerts'
+	    },
+	    searchAlertsUpdateSubscription: {
+	        name: 'updateSubscription',
+	        type: 'searchAlerts'
+	    },
+	    searchAlertsDeleteSubscription: {
+	        name: 'deleteSubscription',
+	        type: 'searchAlerts'
+	    },
+	    searchAlertsUnfollowDocument: {
+	        name: 'unfollowDocument',
+	        type: 'searchAlerts'
+	    },
+	    searchAlertsUnfollowQuery: {
+	        name: 'unfollowQuery',
+	        type: 'searchAlerts'
+	    },
+	    resultsLayoutChange: {
+	        name: 'changeResultsLayout',
+	        type: 'resultsLayout'
 	    }
-	    ResponsiveResultLayout.init = function (root, component, options) {
-	        if (!Dom_1.$$(root).find("." + Component_1.Component.computeCssClassName(ResultLayout_1.ResultLayout))) {
-	            var logger = new Logger_1.Logger('ResponsiveResultLayout');
-	            logger.trace('No ResultLayout component found : Cannot instantiate ResponsiveResultLayout');
-	            return;
-	        }
-	        ResponsiveComponentsManager_1.ResponsiveComponentsManager.register(ResponsiveResultLayout, Dom_1.$$(root), ResultLayout_1.ResultLayout.ID, component, options);
+	};
+
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	    };
-	    ResponsiveResultLayout.prototype.registerComponent = function (accept) {
-	        if (accept instanceof ResultLayout_1.ResultLayout) {
-	            this.resultLayout = accept;
-	            return true;
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
+	var AnalyticsEndpoint_1 = __webpack_require__(37);
+	var SearchEndpoint_1 = __webpack_require__(9);
+	var Assert_1 = __webpack_require__(12);
+	var QueryEvents_1 = __webpack_require__(48);
+	var ComponentOptionsModel_1 = __webpack_require__(102);
+	var Dom_1 = __webpack_require__(59);
+	var Model_1 = __webpack_require__(98);
+	var Utils_1 = __webpack_require__(13);
+	var NoopAnalyticsClient_1 = __webpack_require__(119);
+	var LiveAnalyticsClient_1 = __webpack_require__(128);
+	var MultiAnalyticsClient_1 = __webpack_require__(132);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var SearchInterface_1 = __webpack_require__(108);
+	var Recommendation_1 = __webpack_require__(133);
+	var RecommendationAnalyticsClient_1 = __webpack_require__(173);
+	var _ = __webpack_require__(14);
+	/**
+	 * The Analytics component logs user actions performed in the search interface and sends them to a REST web service
+	 * exposed through the Coveo Cloud Platform.
+	 *
+	 * You can use analytics data to evaluate how users are interacting with your search interface, improve relevance and
+	 * produce analytics dashboards within the Coveo Cloud Platform.
+	 *
+	 * See [Step 7 - Usage Analytics](https://developers.coveo.com/x/EYskAg) of the Getting Started with the JavaScript
+	 * Search Framework V1 tutorial for an introduction to usage analytics.
+	 *
+	 * See also [Sending Custom Analytics Events](https://developers.coveo.com/x/KoGfAQ) for more advanced use cases.
+	 */
+	var Analytics = (function (_super) {
+	    __extends(Analytics, _super);
+	    /**
+	     * Creates a new Analytics component. Creates the {@link IAnalyticsClient}.
+	     * @param element The HTMLElement on which the component will be instantiated.
+	     * @param options The options for the Analytics component.
+	     * @param bindings The bindings that the component requires to function normally. If not set, these will be
+	     * automatically resolved (with a slower execution time).
+	     */
+	    function Analytics(element, options, bindings) {
+	        if (options === void 0) { options = {}; }
+	        var _this = _super.call(this, element, Analytics.ID, bindings) || this;
+	        _this.element = element;
+	        _this.options = options;
+	        _this.bindings = bindings;
+	        _this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, Analytics, options);
+	        _this.retrieveInfoFromDefaultSearchEndpoint();
+	        _this.initializeAnalyticsClient();
+	        Assert_1.Assert.exists(_this.client);
+	        _this.bind.onRootElement(QueryEvents_1.QueryEvents.buildingQuery, function (data) { return _this.handleBuildingQuery(data); });
+	        _this.bind.onRootElement(QueryEvents_1.QueryEvents.queryError, function (data) { return _this.handleQueryError(data); });
+	        // Analytics component is a bit special: It can be higher in the dom tree than the search interface
+	        // Need to resolve down to find the componentOptionsModel if we need to.
+	        if (!_this.componentOptionsModel) {
+	            var cmpOptionElement = Dom_1.$$(element).find('.' + Component_1.Component.computeCssClassName(ComponentOptionsModel_1.ComponentOptionsModel));
+	            if (cmpOptionElement) {
+	                _this.componentOptionsModel = cmpOptionElement[Component_1.Component.computeCssClassName(ComponentOptionsModel_1.ComponentOptionsModel)];
+	            }
 	        }
-	        return false;
+	        if (_this.componentOptionsModel) {
+	            _this.componentOptionsModel.set(ComponentOptionsModel_1.ComponentOptionsModel.attributesEnum.searchHub, _this.options.searchHub);
+	            var event_1 = _this.componentOptionsModel.getEventName(Model_1.Model.eventTypes.changeOne + ComponentOptionsModel_1.ComponentOptionsModel.attributesEnum.searchHub);
+	            _this.bind.onRootElement(event_1, function (args) { return _this.handleSearchHubChanged(args); });
+	        }
+	        return _this;
+	    }
+	    /**
+	     * Logs a Search event on the service, using an [AnalyticsActionCause]({@link IAnalyticsActionCause}) and a meta
+	     * object.
+	     *
+	     * Note that the search event is only sent to the service when the query successfully returns, not immediately after
+	     * calling this method. Therefore, it is important to call this method before executing the query. Otherwise the
+	     * service will log no Search event and you will get a warning message in the console.
+	     *
+	     * See [Sending Custom Analytics Events](https://developers.coveo.com/x/KoGfAQ).
+	     *
+	     * @param actionCause Describes the cause of the event.
+	     * @param meta The metadata which you want to use to create custom dimensions. Metadata can contain as many key-value
+	     * pairs as you need. Each key must contain only alphanumeric characters and underscores. The Coveo Usage Analytics
+	     * API automatically converts white spaces to underscores and uppercase characters to lowercase characters in key
+	     * names. Each value must be a simple string. If you do not need to log metadata, you can simply pass an empty JSON
+	     * ( `{}` ).
+	     */
+	    Analytics.prototype.logSearchEvent = function (actionCause, meta) {
+	        this.client.logSearchEvent(actionCause, meta);
 	    };
-	    ResponsiveResultLayout.prototype.handleResizeEvent = function () {
-	        if (this.needSmallMode()) {
-	            this.enableAndDisableLayout(this.resultLayout.options.mobileLayouts);
-	        }
-	        else if (this.needMediumMode()) {
-	            this.enableAndDisableLayout(this.resultLayout.options.tabletLayouts);
+	    /**
+	     * Logs a SearchAsYouType event on the service, using an {@link IAnalyticsActionCause} and a meta object.
+	     *
+	     * This method is very similar to the {@link logSearchEvent} method, except that logSearchAsYouType is, by definition,
+	     * more frequently called.
+	     *
+	     * The `PendingSearchAsYouTypeEvent` takes care of logging only the "relevant" last event: an event that occurs after
+	     * 5 seconds elapse without any event being logged, or an event that occurs after another part of the interface
+	     * triggers a search event. This avoids logging every single partial query, which would make the reporting very
+	     * confusing.
+	     *
+	     * It is important to call this method before executing the query. Otherwise the service will log no SearchAsYouType
+	     * event and you will get a warning message in the console.
+	     *
+	     * See [Sending Custom Analytics Events](https://developers.coveo.com/x/KoGfAQ).
+	     *
+	     * @param actionCause Describes the cause of the event.
+	     * @param meta The metadata which you want to use to create custom dimensions. Metadata can contain as many key-value
+	     * pairs as you need. Each key must contain only alphanumeric characters and underscores. The Coveo Usage Analytics
+	     * API automatically converts white spaces to underscores and uppercase characters to lowercase characters in key
+	     * names. Each value must be a simple string. If you do not need to log metadata, you can simply pass an empty JSON
+	     * ( `{}` ).
+	     */
+	    Analytics.prototype.logSearchAsYouType = function (actionCause, meta) {
+	        this.client.logSearchAsYouType(actionCause, meta);
+	    };
+	    /**
+	     * Logs a Custom event on the service. You can use custom events to create custom reports, or to track events
+	     * that are not queries or document views.
+	     *
+	     * @param actionCause Describes the cause of the event.
+	     * @param meta The metadata which you want to use to create custom dimensions. Metadata can contain as many key-value
+	     * pairs as you need. Each key must contain only alphanumeric characters and underscores. The Coveo Usage Analytics
+	     * API automatically converts white spaces to underscores and uppercase characters to lowercase characters in key
+	     * names. Each value must be a simple string. If you do not need to log metadata, you can simply pass an empty JSON
+	     * ( `{}` ).
+	     * @param element The HTMLElement that the user has interacted with for this custom event.
+	     */
+	    Analytics.prototype.logCustomEvent = function (actionCause, meta, element) {
+	        if (element === void 0) { element = this.element; }
+	        this.client.logCustomEvent(actionCause, meta, element);
+	    };
+	    /**
+	     * Logs a Click event. You can understand click events as document views (e.g., clicking on a {@link ResultLink} or
+	     * opening a {@link Quickview}).
+	     *
+	     * This event is logged immediately on the service.
+	     *
+	     * @param actionCause Describes the cause of the event.
+	     * @param meta The metadata which you want to use to create custom dimensions. Metadata can contain as many key-value
+	     * pairs as you need. Each key must contain only alphanumeric characters and underscores. The Coveo Usage Analytics
+	     * API automatically converts uppercase characters to lowercase characters in key names. Each value must be a simple
+	     * string. You do not have to pass an {@link IAnalyticsDocumentViewMeta} as meta when logging a custom Click event.
+	     * You can actually send any arbitrary meta. If you do not need to log metadata, you can simply pass an empty JSON
+	     * ( `{}` ).
+	     * @param result The result that the user has clicked.
+	     * @param element The HTMLElement that the user has clicked in the interface.
+	     */
+	    Analytics.prototype.logClickEvent = function (actionCause, meta, result, element) {
+	        if (element === void 0) { element = this.element; }
+	        this.client.logClickEvent(actionCause, meta, result, element);
+	    };
+	    /**
+	     * Sets the Origin Context dimension on the analytic events.
+	     *
+	     * You can use this dimension to specify the context of your application.
+	     * Suggested values are "Search", "InternalSearch" and "CommunitySearch"
+	     *
+	     * Default value is `Search`.
+	     *
+	     * @param originContext The origin context value
+	     */
+	    Analytics.prototype.setOriginContext = function (originContext) {
+	        this.client.setOriginContext(originContext);
+	    };
+	    Analytics.prototype.initializeAnalyticsEndpoint = function () {
+	        return new AnalyticsEndpoint_1.AnalyticsEndpoint({
+	            token: this.options.token,
+	            serviceUrl: this.options.endpoint,
+	            organization: this.options.organization
+	        });
+	    };
+	    Analytics.prototype.initializeAnalyticsClient = function () {
+	        if (Utils_1.Utils.isNonEmptyString(this.options.endpoint)) {
+	            var endpoint = this.initializeAnalyticsEndpoint();
+	            var elementToInitializeClient = void 0;
+	            if (this.root && this.element) {
+	                if (this.root.contains(this.element)) {
+	                    elementToInitializeClient = this.root;
+	                }
+	                else {
+	                    elementToInitializeClient = this.element;
+	                }
+	            }
+	            var isRecommendation = Dom_1.$$(this.root).hasClass(Component_1.Component.computeCssClassName(Recommendation_1.Recommendation));
+	            this.instantiateAnalyticsClient(endpoint, elementToInitializeClient, isRecommendation);
 	        }
 	        else {
-	            this.enableAndDisableLayout(this.resultLayout.options.desktopLayouts);
+	            this.client = new NoopAnalyticsClient_1.NoopAnalyticsClient();
 	        }
 	    };
-	    ResponsiveResultLayout.prototype.enableAndDisableLayout = function (validLayouts) {
-	        var needToDisable = _.difference(ResultLayout_1.ResultLayout.validLayouts, validLayouts);
-	        var needToEnable = _.intersection(ResultLayout_1.ResultLayout.validLayouts, validLayouts);
-	        this.resultLayout.disableLayouts(needToDisable);
-	        this.resultLayout.enableLayouts(needToEnable);
+	    Analytics.prototype.instantiateAnalyticsClient = function (endpoint, elementToInitializeClient, isRecommendation) {
+	        if (isRecommendation) {
+	            this.client = new RecommendationAnalyticsClient_1.RecommendationAnalyticsClient(endpoint, elementToInitializeClient, this.options.user, this.options.userDisplayName, this.options.anonymous, this.options.splitTestRunName, this.options.splitTestRunVersion, this.options.searchHub, this.options.sendToCloud, this.getBindings());
+	        }
+	        else {
+	            this.client = new LiveAnalyticsClient_1.LiveAnalyticsClient(endpoint, elementToInitializeClient, this.options.user, this.options.userDisplayName, this.options.anonymous, this.options.splitTestRunName, this.options.splitTestRunVersion, this.options.searchHub, this.options.sendToCloud);
+	        }
 	    };
-	    ResponsiveResultLayout.prototype.needSmallMode = function () {
-	        return this.coveoRoot.width() <= this.searchInterface.responsiveComponents.getSmallScreenWidth();
+	    Analytics.prototype.retrieveInfoFromDefaultSearchEndpoint = function () {
+	        var defaultEndpoint = SearchEndpoint_1.SearchEndpoint.endpoints['default'];
+	        if (this.options.token == null && defaultEndpoint) {
+	            this.options.token = defaultEndpoint.options.accessToken;
+	        }
+	        if (!this.options.organization && defaultEndpoint) {
+	            this.options.organization = defaultEndpoint.options.queryStringArguments['workgroup'];
+	        }
 	    };
-	    ResponsiveResultLayout.prototype.needMediumMode = function () {
-	        return this.coveoRoot.width() <= this.searchInterface.responsiveComponents.getMediumScreenWidth();
+	    Analytics.prototype.handleBuildingQuery = function (data) {
+	        Assert_1.Assert.exists(data);
+	        data.queryBuilder.searchHub = this.options.searchHub;
 	    };
-	    return ResponsiveResultLayout;
-	}());
-	exports.ResponsiveResultLayout = ResponsiveResultLayout;
+	    Analytics.prototype.handleSearchHubChanged = function (data) {
+	        this.options.searchHub = data.value;
+	    };
+	    Analytics.prototype.handleQueryError = function (data) {
+	        Assert_1.Assert.exists(data);
+	        this.client.logCustomEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.queryError, {
+	            query: data.query.q,
+	            aq: data.query.aq,
+	            cq: data.query.cq,
+	            dq: data.query.dq,
+	            errorType: data.error.type,
+	            errorMessage: data.error.message
+	        }, this.element);
+	    };
+	    Analytics.create = function (element, options, bindings) {
+	        var selector = Component_1.Component.computeSelectorForType(Analytics.ID);
+	        var found = [];
+	        found = found.concat(Dom_1.$$(element).findAll(selector));
+	        if (!(Component_1.Component.get(element, SearchInterface_1.SearchInterface) instanceof Recommendation_1.Recommendation)) {
+	            found = this.ignoreElementsInsideRecommendationInterface(found);
+	        }
+	        found.push(Dom_1.$$(element).closest(Component_1.Component.computeCssClassName(Analytics)));
+	        if (Dom_1.$$(element).is(selector)) {
+	            found.push(element);
+	        }
+	        found = _.compact(found);
+	        if (found.length == 1) {
+	            return Analytics.getClient(found[0], options, bindings);
+	        }
+	        else if (found.length > 1) {
+	            return new MultiAnalyticsClient_1.MultiAnalyticsClient(_.map(found, function (el) { return Analytics.getClient(el, options, bindings); }));
+	        }
+	        else {
+	            return new NoopAnalyticsClient_1.NoopAnalyticsClient();
+	        }
+	    };
+	    Analytics.ignoreElementsInsideRecommendationInterface = function (found) {
+	        return _.filter(found, function (element) {
+	            return Dom_1.$$(element).closest(Component_1.Component.computeCssClassName(Recommendation_1.Recommendation)) === undefined;
+	        });
+	    };
+	    Analytics.getClient = function (element, options, bindings) {
+	        // This check if an element is already initialized as an analytics component.
+	        // If that's the case, return the client on that element.
+	        // Otherwise, init and return.
+	        var foundOnElement = Component_1.Component.get(element, Analytics, true);
+	        if (foundOnElement instanceof Analytics) {
+	            return foundOnElement.client;
+	        }
+	        else {
+	            return new Analytics(element, options, bindings).client;
+	        }
+	    };
+	    return Analytics;
+	}(Component_1.Component));
+	Analytics.ID = 'Analytics';
+	// NOTE: The default values for some of those options (`organization`, `endpoint`, `searchHub`) can be
+	// overridden by generated code when using hosted search pages.
+	/**
+	 * Options for the component
+	 * @componentOptions
+	 */
+	Analytics.options = {
+	    /**
+	     * Specifies the name of the user for the usage analytics logs.
+	     *
+	     * Default value is `undefined`
+	     */
+	    user: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	    /**
+	     * Specifies the user display name for the usage analytics logs.
+	     *
+	     * Default value is `undefined`
+	     */
+	    userDisplayName: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	    /**
+	     * Specifies the token to use to access the usage analytics endpoint.
+	     *
+	     * Default value is `undefined`, and the component uses the search token.
+	     */
+	    token: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	    /**
+	     * Specifies the URL of the usage analytics logger to cover exceptional cases in which this location could differ
+	     * from the default Coveo Cloud Usage Analytics endpoint (https://usageanalytics.coveo.com).
+	     *
+	     * Default value is `https://usageanalytics.coveo.com`.
+	     */
+	    endpoint: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: AnalyticsEndpoint_1.AnalyticsEndpoint.DEFAULT_ANALYTICS_URI }),
+	    /**
+	     * Specifies whether to convert search user identities to unique hash when logging analytics data, so that
+	     * analytics reviewers and managers will not be able to clearly identify which user is performing which query.
+	     *
+	     * When this option is `true`, the Coveo Usage Analytics Platform can still properly differentiate sessions
+	     * made by anonymous users from sessions made by users authenticated in some way on the site containing the search
+	     * page.
+	     *
+	     * Default value is `false`.
+	     */
+	    anonymous: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
+	    /**
+	     * Sets the Search Hub dimension on the search events.
+	     *
+	     * The Search Hub dimension is typically a name that refers to a specific search page. For example, you could use
+	     * the `CommunitySite` value to refer to a search page on a company's public community site.
+	     *
+	     * Default value is `default`.
+	     */
+	    searchHub: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: 'default' }),
+	    /**
+	     * Specifies the name of the split test run that the search page is part of.
+	     *
+	     * You can use this dimension to perform A/B testing using different search page layouts and features inside the
+	     * Coveo Query pipeline.
+	     *
+	     * Default value is `undefined` and no split test run name is reported to the Coveo Usage Analytics Platform.
+	     */
+	    splitTestRunName: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	    /**
+	     * Specifies the version name for the page when a split test run is active.
+	     *
+	     * When reporting on A/B testing analytics data, this value specifies the test run version name that was
+	     * presented to the user.
+	     *
+	     * Default value is `undefined`
+	     */
+	    splitTestRunVersion: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	    sendToCloud: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
+	    /**
+	     * Specifies the organization bound to the access token. This is necessary when using an access token, because a
+	     * single access token can be associated to more than one organization.
+	     *
+	     * Default value is `undefined`, and the value of this parameter will fallback to the organization used for the
+	     * search endpoint.
+	     */
+	    organization: ComponentOptions_1.ComponentOptions.buildStringOption()
+	};
+	exports.Analytics = Analytics;
 
 
-/***/ },
-/* 127 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var DeviceUtils_1 = __webpack_require__(16);
+	var PendingSearchEvent_1 = __webpack_require__(129);
+	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(131);
+	var Assert_1 = __webpack_require__(12);
+	var Logger_1 = __webpack_require__(11);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var Defer_1 = __webpack_require__(32);
+	var Dom_1 = __webpack_require__(59);
+	var AnalyticsEvents_1 = __webpack_require__(41);
+	var APIAnalyticsBuilder_1 = __webpack_require__(130);
+	var QueryStateModel_1 = __webpack_require__(101);
+	var Component_1 = __webpack_require__(107);
+	var Version_1 = __webpack_require__(8);
+	var QueryUtils_1 = __webpack_require__(21);
+	var _ = __webpack_require__(14);
+	var LiveAnalyticsClient = (function () {
+	    function LiveAnalyticsClient(endpoint, rootElement, userId, userDisplayName, anonymous, splitTestRunName, splitTestRunVersion, originLevel1, sendToCloud) {
+	        this.endpoint = endpoint;
+	        this.rootElement = rootElement;
+	        this.userId = userId;
+	        this.userDisplayName = userDisplayName;
+	        this.anonymous = anonymous;
+	        this.splitTestRunName = splitTestRunName;
+	        this.splitTestRunVersion = splitTestRunVersion;
+	        this.originLevel1 = originLevel1;
+	        this.sendToCloud = sendToCloud;
+	        this.isContextual = false;
+	        this.originContext = 'Search';
+	        this.language = String['locale'];
+	        this.device = DeviceUtils_1.DeviceUtils.getDeviceName();
+	        this.mobile = DeviceUtils_1.DeviceUtils.isMobileDevice();
+	        Assert_1.Assert.exists(endpoint);
+	        Assert_1.Assert.exists(rootElement);
+	        Assert_1.Assert.isNonEmptyString(this.language);
+	        Assert_1.Assert.isNonEmptyString(this.device);
+	        Assert_1.Assert.isNonEmptyString(this.originLevel1);
+	        this.logger = new Logger_1.Logger(this);
+	    }
+	    LiveAnalyticsClient.prototype.isActivated = function () {
+	        return true;
+	    };
+	    LiveAnalyticsClient.prototype.getCurrentVisitId = function () {
+	        return this.endpoint.getCurrentVisitId();
+	    };
+	    LiveAnalyticsClient.prototype.getCurrentVisitIdPromise = function () {
+	        return this.endpoint.getCurrentVisitIdPromise();
+	    };
+	    LiveAnalyticsClient.prototype.getCurrentEventCause = function () {
+	        if (this.pendingSearchEvent != null) {
+	            return this.pendingSearchEvent.getEventCause();
+	        }
+	        if (this.pendingSearchAsYouTypeSearchEvent != null) {
+	            return this.pendingSearchAsYouTypeSearchEvent.getEventCause();
+	        }
+	        return null;
+	    };
+	    LiveAnalyticsClient.prototype.getCurrentEventMeta = function () {
+	        if (this.pendingSearchEvent != null) {
+	            return this.pendingSearchEvent.getEventMeta();
+	        }
+	        if (this.pendingSearchAsYouTypeSearchEvent != null) {
+	            return this.pendingSearchAsYouTypeSearchEvent.getEventMeta();
+	        }
+	        return null;
+	    };
+	    LiveAnalyticsClient.prototype.logSearchEvent = function (actionCause, meta) {
+	        var metaObject = this.buildMetaObject(meta);
+	        this.pushSearchEvent(actionCause, metaObject);
+	    };
+	    LiveAnalyticsClient.prototype.logSearchAsYouType = function (actionCause, meta) {
+	        var metaObject = this.buildMetaObject(meta);
+	        this.pushSearchAsYouTypeEvent(actionCause, metaObject);
+	    };
+	    LiveAnalyticsClient.prototype.logClickEvent = function (actionCause, meta, result, element) {
+	        var metaObject = this.buildMetaObject(meta, result);
+	        this.pushClickEvent(actionCause, metaObject, result, element);
+	    };
+	    LiveAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element) {
+	        var metaObject = this.buildMetaObject(meta);
+	        this.pushCustomEvent(actionCause, metaObject, element);
+	    };
+	    LiveAnalyticsClient.prototype.getTopQueries = function (params) {
+	        return this.endpoint.getTopQueries(params);
+	    };
+	    LiveAnalyticsClient.prototype.sendAllPendingEvents = function () {
+	        if (this.pendingSearchAsYouTypeSearchEvent) {
+	            this.pendingSearchAsYouTypeSearchEvent.sendRightNow();
+	        }
+	    };
+	    LiveAnalyticsClient.prototype.cancelAllPendingEvents = function () {
+	        if (this.pendingSearchAsYouTypeSearchEvent) {
+	            this.pendingSearchAsYouTypeSearchEvent.cancel();
+	            this.pendingSearchAsYouTypeSearchEvent = null;
+	        }
+	        if (this.pendingSearchEvent) {
+	            this.pendingSearchEvent.cancel();
+	            this.pendingSearchEvent = null;
+	        }
+	    };
+	    LiveAnalyticsClient.prototype.getPendingSearchEvent = function () {
+	        if (this.pendingSearchEvent) {
+	            return this.pendingSearchEvent;
+	        }
+	        else if (this.pendingSearchAsYouTypeSearchEvent) {
+	            return this.pendingSearchAsYouTypeSearchEvent;
+	        }
+	        return null;
+	    };
+	    LiveAnalyticsClient.prototype.warnAboutSearchEvent = function () {
+	        if (_.isUndefined(this.pendingSearchEvent) && _.isUndefined(this.pendingSearchAsYouTypeSearchEvent)) {
+	            this.logger.warn('A search was triggered, but no analytics event was logged. If you wish to have consistent analytics data, consider logging a search event using the methods provided by the framework', 'https://developers.coveo.com/x/TwA5');
+	            if (window['console'] && console.trace) {
+	                console.trace();
+	            }
+	        }
+	    };
+	    LiveAnalyticsClient.prototype.setOriginContext = function (originContext) {
+	        this.originContext = originContext;
+	    };
+	    LiveAnalyticsClient.prototype.pushCustomEvent = function (actionCause, metaObject, element) {
+	        var _this = this;
+	        var customEvent = this.buildCustomEvent(actionCause, metaObject, element);
+	        this.triggerChangeAnalyticsCustomData('CustomEvent', metaObject, customEvent);
+	        this.checkToSendAnyPendingSearchAsYouType(actionCause);
+	        Defer_1.Defer.defer(function () {
+	            if (_this.sendToCloud) {
+	                _this.endpoint.sendCustomEvent(customEvent);
+	            }
+	            Dom_1.$$(_this.rootElement).trigger(AnalyticsEvents_1.AnalyticsEvents.customEvent, { customEvent: APIAnalyticsBuilder_1.APIAnalyticsBuilder.convertCustomEventToAPI(customEvent) });
+	        });
+	    };
+	    LiveAnalyticsClient.prototype.pushSearchEvent = function (actionCause, metaObject) {
+	        var _this = this;
+	        Assert_1.Assert.exists(actionCause);
+	        if (this.pendingSearchEvent && this.pendingSearchEvent.getEventCause() !== actionCause.name) {
+	            this.pendingSearchEvent.stopRecording();
+	            this.pendingSearchEvent = null;
+	        }
+	        this.checkToSendAnyPendingSearchAsYouType(actionCause);
+	        if (!this.pendingSearchEvent) {
+	            var searchEvent = this.buildSearchEvent(actionCause, metaObject);
+	            this.triggerChangeAnalyticsCustomData('SearchEvent', metaObject, searchEvent);
+	            var pendingSearchEvent = this.pendingSearchEvent = new PendingSearchEvent_1.PendingSearchEvent(this.rootElement, this.endpoint, searchEvent, this.sendToCloud);
+	            Defer_1.Defer.defer(function () {
+	                // At this point all `duringQuery` events should have been fired, so we can forget
+	                // about the pending search event. It will finish processing automatically when
+	                // all the deferred that were caught terminate.
+	                _this.pendingSearchEvent = undefined;
+	                pendingSearchEvent.stopRecording();
+	            });
+	        }
+	    };
+	    LiveAnalyticsClient.prototype.checkToSendAnyPendingSearchAsYouType = function (actionCause) {
+	        if (this.eventIsNotRelatedToSearchbox(actionCause.name)) {
+	            this.sendAllPendingEvents();
+	        }
+	        else {
+	            this.cancelAnyPendingSearchAsYouTypeEvent();
+	        }
+	    };
+	    LiveAnalyticsClient.prototype.pushSearchAsYouTypeEvent = function (actionCause, metaObject) {
+	        this.cancelAnyPendingSearchAsYouTypeEvent();
+	        var searchEvent = this.buildSearchEvent(actionCause, metaObject);
+	        this.triggerChangeAnalyticsCustomData('SearchEvent', metaObject, searchEvent);
+	        this.pendingSearchAsYouTypeSearchEvent = new PendingSearchAsYouTypeSearchEvent_1.PendingSearchAsYouTypeSearchEvent(this.rootElement, this.endpoint, searchEvent, this.sendToCloud);
+	    };
+	    LiveAnalyticsClient.prototype.pushClickEvent = function (actionCause, metaObject, result, element) {
+	        var _this = this;
+	        var event = this.buildClickEvent(actionCause, metaObject, result, element);
+	        this.checkToSendAnyPendingSearchAsYouType(actionCause);
+	        this.triggerChangeAnalyticsCustomData('ClickEvent', metaObject, event, { resultData: result });
+	        Assert_1.Assert.isNonEmptyString(event.searchQueryUid);
+	        Assert_1.Assert.isNonEmptyString(event.collectionName);
+	        Assert_1.Assert.isNonEmptyString(event.sourceName);
+	        Assert_1.Assert.isNumber(event.documentPosition);
+	        Defer_1.Defer.defer(function () {
+	            if (_this.sendToCloud) {
+	                _this.endpoint.sendDocumentViewEvent(event);
+	            }
+	            Dom_1.$$(_this.rootElement).trigger(AnalyticsEvents_1.AnalyticsEvents.documentViewEvent, {
+	                documentViewEvent: APIAnalyticsBuilder_1.APIAnalyticsBuilder.convertDocumentViewToAPI(event)
+	            });
+	        });
+	    };
+	    LiveAnalyticsClient.prototype.buildAnalyticsEvent = function (actionCause, metaObject) {
+	        return {
+	            actionCause: actionCause.name,
+	            actionType: actionCause.type,
+	            username: this.userId,
+	            userDisplayName: this.userDisplayName,
+	            anonymous: this.anonymous,
+	            device: this.device,
+	            mobile: this.mobile,
+	            language: this.language,
+	            responseTime: undefined,
+	            originLevel1: this.originLevel1,
+	            originLevel2: this.getOriginLevel2(this.rootElement),
+	            originLevel3: document.referrer,
+	            originContext: this.originContext,
+	            customData: _.keys(metaObject).length > 0 ? metaObject : undefined,
+	            userAgent: navigator.userAgent
+	        };
+	    };
+	    LiveAnalyticsClient.prototype.buildSearchEvent = function (actionCause, metaObject) {
+	        return this.merge(this.buildAnalyticsEvent(actionCause, metaObject), {
+	            searchQueryUid: undefined,
+	            pipeline: undefined,
+	            splitTestRunName: this.splitTestRunName,
+	            splitTestRunVersion: this.splitTestRunVersion,
+	            queryText: undefined,
+	            advancedQuery: undefined,
+	            results: undefined,
+	            resultsPerPage: undefined,
+	            pageNumber: undefined,
+	            didYouMean: undefined,
+	            facets: undefined,
+	            contextual: this.isContextual
+	        });
+	    };
+	    LiveAnalyticsClient.prototype.buildClickEvent = function (actionCause, metaObject, result, element) {
+	        return this.merge(this.buildAnalyticsEvent(actionCause, metaObject), {
+	            searchQueryUid: result.queryUid,
+	            queryPipeline: result.pipeline,
+	            splitTestRunName: this.splitTestRunName || result.splitTestRun,
+	            splitTestRunVersion: this.splitTestRunVersion || (result.splitTestRun != undefined ? result.pipeline : undefined),
+	            documentUri: result.uri,
+	            documentUriHash: QueryUtils_1.QueryUtils.getUriHash(result),
+	            documentUrl: result.clickUri,
+	            documentTitle: result.title,
+	            documentCategory: QueryUtils_1.QueryUtils.getObjectType(result),
+	            originLevel2: this.getOriginLevel2(element),
+	            collectionName: QueryUtils_1.QueryUtils.getCollection(result),
+	            sourceName: QueryUtils_1.QueryUtils.getSource(result),
+	            documentPosition: result.index + 1,
+	            responseTime: 0,
+	            viewMethod: actionCause.name,
+	            rankingModifier: result.rankingModifier
+	        });
+	    };
+	    LiveAnalyticsClient.prototype.buildCustomEvent = function (actionCause, metaObject, element) {
+	        return this.merge(this.buildAnalyticsEvent(actionCause, metaObject), {
+	            eventType: actionCause.type,
+	            eventValue: actionCause.name,
+	            originLevel2: this.getOriginLevel2(element),
+	            responseTime: 0
+	        });
+	    };
+	    LiveAnalyticsClient.prototype.getOriginLevel2 = function (element) {
+	        return this.resolveActiveTabFromElement(element) || 'default';
+	    };
+	    LiveAnalyticsClient.prototype.buildMetaObject = function (meta, result) {
+	        var modifiedMeta = _.extend({}, meta);
+	        modifiedMeta['JSUIVersion'] = Version_1.version.lib + ';' + Version_1.version.product;
+	        if (result) {
+	            var uniqueId = QueryUtils_1.QueryUtils.getPermanentId(result);
+	            modifiedMeta['contentIDKey'] = uniqueId.fieldUsed;
+	            modifiedMeta['contentIDValue'] = uniqueId.fieldValue;
+	        }
+	        return modifiedMeta;
+	    };
+	    LiveAnalyticsClient.prototype.cancelAnyPendingSearchAsYouTypeEvent = function () {
+	        if (this.pendingSearchAsYouTypeSearchEvent) {
+	            this.pendingSearchAsYouTypeSearchEvent.cancel();
+	            this.pendingSearchAsYouTypeSearchEvent = undefined;
+	        }
+	    };
+	    LiveAnalyticsClient.prototype.resolveActiveTabFromElement = function (element) {
+	        Assert_1.Assert.exists(element);
+	        var queryStateModel = this.resolveQueryStateModel(element);
+	        return (queryStateModel && queryStateModel.get(QueryStateModel_1.QueryStateModel.attributesEnum.t));
+	    };
+	    LiveAnalyticsClient.prototype.resolveQueryStateModel = function (rootElement) {
+	        return Component_1.Component.resolveBinding(rootElement, QueryStateModel_1.QueryStateModel);
+	    };
+	    LiveAnalyticsClient.prototype.eventIsNotRelatedToSearchbox = function (event) {
+	        return event !== AnalyticsActionListMeta_1.analyticsActionCauseList.searchboxSubmit.name && event !== AnalyticsActionListMeta_1.analyticsActionCauseList.searchboxClear.name;
+	    };
+	    LiveAnalyticsClient.prototype.triggerChangeAnalyticsCustomData = function (type, metaObject, event, data) {
+	        // This is for backward compatibility. Before the analytics were using either numbered
+	        // metas in `metaDataAsNumber` of later on named metas in `metaDataAsString`. Thus we still
+	        // provide those properties in a deprecated way. Below we are moving any data that put
+	        // in them to the root.
+	        metaObject['metaDataAsString'] = {};
+	        metaObject['metaDataAsNumber'] = {};
+	        var changeableAnalyticsDataObject = {
+	            language: event.language,
+	            originLevel1: event.originLevel1,
+	            originLevel2: event.originLevel2,
+	            originLevel3: event.originLevel3,
+	            metaObject: metaObject
+	        };
+	        var args = _.extend({}, {
+	            type: type,
+	            actionType: event.actionType,
+	            actionCause: event.actionCause
+	        }, changeableAnalyticsDataObject, data);
+	        Dom_1.$$(this.rootElement).trigger(AnalyticsEvents_1.AnalyticsEvents.changeAnalyticsCustomData, args);
+	        event.language = args.language;
+	        event.originLevel1 = args.originLevel1;
+	        event.originLevel2 = args.originLevel2;
+	        event.originLevel3 = args.originLevel3;
+	        event.customData = metaObject;
+	        // This is for backward compatibility. Before the analytics were using either numbered
+	        // metas in `metaDataAsNumber` of later on named metas in `metaDataAsString`. We are now putting
+	        // them all at the root, and if I encounter the older properties I move them to the top
+	        // level after issuing a warning.
+	        var metaDataAsString = event.customData['metaDataAsString'];
+	        if (_.keys(metaDataAsString).length > 0) {
+	            this.logger.warn('Using deprecated \'metaDataAsString\' key to log custom analytics data. Custom meta should now be put at the root of the object.');
+	            _.extend(event.customData, metaDataAsString);
+	        }
+	        delete event.customData['metaDataAsString'];
+	        var metaDataAsNumber = event.customData['metaDataAsNumber'];
+	        if (_.keys(metaDataAsNumber).length > 0) {
+	            this.logger.warn('Using deprecated \'metaDataAsNumber\' key to log custom analytics data. Custom meta should now be put at the root of the object.');
+	            _.extend(event.customData, metaDataAsNumber);
+	        }
+	        delete event.customData['metaDataAsNumber'];
+	    };
+	    LiveAnalyticsClient.prototype.merge = function (first, second) {
+	        return _.extend({}, first, second);
+	    };
+	    return LiveAnalyticsClient;
+	}());
+	exports.LiveAnalyticsClient = LiveAnalyticsClient;
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var QueryEvents_1 = __webpack_require__(48);
+	var Assert_1 = __webpack_require__(12);
+	var Dom_1 = __webpack_require__(59);
+	var SearchInterface_1 = __webpack_require__(108);
+	var Component_1 = __webpack_require__(107);
+	var QueryController_1 = __webpack_require__(74);
+	var Defer_1 = __webpack_require__(32);
+	var APIAnalyticsBuilder_1 = __webpack_require__(130);
+	var AnalyticsEvents_1 = __webpack_require__(41);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var QueryStateModel_1 = __webpack_require__(101);
+	var _ = __webpack_require__(14);
+	var PendingSearchEvent = (function () {
+	    function PendingSearchEvent(root, endpoint, templateSearchEvent, sendToCloud) {
+	        var _this = this;
+	        this.root = root;
+	        this.endpoint = endpoint;
+	        this.templateSearchEvent = templateSearchEvent;
+	        this.sendToCloud = sendToCloud;
+	        this.searchPromises = [];
+	        this.results = [];
+	        this.cancelled = false;
+	        this.finished = false;
+	        this.searchEvents = [];
+	        Assert_1.Assert.exists(root);
+	        Assert_1.Assert.exists(endpoint);
+	        Assert_1.Assert.exists(templateSearchEvent);
+	        this.handler = function (evt, arg) {
+	            _this.handleDuringQuery(evt, arg);
+	        };
+	        Dom_1.$$(root).on(QueryEvents_1.QueryEvents.duringQuery, this.handler);
+	    }
+	    PendingSearchEvent.prototype.getEventCause = function () {
+	        return this.templateSearchEvent.actionCause;
+	    };
+	    PendingSearchEvent.prototype.getEventMeta = function () {
+	        return this.templateSearchEvent.customData;
+	    };
+	    PendingSearchEvent.prototype.cancel = function () {
+	        this.stopRecording();
+	        this.cancelled = true;
+	    };
+	    PendingSearchEvent.prototype.handleDuringQuery = function (evt, args) {
+	        var _this = this;
+	        Assert_1.Assert.check(!this.finished);
+	        Assert_1.Assert.check(!this.cancelled);
+	        // When synchronizing multiple search interfaces under a single search event
+	        // (think Salesforce boxes), we need to collect all search events and send them
+	        // in one single batch. So we gather all events until we idle out and then we
+	        // monitor those before sending the data.
+	        this.searchPromises.push(args.promise);
+	        // TODO: Maybe a better way to grab the search interface?
+	        var eventTarget;
+	        eventTarget = evt.target;
+	        var searchInterface = Component_1.Component.get(eventTarget, SearchInterface_1.SearchInterface);
+	        Assert_1.Assert.exists(searchInterface);
+	        // TODO: Maybe a better way to grab the query controller?
+	        var queryController = Component_1.Component.get(eventTarget, QueryController_1.QueryController);
+	        Assert_1.Assert.exists(queryController);
+	        args.promise.then(function (queryResults) {
+	            Assert_1.Assert.exists(queryResults);
+	            Assert_1.Assert.check(!_this.finished);
+	            if (queryResults._reusedSearchUid !== true || _this.templateSearchEvent.actionCause == AnalyticsActionListMeta_1.analyticsActionCauseList.recommendation.name) {
+	                var searchEvent = _.extend({}, _this.templateSearchEvent);
+	                _this.fillSearchEvent(searchEvent, searchInterface, args.query, queryResults);
+	                _this.searchEvents.push(searchEvent);
+	                _this.results.push(queryResults);
+	                return queryResults;
+	            }
+	        }).finally(function () {
+	            var index = _.indexOf(_this.searchPromises, args.promise);
+	            _this.searchPromises.splice(index, 1);
+	            if (_this.searchPromises.length == 0) {
+	                _this.flush();
+	            }
+	        });
+	    };
+	    PendingSearchEvent.prototype.stopRecording = function () {
+	        if (this.handler) {
+	            Dom_1.$$(this.root).off(QueryEvents_1.QueryEvents.duringQuery, this.handler);
+	            Dom_1.$$(this.root).off(QueryEvents_1.QueryEvents.duringFetchMoreQuery, this.handler);
+	            this.handler = null;
+	        }
+	    };
+	    PendingSearchEvent.prototype.flush = function () {
+	        var _this = this;
+	        if (!this.cancelled) {
+	            this.stopRecording();
+	            this.finished = true;
+	            Assert_1.Assert.check(this.searchEvents.length == this.results.length);
+	            Defer_1.Defer.defer(function () {
+	                if (_this.sendToCloud) {
+	                    _this.endpoint.sendSearchEvents(_this.searchEvents);
+	                }
+	                var apiSearchEvents = _.map(_this.searchEvents, function (searchEvent) {
+	                    return APIAnalyticsBuilder_1.APIAnalyticsBuilder.convertSearchEventToAPI(searchEvent);
+	                });
+	                Dom_1.$$(_this.root).trigger(AnalyticsEvents_1.AnalyticsEvents.searchEvent, { searchEvents: apiSearchEvents });
+	            });
+	        }
+	    };
+	    PendingSearchEvent.prototype.fillSearchEvent = function (searchEvent, searchInterface, query, queryResults) {
+	        Assert_1.Assert.exists(searchEvent);
+	        Assert_1.Assert.exists(searchInterface);
+	        Assert_1.Assert.exists(query);
+	        Assert_1.Assert.exists(queryResults);
+	        var currentQuery = searchInterface.queryStateModel.get(QueryStateModel_1.QueryStateModel.attributesEnum.q);
+	        searchEvent.queryPipeline = queryResults.pipeline;
+	        searchEvent.splitTestRunName = searchEvent.splitTestRunName || queryResults.splitTestRun;
+	        searchEvent.splitTestRunVersion = searchEvent.splitTestRunVersion || (queryResults.splitTestRun != undefined ? queryResults.pipeline : undefined);
+	        searchEvent.originLevel2 = searchEvent.originLevel2 || searchInterface.queryStateModel.get('t') || 'default';
+	        searchEvent.queryText = currentQuery || query.q || ''; // do not log the query sent to the server if possible; it may contain added syntax depending on options
+	        searchEvent.advancedQuery = query.aq || '';
+	        searchEvent.didYouMean = query.enableDidYouMean;
+	        searchEvent.numberOfResults = queryResults.totalCount;
+	        searchEvent.responseTime = queryResults.duration;
+	        searchEvent.pageNumber = (query.firstResult / query.numberOfResults);
+	        searchEvent.resultsPerPage = query.numberOfResults;
+	        searchEvent.searchQueryUid = queryResults.searchUid;
+	        searchEvent.queryPipeline = queryResults.pipeline;
+	        // The context_${key} format is important for the Analytics backend
+	        // This is what they use to recognize a custom data that will be used internally by other coveo's service.
+	        // In this case, Reveal will be the consumer of this information.
+	        if (query.context != undefined) {
+	            _.each(query.context, function (value, key) {
+	                searchEvent.customData["context_" + key] = value;
+	            });
+	        }
+	        // The refinedKeywords field is important for Reveal in order to learn properly on query
+	        // made based on the long query.
+	        if (queryResults.refinedKeywords != undefined && queryResults.refinedKeywords.length != 0) {
+	            searchEvent.customData['refinedKeywords'] = queryResults.refinedKeywords;
+	        }
+	    };
+	    return PendingSearchEvent;
+	}());
+	exports.PendingSearchEvent = PendingSearchEvent;
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var APIAnalyticsBuilder = (function () {
+	    function APIAnalyticsBuilder() {
+	    }
+	    APIAnalyticsBuilder.convertSearchEventToAPI = function (searchEvent) {
+	        var apiSearchEvent = {
+	            advancedQuery: searchEvent.advancedQuery,
+	            customMetadatas: searchEvent.customData,
+	            device: searchEvent.device,
+	            didYouMean: searchEvent.didYouMean,
+	            language: searchEvent.language,
+	            pageNumber: searchEvent.pageNumber,
+	            queryText: searchEvent.queryText,
+	            responseTime: searchEvent.responseTime,
+	            numberOfResults: searchEvent.numberOfResults,
+	            resultsPerPage: searchEvent.resultsPerPage,
+	            searchHub: searchEvent.originLevel1,
+	            searchInterface: searchEvent.originLevel2,
+	            searchQueryUid: searchEvent.searchQueryUid,
+	            type: searchEvent.actionType,
+	            actionCause: searchEvent.actionCause,
+	            queryPipeline: searchEvent.queryPipeline,
+	            splitTestRunName: searchEvent.splitTestRunName,
+	            splitTestRunVersion: searchEvent.splitTestRunVersion
+	        };
+	        return apiSearchEvent;
+	    };
+	    APIAnalyticsBuilder.convertDocumentViewToAPI = function (documentView) {
+	        var apiDocumentView = {
+	            collectionName: documentView.collectionName,
+	            device: documentView.device,
+	            documentPosition: documentView.documentPosition,
+	            title: documentView.documentTitle,
+	            documentUrl: documentView.documentUrl,
+	            documentUri: documentView.documentUri,
+	            documentUriHash: documentView.documentUriHash,
+	            language: documentView.language,
+	            responseTime: documentView.responseTime,
+	            searchHub: documentView.originLevel1,
+	            searchInterface: documentView.originLevel2,
+	            searchQueryUid: documentView.searchQueryUid,
+	            sourceName: documentView.sourceName,
+	            viewMethod: documentView.viewMethod,
+	            customMetadatas: documentView.customData,
+	            actionCause: documentView.actionCause,
+	            queryPipeline: documentView.queryPipeline,
+	            splitTestRunName: documentView.splitTestRunName,
+	            splitTestRunVersion: documentView.splitTestRunVersion
+	        };
+	        return apiDocumentView;
+	    };
+	    APIAnalyticsBuilder.convertCustomEventToAPI = function (customEvent) {
+	        var apiCustomEvent = {
+	            actionCause: customEvent.actionCause,
+	            actionType: customEvent.actionType,
+	            device: customEvent.device,
+	            language: customEvent.language,
+	            responseTime: customEvent.responseTime,
+	            searchHub: customEvent.originLevel1,
+	            searchInterface: customEvent.originLevel2,
+	            customMetadatas: customEvent.customData
+	        };
+	        return apiCustomEvent;
+	    };
+	    return APIAnalyticsBuilder;
+	}());
+	exports.APIAnalyticsBuilder = APIAnalyticsBuilder;
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var PendingSearchEvent_1 = __webpack_require__(129);
 	var Dom_1 = __webpack_require__(59);
 	var InitializationEvents_1 = __webpack_require__(45);
-	var Component_1 = __webpack_require__(103);
-	var SearchInterface_1 = __webpack_require__(106);
+	var _ = __webpack_require__(14);
+	var PendingSearchAsYouTypeSearchEvent = (function (_super) {
+	    __extends(PendingSearchAsYouTypeSearchEvent, _super);
+	    function PendingSearchAsYouTypeSearchEvent(root, endpoint, templateSearchEvent, sendToCloud) {
+	        var _this = _super.call(this, root, endpoint, templateSearchEvent, sendToCloud) || this;
+	        _this.root = root;
+	        _this.endpoint = endpoint;
+	        _this.templateSearchEvent = templateSearchEvent;
+	        _this.sendToCloud = sendToCloud;
+	        _this.delayBeforeSending = 5000;
+	        _this.armBatchDelay = 50;
+	        _this.beforeUnloadHandler = function () {
+	            _this.onWindowUnload();
+	        };
+	        window.addEventListener('beforeunload', _this.beforeUnloadHandler);
+	        Dom_1.$$(root).on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
+	        return _this;
+	    }
+	    PendingSearchAsYouTypeSearchEvent.prototype.handleDuringQuery = function (e, args) {
+	        var _this = this;
+	        var event = _.clone(e);
+	        this.beforeResolve = new Promise(function (resolve) {
+	            _this.toSendRightNow = function () {
+	                if (!_this.isCancelledOrFinished()) {
+	                    resolve(_this);
+	                    _super.prototype.handleDuringQuery.call(_this, event, args);
+	                }
+	            };
+	            _.delay(function () {
+	                _this.toSendRightNow();
+	            }, _this.delayBeforeSending);
+	        });
+	    };
+	    PendingSearchAsYouTypeSearchEvent.prototype.sendRightNow = function () {
+	        if (this.toSendRightNow) {
+	            this.toSendRightNow();
+	        }
+	    };
+	    PendingSearchAsYouTypeSearchEvent.prototype.modifyCustomData = function (key, newData) {
+	        _.each(this.searchEvents, function (searchEvent) {
+	            searchEvent.customData[key] = newData;
+	        });
+	        if (!this.templateSearchEvent.customData) {
+	            this.templateSearchEvent.customData = {};
+	        }
+	        this.templateSearchEvent.customData[key] = newData;
+	    };
+	    PendingSearchAsYouTypeSearchEvent.prototype.modifyEventCause = function (newCause) {
+	        _.each(this.searchEvents, function (searchEvent) {
+	            searchEvent.actionCause = newCause.name;
+	            searchEvent.actionType = newCause.type;
+	        });
+	        this.templateSearchEvent.actionCause = newCause.name;
+	        this.templateSearchEvent.actionType = newCause.type;
+	    };
+	    PendingSearchAsYouTypeSearchEvent.prototype.stopRecording = function () {
+	        _super.prototype.stopRecording.call(this);
+	        if (this.beforeUnloadHandler) {
+	            window.removeEventListener('beforeunload', this.beforeUnloadHandler);
+	            this.beforeUnloadHandler = undefined;
+	        }
+	    };
+	    PendingSearchAsYouTypeSearchEvent.prototype.handleNuke = function () {
+	        window.removeEventListener('beforeunload', this.beforeUnloadHandler);
+	    };
+	    PendingSearchAsYouTypeSearchEvent.prototype.onWindowUnload = function () {
+	        if (!this.isCancelledOrFinished()) {
+	            this.armBatchDelay = 0;
+	            this.sendRightNow();
+	        }
+	    };
+	    PendingSearchAsYouTypeSearchEvent.prototype.isCancelledOrFinished = function () {
+	        if (!this.cancelled) {
+	            if (this.finished) {
+	                this.cancel();
+	                return true;
+	            }
+	            else {
+	                return false;
+	            }
+	        }
+	        else {
+	            return true;
+	        }
+	    };
+	    return PendingSearchAsYouTypeSearchEvent;
+	}(PendingSearchEvent_1.PendingSearchEvent));
+	exports.PendingSearchAsYouTypeSearchEvent = PendingSearchAsYouTypeSearchEvent;
+
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var _ = __webpack_require__(14);
+	var MultiAnalyticsClient = (function () {
+	    function MultiAnalyticsClient(analyticsClients) {
+	        if (analyticsClients === void 0) { analyticsClients = []; }
+	        this.analyticsClients = analyticsClients;
+	        this.isContextual = false;
+	    }
+	    MultiAnalyticsClient.prototype.isActivated = function () {
+	        return _.some(this.analyticsClients, function (analyticsClient) { return analyticsClient.isActivated(); });
+	    };
+	    MultiAnalyticsClient.prototype.getCurrentEventCause = function () {
+	        return _.find(_.map(this.analyticsClients, function (analyticsClient) { return analyticsClient.getCurrentEventCause(); }), function (currentEventCause) { return currentEventCause != null; });
+	    };
+	    MultiAnalyticsClient.prototype.getCurrentEventMeta = function () {
+	        return _.find(_.map(this.analyticsClients, function (analyticsClient) { return analyticsClient.getCurrentEventMeta(); }), function (currentEventMeta) { return currentEventMeta != null; });
+	    };
+	    MultiAnalyticsClient.prototype.logSearchEvent = function (actionCause, meta) {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logSearchEvent(actionCause, meta); });
+	    };
+	    MultiAnalyticsClient.prototype.logSearchAsYouType = function (actionCause, meta) {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logSearchEvent(actionCause, meta); });
+	    };
+	    MultiAnalyticsClient.prototype.logClickEvent = function (actionCause, meta, result, element) {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logClickEvent(actionCause, meta, result, element); });
+	    };
+	    MultiAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element) {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logCustomEvent(actionCause, meta, element); });
+	    };
+	    MultiAnalyticsClient.prototype.getTopQueries = function (params) {
+	        var _this = this;
+	        return Promise.all(_.map(this.analyticsClients, function (client) {
+	            return client.getTopQueries(params);
+	        }))
+	            .then(function (values) {
+	            return _this.mergeTopQueries(values, params.pageSize);
+	        });
+	    };
+	    MultiAnalyticsClient.prototype.getCurrentVisitIdPromise = function () {
+	        return _.first(this.analyticsClients).getCurrentVisitIdPromise();
+	    };
+	    MultiAnalyticsClient.prototype.getCurrentVisitId = function () {
+	        return _.first(this.analyticsClients).getCurrentVisitId();
+	    };
+	    MultiAnalyticsClient.prototype.sendAllPendingEvents = function () {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.sendAllPendingEvents(); });
+	    };
+	    MultiAnalyticsClient.prototype.warnAboutSearchEvent = function () {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.warnAboutSearchEvent(); });
+	    };
+	    MultiAnalyticsClient.prototype.cancelAllPendingEvents = function () {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.cancelAllPendingEvents(); });
+	    };
+	    MultiAnalyticsClient.prototype.getPendingSearchEvent = function () {
+	        return _.first(this.analyticsClients).getPendingSearchEvent();
+	    };
+	    MultiAnalyticsClient.prototype.setOriginContext = function (originContext) {
+	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.setOriginContext(originContext); });
+	    };
+	    MultiAnalyticsClient.prototype.mergeTopQueries = function (values, pageSize) {
+	        if (pageSize === void 0) { pageSize = 5; }
+	        return _.chain(values)
+	            .flatten()
+	            .first(pageSize)
+	            .value();
+	    };
+	    return MultiAnalyticsClient;
+	}());
+	exports.MultiAnalyticsClient = MultiAnalyticsClient;
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var SearchInterface_1 = __webpack_require__(108);
+	var ComponentOptions_1 = __webpack_require__(109);
+	var QueryEvents_1 = __webpack_require__(48);
+	var OmniboxEvents_1 = __webpack_require__(46);
+	var ResultListEvents_1 = __webpack_require__(49);
+	var SettingsEvents_1 = __webpack_require__(52);
+	var PreferencesPanelEvents_1 = __webpack_require__(47);
+	var AnalyticsEvents_1 = __webpack_require__(41);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var BreadcrumbEvents_1 = __webpack_require__(42);
+	var QuickviewEvents_1 = __webpack_require__(134);
+	var QueryStateModel_1 = __webpack_require__(101);
+	var Model_1 = __webpack_require__(98);
 	var Utils_1 = __webpack_require__(13);
-	var Tab_1 = __webpack_require__(128);
+	var Dom_1 = __webpack_require__(59);
+	var ResponsiveRecommendation_1 = __webpack_require__(135);
+	var coveo_analytics_1 = __webpack_require__(80);
+	var RegisteredNamedMethods_1 = __webpack_require__(105);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var _ = __webpack_require__(14);
+	/**
+	 * The Recommendation component is a {@link SearchInterface} that displays recommendations typically based on user
+	 * history.
+	 *
+	 * This component usually listens to the main SearchInterface. When the main SearchInterface generates a query, the
+	 * Recommendation component generates another query to get the recommendations at the same time.
+	 *
+	 * To get history-based recommendations, you will likely want to include the `pageview` script in your page (see
+	 * [coveo.analytics.js](https://github.com/coveo/coveo.analytics.js)). However, including this script is not mandatory.
+	 * For instance, you could use the Recommendation component without the Coveo Machine Learning service to create a
+	 * simple "recommended people" interface.
+	 *
+	 * It is possible to include this component inside another SearchInterface, but it is also possible to instantiate it as
+	 * a "standalone" search interface, without even instantiating a main SearchInterface component. In any case, a
+	 * Recommendation component always acts as a full-fledged search interface. Therefore, you can include any component
+	 * inside the Recommendation component (Searchbox, Facet, Sort, etc.), just as you would inside the main SearchInterface
+	 * component.
+	 */
+	var Recommendation = (function (_super) {
+	    __extends(Recommendation, _super);
+	    /**
+	     * Creates a new Recommendation component.
+	     * @param element The HTMLElement on which to instantiate the component.
+	     * @param options The options for the Recommendation component.
+	     * @param bindings The bindings that the component requires to function normally. If not set, these will be
+	     * automatically resolved (with a slower execution time)
+	     * @param _window
+	     */
+	    function Recommendation(element, options, analyticsOptions, _window) {
+	        if (options === void 0) { options = {}; }
+	        if (analyticsOptions === void 0) { analyticsOptions = {}; }
+	        if (_window === void 0) { _window = window; }
+	        var _this = _super.call(this, element, ComponentOptions_1.ComponentOptions.initComponentOptions(element, Recommendation, options), analyticsOptions, _window) || this;
+	        _this.element = element;
+	        _this.options = options;
+	        _this.analyticsOptions = analyticsOptions;
+	        if (!_this.options.id) {
+	            _this.generateDefaultId();
+	        }
+	        // This is done to allow the component to be included in another search interface without triggering the parent events.
+	        _this.preventEventPropagation();
+	        if (_this.options.mainSearchInterface) {
+	            _this.bindToMainSearchInterface();
+	        }
+	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.buildingQuery, function (e, args) { return _this.handleRecommendationBuildingQuery(args); });
+	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.querySuccess, function (e, args) { return _this.handleRecommendationQuerySuccess(args); });
+	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.noResults, function (e, args) { return _this.handleRecommendationNoResults(); });
+	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.queryError, function (e, args) { return _this.handleRecommendationQueryError(); });
+	        _this.historyStore = new coveo_analytics_1.history.HistoryStore();
+	        if (!_this.options.mainSearchInterface) {
+	            // When the recommendation component is "standalone", we add additional safeguard against bad config.
+	            _this.ensureCurrentPageViewExistsInStore();
+	        }
+	        ResponsiveRecommendation_1.ResponsiveRecommendation.init(_this.root, _this, options);
+	        return _this;
+	    }
+	    Recommendation.prototype.getId = function () {
+	        return this.options.id;
+	    };
+	    Recommendation.prototype.enable = function () {
+	        _super.prototype.enable.call(this);
+	        this.show();
+	    };
+	    Recommendation.prototype.disable = function () {
+	        _super.prototype.disable.call(this);
+	        this.hide();
+	    };
+	    Recommendation.prototype.hide = function () {
+	        if (!this.displayStyle) {
+	            this.displayStyle = this.element.style.display;
+	        }
+	        Dom_1.$$(this.element).hide();
+	    };
+	    Recommendation.prototype.show = function () {
+	        if (!this.displayStyle) {
+	            this.displayStyle = this.element.style.display;
+	        }
+	        this.element.style.display = this.displayStyle;
+	    };
+	    Recommendation.prototype.ensureCurrentPageViewExistsInStore = function () {
+	        // It's not 100% sure that the element will actually be added in the store.
+	        // It's possible that an external script configured by the end user to log the page view already did that.
+	        // So we *could* end up with duplicate values in the store :
+	        // We rely on the fact that the coveo.analytics lib has defensive code against consecutive page view that are identical.
+	        // This is mainly done if the recommendation component is being initialized before the page view could be logged correctly by the coveo.analytics externa lib.
+	        var historyElement = {
+	            name: 'PageView',
+	            value: document.location.toString(),
+	            time: JSON.stringify(new Date()),
+	            title: document.title
+	        };
+	        this.historyStore.addElement(historyElement);
+	    };
+	    Recommendation.prototype.bindToMainSearchInterface = function () {
+	        this.bindComponentOptionsModelToMainSearchInterface();
+	        this.bindQueryEventsToMainSearchInterface();
+	    };
+	    Recommendation.prototype.bindComponentOptionsModelToMainSearchInterface = function () {
+	        var _this = this;
+	        // Try to fetch the componentOptions from the main search interface.
+	        // Since we do not know which interface is init first (recommendation or full search interface)
+	        // add a mechanism that waits for the full search interface to be correctly initialized
+	        // then, set the needed values on the component options model.
+	        var searchInterfaceComponent = RegisteredNamedMethods_1.get(this.options.mainSearchInterface, SearchInterface_1.SearchInterface);
+	        var alreadyInitialized = searchInterfaceComponent != null;
+	        var onceInitialized = function () {
+	            var mainSearchInterfaceOptionsModel = searchInterfaceComponent.getBindings().componentOptionsModel;
+	            _this.componentOptionsModel.setMultiple(mainSearchInterfaceOptionsModel.getAttributes());
+	            Dom_1.$$(_this.options.mainSearchInterface).on(_this.componentOptionsModel.getEventName(Model_1.MODEL_EVENTS.ALL), function () {
+	                _this.componentOptionsModel.setMultiple(mainSearchInterfaceOptionsModel.getAttributes());
+	            });
+	        };
+	        if (alreadyInitialized) {
+	            onceInitialized();
+	        }
+	        else {
+	            Dom_1.$$(this.options.mainSearchInterface).on(InitializationEvents_1.InitializationEvents.afterComponentsInitialization, function () {
+	                searchInterfaceComponent = RegisteredNamedMethods_1.get(_this.options.mainSearchInterface, SearchInterface_1.SearchInterface);
+	                onceInitialized();
+	            });
+	        }
+	    };
+	    Recommendation.prototype.bindQueryEventsToMainSearchInterface = function () {
+	        var _this = this;
+	        // Whenever a query sucessfully returns on the full search interface, refresh the recommendation component.
+	        Dom_1.$$(this.options.mainSearchInterface).on(QueryEvents_1.QueryEvents.querySuccess, function (e, args) {
+	            _this.mainInterfaceQuery = args;
+	            _this.mainQuerySearchUID = args.results.searchUid;
+	            _this.mainQueryPipeline = args.results.pipeline;
+	            _this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.recommendation, {});
+	            _this.queryController.executeQuery();
+	        });
+	    };
+	    Recommendation.prototype.handleRecommendationBuildingQuery = function (data) {
+	        if (!this.disabled) {
+	            this.modifyQueryForRecommendation(data);
+	            this.addRecommendationInfoInQuery(data);
+	        }
+	    };
+	    Recommendation.prototype.handleRecommendationQuerySuccess = function (data) {
+	        if (!this.disabled) {
+	            if (this.options.hideIfNoResults) {
+	                if (data.results.totalCount === 0) {
+	                    this.hide();
+	                }
+	                else {
+	                    this.show();
+	                }
+	            }
+	        }
+	    };
+	    Recommendation.prototype.handleRecommendationNoResults = function () {
+	        if (!this.disabled) {
+	            if (this.options.hideIfNoResults) {
+	                this.hide();
+	            }
+	        }
+	    };
+	    Recommendation.prototype.handleRecommendationQueryError = function () {
+	        if (!this.disabled) {
+	            this.hide();
+	        }
+	    };
+	    Recommendation.prototype.modifyQueryForRecommendation = function (data) {
+	        if (this.mainInterfaceQuery) {
+	            Utils_1.Utils.copyObjectAttributes(data.queryBuilder, this.mainInterfaceQuery.queryBuilder, this.options.optionsToUse);
+	        }
+	    };
+	    Recommendation.prototype.addRecommendationInfoInQuery = function (data) {
+	        if (!_.isEmpty(this.options.userContext)) {
+	            data.queryBuilder.addContext(JSON.parse(this.options.userContext));
+	        }
+	        if (this.options.sendActionsHistory) {
+	            data.queryBuilder.actionsHistory = this.getHistory();
+	        }
+	        data.queryBuilder.recommendation = this.options.id;
+	    };
+	    Recommendation.prototype.getHistory = function () {
+	        var historyFromStore = this.historyStore.getHistory();
+	        if (historyFromStore == null) {
+	            historyFromStore = [];
+	        }
+	        return JSON.stringify(historyFromStore);
+	    };
+	    Recommendation.prototype.preventEventPropagation = function () {
+	        this.preventEventPropagationOn(QueryEvents_1.QueryEvents);
+	        this.preventEventPropagationOn(OmniboxEvents_1.OmniboxEvents);
+	        this.preventEventPropagationOn(ResultListEvents_1.ResultListEvents);
+	        this.preventEventPropagationOn(SettingsEvents_1.SettingsEvents);
+	        this.preventEventPropagationOn(PreferencesPanelEvents_1.PreferencesPanelEvents);
+	        this.preventEventPropagationOn(AnalyticsEvents_1.AnalyticsEvents);
+	        this.preventEventPropagationOn(BreadcrumbEvents_1.BreadcrumbEvents);
+	        this.preventEventPropagationOn(QuickviewEvents_1.QuickviewEvents);
+	        this.preventEventPropagationOn(InitializationEvents_1.InitializationEvents);
+	        this.preventEventPropagationOn(this.getAllModelEvents());
+	    };
+	    Recommendation.prototype.preventEventPropagationOn = function (eventType, eventName) {
+	        if (eventName === void 0) { eventName = function (event) { return event; }; }
+	        for (var event_1 in eventType) {
+	            Dom_1.$$(this.root).on(eventName(event_1), function (e) { return e.stopPropagation(); });
+	        }
+	    };
+	    Recommendation.prototype.getAllModelEvents = function () {
+	        var _this = this;
+	        var events = {};
+	        _.each(_.values(Model_1.Model.eventTypes), function (event) {
+	            _.each(_.values(QueryStateModel_1.QUERY_STATE_ATTRIBUTES), function (attribute) {
+	                var eventName = _this.getBindings().queryStateModel.getEventName(event + attribute);
+	                events[eventName] = eventName;
+	            });
+	        });
+	        return events;
+	    };
+	    Recommendation.prototype.generateDefaultId = function () {
+	        var id = 'Recommendation';
+	        if (Recommendation.NEXT_ID !== 1) {
+	            this.logger.warn('Generating another recommendation default id', 'Consider configuring a human friendly / meaningful id for this interface');
+	            id = id + '_' + Recommendation.NEXT_ID;
+	        }
+	        Recommendation.NEXT_ID++;
+	        this.options.id = id;
+	    };
+	    return Recommendation;
+	}(SearchInterface_1.SearchInterface));
+	Recommendation.ID = 'Recommendation';
+	Recommendation.NEXT_ID = 1;
+	/**
+	 * The options for the recommendation component
+	 * @componentOptions
+	 */
+	Recommendation.options = {
+	    /**
+	     * Specifies the main {@link SearchInterface} to listen to.
+	     */
+	    mainSearchInterface: ComponentOptions_1.ComponentOptions.buildSelectorOption(),
+	    /**
+	     * Specifies the user context to send to Coveo usage analytics.
+	     * The component sends this information with the query alongside the user history to get the recommendations.
+	     */
+	    userContext: ComponentOptions_1.ComponentOptions.buildJsonOption(),
+	    /**
+	     * Specifies the ID of the interface.
+	     * The usage analytics use the interface ID to know which recommendation interface was selected.
+	     *
+	     * Default value is `Recommendation` for the first one and `Recommendation_{number}`, where {number} depends on the
+	     * number of Recommendation interfaces with default IDs in the page for the others.
+	     */
+	    id: ComponentOptions_1.ComponentOptions.buildStringOption(),
+	    /**
+	     * Specifies which options from the main {@link QueryBuilder} to use in the triggered query.
+	     *
+	     * Possible values are:
+	     * - `expression`
+	     * - `advancedExpression`
+	     * - `constantExpression`
+	     * - `disjunctionExpression`
+	     *
+	     * **Example:**
+	     *
+	     * Adding the expression (`q`) and the advanced expression (`aq`) parts of the main query in the triggered query:
+	     *
+	     * `data-options-to-use="expression,advancedExpression"`
+	     *
+	     * Default value is `expression`.
+	     */
+	    optionsToUse: ComponentOptions_1.ComponentOptions.buildListOption({ defaultValue: ['expression'] }),
+	    /**
+	     * Specifies whether to send the actions history along with the triggered query.
+	     *
+	     * Setting this option to `false` makes it impossible for this component to get Coveo Machine Learning
+	     * recommendations.
+	     *
+	     * However, setting this option to `false` can be useful to display side results in a search page.
+	     *
+	     * Default value is `true`.
+	     */
+	    sendActionsHistory: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
+	    /**
+	     * Specifies whether to hide the Recommendations component if no result or recommendation is available.
+	     *
+	     * Default value is `false`.
+	     */
+	    hideIfNoResults: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
+	    autoTriggerQuery: ComponentOptions_1.ComponentOptions.buildBooleanOption({
+	        postProcessing: function (value, options) {
+	            if (options.mainSearchInterface) {
+	                return false;
+	            }
+	            return value;
+	        }
+	    }),
+	    /**
+	     * Specifies whether to enable *responsive mode* for Recommendation components. Setting this options to `false` on
+	     * any Recommendation component in a search interface disables responsive mode for all other Recommendation
+	     * components in the search interface.
+	     *
+	     * Responsive mode displays all Recommendation components under a single dropdown button whenever the width of the
+	     * HTML element which the search interface is bound to reaches or falls behind a certain threshold (see
+	     * {@link Recommendation.options.responsiveBreakpoint}).
+	     *
+	     * See also {@link Recommendation.options.dropdownHeaderLabel}.
+	     *
+	     * Default value is `true`.
+	     */
+	    enableResponsiveMode: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
+	    /**
+	     * If {@link Recommendation.options.enableResponsiveMode} is `true` for all Recommendation components, specifies the
+	     * width threshold (in pixels) of the search interface at which Recommendation components go in responsive mode.
+	     *
+	     * Recommendation components go in responsive mode when the width of the search interface is equal to or lower than
+	     * this value.
+	     *
+	     * The `search interface` corresponds to the HTML element with the class `CoveoSearchInterface`.
+	     *
+	     * If more than one Recommendation component in the search interface specifies a value for this option, then the
+	     * framework uses the last occurrence of the option.
+	     *
+	     * Default value is `1000`.
+	     */
+	    responsiveBreakpoint: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 1000 }),
+	    /**
+	     * If {@link Recommendation.options.enableResponsiveMode} is `true` for all Recommendation components, specifies the
+	     * label of the dropdown button that allows to display the Recommendation components when in responsive mode.
+	     *
+	     * If more than one Recommendation component in the search interface specifies a value for this option, then the
+	     * framework uses the first occurrence of the option.
+	     *
+	     * Default value is `Recommendations`.
+	     */
+	    dropdownHeaderLabel: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: 'Recommendations' })
+	};
+	exports.Recommendation = Recommendation;
+	// We do not register the Recommendation component since it is done with .coveo('initRecommendation')
+
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var QuickviewEvents = (function () {
+	    function QuickviewEvents() {
+	    }
+	    return QuickviewEvents;
+	}());
+	QuickviewEvents.quickviewLoaded = 'quickviewLoaded';
+	QuickviewEvents.openQuickview = 'openQuickview';
+	exports.QuickviewEvents = QuickviewEvents;
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ResponsiveComponentsManager_1 = __webpack_require__(136);
+	var ResponsiveComponentsUtils_1 = __webpack_require__(140);
+	var SearchInterface_1 = __webpack_require__(108);
+	var Utils_1 = __webpack_require__(13);
+	var Dom_1 = __webpack_require__(59);
+	var Logger_1 = __webpack_require__(11);
+	var Recommendation_1 = __webpack_require__(133);
+	var RecommendationDropdownContent_1 = __webpack_require__(141);
+	var ResponsiveDropdownHeader_1 = __webpack_require__(143);
+	var ResponsiveDropdown_1 = __webpack_require__(144);
+	var Strings_1 = __webpack_require__(35);
+	var FacetSlider_1 = __webpack_require__(145);
+	var Facet_1 = __webpack_require__(157);
+	var Component_1 = __webpack_require__(107);
+	var RegisteredNamedMethods_1 = __webpack_require__(105);
+	var QueryEvents_1 = __webpack_require__(48);
+	var _ = __webpack_require__(14);
+	var ResponsiveRecommendation = (function () {
+	    function ResponsiveRecommendation(coveoRoot, ID, options, responsiveDropdown) {
+	        this.coveoRoot = coveoRoot;
+	        this.ID = ID;
+	        this.responsiveDropdown = responsiveDropdown;
+	        this.recommendationRoot = this.getRecommendationRoot();
+	        this.dropdownHeaderLabel = options.dropdownHeaderLabel;
+	        this.breakpoint = this.defineResponsiveBreakpoint(options);
+	        this.logger = new Logger_1.Logger(this);
+	        this.dropdown = this.buildDropdown(responsiveDropdown);
+	        this.facets = this.getFacets();
+	        this.facetSliders = this.getFacetSliders();
+	        this.registerOnOpenHandler();
+	        this.registerOnCloseHandler();
+	        this.registerQueryEvents();
+	        this.dropdownContainer = Dom_1.$$('div', { className: ResponsiveRecommendation.DROPDOWN_CONTAINER_CSS_CLASS_NAME });
+	    }
+	    ResponsiveRecommendation.init = function (root, component, options) {
+	        var logger = new Logger_1.Logger('ResponsiveRecommendation');
+	        var coveoRoot = this.findParentRootOfRecommendationComponent(root);
+	        if (!coveoRoot) {
+	            logger.info('Recommendation component has no parent interface. Disabling responsive mode for this component.');
+	            return;
+	        }
+	        if (!Dom_1.$$(coveoRoot).find('.coveo-results-column')) {
+	            logger.info('Cannot find element with class coveo-results-column. Disabling responsive mode for this component.');
+	            return;
+	        }
+	        ResponsiveComponentsManager_1.ResponsiveComponentsManager.register(ResponsiveRecommendation, Dom_1.$$(coveoRoot), Recommendation_1.Recommendation.ID, component, options);
+	    };
+	    ResponsiveRecommendation.findParentRootOfRecommendationComponent = function (root) {
+	        var coveoRoot = Dom_1.$$(root).parents(Component_1.Component.computeCssClassName(SearchInterface_1.SearchInterface));
+	        if (coveoRoot[0]) {
+	            return Dom_1.$$(coveoRoot[0]);
+	        }
+	        return null;
+	    };
+	    ResponsiveRecommendation.prototype.handleResizeEvent = function () {
+	        if (this.needSmallMode() && !ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.isSmallRecommendationActivated(this.coveoRoot)) {
+	            this.changeToSmallMode();
+	        }
+	        else if (!this.needSmallMode() && ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.isSmallRecommendationActivated(this.coveoRoot)) {
+	            this.changeToLargeMode();
+	        }
+	        if (this.dropdown.isOpened) {
+	            this.dropdown.dropdownContent.positionDropdown();
+	        }
+	    };
+	    ResponsiveRecommendation.prototype.needDropdownWrapper = function () {
+	        return this.needSmallMode();
+	    };
+	    ResponsiveRecommendation.prototype.needSmallMode = function () {
+	        return this.coveoRoot.width() <= this.breakpoint;
+	    };
+	    ResponsiveRecommendation.prototype.changeToSmallMode = function () {
+	        this.dropdown.close();
+	        Dom_1.$$(this.coveoRoot.find("." + ResponsiveComponentsManager_1.ResponsiveComponentsManager.DROPDOWN_HEADER_WRAPPER_CSS_CLASS)).el.appendChild(this.dropdown.dropdownHeader.element.el);
+	        this.disableFacetPreservePosition();
+	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.activateSmallRecommendation(this.coveoRoot);
+	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.activateSmallRecommendation(this.recommendationRoot);
+	    };
+	    ResponsiveRecommendation.prototype.changeToLargeMode = function () {
+	        this.enableFacetPreservePosition();
+	        this.dropdown.cleanUp();
+	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.deactivateSmallRecommendation(this.coveoRoot);
+	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.deactivateSmallRecommendation(this.recommendationRoot);
+	    };
+	    ResponsiveRecommendation.prototype.buildDropdown = function (responsiveDropdown) {
+	        var dropdownContent = this.buildDropdownContent();
+	        var dropdownHeader = this.buildDropdownHeader();
+	        var dropdown = responsiveDropdown ? responsiveDropdown : new ResponsiveDropdown_1.ResponsiveDropdown(dropdownContent, dropdownHeader, this.coveoRoot);
+	        dropdown.disablePopupBackground();
+	        return dropdown;
+	    };
+	    ResponsiveRecommendation.prototype.buildDropdownHeader = function () {
+	        var dropdownHeaderElement = Dom_1.$$('a');
+	        var content = Dom_1.$$('p');
+	        content.text(Strings_1.l(this.dropdownHeaderLabel));
+	        dropdownHeaderElement.el.appendChild(content.el);
+	        var dropdownHeader = new ResponsiveDropdownHeader_1.ResponsiveDropdownHeader('recommendation', dropdownHeaderElement);
+	        return dropdownHeader;
+	    };
+	    ResponsiveRecommendation.prototype.buildDropdownContent = function () {
+	        var dropdownContentElement;
+	        var recommendationColumn = this.coveoRoot.find('.coveo-recommendation-column');
+	        if (recommendationColumn) {
+	            dropdownContentElement = Dom_1.$$(recommendationColumn);
+	        }
+	        else {
+	            dropdownContentElement = Dom_1.$$(this.coveoRoot.find('.' + Component_1.Component.computeCssClassName(Recommendation_1.Recommendation)));
+	        }
+	        var dropdownContent = new RecommendationDropdownContent_1.RecommendationDropdownContent('recommendation', dropdownContentElement, this.coveoRoot);
+	        return dropdownContent;
+	    };
+	    ResponsiveRecommendation.prototype.defineResponsiveBreakpoint = function (options) {
+	        var breakpoint;
+	        if (Utils_1.Utils.isNullOrUndefined(options.responsiveBreakpoint)) {
+	            breakpoint = ResponsiveRecommendation.RESPONSIVE_BREAKPOINT;
+	        }
+	        else {
+	            breakpoint = options.responsiveBreakpoint;
+	        }
+	        return breakpoint;
+	    };
+	    ResponsiveRecommendation.prototype.getFacetSliders = function () {
+	        var facetSliders = [];
+	        _.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassName(FacetSlider_1.FacetSlider)), function (facetSliderElement) {
+	            var facetSlider = Component_1.Component.get(facetSliderElement, FacetSlider_1.FacetSlider);
+	            if (facetSlider instanceof FacetSlider_1.FacetSlider) {
+	                facetSliders.push(facetSlider);
+	            }
+	        });
+	        return facetSliders;
+	    };
+	    ResponsiveRecommendation.prototype.getFacets = function () {
+	        var facets = [];
+	        _.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassName(Facet_1.Facet)), function (facetElement) {
+	            var facet = Component_1.Component.get(facetElement, Facet_1.Facet);
+	            if (facet instanceof Facet_1.Facet) {
+	                facets.push(facet);
+	            }
+	        });
+	        return facets;
+	    };
+	    ResponsiveRecommendation.prototype.dismissFacetSearches = function () {
+	        _.each(this.facets, function (facet) {
+	            if (facet.facetSearch && facet.facetSearch.currentlyDisplayedResults) {
+	                facet.facetSearch.completelyDismissSearch();
+	            }
+	        });
+	    };
+	    ResponsiveRecommendation.prototype.enableFacetPreservePosition = function () {
+	        _.each(this.facets, function (facet) { return facet.options.preservePosition = true; });
+	    };
+	    ResponsiveRecommendation.prototype.disableFacetPreservePosition = function () {
+	        _.each(this.facets, function (facet) { return facet.options.preservePosition = false; });
+	    };
+	    ResponsiveRecommendation.prototype.drawFacetSliderGraphs = function () {
+	        _.each(this.facetSliders, function (facetSlider) { return facetSlider.drawDelayedGraphData(); });
+	    };
+	    ResponsiveRecommendation.prototype.registerOnOpenHandler = function () {
+	        this.dropdown.registerOnOpenHandler(this.drawFacetSliderGraphs, this);
+	    };
+	    ResponsiveRecommendation.prototype.registerOnCloseHandler = function () {
+	        this.dropdown.registerOnCloseHandler(this.dismissFacetSearches, this);
+	    };
+	    ResponsiveRecommendation.prototype.getRecommendationRoot = function () {
+	        return Dom_1.$$(this.coveoRoot.find('.' + Component_1.Component.computeCssClassName(Recommendation_1.Recommendation)));
+	    };
+	    ResponsiveRecommendation.prototype.registerQueryEvents = function () {
+	        var _this = this;
+	        var recommendationInstance = RegisteredNamedMethods_1.get(this.recommendationRoot.el, SearchInterface_1.SearchInterface);
+	        if (recommendationInstance && recommendationInstance.options.hideIfNoResults) {
+	            this.coveoRoot.on(QueryEvents_1.QueryEvents.querySuccess, function (e, data) { return _this.handleRecommnendationQuerySucess(data); });
+	            this.coveoRoot.on(QueryEvents_1.QueryEvents.noResults, function (e, data) { return _this.handleRecommendationNoResults(); });
+	        }
+	        this.coveoRoot.on(QueryEvents_1.QueryEvents.queryError, function () { return _this.handleRecommendationQueryError(); });
+	    };
+	    ResponsiveRecommendation.prototype.handleRecommnendationQuerySucess = function (data) {
+	        if (data.results.totalCount === 0) {
+	            this.dropdown.close();
+	            this.dropdown.dropdownHeader.hide();
+	        }
+	        else {
+	            this.dropdown.dropdownHeader.show();
+	        }
+	    };
+	    ResponsiveRecommendation.prototype.handleRecommendationNoResults = function () {
+	        this.dropdown.close();
+	        this.dropdown.dropdownHeader.hide();
+	    };
+	    ResponsiveRecommendation.prototype.handleRecommendationQueryError = function () {
+	        this.dropdown.close();
+	        this.dropdown.dropdownHeader.hide();
+	    };
+	    return ResponsiveRecommendation;
+	}());
+	ResponsiveRecommendation.DROPDOWN_CONTAINER_CSS_CLASS_NAME = 'coveo-recommendation-dropdown-container';
+	ResponsiveRecommendation.RESPONSIVE_BREAKPOINT = 1000;
+	exports.ResponsiveRecommendation = ResponsiveRecommendation;
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Dom_1 = __webpack_require__(59);
+	var InitializationEvents_1 = __webpack_require__(45);
+	var Component_1 = __webpack_require__(107);
+	var SearchInterface_1 = __webpack_require__(108);
+	var Utils_1 = __webpack_require__(13);
+	var Tab_1 = __webpack_require__(137);
 	var QueryEvents_1 = __webpack_require__(48);
 	var Logger_1 = __webpack_require__(11);
 	var _ = __webpack_require__(14);
@@ -20651,12 +22945,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	                // Tabs need to be rendered last, so any dropdown header(eg: facet) is already there when the responsive tabs check for overflow.
 	                this.responsiveComponents.unshift(responsiveComponent);
 	            }
-	            _.each(this.responsiveComponents, function (responsiveComponent) {
-	                if (responsiveComponent.registerComponent != null) {
-	                    responsiveComponent.registerComponent(component);
-	                }
-	            });
 	        }
+	        _.each(this.responsiveComponents, function (responsiveComponent) {
+	            if (responsiveComponent.registerComponent != null) {
+	                responsiveComponent.registerComponent(component);
+	            }
+	        });
 	    };
 	    ResponsiveComponentsManager.prototype.disableComponent = function (ID) {
 	        this.disabledComponents.push(ID);
@@ -20723,29 +23017,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveComponentsManager = ResponsiveComponentsManager;
 
 
-/***/ },
-/* 128 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var ResponsiveTabs_ts_1 = __webpack_require__(129);
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ResponsiveTabs_ts_1 = __webpack_require__(138);
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var Model_1 = __webpack_require__(98);
 	var QueryEvents_1 = __webpack_require__(48);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var SearchEndpoint_1 = __webpack_require__(9);
-	var Initialization_1 = __webpack_require__(111);
+	var Initialization_1 = __webpack_require__(106);
 	var Utils_1 = __webpack_require__(13);
 	var Assert_1 = __webpack_require__(12);
 	var Dom_1 = __webpack_require__(59);
-	var KeyboardUtils_1 = __webpack_require__(69);
+	var KeyboardUtils_1 = __webpack_require__(68);
 	var _ = __webpack_require__(14);
 	/**
 	 * The Tab component renders a bar that allows the end user to select a specific search interface.
@@ -21099,22 +23399,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(Tab);
 
 
-/***/ },
-/* 129 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 138 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var InitializationEvents_1 = __webpack_require__(45);
-	var PopupUtils_1 = __webpack_require__(72);
-	var EventsUtils_1 = __webpack_require__(130);
+	var PopupUtils_1 = __webpack_require__(71);
+	var EventsUtils_1 = __webpack_require__(139);
 	var Utils_1 = __webpack_require__(13);
 	var Logger_1 = __webpack_require__(11);
-	var Component_1 = __webpack_require__(103);
-	var SearchInterface_1 = __webpack_require__(106);
-	var Tab_1 = __webpack_require__(128);
-	var ResponsiveComponentsManager_1 = __webpack_require__(127);
-	var ResponsiveComponentsUtils_1 = __webpack_require__(131);
+	var Component_1 = __webpack_require__(107);
+	var SearchInterface_1 = __webpack_require__(108);
+	var Tab_1 = __webpack_require__(137);
+	var ResponsiveComponentsManager_1 = __webpack_require__(136);
+	var ResponsiveComponentsUtils_1 = __webpack_require__(140);
 	var Strings_1 = __webpack_require__(35);
 	var ResponsiveComponents_1 = __webpack_require__(17);
 	var _ = __webpack_require__(14);
@@ -21439,11 +23740,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveTabs = ResponsiveTabs;
 
 
-/***/ },
-/* 130 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	var EventsUtils = (function () {
 	    function EventsUtils() {
@@ -21472,11 +23774,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.EventsUtils = EventsUtils;
 
 
-/***/ },
-/* 131 */
-/***/ function(module, exports) {
+/***/ }),
+/* 140 */
+/***/ (function(module, exports) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var ResponsiveComponentsUtils = (function () {
 	    function ResponsiveComponentsUtils() {
 	    }
@@ -21518,2052 +23821,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveComponentsUtils = ResponsiveComponentsUtils;
 
 
-/***/ },
-/* 132 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	function __export(m) {
-	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-	}
-	__export(__webpack_require__(133));
-	var ComponentOptions_1 = __webpack_require__(107);
-	exports.ComponentOptions = ComponentOptions_1.ComponentOptions;
-	exports.ComponentOptionsType = ComponentOptions_1.ComponentOptionsType;
-	var Component_1 = __webpack_require__(103);
-	exports.Component = Component_1.Component;
-	var BaseComponent_1 = __webpack_require__(77);
-	exports.BaseComponent = BaseComponent_1.BaseComponent;
-	var RootComponent_1 = __webpack_require__(76);
-	exports.RootComponent = RootComponent_1.RootComponent;
-	var QueryBuilder_1 = __webpack_require__(78);
-	exports.QueryBuilder = QueryBuilder_1.QueryBuilder;
-	var ExpressionBuilder_1 = __webpack_require__(79);
-	exports.ExpressionBuilder = ExpressionBuilder_1.ExpressionBuilder;
-	// Export Initialization under both name, for legacy reason and old code in the wild that
-	// reference the old CoveoJQuery module
-	var Initialization_1 = __webpack_require__(111);
-	exports.Initialization = Initialization_1.Initialization;
-	var Initialization_2 = __webpack_require__(111);
-	exports.CoveoJQuery = Initialization_2.Initialization;
-	var CoveoJQuery_1 = __webpack_require__(176);
-	exports.initCoveoJQuery = CoveoJQuery_1.initCoveoJQuery;
-
-
-/***/ },
-/* 133 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var Initialization_1 = __webpack_require__(111);
-	var Assert_1 = __webpack_require__(12);
-	var QueryController_1 = __webpack_require__(75);
-	var QueryStateModel_1 = __webpack_require__(101);
-	var Analytics_1 = __webpack_require__(134);
-	var InitializationEvents_1 = __webpack_require__(45);
-	var Dom_1 = __webpack_require__(59);
-	var Component_1 = __webpack_require__(103);
-	var _ = __webpack_require__(14);
-	/**
-	 * Initialize the framework with a basic search interface. Calls {@link Initialization.initSearchInterface}.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('init');</code>.
-	 * @param element The root of the interface to initialize.
-	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType : true}}</code>).
-	 */
-	function init(element, options) {
-	    if (options === void 0) { options = {}; }
-	    Initialization_1.Initialization.initializeFramework(element, options, function () {
-	        Initialization_1.Initialization.initSearchInterface(element, options);
-	    });
-	}
-	exports.init = init;
-	Initialization_1.Initialization.registerNamedMethod('init', function (element, options) {
-	    if (options === void 0) { options = {}; }
-	    init(element, options);
-	});
-	/**
-	 * Initialize the framework with a standalone search box. Calls {@link Initialize.initStandaloneSearchInterface}.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initSearchbox');</code>.
-	 * @param element The root of the interface to initialize.
-	 * @param searchPageUri The search page on which to redirect when there is a query.
-	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType : true}}</code>).
-	 */
-	function initSearchbox(element, searchPageUri, options) {
-	    if (options === void 0) { options = {}; }
-	    Assert_1.Assert.isNonEmptyString(searchPageUri);
-	    var searchInterfaceOptions = {};
-	    searchInterfaceOptions.searchPageUri = searchPageUri;
-	    searchInterfaceOptions.autoTriggerQuery = false;
-	    searchInterfaceOptions.hideUntilFirstQuery = false;
-	    searchInterfaceOptions.enableHistory = false;
-	    options = _.extend({}, options, { StandaloneSearchInterface: searchInterfaceOptions });
-	    Initialization_1.Initialization.initializeFramework(element, options, function () {
-	        Initialization_1.Initialization.initStandaloneSearchInterface(element, options);
-	    });
-	}
-	exports.initSearchbox = initSearchbox;
-	Initialization_1.Initialization.registerNamedMethod('initSearchbox', function (element, searchPageUri, options) {
-	    if (options === void 0) { options = {}; }
-	    initSearchbox(element, searchPageUri, options);
-	});
-	/**
-	 * Initialize the framework with a recommendation interface. Calls {@link Initialization.initRecommendationInterface}.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('initRecommendation');</code>.
-	 * @param element The root of the interface to initialize.
-	 * @param mainSearchInterface The search interface to link with the recommendation interface (see {@link Recommendation}).
-	 * @param userContext The user context to pass with the query generated in the recommendation interface (see {@link Recommendation}).
-	 * @param options JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType: true}}</code>).
-	 */
-	function initRecommendation(element, mainSearchInterface, userContext, options) {
-	    if (options === void 0) { options = {}; }
-	    var recommendationOptions = {};
-	    recommendationOptions.mainSearchInterface = mainSearchInterface;
-	    recommendationOptions.userContext = JSON.stringify(userContext);
-	    recommendationOptions.enableHistory = false;
-	    options = _.extend({}, options, { Recommendation: recommendationOptions });
-	    Initialization_1.Initialization.initializeFramework(element, options, function () {
-	        Initialization_1.Initialization.initRecommendationInterface(element, options);
-	    });
-	}
-	exports.initRecommendation = initRecommendation;
-	Initialization_1.Initialization.registerNamedMethod('initRecommendation', function (element, mainSearchInterface, userContext, options) {
-	    if (userContext === void 0) { userContext = {}; }
-	    if (options === void 0) { options = {}; }
-	    initRecommendation(element, mainSearchInterface, userContext, options);
-	});
-	/**
-	 * Execute a standard query. Active component in the interface will react to events/ push data in the query / handle the query success or failure as needed.<br/>
-	 * It triggers a standard query flow for which the standard component will perform their expected behavior.<br/>
-	 * If you wish to only perform a query on the index to retrieve results (without the component reacting), look into {@link SearchInterface} instead.<br/>
-	 * Calling this method is the same as calling {@link QueryController.executeQuery}.
-	 * @param element The root of the interface to initialize.
-	 */
-	function executeQuery(element) {
-	    Assert_1.Assert.exists(element);
-	    var queryController = Component_1.Component.resolveBinding(element, QueryController_1.QueryController);
-	    Assert_1.Assert.exists(queryController);
-	    return queryController.executeQuery();
-	}
-	exports.executeQuery = executeQuery;
-	Initialization_1.Initialization.registerNamedMethod('executeQuery', function (element) {
-	    return executeQuery(element);
-	});
-	/**
-	 * Perform operation on the state ({@link QueryStateModel} of the interface.<br/>
-	 * Get the complete {@link QueryStateModel} object: <code>Coveo.state(element)</code><br/>.
-	 * Get an attribute from the {@link QueryStateModel}: <code>Coveo.state(element, 'q')</code> Can be any attribute.<br/>
-	 * Set an attribute on the {@link QueryStateModel}: <code>Coveo.state(element, 'q', 'foobar')</code>. Can be any attribute.<br/>
-	 * Set multiple attribute on the {@link QueryStateModel}: <code>Coveo.state(element, {'q' : 'foobar' , sort : 'relevancy'})</code>. Can be any attribute.<br/>
-	 * If using the jQuery extension, this is called using <code>$('#root').coveo('state');</code>.
-	 * @param element The root of the interface for which to access the {@link QueryStateModel}.
-	 * @param args
-	 * @returns {any}
-	 */
-	function state(element) {
-	    var args = [];
-	    for (var _i = 1; _i < arguments.length; _i++) {
-	        args[_i - 1] = arguments[_i];
-	    }
-	    Assert_1.Assert.exists(element);
-	    var model = Component_1.Component.resolveBinding(element, QueryStateModel_1.QueryStateModel);
-	    return QueryStateModel_1.setState(model, args);
-	}
-	exports.state = state;
-	Initialization_1.Initialization.registerNamedMethod('state', function (element) {
-	    var args = [];
-	    for (var _i = 1; _i < arguments.length; _i++) {
-	        args[_i - 1] = arguments[_i];
-	    }
-	    if (args.length != 0) {
-	        return state.apply(undefined, [element].concat(args));
-	    }
-	    else {
-	        return state.apply(undefined, [element]);
-	    }
-	});
-	/**
-	 * Get the component bound on the given `HTMLElement`.
-	 * @param element The `HTMLElement` for which to get the component instance.
-	 * @param componentClass If multiple components are bound to a single `HTMLElement`, you need to specify which components you wish to get.
-	 * @param noThrow By default, the GET method will throw if there is no component bound, or if there are multiple component and no `componentClass` is specified. This deletes the error if set to true.
-	 * @returns {Component}
-	 */
-	function get(element, componentClass, noThrow) {
-	    Assert_1.Assert.exists(element);
-	    return Component_1.Component.get(element, componentClass, noThrow);
-	}
-	exports.get = get;
-	Initialization_1.Initialization.registerNamedMethod('get', function (element, componentClass, noThrow) {
-	    return get(element, componentClass, noThrow);
-	});
-	function result(element, noThrow) {
-	    Assert_1.Assert.exists(element);
-	    return Component_1.Component.getResult(element, noThrow);
-	}
-	exports.result = result;
-	Initialization_1.Initialization.registerNamedMethod('result', function (element, noThrow) {
-	    return result(element, noThrow);
-	});
-	function getCoveoAnalyticsClient(element) {
-	    var analytics = getCoveoAnalytics(element);
-	    if (analytics) {
-	        return analytics.client;
-	    }
-	    else {
-	        return undefined;
-	    }
-	}
-	function getCoveoAnalytics(element) {
-	    var analyticsElement = Dom_1.$$(element).find('.' + Component_1.Component.computeCssClassName(Analytics_1.Analytics));
-	    if (analyticsElement) {
-	        return Component_1.Component.get(analyticsElement);
-	    }
-	    else {
-	        return undefined;
-	    }
-	}
-	/**
-	 * Log a custom event on the Coveo Usage Analytics service.
-	 * @param element The root of the interface for which to log analytics events.
-	 * @param customEventCause The cause of the event.
-	 * @param metadata The metadata associated with the event (JSON key value).
-	 */
-	function logCustomEvent(element, customEventCause, metadata) {
-	    var client = getCoveoAnalyticsClient(element);
-	    if (client) {
-	        client.logCustomEvent(customEventCause, metadata, element);
-	    }
-	}
-	exports.logCustomEvent = logCustomEvent;
-	Initialization_1.Initialization.registerNamedMethod('logCustomEvent', function (element, customEventCause, metadata) {
-	    logCustomEvent(element, customEventCause, metadata);
-	});
-	/**
-	 * Log a `SearchEvent` on the Coveo Usage Analytics service.
-	 * @param element The root of the interface for which to log analytics events.
-	 * @param searchEventCause The cause of the event.
-	 * @param metadata The metadata associated with the event (JSON key value).
-	 */
-	function logSearchEvent(element, searchEventCause, metadata) {
-	    var client = getCoveoAnalyticsClient(element);
-	    if (client) {
-	        client.logSearchEvent(searchEventCause, metadata);
-	    }
-	}
-	exports.logSearchEvent = logSearchEvent;
-	Initialization_1.Initialization.registerNamedMethod('logSearchEvent', function (element, searchEventCause, metadata) {
-	    logSearchEvent(element, searchEventCause, metadata);
-	});
-	/**
-	 * Log a `SearchAsYouTypeEvent` on the Coveo Usage Analytics service.<br/>
-	 * It is a bit different from a standard search event, as it will wait 5 seconds before sending the final `SearchAsYouType` event.
-	 * @param element The root of the interface for which to log analytics events.
-	 * @param searchAsYouTypeEventCause The cause of the event.
-	 * @param metadata The metadata associated with the event (JSON key value).
-	 */
-	function logSearchAsYouTypeEvent(element, searchAsYouTypeEventCause, metadata) {
-	    var client = getCoveoAnalyticsClient(element);
-	    if (client) {
-	        client.logSearchAsYouType(searchAsYouTypeEventCause, metadata);
-	    }
-	}
-	exports.logSearchAsYouTypeEvent = logSearchAsYouTypeEvent;
-	Initialization_1.Initialization.registerNamedMethod('logSearchAsYouTypeEvent', function (element, searchAsYouTypeEventCause, metadata) {
-	    logSearchAsYouTypeEvent(element, searchAsYouTypeEventCause, metadata);
-	});
-	/**
-	 * Log a `ClickEvent` on the Coveo Usage Analytics service.
-	 * @param element The root of the interface for which to log analytics events.
-	 * @param clickEventCause The cause of the event.
-	 * @param metadata The metadata associated with the event (JSON key value).
-	 * @param result The result that was clicked.
-	 */
-	function logClickEvent(element, clickEventCause, metadata, result) {
-	    var client = getCoveoAnalyticsClient(element);
-	    if (client) {
-	        client.logClickEvent(clickEventCause, metadata, result, element);
-	    }
-	}
-	exports.logClickEvent = logClickEvent;
-	Initialization_1.Initialization.registerNamedMethod('logClickEvent', function (element, clickEventCause, metadata, result) {
-	    logClickEvent(element, clickEventCause, metadata, result);
-	});
-	/**
-	 * Pass options to the framework, before it is initialized ({@link init}).<br/>
-	 * All the options passed with this calls will be merged together on initialization.
-	 * @param element The root of the interface for which you wish to set options.
-	 * @param optionsToSet JSON options for the framework (e.g.: <code>{Searchbox : {enableSearchAsYouType: true}}</code>).
-	 */
-	function options(element, optionsToSet) {
-	    if (optionsToSet === void 0) { optionsToSet = {}; }
-	    Initialization_1.Initialization.registerDefaultOptions(element, optionsToSet);
-	}
-	exports.options = options;
-	Initialization_1.Initialization.registerNamedMethod('options', function (element, optionsToSet) {
-	    if (optionsToSet === void 0) { optionsToSet = {}; }
-	    options(element, optionsToSet);
-	});
-	/**
-	 * Patch the given `methodName` on an instance of a component bound to an `HTMLElement` with a new handler.
-	 * @param element
-	 * @param methodName
-	 * @param handler
-	 */
-	function patch(element, methodName, handler) {
-	    Initialization_1.Initialization.monkeyPatchComponentMethod(methodName, element, handler);
-	}
-	exports.patch = patch;
-	Initialization_1.Initialization.registerNamedMethod('patch', function (element, methodName, handler) {
-	    patch(element, methodName, handler);
-	});
-	function initBox(element) {
-	    var args = [];
-	    for (var _i = 1; _i < arguments.length; _i++) {
-	        args[_i - 1] = arguments[_i];
-	    }
-	    var type, options = {}, injectMarkup;
-	    // This means : initBox, no type (no injection) and no options
-	    if (args.length == 0) {
-	        type = 'Standard';
-	        injectMarkup = false;
-	    }
-	    else if (args.length == 1) {
-	        // This mean a type (with injection) and no options
-	        if (typeof args[0] == 'string') {
-	            type = args[0];
-	            injectMarkup = true;
-	        }
-	        else if (typeof args[0] == 'object') {
-	            type = 'Standard';
-	            injectMarkup = false;
-	            options = args[0];
-	        }
-	        else {
-	            Assert_1.Assert.fail('Invalid parameters to init a box');
-	        }
-	    }
-	    else if (args.length == 2) {
-	        type = args[0];
-	        options = args[1];
-	        injectMarkup = true;
-	    }
-	    var merged = {};
-	    merged[type || 'Container'] = _.extend({}, options.SearchInterface, options[type]);
-	    options = _.extend({}, options, merged);
-	    Initialization_1.Initialization.initializeFramework(element, options, function () {
-	        Initialization_1.Initialization.initBoxInterface(element, options, type, injectMarkup);
-	    });
-	}
-	exports.initBox = initBox;
-	Initialization_1.Initialization.registerNamedMethod('initBox', function (element) {
-	    var args = [];
-	    for (var _i = 1; _i < arguments.length; _i++) {
-	        args[_i - 1] = arguments[_i];
-	    }
-	    initBox(element, args);
-	});
-	function nuke(element) {
-	    Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.nuke);
-	}
-	exports.nuke = nuke;
-	Initialization_1.Initialization.registerNamedMethod('nuke', function (element) {
-	    nuke(element);
-	});
-
-
-/***/ },
-/* 134 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
-	var AnalyticsEndpoint_1 = __webpack_require__(37);
-	var SearchEndpoint_1 = __webpack_require__(9);
-	var Assert_1 = __webpack_require__(12);
-	var QueryEvents_1 = __webpack_require__(48);
-	var ComponentOptionsModel_1 = __webpack_require__(105);
-	var Dom_1 = __webpack_require__(59);
-	var Model_1 = __webpack_require__(98);
-	var Utils_1 = __webpack_require__(13);
-	var NoopAnalyticsClient_1 = __webpack_require__(119);
-	var LiveAnalyticsClient_1 = __webpack_require__(135);
-	var MultiAnalyticsClient_1 = __webpack_require__(139);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var SearchInterface_1 = __webpack_require__(106);
-	var Recommendation_1 = __webpack_require__(140);
-	var RecommendationAnalyticsClient_1 = __webpack_require__(175);
-	var _ = __webpack_require__(14);
-	/**
-	 * The Analytics component logs all user actions performed in the search interface and sends them to a REST web service
-	 * exposed through the Coveo Cloud Platform.
-	 *
-	 * You can use logged analytics data to evaluate how users are interacting with your search interface, improve relevance
-	 * and produce analytics dashboards within the Coveo Cloud Platform.
-	 *
-	 * See [Step 7 - Usage Analytics](https://developers.coveo.com/x/EYskAg) of the Getting Started with the JavaScript
-	 * Search Framework V1 tutorial for an introduction to usage analytics.
-	 *
-	 * ## Send Custom Events
-	 * In some scenarios, you might want to send custom data to the Coveo Cloud Usage Analytics (see
-	 * [Coveo Cloud Usage Analytics](http://www.coveo.com/go?dest=cloudhelp&lcid=9&context=89)). The Coveo JavaScript Search
-	 * Framework offers helper functions to communicate with the Coveo Usage Analytics REST API, so you do not have to write
-	 * code to call the API directly.
-	 *
-	 * ## Create a Custom Event Cause and Metadata
-	 *
-	 * ```
-	 * // Each event should have a unique "name" attribute (e.g., "searchboxSubmit", "searchboxClear").
-	 * // The "type" attribute allows you to group similar event types when doing reporting (e.g., "searchbox").
-	 * var customEventCause = {name: 'customEventName', type: 'customEventType'};
-	 *
-	 * // This is arbitrary data you want to send to the Coveo Usage Analytics in order to create custom dimensions (see
-	 * // [Creating and Managing Dimensions on Custom Metada](http://www.coveo.com/go?dest=cloudhelp&lcid=9&context=142)).
-	 * var metadata = {key1: 'value1', key2: 'value2'};
-	 * ```
-	 *
-	 * See {@link IAnalyticsActionCause}
-	 *
-	 * ## Send a Custom Event
-	 * ```
-	 * Coveo.logCustomEvent(document.querySelector('#search'), customEventCause, metadata);
-	 * ```
-	 *
-	 * Or, using the jQuery extension:
-	 * ```
-	 * $('#search').coveo('logCustomEvent', customEventCause, metadata);
-	 * ```
-	 * See {@link logCustomEvent}.
-	 *
-	 * ## Send a Custom Search Event
-	 *
-	 * NB: If you want to log a search event, be sure to always call the `logSearchEvent` helper before you call
-	 * `executeQuery`.
-	 *
-	 * ```
-	 * function myCustomButtonWasClicked() {
-	 *   Coveo.logSearchEvent(document.querySelector('#search'), customEventCause, metadata);
-	 *   Coveo.executeQuery(document.querySelector('#search'));
-	 * ```
-	 *
-	 * Or, using the jQuery extension:
-	 * ```
-	 * function myCustomButtonWasClicked() {
-	 *   $('#search').coveo('logSearchEvent', customEventCause, metadata);
-	 *   $('#search').coveo('executeQuery');
-	 * }
-	 * ```
-	 * See {@link logSearchEvent}.
-	 *
-	 * ## Send a Custom Search-As-You-Type Event
-	 *
-	 * NB: If you want to log a search-as-you-type event, be sure to always call the `logSearchAsYouTypeEvent` helper before
-	 * you call `executeQuery`.
-	 *
-	 * ```
-	 * function myCustomButtonWasClicked() {
-	 *     Coveo.logSearchAsYouTypeEvent(document.querySelector('#search'), customEventCause, metadata);
-	 *     Coveo.executeQuery(document.querySelector('#search'));
-	 * ```
-	 *
-	 * Or, using the jQuery extension:
-	 * ```
-	 * function myCustomButtonWasClicked() {
-	 *   $('#search').coveo('logSearchAsYouTypeEvent', customEventCause, metadata);
-	 *   $('#search').coveo('executeQuery');
-	 * }
-	 * ```
-	 * See {@link logSearchAsYouTypeEvent}.
-	 *
-	 * ## Send a Custom Click Event
-	 * ```
-	 * Coveo.logClickEvent(document.querySelector('#search'), customEventCause, metadata, result);
-	 * ```
-	 *
-	 * Or, using the jQuery extension:
-	 * ```
-	 * $('#search').coveo('logClickEvent', customEventCause, metadata, result);
-	 * ```
-	 * See {@link logClickEvent}.
-	 */
-	var Analytics = (function (_super) {
-	    __extends(Analytics, _super);
-	    /**
-	     * Creates a new Analytics component. Creates the {@link IAnalyticsClient}.
-	     * @param element The HTMLElement on which the component will be instantiated.
-	     * @param options The options for the Analytics component.
-	     * @param bindings The bindings that the component requires to function normally. If not set, these will be
-	     * automatically resolved (with a slower execution time).
-	     */
-	    function Analytics(element, options, bindings) {
-	        if (options === void 0) { options = {}; }
-	        var _this = _super.call(this, element, Analytics.ID, bindings) || this;
-	        _this.element = element;
-	        _this.options = options;
-	        _this.bindings = bindings;
-	        _this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, Analytics, options);
-	        _this.retrieveInfoFromDefaultSearchEndpoint();
-	        _this.initializeAnalyticsClient();
-	        Assert_1.Assert.exists(_this.client);
-	        _this.bind.onRootElement(QueryEvents_1.QueryEvents.buildingQuery, function (data) { return _this.handleBuildingQuery(data); });
-	        _this.bind.onRootElement(QueryEvents_1.QueryEvents.queryError, function (data) { return _this.handleQueryError(data); });
-	        // Analytics component is a bit special: It can be higher in the dom tree than the search interface
-	        // Need to resolve down to find the componentOptionsModel if we need to.
-	        if (!_this.componentOptionsModel) {
-	            var cmpOptionElement = Dom_1.$$(element).find('.' + Component_1.Component.computeCssClassName(ComponentOptionsModel_1.ComponentOptionsModel));
-	            if (cmpOptionElement) {
-	                _this.componentOptionsModel = cmpOptionElement[Component_1.Component.computeCssClassName(ComponentOptionsModel_1.ComponentOptionsModel)];
-	            }
-	        }
-	        if (_this.componentOptionsModel) {
-	            _this.componentOptionsModel.set(ComponentOptionsModel_1.ComponentOptionsModel.attributesEnum.searchHub, _this.options.searchHub);
-	            var event_1 = _this.componentOptionsModel.getEventName(Model_1.Model.eventTypes.changeOne + ComponentOptionsModel_1.ComponentOptionsModel.attributesEnum.searchHub);
-	            _this.bind.onRootElement(event_1, function (args) { return _this.handleSearchHubChanged(args); });
-	        }
-	        return _this;
-	    }
-	    /**
-	     * Logs a search event on the service, using a {@link IAnalyticsActionCause} and a meta object.
-	     *
-	     * Note that the search event is sent to the service when a query successfully returns, not immediately after calling
-	     * this method.
-	     *
-	     * Normally, you should call this method using the following "format":
-	     *
-	     * ```
-	     * usageAnalytics.logSearchEvent<SomeMeta>({name: 'foo', type: 'bar'}, <SomeMeta>{'key':'value'});
-	     * this.queryController.executeQuery();
-	     * ```
-	     *
-	     * This queues up an analytics search event. Then, the query executes itself. The search event is sent to the service
-	     * when the query successfully returns.
-	     *
-	     * @param actionCause Describes the cause of the event.
-	     * @param meta The metadata which you can use to create custom dimensions. Can be an empty object ( `{}` ).
-	     */
-	    Analytics.prototype.logSearchEvent = function (actionCause, meta) {
-	        this.client.logSearchEvent(actionCause, meta);
-	    };
-	    /**
-	     * Logs a search-as-you-type event on the service, using an {@link IAnalyticsActionCause} and a meta object.
-	     *
-	     * This method is very similar to the {@link logSearchEvent} method, except that logSearchAsYouType is, by definition,
-	     * more frequently called.
-	     *
-	     * The `PendingSearchAsYouTypeEvent` takes care of logging only the "relevant" last event: an event that occurs after
-	     * 5 seconds elapse without any event being logged, or an event that occurs after another part of the interface
-	     * triggers a search event.
-	     *
-	     * This avoids logging every single partial query, which would make the reporting very confusing.
-	     *
-	     * @param actionCause Describes the cause of the event.
-	     * @param meta The metadata which you can use to create custom dimensions. Can be an empty object ( `{}` ).
-	     */
-	    Analytics.prototype.logSearchAsYouType = function (actionCause, meta) {
-	        this.client.logSearchAsYouType(actionCause, meta);
-	    };
-	    /**
-	     * Logs a custom event on the service. You can use custom events to create custom reports, or to track events
-	     * that are not queries or document views.
-	     *
-	     * @param actionCause Describes the cause of the event.
-	     * @param meta The metadata which you can use to create custom dimensions. Can be an empty object ( `{}` ).
-	     * @param element The HTMLElement that the user has interacted with for this custom event.
-	     */
-	    Analytics.prototype.logCustomEvent = function (actionCause, meta, element) {
-	        if (element === void 0) { element = this.element; }
-	        this.client.logCustomEvent(actionCause, meta, element);
-	    };
-	    /**
-	     * Logs a click event. You can understand click events as document views (e.g., clicking on a {@link ResultLink} or
-	     * opening a {@link Quickview}).
-	     *
-	     * This event is logged immediately on the service.
-	     *
-	     * @param actionCause Describes the cause of the event.
-	     * @param meta The metadata which you can use to create custom dimensions. Can be an empty object ( `{}` ).
-	     * @param result The result that the user has clicked.
-	     * @param element The HTMLElement that the user has clicked in the interface.
-	     */
-	    Analytics.prototype.logClickEvent = function (actionCause, meta, result, element) {
-	        if (element === void 0) { element = this.element; }
-	        this.client.logClickEvent(actionCause, meta, result, element);
-	    };
-	    Analytics.prototype.initializeAnalyticsEndpoint = function () {
-	        return new AnalyticsEndpoint_1.AnalyticsEndpoint({
-	            token: this.options.token,
-	            serviceUrl: this.options.endpoint,
-	            organization: this.options.organization
-	        });
-	    };
-	    Analytics.prototype.initializeAnalyticsClient = function () {
-	        if (Utils_1.Utils.isNonEmptyString(this.options.endpoint)) {
-	            var endpoint = this.initializeAnalyticsEndpoint();
-	            var elementToInitializeClient = void 0;
-	            if (this.root && this.element) {
-	                if (this.root.contains(this.element)) {
-	                    elementToInitializeClient = this.root;
-	                }
-	                else {
-	                    elementToInitializeClient = this.element;
-	                }
-	            }
-	            var isRecommendation = Dom_1.$$(this.root).hasClass(Component_1.Component.computeCssClassName(Recommendation_1.Recommendation));
-	            this.instantiateAnalyticsClient(endpoint, elementToInitializeClient, isRecommendation);
-	        }
-	        else {
-	            this.client = new NoopAnalyticsClient_1.NoopAnalyticsClient();
-	        }
-	    };
-	    Analytics.prototype.instantiateAnalyticsClient = function (endpoint, elementToInitializeClient, isRecommendation) {
-	        if (isRecommendation) {
-	            this.client = new RecommendationAnalyticsClient_1.RecommendationAnalyticsClient(endpoint, elementToInitializeClient, this.options.user, this.options.userDisplayName, this.options.anonymous, this.options.splitTestRunName, this.options.splitTestRunVersion, this.options.searchHub, this.options.sendToCloud, this.getBindings());
-	        }
-	        else {
-	            this.client = new LiveAnalyticsClient_1.LiveAnalyticsClient(endpoint, elementToInitializeClient, this.options.user, this.options.userDisplayName, this.options.anonymous, this.options.splitTestRunName, this.options.splitTestRunVersion, this.options.searchHub, this.options.sendToCloud);
-	        }
-	    };
-	    Analytics.prototype.retrieveInfoFromDefaultSearchEndpoint = function () {
-	        var defaultEndpoint = SearchEndpoint_1.SearchEndpoint.endpoints['default'];
-	        if (this.options.token == null && defaultEndpoint) {
-	            this.options.token = defaultEndpoint.options.accessToken;
-	        }
-	        if (!this.options.organization && defaultEndpoint) {
-	            this.options.organization = defaultEndpoint.options.queryStringArguments['workgroup'];
-	        }
-	    };
-	    Analytics.prototype.handleBuildingQuery = function (data) {
-	        Assert_1.Assert.exists(data);
-	        data.queryBuilder.searchHub = this.options.searchHub;
-	    };
-	    Analytics.prototype.handleSearchHubChanged = function (data) {
-	        this.options.searchHub = data.value;
-	    };
-	    Analytics.prototype.handleQueryError = function (data) {
-	        Assert_1.Assert.exists(data);
-	        this.client.logCustomEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.queryError, {
-	            query: data.query.q,
-	            aq: data.query.aq,
-	            cq: data.query.cq,
-	            dq: data.query.dq,
-	            errorType: data.error.type,
-	            errorMessage: data.error.message
-	        }, this.element);
-	    };
-	    Analytics.create = function (element, options, bindings) {
-	        var selector = Component_1.Component.computeSelectorForType(Analytics.ID);
-	        var found = [];
-	        found = found.concat(Dom_1.$$(element).findAll(selector));
-	        if (!(Component_1.Component.get(element, SearchInterface_1.SearchInterface) instanceof Recommendation_1.Recommendation)) {
-	            found = this.ignoreElementsInsideRecommendationInterface(found);
-	        }
-	        found.push(Dom_1.$$(element).closest(Component_1.Component.computeCssClassName(Analytics)));
-	        if (Dom_1.$$(element).is(selector)) {
-	            found.push(element);
-	        }
-	        found = _.compact(found);
-	        if (found.length == 1) {
-	            return Analytics.getClient(found[0], options, bindings);
-	        }
-	        else if (found.length > 1) {
-	            return new MultiAnalyticsClient_1.MultiAnalyticsClient(_.map(found, function (el) { return Analytics.getClient(el, options, bindings); }));
-	        }
-	        else {
-	            return new NoopAnalyticsClient_1.NoopAnalyticsClient();
-	        }
-	    };
-	    Analytics.ignoreElementsInsideRecommendationInterface = function (found) {
-	        return _.filter(found, function (element) {
-	            return Dom_1.$$(element).closest(Component_1.Component.computeCssClassName(Recommendation_1.Recommendation)) === undefined;
-	        });
-	    };
-	    Analytics.getClient = function (element, options, bindings) {
-	        // This check if an element is already initialized as an analytics component.
-	        // If that's the case, return the client on that element.
-	        // Otherwise, init and return.
-	        var foundOnElement = Component_1.Component.get(element, Analytics, true);
-	        if (foundOnElement instanceof Analytics) {
-	            return foundOnElement.client;
-	        }
-	        else {
-	            return new Analytics(element, options, bindings).client;
-	        }
-	    };
-	    return Analytics;
-	}(Component_1.Component));
-	Analytics.ID = 'Analytics';
-	// NOTE: The default values for some of those options (`organization`, `endpoint`, `searchHub`) can be
-	// overridden by generated code when using hosted search pages.
-	/**
-	 * Options for the component
-	 * @componentOptions
-	 */
-	Analytics.options = {
-	    /**
-	     * Specifies the name of the user for usage analytics logs.
-	     */
-	    user: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	    /**
-	     * Specifies the user display name for usage analytics logs.
-	     */
-	    userDisplayName: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	    /**
-	     * Specifies the token you want to use to access the usage analytics endpoint.
-	     *
-	     * Default value is `undefined`, and the component will use the search token.
-	     */
-	    token: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	    /**
-	     * Specifies the URL of the usage analytics logger to cover exceptional cases in which this location could differ
-	     * from the default Coveo Cloud Usage Analytics endpoint (https://usageanalytics.coveo.com).
-	     *
-	     * Default value is `https://usageanalytics.coveo.com`.
-	     */
-	    endpoint: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: AnalyticsEndpoint_1.AnalyticsEndpoint.DEFAULT_ANALYTICS_URI }),
-	    /**
-	     * Specifies whether to convert search user identities to unique hash when logging analytics data, so that
-	     * analytics reviewers and managers will not be able to clearly identify which user is performing which query.
-	     *
-	     * When this option is set to `true`, the Coveo Usage Analytics Platform can still properly differentiate sessions
-	     * made by anonymous users from sessions made by users authenticated in some way on the site containing the search
-	     * page.
-	     *
-	     * Default value is `false`.
-	     */
-	    anonymous: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
-	    /**
-	     * Sets the Search Hub dimension on the search events.
-	     *
-	     * The Search Hub dimension is typically a name that refers to a specific search page. For example, you could use
-	     * the `CommunitySite` value to refer to a search page on a company's public community site.
-	     *
-	     * Default value is `default`.
-	     */
-	    searchHub: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: 'default' }),
-	    /**
-	     * Specifies the name of the split test run that the search page is part of.
-	     *
-	     * You can use this dimension to perform A/B testing using different search page layouts and features inside the
-	     * Coveo Query pipeline.
-	     *
-	     * Default value is `undefined` and no split test run name is reported to the Coveo Usage Analytics Platform.
-	     */
-	    splitTestRunName: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	    /**
-	     * Specifies the version name for the page when a split test run is active.
-	     *
-	     * When reporting on A/B testing analytics data, this value specifies the test run version name that was
-	     * presented to the user.
-	     */
-	    splitTestRunVersion: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	    sendToCloud: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
-	    /**
-	     * Specifies the organization bound to the access token. This is necessary when using an access token, because a
-	     * single access token can be associated to more than one organization.
-	     *
-	     * Default value is `undefined`, and the value of this parameter will fallback to the organization used for the
-	     * search endpoint.
-	     */
-	    organization: ComponentOptions_1.ComponentOptions.buildStringOption()
-	};
-	exports.Analytics = Analytics;
-
-
-/***/ },
-/* 135 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var DeviceUtils_1 = __webpack_require__(16);
-	var PendingSearchEvent_1 = __webpack_require__(136);
-	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(138);
-	var Assert_1 = __webpack_require__(12);
-	var Logger_1 = __webpack_require__(11);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var Defer_1 = __webpack_require__(32);
-	var Dom_1 = __webpack_require__(59);
-	var AnalyticsEvents_1 = __webpack_require__(41);
-	var APIAnalyticsBuilder_1 = __webpack_require__(137);
-	var QueryStateModel_1 = __webpack_require__(101);
-	var Component_1 = __webpack_require__(103);
-	var Version_1 = __webpack_require__(8);
-	var QueryUtils_1 = __webpack_require__(21);
-	var _ = __webpack_require__(14);
-	var LiveAnalyticsClient = (function () {
-	    function LiveAnalyticsClient(endpoint, rootElement, userId, userDisplayName, anonymous, splitTestRunName, splitTestRunVersion, originLevel1, sendToCloud) {
-	        this.endpoint = endpoint;
-	        this.rootElement = rootElement;
-	        this.userId = userId;
-	        this.userDisplayName = userDisplayName;
-	        this.anonymous = anonymous;
-	        this.splitTestRunName = splitTestRunName;
-	        this.splitTestRunVersion = splitTestRunVersion;
-	        this.originLevel1 = originLevel1;
-	        this.sendToCloud = sendToCloud;
-	        this.isContextual = false;
-	        this.language = String['locale'];
-	        this.device = DeviceUtils_1.DeviceUtils.getDeviceName();
-	        this.mobile = DeviceUtils_1.DeviceUtils.isMobileDevice();
-	        Assert_1.Assert.exists(endpoint);
-	        Assert_1.Assert.exists(rootElement);
-	        Assert_1.Assert.isNonEmptyString(this.language);
-	        Assert_1.Assert.isNonEmptyString(this.device);
-	        Assert_1.Assert.isNonEmptyString(this.originLevel1);
-	        this.logger = new Logger_1.Logger(this);
-	    }
-	    LiveAnalyticsClient.prototype.isActivated = function () {
-	        return true;
-	    };
-	    LiveAnalyticsClient.prototype.getCurrentVisitId = function () {
-	        return this.endpoint.getCurrentVisitId();
-	    };
-	    LiveAnalyticsClient.prototype.getCurrentVisitIdPromise = function () {
-	        return this.endpoint.getCurrentVisitIdPromise();
-	    };
-	    LiveAnalyticsClient.prototype.getCurrentEventCause = function () {
-	        if (this.pendingSearchEvent != null) {
-	            return this.pendingSearchEvent.getEventCause();
-	        }
-	        if (this.pendingSearchAsYouTypeSearchEvent != null) {
-	            return this.pendingSearchAsYouTypeSearchEvent.getEventCause();
-	        }
-	        return null;
-	    };
-	    LiveAnalyticsClient.prototype.getCurrentEventMeta = function () {
-	        if (this.pendingSearchEvent != null) {
-	            return this.pendingSearchEvent.getEventMeta();
-	        }
-	        if (this.pendingSearchAsYouTypeSearchEvent != null) {
-	            return this.pendingSearchAsYouTypeSearchEvent.getEventMeta();
-	        }
-	        return null;
-	    };
-	    LiveAnalyticsClient.prototype.logSearchEvent = function (actionCause, meta) {
-	        var metaObject = this.buildMetaObject(meta);
-	        this.pushSearchEvent(actionCause, metaObject);
-	    };
-	    LiveAnalyticsClient.prototype.logSearchAsYouType = function (actionCause, meta) {
-	        var metaObject = this.buildMetaObject(meta);
-	        this.pushSearchAsYouTypeEvent(actionCause, metaObject);
-	    };
-	    LiveAnalyticsClient.prototype.logClickEvent = function (actionCause, meta, result, element) {
-	        var metaObject = this.buildMetaObject(meta, result);
-	        this.pushClickEvent(actionCause, metaObject, result, element);
-	    };
-	    LiveAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element) {
-	        var metaObject = this.buildMetaObject(meta);
-	        this.pushCustomEvent(actionCause, metaObject, element);
-	    };
-	    LiveAnalyticsClient.prototype.getTopQueries = function (params) {
-	        return this.endpoint.getTopQueries(params);
-	    };
-	    LiveAnalyticsClient.prototype.sendAllPendingEvents = function () {
-	        if (this.pendingSearchAsYouTypeSearchEvent) {
-	            this.pendingSearchAsYouTypeSearchEvent.sendRightNow();
-	        }
-	    };
-	    LiveAnalyticsClient.prototype.cancelAllPendingEvents = function () {
-	        if (this.pendingSearchAsYouTypeSearchEvent) {
-	            this.pendingSearchAsYouTypeSearchEvent.cancel();
-	            this.pendingSearchAsYouTypeSearchEvent = null;
-	        }
-	        if (this.pendingSearchEvent) {
-	            this.pendingSearchEvent.cancel();
-	            this.pendingSearchEvent = null;
-	        }
-	    };
-	    LiveAnalyticsClient.prototype.getPendingSearchEvent = function () {
-	        if (this.pendingSearchEvent) {
-	            return this.pendingSearchEvent;
-	        }
-	        else if (this.pendingSearchAsYouTypeSearchEvent) {
-	            return this.pendingSearchAsYouTypeSearchEvent;
-	        }
-	        return null;
-	    };
-	    LiveAnalyticsClient.prototype.warnAboutSearchEvent = function () {
-	        if (_.isUndefined(this.pendingSearchEvent) && _.isUndefined(this.pendingSearchAsYouTypeSearchEvent)) {
-	            this.logger.warn('A search was triggered, but no analytics event was logged. If you wish to have consistent analytics data, consider logging a search event using the methods provided by the framework', 'https://developers.coveo.com/x/TwA5');
-	            if (window['console'] && console.trace) {
-	                console.trace();
-	            }
-	        }
-	    };
-	    LiveAnalyticsClient.prototype.pushCustomEvent = function (actionCause, metaObject, element) {
-	        var _this = this;
-	        var customEvent = this.buildCustomEvent(actionCause, metaObject, element);
-	        this.triggerChangeAnalyticsCustomData('CustomEvent', metaObject, customEvent);
-	        this.checkToSendAnyPendingSearchAsYouType(actionCause);
-	        Defer_1.Defer.defer(function () {
-	            if (_this.sendToCloud) {
-	                _this.endpoint.sendCustomEvent(customEvent);
-	            }
-	            Dom_1.$$(_this.rootElement).trigger(AnalyticsEvents_1.AnalyticsEvents.customEvent, { customEvent: APIAnalyticsBuilder_1.APIAnalyticsBuilder.convertCustomEventToAPI(customEvent) });
-	        });
-	    };
-	    LiveAnalyticsClient.prototype.pushSearchEvent = function (actionCause, metaObject) {
-	        var _this = this;
-	        Assert_1.Assert.exists(actionCause);
-	        if (this.pendingSearchEvent && this.pendingSearchEvent.getEventCause() !== actionCause.name) {
-	            this.pendingSearchEvent.stopRecording();
-	            this.pendingSearchEvent = null;
-	        }
-	        this.checkToSendAnyPendingSearchAsYouType(actionCause);
-	        if (!this.pendingSearchEvent) {
-	            var searchEvent = this.buildSearchEvent(actionCause, metaObject);
-	            this.triggerChangeAnalyticsCustomData('SearchEvent', metaObject, searchEvent);
-	            var pendingSearchEvent = this.pendingSearchEvent = new PendingSearchEvent_1.PendingSearchEvent(this.rootElement, this.endpoint, searchEvent, this.sendToCloud);
-	            Defer_1.Defer.defer(function () {
-	                // At this point all `duringQuery` events should have been fired, so we can forget
-	                // about the pending search event. It will finish processing automatically when
-	                // all the deferred that were caught terminate.
-	                _this.pendingSearchEvent = undefined;
-	                pendingSearchEvent.stopRecording();
-	            });
-	        }
-	    };
-	    LiveAnalyticsClient.prototype.checkToSendAnyPendingSearchAsYouType = function (actionCause) {
-	        if (this.eventIsNotRelatedToSearchbox(actionCause.name)) {
-	            this.sendAllPendingEvents();
-	        }
-	        else {
-	            this.cancelAnyPendingSearchAsYouTypeEvent();
-	        }
-	    };
-	    LiveAnalyticsClient.prototype.pushSearchAsYouTypeEvent = function (actionCause, metaObject) {
-	        this.cancelAnyPendingSearchAsYouTypeEvent();
-	        var searchEvent = this.buildSearchEvent(actionCause, metaObject);
-	        this.triggerChangeAnalyticsCustomData('SearchEvent', metaObject, searchEvent);
-	        this.pendingSearchAsYouTypeSearchEvent = new PendingSearchAsYouTypeSearchEvent_1.PendingSearchAsYouTypeSearchEvent(this.rootElement, this.endpoint, searchEvent, this.sendToCloud);
-	    };
-	    LiveAnalyticsClient.prototype.pushClickEvent = function (actionCause, metaObject, result, element) {
-	        var _this = this;
-	        var event = this.buildClickEvent(actionCause, metaObject, result, element);
-	        this.checkToSendAnyPendingSearchAsYouType(actionCause);
-	        this.triggerChangeAnalyticsCustomData('ClickEvent', metaObject, event, { resultData: result });
-	        Assert_1.Assert.isNonEmptyString(event.searchQueryUid);
-	        Assert_1.Assert.isNonEmptyString(event.collectionName);
-	        Assert_1.Assert.isNonEmptyString(event.sourceName);
-	        Assert_1.Assert.isNumber(event.documentPosition);
-	        Defer_1.Defer.defer(function () {
-	            if (_this.sendToCloud) {
-	                _this.endpoint.sendDocumentViewEvent(event);
-	            }
-	            Dom_1.$$(_this.rootElement).trigger(AnalyticsEvents_1.AnalyticsEvents.documentViewEvent, {
-	                documentViewEvent: APIAnalyticsBuilder_1.APIAnalyticsBuilder.convertDocumentViewToAPI(event)
-	            });
-	        });
-	    };
-	    LiveAnalyticsClient.prototype.buildAnalyticsEvent = function (actionCause, metaObject) {
-	        return {
-	            actionCause: actionCause.name,
-	            actionType: actionCause.type,
-	            username: this.userId,
-	            userDisplayName: this.userDisplayName,
-	            anonymous: this.anonymous,
-	            device: this.device,
-	            mobile: this.mobile,
-	            language: this.language,
-	            responseTime: undefined,
-	            originLevel1: this.originLevel1,
-	            originLevel2: this.getOriginLevel2(this.rootElement),
-	            originLevel3: document.referrer,
-	            customData: _.keys(metaObject).length > 0 ? metaObject : undefined,
-	            userAgent: navigator.userAgent
-	        };
-	    };
-	    LiveAnalyticsClient.prototype.buildSearchEvent = function (actionCause, metaObject) {
-	        return this.merge(this.buildAnalyticsEvent(actionCause, metaObject), {
-	            searchQueryUid: undefined,
-	            pipeline: undefined,
-	            splitTestRunName: this.splitTestRunName,
-	            splitTestRunVersion: this.splitTestRunVersion,
-	            queryText: undefined,
-	            advancedQuery: undefined,
-	            results: undefined,
-	            resultsPerPage: undefined,
-	            pageNumber: undefined,
-	            didYouMean: undefined,
-	            facets: undefined,
-	            contextual: this.isContextual
-	        });
-	    };
-	    LiveAnalyticsClient.prototype.buildClickEvent = function (actionCause, metaObject, result, element) {
-	        return this.merge(this.buildAnalyticsEvent(actionCause, metaObject), {
-	            searchQueryUid: result.queryUid,
-	            queryPipeline: result.pipeline,
-	            splitTestRunName: this.splitTestRunName || result.splitTestRun,
-	            splitTestRunVersion: this.splitTestRunVersion || (result.splitTestRun != undefined ? result.pipeline : undefined),
-	            documentUri: result.uri,
-	            documentUriHash: QueryUtils_1.QueryUtils.getUriHash(result),
-	            documentUrl: result.clickUri,
-	            documentTitle: result.title,
-	            documentCategory: QueryUtils_1.QueryUtils.getObjectType(result),
-	            originLevel2: this.getOriginLevel2(element),
-	            collectionName: QueryUtils_1.QueryUtils.getCollection(result),
-	            sourceName: QueryUtils_1.QueryUtils.getSource(result),
-	            documentPosition: result.index + 1,
-	            responseTime: 0,
-	            viewMethod: actionCause.name,
-	            rankingModifier: result.rankingModifier
-	        });
-	    };
-	    LiveAnalyticsClient.prototype.buildCustomEvent = function (actionCause, metaObject, element) {
-	        return this.merge(this.buildAnalyticsEvent(actionCause, metaObject), {
-	            eventType: actionCause.type,
-	            eventValue: actionCause.name,
-	            originLevel2: this.getOriginLevel2(element),
-	            responseTime: 0
-	        });
-	    };
-	    LiveAnalyticsClient.prototype.getOriginLevel2 = function (element) {
-	        return this.resolveActiveTabFromElement(element) || 'default';
-	    };
-	    LiveAnalyticsClient.prototype.buildMetaObject = function (meta, result) {
-	        var modifiedMeta = _.extend({}, meta);
-	        modifiedMeta['JSUIVersion'] = Version_1.version.lib + ';' + Version_1.version.product;
-	        if (result) {
-	            var uniqueId = QueryUtils_1.QueryUtils.getUniqueId(result);
-	            modifiedMeta['contentIDKey'] = uniqueId.fieldUsed;
-	            modifiedMeta['contentIDValue'] = uniqueId.fieldValue;
-	        }
-	        return modifiedMeta;
-	    };
-	    LiveAnalyticsClient.prototype.cancelAnyPendingSearchAsYouTypeEvent = function () {
-	        if (this.pendingSearchAsYouTypeSearchEvent) {
-	            this.pendingSearchAsYouTypeSearchEvent.cancel();
-	            this.pendingSearchAsYouTypeSearchEvent = undefined;
-	        }
-	    };
-	    LiveAnalyticsClient.prototype.resolveActiveTabFromElement = function (element) {
-	        Assert_1.Assert.exists(element);
-	        var queryStateModel = this.resolveQueryStateModel(element);
-	        return (queryStateModel && queryStateModel.get(QueryStateModel_1.QueryStateModel.attributesEnum.t));
-	    };
-	    LiveAnalyticsClient.prototype.resolveQueryStateModel = function (rootElement) {
-	        return Component_1.Component.resolveBinding(rootElement, QueryStateModel_1.QueryStateModel);
-	    };
-	    LiveAnalyticsClient.prototype.eventIsNotRelatedToSearchbox = function (event) {
-	        return event !== AnalyticsActionListMeta_1.analyticsActionCauseList.searchboxSubmit.name && event !== AnalyticsActionListMeta_1.analyticsActionCauseList.searchboxClear.name;
-	    };
-	    LiveAnalyticsClient.prototype.triggerChangeAnalyticsCustomData = function (type, metaObject, event, data) {
-	        // This is for backward compatibility. Before the analytics were using either numbered
-	        // metas in `metaDataAsNumber` of later on named metas in `metaDataAsString`. Thus we still
-	        // provide those properties in a deprecated way. Below we are moving any data that put
-	        // in them to the root.
-	        metaObject['metaDataAsString'] = {};
-	        metaObject['metaDataAsNumber'] = {};
-	        var changeableAnalyticsDataObject = {
-	            language: event.language,
-	            originLevel1: event.originLevel1,
-	            originLevel2: event.originLevel2,
-	            originLevel3: event.originLevel3,
-	            metaObject: metaObject
-	        };
-	        var args = _.extend({}, {
-	            type: type,
-	            actionType: event.actionType,
-	            actionCause: event.actionCause
-	        }, changeableAnalyticsDataObject, data);
-	        Dom_1.$$(this.rootElement).trigger(AnalyticsEvents_1.AnalyticsEvents.changeAnalyticsCustomData, args);
-	        event.language = args.language;
-	        event.originLevel1 = args.originLevel1;
-	        event.originLevel2 = args.originLevel2;
-	        event.originLevel3 = args.originLevel3;
-	        event.customData = metaObject;
-	        // This is for backward compatibility. Before the analytics were using either numbered
-	        // metas in `metaDataAsNumber` of later on named metas in `metaDataAsString`. We are now putting
-	        // them all at the root, and if I encounter the older properties I move them to the top
-	        // level after issuing a warning.
-	        var metaDataAsString = event.customData['metaDataAsString'];
-	        if (_.keys(metaDataAsString).length > 0) {
-	            this.logger.warn('Using deprecated \'metaDataAsString\' key to log custom analytics data. Custom meta should now be put at the root of the object.');
-	            _.extend(event.customData, metaDataAsString);
-	        }
-	        delete event.customData['metaDataAsString'];
-	        var metaDataAsNumber = event.customData['metaDataAsNumber'];
-	        if (_.keys(metaDataAsNumber).length > 0) {
-	            this.logger.warn('Using deprecated \'metaDataAsNumber\' key to log custom analytics data. Custom meta should now be put at the root of the object.');
-	            _.extend(event.customData, metaDataAsNumber);
-	        }
-	        delete event.customData['metaDataAsNumber'];
-	    };
-	    LiveAnalyticsClient.prototype.merge = function (first, second) {
-	        return _.extend({}, first, second);
-	    };
-	    return LiveAnalyticsClient;
-	}());
-	exports.LiveAnalyticsClient = LiveAnalyticsClient;
-
-
-/***/ },
-/* 136 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var QueryEvents_1 = __webpack_require__(48);
-	var Assert_1 = __webpack_require__(12);
-	var Dom_1 = __webpack_require__(59);
-	var SearchInterface_1 = __webpack_require__(106);
-	var Component_1 = __webpack_require__(103);
-	var QueryController_1 = __webpack_require__(75);
-	var Defer_1 = __webpack_require__(32);
-	var APIAnalyticsBuilder_1 = __webpack_require__(137);
-	var AnalyticsEvents_1 = __webpack_require__(41);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var QueryStateModel_1 = __webpack_require__(101);
-	var _ = __webpack_require__(14);
-	var PendingSearchEvent = (function () {
-	    function PendingSearchEvent(root, endpoint, templateSearchEvent, sendToCloud) {
-	        var _this = this;
-	        this.root = root;
-	        this.endpoint = endpoint;
-	        this.templateSearchEvent = templateSearchEvent;
-	        this.sendToCloud = sendToCloud;
-	        this.searchPromises = [];
-	        this.results = [];
-	        this.cancelled = false;
-	        this.finished = false;
-	        this.searchEvents = [];
-	        Assert_1.Assert.exists(root);
-	        Assert_1.Assert.exists(endpoint);
-	        Assert_1.Assert.exists(templateSearchEvent);
-	        this.handler = function (evt, arg) {
-	            _this.handleDuringQuery(evt, arg);
-	        };
-	        Dom_1.$$(root).on(QueryEvents_1.QueryEvents.duringQuery, this.handler);
-	    }
-	    PendingSearchEvent.prototype.getEventCause = function () {
-	        return this.templateSearchEvent.actionCause;
-	    };
-	    PendingSearchEvent.prototype.getEventMeta = function () {
-	        return this.templateSearchEvent.customData;
-	    };
-	    PendingSearchEvent.prototype.cancel = function () {
-	        this.stopRecording();
-	        this.cancelled = true;
-	    };
-	    PendingSearchEvent.prototype.handleDuringQuery = function (evt, args) {
-	        var _this = this;
-	        Assert_1.Assert.check(!this.finished);
-	        Assert_1.Assert.check(!this.cancelled);
-	        // When synchronizing multiple search interfaces under a single search event
-	        // (think Salesforce boxes), we need to collect all search events and send them
-	        // in one single batch. So we gather all events until we idle out and then we
-	        // monitor those before sending the data.
-	        this.searchPromises.push(args.promise);
-	        // TODO: Maybe a better way to grab the search interface?
-	        var eventTarget;
-	        eventTarget = evt.target;
-	        var searchInterface = Component_1.Component.get(eventTarget, SearchInterface_1.SearchInterface);
-	        Assert_1.Assert.exists(searchInterface);
-	        // TODO: Maybe a better way to grab the query controller?
-	        var queryController = Component_1.Component.get(eventTarget, QueryController_1.QueryController);
-	        Assert_1.Assert.exists(queryController);
-	        args.promise.then(function (queryResults) {
-	            Assert_1.Assert.exists(queryResults);
-	            Assert_1.Assert.check(!_this.finished);
-	            if (queryResults._reusedSearchUid !== true || _this.templateSearchEvent.actionCause == AnalyticsActionListMeta_1.analyticsActionCauseList.recommendation.name) {
-	                var searchEvent = _.extend({}, _this.templateSearchEvent);
-	                _this.fillSearchEvent(searchEvent, searchInterface, args.query, queryResults);
-	                _this.searchEvents.push(searchEvent);
-	                _this.results.push(queryResults);
-	                return queryResults;
-	            }
-	        }).finally(function () {
-	            var index = _.indexOf(_this.searchPromises, args.promise);
-	            _this.searchPromises.splice(index, 1);
-	            if (_this.searchPromises.length == 0) {
-	                _this.flush();
-	            }
-	        });
-	    };
-	    PendingSearchEvent.prototype.stopRecording = function () {
-	        if (this.handler) {
-	            Dom_1.$$(this.root).off(QueryEvents_1.QueryEvents.duringQuery, this.handler);
-	            Dom_1.$$(this.root).off(QueryEvents_1.QueryEvents.duringFetchMoreQuery, this.handler);
-	            this.handler = null;
-	        }
-	    };
-	    PendingSearchEvent.prototype.flush = function () {
-	        var _this = this;
-	        if (!this.cancelled) {
-	            this.stopRecording();
-	            this.finished = true;
-	            Assert_1.Assert.check(this.searchEvents.length == this.results.length);
-	            Defer_1.Defer.defer(function () {
-	                if (_this.sendToCloud) {
-	                    _this.endpoint.sendSearchEvents(_this.searchEvents);
-	                }
-	                var apiSearchEvents = _.map(_this.searchEvents, function (searchEvent) {
-	                    return APIAnalyticsBuilder_1.APIAnalyticsBuilder.convertSearchEventToAPI(searchEvent);
-	                });
-	                Dom_1.$$(_this.root).trigger(AnalyticsEvents_1.AnalyticsEvents.searchEvent, { searchEvents: apiSearchEvents });
-	            });
-	        }
-	    };
-	    PendingSearchEvent.prototype.fillSearchEvent = function (searchEvent, searchInterface, query, queryResults) {
-	        Assert_1.Assert.exists(searchEvent);
-	        Assert_1.Assert.exists(searchInterface);
-	        Assert_1.Assert.exists(query);
-	        Assert_1.Assert.exists(queryResults);
-	        var currentQuery = searchInterface.queryStateModel.get(QueryStateModel_1.QueryStateModel.attributesEnum.q);
-	        searchEvent.queryPipeline = queryResults.pipeline;
-	        searchEvent.splitTestRunName = searchEvent.splitTestRunName || queryResults.splitTestRun;
-	        searchEvent.splitTestRunVersion = searchEvent.splitTestRunVersion || (queryResults.splitTestRun != undefined ? queryResults.pipeline : undefined);
-	        searchEvent.originLevel2 = searchEvent.originLevel2 || searchInterface.queryStateModel.get('t') || 'default';
-	        searchEvent.queryText = currentQuery || query.q || ''; // do not log the query sent to the server if possible; it may contain added syntax depending on options
-	        searchEvent.advancedQuery = query.aq || '';
-	        searchEvent.didYouMean = query.enableDidYouMean;
-	        searchEvent.numberOfResults = queryResults.totalCount;
-	        searchEvent.responseTime = queryResults.duration;
-	        searchEvent.pageNumber = (query.firstResult / query.numberOfResults);
-	        searchEvent.resultsPerPage = query.numberOfResults;
-	        searchEvent.searchQueryUid = queryResults.searchUid;
-	        searchEvent.queryPipeline = queryResults.pipeline;
-	        // The context_${key} format is important for the Analytics backend
-	        // This is what they use to recognize a custom data that will be used internally by other coveo's service.
-	        // In this case, Reveal will be the consumer of this information.
-	        if (query.context != undefined) {
-	            _.each(query.context, function (value, key) {
-	                searchEvent.customData["context_" + key] = value;
-	            });
-	        }
-	        // The refinedKeywords field is important for Reveal in order to learn properly on query
-	        // made based on the long query.
-	        if (queryResults.refinedKeywords != undefined && queryResults.refinedKeywords.length != 0) {
-	            searchEvent.customData['refinedKeywords'] = queryResults.refinedKeywords;
-	        }
-	    };
-	    return PendingSearchEvent;
-	}());
-	exports.PendingSearchEvent = PendingSearchEvent;
-
-
-/***/ },
-/* 137 */
-/***/ function(module, exports) {
-
-	"use strict";
-	var APIAnalyticsBuilder = (function () {
-	    function APIAnalyticsBuilder() {
-	    }
-	    APIAnalyticsBuilder.convertSearchEventToAPI = function (searchEvent) {
-	        var apiSearchEvent = {
-	            advancedQuery: searchEvent.advancedQuery,
-	            customMetadatas: searchEvent.customData,
-	            device: searchEvent.device,
-	            didYouMean: searchEvent.didYouMean,
-	            language: searchEvent.language,
-	            pageNumber: searchEvent.pageNumber,
-	            queryText: searchEvent.queryText,
-	            responseTime: searchEvent.responseTime,
-	            numberOfResults: searchEvent.numberOfResults,
-	            resultsPerPage: searchEvent.resultsPerPage,
-	            searchHub: searchEvent.originLevel1,
-	            searchInterface: searchEvent.originLevel2,
-	            searchQueryUid: searchEvent.searchQueryUid,
-	            type: searchEvent.actionType,
-	            actionCause: searchEvent.actionCause,
-	            queryPipeline: searchEvent.queryPipeline,
-	            splitTestRunName: searchEvent.splitTestRunName,
-	            splitTestRunVersion: searchEvent.splitTestRunVersion
-	        };
-	        return apiSearchEvent;
-	    };
-	    APIAnalyticsBuilder.convertDocumentViewToAPI = function (documentView) {
-	        var apiDocumentView = {
-	            collectionName: documentView.collectionName,
-	            device: documentView.device,
-	            documentPosition: documentView.documentPosition,
-	            title: documentView.documentTitle,
-	            documentUrl: documentView.documentUrl,
-	            documentUri: documentView.documentUri,
-	            documentUriHash: documentView.documentUriHash,
-	            language: documentView.language,
-	            responseTime: documentView.responseTime,
-	            searchHub: documentView.originLevel1,
-	            searchInterface: documentView.originLevel2,
-	            searchQueryUid: documentView.searchQueryUid,
-	            sourceName: documentView.sourceName,
-	            viewMethod: documentView.viewMethod,
-	            customMetadatas: documentView.customData,
-	            actionCause: documentView.actionCause,
-	            queryPipeline: documentView.queryPipeline,
-	            splitTestRunName: documentView.splitTestRunName,
-	            splitTestRunVersion: documentView.splitTestRunVersion
-	        };
-	        return apiDocumentView;
-	    };
-	    APIAnalyticsBuilder.convertCustomEventToAPI = function (customEvent) {
-	        var apiCustomEvent = {
-	            actionCause: customEvent.actionCause,
-	            actionType: customEvent.actionType,
-	            device: customEvent.device,
-	            language: customEvent.language,
-	            responseTime: customEvent.responseTime,
-	            searchHub: customEvent.originLevel1,
-	            searchInterface: customEvent.originLevel2,
-	            customMetadatas: customEvent.customData
-	        };
-	        return apiCustomEvent;
-	    };
-	    return APIAnalyticsBuilder;
-	}());
-	exports.APIAnalyticsBuilder = APIAnalyticsBuilder;
-
-
-/***/ },
-/* 138 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var PendingSearchEvent_1 = __webpack_require__(136);
-	var Dom_1 = __webpack_require__(59);
-	var InitializationEvents_1 = __webpack_require__(45);
-	var _ = __webpack_require__(14);
-	var PendingSearchAsYouTypeSearchEvent = (function (_super) {
-	    __extends(PendingSearchAsYouTypeSearchEvent, _super);
-	    function PendingSearchAsYouTypeSearchEvent(root, endpoint, templateSearchEvent, sendToCloud) {
-	        var _this = _super.call(this, root, endpoint, templateSearchEvent, sendToCloud) || this;
-	        _this.root = root;
-	        _this.endpoint = endpoint;
-	        _this.templateSearchEvent = templateSearchEvent;
-	        _this.sendToCloud = sendToCloud;
-	        _this.delayBeforeSending = 5000;
-	        _this.armBatchDelay = 50;
-	        _this.beforeUnloadHandler = function () {
-	            _this.onWindowUnload();
-	        };
-	        window.addEventListener('beforeunload', _this.beforeUnloadHandler);
-	        Dom_1.$$(root).on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
-	        return _this;
-	    }
-	    PendingSearchAsYouTypeSearchEvent.prototype.handleDuringQuery = function (e, args) {
-	        var _this = this;
-	        var event = _.clone(e);
-	        this.beforeResolve = new Promise(function (resolve) {
-	            _this.toSendRightNow = function () {
-	                if (!_this.isCancelledOrFinished()) {
-	                    resolve(_this);
-	                    _super.prototype.handleDuringQuery.call(_this, event, args);
-	                }
-	            };
-	            _.delay(function () {
-	                _this.toSendRightNow();
-	            }, _this.delayBeforeSending);
-	        });
-	    };
-	    PendingSearchAsYouTypeSearchEvent.prototype.sendRightNow = function () {
-	        if (this.toSendRightNow) {
-	            this.toSendRightNow();
-	        }
-	    };
-	    PendingSearchAsYouTypeSearchEvent.prototype.modifyCustomData = function (key, newData) {
-	        _.each(this.searchEvents, function (searchEvent) {
-	            searchEvent.customData[key] = newData;
-	        });
-	        if (!this.templateSearchEvent.customData) {
-	            this.templateSearchEvent.customData = {};
-	        }
-	        this.templateSearchEvent.customData[key] = newData;
-	    };
-	    PendingSearchAsYouTypeSearchEvent.prototype.modifyEventCause = function (newCause) {
-	        _.each(this.searchEvents, function (searchEvent) {
-	            searchEvent.actionCause = newCause.name;
-	            searchEvent.actionType = newCause.type;
-	        });
-	        this.templateSearchEvent.actionCause = newCause.name;
-	        this.templateSearchEvent.actionType = newCause.type;
-	    };
-	    PendingSearchAsYouTypeSearchEvent.prototype.stopRecording = function () {
-	        _super.prototype.stopRecording.call(this);
-	        if (this.beforeUnloadHandler) {
-	            window.removeEventListener('beforeunload', this.beforeUnloadHandler);
-	            this.beforeUnloadHandler = undefined;
-	        }
-	    };
-	    PendingSearchAsYouTypeSearchEvent.prototype.handleNuke = function () {
-	        window.removeEventListener('beforeunload', this.beforeUnloadHandler);
-	    };
-	    PendingSearchAsYouTypeSearchEvent.prototype.onWindowUnload = function () {
-	        if (!this.isCancelledOrFinished()) {
-	            this.armBatchDelay = 0;
-	            this.sendRightNow();
-	        }
-	    };
-	    PendingSearchAsYouTypeSearchEvent.prototype.isCancelledOrFinished = function () {
-	        if (!this.cancelled) {
-	            if (this.finished) {
-	                this.cancel();
-	                return true;
-	            }
-	            else {
-	                return false;
-	            }
-	        }
-	        else {
-	            return true;
-	        }
-	    };
-	    return PendingSearchAsYouTypeSearchEvent;
-	}(PendingSearchEvent_1.PendingSearchEvent));
-	exports.PendingSearchAsYouTypeSearchEvent = PendingSearchAsYouTypeSearchEvent;
-
-
-/***/ },
-/* 139 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var _ = __webpack_require__(14);
-	var MultiAnalyticsClient = (function () {
-	    function MultiAnalyticsClient(analyticsClients) {
-	        if (analyticsClients === void 0) { analyticsClients = []; }
-	        this.analyticsClients = analyticsClients;
-	        this.isContextual = false;
-	    }
-	    MultiAnalyticsClient.prototype.isActivated = function () {
-	        return _.some(this.analyticsClients, function (analyticsClient) { return analyticsClient.isActivated(); });
-	    };
-	    MultiAnalyticsClient.prototype.getCurrentEventCause = function () {
-	        return _.find(_.map(this.analyticsClients, function (analyticsClient) { return analyticsClient.getCurrentEventCause(); }), function (currentEventCause) { return currentEventCause != null; });
-	    };
-	    MultiAnalyticsClient.prototype.getCurrentEventMeta = function () {
-	        return _.find(_.map(this.analyticsClients, function (analyticsClient) { return analyticsClient.getCurrentEventMeta(); }), function (currentEventMeta) { return currentEventMeta != null; });
-	    };
-	    MultiAnalyticsClient.prototype.logSearchEvent = function (actionCause, meta) {
-	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logSearchEvent(actionCause, meta); });
-	    };
-	    MultiAnalyticsClient.prototype.logSearchAsYouType = function (actionCause, meta) {
-	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logSearchEvent(actionCause, meta); });
-	    };
-	    MultiAnalyticsClient.prototype.logClickEvent = function (actionCause, meta, result, element) {
-	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logClickEvent(actionCause, meta, result, element); });
-	    };
-	    MultiAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element) {
-	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.logCustomEvent(actionCause, meta, element); });
-	    };
-	    MultiAnalyticsClient.prototype.getTopQueries = function (params) {
-	        var _this = this;
-	        return Promise.all(_.map(this.analyticsClients, function (client) {
-	            return client.getTopQueries(params);
-	        }))
-	            .then(function (values) {
-	            return _this.mergeTopQueries(values, params.pageSize);
-	        });
-	    };
-	    MultiAnalyticsClient.prototype.getCurrentVisitIdPromise = function () {
-	        return _.first(this.analyticsClients).getCurrentVisitIdPromise();
-	    };
-	    MultiAnalyticsClient.prototype.getCurrentVisitId = function () {
-	        return _.first(this.analyticsClients).getCurrentVisitId();
-	    };
-	    MultiAnalyticsClient.prototype.sendAllPendingEvents = function () {
-	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.sendAllPendingEvents(); });
-	    };
-	    MultiAnalyticsClient.prototype.warnAboutSearchEvent = function () {
-	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.warnAboutSearchEvent(); });
-	    };
-	    MultiAnalyticsClient.prototype.cancelAllPendingEvents = function () {
-	        _.each(this.analyticsClients, function (analyticsClient) { return analyticsClient.cancelAllPendingEvents(); });
-	    };
-	    MultiAnalyticsClient.prototype.getPendingSearchEvent = function () {
-	        return _.first(this.analyticsClients).getPendingSearchEvent();
-	    };
-	    MultiAnalyticsClient.prototype.mergeTopQueries = function (values, pageSize) {
-	        if (pageSize === void 0) { pageSize = 5; }
-	        return _.chain(values)
-	            .flatten()
-	            .first(pageSize)
-	            .value();
-	    };
-	    return MultiAnalyticsClient;
-	}());
-	exports.MultiAnalyticsClient = MultiAnalyticsClient;
-
-
-/***/ },
-/* 140 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var SearchInterface_1 = __webpack_require__(106);
-	var ComponentOptions_1 = __webpack_require__(107);
-	var QueryEvents_1 = __webpack_require__(48);
-	var OmniboxEvents_1 = __webpack_require__(46);
-	var ResultListEvents_1 = __webpack_require__(49);
-	var SettingsEvents_1 = __webpack_require__(52);
-	var PreferencesPanelEvents_1 = __webpack_require__(47);
-	var AnalyticsEvents_1 = __webpack_require__(41);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var BreadcrumbEvents_1 = __webpack_require__(42);
-	var QuickviewEvents_1 = __webpack_require__(141);
-	var QueryStateModel_1 = __webpack_require__(101);
-	var Model_1 = __webpack_require__(98);
-	var Utils_1 = __webpack_require__(13);
-	var Dom_1 = __webpack_require__(59);
-	var ResponsiveRecommendation_1 = __webpack_require__(142);
-	var coveo_analytics_1 = __webpack_require__(81);
-	var RegisteredNamedMethods_1 = __webpack_require__(133);
-	var InitializationEvents_1 = __webpack_require__(45);
-	var _ = __webpack_require__(14);
-	/**
-	 * The Recommendation component is a {@link SearchInterface} that displays recommendations typically based on user
-	 * history.
-	 *
-	 * This component usually listens to the main SearchInterface. When the main SearchInterface generates a query, the
-	 * Recommendation component generates another query to get the recommendations at the same time.
-	 *
-	 * To get history-based recommendations, you will likely want to include the `pageview` script in your page (see
-	 * [coveo.analytics.js](https://github.com/coveo/coveo.analytics.js)). However, including this script is not mandatory.
-	 * For instance, you could use the Recommendation component without Reveal to create a simple "recommended people"
-	 * interface.
-	 *
-	 * It is possible to include this component inside another SearchInterface, but it is also possible to instantiate it as
-	 * a "standalone" search interface, without even instantiating a main SearchInterface component. In any case, a
-	 * Recommendation component always acts as a full-fledged search interface. Therefore, you can include any component
-	 * inside the Recommendation component (Searchbox, Facet, Sort, etc.), just as you would inside the main SearchInterface
-	 * component.
-	 */
-	var Recommendation = (function (_super) {
-	    __extends(Recommendation, _super);
-	    /**
-	     * Creates a new Recommendation component.
-	     * @param element The HTMLElement on which to instantiate the component.
-	     * @param options The options for the Recommendation component.
-	     * @param bindings The bindings that the component requires to function normally. If not set, these will be
-	     * automatically resolved (with a slower execution time)
-	     * @param _window
-	     */
-	    function Recommendation(element, options, analyticsOptions, _window) {
-	        if (options === void 0) { options = {}; }
-	        if (analyticsOptions === void 0) { analyticsOptions = {}; }
-	        if (_window === void 0) { _window = window; }
-	        var _this = _super.call(this, element, ComponentOptions_1.ComponentOptions.initComponentOptions(element, Recommendation, options), analyticsOptions, _window) || this;
-	        _this.element = element;
-	        _this.options = options;
-	        _this.analyticsOptions = analyticsOptions;
-	        if (!_this.options.id) {
-	            _this.generateDefaultId();
-	        }
-	        // This is done to allow the component to be included in another search interface without triggering the parent events.
-	        _this.preventEventPropagation();
-	        if (_this.options.mainSearchInterface) {
-	            _this.bindToMainSearchInterface();
-	        }
-	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.buildingQuery, function (e, args) { return _this.handleRecommendationBuildingQuery(args); });
-	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.querySuccess, function (e, args) { return _this.handleRecommendationQuerySuccess(args); });
-	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.noResults, function (e, args) { return _this.handleRecommendationNoResults(); });
-	        Dom_1.$$(_this.element).on(QueryEvents_1.QueryEvents.queryError, function (e, args) { return _this.handleRecommendationQueryError(); });
-	        _this.historyStore = new coveo_analytics_1.history.HistoryStore();
-	        ResponsiveRecommendation_1.ResponsiveRecommendation.init(_this.root, _this, options);
-	        return _this;
-	    }
-	    Recommendation.prototype.getId = function () {
-	        return this.options.id;
-	    };
-	    Recommendation.prototype.enable = function () {
-	        _super.prototype.enable.call(this);
-	        this.show();
-	    };
-	    Recommendation.prototype.disable = function () {
-	        _super.prototype.disable.call(this);
-	        this.hide();
-	    };
-	    Recommendation.prototype.hide = function () {
-	        if (!this.displayStyle) {
-	            this.displayStyle = this.element.style.display;
-	        }
-	        Dom_1.$$(this.element).hide();
-	    };
-	    Recommendation.prototype.show = function () {
-	        if (!this.displayStyle) {
-	            this.displayStyle = this.element.style.display;
-	        }
-	        this.element.style.display = this.displayStyle;
-	    };
-	    Recommendation.prototype.bindToMainSearchInterface = function () {
-	        this.bindComponentOptionsModelToMainSearchInterface();
-	        this.bindQueryEventsToMainSearchInterface();
-	    };
-	    Recommendation.prototype.bindComponentOptionsModelToMainSearchInterface = function () {
-	        var _this = this;
-	        // Try to fetch the componentOptions from the main search interface.
-	        // Since we do not know which interface is init first (recommendation or full search interface)
-	        // add a mechanism that waits for the full search interface to be correctly initialized
-	        // then, set the needed values on the component options model.
-	        var searchInterfaceComponent = RegisteredNamedMethods_1.get(this.options.mainSearchInterface, SearchInterface_1.SearchInterface);
-	        var alreadyInitialized = searchInterfaceComponent != null;
-	        var onceInitialized = function () {
-	            var mainSearchInterfaceOptionsModel = searchInterfaceComponent.getBindings().componentOptionsModel;
-	            _this.componentOptionsModel.setMultiple(mainSearchInterfaceOptionsModel.getAttributes());
-	            Dom_1.$$(_this.options.mainSearchInterface).on(_this.componentOptionsModel.getEventName(Model_1.MODEL_EVENTS.ALL), function () {
-	                _this.componentOptionsModel.setMultiple(mainSearchInterfaceOptionsModel.getAttributes());
-	            });
-	        };
-	        if (alreadyInitialized) {
-	            onceInitialized();
-	        }
-	        else {
-	            Dom_1.$$(this.options.mainSearchInterface).on(InitializationEvents_1.InitializationEvents.afterComponentsInitialization, function () {
-	                searchInterfaceComponent = RegisteredNamedMethods_1.get(_this.options.mainSearchInterface, SearchInterface_1.SearchInterface);
-	                onceInitialized();
-	            });
-	        }
-	    };
-	    Recommendation.prototype.bindQueryEventsToMainSearchInterface = function () {
-	        var _this = this;
-	        // Whenever a query sucessfully returns on the full search interface, refresh the recommendation component.
-	        Dom_1.$$(this.options.mainSearchInterface).on(QueryEvents_1.QueryEvents.querySuccess, function (e, args) {
-	            _this.mainInterfaceQuery = args;
-	            _this.mainQuerySearchUID = args.results.searchUid;
-	            _this.mainQueryPipeline = args.results.pipeline;
-	            _this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.recommendation, {});
-	            _this.queryController.executeQuery();
-	        });
-	    };
-	    Recommendation.prototype.handleRecommendationBuildingQuery = function (data) {
-	        if (!this.disabled) {
-	            this.modifyQueryForRecommendation(data);
-	            this.addRecommendationInfoInQuery(data);
-	        }
-	    };
-	    Recommendation.prototype.handleRecommendationQuerySuccess = function (data) {
-	        if (!this.disabled) {
-	            if (this.options.hideIfNoResults) {
-	                if (data.results.totalCount === 0) {
-	                    this.hide();
-	                }
-	                else {
-	                    this.show();
-	                }
-	            }
-	        }
-	    };
-	    Recommendation.prototype.handleRecommendationNoResults = function () {
-	        if (!this.disabled) {
-	            if (this.options.hideIfNoResults) {
-	                this.hide();
-	            }
-	        }
-	    };
-	    Recommendation.prototype.handleRecommendationQueryError = function () {
-	        if (!this.disabled) {
-	            this.hide();
-	        }
-	    };
-	    Recommendation.prototype.modifyQueryForRecommendation = function (data) {
-	        if (this.mainInterfaceQuery) {
-	            Utils_1.Utils.copyObjectAttributes(data.queryBuilder, this.mainInterfaceQuery.queryBuilder, this.options.optionsToUse);
-	        }
-	    };
-	    Recommendation.prototype.addRecommendationInfoInQuery = function (data) {
-	        if (!_.isEmpty(this.options.userContext)) {
-	            data.queryBuilder.addContext(JSON.parse(this.options.userContext));
-	        }
-	        if (this.options.sendActionsHistory) {
-	            data.queryBuilder.actionsHistory = this.getHistory();
-	        }
-	        data.queryBuilder.recommendation = this.options.id;
-	    };
-	    Recommendation.prototype.getHistory = function () {
-	        var historyFromStore = this.historyStore.getHistory();
-	        if (historyFromStore == null) {
-	            historyFromStore = [];
-	        }
-	        return JSON.stringify(historyFromStore);
-	    };
-	    Recommendation.prototype.preventEventPropagation = function () {
-	        this.preventEventPropagationOn(QueryEvents_1.QueryEvents);
-	        this.preventEventPropagationOn(OmniboxEvents_1.OmniboxEvents);
-	        this.preventEventPropagationOn(ResultListEvents_1.ResultListEvents);
-	        this.preventEventPropagationOn(SettingsEvents_1.SettingsEvents);
-	        this.preventEventPropagationOn(PreferencesPanelEvents_1.PreferencesPanelEvents);
-	        this.preventEventPropagationOn(AnalyticsEvents_1.AnalyticsEvents);
-	        this.preventEventPropagationOn(BreadcrumbEvents_1.BreadcrumbEvents);
-	        this.preventEventPropagationOn(QuickviewEvents_1.QuickviewEvents);
-	        this.preventEventPropagationOn(InitializationEvents_1.InitializationEvents);
-	        this.preventEventPropagationOn(this.getAllModelEvents());
-	    };
-	    Recommendation.prototype.preventEventPropagationOn = function (eventType, eventName) {
-	        if (eventName === void 0) { eventName = function (event) { return event; }; }
-	        for (var event_1 in eventType) {
-	            Dom_1.$$(this.root).on(eventName(event_1), function (e) { return e.stopPropagation(); });
-	        }
-	    };
-	    Recommendation.prototype.getAllModelEvents = function () {
-	        var _this = this;
-	        var events = {};
-	        _.each(_.values(Model_1.Model.eventTypes), function (event) {
-	            _.each(_.values(QueryStateModel_1.QUERY_STATE_ATTRIBUTES), function (attribute) {
-	                var eventName = _this.getBindings().queryStateModel.getEventName(event + attribute);
-	                events[eventName] = eventName;
-	            });
-	        });
-	        return events;
-	    };
-	    Recommendation.prototype.generateDefaultId = function () {
-	        var id = 'Recommendation';
-	        if (Recommendation.NEXT_ID !== 1) {
-	            this.logger.warn('Generating another recommendation default id', 'Consider configuring a human friendly / meaningful id for this interface');
-	            id = id + '_' + Recommendation.NEXT_ID;
-	        }
-	        Recommendation.NEXT_ID++;
-	        this.options.id = id;
-	    };
-	    return Recommendation;
-	}(SearchInterface_1.SearchInterface));
-	Recommendation.ID = 'Recommendation';
-	Recommendation.NEXT_ID = 1;
-	/**
-	 * The options for the recommendation component
-	 * @componentOptions
-	 */
-	Recommendation.options = {
-	    /**
-	     * Specifies the main {@link SearchInterface} to listen to.
-	     */
-	    mainSearchInterface: ComponentOptions_1.ComponentOptions.buildSelectorOption(),
-	    /**
-	     * Specifies the user context to send to Coveo usage analytics.
-	     * The component sends this information with the query alongside the user history to get the recommendations.
-	     */
-	    userContext: ComponentOptions_1.ComponentOptions.buildJsonOption(),
-	    /**
-	     * Specifies the ID of the interface.
-	     * The usage analytics use the interface ID to know which recommendation interface was selected.
-	     *
-	     * Default value is `Recommendation` for the first one and `Recommendation_{number}`, where {number} depends on the
-	     * number of Recommendation interfaces with default IDs in the page for the others.
-	     */
-	    id: ComponentOptions_1.ComponentOptions.buildStringOption(),
-	    /**
-	     * Specifies which options from the main {@link QueryBuilder} to use in the triggered query.
-	     *
-	     * Possible values are:
-	     * - `expression`
-	     * - `advancedExpression`
-	     * - `constantExpression`
-	     * - `disjunctionExpression`
-	     *
-	     * **Example:**
-	     *
-	     * Adding the expression (`q`) and the advanced expression (`aq`) parts of the main query in the triggered query:
-	     *
-	     * `data-options-to-use="expression,advancedExpression"`
-	     *
-	     * Default value is `expression`.
-	     */
-	    optionsToUse: ComponentOptions_1.ComponentOptions.buildListOption({ defaultValue: ['expression'] }),
-	    /**
-	     * Specifies whether to send the actions history along with the triggered query.
-	     *
-	     * Setting this option to `false` makes it impossible for this component to get Reveal recommendations.
-	     *
-	     * However, setting this option to `false` can be useful to display side results in a search page.
-	     *
-	     * Default value is `true`.
-	     */
-	    sendActionsHistory: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
-	    /**
-	     * Specifies whether to hide the Recommendations component if no result or recommendation is available.
-	     *
-	     * Default value is `false`.
-	     */
-	    hideIfNoResults: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
-	    autoTriggerQuery: ComponentOptions_1.ComponentOptions.buildBooleanOption({
-	        postProcessing: function (value, options) {
-	            if (options.mainSearchInterface) {
-	                return false;
-	            }
-	            return value;
-	        }
-	    }),
-	    /**
-	     * Specifies whether to enable *responsive mode* for Recommendation components. Setting this options to `false` on
-	     * any Recommendation component in a search interface disables responsive mode for all other Recommendation
-	     * components in the search interface.
-	     *
-	     * Responsive mode displays all Recommendation components under a single dropdown button whenever the width of the
-	     * HTML element which the search interface is bound to reaches or falls behind a certain threshold (see
-	     * {@link Recommendation.options.responsiveBreakpoint}).
-	     *
-	     * See also {@link Recommendation.options.dropdownHeaderLabel}.
-	     *
-	     * Default value is `true`.
-	     */
-	    enableResponsiveMode: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
-	    /**
-	     * If {@link Recommendation.options.enableResponsiveMode} is `true` for all Recommendation components, specifies the
-	     * width threshold (in pixels) of the search interface at which Recommendation components go in responsive mode.
-	     *
-	     * Recommendation components go in responsive mode when the width of the search interface is equal to or lower than
-	     * this value.
-	     *
-	     * The `search interface` corresponds to the HTML element with the class `CoveoSearchInterface`.
-	     *
-	     * If more than one Recommendation component in the search interface specifies a value for this option, then the
-	     * framework uses the last occurrence of the option.
-	     *
-	     * Default value is `1000`.
-	     */
-	    responsiveBreakpoint: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 1000 }),
-	    /**
-	     * If {@link Recommendation.options.enableResponsiveMode} is `true` for all Recommendation components, specifies the
-	     * label of the dropdown button that allows to display the Recommendation components when in responsive mode.
-	     *
-	     * If more than one Recommendation component in the search interface specifies a value for this option, then the
-	     * framework uses the first occurrence of the option.
-	     *
-	     * Default value is `Recommendations`.
-	     */
-	    dropdownHeaderLabel: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: 'Recommendations' })
-	};
-	exports.Recommendation = Recommendation;
-	// We do not register the Recommendation component since it is done with .coveo('initRecommendation')
-
-
-/***/ },
+/***/ }),
 /* 141 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var QuickviewEvents = (function () {
-	    function QuickviewEvents() {
-	    }
-	    return QuickviewEvents;
-	}());
-	QuickviewEvents.quickviewLoaded = 'quickviewLoaded';
-	QuickviewEvents.openQuickview = 'openQuickview';
-	exports.QuickviewEvents = QuickviewEvents;
-
-
-/***/ },
-/* 142 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var ResponsiveComponentsManager_1 = __webpack_require__(127);
-	var ResponsiveComponentsUtils_1 = __webpack_require__(131);
-	var SearchInterface_1 = __webpack_require__(106);
-	var Utils_1 = __webpack_require__(13);
-	var Dom_1 = __webpack_require__(59);
-	var Logger_1 = __webpack_require__(11);
-	var Recommendation_1 = __webpack_require__(140);
-	var RecommendationDropdownContent_1 = __webpack_require__(143);
-	var ResponsiveDropdownHeader_1 = __webpack_require__(145);
-	var ResponsiveDropdown_1 = __webpack_require__(146);
-	var Strings_1 = __webpack_require__(35);
-	var FacetSlider_1 = __webpack_require__(147);
-	var Facet_1 = __webpack_require__(159);
-	var Component_1 = __webpack_require__(103);
-	var RegisteredNamedMethods_1 = __webpack_require__(133);
-	var QueryEvents_1 = __webpack_require__(48);
-	var _ = __webpack_require__(14);
-	var ResponsiveRecommendation = (function () {
-	    function ResponsiveRecommendation(coveoRoot, ID, options, responsiveDropdown) {
-	        this.coveoRoot = coveoRoot;
-	        this.ID = ID;
-	        this.responsiveDropdown = responsiveDropdown;
-	        this.recommendationRoot = this.getRecommendationRoot();
-	        this.dropdownHeaderLabel = options.dropdownHeaderLabel;
-	        this.breakpoint = this.defineResponsiveBreakpoint(options);
-	        this.logger = new Logger_1.Logger(this);
-	        this.dropdown = this.buildDropdown(responsiveDropdown);
-	        this.facets = this.getFacets();
-	        this.facetSliders = this.getFacetSliders();
-	        this.registerOnOpenHandler();
-	        this.registerOnCloseHandler();
-	        this.registerQueryEvents();
-	        this.dropdownContainer = Dom_1.$$('div', { className: ResponsiveRecommendation.DROPDOWN_CONTAINER_CSS_CLASS_NAME });
-	    }
-	    ResponsiveRecommendation.init = function (root, component, options) {
-	        var logger = new Logger_1.Logger('ResponsiveRecommendation');
-	        var coveoRoot = this.findParentRootOfRecommendationComponent(root);
-	        if (!coveoRoot) {
-	            logger.info('Recommendation component has no parent interface. Disabling responsive mode for this component.');
-	            return;
-	        }
-	        if (!Dom_1.$$(coveoRoot).find('.coveo-results-column')) {
-	            logger.info('Cannot find element with class coveo-results-column. Disabling responsive mode for this component.');
-	            return;
-	        }
-	        ResponsiveComponentsManager_1.ResponsiveComponentsManager.register(ResponsiveRecommendation, Dom_1.$$(coveoRoot), Recommendation_1.Recommendation.ID, component, options);
-	    };
-	    ResponsiveRecommendation.findParentRootOfRecommendationComponent = function (root) {
-	        var coveoRoot = Dom_1.$$(root).parents(Component_1.Component.computeCssClassName(SearchInterface_1.SearchInterface));
-	        if (coveoRoot[0]) {
-	            return Dom_1.$$(coveoRoot[0]);
-	        }
-	        return null;
-	    };
-	    ResponsiveRecommendation.prototype.handleResizeEvent = function () {
-	        if (this.needSmallMode() && !ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.isSmallRecommendationActivated(this.coveoRoot)) {
-	            this.changeToSmallMode();
-	        }
-	        else if (!this.needSmallMode() && ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.isSmallRecommendationActivated(this.coveoRoot)) {
-	            this.changeToLargeMode();
-	        }
-	        if (this.dropdown.isOpened) {
-	            this.dropdown.dropdownContent.positionDropdown();
-	        }
-	    };
-	    ResponsiveRecommendation.prototype.needDropdownWrapper = function () {
-	        return this.needSmallMode();
-	    };
-	    ResponsiveRecommendation.prototype.needSmallMode = function () {
-	        return this.coveoRoot.width() <= this.breakpoint;
-	    };
-	    ResponsiveRecommendation.prototype.changeToSmallMode = function () {
-	        this.dropdown.close();
-	        Dom_1.$$(this.coveoRoot.find("." + ResponsiveComponentsManager_1.ResponsiveComponentsManager.DROPDOWN_HEADER_WRAPPER_CSS_CLASS)).el.appendChild(this.dropdown.dropdownHeader.element.el);
-	        this.disableFacetPreservePosition();
-	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.activateSmallRecommendation(this.coveoRoot);
-	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.activateSmallRecommendation(this.recommendationRoot);
-	    };
-	    ResponsiveRecommendation.prototype.changeToLargeMode = function () {
-	        this.enableFacetPreservePosition();
-	        this.dropdown.cleanUp();
-	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.deactivateSmallRecommendation(this.coveoRoot);
-	        ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.deactivateSmallRecommendation(this.recommendationRoot);
-	    };
-	    ResponsiveRecommendation.prototype.buildDropdown = function (responsiveDropdown) {
-	        var dropdownContent = this.buildDropdownContent();
-	        var dropdownHeader = this.buildDropdownHeader();
-	        var dropdown = responsiveDropdown ? responsiveDropdown : new ResponsiveDropdown_1.ResponsiveDropdown(dropdownContent, dropdownHeader, this.coveoRoot);
-	        dropdown.disablePopupBackground();
-	        return dropdown;
-	    };
-	    ResponsiveRecommendation.prototype.buildDropdownHeader = function () {
-	        var dropdownHeaderElement = Dom_1.$$('a');
-	        var content = Dom_1.$$('p');
-	        content.text(Strings_1.l(this.dropdownHeaderLabel));
-	        dropdownHeaderElement.el.appendChild(content.el);
-	        var dropdownHeader = new ResponsiveDropdownHeader_1.ResponsiveDropdownHeader('recommendation', dropdownHeaderElement);
-	        return dropdownHeader;
-	    };
-	    ResponsiveRecommendation.prototype.buildDropdownContent = function () {
-	        var dropdownContentElement;
-	        var recommendationColumn = this.coveoRoot.find('.coveo-recommendation-column');
-	        if (recommendationColumn) {
-	            dropdownContentElement = Dom_1.$$(recommendationColumn);
-	        }
-	        else {
-	            dropdownContentElement = Dom_1.$$(this.coveoRoot.find('.' + Component_1.Component.computeCssClassName(Recommendation_1.Recommendation)));
-	        }
-	        var dropdownContent = new RecommendationDropdownContent_1.RecommendationDropdownContent('recommendation', dropdownContentElement, this.coveoRoot);
-	        return dropdownContent;
-	    };
-	    ResponsiveRecommendation.prototype.defineResponsiveBreakpoint = function (options) {
-	        var breakpoint;
-	        if (Utils_1.Utils.isNullOrUndefined(options.responsiveBreakpoint)) {
-	            breakpoint = ResponsiveRecommendation.RESPONSIVE_BREAKPOINT;
-	        }
-	        else {
-	            breakpoint = options.responsiveBreakpoint;
-	        }
-	        return breakpoint;
-	    };
-	    ResponsiveRecommendation.prototype.getFacetSliders = function () {
-	        var facetSliders = [];
-	        _.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassName(FacetSlider_1.FacetSlider)), function (facetSliderElement) {
-	            var facetSlider = Component_1.Component.get(facetSliderElement, FacetSlider_1.FacetSlider);
-	            if (facetSlider instanceof FacetSlider_1.FacetSlider) {
-	                facetSliders.push(facetSlider);
-	            }
-	        });
-	        return facetSliders;
-	    };
-	    ResponsiveRecommendation.prototype.getFacets = function () {
-	        var facets = [];
-	        _.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassName(Facet_1.Facet)), function (facetElement) {
-	            var facet = Component_1.Component.get(facetElement, Facet_1.Facet);
-	            if (facet instanceof Facet_1.Facet) {
-	                facets.push(facet);
-	            }
-	        });
-	        return facets;
-	    };
-	    ResponsiveRecommendation.prototype.dismissFacetSearches = function () {
-	        _.each(this.facets, function (facet) {
-	            if (facet.facetSearch && facet.facetSearch.currentlyDisplayedResults) {
-	                facet.facetSearch.completelyDismissSearch();
-	            }
-	        });
-	    };
-	    ResponsiveRecommendation.prototype.enableFacetPreservePosition = function () {
-	        _.each(this.facets, function (facet) { return facet.options.preservePosition = true; });
-	    };
-	    ResponsiveRecommendation.prototype.disableFacetPreservePosition = function () {
-	        _.each(this.facets, function (facet) { return facet.options.preservePosition = false; });
-	    };
-	    ResponsiveRecommendation.prototype.drawFacetSliderGraphs = function () {
-	        _.each(this.facetSliders, function (facetSlider) { return facetSlider.drawDelayedGraphData(); });
-	    };
-	    ResponsiveRecommendation.prototype.registerOnOpenHandler = function () {
-	        this.dropdown.registerOnOpenHandler(this.drawFacetSliderGraphs, this);
-	    };
-	    ResponsiveRecommendation.prototype.registerOnCloseHandler = function () {
-	        this.dropdown.registerOnCloseHandler(this.dismissFacetSearches, this);
-	    };
-	    ResponsiveRecommendation.prototype.getRecommendationRoot = function () {
-	        return Dom_1.$$(this.coveoRoot.find('.' + Component_1.Component.computeCssClassName(Recommendation_1.Recommendation)));
-	    };
-	    ResponsiveRecommendation.prototype.registerQueryEvents = function () {
-	        var _this = this;
-	        var recommendationInstance = RegisteredNamedMethods_1.get(this.recommendationRoot.el, SearchInterface_1.SearchInterface);
-	        if (recommendationInstance && recommendationInstance.options.hideIfNoResults) {
-	            this.coveoRoot.on(QueryEvents_1.QueryEvents.querySuccess, function (e, data) { return _this.handleRecommnendationQuerySucess(data); });
-	            this.coveoRoot.on(QueryEvents_1.QueryEvents.noResults, function (e, data) { return _this.handleRecommendationNoResults(); });
-	        }
-	        this.coveoRoot.on(QueryEvents_1.QueryEvents.queryError, function () { return _this.handleRecommendationQueryError(); });
-	    };
-	    ResponsiveRecommendation.prototype.handleRecommnendationQuerySucess = function (data) {
-	        if (data.results.totalCount === 0) {
-	            this.dropdown.close();
-	            this.dropdown.dropdownHeader.hide();
-	        }
-	        else {
-	            this.dropdown.dropdownHeader.show();
-	        }
-	    };
-	    ResponsiveRecommendation.prototype.handleRecommendationNoResults = function () {
-	        this.dropdown.close();
-	        this.dropdown.dropdownHeader.hide();
-	    };
-	    ResponsiveRecommendation.prototype.handleRecommendationQueryError = function () {
-	        this.dropdown.close();
-	        this.dropdown.dropdownHeader.hide();
-	    };
-	    return ResponsiveRecommendation;
-	}());
-	ResponsiveRecommendation.DROPDOWN_CONTAINER_CSS_CLASS_NAME = 'coveo-recommendation-dropdown-container';
-	ResponsiveRecommendation.RESPONSIVE_BREAKPOINT = 1000;
-	exports.ResponsiveRecommendation = ResponsiveRecommendation;
-
-
-/***/ },
-/* 143 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var ResponsiveDropdownContent_1 = __webpack_require__(144);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ResponsiveDropdownContent_1 = __webpack_require__(142);
 	var Dom_1 = __webpack_require__(59);
 	var RecommendationDropdownContent = (function () {
 	    function RecommendationDropdownContent(componentName, element, coveoRoot) {
@@ -23598,14 +23862,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.RecommendationDropdownContent = RecommendationDropdownContent;
 
 
-/***/ },
-/* 144 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
-	var PopupUtils_1 = __webpack_require__(72);
-	var ResponsiveComponentsManager_1 = __webpack_require__(127);
+	var PopupUtils_1 = __webpack_require__(71);
+	var ResponsiveComponentsManager_1 = __webpack_require__(136);
 	var ResponsiveDropdownContent = (function () {
 	    function ResponsiveDropdownContent(componentName, element, coveoRoot, minWidth, widthRatio) {
 	        this.element = element;
@@ -23639,11 +23904,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveDropdownContent = ResponsiveDropdownContent;
 
 
-/***/ },
-/* 145 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var ResponsiveDropdownHeader = (function () {
 	    function ResponsiveDropdownHeader(componentName, element) {
@@ -23673,13 +23939,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveDropdownHeader = ResponsiveDropdownHeader;
 
 
-/***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
-	var EventsUtils_1 = __webpack_require__(130);
+	var EventsUtils_1 = __webpack_require__(139);
 	var _ = __webpack_require__(14);
 	var ResponsiveDropdown = (function () {
 	    function ResponsiveDropdown(dropdownContent, dropdownHeader, coveoRoot) {
@@ -23784,23 +24051,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveDropdown = ResponsiveDropdown;
 
 
-/***/ },
-/* 147 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="../Facet/FacetHeader.ts" />
 	/// <reference path="../../controllers/FacetSliderQueryController.ts" />
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Slider_1 = __webpack_require__(148);
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
-	var ResponsiveFacets_1 = __webpack_require__(158);
-	var FacetHeader_1 = __webpack_require__(169);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Slider_1 = __webpack_require__(146);
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
+	var ResponsiveFacets_1 = __webpack_require__(156);
+	var FacetHeader_1 = __webpack_require__(167);
 	var Strings_1 = __webpack_require__(35);
 	var InitializationEvents_1 = __webpack_require__(45);
 	var FacetSliderQueryController_1 = __webpack_require__(95);
@@ -23808,14 +24081,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var BreadcrumbEvents_1 = __webpack_require__(42);
 	var Model_1 = __webpack_require__(98);
 	var Dom_1 = __webpack_require__(59);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var QueryStateModel_1 = __webpack_require__(101);
 	var SliderEvents_1 = __webpack_require__(53);
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
-	var ResponsiveComponentsUtils_1 = __webpack_require__(131);
-	var Initialization_1 = __webpack_require__(111);
-	var d3 = __webpack_require__(157);
+	var ResponsiveComponentsUtils_1 = __webpack_require__(140);
+	var Initialization_1 = __webpack_require__(106);
+	var d3 = __webpack_require__(155);
 	var SearchAlertEvents_1 = __webpack_require__(51);
 	var _ = __webpack_require__(14);
 	/**
@@ -24006,12 +24279,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return undefined;
 	        }
 	    };
-	    // There is delayed graph data if at the time the facet slider tried to draw the facet was hidden in the
+	    // There is delayed graph data if at the time the facet slider tried to draw, the facet was hidden in the
 	    // facet dropdown. This method will draw delayed graph data if it exists.
 	    FacetSlider.prototype.drawDelayedGraphData = function () {
 	        if (this.delayedGraphData != undefined && !this.isEmpty) {
 	            this.slider.drawGraph(this.delayedGraphData);
 	        }
+	    };
+	    FacetSlider.prototype.isSimpleSliderConfig = function () {
+	        return this.options.start != null && this.options.end != null;
+	    };
+	    FacetSlider.prototype.hasAGraph = function () {
+	        return this.options.graph != undefined;
 	    };
 	    FacetSlider.prototype.handleNoresults = function () {
 	        this.isEmpty = true;
@@ -24146,9 +24425,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.ensureDom();
 	        this.setupSliderIfNeeded(data);
 	        var groupByResults = data.results.groupByResults[this.facetQueryController.lastGroupByRequestIndex];
-	        if (groupByResults == undefined || groupByResults.values[0] == undefined) {
-	            this.isEmpty = true;
-	        }
+	        this.isEmpty = this.isFacetEmpty(groupByResults, data);
 	        this.updateAppearanceDependingOnState();
 	        if (this.hasAGraph()) {
 	            this.renderToSliderGraph(data);
@@ -24394,9 +24671,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        }
 	    };
-	    FacetSlider.prototype.hasAGraph = function () {
-	        return this.options.graph != undefined;
-	    };
 	    FacetSlider.prototype.updateAppearanceDependingOnState = function (sliding) {
 	        if (sliding === void 0) { sliding = false; }
 	        if (this.isEmpty && !this.isActive() && !sliding) {
@@ -24412,9 +24686,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else {
 	            Dom_1.$$(this.element).removeClass('coveo-disabled');
 	        }
+	        if (this.isActive() && this.slider) {
+	            this.slider.onMoving();
+	        }
 	    };
 	    FacetSlider.prototype.handleNuke = function () {
 	        window.removeEventListener('resize', this.onResize);
+	    };
+	    FacetSlider.prototype.isFacetEmpty = function (groupByResults, data) {
+	        return groupByResults == null || groupByResults.values[0] == null || groupByResults.values[0].numberOfResults == 0 || data.results.results.length == 0;
 	    };
 	    return FacetSlider;
 	}(Component_1.Component));
@@ -24556,7 +24836,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * Available options are:
 	     * - steps (`data-graph-steps`): number; specifies the number of steps/columns to display in your graph. Default
-	     * value is `10`.
+	     * value is `10`. Minimum value is `2`.
 	     */
 	    graph: ComponentOptions_1.ComponentOptions.buildObjectOption({
 	        subOptions: {
@@ -24667,17 +24947,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(FacetSlider);
 
 
-/***/ },
-/* 148 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var SliderEvents_1 = __webpack_require__(53);
 	var Utils_1 = __webpack_require__(13);
-	var d3Scale = __webpack_require__(149);
-	var d3 = __webpack_require__(157);
+	var d3Scale = __webpack_require__(147);
+	var d3 = __webpack_require__(155);
 	var Globalize = __webpack_require__(28);
 	var _ = __webpack_require__(14);
 	var Logger_1 = __webpack_require__(11);
@@ -24884,6 +25165,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    return SliderLine;
 	}());
+	// This component relies heavily on mouse interaction, really difficult to test inside a UT context.
+	// Ignore it
+	/* istanbul ignore next */
 	var SliderButton = (function () {
 	    function SliderButton(slider, which) {
 	        this.slider = slider;
@@ -25041,11 +25325,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    SliderButton.prototype.updatePosition = function (e) {
 	        var pos = this.getMousePosition(e);
 	        var spanX = pos.x - this.startPositionX;
+	        var currentValue;
 	        this.currentPos = this.lastElementLeft + spanX;
 	        if (this.slider.options.steps || this.slider.options.getSteps) {
 	            var snapResult = this.snapToStep(spanX);
 	            this.currentPos = snapResult.position;
-	            var currentValue = snapResult.value;
+	            currentValue = snapResult.value;
 	        }
 	        this.currentPos = Math.max(this.leftBoundary, this.currentPos);
 	        this.currentPos = Math.min(this.rightBoundary, this.currentPos);
@@ -25210,6 +25495,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    SliderGraph.prototype.draw = function (data) {
 	        if (data === void 0) { data = this.oldData; }
 	        if (data) {
+	            if (data != this.oldData) {
+	                // only modify the data if it's new
+	                data = this.modifyPossibleSinglePointDataIntoValidRange(data);
+	            }
 	            var sliderOuterWidth = this.slider.element.offsetWidth;
 	            var sliderOuterHeight = this.slider.element.offsetHeight;
 	            var width = sliderOuterWidth - this.slider.options.graph.margin.left - this.slider.options.graph.margin.right;
@@ -25225,6 +25514,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            this.oldData = data;
 	        }
+	    };
+	    SliderGraph.prototype.modifyPossibleSinglePointDataIntoValidRange = function (data) {
+	        var _this = this;
+	        return _.map(data, function (d) {
+	            // In some rare corner case, the index can return range values where the start of the data is equal to the end of the data
+	            // Since it's a "point" as opposed to a real range, it's impossible to display this properly on a graph (where the range is the x axis)
+	            // An element in a graph with with 0 width on the x axis is illogical and cannot work.
+	            // In those case, we must "widen" the x range. Instead of adding an arbitrary value (like +1 to end, for example), we need something that won't make the range super small to click on.
+	            // We use the total width available, and subtract half a step at the beginning, and add half a step at the end
+	            if (d.start == d.end) {
+	                var oneStep = (_this.slider.options.end - _this.slider.options.start) / _this.slider.options.graph.steps;
+	                d.start = Math.round(d.start - oneStep / 2);
+	                d.end = Math.round(d.end + oneStep / 2);
+	            }
+	            return d;
+	        });
 	    };
 	    SliderGraph.prototype.setXAndYRange = function (width, height) {
 	        this.x.range([0, width]);
@@ -25242,10 +25547,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    SliderGraph.prototype.padGraphWithEmptyData = function (data) {
 	        var oneStepOfGraph = data[0].end - data[0].start;
-	        if (oneStepOfGraph != 0) {
-	            this.padBeginningOfGraphWithEmptyData(data, oneStepOfGraph);
-	            this.padEndOfGraphWithEmptyData(data, oneStepOfGraph);
-	        }
+	        this.padBeginningOfGraphWithEmptyData(data, oneStepOfGraph);
+	        this.padEndOfGraphWithEmptyData(data, oneStepOfGraph);
 	    };
 	    SliderGraph.prototype.padBeginningOfGraphWithEmptyData = function (data, oneStepOfGraph) {
 	        if (data[0].start > this.slider.options.start && data[0].start > oneStepOfGraph) {
@@ -25378,15 +25681,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	}());
 
 
-/***/ },
-/* 149 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-scale/ Version 1.0.4. Copyright 2016 Mike Bostock.
+	// https://d3js.org/d3-scale/ Version 1.0.5. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports, __webpack_require__(150), __webpack_require__(151), __webpack_require__(152), __webpack_require__(154), __webpack_require__(155), __webpack_require__(156), __webpack_require__(153)) :
-	  typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) :
-	  (factory((global.d3 = global.d3 || {}),global.d3,global.d3,global.d3,global.d3,global.d3,global.d3,global.d3));
+		 true ? factory(exports, __webpack_require__(148), __webpack_require__(149), __webpack_require__(150), __webpack_require__(152), __webpack_require__(153), __webpack_require__(154), __webpack_require__(151)) :
+		typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) :
+		(factory((global.d3 = global.d3 || {}),global.d3,global.d3,global.d3,global.d3,global.d3,global.d3,global.d3));
 	}(this, (function (exports,d3Array,d3Collection,d3Interpolate,d3Format,d3Time,d3TimeFormat,d3Color) { 'use strict';
 	
 	var array = Array.prototype;
@@ -26287,15 +26590,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 150 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-array/ Version 1.0.2. Copyright 2016 Mike Bostock.
+	// https://d3js.org/d3-array/ Version 1.2.0. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports) :
-	  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	  (factory((global.d3 = global.d3 || {})));
+		 true ? factory(exports) :
+		typeof define === 'function' && define.amd ? define(['exports'], factory) :
+		(factory((global.d3 = global.d3 || {})));
 	}(this, (function (exports) { 'use strict';
 	
 	var ascending = function(a, b) {
@@ -26338,6 +26641,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	var bisectRight = ascendingBisect.right;
 	var bisectLeft = ascendingBisect.left;
 	
+	var pairs = function(array, f) {
+	  if (f == null) f = pair;
+	  var i = 0, n = array.length - 1, p = array[0], pairs = new Array(n < 0 ? 0 : n);
+	  while (i < n) pairs[i] = f(p, p = array[++i]);
+	  return pairs;
+	};
+	
+	function pair(a, b) {
+	  return [a, b];
+	}
+	
+	var cross = function(values0, values1, reduce) {
+	  var n0 = values0.length,
+	      n1 = values1.length,
+	      values = new Array(n0 * n1),
+	      i0,
+	      i1,
+	      i,
+	      value0;
+	
+	  if (reduce == null) reduce = pair;
+	
+	  for (i0 = i = 0; i0 < n0; ++i0) {
+	    for (value0 = values0[i0], i1 = 0; i1 < n1; ++i1, ++i) {
+	      values[i] = reduce(value0, values1[i1]);
+	    }
+	  }
+	
+	  return values;
+	};
+	
 	var descending = function(a, b) {
 	  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
 	};
@@ -26346,36 +26680,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return x === null ? NaN : +x;
 	};
 	
-	var variance = function(array, f) {
-	  var n = array.length,
+	var variance = function(values, valueof) {
+	  var n = values.length,
 	      m = 0,
-	      a,
-	      d,
-	      s = 0,
 	      i = -1,
-	      j = 0;
+	      mean = 0,
+	      value,
+	      delta,
+	      sum = 0;
 	
-	  if (f == null) {
+	  if (valueof == null) {
 	    while (++i < n) {
-	      if (!isNaN(a = number(array[i]))) {
-	        d = a - m;
-	        m += d / ++j;
-	        s += d * (a - m);
+	      if (!isNaN(value = number(values[i]))) {
+	        delta = value - mean;
+	        mean += delta / ++m;
+	        sum += delta * (value - mean);
 	      }
 	    }
 	  }
 	
 	  else {
 	    while (++i < n) {
-	      if (!isNaN(a = number(f(array[i], i, array)))) {
-	        d = a - m;
-	        m += d / ++j;
-	        s += d * (a - m);
+	      if (!isNaN(value = number(valueof(values[i], i, values)))) {
+	        delta = value - mean;
+	        mean += delta / ++m;
+	        sum += delta * (value - mean);
 	      }
 	    }
 	  }
 	
-	  if (j > 1) return s / (j - 1);
+	  if (m > 1) return sum / (m - 1);
 	};
 	
 	var deviation = function(array, f) {
@@ -26383,30 +26717,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return v ? Math.sqrt(v) : v;
 	};
 	
-	var extent = function(array, f) {
-	  var i = -1,
-	      n = array.length,
-	      a,
-	      b,
-	      c;
+	var extent = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      min,
+	      max;
 	
-	  if (f == null) {
-	    while (++i < n) if ((b = array[i]) != null && b >= b) { a = c = b; break; }
-	    while (++i < n) if ((b = array[i]) != null) {
-	      if (a > b) a = b;
-	      if (c < b) c = b;
+	  if (valueof == null) {
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = values[i]) != null && value >= value) {
+	        min = max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = values[i]) != null) {
+	            if (min > value) min = value;
+	            if (max < value) max = value;
+	          }
+	        }
+	      }
 	    }
 	  }
 	
 	  else {
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = c = b; break; }
-	    while (++i < n) if ((b = f(array[i], i, array)) != null) {
-	      if (a > b) a = b;
-	      if (c < b) c = b;
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = valueof(values[i], i, values)) != null && value >= value) {
+	        min = max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = valueof(values[i], i, values)) != null) {
+	            if (min > value) min = value;
+	            if (max < value) max = value;
+	          }
+	        }
+	      }
 	    }
 	  }
 	
-	  return [a, c];
+	  return [min, max];
 	};
 	
 	var array = Array.prototype;
@@ -26443,13 +26789,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	var e2 = Math.sqrt(2);
 	
 	var ticks = function(start, stop, count) {
-	  var step = tickStep(start, stop, count);
-	  return range(
-	    Math.ceil(start / step) * step,
-	    Math.floor(stop / step) * step + step / 2, // inclusive
-	    step
-	  );
+	  var reverse = stop < start,
+	      i = -1,
+	      n,
+	      ticks,
+	      step;
+	
+	  if (reverse) n = start, start = stop, stop = n;
+	
+	  if ((step = tickIncrement(start, stop, count)) === 0 || !isFinite(step)) return [];
+	
+	  if (step > 0) {
+	    start = Math.ceil(start / step);
+	    stop = Math.floor(stop / step);
+	    ticks = new Array(n = Math.ceil(stop - start + 1));
+	    while (++i < n) ticks[i] = (start + i) * step;
+	  } else {
+	    start = Math.floor(start * step);
+	    stop = Math.ceil(stop * step);
+	    ticks = new Array(n = Math.ceil(start - stop + 1));
+	    while (++i < n) ticks[i] = (start - i) / step;
+	  }
+	
+	  if (reverse) ticks.reverse();
+	
+	  return ticks;
 	};
+	
+	function tickIncrement(start, stop, count) {
+	  var step = (stop - start) / Math.max(0, count),
+	      power = Math.floor(Math.log(step) / Math.LN10),
+	      error = step / Math.pow(10, power);
+	  return power >= 0
+	      ? (error >= e10 ? 10 : error >= e5 ? 5 : error >= e2 ? 2 : 1) * Math.pow(10, power)
+	      : -Math.pow(10, -power) / (error >= e10 ? 10 : error >= e5 ? 5 : error >= e2 ? 2 : 1);
+	}
 	
 	function tickStep(start, stop, count) {
 	  var step0 = Math.abs(stop - start) / Math.max(0, count),
@@ -26486,12 +26860,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        tz = threshold(values, x0, x1);
 	
 	    // Convert number of thresholds into uniform thresholds.
-	    if (!Array.isArray(tz)) tz = ticks(x0, x1, tz);
+	    if (!Array.isArray(tz)) {
+	      tz = tickStep(x0, x1, tz);
+	      tz = range(Math.ceil(x0 / tz) * tz, Math.floor(x1 / tz) * tz, tz); // exclusive
+	    }
 	
 	    // Remove any thresholds outside the domain.
 	    var m = tz.length;
 	    while (tz[0] <= x0) tz.shift(), --m;
-	    while (tz[m - 1] >= x1) tz.pop(), --m;
+	    while (tz[m - 1] > x1) tz.pop(), --m;
 	
 	    var bins = new Array(m + 1),
 	        bin;
@@ -26529,17 +26906,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return histogram;
 	};
 	
-	var quantile = function(array, p, f) {
-	  if (f == null) f = number;
-	  if (!(n = array.length)) return;
-	  if ((p = +p) <= 0 || n < 2) return +f(array[0], 0, array);
-	  if (p >= 1) return +f(array[n - 1], n - 1, array);
+	var quantile = function(values, p, valueof) {
+	  if (valueof == null) valueof = number;
+	  if (!(n = values.length)) return;
+	  if ((p = +p) <= 0 || n < 2) return +valueof(values[0], 0, values);
+	  if (p >= 1) return +valueof(values[n - 1], n - 1, values);
 	  var n,
-	      h = (n - 1) * p,
-	      i = Math.floor(h),
-	      a = +f(array[i], i, array),
-	      b = +f(array[i + 1], i + 1, array);
-	  return a + (b - a) * (h - i);
+	      i = (n - 1) * p,
+	      i0 = Math.floor(i),
+	      value0 = +valueof(values[i0], i0, values),
+	      value1 = +valueof(values[i0 + 1], i0 + 1, values);
+	  return value0 + (value1 - value0) * (i - i0);
 	};
 	
 	var freedmanDiaconis = function(values, min, max) {
@@ -26551,55 +26928,85 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return Math.ceil((max - min) / (3.5 * deviation(values) * Math.pow(values.length, -1 / 3)));
 	};
 	
-	var max = function(array, f) {
-	  var i = -1,
-	      n = array.length,
-	      a,
-	      b;
-	
-	  if (f == null) {
-	    while (++i < n) if ((b = array[i]) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = array[i]) != null && b > a) a = b;
-	  }
-	
-	  else {
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b > a) a = b;
-	  }
-	
-	  return a;
-	};
-	
-	var mean = function(array, f) {
-	  var s = 0,
-	      n = array.length,
-	      a,
+	var max = function(values, valueof) {
+	  var n = values.length,
 	      i = -1,
-	      j = n;
+	      value,
+	      max;
 	
-	  if (f == null) {
-	    while (++i < n) if (!isNaN(a = number(array[i]))) s += a; else --j;
+	  if (valueof == null) {
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = values[i]) != null && value >= value) {
+	        max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = values[i]) != null && value > max) {
+	            max = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if (!isNaN(a = number(f(array[i], i, array)))) s += a; else --j;
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = valueof(values[i], i, values)) != null && value >= value) {
+	        max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = valueof(values[i], i, values)) != null && value > max) {
+	            max = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
-	  if (j) return s / j;
+	  return max;
 	};
 	
-	var median = function(array, f) {
-	  var numbers = [],
-	      n = array.length,
-	      a,
-	      i = -1;
+	var mean = function(values, valueof) {
+	  var n = values.length,
+	      m = n,
+	      i = -1,
+	      value,
+	      sum = 0;
 	
-	  if (f == null) {
-	    while (++i < n) if (!isNaN(a = number(array[i]))) numbers.push(a);
+	  if (valueof == null) {
+	    while (++i < n) {
+	      if (!isNaN(value = number(values[i]))) sum += value;
+	      else --m;
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if (!isNaN(a = number(f(array[i], i, array)))) numbers.push(a);
+	    while (++i < n) {
+	      if (!isNaN(value = number(valueof(values[i], i, values)))) sum += value;
+	      else --m;
+	    }
+	  }
+	
+	  if (m) return sum / m;
+	};
+	
+	var median = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      numbers = [];
+	
+	  if (valueof == null) {
+	    while (++i < n) {
+	      if (!isNaN(value = number(values[i]))) {
+	        numbers.push(value);
+	      }
+	    }
+	  }
+	
+	  else {
+	    while (++i < n) {
+	      if (!isNaN(value = number(valueof(values[i], i, values)))) {
+	        numbers.push(value);
+	      }
+	    }
 	  }
 	
 	  return quantile(numbers.sort(ascending), 0.5);
@@ -26627,29 +27034,39 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return merged;
 	};
 	
-	var min = function(array, f) {
-	  var i = -1,
-	      n = array.length,
-	      a,
-	      b;
+	var min = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      min;
 	
-	  if (f == null) {
-	    while (++i < n) if ((b = array[i]) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = array[i]) != null && a > b) a = b;
+	  if (valueof == null) {
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = values[i]) != null && value >= value) {
+	        min = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = values[i]) != null && min > value) {
+	            min = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && a > b) a = b;
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = valueof(values[i], i, values)) != null && value >= value) {
+	        min = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = valueof(values[i], i, values)) != null && min > value) {
+	            min = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
-	  return a;
-	};
-	
-	var pairs = function(array) {
-	  var i = 0, n = array.length - 1, p = array[0], pairs = new Array(n < 0 ? 0 : n);
-	  while (i < n) pairs[i] = [p, p = array[++i]];
-	  return pairs;
+	  return min;
 	};
 	
 	var permute = function(array, indexes) {
@@ -26658,17 +27075,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return permutes;
 	};
 	
-	var scan = function(array, compare) {
-	  if (!(n = array.length)) return;
-	  var i = 0,
-	      n,
+	var scan = function(values, compare) {
+	  if (!(n = values.length)) return;
+	  var n,
+	      i = 0,
 	      j = 0,
 	      xi,
-	      xj = array[j];
+	      xj = values[j];
 	
-	  if (!compare) compare = ascending;
+	  if (compare == null) compare = ascending;
 	
-	  while (++i < n) if (compare(xi = array[i], xj) < 0 || compare(xj, xj) !== 0) xj = xi, j = i;
+	  while (++i < n) {
+	    if (compare(xi = values[i], xj) < 0 || compare(xj, xj) !== 0) {
+	      xj = xi, j = i;
+	    }
+	  }
 	
 	  if (compare(xj, xj) === 0) return j;
 	};
@@ -26688,21 +27109,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return array;
 	};
 	
-	var sum = function(array, f) {
-	  var s = 0,
-	      n = array.length,
-	      a,
-	      i = -1;
+	var sum = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      sum = 0;
 	
-	  if (f == null) {
-	    while (++i < n) if (a = +array[i]) s += a; // Note: zero and null are equivalent.
+	  if (valueof == null) {
+	    while (++i < n) {
+	      if (value = +values[i]) sum += value; // Note: zero and null are equivalent.
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if (a = +f(array[i], i, array)) s += a;
+	    while (++i < n) {
+	      if (value = +valueof(values[i], i, values)) sum += value;
+	    }
 	  }
 	
-	  return s;
+	  return sum;
 	};
 	
 	var transpose = function(matrix) {
@@ -26728,6 +27153,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.bisectLeft = bisectLeft;
 	exports.ascending = ascending;
 	exports.bisector = bisector;
+	exports.cross = cross;
 	exports.descending = descending;
 	exports.deviation = deviation;
 	exports.extent = extent;
@@ -26748,6 +27174,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.shuffle = shuffle;
 	exports.sum = sum;
 	exports.ticks = ticks;
+	exports.tickIncrement = tickIncrement;
 	exports.tickStep = tickStep;
 	exports.transpose = transpose;
 	exports.variance = variance;
@@ -26758,15 +27185,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 151 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-collection/ Version 1.0.2. Copyright 2016 Mike Bostock.
+	// https://d3js.org/d3-collection/ Version 1.0.3. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports) :
-	  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	  (factory((global.d3 = global.d3 || {})));
+		 true ? factory(exports) :
+		typeof define === 'function' && define.amd ? define(['exports'], factory) :
+		(factory((global.d3 = global.d3 || {})));
 	}(this, (function (exports) { 'use strict';
 	
 	var prefix = "$";
@@ -26981,15 +27408,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 152 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-interpolate/ Version 1.1.3. Copyright 2017 Mike Bostock.
+	// https://d3js.org/d3-interpolate/ Version 1.1.4. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports, __webpack_require__(153)) :
-	  typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) :
-	  (factory((global.d3 = global.d3 || {}),global.d3));
+		 true ? factory(exports, __webpack_require__(151)) :
+		typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) :
+		(factory((global.d3 = global.d3 || {}),global.d3));
 	}(this, (function (exports,d3Color) { 'use strict';
 	
 	function basis(t1, v0, v1, v2, v3) {
@@ -27532,15 +27959,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 153 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-color/ Version 1.0.2. Copyright 2016 Mike Bostock.
+	// https://d3js.org/d3-color/ Version 1.0.3. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports) :
-	  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	  (factory((global.d3 = global.d3 || {})));
+		 true ? factory(exports) :
+		typeof define === 'function' && define.amd ? define(['exports'], factory) :
+		(factory((global.d3 = global.d3 || {})));
 	}(this, (function (exports) { 'use strict';
 	
 	var define = function(constructor, factory, prototype) {
@@ -28061,349 +28488,352 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 154 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-format/ Version 1.0.2. Copyright 2016 Mike Bostock.
+	// https://d3js.org/d3-format/ Version 1.2.0. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports) :
-	  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	  (factory((global.d3 = global.d3 || {})));
-	}(this, function (exports) { 'use strict';
+		 true ? factory(exports) :
+		typeof define === 'function' && define.amd ? define(['exports'], factory) :
+		(factory((global.d3 = global.d3 || {})));
+	}(this, (function (exports) { 'use strict';
 	
-	  // Computes the decimal coefficient and exponent of the specified number x with
-	  // significant digits p, where x is positive and p is in [1, 21] or undefined.
-	  // For example, formatDecimal(1.23) returns ["123", 0].
-	  function formatDecimal(x, p) {
-	    if ((i = (x = p ? x.toExponential(p - 1) : x.toExponential()).indexOf("e")) < 0) return null; // NaN, ±Infinity
-	    var i, coefficient = x.slice(0, i);
+	// Computes the decimal coefficient and exponent of the specified number x with
+	// significant digits p, where x is positive and p is in [1, 21] or undefined.
+	// For example, formatDecimal(1.23) returns ["123", 0].
+	var formatDecimal = function(x, p) {
+	  if ((i = (x = p ? x.toExponential(p - 1) : x.toExponential()).indexOf("e")) < 0) return null; // NaN, ±Infinity
+	  var i, coefficient = x.slice(0, i);
 	
-	    // The string returned by toExponential either has the form \d\.\d+e[-+]\d+
-	    // (e.g., 1.2e+3) or the form \de[-+]\d+ (e.g., 1e+3).
-	    return [
-	      coefficient.length > 1 ? coefficient[0] + coefficient.slice(2) : coefficient,
-	      +x.slice(i + 1)
-	    ];
-	  }
+	  // The string returned by toExponential either has the form \d\.\d+e[-+]\d+
+	  // (e.g., 1.2e+3) or the form \de[-+]\d+ (e.g., 1e+3).
+	  return [
+	    coefficient.length > 1 ? coefficient[0] + coefficient.slice(2) : coefficient,
+	    +x.slice(i + 1)
+	  ];
+	};
 	
-	  function exponent(x) {
-	    return x = formatDecimal(Math.abs(x)), x ? x[1] : NaN;
-	  }
+	var exponent = function(x) {
+	  return x = formatDecimal(Math.abs(x)), x ? x[1] : NaN;
+	};
 	
-	  function formatGroup(grouping, thousands) {
-	    return function(value, width) {
-	      var i = value.length,
-	          t = [],
-	          j = 0,
-	          g = grouping[0],
-	          length = 0;
+	var formatGroup = function(grouping, thousands) {
+	  return function(value, width) {
+	    var i = value.length,
+	        t = [],
+	        j = 0,
+	        g = grouping[0],
+	        length = 0;
 	
-	      while (i > 0 && g > 0) {
-	        if (length + g + 1 > width) g = Math.max(1, width - length);
-	        t.push(value.substring(i -= g, i + g));
-	        if ((length += g + 1) > width) break;
-	        g = grouping[j = (j + 1) % grouping.length];
-	      }
-	
-	      return t.reverse().join(thousands);
-	    };
-	  }
-	
-	  function formatDefault(x, p) {
-	    x = x.toPrecision(p);
-	
-	    out: for (var n = x.length, i = 1, i0 = -1, i1; i < n; ++i) {
-	      switch (x[i]) {
-	        case ".": i0 = i1 = i; break;
-	        case "0": if (i0 === 0) i0 = i; i1 = i; break;
-	        case "e": break out;
-	        default: if (i0 > 0) i0 = 0; break;
-	      }
+	    while (i > 0 && g > 0) {
+	      if (length + g + 1 > width) g = Math.max(1, width - length);
+	      t.push(value.substring(i -= g, i + g));
+	      if ((length += g + 1) > width) break;
+	      g = grouping[j = (j + 1) % grouping.length];
 	    }
 	
-	    return i0 > 0 ? x.slice(0, i0) + x.slice(i1 + 1) : x;
-	  }
-	
-	  var prefixExponent;
-	
-	  function formatPrefixAuto(x, p) {
-	    var d = formatDecimal(x, p);
-	    if (!d) return x + "";
-	    var coefficient = d[0],
-	        exponent = d[1],
-	        i = exponent - (prefixExponent = Math.max(-8, Math.min(8, Math.floor(exponent / 3))) * 3) + 1,
-	        n = coefficient.length;
-	    return i === n ? coefficient
-	        : i > n ? coefficient + new Array(i - n + 1).join("0")
-	        : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i)
-	        : "0." + new Array(1 - i).join("0") + formatDecimal(x, Math.max(0, p + i - 1))[0]; // less than 1y!
-	  }
-	
-	  function formatRounded(x, p) {
-	    var d = formatDecimal(x, p);
-	    if (!d) return x + "";
-	    var coefficient = d[0],
-	        exponent = d[1];
-	    return exponent < 0 ? "0." + new Array(-exponent).join("0") + coefficient
-	        : coefficient.length > exponent + 1 ? coefficient.slice(0, exponent + 1) + "." + coefficient.slice(exponent + 1)
-	        : coefficient + new Array(exponent - coefficient.length + 2).join("0");
-	  }
-	
-	  var formatTypes = {
-	    "": formatDefault,
-	    "%": function(x, p) { return (x * 100).toFixed(p); },
-	    "b": function(x) { return Math.round(x).toString(2); },
-	    "c": function(x) { return x + ""; },
-	    "d": function(x) { return Math.round(x).toString(10); },
-	    "e": function(x, p) { return x.toExponential(p); },
-	    "f": function(x, p) { return x.toFixed(p); },
-	    "g": function(x, p) { return x.toPrecision(p); },
-	    "o": function(x) { return Math.round(x).toString(8); },
-	    "p": function(x, p) { return formatRounded(x * 100, p); },
-	    "r": formatRounded,
-	    "s": formatPrefixAuto,
-	    "X": function(x) { return Math.round(x).toString(16).toUpperCase(); },
-	    "x": function(x) { return Math.round(x).toString(16); }
+	    return t.reverse().join(thousands);
 	  };
+	};
 	
-	  // [[fill]align][sign][symbol][0][width][,][.precision][type]
-	  var re = /^(?:(.)?([<>=^]))?([+\-\( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?([a-z%])?$/i;
-	
-	  function formatSpecifier(specifier) {
-	    return new FormatSpecifier(specifier);
-	  }
-	
-	  function FormatSpecifier(specifier) {
-	    if (!(match = re.exec(specifier))) throw new Error("invalid format: " + specifier);
-	
-	    var match,
-	        fill = match[1] || " ",
-	        align = match[2] || ">",
-	        sign = match[3] || "-",
-	        symbol = match[4] || "",
-	        zero = !!match[5],
-	        width = match[6] && +match[6],
-	        comma = !!match[7],
-	        precision = match[8] && +match[8].slice(1),
-	        type = match[9] || "";
-	
-	    // The "n" type is an alias for ",g".
-	    if (type === "n") comma = true, type = "g";
-	
-	    // Map invalid types to the default format.
-	    else if (!formatTypes[type]) type = "";
-	
-	    // If zero fill is specified, padding goes after sign and before digits.
-	    if (zero || (fill === "0" && align === "=")) zero = true, fill = "0", align = "=";
-	
-	    this.fill = fill;
-	    this.align = align;
-	    this.sign = sign;
-	    this.symbol = symbol;
-	    this.zero = zero;
-	    this.width = width;
-	    this.comma = comma;
-	    this.precision = precision;
-	    this.type = type;
-	  }
-	
-	  FormatSpecifier.prototype.toString = function() {
-	    return this.fill
-	        + this.align
-	        + this.sign
-	        + this.symbol
-	        + (this.zero ? "0" : "")
-	        + (this.width == null ? "" : Math.max(1, this.width | 0))
-	        + (this.comma ? "," : "")
-	        + (this.precision == null ? "" : "." + Math.max(0, this.precision | 0))
-	        + this.type;
+	var formatNumerals = function(numerals) {
+	  return function(value) {
+	    return value.replace(/[0-9]/g, function(i) {
+	      return numerals[+i];
+	    });
 	  };
+	};
 	
-	  var prefixes = ["y","z","a","f","p","n","µ","m","","k","M","G","T","P","E","Z","Y"];
+	var formatDefault = function(x, p) {
+	  x = x.toPrecision(p);
 	
-	  function identity(x) {
-	    return x;
+	  out: for (var n = x.length, i = 1, i0 = -1, i1; i < n; ++i) {
+	    switch (x[i]) {
+	      case ".": i0 = i1 = i; break;
+	      case "0": if (i0 === 0) i0 = i; i1 = i; break;
+	      case "e": break out;
+	      default: if (i0 > 0) i0 = 0; break;
+	    }
 	  }
 	
-	  function formatLocale(locale) {
-	    var group = locale.grouping && locale.thousands ? formatGroup(locale.grouping, locale.thousands) : identity,
-	        currency = locale.currency,
-	        decimal = locale.decimal;
+	  return i0 > 0 ? x.slice(0, i0) + x.slice(i1 + 1) : x;
+	};
 	
-	    function newFormat(specifier) {
-	      specifier = formatSpecifier(specifier);
+	var prefixExponent;
 	
-	      var fill = specifier.fill,
-	          align = specifier.align,
-	          sign = specifier.sign,
-	          symbol = specifier.symbol,
-	          zero = specifier.zero,
-	          width = specifier.width,
-	          comma = specifier.comma,
-	          precision = specifier.precision,
-	          type = specifier.type;
+	var formatPrefixAuto = function(x, p) {
+	  var d = formatDecimal(x, p);
+	  if (!d) return x + "";
+	  var coefficient = d[0],
+	      exponent = d[1],
+	      i = exponent - (prefixExponent = Math.max(-8, Math.min(8, Math.floor(exponent / 3))) * 3) + 1,
+	      n = coefficient.length;
+	  return i === n ? coefficient
+	      : i > n ? coefficient + new Array(i - n + 1).join("0")
+	      : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i)
+	      : "0." + new Array(1 - i).join("0") + formatDecimal(x, Math.max(0, p + i - 1))[0]; // less than 1y!
+	};
 	
-	      // Compute the prefix and suffix.
-	      // For SI-prefix, the suffix is lazily computed.
-	      var prefix = symbol === "$" ? currency[0] : symbol === "#" && /[boxX]/.test(type) ? "0" + type.toLowerCase() : "",
-	          suffix = symbol === "$" ? currency[1] : /[%p]/.test(type) ? "%" : "";
+	var formatRounded = function(x, p) {
+	  var d = formatDecimal(x, p);
+	  if (!d) return x + "";
+	  var coefficient = d[0],
+	      exponent = d[1];
+	  return exponent < 0 ? "0." + new Array(-exponent).join("0") + coefficient
+	      : coefficient.length > exponent + 1 ? coefficient.slice(0, exponent + 1) + "." + coefficient.slice(exponent + 1)
+	      : coefficient + new Array(exponent - coefficient.length + 2).join("0");
+	};
 	
-	      // What format function should we use?
-	      // Is this an integer type?
-	      // Can this type generate exponential notation?
-	      var formatType = formatTypes[type],
-	          maybeSuffix = !type || /[defgprs%]/.test(type);
+	var formatTypes = {
+	  "": formatDefault,
+	  "%": function(x, p) { return (x * 100).toFixed(p); },
+	  "b": function(x) { return Math.round(x).toString(2); },
+	  "c": function(x) { return x + ""; },
+	  "d": function(x) { return Math.round(x).toString(10); },
+	  "e": function(x, p) { return x.toExponential(p); },
+	  "f": function(x, p) { return x.toFixed(p); },
+	  "g": function(x, p) { return x.toPrecision(p); },
+	  "o": function(x) { return Math.round(x).toString(8); },
+	  "p": function(x, p) { return formatRounded(x * 100, p); },
+	  "r": formatRounded,
+	  "s": formatPrefixAuto,
+	  "X": function(x) { return Math.round(x).toString(16).toUpperCase(); },
+	  "x": function(x) { return Math.round(x).toString(16); }
+	};
 	
-	      // Set the default precision if not specified,
-	      // or clamp the specified precision to the supported range.
-	      // For significant precision, it must be in [1, 21].
-	      // For fixed precision, it must be in [0, 20].
-	      precision = precision == null ? (type ? 6 : 12)
-	          : /[gprs]/.test(type) ? Math.max(1, Math.min(21, precision))
-	          : Math.max(0, Math.min(20, precision));
+	// [[fill]align][sign][symbol][0][width][,][.precision][type]
+	var re = /^(?:(.)?([<>=^]))?([+\-\( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?([a-z%])?$/i;
 	
-	      function format(value) {
-	        var valuePrefix = prefix,
-	            valueSuffix = suffix,
-	            i, n, c;
+	function formatSpecifier(specifier) {
+	  return new FormatSpecifier(specifier);
+	}
 	
-	        if (type === "c") {
-	          valueSuffix = formatType(value) + valueSuffix;
-	          value = "";
-	        } else {
-	          value = +value;
+	formatSpecifier.prototype = FormatSpecifier.prototype; // instanceof
 	
-	          // Convert negative to positive, and compute the prefix.
-	          // Note that -0 is not less than 0, but 1 / -0 is!
-	          var valueNegative = (value < 0 || 1 / value < 0) && (value *= -1, true);
+	function FormatSpecifier(specifier) {
+	  if (!(match = re.exec(specifier))) throw new Error("invalid format: " + specifier);
 	
-	          // Perform the initial formatting.
-	          value = formatType(value, precision);
+	  var match,
+	      fill = match[1] || " ",
+	      align = match[2] || ">",
+	      sign = match[3] || "-",
+	      symbol = match[4] || "",
+	      zero = !!match[5],
+	      width = match[6] && +match[6],
+	      comma = !!match[7],
+	      precision = match[8] && +match[8].slice(1),
+	      type = match[9] || "";
 	
-	          // If the original value was negative, it may be rounded to zero during
-	          // formatting; treat this as (positive) zero.
-	          if (valueNegative) {
-	            i = -1, n = value.length;
-	            valueNegative = false;
-	            while (++i < n) {
-	              if (c = value.charCodeAt(i), (48 < c && c < 58)
-	                  || (type === "x" && 96 < c && c < 103)
-	                  || (type === "X" && 64 < c && c < 71)) {
-	                valueNegative = true;
-	                break;
-	              }
-	            }
-	          }
+	  // The "n" type is an alias for ",g".
+	  if (type === "n") comma = true, type = "g";
 	
-	          // Compute the prefix and suffix.
-	          valuePrefix = (valueNegative ? (sign === "(" ? sign : "-") : sign === "-" || sign === "(" ? "" : sign) + valuePrefix;
-	          valueSuffix = valueSuffix + (type === "s" ? prefixes[8 + prefixExponent / 3] : "") + (valueNegative && sign === "(" ? ")" : "");
+	  // Map invalid types to the default format.
+	  else if (!formatTypes[type]) type = "";
 	
-	          // Break the formatted value into the integer “value” part that can be
-	          // grouped, and fractional or exponential “suffix” part that is not.
-	          if (maybeSuffix) {
-	            i = -1, n = value.length;
-	            while (++i < n) {
-	              if (c = value.charCodeAt(i), 48 > c || c > 57) {
-	                valueSuffix = (c === 46 ? decimal + value.slice(i + 1) : value.slice(i)) + valueSuffix;
-	                value = value.slice(0, i);
-	                break;
-	              }
+	  // If zero fill is specified, padding goes after sign and before digits.
+	  if (zero || (fill === "0" && align === "=")) zero = true, fill = "0", align = "=";
+	
+	  this.fill = fill;
+	  this.align = align;
+	  this.sign = sign;
+	  this.symbol = symbol;
+	  this.zero = zero;
+	  this.width = width;
+	  this.comma = comma;
+	  this.precision = precision;
+	  this.type = type;
+	}
+	
+	FormatSpecifier.prototype.toString = function() {
+	  return this.fill
+	      + this.align
+	      + this.sign
+	      + this.symbol
+	      + (this.zero ? "0" : "")
+	      + (this.width == null ? "" : Math.max(1, this.width | 0))
+	      + (this.comma ? "," : "")
+	      + (this.precision == null ? "" : "." + Math.max(0, this.precision | 0))
+	      + this.type;
+	};
+	
+	var identity = function(x) {
+	  return x;
+	};
+	
+	var prefixes = ["y","z","a","f","p","n","µ","m","","k","M","G","T","P","E","Z","Y"];
+	
+	var formatLocale = function(locale) {
+	  var group = locale.grouping && locale.thousands ? formatGroup(locale.grouping, locale.thousands) : identity,
+	      currency = locale.currency,
+	      decimal = locale.decimal,
+	      numerals = locale.numerals ? formatNumerals(locale.numerals) : identity,
+	      percent = locale.percent || "%";
+	
+	  function newFormat(specifier) {
+	    specifier = formatSpecifier(specifier);
+	
+	    var fill = specifier.fill,
+	        align = specifier.align,
+	        sign = specifier.sign,
+	        symbol = specifier.symbol,
+	        zero = specifier.zero,
+	        width = specifier.width,
+	        comma = specifier.comma,
+	        precision = specifier.precision,
+	        type = specifier.type;
+	
+	    // Compute the prefix and suffix.
+	    // For SI-prefix, the suffix is lazily computed.
+	    var prefix = symbol === "$" ? currency[0] : symbol === "#" && /[boxX]/.test(type) ? "0" + type.toLowerCase() : "",
+	        suffix = symbol === "$" ? currency[1] : /[%p]/.test(type) ? percent : "";
+	
+	    // What format function should we use?
+	    // Is this an integer type?
+	    // Can this type generate exponential notation?
+	    var formatType = formatTypes[type],
+	        maybeSuffix = !type || /[defgprs%]/.test(type);
+	
+	    // Set the default precision if not specified,
+	    // or clamp the specified precision to the supported range.
+	    // For significant precision, it must be in [1, 21].
+	    // For fixed precision, it must be in [0, 20].
+	    precision = precision == null ? (type ? 6 : 12)
+	        : /[gprs]/.test(type) ? Math.max(1, Math.min(21, precision))
+	        : Math.max(0, Math.min(20, precision));
+	
+	    function format(value) {
+	      var valuePrefix = prefix,
+	          valueSuffix = suffix,
+	          i, n, c;
+	
+	      if (type === "c") {
+	        valueSuffix = formatType(value) + valueSuffix;
+	        value = "";
+	      } else {
+	        value = +value;
+	
+	        // Perform the initial formatting.
+	        var valueNegative = value < 0;
+	        value = formatType(Math.abs(value), precision);
+	
+	        // If a negative value rounds to zero during formatting, treat as positive.
+	        if (valueNegative && +value === 0) valueNegative = false;
+	
+	        // Compute the prefix and suffix.
+	        valuePrefix = (valueNegative ? (sign === "(" ? sign : "-") : sign === "-" || sign === "(" ? "" : sign) + valuePrefix;
+	        valueSuffix = valueSuffix + (type === "s" ? prefixes[8 + prefixExponent / 3] : "") + (valueNegative && sign === "(" ? ")" : "");
+	
+	        // Break the formatted value into the integer “value” part that can be
+	        // grouped, and fractional or exponential “suffix” part that is not.
+	        if (maybeSuffix) {
+	          i = -1, n = value.length;
+	          while (++i < n) {
+	            if (c = value.charCodeAt(i), 48 > c || c > 57) {
+	              valueSuffix = (c === 46 ? decimal + value.slice(i + 1) : value.slice(i)) + valueSuffix;
+	              value = value.slice(0, i);
+	              break;
 	            }
 	          }
 	        }
-	
-	        // If the fill character is not "0", grouping is applied before padding.
-	        if (comma && !zero) value = group(value, Infinity);
-	
-	        // Compute the padding.
-	        var length = valuePrefix.length + value.length + valueSuffix.length,
-	            padding = length < width ? new Array(width - length + 1).join(fill) : "";
-	
-	        // If the fill character is "0", grouping is applied after padding.
-	        if (comma && zero) value = group(padding + value, padding.length ? width - valueSuffix.length : Infinity), padding = "";
-	
-	        // Reconstruct the final output based on the desired alignment.
-	        switch (align) {
-	          case "<": return valuePrefix + value + valueSuffix + padding;
-	          case "=": return valuePrefix + padding + value + valueSuffix;
-	          case "^": return padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length);
-	        }
-	        return padding + valuePrefix + value + valueSuffix;
 	      }
 	
-	      format.toString = function() {
-	        return specifier + "";
-	      };
+	      // If the fill character is not "0", grouping is applied before padding.
+	      if (comma && !zero) value = group(value, Infinity);
 	
-	      return format;
+	      // Compute the padding.
+	      var length = valuePrefix.length + value.length + valueSuffix.length,
+	          padding = length < width ? new Array(width - length + 1).join(fill) : "";
+	
+	      // If the fill character is "0", grouping is applied after padding.
+	      if (comma && zero) value = group(padding + value, padding.length ? width - valueSuffix.length : Infinity), padding = "";
+	
+	      // Reconstruct the final output based on the desired alignment.
+	      switch (align) {
+	        case "<": value = valuePrefix + value + valueSuffix + padding; break;
+	        case "=": value = valuePrefix + padding + value + valueSuffix; break;
+	        case "^": value = padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length); break;
+	        default: value = padding + valuePrefix + value + valueSuffix; break;
+	      }
+	
+	      return numerals(value);
 	    }
 	
-	    function formatPrefix(specifier, value) {
-	      var f = newFormat((specifier = formatSpecifier(specifier), specifier.type = "f", specifier)),
-	          e = Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3,
-	          k = Math.pow(10, -e),
-	          prefix = prefixes[8 + e / 3];
-	      return function(value) {
-	        return f(k * value) + prefix;
-	      };
-	    }
+	    format.toString = function() {
+	      return specifier + "";
+	    };
 	
-	    return {
-	      format: newFormat,
-	      formatPrefix: formatPrefix
+	    return format;
+	  }
+	
+	  function formatPrefix(specifier, value) {
+	    var f = newFormat((specifier = formatSpecifier(specifier), specifier.type = "f", specifier)),
+	        e = Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3,
+	        k = Math.pow(10, -e),
+	        prefix = prefixes[8 + e / 3];
+	    return function(value) {
+	      return f(k * value) + prefix;
 	    };
 	  }
 	
-	  var locale;
-	  defaultLocale({
-	    decimal: ".",
-	    thousands: ",",
-	    grouping: [3],
-	    currency: ["$", ""]
-	  });
+	  return {
+	    format: newFormat,
+	    formatPrefix: formatPrefix
+	  };
+	};
 	
-	  function defaultLocale(definition) {
-	    locale = formatLocale(definition);
-	    exports.format = locale.format;
-	    exports.formatPrefix = locale.formatPrefix;
-	    return locale;
-	  }
+	var locale;
 	
-	  function precisionFixed(step) {
-	    return Math.max(0, -exponent(Math.abs(step)));
-	  }
 	
-	  function precisionPrefix(step, value) {
-	    return Math.max(0, Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3 - exponent(Math.abs(step)));
-	  }
 	
-	  function precisionRound(step, max) {
-	    step = Math.abs(step), max = Math.abs(max) - step;
-	    return Math.max(0, exponent(max) - exponent(step)) + 1;
-	  }
+	defaultLocale({
+	  decimal: ".",
+	  thousands: ",",
+	  grouping: [3],
+	  currency: ["$", ""]
+	});
 	
-	  exports.formatDefaultLocale = defaultLocale;
-	  exports.formatLocale = formatLocale;
-	  exports.formatSpecifier = formatSpecifier;
-	  exports.precisionFixed = precisionFixed;
-	  exports.precisionPrefix = precisionPrefix;
-	  exports.precisionRound = precisionRound;
+	function defaultLocale(definition) {
+	  locale = formatLocale(definition);
+	  exports.format = locale.format;
+	  exports.formatPrefix = locale.formatPrefix;
+	  return locale;
+	}
 	
-	  Object.defineProperty(exports, '__esModule', { value: true });
+	var precisionFixed = function(step) {
+	  return Math.max(0, -exponent(Math.abs(step)));
+	};
 	
-	}));
+	var precisionPrefix = function(step, value) {
+	  return Math.max(0, Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3 - exponent(Math.abs(step)));
+	};
+	
+	var precisionRound = function(step, max) {
+	  step = Math.abs(step), max = Math.abs(max) - step;
+	  return Math.max(0, exponent(max) - exponent(step)) + 1;
+	};
+	
+	exports.formatDefaultLocale = defaultLocale;
+	exports.formatLocale = formatLocale;
+	exports.formatSpecifier = formatSpecifier;
+	exports.precisionFixed = precisionFixed;
+	exports.precisionPrefix = precisionPrefix;
+	exports.precisionRound = precisionRound;
+	
+	Object.defineProperty(exports, '__esModule', { value: true });
+	
+	})));
 
-/***/ },
-/* 155 */
-/***/ function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-time/ Version 1.0.4. Copyright 2016 Mike Bostock.
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// https://d3js.org/d3-time/ Version 1.0.6. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports) :
-	  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	  (factory((global.d3 = global.d3 || {})));
+		 true ? factory(exports) :
+		typeof define === 'function' && define.amd ? define(['exports'], factory) :
+		(factory((global.d3 = global.d3 || {})));
 	}(this, (function (exports) { 'use strict';
 	
 	var t0 = new Date;
@@ -28779,15 +29209,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 156 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org/d3-time-format/ Version 2.0.3. Copyright 2016 Mike Bostock.
+	// https://d3js.org/d3-time-format/ Version 2.0.5. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
-	   true ? factory(exports, __webpack_require__(155)) :
-	  typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) :
-	  (factory((global.d3 = global.d3 || {}),global.d3));
+		 true ? factory(exports, __webpack_require__(153)) :
+		typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) :
+		(factory((global.d3 = global.d3 || {}),global.d3));
 	}(this, (function (exports,d3Time) { 'use strict';
 	
 	function localDate(d) {
@@ -29373,18 +29803,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 157 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	// https://d3js.org Version 4.5.0. Copyright 2017 Mike Bostock.
+	// https://d3js.org Version 4.8.0. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
 		 true ? factory(exports) :
 		typeof define === 'function' && define.amd ? define(['exports'], factory) :
 		(factory((global.d3 = global.d3 || {})));
 	}(this, (function (exports) { 'use strict';
 	
-	var version = "4.5.0";
+	var version = "4.8.0";
 	
 	var ascending = function(a, b) {
 	  return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
@@ -29426,6 +29856,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	var bisectRight = ascendingBisect.right;
 	var bisectLeft = ascendingBisect.left;
 	
+	var pairs = function(array, f) {
+	  if (f == null) f = pair;
+	  var i = 0, n = array.length - 1, p = array[0], pairs = new Array(n < 0 ? 0 : n);
+	  while (i < n) pairs[i] = f(p, p = array[++i]);
+	  return pairs;
+	};
+	
+	function pair(a, b) {
+	  return [a, b];
+	}
+	
+	var cross = function(values0, values1, reduce) {
+	  var n0 = values0.length,
+	      n1 = values1.length,
+	      values = new Array(n0 * n1),
+	      i0,
+	      i1,
+	      i,
+	      value0;
+	
+	  if (reduce == null) reduce = pair;
+	
+	  for (i0 = i = 0; i0 < n0; ++i0) {
+	    for (value0 = values0[i0], i1 = 0; i1 < n1; ++i1, ++i) {
+	      values[i] = reduce(value0, values1[i1]);
+	    }
+	  }
+	
+	  return values;
+	};
+	
 	var descending = function(a, b) {
 	  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
 	};
@@ -29434,36 +29895,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return x === null ? NaN : +x;
 	};
 	
-	var variance = function(array, f) {
-	  var n = array.length,
+	var variance = function(values, valueof) {
+	  var n = values.length,
 	      m = 0,
-	      a,
-	      d,
-	      s = 0,
 	      i = -1,
-	      j = 0;
+	      mean = 0,
+	      value,
+	      delta,
+	      sum = 0;
 	
-	  if (f == null) {
+	  if (valueof == null) {
 	    while (++i < n) {
-	      if (!isNaN(a = number(array[i]))) {
-	        d = a - m;
-	        m += d / ++j;
-	        s += d * (a - m);
+	      if (!isNaN(value = number(values[i]))) {
+	        delta = value - mean;
+	        mean += delta / ++m;
+	        sum += delta * (value - mean);
 	      }
 	    }
 	  }
 	
 	  else {
 	    while (++i < n) {
-	      if (!isNaN(a = number(f(array[i], i, array)))) {
-	        d = a - m;
-	        m += d / ++j;
-	        s += d * (a - m);
+	      if (!isNaN(value = number(valueof(values[i], i, values)))) {
+	        delta = value - mean;
+	        mean += delta / ++m;
+	        sum += delta * (value - mean);
 	      }
 	    }
 	  }
 	
-	  if (j > 1) return s / (j - 1);
+	  if (m > 1) return sum / (m - 1);
 	};
 	
 	var deviation = function(array, f) {
@@ -29471,30 +29932,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return v ? Math.sqrt(v) : v;
 	};
 	
-	var extent = function(array, f) {
-	  var i = -1,
-	      n = array.length,
-	      a,
-	      b,
-	      c;
+	var extent = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      min,
+	      max;
 	
-	  if (f == null) {
-	    while (++i < n) if ((b = array[i]) != null && b >= b) { a = c = b; break; }
-	    while (++i < n) if ((b = array[i]) != null) {
-	      if (a > b) a = b;
-	      if (c < b) c = b;
+	  if (valueof == null) {
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = values[i]) != null && value >= value) {
+	        min = max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = values[i]) != null) {
+	            if (min > value) min = value;
+	            if (max < value) max = value;
+	          }
+	        }
+	      }
 	    }
 	  }
 	
 	  else {
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = c = b; break; }
-	    while (++i < n) if ((b = f(array[i], i, array)) != null) {
-	      if (a > b) a = b;
-	      if (c < b) c = b;
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = valueof(values[i], i, values)) != null && value >= value) {
+	        min = max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = valueof(values[i], i, values)) != null) {
+	            if (min > value) min = value;
+	            if (max < value) max = value;
+	          }
+	        }
+	      }
 	    }
 	  }
 	
-	  return [a, c];
+	  return [min, max];
 	};
 	
 	var array = Array.prototype;
@@ -29531,13 +30004,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	var e2 = Math.sqrt(2);
 	
 	var ticks = function(start, stop, count) {
-	  var step = tickStep(start, stop, count);
-	  return sequence(
-	    Math.ceil(start / step) * step,
-	    Math.floor(stop / step) * step + step / 2, // inclusive
-	    step
-	  );
+	  var reverse = stop < start,
+	      i = -1,
+	      n,
+	      ticks,
+	      step;
+	
+	  if (reverse) n = start, start = stop, stop = n;
+	
+	  if ((step = tickIncrement(start, stop, count)) === 0 || !isFinite(step)) return [];
+	
+	  if (step > 0) {
+	    start = Math.ceil(start / step);
+	    stop = Math.floor(stop / step);
+	    ticks = new Array(n = Math.ceil(stop - start + 1));
+	    while (++i < n) ticks[i] = (start + i) * step;
+	  } else {
+	    start = Math.floor(start * step);
+	    stop = Math.ceil(stop * step);
+	    ticks = new Array(n = Math.ceil(start - stop + 1));
+	    while (++i < n) ticks[i] = (start - i) / step;
+	  }
+	
+	  if (reverse) ticks.reverse();
+	
+	  return ticks;
 	};
+	
+	function tickIncrement(start, stop, count) {
+	  var step = (stop - start) / Math.max(0, count),
+	      power = Math.floor(Math.log(step) / Math.LN10),
+	      error = step / Math.pow(10, power);
+	  return power >= 0
+	      ? (error >= e10 ? 10 : error >= e5 ? 5 : error >= e2 ? 2 : 1) * Math.pow(10, power)
+	      : -Math.pow(10, -power) / (error >= e10 ? 10 : error >= e5 ? 5 : error >= e2 ? 2 : 1);
+	}
 	
 	function tickStep(start, stop, count) {
 	  var step0 = Math.abs(stop - start) / Math.max(0, count),
@@ -29574,12 +30075,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        tz = threshold(values, x0, x1);
 	
 	    // Convert number of thresholds into uniform thresholds.
-	    if (!Array.isArray(tz)) tz = ticks(x0, x1, tz);
+	    if (!Array.isArray(tz)) {
+	      tz = tickStep(x0, x1, tz);
+	      tz = sequence(Math.ceil(x0 / tz) * tz, Math.floor(x1 / tz) * tz, tz); // exclusive
+	    }
 	
 	    // Remove any thresholds outside the domain.
 	    var m = tz.length;
 	    while (tz[0] <= x0) tz.shift(), --m;
-	    while (tz[m - 1] >= x1) tz.pop(), --m;
+	    while (tz[m - 1] > x1) tz.pop(), --m;
 	
 	    var bins = new Array(m + 1),
 	        bin;
@@ -29617,17 +30121,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return histogram;
 	};
 	
-	var threshold = function(array, p, f) {
-	  if (f == null) f = number;
-	  if (!(n = array.length)) return;
-	  if ((p = +p) <= 0 || n < 2) return +f(array[0], 0, array);
-	  if (p >= 1) return +f(array[n - 1], n - 1, array);
+	var threshold = function(values, p, valueof) {
+	  if (valueof == null) valueof = number;
+	  if (!(n = values.length)) return;
+	  if ((p = +p) <= 0 || n < 2) return +valueof(values[0], 0, values);
+	  if (p >= 1) return +valueof(values[n - 1], n - 1, values);
 	  var n,
-	      h = (n - 1) * p,
-	      i = Math.floor(h),
-	      a = +f(array[i], i, array),
-	      b = +f(array[i + 1], i + 1, array);
-	  return a + (b - a) * (h - i);
+	      i = (n - 1) * p,
+	      i0 = Math.floor(i),
+	      value0 = +valueof(values[i0], i0, values),
+	      value1 = +valueof(values[i0 + 1], i0 + 1, values);
+	  return value0 + (value1 - value0) * (i - i0);
 	};
 	
 	var freedmanDiaconis = function(values, min, max) {
@@ -29639,55 +30143,85 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return Math.ceil((max - min) / (3.5 * deviation(values) * Math.pow(values.length, -1 / 3)));
 	};
 	
-	var max = function(array, f) {
-	  var i = -1,
-	      n = array.length,
-	      a,
-	      b;
-	
-	  if (f == null) {
-	    while (++i < n) if ((b = array[i]) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = array[i]) != null && b > a) a = b;
-	  }
-	
-	  else {
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b > a) a = b;
-	  }
-	
-	  return a;
-	};
-	
-	var mean = function(array, f) {
-	  var s = 0,
-	      n = array.length,
-	      a,
+	var max = function(values, valueof) {
+	  var n = values.length,
 	      i = -1,
-	      j = n;
+	      value,
+	      max;
 	
-	  if (f == null) {
-	    while (++i < n) if (!isNaN(a = number(array[i]))) s += a; else --j;
+	  if (valueof == null) {
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = values[i]) != null && value >= value) {
+	        max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = values[i]) != null && value > max) {
+	            max = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if (!isNaN(a = number(f(array[i], i, array)))) s += a; else --j;
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = valueof(values[i], i, values)) != null && value >= value) {
+	        max = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = valueof(values[i], i, values)) != null && value > max) {
+	            max = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
-	  if (j) return s / j;
+	  return max;
 	};
 	
-	var median = function(array, f) {
-	  var numbers = [],
-	      n = array.length,
-	      a,
-	      i = -1;
+	var mean = function(values, valueof) {
+	  var n = values.length,
+	      m = n,
+	      i = -1,
+	      value,
+	      sum = 0;
 	
-	  if (f == null) {
-	    while (++i < n) if (!isNaN(a = number(array[i]))) numbers.push(a);
+	  if (valueof == null) {
+	    while (++i < n) {
+	      if (!isNaN(value = number(values[i]))) sum += value;
+	      else --m;
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if (!isNaN(a = number(f(array[i], i, array)))) numbers.push(a);
+	    while (++i < n) {
+	      if (!isNaN(value = number(valueof(values[i], i, values)))) sum += value;
+	      else --m;
+	    }
+	  }
+	
+	  if (m) return sum / m;
+	};
+	
+	var median = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      numbers = [];
+	
+	  if (valueof == null) {
+	    while (++i < n) {
+	      if (!isNaN(value = number(values[i]))) {
+	        numbers.push(value);
+	      }
+	    }
+	  }
+	
+	  else {
+	    while (++i < n) {
+	      if (!isNaN(value = number(valueof(values[i], i, values)))) {
+	        numbers.push(value);
+	      }
+	    }
 	  }
 	
 	  return threshold(numbers.sort(ascending), 0.5);
@@ -29715,29 +30249,39 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return merged;
 	};
 	
-	var min = function(array, f) {
-	  var i = -1,
-	      n = array.length,
-	      a,
-	      b;
+	var min = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      min;
 	
-	  if (f == null) {
-	    while (++i < n) if ((b = array[i]) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = array[i]) != null && a > b) a = b;
+	  if (valueof == null) {
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = values[i]) != null && value >= value) {
+	        min = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = values[i]) != null && min > value) {
+	            min = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = b; break; }
-	    while (++i < n) if ((b = f(array[i], i, array)) != null && a > b) a = b;
+	    while (++i < n) { // Find the first comparable value.
+	      if ((value = valueof(values[i], i, values)) != null && value >= value) {
+	        min = value;
+	        while (++i < n) { // Compare the remaining values.
+	          if ((value = valueof(values[i], i, values)) != null && min > value) {
+	            min = value;
+	          }
+	        }
+	      }
+	    }
 	  }
 	
-	  return a;
-	};
-	
-	var pairs = function(array) {
-	  var i = 0, n = array.length - 1, p = array[0], pairs = new Array(n < 0 ? 0 : n);
-	  while (i < n) pairs[i] = [p, p = array[++i]];
-	  return pairs;
+	  return min;
 	};
 	
 	var permute = function(array, indexes) {
@@ -29746,17 +30290,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return permutes;
 	};
 	
-	var scan = function(array, compare) {
-	  if (!(n = array.length)) return;
-	  var i = 0,
-	      n,
+	var scan = function(values, compare) {
+	  if (!(n = values.length)) return;
+	  var n,
+	      i = 0,
 	      j = 0,
 	      xi,
-	      xj = array[j];
+	      xj = values[j];
 	
-	  if (!compare) compare = ascending;
+	  if (compare == null) compare = ascending;
 	
-	  while (++i < n) if (compare(xi = array[i], xj) < 0 || compare(xj, xj) !== 0) xj = xi, j = i;
+	  while (++i < n) {
+	    if (compare(xi = values[i], xj) < 0 || compare(xj, xj) !== 0) {
+	      xj = xi, j = i;
+	    }
+	  }
 	
 	  if (compare(xj, xj) === 0) return j;
 	};
@@ -29776,21 +30324,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return array;
 	};
 	
-	var sum = function(array, f) {
-	  var s = 0,
-	      n = array.length,
-	      a,
-	      i = -1;
+	var sum = function(values, valueof) {
+	  var n = values.length,
+	      i = -1,
+	      value,
+	      sum = 0;
 	
-	  if (f == null) {
-	    while (++i < n) if (a = +array[i]) s += a; // Note: zero and null are equivalent.
+	  if (valueof == null) {
+	    while (++i < n) {
+	      if (value = +values[i]) sum += value; // Note: zero and null are equivalent.
+	    }
 	  }
 	
 	  else {
-	    while (++i < n) if (a = +f(array[i], i, array)) s += a;
+	    while (++i < n) {
+	      if (value = +valueof(values[i], i, values)) sum += value;
+	    }
 	  }
 	
-	  return s;
+	  return sum;
 	};
 	
 	var transpose = function(matrix) {
@@ -29823,14 +30375,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var left = 4;
 	var epsilon = 1e-6;
 	
-	function translateX(scale0, scale1, d) {
-	  var x = scale0(d);
-	  return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
+	function translateX(x) {
+	  return "translate(" + x + ",0)";
 	}
 	
-	function translateY(scale0, scale1, d) {
-	  var y = scale0(d);
-	  return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
+	function translateY(y) {
+	  return "translate(0," + y + ")";
 	}
 	
 	function center(scale) {
@@ -29851,13 +30401,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	      tickFormat = null,
 	      tickSizeInner = 6,
 	      tickSizeOuter = 6,
-	      tickPadding = 3;
+	      tickPadding = 3,
+	      k = orient === top || orient === left ? -1 : 1,
+	      x, y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x"),
+	      transform = orient === top || orient === bottom ? translateX : translateY;
 	
 	  function axis(context) {
 	    var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
 	        format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : identity$1) : tickFormat,
 	        spacing = Math.max(tickSizeInner, 0) + tickPadding,
-	        transform = orient === top || orient === bottom ? translateX : translateY,
 	        range = scale.range(),
 	        range0 = range[0] + 0.5,
 	        range1 = range[range.length - 1] + 0.5,
@@ -29868,9 +30420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        tickExit = tick.exit(),
 	        tickEnter = tick.enter().append("g").attr("class", "tick"),
 	        line = tick.select("line"),
-	        text = tick.select("text"),
-	        k = orient === top || orient === left ? -1 : 1,
-	        x, y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
+	        text = tick.select("text");
 	
 	    path = path.merge(path.enter().insert("path", ".tick")
 	        .attr("class", "domain")
@@ -29898,11 +30448,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      tickExit = tickExit.transition(context)
 	          .attr("opacity", epsilon)
-	          .attr("transform", function(d) { return transform(position, this.parentNode.__axis || position, d); });
+	          .attr("transform", function(d) { return isFinite(d = position(d)) ? transform(d) : this.getAttribute("transform"); });
 	
 	      tickEnter
 	          .attr("opacity", epsilon)
-	          .attr("transform", function(d) { return transform(this.parentNode.__axis || position, position, d); });
+	          .attr("transform", function(d) { var p = this.parentNode.__axis; return transform(p && isFinite(p = p(d)) ? p : position(d)); });
 	    }
 	
 	    tickExit.remove();
@@ -29914,7 +30464,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    tick
 	        .attr("opacity", 1)
-	        .attr("transform", function(d) { return transform(position, position, d); });
+	        .attr("transform", function(d) { return transform(position(d)); });
 	
 	    line
 	        .attr(x + "2", k * tickSizeInner);
@@ -32702,7 +33252,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return this.attrTween(name, typeof value === "function"
 	      ? (fullname.local ? attrFunctionNS$1 : attrFunction$1)(fullname, i, tweenValue(this, "attr." + name, value))
 	      : value == null ? (fullname.local ? attrRemoveNS$1 : attrRemove$1)(fullname)
-	      : (fullname.local ? attrConstantNS$1 : attrConstant$1)(fullname, i, value));
+	      : (fullname.local ? attrConstantNS$1 : attrConstant$1)(fullname, i, value + ""));
 	};
 	
 	function attrTweenNS(fullname, value) {
@@ -32971,7 +33521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          .on("end.style." + name, styleRemoveEnd(name))
 	      : this.styleTween(name, typeof value === "function"
 	          ? styleFunction$1(name, i, tweenValue(this, "style." + name, value))
-	          : styleConstant$1(name, i, value), priority);
+	          : styleConstant$1(name, i, value + ""), priority);
 	};
 	
 	function styleTween(name, value, priority) {
@@ -34145,14 +34695,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Is this arc empty? We’re done.
 	    if (!r) return;
 	
+	    // Does the angle go the wrong way? Flip the direction.
+	    if (da < 0) da = da % tau$2 + tau$2;
+	
 	    // Is this a complete circle? Draw two arcs to complete the circle.
 	    if (da > tauEpsilon) {
 	      this._ += "A" + r + "," + r + ",0,1," + cw + "," + (x - dx) + "," + (y - dy) + "A" + r + "," + r + ",0,1," + cw + "," + (this._x1 = x0) + "," + (this._y1 = y0);
 	    }
 	
-	    // Otherwise, draw an arc!
-	    else {
-	      if (da < 0) da = da % tau$2 + tau$2;
+	    // Is this arc non-empty? Draw an arc!
+	    else if (da > epsilon$1) {
 	      this._ += "A" + r + "," + r + ",0," + (+(da >= pi$2)) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
 	    }
 	  },
@@ -34477,7 +35029,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	var dsv = function(delimiter) {
-	  var reFormat = new RegExp("[\"" + delimiter + "\n]"),
+	  var reFormat = new RegExp("[\"" + delimiter + "\n\r]"),
 	      delimiterCode = delimiter.charCodeAt(0);
 	
 	  function parse(text, f) {
@@ -35642,6 +36194,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	};
 	
+	var formatNumerals = function(numerals) {
+	  return function(value) {
+	    return value.replace(/[0-9]/g, function(i) {
+	      return numerals[+i];
+	    });
+	  };
+	};
+	
 	var formatDefault = function(x, p) {
 	  x = x.toPrecision(p);
 	
@@ -35702,9 +36262,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	// [[fill]align][sign][symbol][0][width][,][.precision][type]
 	var re = /^(?:(.)?([<>=^]))?([+\-\( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?([a-z%])?$/i;
 	
-	var formatSpecifier = function(specifier) {
+	function formatSpecifier(specifier) {
 	  return new FormatSpecifier(specifier);
-	};
+	}
+	
+	formatSpecifier.prototype = FormatSpecifier.prototype; // instanceof
 	
 	function FormatSpecifier(specifier) {
 	  if (!(match = re.exec(specifier))) throw new Error("invalid format: " + specifier);
@@ -35752,16 +36314,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	      + this.type;
 	};
 	
-	var prefixes = ["y","z","a","f","p","n","\xB5","m","","k","M","G","T","P","E","Z","Y"];
-	
-	function identity$3(x) {
+	var identity$3 = function(x) {
 	  return x;
-	}
+	};
+	
+	var prefixes = ["y","z","a","f","p","n","\xB5","m","","k","M","G","T","P","E","Z","Y"];
 	
 	var formatLocale = function(locale) {
 	  var group = locale.grouping && locale.thousands ? formatGroup(locale.grouping, locale.thousands) : identity$3,
 	      currency = locale.currency,
-	      decimal = locale.decimal;
+	      decimal = locale.decimal,
+	      numerals = locale.numerals ? formatNumerals(locale.numerals) : identity$3,
+	      percent = locale.percent || "%";
 	
 	  function newFormat(specifier) {
 	    specifier = formatSpecifier(specifier);
@@ -35779,7 +36343,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Compute the prefix and suffix.
 	    // For SI-prefix, the suffix is lazily computed.
 	    var prefix = symbol === "$" ? currency[0] : symbol === "#" && /[boxX]/.test(type) ? "0" + type.toLowerCase() : "",
-	        suffix = symbol === "$" ? currency[1] : /[%p]/.test(type) ? "%" : "";
+	        suffix = symbol === "$" ? currency[1] : /[%p]/.test(type) ? percent : "";
 	
 	    // What format function should we use?
 	    // Is this an integer type?
@@ -35806,27 +36370,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      } else {
 	        value = +value;
 	
-	        // Convert negative to positive, and compute the prefix.
-	        // Note that -0 is not less than 0, but 1 / -0 is!
-	        var valueNegative = (value < 0 || 1 / value < 0) && (value *= -1, true);
-	
 	        // Perform the initial formatting.
-	        value = formatType(value, precision);
+	        var valueNegative = value < 0;
+	        value = formatType(Math.abs(value), precision);
 	
-	        // If the original value was negative, it may be rounded to zero during
-	        // formatting; treat this as (positive) zero.
-	        if (valueNegative) {
-	          i = -1, n = value.length;
-	          valueNegative = false;
-	          while (++i < n) {
-	            if (c = value.charCodeAt(i), (48 < c && c < 58)
-	                || (type === "x" && 96 < c && c < 103)
-	                || (type === "X" && 64 < c && c < 71)) {
-	              valueNegative = true;
-	              break;
-	            }
-	          }
-	        }
+	        // If a negative value rounds to zero during formatting, treat as positive.
+	        if (valueNegative && +value === 0) valueNegative = false;
 	
 	        // Compute the prefix and suffix.
 	        valuePrefix = (valueNegative ? (sign === "(" ? sign : "-") : sign === "-" || sign === "(" ? "" : sign) + valuePrefix;
@@ -35858,11 +36407,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      // Reconstruct the final output based on the desired alignment.
 	      switch (align) {
-	        case "<": return valuePrefix + value + valueSuffix + padding;
-	        case "=": return valuePrefix + padding + value + valueSuffix;
-	        case "^": return padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length);
+	        case "<": value = valuePrefix + value + valueSuffix + padding; break;
+	        case "=": value = valuePrefix + padding + value + valueSuffix; break;
+	        case "^": value = padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length); break;
+	        default: value = padding + valuePrefix + value + valueSuffix; break;
 	      }
-	      return padding + valuePrefix + value + valueSuffix;
+	
+	      return numerals(value);
 	    }
 	
 	    format.toString = function() {
@@ -36005,8 +36556,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	var streamObjectType = {
-	  Feature: function(feature, stream) {
-	    streamGeometry(feature.geometry, stream);
+	  Feature: function(object, stream) {
+	    streamGeometry(object.geometry, stream);
 	  },
 	  FeatureCollection: function(object, stream) {
 	    var features = object.features, i = -1, n = features.length;
@@ -36253,8 +36804,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 	  } else {
-	    boundsPoint(lambda, phi);
+	    ranges.push(range = [lambda0$1 = lambda, lambda1 = lambda]);
 	  }
+	  if (phi < phi0) phi0 = phi;
+	  if (phi > phi1) phi1 = phi;
 	  p0 = p, lambda2 = lambda;
 	}
 	
@@ -36453,9 +37006,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      cy = z0 * x - x0 * z,
 	      cz = x0 * y - y0 * x,
 	      m = sqrt(cx * cx + cy * cy + cz * cz),
-	      u = x0 * x + y0 * y + z0 * z,
-	      v = m && -acos(u) / m, // area weight
-	      w = atan2(m, u); // line weight
+	      w = asin(m), // line weight = angle
+	      v = m && -w / m; // area weight multiplier
 	  X2 += v * cx;
 	  Y2 += v * cy;
 	  Z2 += v * cz;
@@ -37022,6 +37574,71 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	};
 	
+	var sum$1 = adder();
+	
+	var polygonContains = function(polygon, point) {
+	  var lambda = point[0],
+	      phi = point[1],
+	      normal = [sin$1(lambda), -cos$1(lambda), 0],
+	      angle = 0,
+	      winding = 0;
+	
+	  sum$1.reset();
+	
+	  for (var i = 0, n = polygon.length; i < n; ++i) {
+	    if (!(m = (ring = polygon[i]).length)) continue;
+	    var ring,
+	        m,
+	        point0 = ring[m - 1],
+	        lambda0 = point0[0],
+	        phi0 = point0[1] / 2 + quarterPi,
+	        sinPhi0 = sin$1(phi0),
+	        cosPhi0 = cos$1(phi0);
+	
+	    for (var j = 0; j < m; ++j, lambda0 = lambda1, sinPhi0 = sinPhi1, cosPhi0 = cosPhi1, point0 = point1) {
+	      var point1 = ring[j],
+	          lambda1 = point1[0],
+	          phi1 = point1[1] / 2 + quarterPi,
+	          sinPhi1 = sin$1(phi1),
+	          cosPhi1 = cos$1(phi1),
+	          delta = lambda1 - lambda0,
+	          sign$$1 = delta >= 0 ? 1 : -1,
+	          absDelta = sign$$1 * delta,
+	          antimeridian = absDelta > pi$3,
+	          k = sinPhi0 * sinPhi1;
+	
+	      sum$1.add(atan2(k * sign$$1 * sin$1(absDelta), cosPhi0 * cosPhi1 + k * cos$1(absDelta)));
+	      angle += antimeridian ? delta + sign$$1 * tau$3 : delta;
+	
+	      // Are the longitudes either side of the point’s meridian (lambda),
+	      // and are the latitudes smaller than the parallel (phi)?
+	      if (antimeridian ^ lambda0 >= lambda ^ lambda1 >= lambda) {
+	        var arc = cartesianCross(cartesian(point0), cartesian(point1));
+	        cartesianNormalizeInPlace(arc);
+	        var intersection = cartesianCross(normal, arc);
+	        cartesianNormalizeInPlace(intersection);
+	        var phiArc = (antimeridian ^ delta >= 0 ? -1 : 1) * asin(intersection[2]);
+	        if (phi > phiArc || phi === phiArc && (arc[0] || arc[1])) {
+	          winding += antimeridian ^ delta >= 0 ? 1 : -1;
+	        }
+	      }
+	    }
+	  }
+	
+	  // First, determine whether the South pole is inside or outside:
+	  //
+	  // It is inside if:
+	  // * the polygon winds around it in a clockwise direction.
+	  // * the polygon does not (cumulatively) wind around it, but has a negative
+	  //   (counter-clockwise) area.
+	  //
+	  // Second, count the (signed) number of times a segment crosses a lambda
+	  // from the point to the South pole.  If it is zero, then the point is the
+	  // same side as the South pole.
+	
+	  return (angle < -epsilon$2 || angle < epsilon$2 && sum$1 < -epsilon$2) ^ (winding & 1);
+	};
+	
 	var lengthSum = adder();
 	var lambda0$2;
 	var sinPhi0$1;
@@ -37078,6 +37695,87 @@ return /******/ (function(modules) { // webpackBootstrap
 	  coordinates[0] = a;
 	  coordinates[1] = b;
 	  return length$1(object$1);
+	};
+	
+	var containsObjectType = {
+	  Feature: function(object, point) {
+	    return containsGeometry(object.geometry, point);
+	  },
+	  FeatureCollection: function(object, point) {
+	    var features = object.features, i = -1, n = features.length;
+	    while (++i < n) if (containsGeometry(features[i].geometry, point)) return true;
+	    return false;
+	  }
+	};
+	
+	var containsGeometryType = {
+	  Sphere: function() {
+	    return true;
+	  },
+	  Point: function(object, point) {
+	    return containsPoint(object.coordinates, point);
+	  },
+	  MultiPoint: function(object, point) {
+	    var coordinates = object.coordinates, i = -1, n = coordinates.length;
+	    while (++i < n) if (containsPoint(coordinates[i], point)) return true;
+	    return false;
+	  },
+	  LineString: function(object, point) {
+	    return containsLine(object.coordinates, point);
+	  },
+	  MultiLineString: function(object, point) {
+	    var coordinates = object.coordinates, i = -1, n = coordinates.length;
+	    while (++i < n) if (containsLine(coordinates[i], point)) return true;
+	    return false;
+	  },
+	  Polygon: function(object, point) {
+	    return containsPolygon(object.coordinates, point);
+	  },
+	  MultiPolygon: function(object, point) {
+	    var coordinates = object.coordinates, i = -1, n = coordinates.length;
+	    while (++i < n) if (containsPolygon(coordinates[i], point)) return true;
+	    return false;
+	  },
+	  GeometryCollection: function(object, point) {
+	    var geometries = object.geometries, i = -1, n = geometries.length;
+	    while (++i < n) if (containsGeometry(geometries[i], point)) return true;
+	    return false;
+	  }
+	};
+	
+	function containsGeometry(geometry, point) {
+	  return geometry && containsGeometryType.hasOwnProperty(geometry.type)
+	      ? containsGeometryType[geometry.type](geometry, point)
+	      : false;
+	}
+	
+	function containsPoint(coordinates, point) {
+	  return distance(coordinates, point) === 0;
+	}
+	
+	function containsLine(coordinates, point) {
+	  var ab = distance(coordinates[0], coordinates[1]),
+	      ao = distance(coordinates[0], point),
+	      ob = distance(point, coordinates[1]);
+	  return ao + ob <= ab + epsilon$2;
+	}
+	
+	function containsPolygon(coordinates, point) {
+	  return !!polygonContains(coordinates.map(ringRadians), pointRadians(point));
+	}
+	
+	function ringRadians(ring) {
+	  return ring = ring.map(pointRadians), ring.pop(), ring;
+	}
+	
+	function pointRadians(point) {
+	  return [point[0] * radians, point[1] * radians];
+	}
+	
+	var contains = function(object, point) {
+	  return (object && containsObjectType.hasOwnProperty(object.type)
+	      ? containsObjectType[object.type]
+	      : containsGeometry)(object, point);
 	};
 	
 	function graticuleX(y0, y1, dy) {
@@ -37432,6 +38130,46 @@ return /******/ (function(modules) { // webpackBootstrap
 	  result: noop$1
 	};
 	
+	var lengthSum$1 = adder();
+	var lengthRing;
+	var x00$2;
+	var y00$2;
+	var x0$4;
+	var y0$4;
+	
+	var lengthStream$1 = {
+	  point: noop$1,
+	  lineStart: function() {
+	    lengthStream$1.point = lengthPointFirst$1;
+	  },
+	  lineEnd: function() {
+	    if (lengthRing) lengthPoint$1(x00$2, y00$2);
+	    lengthStream$1.point = noop$1;
+	  },
+	  polygonStart: function() {
+	    lengthRing = true;
+	  },
+	  polygonEnd: function() {
+	    lengthRing = null;
+	  },
+	  result: function() {
+	    var length = +lengthSum$1;
+	    lengthSum$1.reset();
+	    return length;
+	  }
+	};
+	
+	function lengthPointFirst$1(x, y) {
+	  lengthStream$1.point = lengthPoint$1;
+	  x00$2 = x0$4 = x, y00$2 = y0$4 = y;
+	}
+	
+	function lengthPoint$1(x, y) {
+	  x0$4 -= x, y0$4 -= y;
+	  lengthSum$1.add(sqrt(x0$4 * x0$4 + y0$4 * y0$4));
+	  x0$4 = x, y0$4 = y;
+	}
+	
 	function PathString() {
 	  this._string = [];
 	}
@@ -37505,6 +38243,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return areaStream$1.result();
 	  };
 	
+	  path.measure = function(object) {
+	    geoStream(object, projectionStream(lengthStream$1));
+	    return lengthStream$1.result();
+	  };
+	
 	  path.bounds = function(object) {
 	    geoStream(object, projectionStream(boundsStream$1));
 	    return boundsStream$1.result();
@@ -37533,71 +38276,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	
 	  return path.projection(projection).context(context);
-	};
-	
-	var sum$1 = adder();
-	
-	var polygonContains = function(polygon, point) {
-	  var lambda = point[0],
-	      phi = point[1],
-	      normal = [sin$1(lambda), -cos$1(lambda), 0],
-	      angle = 0,
-	      winding = 0;
-	
-	  sum$1.reset();
-	
-	  for (var i = 0, n = polygon.length; i < n; ++i) {
-	    if (!(m = (ring = polygon[i]).length)) continue;
-	    var ring,
-	        m,
-	        point0 = ring[m - 1],
-	        lambda0 = point0[0],
-	        phi0 = point0[1] / 2 + quarterPi,
-	        sinPhi0 = sin$1(phi0),
-	        cosPhi0 = cos$1(phi0);
-	
-	    for (var j = 0; j < m; ++j, lambda0 = lambda1, sinPhi0 = sinPhi1, cosPhi0 = cosPhi1, point0 = point1) {
-	      var point1 = ring[j],
-	          lambda1 = point1[0],
-	          phi1 = point1[1] / 2 + quarterPi,
-	          sinPhi1 = sin$1(phi1),
-	          cosPhi1 = cos$1(phi1),
-	          delta = lambda1 - lambda0,
-	          sign$$1 = delta >= 0 ? 1 : -1,
-	          absDelta = sign$$1 * delta,
-	          antimeridian = absDelta > pi$3,
-	          k = sinPhi0 * sinPhi1;
-	
-	      sum$1.add(atan2(k * sign$$1 * sin$1(absDelta), cosPhi0 * cosPhi1 + k * cos$1(absDelta)));
-	      angle += antimeridian ? delta + sign$$1 * tau$3 : delta;
-	
-	      // Are the longitudes either side of the point’s meridian (lambda),
-	      // and are the latitudes smaller than the parallel (phi)?
-	      if (antimeridian ^ lambda0 >= lambda ^ lambda1 >= lambda) {
-	        var arc = cartesianCross(cartesian(point0), cartesian(point1));
-	        cartesianNormalizeInPlace(arc);
-	        var intersection = cartesianCross(normal, arc);
-	        cartesianNormalizeInPlace(intersection);
-	        var phiArc = (antimeridian ^ delta >= 0 ? -1 : 1) * asin(intersection[2]);
-	        if (phi > phiArc || phi === phiArc && (arc[0] || arc[1])) {
-	          winding += antimeridian ^ delta >= 0 ? 1 : -1;
-	        }
-	      }
-	    }
-	  }
-	
-	  // First, determine whether the South pole is inside or outside:
-	  //
-	  // It is inside if:
-	  // * the polygon winds around it in a clockwise direction.
-	  // * the polygon does not (cumulatively) wind around it, but has a negative
-	  //   (counter-clockwise) area.
-	  //
-	  // Second, count the (signed) number of times a segment crosses a lambda
-	  // from the point to the South pole.  If it is zero, then the point is the
-	  // same side as the South pole.
-	
-	  return (angle < -epsilon$2 || angle < epsilon$2 && sum$1 < -epsilon$2) ^ (winding & 1);
 	};
 	
 	var clip = function(pointVisible, clipLine, interpolate, start) {
@@ -38477,31 +39155,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function mercatorProjection(project) {
 	  var m = projection(project),
+	      center = m.center,
 	      scale = m.scale,
 	      translate = m.translate,
 	      clipExtent = m.clipExtent,
-	      clipAuto;
+	      x0 = null, y0, x1, y1; // clip extent
 	
 	  m.scale = function(_) {
-	    return arguments.length ? (scale(_), clipAuto && m.clipExtent(null), m) : scale();
+	    return arguments.length ? (scale(_), reclip()) : scale();
 	  };
 	
 	  m.translate = function(_) {
-	    return arguments.length ? (translate(_), clipAuto && m.clipExtent(null), m) : translate();
+	    return arguments.length ? (translate(_), reclip()) : translate();
+	  };
+	
+	  m.center = function(_) {
+	    return arguments.length ? (center(_), reclip()) : center();
 	  };
 	
 	  m.clipExtent = function(_) {
-	    if (!arguments.length) return clipAuto ? null : clipExtent();
-	    if (clipAuto = _ == null) {
-	      var k = pi$3 * scale(),
-	          t = translate();
-	      _ = [[t[0] - k, t[1] - k], [t[0] + k, t[1] + k]];
-	    }
-	    clipExtent(_);
-	    return m;
+	    return arguments.length ? ((_ == null ? x0 = y0 = x1 = y1 = null : (x0 = +_[0][0], y0 = +_[0][1], x1 = +_[1][0], y1 = +_[1][1])), reclip()) : x0 == null ? null : [[x0, y0], [x1, y1]];
 	  };
 	
-	  return m.clipExtent(null);
+	  function reclip() {
+	    var k = pi$3 * scale(),
+	        t = m(rotation(m.rotate()).invert([0, 0]));
+	    return clipExtent(x0 == null
+	        ? [[t[0] - k, t[1] - k], [t[0] + k, t[1] + k]] : project === mercatorRaw
+	        ? [[Math.max(t[0] - k, x0), y0], [Math.min(t[0] + k, x1), y1]]
+	        : [[x0, Math.max(t[1] - k, y0)], [x1, Math.min(t[1] + k, y1)]]);
+	  }
+	
+	  return reclip();
 	}
 	
 	function tany(y) {
@@ -39126,15 +39811,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return dr * dr - 1e-6 > dx * dx + dy * dy;
 	}
 	
-	function distance1(a, b) {
-	  var l = a._.r;
-	  while (a !== b) l += 2 * (a = a.next)._.r;
-	  return l - b._.r;
-	}
-	
-	function distance2(circle, x, y) {
-	  var dx = circle.x - x,
-	      dy = circle.y - y;
+	function distance2(node, x, y) {
+	  var a = node._,
+	      b = node.next._,
+	      ab = a.r + b.r,
+	      dx = (a.x * b.r + b.x * a.r) / ab - x,
+	      dy = (a.y * b.r + b.y * a.r) / ab - y;
 	  return dx * dx + dy * dy;
 	}
 	
@@ -39186,15 +39868,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    do {
 	      if (sj <= sk) {
 	        if (intersects(j._, c._)) {
-	          if (sj + a._.r + b._.r > distance1(j, b)) a = j; else b = j;
-	          a.next = b, b.previous = a, --i;
+	          b = j, a.next = b, b.previous = a, --i;
 	          continue pack;
 	        }
 	        sj += j._.r, j = j.next;
 	      } else {
 	        if (intersects(k._, c._)) {
-	          if (distance1(a, k) > sk + a._.r + b._.r) a = k; else b = k;
-	          a.next = b, b.previous = a, --i;
+	          a = k, a.next = b, b.previous = a, --i;
 	          continue pack;
 	        }
 	        sk += k._.r, k = k.previous;
@@ -39209,10 +39889,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    ox += ca * c._.x;
 	    oy += ca * c._.y;
 	
-	    // Compute the new closest circle a to centroid.
-	    aa = distance2(a._, cx = ox / oa, cy = oy / oa);
+	    // Compute the new closest circle pair to the centroid.
+	    aa = distance2(a, cx = ox / oa, cy = oy / oa);
 	    while ((c = c.next) !== b) {
-	      if ((ca = distance2(c._, cx, cy)) < aa) {
+	      if ((ca = distance2(c, cx, cy)) < aa) {
 	        a = c, aa = ca;
 	      }
 	    }
@@ -39902,17 +40582,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	      else hi = mid;
 	    }
 	
+	    if ((valueTarget - sums[k - 1]) < (sums[k] - valueTarget) && i + 1 < k) --k;
+	
 	    var valueLeft = sums[k] - valueOffset,
 	        valueRight = value - valueLeft;
 	
-	    if ((y1 - y0) > (x1 - x0)) {
-	      var yk = (y0 * valueRight + y1 * valueLeft) / value;
-	      partition(i, k, valueLeft, x0, y0, x1, yk);
-	      partition(k, j, valueRight, x0, yk, x1, y1);
-	    } else {
+	    if ((x1 - x0) > (y1 - y0)) {
 	      var xk = (x0 * valueRight + x1 * valueLeft) / value;
 	      partition(i, k, valueLeft, x0, y0, xk, y1);
 	      partition(k, j, valueRight, xk, y0, x1, y1);
+	    } else {
+	      var yk = (y0 * valueRight + y1 * valueLeft) / value;
+	      partition(i, k, valueLeft, x0, y0, x1, yk);
+	      partition(k, j, valueRight, x0, yk, x1, y1);
 	    }
 	  }
 	};
@@ -39995,7 +40677,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// the 3D cross product in a quadrant I Cartesian coordinate system (+x is
 	// right, +y is up). Returns a positive value if ABC is counter-clockwise,
 	// negative if clockwise, and zero if the points are collinear.
-	var cross = function(a, b, c) {
+	var cross$1 = function(a, b, c) {
 	  return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
 	};
 	
@@ -40012,7 +40694,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      size = 2;
 	
 	  for (var i = 2; i < n; ++i) {
-	    while (size > 1 && cross(points[indexes[size - 2]], points[indexes[size - 1]], points[i]) <= 0) --size;
+	    while (size > 1 && cross$1(points[indexes[size - 2]], points[indexes[size - 1]], points[i]) <= 0) --size;
 	    indexes[size++] = i;
 	  }
 	
@@ -40047,7 +40729,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return hull;
 	};
 	
-	var contains = function(polygon, point) {
+	var contains$1 = function(polygon, point) {
 	  var n = polygon.length,
 	      p = polygon[n - 1],
 	      x = point[0], y = point[1],
@@ -42212,10 +42894,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	};
 	
+	var abs$1 = Math.abs;
+	var atan2$1 = Math.atan2;
+	var cos$2 = Math.cos;
+	var max$2 = Math.max;
+	var min$1 = Math.min;
+	var sin$2 = Math.sin;
+	var sqrt$2 = Math.sqrt;
+	
 	var epsilon$3 = 1e-12;
 	var pi$4 = Math.PI;
 	var halfPi$3 = pi$4 / 2;
 	var tau$4 = 2 * pi$4;
+	
+	function acos$1(x) {
+	  return x > 1 ? 0 : x < -1 ? pi$4 : Math.acos(x);
+	}
+	
+	function asin$1(x) {
+	  return x >= 1 ? halfPi$3 : x <= -1 ? -halfPi$3 : Math.asin(x);
+	}
 	
 	function arcInnerRadius(d) {
 	  return d.innerRadius;
@@ -42237,10 +42935,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return d && d.padAngle; // Note: optional!
 	}
 	
-	function asin$1(x) {
-	  return x >= 1 ? halfPi$3 : x <= -1 ? -halfPi$3 : Math.asin(x);
-	}
-	
 	function intersect(x0, y0, x1, y1, x2, y2, x3, y3) {
 	  var x10 = x1 - x0, y10 = y1 - y0,
 	      x32 = x3 - x2, y32 = y3 - y2,
@@ -42253,7 +42947,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function cornerTangents(x0, y0, x1, y1, r1, rc, cw) {
 	  var x01 = x0 - x1,
 	      y01 = y0 - y1,
-	      lo = (cw ? rc : -rc) / Math.sqrt(x01 * x01 + y01 * y01),
+	      lo = (cw ? rc : -rc) / sqrt$2(x01 * x01 + y01 * y01),
 	      ox = lo * y01,
 	      oy = -lo * x01,
 	      x11 = x0 + ox,
@@ -42267,7 +42961,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      d2 = dx * dx + dy * dy,
 	      r = r1 - rc,
 	      D = x11 * y10 - x10 * y11,
-	      d = (dy < 0 ? -1 : 1) * Math.sqrt(Math.max(0, r * r * d2 - D * D)),
+	      d = (dy < 0 ? -1 : 1) * sqrt$2(max$2(0, r * r * d2 - D * D)),
 	      cx0 = (D * dy - dx * d) / d2,
 	      cy0 = (-D * dx - dy * d) / d2,
 	      cx1 = (D * dy + dx * d) / d2,
@@ -42308,7 +43002,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        r1 = +outerRadius.apply(this, arguments),
 	        a0 = startAngle.apply(this, arguments) - halfPi$3,
 	        a1 = endAngle.apply(this, arguments) - halfPi$3,
-	        da = Math.abs(a1 - a0),
+	        da = abs$1(a1 - a0),
 	        cw = a1 > a0;
 	
 	    if (!context) context = buffer = path();
@@ -42321,10 +43015,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    // Or is it a circle or annulus?
 	    else if (da > tau$4 - epsilon$3) {
-	      context.moveTo(r1 * Math.cos(a0), r1 * Math.sin(a0));
+	      context.moveTo(r1 * cos$2(a0), r1 * sin$2(a0));
 	      context.arc(0, 0, r1, a0, a1, !cw);
 	      if (r0 > epsilon$3) {
-	        context.moveTo(r0 * Math.cos(a1), r0 * Math.sin(a1));
+	        context.moveTo(r0 * cos$2(a1), r0 * sin$2(a1));
 	        context.arc(0, 0, r0, a1, a0, cw);
 	      }
 	    }
@@ -42338,8 +43032,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          da0 = da,
 	          da1 = da,
 	          ap = padAngle.apply(this, arguments) / 2,
-	          rp = (ap > epsilon$3) && (padRadius ? +padRadius.apply(this, arguments) : Math.sqrt(r0 * r0 + r1 * r1)),
-	          rc = Math.min(Math.abs(r1 - r0) / 2, +cornerRadius.apply(this, arguments)),
+	          rp = (ap > epsilon$3) && (padRadius ? +padRadius.apply(this, arguments) : sqrt$2(r0 * r0 + r1 * r1)),
+	          rc = min$1(abs$1(r1 - r0) / 2, +cornerRadius.apply(this, arguments)),
 	          rc0 = rc,
 	          rc1 = rc,
 	          t0,
@@ -42347,25 +43041,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      // Apply padding? Note that since r1 ≥ r0, da1 ≥ da0.
 	      if (rp > epsilon$3) {
-	        var p0 = asin$1(rp / r0 * Math.sin(ap)),
-	            p1 = asin$1(rp / r1 * Math.sin(ap));
+	        var p0 = asin$1(rp / r0 * sin$2(ap)),
+	            p1 = asin$1(rp / r1 * sin$2(ap));
 	        if ((da0 -= p0 * 2) > epsilon$3) p0 *= (cw ? 1 : -1), a00 += p0, a10 -= p0;
 	        else da0 = 0, a00 = a10 = (a0 + a1) / 2;
 	        if ((da1 -= p1 * 2) > epsilon$3) p1 *= (cw ? 1 : -1), a01 += p1, a11 -= p1;
 	        else da1 = 0, a01 = a11 = (a0 + a1) / 2;
 	      }
 	
-	      var x01 = r1 * Math.cos(a01),
-	          y01 = r1 * Math.sin(a01),
-	          x10 = r0 * Math.cos(a10),
-	          y10 = r0 * Math.sin(a10);
+	      var x01 = r1 * cos$2(a01),
+	          y01 = r1 * sin$2(a01),
+	          x10 = r0 * cos$2(a10),
+	          y10 = r0 * sin$2(a10);
 	
 	      // Apply rounded corners?
 	      if (rc > epsilon$3) {
-	        var x11 = r1 * Math.cos(a11),
-	            y11 = r1 * Math.sin(a11),
-	            x00 = r0 * Math.cos(a00),
-	            y00 = r0 * Math.sin(a00);
+	        var x11 = r1 * cos$2(a11),
+	            y11 = r1 * sin$2(a11),
+	            x00 = r0 * cos$2(a00),
+	            y00 = r0 * sin$2(a00);
 	
 	        // Restrict the corner radius according to the sector angle.
 	        if (da < pi$4) {
@@ -42374,10 +43068,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	              ay = y01 - oc[1],
 	              bx = x11 - oc[0],
 	              by = y11 - oc[1],
-	              kc = 1 / Math.sin(Math.acos((ax * bx + ay * by) / (Math.sqrt(ax * ax + ay * ay) * Math.sqrt(bx * bx + by * by))) / 2),
-	              lc = Math.sqrt(oc[0] * oc[0] + oc[1] * oc[1]);
-	          rc0 = Math.min(rc, (r0 - lc) / (kc - 1));
-	          rc1 = Math.min(rc, (r1 - lc) / (kc + 1));
+	              kc = 1 / sin$2(acos$1((ax * bx + ay * by) / (sqrt$2(ax * ax + ay * ay) * sqrt$2(bx * bx + by * by))) / 2),
+	              lc = sqrt$2(oc[0] * oc[0] + oc[1] * oc[1]);
+	          rc0 = min$1(rc, (r0 - lc) / (kc - 1));
+	          rc1 = min$1(rc, (r1 - lc) / (kc + 1));
 	        }
 	      }
 	
@@ -42392,13 +43086,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        context.moveTo(t0.cx + t0.x01, t0.cy + t0.y01);
 	
 	        // Have the corners merged?
-	        if (rc1 < rc) context.arc(t0.cx, t0.cy, rc1, Math.atan2(t0.y01, t0.x01), Math.atan2(t1.y01, t1.x01), !cw);
+	        if (rc1 < rc) context.arc(t0.cx, t0.cy, rc1, atan2$1(t0.y01, t0.x01), atan2$1(t1.y01, t1.x01), !cw);
 	
 	        // Otherwise, draw the two corners and the ring.
 	        else {
-	          context.arc(t0.cx, t0.cy, rc1, Math.atan2(t0.y01, t0.x01), Math.atan2(t0.y11, t0.x11), !cw);
-	          context.arc(0, 0, r1, Math.atan2(t0.cy + t0.y11, t0.cx + t0.x11), Math.atan2(t1.cy + t1.y11, t1.cx + t1.x11), !cw);
-	          context.arc(t1.cx, t1.cy, rc1, Math.atan2(t1.y11, t1.x11), Math.atan2(t1.y01, t1.x01), !cw);
+	          context.arc(t0.cx, t0.cy, rc1, atan2$1(t0.y01, t0.x01), atan2$1(t0.y11, t0.x11), !cw);
+	          context.arc(0, 0, r1, atan2$1(t0.cy + t0.y11, t0.cx + t0.x11), atan2$1(t1.cy + t1.y11, t1.cx + t1.x11), !cw);
+	          context.arc(t1.cx, t1.cy, rc1, atan2$1(t1.y11, t1.x11), atan2$1(t1.y01, t1.x01), !cw);
 	        }
 	      }
 	
@@ -42417,13 +43111,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        context.lineTo(t0.cx + t0.x01, t0.cy + t0.y01);
 	
 	        // Have the corners merged?
-	        if (rc0 < rc) context.arc(t0.cx, t0.cy, rc0, Math.atan2(t0.y01, t0.x01), Math.atan2(t1.y01, t1.x01), !cw);
+	        if (rc0 < rc) context.arc(t0.cx, t0.cy, rc0, atan2$1(t0.y01, t0.x01), atan2$1(t1.y01, t1.x01), !cw);
 	
 	        // Otherwise, draw the two corners and the ring.
 	        else {
-	          context.arc(t0.cx, t0.cy, rc0, Math.atan2(t0.y01, t0.x01), Math.atan2(t0.y11, t0.x11), !cw);
-	          context.arc(0, 0, r0, Math.atan2(t0.cy + t0.y11, t0.cx + t0.x11), Math.atan2(t1.cy + t1.y11, t1.cx + t1.x11), cw);
-	          context.arc(t1.cx, t1.cy, rc0, Math.atan2(t1.y11, t1.x11), Math.atan2(t1.y01, t1.x01), !cw);
+	          context.arc(t0.cx, t0.cy, rc0, atan2$1(t0.y01, t0.x01), atan2$1(t0.y11, t0.x11), !cw);
+	          context.arc(0, 0, r0, atan2$1(t0.cy + t0.y11, t0.cx + t0.x11), atan2$1(t1.cy + t1.y11, t1.cx + t1.x11), cw);
+	          context.arc(t1.cx, t1.cy, rc0, atan2$1(t1.y11, t1.x11), atan2$1(t1.y01, t1.x01), !cw);
 	        }
 	      }
 	
@@ -42439,7 +43133,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  arc.centroid = function() {
 	    var r = (+innerRadius.apply(this, arguments) + +outerRadius.apply(this, arguments)) / 2,
 	        a = (+startAngle.apply(this, arguments) + +endAngle.apply(this, arguments)) / 2 - pi$4 / 2;
-	    return [Math.cos(a) * r, Math.sin(a) * r];
+	    return [cos$2(a) * r, sin$2(a) * r];
 	  };
 	
 	  arc.innerRadius = function(_) {
@@ -42841,7 +43535,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	
-	var cross$1 = {
+	var cross$2 = {
 	  draw: function(context, size) {
 	    var r = Math.sqrt(size / 5) / 2;
 	    context.moveTo(-3 * r, -r);
@@ -42947,7 +43641,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var symbols = [
 	  circle$2,
-	  cross$1,
+	  cross$2,
 	  diamond,
 	  square,
 	  star,
@@ -45366,7 +46060,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      else if (g.touch1 && g.touch1[2] === t.identifier) delete g.touch1;
 	    }
 	    if (g.touch1 && !g.touch0) g.touch0 = g.touch1, delete g.touch1;
-	    if (!g.touch0) g.end();
+	    if (g.touch0) g.touch0[1] = this.__zoom.invert(g.touch0[0]);
+	    else g.end();
 	  }
 	
 	  zoom.filter = function(_) {
@@ -45407,6 +46102,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.bisectLeft = bisectLeft;
 	exports.ascending = ascending;
 	exports.bisector = bisector;
+	exports.cross = cross;
 	exports.descending = descending;
 	exports.deviation = deviation;
 	exports.extent = extent;
@@ -45427,6 +46123,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.shuffle = shuffle;
 	exports.sum = sum;
 	exports.ticks = ticks;
+	exports.tickIncrement = tickIncrement;
 	exports.tickStep = tickStep;
 	exports.transpose = transpose;
 	exports.variance = variance;
@@ -45521,6 +46218,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.geoCentroid = centroid;
 	exports.geoCircle = circle;
 	exports.geoClipExtent = extent$1;
+	exports.geoContains = contains;
 	exports.geoDistance = distance;
 	exports.geoGraticule = graticule;
 	exports.geoGraticule10 = graticule10;
@@ -45599,7 +46297,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.polygonArea = area$1;
 	exports.polygonCentroid = centroid$1;
 	exports.polygonHull = hull;
-	exports.polygonContains = contains;
+	exports.polygonContains = contains$1;
 	exports.polygonLength = length$2;
 	exports.quadtree = quadtree;
 	exports.queue = queue;
@@ -45667,7 +46365,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.symbol = symbol;
 	exports.symbols = symbols;
 	exports.symbolCircle = circle$2;
-	exports.symbolCross = cross$1;
+	exports.symbolCross = cross$2;
 	exports.symbolDiamond = diamond;
 	exports.symbolSquare = square;
 	exports.symbolStar = star;
@@ -45784,25 +46482,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 
 
-/***/ },
-/* 158 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
-	var ResponsiveComponentsManager_1 = __webpack_require__(127);
-	var ResponsiveComponentsUtils_1 = __webpack_require__(131);
-	var Component_1 = __webpack_require__(103);
+	var ResponsiveComponentsManager_1 = __webpack_require__(136);
+	var ResponsiveComponentsUtils_1 = __webpack_require__(140);
+	var Component_1 = __webpack_require__(107);
 	var Logger_1 = __webpack_require__(11);
 	var Strings_1 = __webpack_require__(35);
 	var Utils_1 = __webpack_require__(13);
-	var Facet_1 = __webpack_require__(159);
-	var FacetSlider_1 = __webpack_require__(147);
-	var ResponsiveDropdown_1 = __webpack_require__(146);
-	var ResponsiveDropdownContent_1 = __webpack_require__(144);
-	var ResponsiveDropdownHeader_1 = __webpack_require__(145);
+	var Facet_1 = __webpack_require__(157);
+	var FacetSlider_1 = __webpack_require__(145);
+	var ResponsiveDropdown_1 = __webpack_require__(144);
+	var ResponsiveDropdownContent_1 = __webpack_require__(142);
+	var ResponsiveDropdownHeader_1 = __webpack_require__(143);
 	var QueryEvents_1 = __webpack_require__(48);
-	var SearchInterface_1 = __webpack_require__(106);
+	var SearchInterface_1 = __webpack_require__(108);
 	var ResponsiveComponents_1 = __webpack_require__(17);
 	var _ = __webpack_require__(14);
 	var ResponsiveFacets = (function () {
@@ -45993,9 +46692,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveFacets = ResponsiveFacets;
 
 
-/***/ },
-/* 159 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="../../controllers/HierarchicalFacetQueryController.ts" />
 	/// <reference path="../../controllers/FacetQueryController.ts" />
@@ -46008,46 +46707,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	/// <reference path="FacetSearchParameters.ts" />
 	/// <reference path="../HierarchicalFacet/HierarchicalFacet.ts" />
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var FacetValues_1 = __webpack_require__(160);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
+	var FacetValues_1 = __webpack_require__(158);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var Strings_1 = __webpack_require__(35);
 	var FacetQueryController_1 = __webpack_require__(91);
-	var FacetSearch_1 = __webpack_require__(161);
-	var FacetSettings_1 = __webpack_require__(166);
-	var FacetSort_1 = __webpack_require__(167);
-	var FacetValuesList_1 = __webpack_require__(168);
-	var FacetHeader_1 = __webpack_require__(169);
+	var FacetSearch_1 = __webpack_require__(159);
+	var FacetSettings_1 = __webpack_require__(164);
+	var FacetSort_1 = __webpack_require__(165);
+	var FacetValuesList_1 = __webpack_require__(166);
+	var FacetHeader_1 = __webpack_require__(167);
 	var FacetUtils_1 = __webpack_require__(93);
 	var InitializationEvents_1 = __webpack_require__(45);
 	var QueryEvents_1 = __webpack_require__(48);
 	var Assert_1 = __webpack_require__(12);
 	var Dom_1 = __webpack_require__(59);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var Utils_1 = __webpack_require__(13);
-	var BreadcrumbValueElement_1 = __webpack_require__(170);
-	var BreadcrumbValuesList_1 = __webpack_require__(171);
-	var FacetValueElement_1 = __webpack_require__(162);
-	var FacetSearchValuesList_1 = __webpack_require__(172);
+	var BreadcrumbValueElement_1 = __webpack_require__(168);
+	var BreadcrumbValuesList_1 = __webpack_require__(169);
+	var FacetValueElement_1 = __webpack_require__(160);
+	var FacetSearchValuesList_1 = __webpack_require__(170);
 	var Defer_1 = __webpack_require__(32);
 	var QueryStateModel_1 = __webpack_require__(101);
 	var Model_1 = __webpack_require__(98);
 	var OmniboxEvents_1 = __webpack_require__(46);
-	var OmniboxValueElement_1 = __webpack_require__(173);
-	var OmniboxValuesList_1 = __webpack_require__(174);
-	var ValueElementRenderer_1 = __webpack_require__(164);
+	var OmniboxValueElement_1 = __webpack_require__(171);
+	var OmniboxValuesList_1 = __webpack_require__(172);
+	var ValueElementRenderer_1 = __webpack_require__(162);
 	var FacetSearchParameters_1 = __webpack_require__(92);
-	var Initialization_1 = __webpack_require__(111);
+	var Initialization_1 = __webpack_require__(106);
 	var BreadcrumbEvents_1 = __webpack_require__(42);
-	var ResponsiveFacets_1 = __webpack_require__(158);
-	var KeyboardUtils_1 = __webpack_require__(69);
-	var FacetValuesOrder_1 = __webpack_require__(165);
+	var ResponsiveFacets_1 = __webpack_require__(156);
+	var KeyboardUtils_1 = __webpack_require__(68);
+	var FacetValuesOrder_1 = __webpack_require__(163);
 	var SearchAlertEvents_1 = __webpack_require__(51);
 	var _ = __webpack_require__(14);
 	/**
@@ -46459,7 +47164,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    Facet.prototype.handlePopulateSearchAlerts = function (args) {
 	        if (this.values.hasSelectedOrExcludedValues()) {
-	            args.text.push(new BreadcrumbValuesList_1.BreadcrumbValueList(this, this.values.getSelected().concat(this.values.getExcluded()), BreadcrumbValueElement_1.BreadcrumbValueElement).buildAsString());
+	            var excludedValues = this.values.getExcluded();
+	            var selectedValues = this.values.getSelected();
+	            if (!_.isEmpty(excludedValues)) {
+	                args.text.push({
+	                    value: new BreadcrumbValuesList_1.BreadcrumbValueList(this, excludedValues, BreadcrumbValueElement_1.BreadcrumbValueElement).buildAsString(),
+	                    lineThrough: true
+	                });
+	            }
+	            if (!_.isEmpty(selectedValues)) {
+	                args.text.push({
+	                    value: new BreadcrumbValuesList_1.BreadcrumbValueList(this, selectedValues, BreadcrumbValueElement_1.BreadcrumbValueElement).buildAsString(),
+	                    lineThrough: false
+	                });
+	            }
 	        }
 	    };
 	    Facet.prototype.initFacetQueryController = function () {
@@ -46912,8 +47630,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            Dom_1.$$(this.pinnedBottomSpace).addClass('coveo-with-animation');
 	            this.pinnedTopSpace.style.height = '0px';
 	            this.pinnedBottomSpace.style.height = '0px';
-	            this.unpinnedViewportPosition = undefined;
 	        }
+	        this.unpinnedViewportPosition = undefined;
+	        this.pinnedViewportPosition = undefined;
 	    };
 	    Facet.prototype.isFacetPinned = function () {
 	        return Utils_1.Utils.exists(this.pinnedViewportPosition);
@@ -47132,12 +47851,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Specifying a value for this option is required for the Facet component to work.
 	     */
 	    field: ComponentOptions_1.ComponentOptions.buildFieldOption({ required: true, groupByField: true, section: 'Identification' }),
-	    /**
-	     * Specifies the CSS class to change the Facet header icon.
-	     *
-	     * @deprecated This option is exposed for legacy reason, and the recommendation is to not use this option.
-	     */
-	    headerIcon: ComponentOptions_1.ComponentOptions.buildIconOption({ deprecated: 'This option is exposed for legacy reason, and the recommendation is to not use this option.' }),
+	    headerIcon: ComponentOptions_1.ComponentOptions.buildIconOption({ deprecated: 'This option is exposed for legacy reasons, and the recommendation is to not use this option.' }),
 	    /**
 	     * Specifies a unique identifier for the Facet. Among other things, this identifier serves the purpose of saving the
 	     * facet state in the URL hash.
@@ -47157,12 +47871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Default value is `false`.
 	     */
 	    isMultiValueField: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
-	    /**
-	     * Specifies the field whose values the Facet should display.
-	     *
-	     * @deprecated This option is exposed for legacy reasons, and the recommendation is to not use this option.
-	     */
-	    lookupField: ComponentOptions_1.ComponentOptions.buildFieldOption({ deprecated: 'This option is exposed for legacy reason, and the recommendation is to not use this option.' }),
+	    lookupField: ComponentOptions_1.ComponentOptions.buildFieldOption({ deprecated: 'This option is exposed for legacy reasons, and the recommendation is to not use this option.' }),
 	    /**
 	     * Specifies whether to display the Facet **Settings** menu.
 	     *
@@ -47231,14 +47940,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Default value is `1000`. Minimum value is `0`.
 	     */
 	    injectionDepth: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 1000, min: 0 }),
-	    /**
-	     * Specifies whether to display an icon next to each facet value.
-	     *
-	     * Default value is `false`.
-	     *
-	     * @deprecated This option is exposed for legacy reason, and the recommendation is to not use this option.
-	     */
-	    showIcon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, deprecated: 'This option is exposed for legacy reason, and the recommendation is to not use this option.' }),
+	    showIcon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, deprecated: 'This option is exposed for legacy reasons, and the recommendation is to not use this option.' }),
 	    /**
 	     * Specifies whether to use the `AND` operator in the resulting filter when multiple values are selected in the
 	     * Facet.
@@ -47306,42 +48008,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * Default value is `5` on a desktop computer and `3` on a mobile device. Minimum value is `0`.
 	     */
-	    numberOfValuesInBreadcrumb: ComponentOptions_1.ComponentOptions.buildNumberOption({
-	        defaultFunction: function () { return DeviceUtils_1.DeviceUtils.isMobileDevice() ? 3 : 5; },
-	        min: 0,
-	        depend: 'includeInBreadcrumb'
-	    }),
-	    /**
-	     * Specifies whether the Facet should push data to the {@link Omnibox} component.
-	     *
-	     * Setting this option to `true` can have a significant negative impact on index performance.
-	     *
-	     * See also {@link Facet.options.numberOfValuesInOmnibox}.
-	     *
-	     * Default value is `false`.
-	     *
-	     * @deprecated This option is exposed for legacy reason, and the recommendation is to not use this option.
-	     */
-	    includeInOmnibox: ComponentOptions_1.ComponentOptions.buildBooleanOption({
-	        defaultValue: false,
-	        deprecated: 'This option is exposed for legacy reason, and the recommendation is to not use this option.'
-	    }),
-	    /**
-	     * If {@link Facet.options.includeInOmnibox} is `true`, specifies the number of values to populate the
-	     * {@link Breadcrumb} with.
-	     *
-	     * Setting this option to `true` can have a significant negative impact on index performance.
-	     *
-	     * Default value is `5` on desktop computer and `3` on a mobile device. Minimum value is `0`.
-	     *
-	     * @deprecated This option is exposed for legacy reason, and the recommendation is to not use this option.
-	     */
-	    numberOfValuesInOmnibox: ComponentOptions_1.ComponentOptions.buildNumberOption({
-	        defaultFunction: function () { return DeviceUtils_1.DeviceUtils.isMobileDevice() ? 3 : 5; },
-	        min: 0,
-	        depend: 'includeInOmnibox',
-	        deprecated: 'This option is exposed for legacy reason, and the recommendation is to not use this option.'
-	    }),
+	    numberOfValuesInBreadcrumb: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultFunction: function () { return DeviceUtils_1.DeviceUtils.isMobileDevice() ? 3 : 5; }, min: 0, depend: 'includeInBreadcrumb' }),
+	    includeInOmnibox: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, deprecated: 'This option is exposed for legacy reasons, and the recommendation is to not use this option.' }),
+	    numberOfValuesInOmnibox: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultFunction: function () { return DeviceUtils_1.DeviceUtils.isMobileDevice() ? 3 : 5; }, min: 0, depend: 'includeInOmnibox', deprecated: 'This option is exposed for legacy reasons, and the recommendation is to not use this option.' }),
 	    /**
 	     * Specifies the name of a field on which to execute an aggregate operation for all distinct values of the Facet
 	     * field.
@@ -47387,10 +48056,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * Default value is the localized string for `"ComputedField"`.
 	     */
-	    computedFieldCaption: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({
-	        defaultValue: Strings_1.l('ComputedField'),
-	        section: 'ComputedField'
-	    }),
+	    computedFieldCaption: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: Strings_1.l('ComputedField'), section: 'ComputedField' }),
 	    /**
 	     * Specifies whether the Facet should remain stable in its current position in the viewport while the mouse cursor
 	     * is over it.
@@ -47537,21 +48203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Default value is `true`.
 	     */
 	    enableResponsiveMode: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
-	    /**
-	     * If {@link Facet.options.enableResponsiveMode} is `true` for all facets and
-	     * {@link FacetSlider.options.enableResponsiveMode} is also `true` for all sliders, specifies the width threshold
-	     * (in pixels) of the search interface at which facets go in responsive mode.
-	     *
-	     * Facets go in responsive mode when the width of the search interface is equal to or lower than this value.
-	     *
-	     * The "search interface" corresponds to the HTML element with the class `CoveoSearchInterface`.
-	     *
-	     * If more than one {@link FacetSlider} or Facet in the search interface specifies a value for this option, then the
-	     * framework uses the last occurrence of the option.
-	     *
-	     * Default value is `800`.
-	     */
-	    responsiveBreakpoint: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 800 }),
+	    responsiveBreakpoint: ComponentOptions_1.ComponentOptions.buildNumberOption({ defaultValue: 800, deprecated: 'This option is exposed for legacy reasons, and the recommendation is to not use this option.' }),
 	    /**
 	     * If {@link Facet.options.enableResponsiveMode} is `true` for all facets and
 	     * {@link FacetSlider.options.enableResponsiveMode} is also `true` for all sliders, specifies the label of the
@@ -47568,11 +48220,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(Facet);
 
 
-/***/ },
-/* 160 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
 	var Globalize = __webpack_require__(28);
@@ -47846,34 +48499,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetValues = FacetValues;
 
 
-/***/ },
-/* 161 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	"use strict";
-	var Facet_1 = __webpack_require__(159);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Facet_1 = __webpack_require__(157);
 	var Dom_1 = __webpack_require__(59);
 	var Utils_1 = __webpack_require__(13);
 	var InitializationEvents_1 = __webpack_require__(45);
 	var DeviceUtils_1 = __webpack_require__(16);
-	var EventsUtils_1 = __webpack_require__(130);
+	var EventsUtils_1 = __webpack_require__(139);
 	var FacetSearchParameters_1 = __webpack_require__(92);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var Component_1 = __webpack_require__(103);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var Component_1 = __webpack_require__(107);
 	var DomUtils_1 = __webpack_require__(60);
-	var PopupUtils_1 = __webpack_require__(72);
+	var PopupUtils_1 = __webpack_require__(71);
 	var Strings_1 = __webpack_require__(35);
 	var Assert_1 = __webpack_require__(12);
-	var KeyboardUtils_1 = __webpack_require__(69);
+	var KeyboardUtils_1 = __webpack_require__(68);
 	var FacetUtils_1 = __webpack_require__(93);
-	var FacetValues_1 = __webpack_require__(160);
+	var FacetValues_1 = __webpack_require__(158);
 	var StringUtils_1 = __webpack_require__(62);
-	var FacetValueElement_1 = __webpack_require__(162);
+	var FacetValueElement_1 = __webpack_require__(160);
 	var ExternalModulesShim_1 = __webpack_require__(23);
-	var SearchInterface_1 = __webpack_require__(106);
-	var ResponsiveComponentsUtils_1 = __webpack_require__(131);
-	var FacetValuesOrder_1 = __webpack_require__(165);
+	var SearchInterface_1 = __webpack_require__(108);
+	var ResponsiveComponentsUtils_1 = __webpack_require__(140);
+	var FacetValuesOrder_1 = __webpack_require__(163);
 	var _ = __webpack_require__(14);
 	/**
 	 * Used by the {@link Facet} component to render and handle the facet search part of each facet.
@@ -47887,6 +48541,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.showingFacetSearchWaitAnimation = false;
 	        this.moreValuesToFetch = true;
 	        this.searchBarIsAnimating = false;
+	        this.lastSearchWasEmpty = true;
 	        this.searchResults = document.createElement('ul');
 	        Dom_1.$$(this.searchResults).addClass('coveo-facet-search-results');
 	        this.onResize = _.debounce(function () {
@@ -48070,7 +48725,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    FacetSearch.prototype.handleFacetSearchKeyUp = function (event) {
 	        Assert_1.Assert.exists(event);
-	        var isEmpty = this.input.value == '';
+	        var isEmpty = this.input.value.trim() == '';
 	        this.showOrHideClearElement(isEmpty);
 	        if (!this.isMobileDevice()) {
 	            this.handleKeyboardNavigation(event, isEmpty);
@@ -48086,7 +48741,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    FacetSearch.prototype.handleFacetSearchFocus = function () {
 	        if (!this.isMobileDevice()) {
 	            if (this.facet.searchInterface.isNewDesign()) {
-	                this.startNewSearchTimeout(this.buildParamsForExcludingCurrentlyDisplayedValues());
+	                // Trigger a query only if the results are not already rendered.
+	                // Protect against the case where user can "focus" out of the search box by clicking not directly on a search results
+	                // Then re-focusing the search box
+	                if (this.currentlyDisplayedResults == null) {
+	                    this.startNewSearchTimeout(this.buildParamsForExcludingCurrentlyDisplayedValues());
+	                }
 	            }
 	            else {
 	                this.startNewSearchTimeout(this.buildParamsForNormalSearch());
@@ -48094,7 +48754,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    FacetSearch.prototype.handleClickElsewhere = function (event) {
-	        if (this.currentlyDisplayedResults && !this.isMobileDevice() && this.search != event.target && this.searchResults != event.target) {
+	        if (this.currentlyDisplayedResults && !this.isMobileDevice() && this.search != event.target && this.searchResults != event.target && this.input != event.target) {
 	            this.completelyDismissSearch();
 	        }
 	    };
@@ -48132,7 +48792,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	            default:
 	                this.moreValuesToFetch = true;
 	                this.highlightCurrentQueryWithinSearchResults();
-	                this.startNewSearchTimeout(this.buildParamsForNormalSearch());
+	                if (!isEmpty) {
+	                    this.lastSearchWasEmpty = false;
+	                    this.startNewSearchTimeout(this.buildParamsForNormalSearch());
+	                }
+	                else if (!this.lastSearchWasEmpty) {
+	                    // This normally happen if a user delete the search box content to go back to "empty" state.
+	                    this.currentlyDisplayedResults = undefined;
+	                    Dom_1.$$(this.searchResults).empty();
+	                    this.lastSearchWasEmpty = true;
+	                    this.startNewSearchTimeout(this.buildParamsForFetchingMore());
+	                }
 	                break;
 	        }
 	    };
@@ -48220,7 +48890,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var selectAll = document.createElement('li');
 	        if (Utils_1.Utils.isNonEmptyString(facetSearchParameters.valueToSearch)) {
 	            Dom_1.$$(selectAll).addClass(['coveo-facet-selectable', 'coveo-facet-search-selectable', 'coveo-facet-search-select-all']);
-	            Dom_1.$$(selectAll).text('SelectAll');
+	            Dom_1.$$(selectAll).text(Strings_1.l('SelectAll'));
 	            Dom_1.$$(selectAll).on('click', function () { return _this.selectAllValuesMatchingSearch(); });
 	            if (!this.isMobileDevice()) {
 	                this.searchResults.appendChild(selectAll);
@@ -48384,11 +49054,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Assert_1.Assert.check(current != null);
 	        var valueCaption = Dom_1.$$(current).find('.coveo-facet-value-caption');
 	        var valueElement = this.facet.facetValuesList.get(Dom_1.$$(valueCaption).text());
-	        this.facet.toggleExcludeValue(valueElement.facetValue);
-	        valueElement.triggerOnExcludeQuery();
+	        valueElement.toggleExcludeWithUA();
 	    };
 	    FacetSearch.prototype.getValueInInputForFacetSearch = function () {
-	        return this.input.value;
+	        return this.input.value.trim();
 	    };
 	    FacetSearch.prototype.selectAllValuesMatchingSearch = function () {
 	        var _this = this;
@@ -48440,20 +49109,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetSearch = FacetSearch;
 
 
-/***/ },
-/* 162 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 160 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var QueryEvents_1 = __webpack_require__(48);
 	var Dom_1 = __webpack_require__(59);
-	var ValueElement_1 = __webpack_require__(163);
+	var ValueElement_1 = __webpack_require__(161);
 	var FacetValueElement = (function (_super) {
 	    __extends(FacetValueElement, _super);
 	    function FacetValueElement(facet, facetValue, keepDisplayedValueNextTime) {
@@ -48476,19 +49151,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetValueElement = FacetValueElement;
 
 
-/***/ },
-/* 163 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ValueElementRenderer_1 = __webpack_require__(164);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ValueElementRenderer_1 = __webpack_require__(162);
 	var Utils_1 = __webpack_require__(13);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var Dom_1 = __webpack_require__(59);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var Defer_1 = __webpack_require__(32);
 	var ExternalModulesShim_1 = __webpack_require__(23);
-	var KeyboardUtils_1 = __webpack_require__(69);
+	var KeyboardUtils_1 = __webpack_require__(68);
 	var ValueElement = (function () {
 	    function ValueElement(facet, facetValue, onSelect, onExclude) {
 	        this.facet = facet;
@@ -48527,30 +49203,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.renderer.setCssClassOnListValueElement();
 	    };
 	    ValueElement.prototype.exclude = function () {
-	        var _this = this;
 	        this.facetValue.selected = false;
 	        this.facetValue.excluded = true;
 	        this.renderer.setCssClassOnListValueElement();
-	        var actionCause;
-	        if (this.facetValue.excluded) {
-	            actionCause = this.isOmnibox ? AnalyticsActionListMeta_1.analyticsActionCauseList.omniboxFacetUnexclude : AnalyticsActionListMeta_1.analyticsActionCauseList.facetUnexclude;
-	        }
-	        else {
-	            actionCause = this.isOmnibox ? AnalyticsActionListMeta_1.analyticsActionCauseList.omniboxFacetExclude : AnalyticsActionListMeta_1.analyticsActionCauseList.facetExclude;
-	        }
-	        if (this.onExclude) {
-	            this.facet.triggerNewQuery(function () { return _this.onExclude(_this, actionCause); });
-	        }
-	        else {
-	            this.facet.triggerNewQuery(function () { return _this.facet.usageAnalytics.logSearchEvent(actionCause, _this.getAnalyticsFacetMeta()); });
-	        }
 	    };
 	    ValueElement.prototype.unexclude = function () {
 	        this.facetValue.selected = false;
 	        this.facetValue.excluded = false;
 	        this.renderer.setCssClassOnListValueElement();
 	    };
-	    ValueElement.prototype.triggerOnExcludeQuery = function () {
+	    ValueElement.prototype.toggleExcludeWithUA = function () {
 	        var _this = this;
 	        var actionCause;
 	        if (this.facetValue.excluded) {
@@ -48559,6 +49221,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else {
 	            actionCause = this.isOmnibox ? AnalyticsActionListMeta_1.analyticsActionCauseList.omniboxFacetExclude : AnalyticsActionListMeta_1.analyticsActionCauseList.facetExclude;
 	        }
+	        this.facet.toggleExcludeValue(this.facetValue);
 	        if (this.onExclude) {
 	            this.facet.triggerNewQuery(function () { return _this.onExclude(_this, actionCause); });
 	        }
@@ -48592,8 +49255,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    ValueElement.prototype.handleExcludeClick = function (eventBindings) {
 	        this.facet.keepDisplayedValuesNextTime = eventBindings.displayNextTime && !this.facet.options.useAnd;
-	        this.facet.toggleExcludeValue(this.facetValue);
-	        this.triggerOnExcludeQuery();
+	        this.toggleExcludeWithUA();
 	    };
 	    ValueElement.prototype.handleEventForExcludedValueElement = function (eventBindings) {
 	        var _this = this;
@@ -48625,6 +49287,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            event.stopPropagation();
 	            event.preventDefault();
 	            _this.handleExcludeClick(eventBindings);
+	            if (_this.facet && _this.facet.facetSearch && _this.facet.facetSearch.completelyDismissSearch) {
+	                _this.facet.facetSearch.completelyDismissSearch();
+	            }
 	            return false;
 	        };
 	        Dom_1.$$(this.renderer.excludeIcon).on('click', excludeAction);
@@ -48677,15 +49342,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ValueElement = ValueElement;
 
 
-/***/ },
-/* 164 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var Utils_1 = __webpack_require__(13);
 	var Strings_1 = __webpack_require__(35);
-	var Component_1 = __webpack_require__(103);
+	var Component_1 = __webpack_require__(107);
 	var _ = __webpack_require__(14);
 	var ValueElementRenderer = (function () {
 	    function ValueElementRenderer(facet, facetValue) {
@@ -48887,11 +49553,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ValueElementRenderer = ValueElementRenderer;
 
 
-/***/ },
-/* 165 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var StringUtils_1 = __webpack_require__(62);
 	var _ = __webpack_require__(14);
 	var FacetValuesOrder = (function () {
@@ -48900,7 +49567,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.facetSort = facetSort;
 	    }
 	    FacetValuesOrder.prototype.reorderValues = function (facetValues) {
-	        if (this.facetSort) {
+	        if (this.facetSort && this.facetSort.activeSort) {
 	            if (this.facetSort.activeSort.name == 'custom' && this.facet.options.customSort != undefined) {
 	                return this.reorderValuesWithCustomOrder(facetValues);
 	            }
@@ -48942,25 +49609,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetValuesOrder = FacetValuesOrder;
 
 
-/***/ },
-/* 166 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var FacetSort_1 = __webpack_require__(167);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var FacetSort_1 = __webpack_require__(165);
 	var Dom_1 = __webpack_require__(59);
-	var LocalStorageUtils_1 = __webpack_require__(70);
+	var LocalStorageUtils_1 = __webpack_require__(69);
 	var Utils_1 = __webpack_require__(13);
 	var Strings_1 = __webpack_require__(35);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var DeviceUtils_1 = __webpack_require__(16);
-	var PopupUtils_1 = __webpack_require__(72);
+	var PopupUtils_1 = __webpack_require__(71);
 	var _ = __webpack_require__(14);
 	/**
 	 * Handle the rendering of the {@link Facet} settings menu (typically the ... in the facet header).
@@ -49438,13 +50111,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetSettings = FacetSettings;
 
 
-/***/ },
-/* 167 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Strings_1 = __webpack_require__(35);
-	var FacetSettings_1 = __webpack_require__(166);
+	var FacetSettings_1 = __webpack_require__(164);
 	var Utils_1 = __webpack_require__(13);
 	var _ = __webpack_require__(14);
 	var FacetSort = (function () {
@@ -49528,6 +50202,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        description: Strings_1.l('RelativeFrequencyDescription'),
 	        name: 'chisquare'
 	    },
+	    nosort: {
+	        label: Strings_1.l('Nosort'),
+	        directionToggle: false,
+	        description: Strings_1.l('NosortDescription'),
+	        name: 'nosort'
+	    },
 	    custom: {
 	        label: Strings_1.l('Custom'),
 	        directionToggle: true,
@@ -49539,18 +50219,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetSort = FacetSort;
 
 
-/***/ },
-/* 168 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	"use strict";
-	var FacetValueElement_1 = __webpack_require__(162);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var FacetValueElement_1 = __webpack_require__(160);
 	var Dom_1 = __webpack_require__(59);
-	var FacetValues_1 = __webpack_require__(160);
+	var FacetValues_1 = __webpack_require__(158);
 	var Utils_1 = __webpack_require__(13);
 	var FacetUtils_1 = __webpack_require__(93);
-	var FacetValuesOrder_1 = __webpack_require__(165);
+	var FacetValuesOrder_1 = __webpack_require__(163);
 	var _ = __webpack_require__(14);
 	var FacetValuesList = (function () {
 	    function FacetValuesList(facet, facetValueElementKlass) {
@@ -49698,17 +50379,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetValuesList = FacetValuesList;
 
 
-/***/ },
-/* 169 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	/// <reference path="FacetSettings.ts" />
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var FacetUtils_1 = __webpack_require__(93);
 	var Strings_1 = __webpack_require__(35);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var FacetHeader = (function () {
 	    function FacetHeader(options) {
 	        this.options = options;
@@ -49936,15 +50618,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetHeader = FacetHeader;
 
 
-/***/ },
-/* 170 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var DeviceUtils_1 = __webpack_require__(16);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var Dom_1 = __webpack_require__(59);
 	var _ = __webpack_require__(14);
 	var BreadcrumbValueElement = (function () {
@@ -49998,11 +50681,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.BreadcrumbValueElement = BreadcrumbValueElement;
 
 
-/***/ },
-/* 171 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var DeviceUtils_1 = __webpack_require__(16);
 	var Assert_1 = __webpack_require__(12);
 	var Strings_1 = __webpack_require__(35);
@@ -50135,11 +50819,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.BreadcrumbValueList = BreadcrumbValueList;
 
 
-/***/ },
-/* 172 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	var FacetSearchValuesList = (function () {
 	    function FacetSearchValuesList(facet, facetValueElementKlass) {
@@ -50162,18 +50847,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FacetSearchValuesList = FacetSearchValuesList;
 
 
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/// <reference path="Facet.ts" />
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var ValueElement_1 = __webpack_require__(163);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ValueElement_1 = __webpack_require__(161);
 	var OmniboxValueElement = (function (_super) {
 	    __extends(OmniboxValueElement, _super);
 	    function OmniboxValueElement(facet, facetValue, eventArg, onSelect, onExclude) {
@@ -50191,11 +50882,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.OmniboxValueElement = OmniboxValueElement;
 
 
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
 	var Utils_1 = __webpack_require__(13);
 	var FacetUtils_1 = __webpack_require__(93);
@@ -50292,20 +50984,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.OmniboxValuesList = OmniboxValuesList;
 
 
-/***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var LiveAnalyticsClient_1 = __webpack_require__(135);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var Component_1 = __webpack_require__(103);
-	var SearchInterface_1 = __webpack_require__(106);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var LiveAnalyticsClient_1 = __webpack_require__(128);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var Component_1 = __webpack_require__(107);
+	var SearchInterface_1 = __webpack_require__(108);
 	var RecommendationAnalyticsClient = (function (_super) {
 	    __extends(RecommendationAnalyticsClient, _super);
 	    function RecommendationAnalyticsClient(endpoint, rootElement, userId, userDisplayName, anonymous, splitTestRunName, splitTestRunVersion, originLevel1, sendToCloud, bindings) {
@@ -50350,12 +51048,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.RecommendationAnalyticsClient = RecommendationAnalyticsClient;
 
 
-/***/ },
-/* 176 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Initialization_1 = __webpack_require__(111);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Initialization_1 = __webpack_require__(106);
 	var _ = __webpack_require__(14);
 	if (!initCoveoJQuery()) {
 	    // Adding a check in case jQuery was added after the jsSearch
@@ -50421,14 +51120,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 175 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var TemplateHelpers_1 = __webpack_require__(178);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var TemplateHelpers_1 = __webpack_require__(176);
 	exports.TemplateHelpers = TemplateHelpers_1.TemplateHelpers;
-	var TemplateCache_1 = __webpack_require__(108);
+	var TemplateCache_1 = __webpack_require__(110);
 	exports.TemplateCache = TemplateCache_1.TemplateCache;
 	var HtmlTemplate_1 = __webpack_require__(117);
 	exports.HtmlTemplate = HtmlTemplate_1.HtmlTemplate;
@@ -50436,11 +51136,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.UnderscoreTemplate = UnderscoreTemplate_1.UnderscoreTemplate;
 
 
-/***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Assert_1 = __webpack_require__(12);
 	var UnderscoreTemplate_1 = __webpack_require__(114);
 	var Utils_1 = __webpack_require__(13);
@@ -50492,31 +51193,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.TemplateHelpers = TemplateHelpers;
 
 
-/***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var TemplateHelpers_1 = __webpack_require__(178);
-	var HighlightUtils_1 = __webpack_require__(67);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var TemplateHelpers_1 = __webpack_require__(176);
+	var HighlightUtils_1 = __webpack_require__(66);
 	var DateUtils_1 = __webpack_require__(58);
 	var CurrencyUtils_1 = __webpack_require__(57);
-	var HtmlUtils_1 = __webpack_require__(68);
-	var Icon_1 = __webpack_require__(180);
+	var HtmlUtils_1 = __webpack_require__(67);
+	var Icon_1 = __webpack_require__(178);
 	var Utils_1 = __webpack_require__(13);
 	var StringUtils_1 = __webpack_require__(62);
 	var TimeSpanUtils_1 = __webpack_require__(15);
-	var EmailUtils_1 = __webpack_require__(65);
+	var EmailUtils_1 = __webpack_require__(64);
 	var QueryUtils_1 = __webpack_require__(21);
 	var DeviceUtils_1 = __webpack_require__(16);
-	var TemplateCache_1 = __webpack_require__(108);
+	var TemplateCache_1 = __webpack_require__(110);
 	var Dom_1 = __webpack_require__(59);
 	var SearchEndpoint_1 = __webpack_require__(9);
-	var ResultList_1 = __webpack_require__(184);
-	var StreamHighlightUtils_1 = __webpack_require__(73);
+	var ResultList_1 = __webpack_require__(182);
+	var StreamHighlightUtils_1 = __webpack_require__(72);
 	var FacetUtils_1 = __webpack_require__(93);
 	var Globalize = __webpack_require__(28);
-	var Quickview_1 = __webpack_require__(181);
+	var Quickview_1 = __webpack_require__(179);
 	var _ = __webpack_require__(14);
 	var CoreHelpers = (function () {
 	    function CoreHelpers() {
@@ -50809,24 +51511,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
-/* 180 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var Assert_1 = __webpack_require__(12);
 	var QueryUtils_1 = __webpack_require__(21);
-	var Initialization_1 = __webpack_require__(111);
+	var Initialization_1 = __webpack_require__(106);
 	var Utils_1 = __webpack_require__(13);
 	var FileTypes_1 = __webpack_require__(61);
-	var Quickview_1 = __webpack_require__(181);
+	var Quickview_1 = __webpack_require__(179);
 	var Dom_1 = __webpack_require__(59);
 	/**
 	 * The Icon component outputs the corresponding icon for a given file type. The component searches for a suitable icon
@@ -50970,29 +51678,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(Icon);
 
 
-/***/ },
-/* 181 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var DomUtils_1 = __webpack_require__(60);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var Dom_1 = __webpack_require__(59);
-	var DefaultQuickviewTemplate_1 = __webpack_require__(182);
+	var DefaultQuickviewTemplate_1 = __webpack_require__(180);
 	var ResultListEvents_1 = __webpack_require__(49);
 	var StringUtils_1 = __webpack_require__(62);
-	var QuickviewDocument_1 = __webpack_require__(183);
+	var QuickviewDocument_1 = __webpack_require__(181);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var QuickviewEvents_1 = __webpack_require__(141);
-	var Initialization_1 = __webpack_require__(111);
-	var KeyboardUtils_1 = __webpack_require__(69);
+	var QuickviewEvents_1 = __webpack_require__(134);
+	var Initialization_1 = __webpack_require__(106);
+	var KeyboardUtils_1 = __webpack_require__(68);
 	var ExternalModulesShim_1 = __webpack_require__(23);
 	/**
 	 * This component is meant to exist within a result template.
@@ -51275,17 +51989,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(Quickview);
 
 
-/***/ },
-/* 182 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 180 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Template_1 = __webpack_require__(109);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Template_1 = __webpack_require__(111);
 	var DefaultQuickviewTemplate = (function (_super) {
 	    __extends(DefaultQuickviewTemplate, _super);
 	    function DefaultQuickviewTemplate() {
@@ -51299,26 +52019,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.DefaultQuickviewTemplate = DefaultQuickviewTemplate;
 
 
-/***/ },
-/* 183 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var Assert_1 = __webpack_require__(12);
 	var Dom_1 = __webpack_require__(59);
-	var QuickviewEvents_1 = __webpack_require__(141);
+	var QuickviewEvents_1 = __webpack_require__(134);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var Utils_1 = __webpack_require__(13);
 	var ColorUtils_1 = __webpack_require__(56);
-	var Initialization_1 = __webpack_require__(111);
+	var Initialization_1 = __webpack_require__(106);
 	var Strings_1 = __webpack_require__(35);
 	var _ = __webpack_require__(14);
 	var HIGHLIGHT_PREFIX = 'CoveoHighlight';
@@ -51364,7 +52090,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            documentURL = this.result.clickUri;
 	        }
 	        this.usageAnalytics.logClickEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.documentQuickview, {
-	            author: this.result.raw.author,
+	            author: Utils_1.Utils.getFieldValue(this.result, 'author'),
 	            documentURL: documentURL,
 	            documentTitle: this.result.title
 	        }, this.result, this.queryController.element);
@@ -51488,6 +52214,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            head.appendChild(style);
 	        }
 	        catch (e) {
+	            // if not allowed
 	        }
 	    };
 	    QuickviewDocument.prototype.triggerQuickviewLoaded = function (beforeLoad) {
@@ -51575,6 +52302,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    if (word.occurence == idOccurencePart) {
 	                        if (element.nodeName.toLowerCase() == 'coveotaggedword') {
 	                            word.text += _this.getHighlightInnerText(element);
+	                            // Doesn't count as a term part (see method description for more info).
 	                        }
 	                        else if (word.termsCount < idTermPart) {
 	                            word.text += _this.getHighlightInnerText(element);
@@ -51798,117 +52526,51 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(QuickviewDocument);
 
 
-/***/ },
-/* 184 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var DefaultResultTemplate_1 = __webpack_require__(116);
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var Assert_1 = __webpack_require__(12);
 	var QueryEvents_1 = __webpack_require__(48);
 	var Model_1 = __webpack_require__(98);
 	var QueryStateModel_1 = __webpack_require__(101);
 	var QueryUtils_1 = __webpack_require__(21);
 	var Dom_1 = __webpack_require__(59);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var Initialization_1 = __webpack_require__(111);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var Initialization_1 = __webpack_require__(106);
 	var Defer_1 = __webpack_require__(32);
 	var DeviceUtils_1 = __webpack_require__(16);
 	var ResultListEvents_1 = __webpack_require__(49);
 	var ResultLayoutEvents_1 = __webpack_require__(50);
 	var Utils_1 = __webpack_require__(13);
 	var DomUtils_1 = __webpack_require__(60);
-	var Recommendation_1 = __webpack_require__(140);
-	var DefaultRecommendationTemplate_1 = __webpack_require__(185);
+	var Recommendation_1 = __webpack_require__(133);
+	var DefaultRecommendationTemplate_1 = __webpack_require__(183);
 	var TemplateList_1 = __webpack_require__(118);
-	var ResponsiveDefaultResultTemplate_1 = __webpack_require__(186);
+	var TemplateCache_1 = __webpack_require__(110);
+	var ResponsiveDefaultResultTemplate_1 = __webpack_require__(184);
 	var _ = __webpack_require__(14);
+	var RegisteredNamedMethods_1 = __webpack_require__(105);
 	/**
 	 * The ResultList component is responsible for displaying the results of the current query using one or more result
 	 * templates (see [Result Templates](https://developers.coveo.com/x/aIGfAQ)).
 	 *
 	 * This component supports many additional features, such as infinite scrolling.
-	 *
-	 * **Examples:**
-	 *
-	 * - This first example shows a very simple ResultList with a single Underscore template. This template has no
-	 * `data-condition`. Therefore, it is rendered for all results.
-	 *
-	 * ```html
-	 * <div class='CoveoResultList'>
-	 *   <script class='result-template' id='MyDefaultTemplate' type='text/underscore'>
-	 *     <div>
-	 *       <a class='CoveoResultLink'>Hey, click on this! <%- title %></a>
-	 *     </div>
-	 *   </script>
-	 * </div>
-	 * ```
-	 *
-	 * - This second example shows two different templates in the same ResultList. The first template has a `data-condition`
-	 * attribute while the second template has none.
-	 *
-	 * When the query returns, the conditional expression of the first template is evaluated against the first result.
-	 * If the result satisfies the condition (in this case, if the `result.raw.objecttype` property in the JSON equals
-	 * `MyObjectType`), the first template is rendered for this result. The second template is neither evaluated nor
-	 * rendered for this result.
-	 *
-	 * If the result does not match the condition of the first template, then the next template is evaluated. Since the
-	 * second template has no `data-condition`, it is `true` for any result and can thus load as a "fallback" template.
-	 *
-	 * This process repeats itself for each result.
-	 *
-	 * ```html
-	 * <div class="CoveoResultList">
-	 *   <script class="result-template" id='MyObjectTypeTemplate' type='text/underscore' data-condition='raw.objecttype==MyObjectType'>
-	 *     <div>
-	 *       <a class='CoveoResultLink'>Hey, click on this! <%- title %></a>
-	 *       <div class='CoveoExcerpt'></div>
-	 *       <span>This is a result for the type: <%- raw.objecttype %></span>
-	 *     </div>
-	 *   </script>
-	 *
-	 *   <script class='result-template' id='MyFallbackTemplate' type='text/underscore'>
-	 *     <div>
-	 *       <a class='CoveoResultLink'>Hey, click on this! <%- title %></a>
-	 *     </div>
-	 *   </script>
-	 * </div>
-	 * ```
-	 *
-	 * - This third example shows two different templates in the same result list. Both templates have a `data-condition`
-	 * attribute.
-	 *
-	 * In this case, there is no "fallback" template, since all templates have a `data-condition` attribute. Therefore, if a
-	 * result matches none of the conditions, the default templates included in the Coveo JavaScript Search Framework will
-	 * load instead. This ensures that all results render themselves.
-	 *
-	 * ```html
-	 * <div class="CoveoResultList">
-	 *   <script class="result-template" type="text/underscore" data-condition='raw.objecttype==MyObjectType' id='MyObjectTypeTemplate'>
-	 *     <div>
-	 *       <a class='CoveoResultLink'>Hey, click on this ! <%- title %></a>
-	 *       <div class='CoveoExcerpt'></div>
-	 *       <span>This is a result for the type : <%- raw.objecttype %></span>
-	 *      </div>
-	 *   </script>
-	 *
-	 *   <script class="result-template" type="text/underscore" data-condition='raw.objecttype==MySecondObjectType' id='MySecondObjectTypeTemplate'>
-	 *     <div>
-	 *       <span class='CoveoIcon'></span>
-	 *       <a class='CoveoResultLink'></a>
-	 *     </div>
-	 *     <div class='CoveoExcerpt'></div>
-	 *     <div class='CoveoPrintableUri'></div>
-	 *   </script>
-	 * </div>
-	 * ```
 	 */
 	var ResultList = (function (_super) {
 	    __extends(ResultList, _super);
@@ -51930,6 +52592,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this.bindings = bindings;
 	        _this.currentlyDisplayedResults = [];
 	        _this.reachedTheEndOfResults = false;
+	        // This variable serves to block some setup where the framework fails to correctly identify the "real" scrolling container.
+	        // Since it's not technically feasible to correctly identify the scrolling container in every possible scenario without some very complex logic, we instead try to add some kind of mechanism to
+	        // block runaway requests where UI will keep asking more results in the index, eventually bringing the browser to it's knee.
+	        // Those successive request are needed in "displayMoreResults" to ensure we fill the scrolling container correctly.
+	        // Since the container is not identified correctly, it is never "full", so we keep asking for more.
+	        // It is reset every time the user actually scroll the container manually.
+	        _this.successiveScrollCount = 0;
 	        _this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, ResultList, options);
 	        Assert_1.Assert.exists(element);
 	        Assert_1.Assert.exists(_this.options);
@@ -51946,7 +52615,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        Dom_1.$$(_this.root).on(ResultListEvents_1.ResultListEvents.changeLayout, function (e, args) { return _this.handleChangeLayout(args); });
 	        if (_this.options.enableInfiniteScroll) {
 	            _this.handlePageChanged();
-	            _this.bind.on(_this.options.infiniteScrollContainer, 'scroll', function (e) { return _this.handleScrollOfResultList(); });
+	            _this.bind.on(_this.options.infiniteScrollContainer, 'scroll', function (e) {
+	                _this.successiveScrollCount = 0;
+	                _this.handleScrollOfResultList();
+	            });
 	        }
 	        _this.bind.onQueryState(Model_1.MODEL_EVENTS.CHANGE_ONE, QueryStateModel_1.QUERY_STATE_ATTRIBUTES.FIRST, function () { return _this.handlePageChanged(); });
 	        Dom_1.$$(_this.options.resultContainer).addClass('coveo-result-list-container');
@@ -51957,11 +52629,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return _this;
 	    }
 	    ResultList.getDefaultTemplate = function (e) {
+	        var template = ResultList.loadTemplatesFromCache();
+	        if (template != null) {
+	            return template;
+	        }
 	        var component = Component_1.Component.get(e);
 	        if (component.searchInterface instanceof Recommendation_1.Recommendation) {
 	            return new DefaultRecommendationTemplate_1.DefaultRecommendationTemplate();
 	        }
 	        return new DefaultResultTemplate_1.DefaultResultTemplate();
+	    };
+	    ResultList.loadTemplatesFromCache = function () {
+	        var pageTemplateNames = TemplateCache_1.TemplateCache.getResultListTemplateNames();
+	        if (pageTemplateNames.length > 0) {
+	            return new TemplateList_1.TemplateList(_.compact(_.map(pageTemplateNames, function (templateName) { return TemplateCache_1.TemplateCache.getTemplate(templateName); })));
+	        }
+	        return null;
+	    };
+	    /**
+	     * Get the fields needed to be automatically included in the query for this result list.
+	     * @returns {string[]}
+	     */
+	    ResultList.prototype.getAutoSelectedFieldsToInclude = function () {
+	        return _.chain(this.options.resultTemplate.getFields())
+	            .concat(this.getMinimalFieldsToInclude())
+	            .compact()
+	            .unique()
+	            .value();
 	    };
 	    ResultList.prototype.setupTemplatesVersusLayouts = function () {
 	        var _this = this;
@@ -52002,7 +52696,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _this.options.resultContainer.appendChild(resultElement);
 	            _this.triggerNewResultDisplayed(Component_1.Component.getResult(resultElement), resultElement);
 	        });
-	        if (this.options.layout == 'card') {
+	        if (this.options.layout == 'card' && !this.options.enableInfiniteScroll) {
 	            // Used to prevent last card from spanning the grid's whole width
 	            _.times(3, function () { return _this.options.resultContainer.appendChild(Dom_1.$$('div').el); });
 	        }
@@ -52050,7 +52744,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Executes a query to fetch new results. After the query returns, renders the new results.
 	     *
-	     * Asserts that there are more results to display by verifying whether t3he last query has returned as many results as
+	     * Asserts that there are more results to display by verifying whether the last query has returned as many results as
 	     * requested.
 	     *
 	     * Asserts that the ResultList is not currently fetching results.
@@ -52085,7 +52779,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.fetchingMoreResults.then(function () {
 	            _this.hideWaitingAnimationForInfiniteScrolling();
 	            _this.fetchingMoreResults = undefined;
-	            Defer_1.Defer.defer(function () { return _this.handleScrollOfResultList(); });
+	            Defer_1.Defer.defer(function () {
+	                _this.successiveScrollCount++;
+	                if (_this.successiveScrollCount <= ResultList.MAX_AMOUNT_OF_SUCESSIVE_REQUESTS) {
+	                    _this.handleScrollOfResultList();
+	                }
+	                else {
+	                    _this.logger.info("Result list has triggered 5 consecutive queries to try and fill up the scrolling container, but it is still unable to do so");
+	                    _this.logger.info("Try explicitly setting the 'data-infinite-scroll-container-selector' option on the result list. See : https://coveo.github.io/search-ui/components/resultlist.html#options.infinitescrollcontainer");
+	                }
+	            });
 	        });
 	    };
 	    /**
@@ -52196,12 +52899,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	        ResultList.resultCurrentlyBeingRendered = undefined;
 	    };
 	    ResultList.prototype.handleBuildingQuery = function (args) {
+	        var _this = this;
 	        if (this.options.fieldsToInclude != null) {
 	            // remove the @
 	            args.queryBuilder.addFieldsToInclude(_.map(this.options.fieldsToInclude, function (field) { return field.substr(1); }));
 	        }
 	        if (this.options.autoSelectFieldsToInclude) {
-	            args.queryBuilder.addRequiredFields(this.getAutoSelectedFieldsToInclude());
+	            var otherResultListsElements = _.reject(Dom_1.$$(this.root).findAll("." + Component_1.Component.computeCssClassName(ResultList)), function (resultListElement) { return resultListElement == _this.element; });
+	            var otherFields = _.flatten(_.map(otherResultListsElements, function (otherResultListElement) {
+	                return RegisteredNamedMethods_1.get(otherResultListElement).getAutoSelectedFieldsToInclude();
+	            }));
+	            args.queryBuilder.addRequiredFields(_.unique(otherFields.concat(this.getAutoSelectedFieldsToInclude())));
 	            args.queryBuilder.includeRequiredFields = true;
 	        }
 	    };
@@ -52220,19 +52928,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.disable();
 	        }
 	    };
-	    ResultList.prototype.getAutoSelectedFieldsToInclude = function () {
-	        return _.chain(this.options.resultTemplate.getFields())
-	            .concat(this.getMinimalFieldsToInclude())
-	            .compact()
-	            .unique()
-	            .value();
-	    };
 	    ResultList.prototype.isCurrentlyFetchingMoreResults = function () {
 	        return Utils_1.Utils.exists(this.fetchingMoreResults);
 	    };
 	    ResultList.prototype.getMinimalFieldsToInclude = function () {
 	        // these fields are needed for analytics click event
-	        return ['author', 'language', 'urihash', 'objecttype', 'collection', 'source', 'language', 'uniqueid'];
+	        return ['author', 'language', 'urihash', 'objecttype', 'collection', 'source', 'language', 'permanentid'];
 	    };
 	    ResultList.prototype.isScrollingOfResultListAlmostAtTheBottom = function () {
 	        // this is in a try catch because the unit test fail otherwise (Window does not exist for phantom js in the console)
@@ -52316,7 +53017,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    ResultList.prototype.showWaitingAnimationForInfiniteScrolling = function () {
-	        this.options.waitAnimationContainer.appendChild(DomUtils_1.DomUtils.getLoadingSpinner());
+	        var spinner = DomUtils_1.DomUtils.getLoadingSpinner();
+	        if (this.options.layout == 'card' && this.options.enableInfiniteScroll) {
+	            var spinnerContainer = Dom_1.$$('div', {
+	                className: 'coveo-loading-spinner-container'
+	            });
+	            spinnerContainer.append(spinner);
+	            this.options.waitAnimationContainer.appendChild(spinnerContainer.el);
+	        }
+	        else {
+	            this.options.waitAnimationContainer.appendChild(DomUtils_1.DomUtils.getLoadingSpinner());
+	        }
 	    };
 	    ResultList.prototype.hideWaitingAnimationForInfiniteScrolling = function () {
 	        var spinner = Dom_1.$$(this.options.waitAnimationContainer).find('.coveo-loading-spinner');
@@ -52381,6 +53092,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * See also {@link ResultList.options.infiniteScrollPageSize}, {@link ResultList.options.infiniteScrollContainer}
 	     * and {@link ResultList.options.enableInfiniteScrollWaitingAnimation}.
 	     *
+	     * It is important to specify the {@link ResultList.options.infiniteScrollContainer} manually if you want the scrolling
+	     * element to be something else than the default `window` element.
+	     * Otherwise, you might get in a weird state where the framework will rapidly trigger multiple successive query.
+	     *
 	     * Default value is `false`.
 	     */
 	    enableInfiniteScroll: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
@@ -52395,12 +53110,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * If {@link ResultList.options.enableInfiniteScroll} is `true`, specifies the element that triggers the fetching of
 	     * additional results when the end user scrolls down to its bottom.
 	     *
+	     * You can change the container by specifying its selector (e.g.,
+	     * `data-infinite-scroll-container-selector='#someCssSelector'`).
+	     *
 	     * By default, the framework uses the first vertically scrollable parent element it finds, starting from the
 	     * ResultList element itself. A vertically scrollable element is an element whose CSS `overflow-y` attribute is
 	     * `scroll`.
 	     *
 	     * This implies that if the framework can find no scrollable parent, it uses the window itself as a scrollable
 	     * container.
+	     *
+	     * This heuristic is not perfect, for technical reasons. There are always some corner case CSS combination which the framework will
+	     * not be able to detect correctly as 'scrollable'.
+	     *
+	     * It is highly recommended that you manually set this option if you wish to have something else than `window` be the scrollable element.
 	     */
 	    infiniteScrollContainer: ComponentOptions_1.ComponentOptions.buildChildHtmlElementOption({ depend: 'enableInfiniteScroll', defaultFunction: function (element) { return ComponentOptions_1.ComponentOptions.findParentScrolling(element); } }),
 	    /**
@@ -52455,21 +53178,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	    })
 	};
 	ResultList.resultCurrentlyBeingRendered = null;
+	ResultList.MAX_AMOUNT_OF_SUCESSIVE_REQUESTS = 5;
 	exports.ResultList = ResultList;
 	Initialization_1.Initialization.registerAutoCreateComponent(ResultList);
 
 
-/***/ },
-/* 185 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Template_1 = __webpack_require__(109);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Template_1 = __webpack_require__(111);
 	var DefaultRecommendationTemplate = (function (_super) {
 	    __extends(DefaultRecommendationTemplate, _super);
 	    function DefaultRecommendationTemplate() {
@@ -52489,16 +53219,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.DefaultRecommendationTemplate = DefaultRecommendationTemplate;
 
 
-/***/ },
-/* 186 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ResponsiveComponentsManager_1 = __webpack_require__(127);
-	var SearchInterface_1 = __webpack_require__(106);
-	var ResultList_1 = __webpack_require__(184);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var ResponsiveComponentsManager_1 = __webpack_require__(136);
+	var SearchInterface_1 = __webpack_require__(108);
+	var ResultList_1 = __webpack_require__(182);
 	var Dom_1 = __webpack_require__(59);
-	var Component_1 = __webpack_require__(103);
+	var Component_1 = __webpack_require__(107);
 	var Logger_1 = __webpack_require__(11);
 	var ResponsiveDefaultResultTemplate = (function () {
 	    function ResponsiveDefaultResultTemplate(coveoRoot, ID, options, responsiveDropdown) {
@@ -52553,28 +53284,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.ResponsiveDefaultResultTemplate = ResponsiveDefaultResultTemplate;
 
 
-/***/ },
-/* 187 */,
-/* 188 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 185 */,
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Initialization_1 = __webpack_require__(111);
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Initialization_1 = __webpack_require__(106);
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var QueryEvents_1 = __webpack_require__(48);
 	var Model_1 = __webpack_require__(98);
 	var QueryStateModel_1 = __webpack_require__(101);
 	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(54);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var Dom_1 = __webpack_require__(59);
 	var Assert_1 = __webpack_require__(12);
-	var QueryboxQueryParameters_1 = __webpack_require__(189);
+	var QueryboxQueryParameters_1 = __webpack_require__(187);
 	/**
 	 * The Querybox component renders an input that the end user can interact with to enter and submit a query.
 	 *
@@ -52889,11 +53626,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(Querybox);
 
 
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	var QueryboxQueryParameters = (function () {
 	    function QueryboxQueryParameters(options) {
@@ -52928,22 +53666,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryboxQueryParameters = QueryboxQueryParameters;
 
 
-/***/ },
-/* 190 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
 	var Utils_1 = __webpack_require__(13);
 	var Dom_1 = __webpack_require__(59);
 	var Strings_1 = __webpack_require__(35);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var Initialization_1 = __webpack_require__(111);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var Initialization_1 = __webpack_require__(106);
 	/**
 	 * The SearchButton component renders a search icon that the end user can click to trigger a new query.
 	 *
@@ -52990,23 +53734,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(SearchButton);
 
 
-/***/ },
-/* 191 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var Omnibox_1 = __webpack_require__(192);
-	var ComponentOptions_1 = __webpack_require__(107);
-	var SearchButton_1 = __webpack_require__(190);
-	var Querybox_1 = __webpack_require__(188);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
+	var Omnibox_1 = __webpack_require__(190);
+	var ComponentOptions_1 = __webpack_require__(109);
+	var SearchButton_1 = __webpack_require__(188);
+	var Querybox_1 = __webpack_require__(186);
 	var Dom_1 = __webpack_require__(59);
-	var Initialization_1 = __webpack_require__(111);
+	var Initialization_1 = __webpack_require__(106);
 	var _ = __webpack_require__(14);
 	/**
 	 * The Searchbox component can conveniently create two components that are frequently used together to allow the end
@@ -53107,38 +53857,44 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(Searchbox);
 
 
-/***/ },
-/* 192 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 190 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var QueryEvents_1 = __webpack_require__(48);
 	var StandaloneSearchInterfaceEvents_1 = __webpack_require__(54);
 	var Model_1 = __webpack_require__(98);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var OmniboxEvents_1 = __webpack_require__(46);
 	var Dom_1 = __webpack_require__(59);
 	var Assert_1 = __webpack_require__(12);
 	var QueryStateModel_2 = __webpack_require__(101);
-	var Initialization_1 = __webpack_require__(111);
-	var Querybox_1 = __webpack_require__(188);
-	var FieldAddon_1 = __webpack_require__(193);
-	var QueryExtensionAddon_1 = __webpack_require__(194);
-	var RevealQuerySuggestAddon_1 = __webpack_require__(195);
-	var OldOmniboxAddon_1 = __webpack_require__(196);
-	var QueryboxQueryParameters_1 = __webpack_require__(189);
-	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(138);
+	var Initialization_1 = __webpack_require__(106);
+	var Querybox_1 = __webpack_require__(186);
+	var FieldAddon_1 = __webpack_require__(191);
+	var QueryExtensionAddon_1 = __webpack_require__(192);
+	var RevealQuerySuggestAddon_1 = __webpack_require__(193);
+	var OldOmniboxAddon_1 = __webpack_require__(194);
+	var QueryboxQueryParameters_1 = __webpack_require__(187);
+	var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(131);
 	var Utils_1 = __webpack_require__(13);
 	var ExternalModulesShim_1 = __webpack_require__(23);
-	var SearchInterface_1 = __webpack_require__(106);
+	var SearchInterface_1 = __webpack_require__(108);
 	var _ = __webpack_require__(14);
 	var MINIMUM_EXECUTABLE_CONFIDENCE = 0.8;
 	/**
@@ -53149,7 +53905,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * and customize the type-ahead and the suggestions it provides.
 	 *
 	 * The type-ahead is configurable by activating addons, which the Coveo JavaScript Search Framework provides OOTB
-	 * (facets, analytics suggestions, Reveal suggestions and advanced Coveo syntax suggestions).
+	 * (facets, analytics suggestions, Coveo Machine Learning suggestions and advanced Coveo syntax suggestions).
 	 *
 	 * It is also possible for external code to provide type-ahead suggestions.
 	 *
@@ -53665,7 +54421,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * results.
 	     *
 	     * Set this option as well as {@link Omnibox.options.enableSearchAsYouType} and
-	     * {@link Omnibox.options.RevealQuerySuggestAddon} to `true` for a cool effect!
+	     * {@link Omnibox.options.enableRevealQuerySuggestAddon} to `true` for a cool effect!
 	     *
 	     * Default value is `false`.
 	     */
@@ -53673,8 +54429,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Specifies whether to automatically trigger a new query whenever the end user types new text inside the Omnibox.
 	     *
-	     * Set this option as well a {@link Omnibox.options.inline} and {@link Omnibox.options.RevealQuerySuggestAddon} to
-	     * `true` for a cool effect!
+	     * Set this option as well a {@link Omnibox.options.inline} and
+	     * {@link Omnibox.options.enableRevealQuerySuggestAddon} to `true` for a cool effect!
 	     *
 	     * Default value is `false`.
 	     */
@@ -53707,14 +54463,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    enableSimpleFieldAddon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, depend: 'enableFieldAddon' }),
 	    listOfFields: ComponentOptions_1.ComponentOptions.buildFieldsOption({ depend: 'enableFieldAddon' }),
 	    /**
-	     * Specifies whether to enable the Reveal query suggestions.
+	     * Specifies whether to enable the Coveo Machine Learning (Coveo ML) query suggestions.
 	     *
-	     * This implies that you have a proper Reveal integration configured (see
-	     * [Coveo Reveal](http://www.coveo.com/go?dest=cloudhelp&lcid=9&context=177)).
+	     * This implies that you have a proper Coveo ML integration configured (see
+	     * [Coveo Machine Learning](http://www.coveo.com/go?dest=cloudhelp&lcid=9&context=177)).
 	     *
-	     * Default value is `false`.
+	     * Default value is `true`.
 	     */
-	    enableRevealQuerySuggestAddon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false, alias: 'enableTopQueryAddon' }),
+	    enableRevealQuerySuggestAddon: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true, alias: 'enableTopQueryAddon' }),
 	    /**
 	     * If {@link Querybox.options.enableQuerySyntax} is `true`, specifies whether to enable the `query extension` addon.
 	     *
@@ -53739,11 +54495,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(Omnibox);
 
 
-/***/ },
-/* 193 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var OmniboxEvents_1 = __webpack_require__(46);
 	var ExternalModulesShim_1 = __webpack_require__(23);
 	var _ = __webpack_require__(14);
@@ -53932,11 +54689,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FieldAddon = FieldAddon;
 
 
-/***/ },
-/* 194 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	///<reference path='Omnibox.ts'/>
 	var OmniboxEvents_1 = __webpack_require__(46);
 	var ExternalModulesShim_1 = __webpack_require__(23);
@@ -54066,13 +54824,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.QueryExtensionAddon = QueryExtensionAddon;
 
 
-/***/ },
-/* 195 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var Dom_1 = __webpack_require__(59);
-	var ComponentOptionsModel_1 = __webpack_require__(105);
+	var ComponentOptionsModel_1 = __webpack_require__(102);
 	var OmniboxEvents_1 = __webpack_require__(46);
 	var StringUtils_1 = __webpack_require__(62);
 	var _ = __webpack_require__(14);
@@ -54176,11 +54935,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.RevealQuerySuggestAddon = RevealQuerySuggestAddon;
 
 
-/***/ },
-/* 196 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var OmniboxEvents_1 = __webpack_require__(46);
 	var Dom_1 = __webpack_require__(59);
 	var Utils_1 = __webpack_require__(13);
@@ -54326,7 +55086,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.OldOmniboxAddon = OldOmniboxAddon;
 
 
-/***/ },
+/***/ }),
+/* 195 */,
+/* 196 */,
 /* 197 */,
 /* 198 */,
 /* 199 */,
@@ -54376,9 +55138,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 243 */,
 /* 244 */,
 /* 245 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var DomUtils_1 = __webpack_require__(60);
 	var Dom_1 = __webpack_require__(59);
 	var _ = __webpack_require__(14);
@@ -54434,28 +55197,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.SuggestionForOmnibox = SuggestionForOmnibox;
 
 
-/***/ },
+/***/ }),
 /* 246 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var SuggestionForOmnibox_1 = __webpack_require__(245);
-	var ComponentOptions_1 = __webpack_require__(107);
-	var Component_1 = __webpack_require__(103);
+	var ComponentOptions_1 = __webpack_require__(109);
+	var Component_1 = __webpack_require__(107);
 	var Assert_1 = __webpack_require__(12);
 	var OmniboxEvents_1 = __webpack_require__(46);
 	var QueryEvents_1 = __webpack_require__(48);
 	var Strings_1 = __webpack_require__(35);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
-	var Initialization_1 = __webpack_require__(111);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
+	var Initialization_1 = __webpack_require__(106);
 	var Dom_1 = __webpack_require__(59);
-	var SearchInterface_1 = __webpack_require__(106);
+	var SearchInterface_1 = __webpack_require__(108);
 	var _ = __webpack_require__(14);
 	/**
 	 * The AnalyticsSuggestion component provides query suggestions based on the queries that a Coveo Analytics service most
@@ -54689,25 +55458,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(AnalyticsSuggestions);
 
 
-/***/ },
+/***/ }),
 /* 247 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
+	var __extends = (this && this.__extends) || (function () {
+	    var extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return function (d, b) {
+	        extendStatics(d, b);
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	})();
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var SuggestionForOmnibox_1 = __webpack_require__(245);
-	var Component_1 = __webpack_require__(103);
-	var ComponentOptions_1 = __webpack_require__(107);
+	var Component_1 = __webpack_require__(107);
+	var ComponentOptions_1 = __webpack_require__(109);
 	var Assert_1 = __webpack_require__(12);
 	var Utils_1 = __webpack_require__(13);
 	var OmniboxEvents_1 = __webpack_require__(46);
 	var QueryStateModel_1 = __webpack_require__(101);
-	var Initialization_1 = __webpack_require__(111);
-	var AnalyticsActionListMeta_1 = __webpack_require__(112);
+	var Initialization_1 = __webpack_require__(106);
+	var AnalyticsActionListMeta_1 = __webpack_require__(126);
 	var Strings_1 = __webpack_require__(35);
 	var Dom_1 = __webpack_require__(59);
 	var _ = __webpack_require__(14);
@@ -54950,7 +55725,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Initialization_1.Initialization.registerAutoCreateComponent(FieldSuggestions);
 
 
-/***/ },
+/***/ }),
 /* 248 */,
 /* 249 */,
 /* 250 */,
@@ -54959,9 +55734,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 253 */,
 /* 254 */,
 /* 255 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var _ = __webpack_require__(14);
 	exports.underscoreInstance = _;
 	setCoveoUnderscore();
@@ -54977,7 +55753,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	window['_'] = _;
 
 
-/***/ },
+/***/ }),
 /* 256 */,
 /* 257 */,
 /* 258 */,
@@ -55126,11 +55902,19 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 401 */,
 /* 402 */,
 /* 403 */,
-/* 404 */
-/***/ function(module, exports, __webpack_require__) {
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var CoreHelpers_1 = __webpack_require__(179);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	var CoreHelpers_1 = __webpack_require__(177);
 	var _ = __webpack_require__(14);
 	// Webpack output a library target with a temporary name.
 	// This is to allow end user to put CoveoJsSearch.Dependencie.js before or after the main CoveoJsSearch.js, without breaking
@@ -55163,7 +55947,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.swapVar = swapVar;
 
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
