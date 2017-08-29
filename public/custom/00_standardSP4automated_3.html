@@ -12,10 +12,8 @@
             document.addEventListener('DOMContentLoaded', function () {
                 Coveo.SearchEndpoint.configureSampleEndpointV2();
                 Coveo.init(document.querySelector('#search'));
-            })
-            var testthis = function () {
-                alert("Triggers received");
-            }
+            });
+
         </script>
     </head>
     <body >
@@ -120,7 +118,9 @@
                     <div class="CoveoHiddenQuery"></div>
                     <div class="CoveoDidYouMean"></div>
                     <div class="CoveoErrorReport"></div>
-                    <div class="CoveoResultList" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+                    <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="true">
+                    </div>
+                    <div class="CoveoResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="true">
                     </div>
                     <div class="CoveoPager"></div>
                     <div class="CoveoResultsPerPage"></div>
