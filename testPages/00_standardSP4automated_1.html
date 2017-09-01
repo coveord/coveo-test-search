@@ -11,7 +11,10 @@
       document.addEventListener('DOMContentLoaded', function(){
         Coveo.SearchEndpoint.configureSampleEndpoint();
         Coveo.init(document.body);
-      })
+      });
+      var testthis = function () {
+          alert("Query received!");
+      };
     </script>
   </head>
   <body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-pipeline="PipelineTest">
