@@ -2,8 +2,582 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/ReadMe.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/examples/normal-usage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/examples/safe-string.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/colors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/custom/trap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/custom/zalgo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/extendStringPrototype.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/maps/america.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/maps/rainbow.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/maps/random.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/maps/zebra.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/styles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/lib/system/supports-colors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/safe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/colors/themes/generic-logging.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/d3-hierarchy/src/pack/shuffle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/d3-shape/src/radialArea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/d3-shape/src/radialLine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/d3-shape/src/radialPoint.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/graceful-readlink/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/graceful-readlink/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/graceful-readlink/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/graceful-readlink/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/graceful-readlink/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/graceful-readlink/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/gulp/clean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/gulp/inject.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/gulp/staticFiles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/gulp/tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/gulp/webpack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/gulpFile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/karma.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/tsconfig.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/tslint.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker-react-babel-karma-gulp/webpack.config.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/commander/History.md" afterPath="$PROJECT_DIR$/node_modules/commander/History.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/commander/Readme.md" afterPath="$PROJECT_DIR$/node_modules/commander/Readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/commander/index.js" afterPath="$PROJECT_DIR$/node_modules/commander/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/commander/package.json" afterPath="$PROJECT_DIR$/node_modules/commander/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/README.md" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/Standalone.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/Standalone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/coverage-es5.json" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/coverage-es5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/coverage.json" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/coverage.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov-report/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov-report/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov-report/tests/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov-report/tests/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov-report/tests/tests.js.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov-report/tests/tests.js.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov.info" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-es5/lcov.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/BaseModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/BaseModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ControllersModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ControllersModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/EventsModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/EventsModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ExternalModulesShim.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ExternalModulesShim.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/Index.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/Index.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/MiscModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/MiscModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ModelsModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ModelsModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/RestModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/RestModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/SwapVar.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/SwapVar.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/TemplatesModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/TemplatesModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/UIBaseModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/UIBaseModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/UtilsModules.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/UtilsModules.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/FacetQueryController.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/FacetQueryController.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/FacetRangeQueryController.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/FacetRangeQueryController.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/FacetSliderQueryController.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/FacetSliderQueryController.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/HierarchicalFacetQueryController.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/HierarchicalFacetQueryController.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/HistoryController.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/HistoryController.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/LocalStorageHistoryController.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/LocalStorageHistoryController.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/QueryController.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/QueryController.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/controllers/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/AdvancedSearchEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/AdvancedSearchEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/AnalyticsEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/AnalyticsEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/BreadcrumbEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/BreadcrumbEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/CardOverlayEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/CardOverlayEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/DebugEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/DebugEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/ImageResultListEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/ImageResultListEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/InitializationEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/InitializationEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/OmniboxEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/OmniboxEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/PreferencesPanelEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/PreferencesPanelEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/QueryEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/QueryEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/QuerySummaryEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/QuerySummaryEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/QuickviewEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/QuickviewEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/ResultLayoutEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/ResultLayoutEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/ResultListEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/ResultListEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/SearchAlertEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/SearchAlertEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/SettingsEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/SettingsEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/SliderEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/SliderEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/StandaloneSearchInterfaceEvents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/StandaloneSearchInterfaceEvents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/events/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Assert.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Assert.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Cache.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Cache.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/CustomEventPolyfill.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/CustomEventPolyfill.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Defer.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Defer.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/L10N.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/L10N.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Logger.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Logger.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Options.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Options.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/PromisesShim.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/PromisesShim.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/SentryLogger.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/SentryLogger.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Version.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/Version.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/misc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/ComponentOptionsModel.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/ComponentOptionsModel.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/ComponentStateModel.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/ComponentStateModel.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/Model.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/Model.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/QueryStateModel.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/QueryStateModel.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/models/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/APIAnalyticsBuilder.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/APIAnalyticsBuilder.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/AjaxError.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/AjaxError.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/AnalyticsEndpoint.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/AnalyticsEndpoint.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/EndpointCaller.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/EndpointCaller.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/MissingAuthenticationError.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/MissingAuthenticationError.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/QueryError.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/QueryError.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/SearchEndpoint.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/SearchEndpoint.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/SearchEndpointWithDefaultCallOptions.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/SearchEndpointWithDefaultCallOptions.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/Subscription.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/Subscription.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/rest/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/strings/DefaultLanguage.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/strings/DefaultLanguage.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/strings/Strings.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/strings/Strings.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/strings/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/strings/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/AdvancedSearch.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/AdvancedSearch.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/AdvancedSearchInputFactory.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/AdvancedSearchInputFactory.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/AnytimeDateInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/AnytimeDateInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/BetweenDateInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/BetweenDateInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/DateInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/DateInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/InTheLastDateInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/InTheLastDateInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DateInput/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/AdvancedFieldInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/AdvancedFieldInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/DocumentInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/DocumentInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/SimpleFieldInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/SimpleFieldInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/SizeInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/SizeInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/DocumentInput/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/DatePicker.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/DatePicker.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/Dropdown.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/Dropdown.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/NumericSpinner.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/NumericSpinner.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/RadioButton.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/RadioButton.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/TextInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/TextInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/Form/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/AllKeywordsInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/AllKeywordsInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/AnyKeywordsInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/AnyKeywordsInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/ExactKeywordsInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/ExactKeywordsInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/KeywordsInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/KeywordsInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/NoneKeywordsInput.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/NoneKeywordsInput.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/KeywordsInput/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AdvancedSearch/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Aggregate/Aggregate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Aggregate/Aggregate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Aggregate/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Aggregate/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/Analytics.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/Analytics.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/AnalyticsActionListMeta.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/AnalyticsActionListMeta.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/LiveAnalyticsClient.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/LiveAnalyticsClient.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/MultiAnalyticsClient.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/MultiAnalyticsClient.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/NoopAnalyticsClient.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/NoopAnalyticsClient.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/PendingSearchAsYouTypeSearchEvent.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/PendingSearchAsYouTypeSearchEvent.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/PendingSearchEvent.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/PendingSearchEvent.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/RecommendationAnalyticsClient.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/RecommendationAnalyticsClient.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Analytics/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AnalyticsSuggestions/AnalyticsSuggestions.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AnalyticsSuggestions/AnalyticsSuggestions.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AnalyticsSuggestions/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AnalyticsSuggestions/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AuthenticationProvider/AuthenticationProvider.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AuthenticationProvider/AuthenticationProvider.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AuthenticationProvider/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/AuthenticationProvider/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Backdrop/Backdrop.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Backdrop/Backdrop.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Backdrop/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Backdrop/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/BaseComponent.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/BaseComponent.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/Component.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/Component.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/ComponentOptions.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/ComponentOptions.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/CoveoJQuery.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/CoveoJQuery.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/CoveoUnderscore.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/CoveoUnderscore.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/ExpressionBuilder.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/ExpressionBuilder.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/Initialization.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/Initialization.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/QueryBuilder.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/QueryBuilder.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/RegisteredNamedMethods.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/RegisteredNamedMethods.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/RootComponent.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/RootComponent.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Base/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Breadcrumb/Breadcrumb.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Breadcrumb/Breadcrumb.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Breadcrumb/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Breadcrumb/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardActionBar/CardActionBar.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardActionBar/CardActionBar.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardActionBar/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardActionBar/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardOverlay/CardOverlay.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardOverlay/CardOverlay.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardOverlay/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CardOverlay/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterLikedBy/ChatterLikedBy.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterLikedBy/ChatterLikedBy.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterLikedBy/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterLikedBy/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostAttachment/ChatterPostAttachment.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostAttachment/ChatterPostAttachment.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostAttachment/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostAttachment/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostedBy/ChatterPostedBy.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostedBy/ChatterPostedBy.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostedBy/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterPostedBy/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterTopic/ChatterTopic.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterTopic/ChatterTopic.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterTopic/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ChatterTopic/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CurrentTab/CurrentTab.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CurrentTab/CurrentTab.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CurrentTab/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/CurrentTab/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Debug/Debug.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Debug/Debug.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Debug/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Debug/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/DidYouMean/DidYouMean.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/DidYouMean/DidYouMean.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/DidYouMean/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/DidYouMean/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ErrorReport/ErrorReport.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ErrorReport/ErrorReport.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ErrorReport/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ErrorReport/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Excerpt/Excerpt.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Excerpt/Excerpt.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Excerpt/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Excerpt/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ExportToExcel/ExportToExcel.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ExportToExcel/ExportToExcel.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ExportToExcel/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ExportToExcel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/BreadcrumbValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/BreadcrumbValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/BreadcrumbValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/BreadcrumbValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/Facet.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/Facet.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetHeader.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetHeader.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSearch.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSearch.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSearchParameters.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSearchParameters.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSearchValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSearchValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSettings.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSettings.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSort.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetSort.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValues.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValues.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValuesOrder.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/FacetValuesOrder.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/OmniboxValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/OmniboxValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/OmniboxValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/OmniboxValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/ValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/ValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/ValueElementRenderer.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/ValueElementRenderer.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Facet/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetRange/FacetRange.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetRange/FacetRange.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetRange/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetRange/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetSlider/FacetSlider.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetSlider/FacetSlider.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetSlider/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FacetSlider/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldSuggestions/FieldSuggestions.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldSuggestions/FieldSuggestions.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldSuggestions/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldSuggestions/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/Badge.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/Badge.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/FieldTable.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/FieldTable.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/FieldValue.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/FieldValue.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/FieldTable/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Folding/Folding.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Folding/Folding.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Folding/FoldingForThread.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Folding/FoldingForThread.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Folding/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Folding/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HiddenQuery/HiddenQuery.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HiddenQuery/HiddenQuery.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HiddenQuery/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HiddenQuery/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalBreadcrumbValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalBreadcrumbValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalBreadcrumbValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalBreadcrumbValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacet.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacet.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetSearch.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetSearch.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetSearchValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetSearchValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetSearchValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetSearchValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/HierarchicalFacetValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/OmniboxHierarchicalValueElement.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/OmniboxHierarchicalValueElement.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/OmniboxHierarchicalValuesList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/OmniboxHierarchicalValuesList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/HierarchicalFacet/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Icon/Icon.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Icon/Icon.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Icon/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Icon/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ImageResultList/ImageResultList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ImageResultList/ImageResultList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ImageResultList/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ImageResultList/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Logo/Logo.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Logo/Logo.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Logo/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Logo/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/Cell.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/Cell.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/DefaultMatrixResultPreviewTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/DefaultMatrixResultPreviewTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/Matrix.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/Matrix.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Matrix/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/FileTypes.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/FileTypes.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/Slider.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/Slider.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/SuggestionForOmnibox.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/SuggestionForOmnibox.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Misc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/FieldAddon.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/FieldAddon.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/OldOmniboxAddon.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/OldOmniboxAddon.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/Omnibox.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/Omnibox.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/QueryExtensionAddon.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/QueryExtensionAddon.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/RevealQuerySuggestAddon.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/RevealQuerySuggestAddon.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Omnibox/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/OmniboxResultList/OmniboxResultList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/OmniboxResultList/OmniboxResultList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/OmniboxResultList/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/OmniboxResultList/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Pager/Pager.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Pager/Pager.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Pager/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Pager/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PipelineContext/PipelineContext.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PipelineContext/PipelineContext.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PipelineContext/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PipelineContext/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PreferencesPanel/PreferencesPanel.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PreferencesPanel/PreferencesPanel.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PreferencesPanel/PreferencesPanelItem.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PreferencesPanel/PreferencesPanelItem.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PreferencesPanel/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PreferencesPanel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PrintableUri/PrintableUri.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PrintableUri/PrintableUri.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PrintableUri/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/PrintableUri/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QueryDuration/QueryDuration.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QueryDuration/QueryDuration.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QueryDuration/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QueryDuration/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QuerySummary/QuerySummary.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QuerySummary/QuerySummary.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QuerySummary/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/QuerySummary/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Querybox/Querybox.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Querybox/Querybox.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Querybox/QueryboxQueryParameters.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Querybox/QueryboxQueryParameters.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Querybox/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Querybox/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/DefaultQuickviewTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/DefaultQuickviewTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/Quickview.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/Quickview.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/QuickviewDocument.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/QuickviewDocument.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Quickview/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Recommendation/Recommendation.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Recommendation/Recommendation.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Recommendation/RecommendationQuery.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Recommendation/RecommendationQuery.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Recommendation/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Recommendation/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveComponents.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveComponents.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveComponentsManager.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveComponentsManager.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveComponentsUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveComponentsUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDefaultResultTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDefaultResultTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/RecommendationDropdownContent.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/RecommendationDropdownContent.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/ResponsiveDropdown.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/ResponsiveDropdown.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/ResponsiveDropdownContent.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/ResponsiveDropdownContent.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/ResponsiveDropdownHeader.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/ResponsiveDropdownHeader.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveDropdown/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveFacets.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveFacets.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveRecommendation.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveRecommendation.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveResultLayout.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveResultLayout.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveTabs.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/ResponsiveTabs.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResponsiveComponents/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultAttachments/DefaultResultAttachmentTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultAttachments/DefaultResultAttachmentTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultAttachments/ResultAttachments.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultAttachments/ResultAttachments.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultAttachments/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultAttachments/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultFolding/DefaultFoldingTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultFolding/DefaultFoldingTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultFolding/ResultFolding.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultFolding/ResultFolding.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultFolding/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultFolding/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLayout/ResultLayout.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLayout/ResultLayout.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLayout/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLayout/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLink/ResultLink.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLink/ResultLink.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLink/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultLink/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultList/ResultList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultList/ResultList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultList/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultList/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultRating/ResultRating.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultRating/ResultRating.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultRating/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultRating/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultTagging/ResultTagging.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultTagging/ResultTagging.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultTagging/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultTagging/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsFiltersPreferences/ResultsFiltersPreferences.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsFiltersPreferences/ResultsFiltersPreferences.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsFiltersPreferences/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsFiltersPreferences/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPerPage/ResultsPerPage.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPerPage/ResultsPerPage.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPerPage/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPerPage/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPreferences/ResultsPreferences.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPreferences/ResultsPreferences.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPreferences/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ResultsPreferences/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/FollowItem.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/FollowItem.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/SearchAlerts.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/SearchAlerts.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/SearchAlertsMessage.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/SearchAlertsMessage.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchAlerts/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchButton/SearchButton.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchButton/SearchButton.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchButton/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchButton/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchInterface/SearchInterface.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchInterface/SearchInterface.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchInterface/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/SearchInterface/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Searchbox/Searchbox.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Searchbox/Searchbox.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Searchbox/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Searchbox/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Settings/Settings.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Settings/Settings.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Settings/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Settings/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ShareQuery/ShareQuery.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ShareQuery/ShareQuery.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ShareQuery/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/ShareQuery/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Sort/Sort.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Sort/Sort.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Sort/SortCriteria.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Sort/SortCriteria.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Sort/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Sort/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Tab/Tab.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Tab/Tab.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Tab/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Tab/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/TemplateLoader/TemplateLoader.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/TemplateLoader/TemplateLoader.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/TemplateLoader/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/TemplateLoader/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/CoreHelpers.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/CoreHelpers.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/DefaultRecommendationTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/DefaultRecommendationTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/DefaultResultTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/DefaultResultTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/HtmlTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/HtmlTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/Template.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/Template.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateCache.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateCache.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateConditionEvaluator.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateConditionEvaluator.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateFieldsEvaluator.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateFieldsEvaluator.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateFromAScriptTag.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateFromAScriptTag.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateHelpers.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateHelpers.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateList.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/TemplateList.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/UnderscoreTemplate.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/UnderscoreTemplate.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Text/Text.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Text/Text.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Text/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Text/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Thumbnail/Thumbnail.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Thumbnail/Thumbnail.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Thumbnail/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Thumbnail/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Triggers/Triggers.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Triggers/Triggers.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Triggers/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/Triggers/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/YouTube/YouTubeThumbnail.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/YouTube/YouTubeThumbnail.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/YouTube/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/ui/YouTube/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/ChatterUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/ChatterUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/ColorUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/ColorUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/CookieUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/CookieUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/CurrencyUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/CurrencyUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/DateUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/DateUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/DeviceUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/DeviceUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/Dom.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/Dom.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/DomUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/DomUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/EmailUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/EmailUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/EventsUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/EventsUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/HashUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/HashUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/HighlightUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/HighlightUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/HtmlUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/HtmlUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/JQueryutils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/JQueryutils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/KeyboardUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/KeyboardUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/LocalStorageUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/LocalStorageUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/OSUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/OSUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/PopupUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/PopupUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/QueryUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/QueryUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/StreamHighlightUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/StreamHighlightUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/StringUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/StringUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/TimeSpanUtils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/TimeSpanUtils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/Utils.ts.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/Utils.ts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov-report/src/utils/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov.info" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/coverage/lcov.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/docgen/docgen.json" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/docgen/docgen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.min.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.min.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.Searchbox.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.min.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.min.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/CoveoJsSearch.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/cultures/en.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/cultures/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/cultures/fr.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/js/cultures/fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/tests/tests.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/tests/tests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/tests/tests.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/tests/tests.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/ts/CoveoJsSearch.d.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/ts/CoveoJsSearch.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/ts/Externals.d.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/bin/ts/Externals.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.min.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.min.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.Searchbox.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.min.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.min.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/CoveoJsSearch.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/cultures/en.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/cultures/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/cultures/fr.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/cultures/fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/playground.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/playground.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/playground.js.map" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/gen/js/playground.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/js/search.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/assets/js/search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/classes/dom.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/classes/dom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/badge.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/badge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/fieldvalue.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/fieldvalue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/pager.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/pager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/resultsperpage.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/components/resultsperpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/globals.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/globals.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/index.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/interfaces/ianalyticsclient.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/interfaces/ianalyticsclient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/interfaces/istreamhighlightoptions.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/docgen/interfaces/istreamhighlightoptions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/gulpTasks/dev.js" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/gulpTasks/dev.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/package.json" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/pages/Standalone.html" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/pages/Standalone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/controllers/FacetSliderQueryController.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/controllers/FacetSliderQueryController.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/controllers/QueryController.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/controllers/QueryController.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/misc/Version.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/misc/Version.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/strings/DefaultLanguage.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/strings/DefaultLanguage.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/strings/Strings.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/strings/Strings.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/AnalyticsClient.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/AnalyticsClient.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/LiveAnalyticsClient.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/LiveAnalyticsClient.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/MultiAnalyticsClient.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/MultiAnalyticsClient.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/NoopAnalyticsClient.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/NoopAnalyticsClient.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/PendingSearchAsYouTypeSearchEvent.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/PendingSearchAsYouTypeSearchEvent.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/PendingSearchEvent.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/PendingSearchEvent.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/RecommendationAnalyticsClient.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Analytics/RecommendationAnalyticsClient.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Facet/ValueElement.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Facet/ValueElement.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/FieldTable/FieldValue.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/FieldTable/FieldValue.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Omnibox/Omnibox.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Omnibox/Omnibox.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Pager/Pager.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Pager/Pager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Recommendation/Recommendation.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/Recommendation/Recommendation.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/ResultLayout/ResultLayout.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/ResultLayout/ResultLayout.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/ResultList/ResultList.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/ResultList/ResultList.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/ResultsPerPage/ResultsPerPage.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/ResultsPerPage/ResultsPerPage.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/SearchInterface/SearchInterface.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/ui/SearchInterface/SearchInterface.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/DateUtils.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/DateUtils.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/Dom.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/Dom.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/HighlightUtils.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/HighlightUtils.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/KeyboardUtils.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/KeyboardUtils.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/StreamHighlightUtils.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/StreamHighlightUtils.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/StringUtils.ts" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/src/utils/StringUtils.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveo-search-ui/strings/strings.json" afterPath="$PROJECT_DIR$/node_modules/coveo-search-ui/strings/strings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveomagicbox/bin/MagicBox.js" afterPath="$PROJECT_DIR$/node_modules/coveomagicbox/bin/MagicBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveomagicbox/bin/MagicBox.min.js" afterPath="$PROJECT_DIR$/node_modules/coveomagicbox/bin/MagicBox.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveomagicbox/package.json" afterPath="$PROJECT_DIR$/node_modules/coveomagicbox/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/coveomagicbox/src/SuggestionsManager.ts" afterPath="$PROJECT_DIR$/node_modules/coveomagicbox/src/SuggestionsManager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-axis/build/d3-axis.js" afterPath="$PROJECT_DIR$/node_modules/d3-axis/build/d3-axis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-axis/build/d3-axis.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-axis/build/d3-axis.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-axis/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-axis/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-axis/src/axis.js" afterPath="$PROJECT_DIR$/node_modules/d3-axis/src/axis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-collection/README.md" afterPath="$PROJECT_DIR$/node_modules/d3-collection/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-collection/build/d3-collection.js" afterPath="$PROJECT_DIR$/node_modules/d3-collection/build/d3-collection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-collection/build/d3-collection.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-collection/build/d3-collection.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-collection/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-collection/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-collection/src/nest.js" afterPath="$PROJECT_DIR$/node_modules/d3-collection/src/nest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-drag/build/d3-drag.js" afterPath="$PROJECT_DIR$/node_modules/d3-drag/build/d3-drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-drag/build/d3-drag.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-drag/build/d3-drag.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-drag/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-drag/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-drag/src/drag.js" afterPath="$PROJECT_DIR$/node_modules/d3-drag/src/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-hierarchy/README.md" afterPath="$PROJECT_DIR$/node_modules/d3-hierarchy/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-hierarchy/build/d3-hierarchy.js" afterPath="$PROJECT_DIR$/node_modules/d3-hierarchy/build/d3-hierarchy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-hierarchy/build/d3-hierarchy.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-hierarchy/build/d3-hierarchy.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-hierarchy/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-hierarchy/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-hierarchy/src/pack/enclose.js" afterPath="$PROJECT_DIR$/node_modules/d3-hierarchy/src/pack/enclose.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-hierarchy/src/pack/siblings.js" afterPath="$PROJECT_DIR$/node_modules/d3-hierarchy/src/pack/siblings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-shape/README.md" afterPath="$PROJECT_DIR$/node_modules/d3-shape/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-shape/build/d3-shape.js" afterPath="$PROJECT_DIR$/node_modules/d3-shape/build/d3-shape.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-shape/build/d3-shape.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-shape/build/d3-shape.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-shape/index.js" afterPath="$PROJECT_DIR$/node_modules/d3-shape/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-shape/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-shape/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-shape/src/link/index.js" afterPath="$PROJECT_DIR$/node_modules/d3-shape/src/link/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-time/.eslintrc" afterPath="$PROJECT_DIR$/node_modules/d3-time/.eslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-time/build/d3-time.js" afterPath="$PROJECT_DIR$/node_modules/d3-time/build/d3-time.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-time/build/d3-time.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-time/build/d3-time.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-time/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-time/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-time/src/interval.js" afterPath="$PROJECT_DIR$/node_modules/d3-time/src/interval.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-timer/build/d3-timer.js" afterPath="$PROJECT_DIR$/node_modules/d3-timer/build/d3-timer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-timer/build/d3-timer.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-timer/build/d3-timer.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-timer/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-timer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-timer/src/timer.js" afterPath="$PROJECT_DIR$/node_modules/d3-timer/src/timer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-zoom/README.md" afterPath="$PROJECT_DIR$/node_modules/d3-zoom/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-zoom/build/d3-zoom.js" afterPath="$PROJECT_DIR$/node_modules/d3-zoom/build/d3-zoom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-zoom/build/d3-zoom.min.js" afterPath="$PROJECT_DIR$/node_modules/d3-zoom/build/d3-zoom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-zoom/package.json" afterPath="$PROJECT_DIR$/node_modules/d3-zoom/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3-zoom/src/zoom.js" afterPath="$PROJECT_DIR$/node_modules/d3-zoom/src/zoom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3/build/d3.js" afterPath="$PROJECT_DIR$/node_modules/d3/build/d3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3/build/d3.min.js" afterPath="$PROJECT_DIR$/node_modules/d3/build/d3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3/build/d3.node.js" afterPath="$PROJECT_DIR$/node_modules/d3/build/d3.node.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3/build/package.js" afterPath="$PROJECT_DIR$/node_modules/d3/build/package.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3/package.json" afterPath="$PROJECT_DIR$/node_modules/d3/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3/rollup.config.js" afterPath="$PROJECT_DIR$/node_modules/d3/rollup.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/d3/rollup.node.js" afterPath="$PROJECT_DIR$/node_modules/d3/rollup.node.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/README.md" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/Resolver.js" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/Resolver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/ResolverFactory.js" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/ResolverFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/SymlinkPlugin.js" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/SymlinkPlugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/forEachBail.js" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/lib/forEachBail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/enhanced-resolve/package.json" afterPath="$PROJECT_DIR$/node_modules/enhanced-resolve/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_duplex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_passthrough.js" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_passthrough.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_readable.js" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_readable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_transform.js" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_transform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_writable.js" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/_stream_writable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/internal/streams/BufferList.js" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/lib/internal/streams/BufferList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/writable.js" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/readable-stream/writable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/node_modules/memory-fs/node_modules/string_decoder/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/pikaday/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/README.md" afterPath="$PROJECT_DIR$/node_modules/pikaday/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/component.json" afterPath="$PROJECT_DIR$/node_modules/pikaday/component.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/css/pikaday.css" afterPath="$PROJECT_DIR$/node_modules/pikaday/css/pikaday.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/examples/daysInNextMonth.html" afterPath="$PROJECT_DIR$/node_modules/pikaday/examples/daysInNextMonth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/examples/pick-whole-week.html" afterPath="$PROJECT_DIR$/node_modules/pikaday/examples/pick-whole-week.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/package.json" afterPath="$PROJECT_DIR$/node_modules/pikaday/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/pikaday.js" afterPath="$PROJECT_DIR$/node_modules/pikaday/pikaday.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pikaday/scss/pikaday.scss" afterPath="$PROJECT_DIR$/node_modules/pikaday/scss/pikaday.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/semver/README.md" afterPath="$PROJECT_DIR$/node_modules/semver/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/semver/package.json" afterPath="$PROJECT_DIR$/node_modules/semver/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/semver/semver.js" afterPath="$PROJECT_DIR$/node_modules/semver/semver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/tapable/README.md" afterPath="$PROJECT_DIR$/node_modules/tapable/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/tapable/lib/Tapable.js" afterPath="$PROJECT_DIR$/node_modules/tapable/lib/Tapable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/tapable/package.json" afterPath="$PROJECT_DIR$/node_modules/tapable/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/ts-loader/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/ts-loader/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/README.md" afterPath="$PROJECT_DIR$/node_modules/ts-loader/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/appveyor.yml" afterPath="$PROJECT_DIR$/node_modules/ts-loader/appveyor.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/after-compile.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/after-compile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/compilerSetup.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/compilerSetup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/config.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/constants.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/constants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/index.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/instances.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/instances.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/resolver.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/resolver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/servicesHost.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/servicesHost.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/utils.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/dist/watch-run.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/dist/watch-run.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker/package.json" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker/tsconfig.json" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker/tsconfig.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker/webpack.config.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/fork-ts-checker/webpack.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/README.md" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/gulp/webpack.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/gulp/webpack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/gulpFile.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/gulpFile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/karma.conf.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/package.json" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/webpack.config.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp/webpack.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-cdn-simple/package.json" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-cdn-simple/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-cdn-simple/tsconfig.json" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-cdn-simple/tsconfig.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-cdn-simple/webpack.config.js" afterPath="$PROJECT_DIR$/node_modules/ts-loader/examples/react-cdn-simple/webpack.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ts-loader/package.json" afterPath="$PROJECT_DIR$/node_modules/ts-loader/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Standalone.html" afterPath="$PROJECT_DIR$/public/Standalone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testPages/00_standardSP4automated_1.html" afterPath="$PROJECT_DIR$/testPages/00_standardSP4automated_1.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,12 +590,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="0">
+              <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -30,8 +604,28 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state relative-caret-position="48">
+              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="00_standardSP4automated_2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1632">
+              <caret line="68" column="140" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="68" selection-end-column="140" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="0_testAllComponentV2 - french.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testPages/0_testAllComponentV2 - french.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,14 +633,23 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>trigger</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_3.html" />
+        <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_2.html" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/testPages/0_testAllComponentV2 - french.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_1.html" />
       </list>
     </option>
   </component>
@@ -68,7 +671,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1918" />
-    <option name="height" value="1072" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -96,6 +699,11 @@
             <path>
               <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
               <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
               <item name="testPages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -111,6 +719,11 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\coveo\herokuTesting\coveo-test-search\testPages" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -134,35 +747,65 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504029022689</updated>
-      <workItem from="1504029024040" duration="104000" />
+      <workItem from="1504029024040" duration="1039000" />
+      <workItem from="1504048785661" duration="569000" />
+      <workItem from="1504049486522" duration="781000" />
+      <workItem from="1504050380637" duration="289000" />
+      <workItem from="1504056964320" duration="431000" />
+      <workItem from="1504108008048" duration="460000" />
+      <workItem from="1504121344100" duration="967000" />
+      <workItem from="1504277782776" duration="1072000" />
+      <workItem from="1507169925275" duration="670000" />
+      <workItem from="1507228966511" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104000" />
+    <option name="totallyTimeSpent" value="6290000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1918" height="1072" extended-state="0" />
+    <frame x="0" y="0" width="1918" height="1038" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2649294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35016286" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959914" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -177,16 +820,369 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="360">
+          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        <state relative-caret-position="48">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="68" column="140" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="68" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/0_testAllComponentV2 - french.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="44" column="88" lean-forward="true" selection-start-line="44" selection-start-column="88" selection-end-line="44" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/0_testAllComponentV2 - french.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="126" column="163" lean-forward="false" selection-start-line="126" selection-start-column="163" selection-end-line="126" selection-end-column="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1416">
+          <caret line="59" column="60" lean-forward="false" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2496">
+          <caret line="104" column="32" lean-forward="false" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="126" column="163" lean-forward="false" selection-start-line="126" selection-start-column="163" selection-end-line="126" selection-end-column="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2496">
+          <caret line="104" column="32" lean-forward="false" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1416">
+          <caret line="59" column="60" lean-forward="true" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="126" column="163" lean-forward="false" selection-start-line="126" selection-start-column="163" selection-end-line="126" selection-end-column="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5040">
+          <caret line="210" column="128" lean-forward="false" selection-start-line="210" selection-start-column="128" selection-end-line="210" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2496">
+          <caret line="104" column="32" lean-forward="false" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5040">
+          <caret line="210" column="128" lean-forward="false" selection-start-line="210" selection-start-column="128" selection-end-line="210" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2472">
+          <caret line="103" column="6" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="152" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="126" column="163" lean-forward="false" selection-start-line="126" selection-start-column="163" selection-end-line="126" selection-end-column="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5040">
+          <caret line="210" column="128" lean-forward="false" selection-start-line="210" selection-start-column="128" selection-end-line="210" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2928">
+          <caret line="122" column="58" lean-forward="false" selection-start-line="122" selection-start-column="58" selection-end-line="122" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2496">
+          <caret line="104" column="32" lean-forward="false" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4992">
+          <caret line="208" column="163" lean-forward="false" selection-start-line="208" selection-start-column="163" selection-end-line="208" selection-end-column="163" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="214" column="22" lean-forward="true" selection-start-line="211" selection-start-column="16" selection-end-line="214" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/custom/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="59" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="225" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="126" column="163" lean-forward="false" selection-start-line="126" selection-start-column="163" selection-end-line="126" selection-end-column="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/0_testAllComponentV2 - french.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="68" column="140" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="68" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="44" column="88" lean-forward="false" selection-start-line="44" selection-start-column="88" selection-end-line="44" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
           <folding />
         </state>
       </provider>
