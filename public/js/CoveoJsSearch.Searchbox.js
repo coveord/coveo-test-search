@@ -84,7 +84,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.SearchButton = SearchButton_1.SearchButton;
 	var Searchbox_1 = __webpack_require__(190);
 	exports.Searchbox = Searchbox_1.Searchbox;
-	var SwapVar_1 = __webpack_require__(415);
+	var SwapVar_1 = __webpack_require__(418);
 	SwapVar_1.swapVar(this);
 
 
@@ -132,39 +132,52 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
+	/* istanbul ignore next */
 	function shim() {
-	    Promise.prototype['finally'] = function finallyPolyfill(callback) {
-	        var constructor = this.constructor;
-	        return this.then(function (value) {
-	            return constructor.resolve(callback()).then(function () {
-	                return value;
+	    var doShim = function (promiseInstance) {
+	        if (typeof promiseInstance.prototype['finally'] != 'function') {
+	            promiseInstance.prototype['finally'] = function finallyPolyfill(callback) {
+	                var constructor = this.constructor;
+	                return this.then(function (value) {
+	                    return constructor.resolve(callback()).then(function () {
+	                        return value;
+	                    });
+	                }, function (reason) {
+	                    return constructor.resolve(callback()).then(function () {
+	                        throw reason;
+	                    });
+	                });
+	            };
+	        }
+	        var rethrowError = function (self) {
+	            self.then(null, function (err) {
+	                setTimeout(function () {
+	                    throw err;
+	                }, 0);
 	            });
-	        }, function (reason) {
-	            return constructor.resolve(callback()).then(function () {
-	                throw reason;
-	            });
-	        });
-	    };
-	    var rethrowError = function (self) {
-	        self.then(null, function (err) {
-	            setTimeout(function () {
-	                throw err;
-	            }, 0);
-	        });
-	    };
-	    if (typeof Promise.prototype['done'] !== 'function') {
-	        Promise.prototype['done'] = function (onFulfilled, onRejected) {
-	            var self = arguments.length ? this.then.apply(this, arguments) : this;
-	            rethrowError(self);
-	            return this;
 	        };
+	        if (typeof promiseInstance.prototype['done'] !== 'function') {
+	            promiseInstance.prototype['done'] = function (onFulfilled, onRejected) {
+	                var self = arguments.length ? this.then.apply(this, arguments) : this;
+	                rethrowError(self);
+	                return this;
+	            };
+	        }
+	        if (typeof promiseInstance.prototype['fail'] !== 'function') {
+	            promiseInstance.prototype['fail'] = function (onFulfilled, onRejected) {
+	                var self = arguments.length ? this.catch.apply(this, arguments) : this;
+	                rethrowError(self);
+	                return this;
+	            };
+	        }
+	    };
+	    var globalPromise = window['Promise'];
+	    var localPromise = Promise;
+	    if (globalPromise) {
+	        doShim(globalPromise);
 	    }
-	    if (typeof Promise.prototype['fail'] !== 'function') {
-	        Promise.prototype['fail'] = function (onFulfilled, onRejected) {
-	            var self = arguments.length ? this.catch.apply(this, arguments) : this;
-	            rethrowError(self);
-	            return this;
-	        };
+	    if (localPromise) {
+	        doShim(localPromise);
 	    }
 	}
 	exports.shim = shim;
@@ -203,8 +216,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.version = {
-	    'lib': '1.2537.42-beta',
-	    'product': '1.2537.42-beta',
+	    'lib': '1.2537.53-beta',
+	    'product': '1.2537.53-beta',
 	    'supportedApiVersion': 2
 	};
 
@@ -10516,9 +10529,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return true;
 	    };
 	    HistoryStore.prototype.stripInternalTime = function (history) {
-	        history.forEach(function (part, index, array) {
-	            delete part.internalTime;
-	        });
+	        if (history) {
+	            history.forEach(function (part, index, array) {
+	                delete part.internalTime;
+	            });
+	        }
 	        return history;
 	    };
 	    return HistoryStore;
@@ -11653,7 +11668,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // If not, just create an empty one.
 	            lastQuery = new QueryBuilder_1.QueryBuilder().build();
 	        }
-	        lastQuery.q = this.facet.facetQueryController.basicExpressionToUseForFacetSearch;
+	        // We want to always force query syntax to true for a facet search,
+	        // but arrange for the basic expression to adapt itself with no syntax block
+	        if (!lastQuery.disableQuerySyntax) {
+	            lastQuery.q = this.facet.facetQueryController.basicExpressionToUseForFacetSearch;
+	        }
+	        else {
+	            if (this.facet.facetQueryController.basicExpressionToUseForFacetSearch == '@uri') {
+	                lastQuery.q = '';
+	            }
+	            else {
+	                lastQuery.q = "<@- " + this.facet.facetQueryController.basicExpressionToUseForFacetSearch + " -@>";
+	            }
+	        }
+	        lastQuery.disableQuerySyntax = false;
 	        lastQuery.cq = this.facet.facetQueryController.constantExpressionToUseForFacetSearch;
 	        lastQuery.aq = this.facet.facetQueryController.advancedExpressionToUseForFacetSearch;
 	        lastQuery.enableDidYouMean = false;
@@ -12289,14 +12317,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    HistoryController.prototype.setHashValues = function (values) {
 	        this.logger.trace('Update history hash');
 	        var hash = '#' + this.hashUtils.encodeValues(values);
-	        this.ignoreNextHashChange = this.windoh.location.hash != hash;
+	        var hashHasChanged = this.windoh.location.hash != hash;
+	        this.ignoreNextHashChange = hashHasChanged;
 	        this.logger.trace('ignoreNextHashChange', this.ignoreNextHashChange);
 	        this.logger.trace('initialHashChange', this.initialHashChange);
 	        this.logger.trace('from', this.windoh.location.hash, 'to', hash);
 	        if (this.initialHashChange) {
 	            this.initialHashChange = false;
-	            this.windoh.location.replace(hash);
-	            this.logger.trace('History hash modified', hash);
+	            if (hashHasChanged) {
+	                this.windoh.location.replace(hash);
+	                this.logger.trace('History hash modified', hash);
+	            }
 	        }
 	        else if (this.ignoreNextHashChange) {
 	            this.windoh.location.hash = hash;
@@ -54008,7 +54039,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 412 */,
 /* 413 */,
 /* 414 */,
-/* 415 */
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
