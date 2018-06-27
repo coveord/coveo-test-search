@@ -1,7 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="" />
+    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AdvancedSearch.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AdvancedSearch__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AdvancedSearch__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Aggregate.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Aggregate__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Aggregate__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AnalyticsSuggestions.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AnalyticsSuggestions__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AnalyticsSuggestions__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AuthenticationProvider.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AuthenticationProvider__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AuthenticationProvider__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Backdrop.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Backdrop__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Backdrop__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Badge.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Badge__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Badge__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Breadcrumb.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Breadcrumb__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Breadcrumb__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardActionBar.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardActionBar__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardActionBar__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardOverlay.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardOverlay__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardOverlay__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CategoryFacet.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CategoryFacet__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CategoryFacet__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterLikedBy.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterLikedBy__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterLikedBy__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostAttachment.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostAttachment__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostAttachment__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostedBy.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostedBy__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostedBy__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterTopic.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterTopic__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterTopic__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DatePicker.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DatePicker__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DatePicker__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DidYouMean.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DidYouMean__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DidYouMean__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DistanceResources.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DistanceResources__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DistanceResources__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Dropdown.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Dropdown__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Dropdown__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ErrorReport.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ErrorReport__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ErrorReport__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Excerpt.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Excerpt__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Excerpt__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ExportToExcel.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ExportToExcel__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ExportToExcel__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Facet.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetRange.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetRange__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetRange__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetSlider.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetSlider__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetSlider__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetValueSuggestions.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetValueSuggestions__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetValueSuggestions__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Facet__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Facet__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldSuggestions.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldSuggestions__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldSuggestions__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldTable.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldTable__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldTable__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldValue.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldValue__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldValue__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Folding.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FoldingForThread.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FoldingForThread__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FoldingForThread__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Folding__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Folding__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FollowItem.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FollowItem__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FollowItem__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FormGroup.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FormGroup__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FormGroup__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HiddenQuery.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HiddenQuery__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HiddenQuery__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HierarchicalFacet.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HierarchicalFacet__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HierarchicalFacet__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Icon.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Icon__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Icon__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Logo.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Logo__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Logo__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Matrix.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Matrix__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Matrix__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/MultiSelect.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/MultiSelect__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/MultiSelect__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/NumericSpinner.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/NumericSpinner__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/NumericSpinner__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Omnibox.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/OmniboxResultList.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/OmniboxResultList__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/OmniboxResultList__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Omnibox__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Omnibox__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Pager.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Pager__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Pager__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PipelineContext.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PipelineContext__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PipelineContext__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PreferencesPanel.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PreferencesPanel__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PreferencesPanel__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PrintableUri.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PrintableUri__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PrintableUri__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PromotedResultsBadge.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PromotedResultsBadge__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PromotedResultsBadge__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QueryDuration.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QueryDuration__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QueryDuration__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QuerySummary.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QuerySummary__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QuerySummary__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Querybox.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Querybox__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Querybox__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Quickview.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Quickview__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Quickview__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RadioButton.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RadioButton__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RadioButton__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Recommendation.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Recommendation__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Recommendation__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RelevanceInspector.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RelevanceInspector__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RelevanceInspector__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultActionsMenu.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultActionsMenu__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultActionsMenu__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultAttachments.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultAttachments__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultAttachments__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultFolding.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultFolding__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultFolding__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLayoutSelector.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLayoutSelector__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLayoutSelector__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLink.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLink__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLink__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultList.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultList__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultList__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultRating.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultRating__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultRating__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultTagging.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultTagging__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultTagging__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsFiltersPreferences.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsFiltersPreferences__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsFiltersPreferences__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPerPage.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPerPage__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPerPage__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPreferences.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPreferences__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPreferences__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchAlerts.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchAlerts__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchAlerts__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchButton.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchButton__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchButton__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Searchbox.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Searchbox__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Searchbox__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Settings.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Settings__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Settings__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ShareQuery.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ShareQuery__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ShareQuery__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SimpleFilter.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SimpleFilter__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SimpleFilter__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Sort.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Sort__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Sort__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Tab.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Tab__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Tab__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TemplateLoader.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TemplateLoader__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TemplateLoader__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Text.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Text__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Text__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Thumbnail.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Thumbnail__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Thumbnail__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TimespanFacet.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TimespanFacet__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TimespanFacet__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Triggers.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Triggers__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Triggers__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/YouTubeThumbnail.min__a57076e3d52e13e31d1d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/YouTubeThumbnail__2ab4d7b74e5a4c6de26b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/YouTubeThumbnail__2ab4d7b74e5a4c6de26b.js.map" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/public/Index.html" afterPath="$PROJECT_DIR$/public/Index.html" />
+      <change beforePath="$PROJECT_DIR$/public/css/CoveoFullSearch.css" afterPath="$PROJECT_DIR$/public/css/CoveoFullSearch.css" />
+      <change beforePath="$PROJECT_DIR$/public/css/CoveoFullSearch.min.css" afterPath="$PROJECT_DIR$/public/css/CoveoFullSearch.min.css" />
+      <change beforePath="$PROJECT_DIR$/public/css/CoveoFullSearchNewDesign.css" afterPath="$PROJECT_DIR$/public/css/CoveoFullSearchNewDesign.css" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -40,6 +288,7 @@
     <findStrings>
       <find>trigger</find>
       <find>searcha</find>
+      <find>infi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,6 +356,11 @@
               <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
               <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
+              <item name="testPages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -178,18 +432,19 @@
       <workItem from="1526581608223" duration="845000" />
       <workItem from="1528911970785" duration="1185000" />
       <workItem from="1528919278757" duration="29000" />
-      <workItem from="1529687749126" duration="17000" />
+      <workItem from="1529687749126" duration="487000" />
+      <workItem from="1530113054962" duration="809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14504000" />
+    <option name="totallyTimeSpent" value="15783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="1" width="1927" height="1030" extended-state="0" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28486806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28486806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -197,7 +452,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25632742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25632742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -240,14 +495,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -592,18 +839,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
           <caret line="43" column="122" lean-forward="false" selection-start-line="43" selection-start-column="122" selection-end-line="43" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/everything_v1_noLazy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="240" column="149" lean-forward="false" selection-start-line="240" selection-start-column="145" selection-end-line="240" selection-end-column="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
         </state>
       </provider>

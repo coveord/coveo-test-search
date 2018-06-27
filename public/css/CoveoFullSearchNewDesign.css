@@ -14608,7 +14608,7 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-result-tagging-add-tag-text {
-  color: #DDD;
+  color: #ddd;
   font-size: 11px;
 }
 
@@ -14617,7 +14617,7 @@ a.coveo-folding-show-less.coveo-selected * {
   position: relative;
 }
 
-.coveo-result-tagging-coveo-tag {
+.CoveoResult .coveo-result-tagging-coveo-tag {
   display: inline-block;
   margin: 0 2px;
   font-size: 12px;
@@ -14627,22 +14627,22 @@ a.coveo-folding-show-less.coveo-selected * {
   text-transform: uppercase;
 }
 
-.coveo-result-tagging-coveo-tag span {
+.CoveoResult .coveo-result-tagging-coveo-tag span {
   line-height: 14px;
   vertical-align: middle;
 }
 
-.coveo-result-tagging-coveo-tag a {
+.CoveoResult .coveo-result-tagging-coveo-tag a {
   color: white;
 }
 
-.coveo-result-tagging-coveo-tag a:hover {
-  color: #DDD;
+.CoveoResult .coveo-result-tagging-coveo-tag a:hover {
+  color: #ddd;
 }
 
 .coveo-result-tagging-add-tag-tick-icon {
   display: inline-block;
-  background: #B0B3AE;
+  background: #b0b3ae;
   padding: 0 5px;
   line-height: 22px;
   height: 22px;
@@ -14660,7 +14660,7 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-result-tagging-clear-icon {
   display: inline-block;
-  background: #B0B3AE;
+  background: #b0b3ae;
   padding: 0 6px 0 5px;
   height: 22px;
   line-height: 22px;
@@ -14683,7 +14683,7 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-result-tagging-add-tag-textbox {
   margin: 0;
-  border: 1px solid #B0B3AE;
+  border: 1px solid #b0b3ae;
   background: transparent;
   padding: 3px;
   z-index: 10;
@@ -14723,9 +14723,9 @@ a.coveo-folding-show-less.coveo-selected * {
   top: 18px;
   left: 0;
   background-color: white;
-  border-left: 1px solid #B0B3AE;
-  border-bottom: 1px solid #B0B3AE;
-  border-right: 1px solid #B0B3AE;
+  border-left: 1px solid #b0b3ae;
+  border-bottom: 1px solid #b0b3ae;
+  border-right: 1px solid #b0b3ae;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   z-index: 5;
