@@ -705,6 +705,7 @@
 
 .coveo-debug.coveo-modal-container .coveo-section .coveo-section-container {
   padding: 16px 8px;
+  overflow: auto;
 }
 
 .coveo-debug.coveo-modal-container .coveo-section .coveo-section-container .coveo-property {
@@ -757,13 +758,12 @@
 }
 
 .coveo-debug.coveo-modal-container .coveo-section .coveo-section-container .coveo-property.coveo-property-basic .coveo-property-value {
-  overflow: hidden;
   color: #212121;
 }
 
 .coveo-debug.coveo-modal-container .coveo-section .coveo-section-container .coveo-property.coveo-property-basic .coveo-property-value.coveo-property-value-string {
   color: #d50000;
-  white-space: pre;
+  white-space: pre-wrap;
   word-wrap: break-word;
 }
 
@@ -12484,164 +12484,6 @@ a.CoveoResultLink.coveo-selected *,
 * @param $size size of the icon to use
 */
 
-.CoveoResultList.coveo-faded {
-  opacity: 0.5;
-}
-
-.CoveoResultList {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.CoveoResultList .coveo-fade-out {
-  opacity: 0.5;
-  -webkit-transition: opacity 0.5s;
-  -moz-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
-
-.CoveoResultList .coveo-wait-animation {
-  display: block;
-  margin: 10px auto;
-}
-
-.CoveoResultList.coveo-hidden {
-  display: none;
-}
-
-.CoveoResultList[data-layout='table'] {
-  overflow-x: auto;
-  margin-bottom: 20px;
-}
-
-.coveo-card-layout-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-lines: multiple;
-  -moz-box-lines: multiple;
-  box-lines: multiple;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -20px;
-}
-
-.coveo-card-layout-container .coveo-media-max-width-480 {
-  margin-right: 0;
-}
-
-@media (max-width: 480px) {
-  .coveo-card-layout-container {
-    margin-right: 0;
-  }
-}
-
-.coveo-table-layout-container {
-  display: table;
-  white-space: nowrap;
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.coveo-result-list-table-footer {
-  border-bottom: none;
-}
-
-.coveo-media-max-width-800 .CoveoResultList {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.coveo-media-max-width-800 .coveo-table-layout-container {
-  table-layout: auto;
-}
-
-.coveo-media-max-width-800 .coveo-table-layout-container td {
-  max-width: 300px;
-}
-
-@media (max-width: 800px) {
-  .CoveoResultList {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .coveo-table-layout-container {
-    table-layout: auto;
-  }
-
-  .coveo-table-layout-container td {
-    max-width: 300px;
-  }
-}
-
-.coveo-result-frame,
-.CoveoResult.coveo-result-frame {
-  margin-left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.coveo-result-frame .coveo-icon.coveo-icon-with-caption-overlay,
-.CoveoResult.coveo-result-frame .coveo-icon.coveo-icon-with-caption-overlay {
-  overflow: visible;
-  position: relative;
-}
-
-.coveo-result-frame .coveo-result-row,
-.CoveoResult.coveo-result-frame .coveo-result-row {
-  width: 100%;
-  display: table;
-  table-layout: fixed;
-  margin: 0.25em 0;
-}
-
-.coveo-result-frame .coveo-result-cell,
-.CoveoResult.coveo-result-frame .coveo-result-cell {
-  line-height: 1.25em;
-  display: table-cell;
-  vertical-align: top;
-}
-
-.coveo-result-frame .coveo-result-cell > *,
-.CoveoResult.coveo-result-frame .coveo-result-cell > * {
-  vertical-align: middle;
-}
-
-.coveo-result-frame .coveo-result-cell .CoveoTemplateLoader,
-.CoveoResult.coveo-result-frame .coveo-result-cell .CoveoTemplateLoader {
-  display: inline-block;
-}
-
-.coveo-result-frame .coveo-result-cell.coveo-no-wrap,
-.CoveoResult.coveo-result-frame .coveo-result-cell.coveo-no-wrap {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.coveo-result-frame .CoveoThumbnail,
-.CoveoResult.coveo-result-frame .CoveoThumbnail {
-  max-width: 100%;
-}
-
-/*
-* @param direction vertical or horizontal
-* @param position type of positioning to apply (relative/absolute)
-*/
-
-/*
-* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
-* @param $size size of the icon to use
-*/
-
 .CoveoResult.coveo-omnibox-selectable {
   padding: 10px 10px 10px 15px;
   margin: 0;
@@ -12966,6 +12808,57 @@ a.CoveoResultLink.coveo-selected *,
   color: #009ddc;
 }
 
+.coveo-result-frame,
+.CoveoResult.coveo-result-frame {
+  margin-left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.coveo-result-frame .coveo-icon.coveo-icon-with-caption-overlay,
+.CoveoResult.coveo-result-frame .coveo-icon.coveo-icon-with-caption-overlay {
+  overflow: visible;
+  position: relative;
+}
+
+.coveo-result-frame .coveo-result-row,
+.CoveoResult.coveo-result-frame .coveo-result-row {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  margin: 0.25em 0;
+}
+
+.coveo-result-frame .coveo-result-cell,
+.CoveoResult.coveo-result-frame .coveo-result-cell {
+  line-height: 1.25em;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.coveo-result-frame .coveo-result-cell > *,
+.CoveoResult.coveo-result-frame .coveo-result-cell > * {
+  vertical-align: middle;
+}
+
+.coveo-result-frame .coveo-result-cell .CoveoTemplateLoader,
+.CoveoResult.coveo-result-frame .coveo-result-cell .CoveoTemplateLoader {
+  display: inline-block;
+}
+
+.coveo-result-frame .coveo-result-cell.coveo-no-wrap,
+.CoveoResult.coveo-result-frame .coveo-result-cell.coveo-no-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coveo-result-frame .CoveoThumbnail,
+.CoveoResult.coveo-result-frame .CoveoThumbnail {
+  max-width: 100%;
+}
+
 /*
 * @param direction vertical or horizontal
 * @param position type of positioning to apply (relative/absolute)
@@ -12976,88 +12869,101 @@ a.CoveoResultLink.coveo-selected *,
 * @param $size size of the icon to use
 */
 
-.CoveoResultLayout,
-.CoveoResultLayoutSelector {
+.CoveoResultList.coveo-faded {
+  opacity: 0.5;
+}
+
+.CoveoResultList {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.CoveoResultList .coveo-fade-out {
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.CoveoResultList .coveo-wait-animation {
+  display: block;
+  margin: 10px auto;
+}
+
+.CoveoResultList.coveo-hidden {
+  display: none;
+}
+
+.CoveoResultList[data-layout='table'] {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.coveo-card-layout-container {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -20px;
 }
 
-.CoveoResultLayout.coveo-result-layout-hidden,
-.CoveoResultLayoutSelector.coveo-result-layout-hidden {
-  display: none;
+.coveo-card-layout-container .coveo-media-max-width-480 {
+  margin-right: 0;
 }
 
-.coveo-result-layout-selector {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 0 5px 10px;
-  border-bottom: thin solid #bcc3ca;
-  text-transform: uppercase;
-  border-bottom: 2px solid #bcc3ca;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  cursor: pointer;
+@media (max-width: 480px) {
+  .coveo-card-layout-container {
+    margin-right: 0;
+  }
 }
 
-.coveo-result-layout-selector.coveo-selected,
-.coveo-result-layout-selector.coveo-selected:hover {
-  border-bottom: 2px solid #263e55;
+.coveo-table-layout-container {
+  display: table;
+  white-space: nowrap;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.coveo-result-layout-selector:focus {
-  outline-width: 1px;
-  outline-color: #bcc3ca;
+.coveo-result-list-table-footer {
+  border-bottom: none;
 }
 
-.coveo-result-layout-selector:hover {
-  color: #263e55;
+.coveo-media-max-width-800 .CoveoResultList {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.coveo-result-layout-selector .coveo-icon {
-  margin-right: 5px;
-  min-width: 14px;
+.coveo-media-max-width-800 .coveo-table-layout-container {
+  table-layout: auto;
 }
 
-.coveo-result-layout-selector.coveo-hidden {
-  display: none;
+.coveo-media-max-width-800 .coveo-table-layout-container td {
+  max-width: 300px;
 }
 
-.coveo-card-layout-icon {
-  width: 16px;
-  height: 16px;
-  fill: black;
-}
+@media (max-width: 800px) {
+  .CoveoResultList {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
-.coveo-list-layout-icon {
-  width: 19px;
-  height: 14px;
-  fill: black;
-}
+  .coveo-table-layout-container {
+    table-layout: auto;
+  }
 
-.coveo-table-layout-icon {
-  width: 18px;
-  height: 13px;
-  fill: black;
+  .coveo-table-layout-container td {
+    max-width: 300px;
+  }
 }
 
 /*
@@ -14103,6 +14009,100 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-card-overlay .coveo-result-folding-child-result:not(:last-child) {
   border-bottom: 1px solid #bcc3ca;
+}
+
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
+.CoveoResultLayout,
+.CoveoResultLayoutSelector {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.CoveoResultLayout.coveo-result-layout-hidden,
+.CoveoResultLayoutSelector.coveo-result-layout-hidden {
+  display: none;
+}
+
+.coveo-result-layout-selector {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 5px 10px;
+  border-bottom: thin solid #bcc3ca;
+  text-transform: uppercase;
+  border-bottom: 2px solid #bcc3ca;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.coveo-result-layout-selector.coveo-selected,
+.coveo-result-layout-selector.coveo-selected:hover {
+  border-bottom: 2px solid #263e55;
+}
+
+.coveo-result-layout-selector:focus {
+  outline-width: 1px;
+  outline-color: #bcc3ca;
+}
+
+.coveo-result-layout-selector:hover {
+  color: #263e55;
+}
+
+.coveo-result-layout-selector .coveo-icon {
+  margin-right: 5px;
+  min-width: 14px;
+}
+
+.coveo-result-layout-selector.coveo-hidden {
+  display: none;
+}
+
+.coveo-card-layout-icon {
+  width: 16px;
+  height: 16px;
+  fill: black;
+}
+
+.coveo-list-layout-icon {
+  width: 19px;
+  height: 14px;
+  fill: black;
+}
+
+.coveo-table-layout-icon {
+  width: 18px;
+  height: 13px;
+  fill: black;
 }
 
 .coveo-result-rating-star + .coveo-result-rating-star {
