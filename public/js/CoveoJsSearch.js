@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "1a4919568d31ada5f0d0" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "0664e97322816359c728" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -18371,8 +18371,8 @@ module.exports = g;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4382.8-beta',
-    product: '2.4382.8-beta',
+    lib: '2.4382.9-beta',
+    product: '2.4382.9-beta',
     supportedApiVersion: 2
 };
 
@@ -20076,7 +20076,14 @@ var Omnibox = /** @class */ (function (_super) {
         if (wordCompletion != null) {
             return wordCompletion;
         }
-        return this.magicBox.getWordCompletion() || this.getFirstSuggestion() || this.lastQuery || this.magicBox.getText();
+        var currentOmniboxSuggestion = this.magicBox.getWordCompletion() || this.getFirstSuggestion();
+        if (currentOmniboxSuggestion) {
+            return currentOmniboxSuggestion;
+        }
+        if (this.isAutoSuggestion()) {
+            return this.lastQuery || this.magicBox.getText();
+        }
+        return this.magicBox.getText();
     };
     Omnibox.prototype.getFirstSuggestion = function () {
         if (this.lastSuggestions == null) {
@@ -34157,15 +34164,7 @@ var FacetSlider = /** @class */ (function (_super) {
             });
         }
         if (totalGraphResults == 0) {
-            // Special corner case for "simple slider facet" : Do not only handle the group by results,
-            // but also look for the complete result set when determining if we should show the facet.
-            // This allows simple slider facet to still show with query function fields
-            if (this.isSimpleSliderConfig) {
-                this.isEmpty = data.results.results.length == 0;
-            }
-            else {
-                this.isEmpty = true;
-            }
+            this.isEmpty = true;
             this.updateAppearanceDependingOnState();
         }
         if (graphData != undefined && !this.isDropdownHidden()) {
@@ -59516,20 +59515,20 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(341);
-var _ = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
-var QueryStateModel_1 = __webpack_require__(12);
-var Strings_1 = __webpack_require__(8);
-var DeviceUtils_1 = __webpack_require__(21);
+var FacetSort_1 = __webpack_require__(310);
 var Dom_1 = __webpack_require__(2);
 var LocalStorageUtils_1 = __webpack_require__(36);
-var PopupUtils_1 = __webpack_require__(49);
-var SVGDom_1 = __webpack_require__(14);
-var SVGIcons_1 = __webpack_require__(13);
 var Utils_1 = __webpack_require__(4);
+var Strings_1 = __webpack_require__(8);
+var QueryStateModel_1 = __webpack_require__(12);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
-var FacetSort_1 = __webpack_require__(310);
+var DeviceUtils_1 = __webpack_require__(21);
+var PopupUtils_1 = __webpack_require__(49);
+var _ = __webpack_require__(0);
+__webpack_require__(341);
+var SVGIcons_1 = __webpack_require__(13);
+var SVGDom_1 = __webpack_require__(14);
+var InitializationEvents_1 = __webpack_require__(15);
 /**
  * Handle the rendering of the {@link Facet} settings menu (typically the ... in the facet header).
  */
@@ -59829,7 +59828,6 @@ var FacetSettings = /** @class */ (function (_super) {
     };
     FacetSettings.prototype.buildAscendingOrDescending = function (direction) {
         var elem = this.buildItem(Strings_1.l(direction));
-        elem.setAttribute('aria-disabled', 'true');
         elem.setAttribute('data-direction', direction.toLowerCase());
         return elem;
     };
@@ -59947,9 +59945,6 @@ var FacetSettings = /** @class */ (function (_super) {
         var _this = this;
         _.each(this.directionSection, function (direction) {
             Dom_1.$$(direction).removeClass('coveo-facet-settings-disabled');
-            Dom_1.$$(direction)
-                .find('.coveo-facet-settings-item')
-                .removeAttribute('aria-disabled');
             _this.unselectSection(direction);
         });
         this.selectItem(this.getCurrentDirectionItem());
@@ -59958,9 +59953,6 @@ var FacetSettings = /** @class */ (function (_super) {
         var _this = this;
         _.each(this.directionSection, function (direction) {
             Dom_1.$$(direction).addClass('coveo-facet-settings-disabled');
-            Dom_1.$$(direction)
-                .find('.coveo-facet-settings-item')
-                .setAttribute('aria-disabled', 'true');
             _this.unselectSection(direction);
         });
     };
