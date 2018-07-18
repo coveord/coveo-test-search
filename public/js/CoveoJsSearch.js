@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "0a04133af5b1d552a074" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "c0ef1d972f09b315d138" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -18379,8 +18379,8 @@ module.exports = g;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4382.12-beta',
-    product: '2.4382.12-beta',
+    lib: '2.4382.13-beta',
+    product: '2.4382.13-beta',
     supportedApiVersion: 2
 };
 
@@ -37021,8 +37021,8 @@ var FacetQueryController = /** @class */ (function () {
         }
         else {
             var parts = queryBuilder.computeCompleteExpressionParts();
-            this.expressionToUseForFacetSearch = parts.withoutConstant == null ? '@uri' : parts.withoutConstant;
-            this.basicExpressionToUseForFacetSearch = parts.basic == null ? '@uri' : parts.basic;
+            this.expressionToUseForFacetSearch = parts.withoutConstant == null ? '' : parts.withoutConstant;
+            this.basicExpressionToUseForFacetSearch = parts.basic == null ? '' : parts.basic;
             this.advancedExpressionToUseForFacetSearch = parts.advanced;
             this.constantExpressionToUseForFacetSearch = parts.constant;
         }
