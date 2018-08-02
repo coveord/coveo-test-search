@@ -798,6 +798,12 @@ var dict = {
   "AllCategories": "All Categories",
   "Recommended": "Recommended",
   "Featured": "Featured",
+  "CoveoHomePage": "Coveo Home page",
+  "SizeValue": "Size value",
+  "UnitMeasurement": "Unit of measurement",
+  "Toggle": "Toggle",
+  "FilterOn": "Filter on {0}",
+  "RemoveFilterOn": "Remove filter on {0}",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1574,6 +1580,12 @@ var dict = {
   "AllCategories": "All Categories",
   "Recommended": "Recommended",
   "Featured": "Featured",
+  "CoveoHomePage": "Coveo Home page",
+  "SizeValue": "Size value",
+  "UnitMeasurement": "Unit of measurement",
+  "Toggle": "Toggle",
+  "FilterOn": "Filter on {0}",
+  "RemoveFilterOn": "Remove filter on {0}",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
