@@ -183,7 +183,6 @@
 
 .coveo-emails-excess-collapsed:visited,
 .coveo-emails-excess-collapsed:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -229,7 +228,6 @@
 .coveo-modal-container .coveo-email-from a:visited:hover,
 .coveo-modal-container .coveo-email-to a:visited,
 .coveo-modal-container .coveo-email-to a:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -259,7 +257,6 @@
 
 .CoveoEmailAction:visited,
 .CoveoEmailAction:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -626,7 +623,6 @@
 .coveo-lithium-from a:visited:hover,
 .coveo-lithium-to a:visited,
 .coveo-lithium-to a:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -8383,26 +8379,16 @@ body.coveo-modalBox-opened .CoveoSearchInterface {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
 }
 
 .coveo-debug.coveo-modal-container .coveo-modal-header a:visited,
 .coveo-debug.coveo-modal-container .coveo-modal-header a:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
 .coveo-debug.coveo-modal-container .coveo-modal-header a:hover,
 .coveo-debug.coveo-modal-container .coveo-modal-header a:hover a {
   text-decoration: underline;
-}
-
-.coveo-debug.coveo-modal-container .coveo-modal-header a.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-debug.coveo-modal-container .coveo-modal-header a:hover {
-  color: #004990;
 }
 
 .coveo-debug.coveo-modal-container .coveo-modal-header a.coveo-selected * {
@@ -8801,7 +8787,6 @@ a.CoveoResultLink,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
   word-wrap: break-word;
 }
 
@@ -8811,7 +8796,6 @@ a.CoveoResultLink:visited,
 a.CoveoResultLink:visited:hover,
 .CoveoResult a.CoveoResultLink:visited,
 .CoveoResult a.CoveoResultLink:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -8830,30 +8814,18 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
 }
 
-.CoveoResultLink:hover,
-a.CoveoResultLink:hover,
-.CoveoResult a.CoveoResultLink:hover {
-  color: #004990;
-}
-
-.CoveoResultLink.coveo-selected *,
-a.CoveoResultLink.coveo-selected *,
-.CoveoResult a.CoveoResultLink.coveo-selected * {
-  color: #004990;
-}
-
 .coveo-card-overlay a.CoveoResultLink {
   color: #004990;
-  color: #009ddc;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
+  color: #f7f8f9;
+  text-decoration: underline;
 }
 
 .coveo-card-overlay a.CoveoResultLink:visited,
 .coveo-card-overlay a.CoveoResultLink:visited:hover {
-  text-decoration: none;
-  color: #009ddc;
+  color: #609;
+  color: #f7f8f9;
 }
 
 .coveo-card-overlay a.CoveoResultLink:hover,
@@ -8862,15 +8834,8 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-card-overlay a.CoveoResultLink.coveo-selected * {
-  color: #009ddc;
-}
-
-.coveo-card-overlay a.CoveoResultLink:hover {
   color: #004990;
-}
-
-.coveo-card-overlay a.CoveoResultLink.coveo-selected * {
-  color: #004990;
+  color: #f7f8f9;
 }
 
 .coveo-accessible-button:hover {
@@ -9487,7 +9452,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-breadcrumb-clear-all:visited,
 .coveo-breadcrumb-clear-all:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -9799,7 +9763,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoDidYouMean a:visited,
 .CoveoDidYouMean a:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -9910,7 +9873,6 @@ a.CoveoResultLink.coveo-selected *,
 .coveo-error-report-retry:visited:hover,
 .coveo-error-report-more-info:visited,
 .coveo-error-report-more-info:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -10243,7 +10205,6 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
 }
 
 .coveo-facet-breadcrumb-value.coveo-excluded .coveo-facet-breadcrumb-caption,
@@ -10276,7 +10237,6 @@ a.CoveoResultLink.coveo-selected *,
 .coveo-facet-breadcrumb-value:visited:hover,
 .coveo-facet-slider-breadcrumb-value:visited,
 .coveo-facet-slider-breadcrumb-value:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -10285,16 +10245,6 @@ a.CoveoResultLink.coveo-selected *,
 .coveo-facet-slider-breadcrumb-value:hover,
 .coveo-facet-slider-breadcrumb-value:hover a {
   text-decoration: underline;
-}
-
-.coveo-facet-breadcrumb-value.coveo-selected *,
-.coveo-facet-slider-breadcrumb-value.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-facet-breadcrumb-value:hover,
-.coveo-facet-slider-breadcrumb-value:hover {
-  color: #004990;
 }
 
 .coveo-facet-breadcrumb-value.coveo-selected *,
@@ -11017,7 +10967,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-facet-search-select-all:visited,
 .coveo-facet-search-select-all:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -11668,7 +11617,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoFieldTable .coveo-clickable:visited,
 .CoveoFieldTable .coveo-clickable:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -11694,7 +11642,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-field-table-toggle:visited,
 .coveo-field-table-toggle:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -11775,7 +11722,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoFieldValue .coveo-clickable:visited,
 .CoveoFieldValue .coveo-clickable:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -11814,16 +11760,16 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-card-overlay .coveo-clickable {
   color: #004990;
-  color: #009ddc;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
+  color: #f7f8f9;
+  text-decoration: underline;
 }
 
 .coveo-card-overlay .coveo-clickable:visited,
 .coveo-card-overlay .coveo-clickable:visited:hover {
-  text-decoration: none;
-  color: #009ddc;
+  color: #609;
+  color: #f7f8f9;
 }
 
 .coveo-card-overlay .coveo-clickable:hover,
@@ -11832,15 +11778,8 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-card-overlay .coveo-clickable.coveo-selected * {
-  color: #009ddc;
-}
-
-.coveo-card-overlay .coveo-clickable:hover {
   color: #004990;
-}
-
-.coveo-card-overlay .coveo-clickable.coveo-selected * {
-  color: #004990;
+  color: #f7f8f9;
 }
 
 /*
@@ -11869,26 +11808,16 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
 }
 
 .coveo-hidden-query-breadcrumb-value:visited,
 .coveo-hidden-query-breadcrumb-value:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
 .coveo-hidden-query-breadcrumb-value:hover,
 .coveo-hidden-query-breadcrumb-value:hover a {
   text-decoration: underline;
-}
-
-.coveo-hidden-query-breadcrumb-value.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-hidden-query-breadcrumb-value:hover {
-  color: #004990;
 }
 
 .coveo-hidden-query-breadcrumb-value.coveo-selected * {
@@ -12559,7 +12488,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoResult a:visited,
 .CoveoResult a:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -12595,7 +12523,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoResult .CoveoBadge .coveo-value.coveo-clickable:visited,
 .CoveoResult .CoveoBadge .coveo-value.coveo-clickable:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -12668,7 +12595,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoResult .coveo-selectable-link:visited,
 .CoveoResult .coveo-selectable-link:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -12807,15 +12733,16 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-card-overlay a {
   color: #004990;
-  color: #009ddc;
   text-decoration: none;
   cursor: pointer;
+  color: #f7f8f9;
+  text-decoration: underline;
 }
 
 .coveo-card-overlay a:visited,
 .coveo-card-overlay a:visited:hover {
-  text-decoration: none;
-  color: #009ddc;
+  color: #609;
+  color: #f7f8f9;
 }
 
 .coveo-card-overlay a:hover,
@@ -12824,7 +12751,8 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-card-overlay a.coveo-selected * {
-  color: #009ddc;
+  color: #004990;
+  color: #f7f8f9;
 }
 
 .coveo-result-frame,
@@ -13072,28 +13000,18 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
   font-size: 14px;
   cursor: pointer;
 }
 
 .coveo-pager-list-item:visited,
 .coveo-pager-list-item:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
 .coveo-pager-list-item:hover,
 .coveo-pager-list-item:hover a {
   text-decoration: underline;
-}
-
-.coveo-pager-list-item.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-pager-list-item:hover {
-  color: #004990;
 }
 
 .coveo-pager-list-item.coveo-selected * {
@@ -13321,7 +13239,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-query-summary-cancel-last:visited,
 .coveo-query-summary-cancel-last:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -13352,7 +13269,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoQuickview:visited,
 .CoveoQuickview:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -13992,7 +13908,6 @@ a.coveo-folding-show-more:visited,
 a.coveo-folding-show-more:visited:hover,
 a.coveo-folding-show-less:visited,
 a.coveo-folding-show-less:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -14011,17 +13926,18 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-card-layout a.coveo-folding-show-more,
 .coveo-card-layout a.coveo-folding-show-less {
   color: #004990;
-  color: #009ddc;
   text-decoration: none;
   cursor: pointer;
+  color: #f7f8f9;
+  text-decoration: underline;
 }
 
 .coveo-card-layout a.coveo-folding-show-more:visited,
 .coveo-card-layout a.coveo-folding-show-more:visited:hover,
 .coveo-card-layout a.coveo-folding-show-less:visited,
 .coveo-card-layout a.coveo-folding-show-less:visited:hover {
-  text-decoration: none;
-  color: #009ddc;
+  color: #609;
+  color: #f7f8f9;
 }
 
 .coveo-card-layout a.coveo-folding-show-more:hover,
@@ -14033,7 +13949,8 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-card-layout a.coveo-folding-show-more.coveo-selected *,
 .coveo-card-layout a.coveo-folding-show-less.coveo-selected * {
-  color: #009ddc;
+  color: #004990;
+  color: #f7f8f9;
 }
 
 .coveo-child-result {
@@ -14256,7 +14173,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoResultsFiltersPreferences .coveo-online-help:visited,
 .CoveoResultsFiltersPreferences .coveo-online-help:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -14354,7 +14270,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoResultsFiltersPreferences .coveo-advanced-filters-builder .coveo-close-and-save .coveo-save:visited,
 .CoveoResultsFiltersPreferences .coveo-advanced-filters-builder .coveo-close-and-save .coveo-save:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -14427,7 +14342,6 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value .coveo-exclusion-svg {
@@ -14449,21 +14363,12 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value:visited,
 .coveo-results-filter-preferences-breadcrumb .coveo-value:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value:hover,
 .coveo-results-filter-preferences-breadcrumb .coveo-value:hover a {
   text-decoration: underline;
-}
-
-.coveo-results-filter-preferences-breadcrumb .coveo-value.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-results-filter-preferences-breadcrumb .coveo-value:hover {
-  color: #004990;
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value.coveo-selected * {
@@ -14582,7 +14487,6 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
   font-size: 14px;
   cursor: pointer;
   padding: 4px;
@@ -14590,21 +14494,12 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-results-per-page-list-item:visited,
 .coveo-results-per-page-list-item:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
 .coveo-results-per-page-list-item:hover,
 .coveo-results-per-page-list-item:hover a {
   text-decoration: underline;
-}
-
-.coveo-results-per-page-list-item.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-results-per-page-list-item:hover {
-  color: #004990;
 }
 
 .coveo-results-per-page-list-item.coveo-selected * {
@@ -14992,7 +14887,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-settings-item:visited,
 .coveo-settings-item:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -15451,7 +15345,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoTriggers a:visited,
 .CoveoTriggers a:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -15696,7 +15589,6 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #004990;
   display: inline-block;
   font-size: 14px;
   margin-right: 20px;
@@ -15721,21 +15613,12 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-simplefilter-breadcrumb-value:visited,
 .coveo-simplefilter-breadcrumb-value:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
 .coveo-simplefilter-breadcrumb-value:hover,
 .coveo-simplefilter-breadcrumb-value:hover a {
   text-decoration: underline;
-}
-
-.coveo-simplefilter-breadcrumb-value.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-simplefilter-breadcrumb-value:hover {
-  color: #004990;
 }
 
 .coveo-simplefilter-breadcrumb-value.coveo-selected * {
@@ -15883,7 +15766,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoResult a:visited,
 .CoveoResult a:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -15919,7 +15801,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoResult .CoveoBadge .coveo-value.coveo-clickable:visited,
 .CoveoResult .CoveoBadge .coveo-value.coveo-clickable:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -15992,7 +15873,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoResult .coveo-selectable-link:visited,
 .CoveoResult .coveo-selectable-link:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
@@ -16131,15 +16011,16 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-card-overlay a {
   color: #004990;
-  color: #009ddc;
   text-decoration: none;
   cursor: pointer;
+  color: #f7f8f9;
+  text-decoration: underline;
 }
 
 .coveo-card-overlay a:visited,
 .coveo-card-overlay a:visited:hover {
-  text-decoration: none;
-  color: #009ddc;
+  color: #609;
+  color: #f7f8f9;
 }
 
 .coveo-card-overlay a:hover,
@@ -16148,7 +16029,8 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-card-overlay a.coveo-selected * {
-  color: #009ddc;
+  color: #004990;
+  color: #f7f8f9;
 }
 
 .coveo-promoted-result-badge {
@@ -16389,7 +16271,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-category-facet-breadcrumb-values:visited,
 .coveo-category-facet-breadcrumb-values:visited:hover {
-  text-decoration: none;
   color: #609;
 }
 
