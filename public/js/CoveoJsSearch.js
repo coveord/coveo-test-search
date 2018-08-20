@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "9d3a3b21e905f8555aba" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "4a583ca6b434f24bb56b" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -17477,14 +17477,19 @@ var Facet = /** @class */ (function (_super) {
          * If you have two facets with the same field on the same page, you should specify an `id` value for at least one of
          * those two facets. This `id` must be unique among the facets.
          *
-         * Whitespace characters are automatically removed from the `id` value.
+         * Non-word characters except @ ( `[^a-zA-Z0-9@]+` ) are automatically removed from the `id` value.
          *
          * Default value is the [`field`]{@link Facet.options.field} option value.
          */
         id: ComponentOptions_1.ComponentOptions.buildStringOption({
             postProcessing: function (value, options) {
                 if (value) {
-                    return value.replace(/\s/g, '');
+                    // All non word characters, except @ (the default character that specifies a field in the index)
+                    var modified = value.replace(/[^a-zA-Z0-9@]+/g, '');
+                    if (Utils_1.Utils.isNullOrEmptyString(modified)) {
+                        return options.field;
+                    }
+                    return modified;
                 }
                 return options.field;
             }
@@ -18968,8 +18973,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4609.3-beta',
-    product: '2.4609.3-beta',
+    lib: '2.4609.4-beta',
+    product: '2.4609.4-beta',
     supportedApiVersion: 2
 };
 
@@ -69136,11 +69141,11 @@ var DependentFacetManager = /** @class */ (function () {
         if (!this.isDependentFacet) {
             return;
         }
-        this.facet.bind.onQueryState(Model_1.MODEL_EVENTS.CHANGE, undefined, function () { return _this.resetIfParentFacetHasNoActiveValues(); });
+        this.facet.bind.onQueryState(Model_1.MODEL_EVENTS.CHANGE, undefined, function () { return _this.resetIfParentFacetHasNoSelectedValues(); });
     };
     DependentFacetManager.prototype.updateVisibilityBasedOnDependsOn = function () {
         if (this.isDependentFacet) {
-            Dom_1.$$(this.facet.element).toggleClass('coveo-facet-dependent', !this.parentFacetHasActiveValues);
+            Dom_1.$$(this.facet.element).toggleClass('coveo-facet-dependent', !this.parentFacetHasSelectedValues);
         }
     };
     Object.defineProperty(DependentFacetManager.prototype, "isDependentFacet", {
@@ -69157,31 +69162,16 @@ var DependentFacetManager = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    DependentFacetManager.prototype.resetIfParentFacetHasNoActiveValues = function () {
-        if (this.parentFacetHasActiveValues) {
+    DependentFacetManager.prototype.resetIfParentFacetHasNoSelectedValues = function () {
+        if (this.parentFacetHasSelectedValues) {
             return;
         }
         this.facet.reset();
     };
-    Object.defineProperty(DependentFacetManager.prototype, "parentFacetHasActiveValues", {
-        get: function () {
-            return this.parentFacetHasSelectedValues || this.parentFacetHasExcludedValues;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(DependentFacetManager.prototype, "parentFacetHasSelectedValues", {
         get: function () {
             var parentSelectedValuesId = QueryStateModel_1.QueryStateModel.getFacetId(this.facetDependsOnField);
             return this.valuesExistForFacetWithId(parentSelectedValuesId);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DependentFacetManager.prototype, "parentFacetHasExcludedValues", {
-        get: function () {
-            var parentExcludedValuesId = QueryStateModel_1.QueryStateModel.getFacetId(this.facetDependsOnField, false);
-            return this.valuesExistForFacetWithId(parentExcludedValuesId);
         },
         enumerable: true,
         configurable: true
