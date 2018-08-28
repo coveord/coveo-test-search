@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "4a583ca6b434f24bb56b" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "b280ae2c1ad0bb933c3f" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -17477,15 +17477,16 @@ var Facet = /** @class */ (function (_super) {
          * If you have two facets with the same field on the same page, you should specify an `id` value for at least one of
          * those two facets. This `id` must be unique among the facets.
          *
-         * Non-word characters except @ ( `[^a-zA-Z0-9@]+` ) are automatically removed from the `id` value.
+         * Non-word characters except - @ $ _ . + ! * ' ( ) , , ( `^a-zA-Z0-9-@$_.+!*'(),,]+` ) are automatically removed from the `id` value.
          *
          * Default value is the [`field`]{@link Facet.options.field} option value.
          */
         id: ComponentOptions_1.ComponentOptions.buildStringOption({
             postProcessing: function (value, options) {
                 if (value) {
-                    // All non word characters, except @ (the default character that specifies a field in the index)
-                    var modified = value.replace(/[^a-zA-Z0-9@]+/g, '');
+                    // All non-word characters, except @ (the default character that specifies a field in the index)
+                    // and characters that do no need to be encoded in the URL : - @ $ _ . + ! * ' ( ) , ,
+                    var modified = value.replace(/[^a-zA-Z0-9-@$_.+!*'(),,]+/g, '');
                     if (Utils_1.Utils.isNullOrEmptyString(modified)) {
                         return options.field;
                     }
@@ -18973,8 +18974,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4609.4-beta',
-    product: '2.4609.4-beta',
+    lib: '2.4609.5-beta',
+    product: '2.4609.5-beta',
     supportedApiVersion: 2
 };
 
@@ -37711,16 +37712,8 @@ var ResponsiveDropdown = /** @class */ (function () {
         var _this = this;
         new AccessibleButton_1.AccessibleButton()
             .withElement(this.dropdownHeader.element)
-            .withSelectAction(function () {
-            if (_this.isOpened) {
-                _this.close();
-            }
-            else {
-                _this.open();
-            }
-        })
-            .withBlurAction(function () { return _this.close(); })
-            .withLabel('yo')
+            .withSelectAction(function () { return (_this.isOpened ? _this.close() : _this.open()); })
+            .withLabel('Filters')
             .build();
     };
     ResponsiveDropdown.prototype.showPopupBackground = function () {
