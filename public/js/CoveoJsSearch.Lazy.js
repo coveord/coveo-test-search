@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Recommendation","11":"OmniboxResultList","12":"CategoryFacet","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "b280ae2c1ad0bb933c3f" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Recommendation","11":"OmniboxResultList","12":"CategoryFacet","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "4f435c4b98cbfc71c823" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2611,6 +2611,41 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
@@ -2785,40 +2820,81 @@ var Initialization = /** @class */ (function () {
      * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
      */
     Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
+        var _this = this;
         Assert_1.Assert.exists(element);
         var alreadyInitialized = Component_1.Component.get(element, QueryController_1.QueryController, true);
         if (alreadyInitialized) {
             this.logger.error('This DOM element has already been initialized as a search interface, skipping initialization', element);
-            return new Promise(function (resolve, reject) {
-                resolve({ elem: element });
+            return Promise.resolve({
+                elem: element
             });
         }
         options = Initialization.resolveDefaultOptions(element, options);
+        var waitForAllPromisesToFinish = function (eventType, promises) { return __awaiter(_this, void 0, void 0, function () {
+            var _this = this;
+            var promisesWithErrorsHandledIndividually;
+            return __generator(this, function (_a) {
+                try {
+                    promisesWithErrorsHandledIndividually = promises.map(function (p) {
+                        return p.catch(function (error) {
+                            return _this.logger.warn("An error occurred when trying to defer the \"" + eventType + "\" event. The defer will be ignored.", "Error: " + error);
+                        });
+                    });
+                    return [2 /*return*/, Promise.all(promisesWithErrorsHandledIndividually)];
+                }
+                catch (error) {
+                    this.logger.error("An unexpected error occurred when trying to defer the \"" + event + "\" event. All defers will be ignored.", "Error: " + error);
+                }
+                return [2 /*return*/];
+            });
+        }); };
+        var triggerInitializationEventWithArguments = function (eventType) {
+            var initializationEventArgs = {
+                defer: []
+            };
+            Dom_1.$$(element).trigger(eventType, initializationEventArgs);
+            if (initializationEventArgs.defer.length > 0) {
+                return waitForAllPromisesToFinish(eventType, initializationEventArgs.defer);
+            }
+            else {
+                return Promise.resolve();
+            }
+        };
         Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.beforeInitialization);
         Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.beforeInitialization);
-        var toExecuteOnceSearchInterfaceIsInitialized = function () {
-            return Initialization.initExternalComponents(element, options).then(function (result) {
-                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
-                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterInitialization);
-                var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
-                if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
-                    Initialization.logFirstQueryCause(searchInterface);
-                    var shouldLogInActionHistory = true;
-                    // We should not log an action history if the interface is a standalone recommendation component.
-                    if (Coveo['Recommendation']) {
-                        shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
-                    }
-                    Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
-                        logInActionsHistory: shouldLogInActionHistory,
-                        isFirstQuery: true
-                    });
+        var toExecuteOnceSearchInterfaceIsInitialized = function () { return __awaiter(_this, void 0, void 0, function () {
+            var result, searchInterface, shouldLogInActionHistory;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Initialization.initExternalComponents(element, options)];
+                    case 1:
+                        result = _a.sent();
+                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterComponentsInitialization)];
+                    case 2:
+                        _a.sent();
+                        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
+                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
+                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterInitialization)];
+                    case 3:
+                        _a.sent();
+                        searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
+                        if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
+                            Initialization.logFirstQueryCause(searchInterface);
+                            shouldLogInActionHistory = true;
+                            // We should not log an action history if the interface is a standalone recommendation component.
+                            if (Coveo['Recommendation']) {
+                                shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
+                            }
+                            Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
+                                logInActionsHistory: shouldLogInActionHistory,
+                                isFirstQuery: true
+                            });
+                        }
+                        return [2 /*return*/, result];
                 }
-                return result;
             });
-        };
+        }); };
         var resultOfSearchInterfaceInitialization = initSearchInterfaceFunction(element, options);
         // We are executing a "lazy" initialization, which returns a Promise
         // eg : CoveoJsSearch.Lazy.js was included in the page
@@ -10243,7 +10319,15 @@ exports.BreadcrumbEvents = BreadcrumbEvents;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var localStorage = window.localStorage;
+var localStorage;
+// This check must be made in a try/catch. If cookies are disabled for a
+// browser then window.localStorage will throw an undefined exception.
+try {
+    localStorage = window.localStorage;
+}
+catch (error) {
+    localStorage = null;
+}
 var LocalStorageUtils = /** @class */ (function () {
     function LocalStorageUtils(id) {
         this.id = id;
@@ -14533,8 +14617,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4609.5-beta',
-    product: '2.4609.5-beta',
+    lib: '2.4710.0-beta',
+    product: '2.4710.0-beta',
     supportedApiVersion: 2
 };
 
