@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "4f435c4b98cbfc71c823" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "a7f65d7223f3cc873f80" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2688,41 +2688,6 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
@@ -2733,7 +2698,7 @@ var ComponentOptionsModel_1 = __webpack_require__(24);
 var ComponentStateModel_1 = __webpack_require__(61);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var JQueryutils_1 = __webpack_require__(59);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -2897,81 +2862,40 @@ var Initialization = /** @class */ (function () {
      * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
      */
     Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
-        var _this = this;
         Assert_1.Assert.exists(element);
         var alreadyInitialized = Component_1.Component.get(element, QueryController_1.QueryController, true);
         if (alreadyInitialized) {
             this.logger.error('This DOM element has already been initialized as a search interface, skipping initialization', element);
-            return Promise.resolve({
-                elem: element
+            return new Promise(function (resolve, reject) {
+                resolve({ elem: element });
             });
         }
         options = Initialization.resolveDefaultOptions(element, options);
-        var waitForAllPromisesToFinish = function (eventType, promises) { return __awaiter(_this, void 0, void 0, function () {
-            var _this = this;
-            var promisesWithErrorsHandledIndividually;
-            return __generator(this, function (_a) {
-                try {
-                    promisesWithErrorsHandledIndividually = promises.map(function (p) {
-                        return p.catch(function (error) {
-                            return _this.logger.warn("An error occurred when trying to defer the \"" + eventType + "\" event. The defer will be ignored.", "Error: " + error);
-                        });
-                    });
-                    return [2 /*return*/, Promise.all(promisesWithErrorsHandledIndividually)];
-                }
-                catch (error) {
-                    this.logger.error("An unexpected error occurred when trying to defer the \"" + event + "\" event. All defers will be ignored.", "Error: " + error);
-                }
-                return [2 /*return*/];
-            });
-        }); };
-        var triggerInitializationEventWithArguments = function (eventType) {
-            var initializationEventArgs = {
-                defer: []
-            };
-            Dom_1.$$(element).trigger(eventType, initializationEventArgs);
-            if (initializationEventArgs.defer.length > 0) {
-                return waitForAllPromisesToFinish(eventType, initializationEventArgs.defer);
-            }
-            else {
-                return Promise.resolve();
-            }
-        };
         Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.beforeInitialization);
         Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.beforeInitialization);
-        var toExecuteOnceSearchInterfaceIsInitialized = function () { return __awaiter(_this, void 0, void 0, function () {
-            var result, searchInterface, shouldLogInActionHistory;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, Initialization.initExternalComponents(element, options)];
-                    case 1:
-                        result = _a.sent();
-                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterComponentsInitialization)];
-                    case 2:
-                        _a.sent();
-                        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
-                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
-                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterInitialization)];
-                    case 3:
-                        _a.sent();
-                        searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
-                        if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
-                            Initialization.logFirstQueryCause(searchInterface);
-                            shouldLogInActionHistory = true;
-                            // We should not log an action history if the interface is a standalone recommendation component.
-                            if (Coveo['Recommendation']) {
-                                shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
-                            }
-                            Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
-                                logInActionsHistory: shouldLogInActionHistory,
-                                isFirstQuery: true
-                            });
-                        }
-                        return [2 /*return*/, result];
+        var toExecuteOnceSearchInterfaceIsInitialized = function () {
+            return Initialization.initExternalComponents(element, options).then(function (result) {
+                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
+                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
+                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterInitialization);
+                var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
+                if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
+                    Initialization.logFirstQueryCause(searchInterface);
+                    var shouldLogInActionHistory = true;
+                    // We should not log an action history if the interface is a standalone recommendation component.
+                    if (Coveo['Recommendation']) {
+                        shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
+                    }
+                    Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
+                        logInActionsHistory: shouldLogInActionHistory,
+                        isFirstQuery: true
+                    });
                 }
+                return result;
             });
-        }); };
+        };
         var resultOfSearchInterfaceInitialization = initSearchInterfaceFunction(element, options);
         // We are executing a "lazy" initialization, which returns a Promise
         // eg : CoveoJsSearch.Lazy.js was included in the page
@@ -7113,7 +7037,7 @@ var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
@@ -10711,8 +10635,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var RootComponent_1 = __webpack_require__(35);
-var QueryBuilder_1 = __webpack_require__(40);
-var LocalStorageUtils_1 = __webpack_require__(37);
+var QueryBuilder_1 = __webpack_require__(36);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var Assert_1 = __webpack_require__(5);
 var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(250);
 var QueryEvents_1 = __webpack_require__(10);
@@ -11246,6 +11170,303 @@ exports.RootComponent = RootComponent;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var ExpressionBuilder_1 = __webpack_require__(55);
+var QueryBuilderExpression_1 = __webpack_require__(130);
+var _ = __webpack_require__(0);
+var Utils_1 = __webpack_require__(4);
+/**
+ * The QueryBuilder is used to build a {@link IQuery} that will be able to be executed using the Search API.
+ *
+ * The class exposes several members and methods that help components and external code to build up the final query that is sent to the Search API.
+ *
+ */
+var QueryBuilder = /** @class */ (function () {
+    function QueryBuilder() {
+        /**
+         * Used to build the basic part of the query expression.
+         *
+         * This part typically consists of user-entered content such as query keywords, etc.
+         * @type {Coveo.ExpressionBuilder}
+         */
+        this.expression = new ExpressionBuilder_1.ExpressionBuilder();
+        /**
+         * Used to build the advanced part of the query expression.
+         *
+         * This part is typically formed of filter expressions generated by components such as facets, external code, etc.
+         * @type {Coveo.ExpressionBuilder}
+         */
+        this.advancedExpression = new ExpressionBuilder_1.ExpressionBuilder();
+        /**
+         * Used to build the advanced part of the query expression.
+         *
+         * This part is similar to `advancedExpression`, but its content is interpreted as a constant expression by the index and it takes advantage of special caching features.
+         * @type {Coveo.ExpressionBuilder}
+         */
+        this.constantExpression = new ExpressionBuilder_1.ExpressionBuilder();
+        /**
+         * The contextual text.
+         *
+         * This is the contextual text part of the query. It uses the Coveo Machine Learning service to pick key keywords from the text and add them to the basic expression.
+         * This field is mainly used to pass context such a case description, long textual query or any other form of text that might help in
+         * refining the query.
+         */
+        this.longQueryExpression = new ExpressionBuilder_1.ExpressionBuilder();
+        /**
+         * Used to build the disjunctive part of the query expression.
+         *
+         * When present, this part is evaluated separately from the other expressions and the matching results are merged to those matching expressions, `advancedExpression` and `constantExpression`.
+         *
+         * The final boolean expression for the query is thus (basic advanced constant) OR (disjunction).
+         * @type {Coveo.ExpressionBuilder}
+         */
+        this.disjunctionExpression = new ExpressionBuilder_1.ExpressionBuilder();
+        /**
+         * Whether to interpret special query syntax (e.g., `@objecttype=message`) in the basic
+         * [`expression`]{@link QueryBuilder.expression} (see
+         * [Coveo Query Syntax Reference](http://www.coveo.com/go?dest=adminhelp70&lcid=9&context=10005)).
+         *
+         * See also [`enableLowercaseOperators`]{@link QueryBuilder.enableLowercaseOperators}.
+         *
+         * **Note:**
+         * > Normally, the [`enableQuerySyntax`]{@link Querybox.options.enableQuerySyntax} option of the
+         * > [`Querybox`]{@link Querybox} component determines the value of this attribute during the initialization of the
+         * search page. End user preferences can also modify the value of this attribute.
+         *
+         * Default value is `false`
+         */
+        this.enableQuerySyntax = false;
+        /**
+         * This is the 0-based index of the first result to return.
+         *
+         * If not specified, this parameter defaults to 0.
+         */
+        this.firstResult = 0;
+        /**
+         * This is the number of results to return, starting from {@link IQuery.firstResult}.
+         *
+         * If not specified, this parameter defaults to 10.
+         */
+        this.numberOfResults = 10;
+        this.requiredFields = [];
+        this.includeRequiredFields = false;
+        /**
+         * Whether to enable query corrections on this query (see {@link DidYouMean}).
+         */
+        this.enableDidYouMean = false;
+        /**
+         * Whether to enable debug info on the query.
+         *
+         * This will return additional information on the resulting JSON response from the Search API.
+         *
+         * Mostly: execution report (a detailed breakdown of the parsed and executed query).
+         */
+        this.enableDebug = false;
+        /**
+         * Specifies the sort criterion(s) to use to sort results. If not specified, this parameter defaults to relevancy.
+         *
+         * Possible values are : <br/>
+         * -- relevancy :  This uses all the configured ranking weights as well as any specified ranking expressions to rank results.<br/>
+         * -- dateascending / datedescending Sort using the value of the `@date` field, which is typically the last modification date of an item in the index.<br/>
+         * -- qre : Sort using only the weights applied through ranking expressions. This is much like using `relevancy` except that automatic weights based on keyword proximity etc, are not computed.<br/>
+         * -- nosort : Do not sort the results. The order in which items are returned is essentially random.<br/>
+         * -- @field ascending / @field descending Sort using the value of a custom field.
+         */
+        this.sortCriteria = 'relevancy';
+        this.retrieveFirstSentences = true;
+        /**
+         * Specifies an array of Query Function operation that will be executed on the results.
+         */
+        this.queryFunctions = [];
+        /**
+         * Specifies an array of Ranking Function operations that will be executed on the results.
+         */
+        this.rankingFunctions = [];
+        /**
+         * Specifies an array of Group By operations that can be performed on the query results to extract facets.
+         */
+        this.groupByRequests = [];
+        /**
+         * Specifies an array of request for the CategoryFacet component.
+         */
+        this.categoryFacets = [];
+        this.enableDuplicateFiltering = false;
+    }
+    /**
+     * Build the current content or state of the query builder and return a {@link IQuery}.
+     *
+     * build can be called multiple times on the same QueryBuilder.
+     * @returns {IQuery}
+     */
+    QueryBuilder.prototype.build = function () {
+        var query = {
+            q: this.expression.build(),
+            aq: this.advancedExpression.build(),
+            cq: this.constantExpression.build(),
+            lq: this.longQueryExpression.build(),
+            dq: this.disjunctionExpression.build(),
+            searchHub: this.searchHub,
+            tab: this.tab,
+            locale: this.locale,
+            pipeline: this.pipeline,
+            maximumAge: this.maximumAge,
+            wildcards: this.enableWildcards,
+            questionMark: this.enableQuestionMarks,
+            lowercaseOperators: this.enableLowercaseOperators,
+            partialMatch: this.enablePartialMatch,
+            partialMatchKeywords: this.partialMatchKeywords,
+            partialMatchThreshold: this.partialMatchThreshold,
+            firstResult: this.firstResult,
+            numberOfResults: this.numberOfResults,
+            excerptLength: this.excerptLength,
+            filterField: this.filterField,
+            filterFieldRange: this.filterFieldRange,
+            parentField: this.parentField,
+            childField: this.childField,
+            fieldsToInclude: this.computeFieldsToInclude(),
+            fieldsToExclude: this.fieldsToExclude,
+            enableDidYouMean: this.enableDidYouMean,
+            sortCriteria: this.sortCriteria,
+            sortField: this.sortField,
+            queryFunctions: this.queryFunctions,
+            rankingFunctions: this.rankingFunctions,
+            groupBy: this.groupByRequests,
+            categoryFacets: this.categoryFacets,
+            retrieveFirstSentences: this.retrieveFirstSentences,
+            timezone: this.timezone,
+            enableQuerySyntax: this.enableQuerySyntax,
+            enableDuplicateFiltering: this.enableDuplicateFiltering,
+            enableCollaborativeRating: this.enableCollaborativeRating,
+            debug: this.enableDebug,
+            context: this.context,
+            actionsHistory: this.actionsHistory,
+            recommendation: this.recommendation,
+            allowQueriesWithoutKeywords: this.allowQueriesWithoutKeywords
+        };
+        return query;
+    };
+    /**
+     * Return only the expression(s) part(s) of the query, as a string.
+     *
+     * This means the basic, advanced and constant part in a complete expression {@link IQuery.q}, {@link IQuery.aq}, {@link IQuery.cq}.
+     * @returns {string}
+     */
+    QueryBuilder.prototype.computeCompleteExpression = function () {
+        return this.computeCompleteExpressionParts().full;
+    };
+    /**
+     * Return only the expression(s) part(s) of the query, as an object.
+     * @returns {{full: string, withoutConstant: string, constant: string}}
+     */
+    QueryBuilder.prototype.computeCompleteExpressionParts = function () {
+        return new QueryBuilderExpression_1.QueryBuilderExpression(this.expression.build(), this.advancedExpression.build(), this.constantExpression.build(), this.disjunctionExpression.build());
+    };
+    /**
+     * Return only the expression(s) part(s) of the query, as a string, except the given expression.
+     *
+     * This is used by {@link Facet}, to build their group by request with query override.
+     * @param except
+     * @returns {string}
+     */
+    QueryBuilder.prototype.computeCompleteExpressionExcept = function (except) {
+        return this.computeCompleteExpressionPartsExcept(except).full;
+    };
+    /**
+     * Return only the expression(s) part(s) of the query, as an object, except the given expression.
+     *
+     * This is used by {@link Facet}, to build their group by request with query override.
+     * @param except
+     * @returns {{full: string, withoutConstant: string, constant: string}}
+     */
+    QueryBuilder.prototype.computeCompleteExpressionPartsExcept = function (except) {
+        var withoutConstantAndExcept = ExpressionBuilder_1.ExpressionBuilder.merge(this.expression, this.advancedExpression);
+        withoutConstantAndExcept.remove(except);
+        var basicWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
+        basicWithoutException.fromExpressionBuilder(this.expression);
+        basicWithoutException.remove(except);
+        var advancedWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
+        advancedWithoutException.fromExpressionBuilder(this.advancedExpression);
+        advancedWithoutException.remove(except);
+        var constantWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
+        constantWithoutException.fromExpressionBuilder(this.constantExpression);
+        constantWithoutException.remove(except);
+        var disjunctionWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
+        disjunctionWithoutException.fromExpressionBuilder(this.disjunctionExpression);
+        disjunctionWithoutException.remove(except);
+        return new QueryBuilderExpression_1.QueryBuilderExpression(basicWithoutException.build(), advancedWithoutException.build(), constantWithoutException.build(), disjunctionWithoutException.build());
+    };
+    /**
+     * Add fields to specifically include when the results return.
+     *
+     * This can be used to accelerate the execution time of every query, as there is much less data to process if you whitelist specific fields.
+     * @param fields
+     */
+    QueryBuilder.prototype.addFieldsToInclude = function (fields) {
+        this.fieldsToInclude = _.uniq((this.fieldsToInclude || []).concat(fields));
+    };
+    QueryBuilder.prototype.addRequiredFields = function (fields) {
+        this.requiredFields = _.uniq(this.requiredFields.concat(fields));
+    };
+    /**
+     * Add fields to specifically exclude when the results return.
+     *
+     * This can be used to accelerate the execution time of every query, as there is much less data to process if you blacklist specific fields.
+     * @param fields
+     */
+    QueryBuilder.prototype.addFieldsToExclude = function (fields) {
+        this.fieldsToExclude = _.uniq((this.fieldsToInclude || []).concat(fields));
+    };
+    QueryBuilder.prototype.computeFieldsToInclude = function () {
+        if (this.includeRequiredFields || this.fieldsToInclude != null) {
+            return this.requiredFields.concat(this.fieldsToInclude || []);
+        }
+        else {
+            return null;
+        }
+    };
+    /**
+     * Adds or updates a single context key-value pair in the `context` object.
+     *
+     * @param key The context key. If this key is already present in the `context` object, its value is updated.
+     * @param value The context value. This should be a string or an array of strings.
+     */
+    QueryBuilder.prototype.addContextValue = function (key, value) {
+        if (this.context == null) {
+            this.context = {};
+        }
+        this.context[key] = value;
+    };
+    /**
+     * Merges the specified `values` into the `context` object.
+     *
+     * @param values The object to merge into the `context` object. Can contain multiple key-value pairs, where each value should be a string or an array of strings. If some keys are already present in the `context` object, their values are updated.
+     */
+    QueryBuilder.prototype.addContext = function (values) {
+        if (this.context == null) {
+            this.context = {};
+        }
+        _.extend(this.context, values);
+    };
+    /**
+     * Returns true if the current query contains any expression that are considered "end user input".
+     *
+     * This usually means anything entered in the basic (see [q]{@link IQuery.options.q}) or long (see [lq]{@link IQuery.options.lq}) part of the query.
+     */
+    QueryBuilder.prototype.containsEndUserKeywords = function () {
+        var query = this.build();
+        return Utils_1.Utils.isNonEmptyString(query.q) || Utils_1.Utils.isNonEmptyString(query.lq);
+    };
+    return QueryBuilder;
+}());
+exports.QueryBuilder = QueryBuilder;
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This static class is there to contains the different string definition for all the events related to {@link Breadcrumb}.
  */
@@ -11271,21 +11492,13 @@ exports.BreadcrumbEvents = BreadcrumbEvents;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var localStorage;
-// This check must be made in a try/catch. If cookies are disabled for a
-// browser then window.localStorage will throw an undefined exception.
-try {
-    localStorage = window.localStorage;
-}
-catch (error) {
-    localStorage = null;
-}
+var localStorage = window.localStorage;
 var LocalStorageUtils = /** @class */ (function () {
     function LocalStorageUtils(id) {
         this.id = id;
@@ -11334,7 +11547,7 @@ exports.LocalStorageUtils = LocalStorageUtils;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11572,7 +11785,7 @@ exports.HashUtils = HashUtils;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11874,303 +12087,6 @@ var EndOfInputResult = /** @class */ (function (_super) {
     return EndOfInputResult;
 }(Result));
 exports.EndOfInputResult = EndOfInputResult;
-
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var ExpressionBuilder_1 = __webpack_require__(55);
-var QueryBuilderExpression_1 = __webpack_require__(130);
-var _ = __webpack_require__(0);
-var Utils_1 = __webpack_require__(4);
-/**
- * The QueryBuilder is used to build a {@link IQuery} that will be able to be executed using the Search API.
- *
- * The class exposes several members and methods that help components and external code to build up the final query that is sent to the Search API.
- *
- */
-var QueryBuilder = /** @class */ (function () {
-    function QueryBuilder() {
-        /**
-         * Used to build the basic part of the query expression.
-         *
-         * This part typically consists of user-entered content such as query keywords, etc.
-         * @type {Coveo.ExpressionBuilder}
-         */
-        this.expression = new ExpressionBuilder_1.ExpressionBuilder();
-        /**
-         * Used to build the advanced part of the query expression.
-         *
-         * This part is typically formed of filter expressions generated by components such as facets, external code, etc.
-         * @type {Coveo.ExpressionBuilder}
-         */
-        this.advancedExpression = new ExpressionBuilder_1.ExpressionBuilder();
-        /**
-         * Used to build the advanced part of the query expression.
-         *
-         * This part is similar to `advancedExpression`, but its content is interpreted as a constant expression by the index and it takes advantage of special caching features.
-         * @type {Coveo.ExpressionBuilder}
-         */
-        this.constantExpression = new ExpressionBuilder_1.ExpressionBuilder();
-        /**
-         * The contextual text.
-         *
-         * This is the contextual text part of the query. It uses the Coveo Machine Learning service to pick key keywords from the text and add them to the basic expression.
-         * This field is mainly used to pass context such a case description, long textual query or any other form of text that might help in
-         * refining the query.
-         */
-        this.longQueryExpression = new ExpressionBuilder_1.ExpressionBuilder();
-        /**
-         * Used to build the disjunctive part of the query expression.
-         *
-         * When present, this part is evaluated separately from the other expressions and the matching results are merged to those matching expressions, `advancedExpression` and `constantExpression`.
-         *
-         * The final boolean expression for the query is thus (basic advanced constant) OR (disjunction).
-         * @type {Coveo.ExpressionBuilder}
-         */
-        this.disjunctionExpression = new ExpressionBuilder_1.ExpressionBuilder();
-        /**
-         * Whether to interpret special query syntax (e.g., `@objecttype=message`) in the basic
-         * [`expression`]{@link QueryBuilder.expression} (see
-         * [Coveo Query Syntax Reference](http://www.coveo.com/go?dest=adminhelp70&lcid=9&context=10005)).
-         *
-         * See also [`enableLowercaseOperators`]{@link QueryBuilder.enableLowercaseOperators}.
-         *
-         * **Note:**
-         * > Normally, the [`enableQuerySyntax`]{@link Querybox.options.enableQuerySyntax} option of the
-         * > [`Querybox`]{@link Querybox} component determines the value of this attribute during the initialization of the
-         * search page. End user preferences can also modify the value of this attribute.
-         *
-         * Default value is `false`
-         */
-        this.enableQuerySyntax = false;
-        /**
-         * This is the 0-based index of the first result to return.
-         *
-         * If not specified, this parameter defaults to 0.
-         */
-        this.firstResult = 0;
-        /**
-         * This is the number of results to return, starting from {@link IQuery.firstResult}.
-         *
-         * If not specified, this parameter defaults to 10.
-         */
-        this.numberOfResults = 10;
-        this.requiredFields = [];
-        this.includeRequiredFields = false;
-        /**
-         * Whether to enable query corrections on this query (see {@link DidYouMean}).
-         */
-        this.enableDidYouMean = false;
-        /**
-         * Whether to enable debug info on the query.
-         *
-         * This will return additional information on the resulting JSON response from the Search API.
-         *
-         * Mostly: execution report (a detailed breakdown of the parsed and executed query).
-         */
-        this.enableDebug = false;
-        /**
-         * Specifies the sort criterion(s) to use to sort results. If not specified, this parameter defaults to relevancy.
-         *
-         * Possible values are : <br/>
-         * -- relevancy :  This uses all the configured ranking weights as well as any specified ranking expressions to rank results.<br/>
-         * -- dateascending / datedescending Sort using the value of the `@date` field, which is typically the last modification date of an item in the index.<br/>
-         * -- qre : Sort using only the weights applied through ranking expressions. This is much like using `relevancy` except that automatic weights based on keyword proximity etc, are not computed.<br/>
-         * -- nosort : Do not sort the results. The order in which items are returned is essentially random.<br/>
-         * -- @field ascending / @field descending Sort using the value of a custom field.
-         */
-        this.sortCriteria = 'relevancy';
-        this.retrieveFirstSentences = true;
-        /**
-         * Specifies an array of Query Function operation that will be executed on the results.
-         */
-        this.queryFunctions = [];
-        /**
-         * Specifies an array of Ranking Function operations that will be executed on the results.
-         */
-        this.rankingFunctions = [];
-        /**
-         * Specifies an array of Group By operations that can be performed on the query results to extract facets.
-         */
-        this.groupByRequests = [];
-        /**
-         * Specifies an array of request for the CategoryFacet component.
-         */
-        this.categoryFacets = [];
-        this.enableDuplicateFiltering = false;
-    }
-    /**
-     * Build the current content or state of the query builder and return a {@link IQuery}.
-     *
-     * build can be called multiple times on the same QueryBuilder.
-     * @returns {IQuery}
-     */
-    QueryBuilder.prototype.build = function () {
-        var query = {
-            q: this.expression.build(),
-            aq: this.advancedExpression.build(),
-            cq: this.constantExpression.build(),
-            lq: this.longQueryExpression.build(),
-            dq: this.disjunctionExpression.build(),
-            searchHub: this.searchHub,
-            tab: this.tab,
-            locale: this.locale,
-            pipeline: this.pipeline,
-            maximumAge: this.maximumAge,
-            wildcards: this.enableWildcards,
-            questionMark: this.enableQuestionMarks,
-            lowercaseOperators: this.enableLowercaseOperators,
-            partialMatch: this.enablePartialMatch,
-            partialMatchKeywords: this.partialMatchKeywords,
-            partialMatchThreshold: this.partialMatchThreshold,
-            firstResult: this.firstResult,
-            numberOfResults: this.numberOfResults,
-            excerptLength: this.excerptLength,
-            filterField: this.filterField,
-            filterFieldRange: this.filterFieldRange,
-            parentField: this.parentField,
-            childField: this.childField,
-            fieldsToInclude: this.computeFieldsToInclude(),
-            fieldsToExclude: this.fieldsToExclude,
-            enableDidYouMean: this.enableDidYouMean,
-            sortCriteria: this.sortCriteria,
-            sortField: this.sortField,
-            queryFunctions: this.queryFunctions,
-            rankingFunctions: this.rankingFunctions,
-            groupBy: this.groupByRequests,
-            categoryFacets: this.categoryFacets,
-            retrieveFirstSentences: this.retrieveFirstSentences,
-            timezone: this.timezone,
-            enableQuerySyntax: this.enableQuerySyntax,
-            enableDuplicateFiltering: this.enableDuplicateFiltering,
-            enableCollaborativeRating: this.enableCollaborativeRating,
-            debug: this.enableDebug,
-            context: this.context,
-            actionsHistory: this.actionsHistory,
-            recommendation: this.recommendation,
-            allowQueriesWithoutKeywords: this.allowQueriesWithoutKeywords
-        };
-        return query;
-    };
-    /**
-     * Return only the expression(s) part(s) of the query, as a string.
-     *
-     * This means the basic, advanced and constant part in a complete expression {@link IQuery.q}, {@link IQuery.aq}, {@link IQuery.cq}.
-     * @returns {string}
-     */
-    QueryBuilder.prototype.computeCompleteExpression = function () {
-        return this.computeCompleteExpressionParts().full;
-    };
-    /**
-     * Return only the expression(s) part(s) of the query, as an object.
-     * @returns {{full: string, withoutConstant: string, constant: string}}
-     */
-    QueryBuilder.prototype.computeCompleteExpressionParts = function () {
-        return new QueryBuilderExpression_1.QueryBuilderExpression(this.expression.build(), this.advancedExpression.build(), this.constantExpression.build(), this.disjunctionExpression.build());
-    };
-    /**
-     * Return only the expression(s) part(s) of the query, as a string, except the given expression.
-     *
-     * This is used by {@link Facet}, to build their group by request with query override.
-     * @param except
-     * @returns {string}
-     */
-    QueryBuilder.prototype.computeCompleteExpressionExcept = function (except) {
-        return this.computeCompleteExpressionPartsExcept(except).full;
-    };
-    /**
-     * Return only the expression(s) part(s) of the query, as an object, except the given expression.
-     *
-     * This is used by {@link Facet}, to build their group by request with query override.
-     * @param except
-     * @returns {{full: string, withoutConstant: string, constant: string}}
-     */
-    QueryBuilder.prototype.computeCompleteExpressionPartsExcept = function (except) {
-        var withoutConstantAndExcept = ExpressionBuilder_1.ExpressionBuilder.merge(this.expression, this.advancedExpression);
-        withoutConstantAndExcept.remove(except);
-        var basicWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
-        basicWithoutException.fromExpressionBuilder(this.expression);
-        basicWithoutException.remove(except);
-        var advancedWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
-        advancedWithoutException.fromExpressionBuilder(this.advancedExpression);
-        advancedWithoutException.remove(except);
-        var constantWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
-        constantWithoutException.fromExpressionBuilder(this.constantExpression);
-        constantWithoutException.remove(except);
-        var disjunctionWithoutException = new ExpressionBuilder_1.ExpressionBuilder();
-        disjunctionWithoutException.fromExpressionBuilder(this.disjunctionExpression);
-        disjunctionWithoutException.remove(except);
-        return new QueryBuilderExpression_1.QueryBuilderExpression(basicWithoutException.build(), advancedWithoutException.build(), constantWithoutException.build(), disjunctionWithoutException.build());
-    };
-    /**
-     * Add fields to specifically include when the results return.
-     *
-     * This can be used to accelerate the execution time of every query, as there is much less data to process if you whitelist specific fields.
-     * @param fields
-     */
-    QueryBuilder.prototype.addFieldsToInclude = function (fields) {
-        this.fieldsToInclude = _.uniq((this.fieldsToInclude || []).concat(fields));
-    };
-    QueryBuilder.prototype.addRequiredFields = function (fields) {
-        this.requiredFields = _.uniq(this.requiredFields.concat(fields));
-    };
-    /**
-     * Add fields to specifically exclude when the results return.
-     *
-     * This can be used to accelerate the execution time of every query, as there is much less data to process if you blacklist specific fields.
-     * @param fields
-     */
-    QueryBuilder.prototype.addFieldsToExclude = function (fields) {
-        this.fieldsToExclude = _.uniq((this.fieldsToInclude || []).concat(fields));
-    };
-    QueryBuilder.prototype.computeFieldsToInclude = function () {
-        if (this.includeRequiredFields || this.fieldsToInclude != null) {
-            return this.requiredFields.concat(this.fieldsToInclude || []);
-        }
-        else {
-            return null;
-        }
-    };
-    /**
-     * Adds or updates a single context key-value pair in the `context` object.
-     *
-     * @param key The context key. If this key is already present in the `context` object, its value is updated.
-     * @param value The context value. This should be a string or an array of strings.
-     */
-    QueryBuilder.prototype.addContextValue = function (key, value) {
-        if (this.context == null) {
-            this.context = {};
-        }
-        this.context[key] = value;
-    };
-    /**
-     * Merges the specified `values` into the `context` object.
-     *
-     * @param values The object to merge into the `context` object. Can contain multiple key-value pairs, where each value should be a string or an array of strings. If some keys are already present in the `context` object, their values are updated.
-     */
-    QueryBuilder.prototype.addContext = function (values) {
-        if (this.context == null) {
-            this.context = {};
-        }
-        _.extend(this.context, values);
-    };
-    /**
-     * Returns true if the current query contains any expression that are considered "end user input".
-     *
-     * This usually means anything entered in the basic (see [q]{@link IQuery.options.q}) or long (see [lq]{@link IQuery.options.lq}) part of the query.
-     */
-    QueryBuilder.prototype.containsEndUserKeywords = function () {
-        var query = this.build();
-        return Utils_1.Utils.isNonEmptyString(query.q) || Utils_1.Utils.isNonEmptyString(query.lq);
-    };
-    return QueryBuilder;
-}());
-exports.QueryBuilder = QueryBuilder;
 
 
 /***/ }),
@@ -16345,7 +16261,7 @@ __webpack_require__(369);
 __webpack_require__(370);
 var _ = __webpack_require__(0);
 var FacetQueryController_1 = __webpack_require__(159);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var OmniboxEvents_1 = __webpack_require__(31);
 var QueryEvents_1 = __webpack_require__(10);
 var SearchAlertEvents_1 = __webpack_require__(64);
@@ -19058,8 +18974,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.0-beta',
-    product: '2.4710.0-beta',
+    lib: '2.4609.7-beta',
+    product: '2.4609.7-beta',
     supportedApiVersion: 2
 };
 
@@ -20550,7 +20466,7 @@ var DomUtils_1 = __webpack_require__(65);
 exports.DomUtils = DomUtils_1.DomUtils;
 var EmailUtils_1 = __webpack_require__(139);
 exports.EmailUtils = EmailUtils_1.EmailUtils;
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 exports.HashUtils = HashUtils_1.HashUtils;
 var HighlightUtils_1 = __webpack_require__(51);
 exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
@@ -20560,7 +20476,7 @@ exports.HTMLUtils = HtmlUtils_1.HTMLUtils;
 var KeyboardUtils_1 = __webpack_require__(26);
 exports.KEYBOARD = KeyboardUtils_1.KEYBOARD;
 exports.KeyboardUtils = KeyboardUtils_1.KeyboardUtils;
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 exports.LocalStorageUtils = LocalStorageUtils_1.LocalStorageUtils;
 var OSUtils_1 = __webpack_require__(127);
 exports.OSUtils = OSUtils_1.OSUtils;
@@ -21212,8 +21128,8 @@ exports.FacetValueElement = FacetValueElement;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Result_1 = __webpack_require__(39);
-var Result_2 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
+var Result_2 = __webpack_require__(40);
 exports.notWordStart = ' ()[],$@\'"';
 exports.notInWord = ' ()[],:';
 exports.Basic = {
@@ -27848,7 +27764,7 @@ var AdvancedSearchEvents_1 = __webpack_require__(66);
 exports.AdvancedSearchEvents = AdvancedSearchEvents_1.AdvancedSearchEvents;
 var AnalyticsEvents_1 = __webpack_require__(68);
 exports.AnalyticsEvents = AnalyticsEvents_1.AnalyticsEvents;
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 exports.BreadcrumbEvents = BreadcrumbEvents_1.BreadcrumbEvents;
 var DebugEvents_1 = __webpack_require__(75);
 exports.DebugEvents = DebugEvents_1.DebugEvents;
@@ -29590,7 +29506,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
 var InitializationEvents_1 = __webpack_require__(15);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var Defer_1 = __webpack_require__(29);
 var RootComponent_1 = __webpack_require__(35);
 var Utils_1 = __webpack_require__(4);
@@ -29859,7 +29775,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var Model_1 = __webpack_require__(16);
 var Logger_1 = __webpack_require__(11);
 var Assert_1 = __webpack_require__(5);
@@ -30169,7 +30085,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentOptions_1 = __webpack_require__(8);
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var ResultListEvents_1 = __webpack_require__(33);
 var DebugEvents_1 = __webpack_require__(75);
 var Dom_1 = __webpack_require__(1);
@@ -31242,7 +31158,7 @@ exports.APIAnalyticsBuilder = APIAnalyticsBuilder;
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = __webpack_require__(4);
 var FacetUtils_1 = __webpack_require__(47);
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
 var AllowedValuesPatternType_1 = __webpack_require__(325);
@@ -32569,7 +32485,7 @@ var Utils_1 = __webpack_require__(4);
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Initialization_1 = __webpack_require__(2);
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 var SortCriteria_1 = __webpack_require__(354);
 /**
  * The `Folding` component makes it possible to render hierarchic representations of search results sharing a common
@@ -32836,10 +32752,6 @@ var Folding = /** @class */ (function (_super) {
             .then(function (results) {
             _this.handlePreprocessMoreResults(results);
             return results.results;
-        })
-            .catch(function (e) {
-            _this.logger.error("Invalid query performed while trying to retrieve more results for folding.", e);
-            return [];
         });
     };
     Folding.prototype.handlePreprocessMoreResults = function (queryResults) {
@@ -34202,7 +34114,7 @@ __webpack_require__(297);
 var QueryEvents_1 = __webpack_require__(10);
 var InitializationEvents_1 = __webpack_require__(15);
 var ResultListEvents_1 = __webpack_require__(33);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var InitializationPlaceholder = /** @class */ (function () {
     function InitializationPlaceholder(root) {
         this.root = root;
@@ -34606,7 +34518,7 @@ var underscore_1 = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var MiscModules_1 = __webpack_require__(54);
 var FacetSliderQueryController_1 = __webpack_require__(422);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var SearchAlertEvents_1 = __webpack_require__(64);
@@ -35195,7 +35107,7 @@ var FacetSlider = /** @class */ (function (_super) {
         }
     };
     FacetSlider.prototype.trySetSliderBoundaryFromQueryResult = function (data) {
-        var groupByResults = data.results.groupByResults[this.facetQueryController.groupByRequestForFullRange];
+        var groupByResults = data.results.groupByResults[this.facetQueryController.lastGroupByRequestForFullRangeIndex];
         if (groupByResults && groupByResults.values.length > 0 && groupByResults.values[0].numberOfResults != 0) {
             this.setupInitialSliderStateStart(groupByResults.values[0].value.split('..')[0]);
             this.setupInitialSliderStateEnd(groupByResults.values[groupByResults.values.length - 1].value.split('..')[1]);
@@ -35560,7 +35472,7 @@ var SettingsEvents_1 = __webpack_require__(42);
 var PreferencesPanelEvents_1 = __webpack_require__(72);
 var AnalyticsEvents_1 = __webpack_require__(68);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var QuickviewEvents_1 = __webpack_require__(164);
 var QueryStateModel_1 = __webpack_require__(12);
 var Model_1 = __webpack_require__(16);
@@ -36736,11 +36648,11 @@ var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
 var CategoryFacetSearch_1 = __webpack_require__(492);
 var KeyboardUtils_1 = __webpack_require__(26);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var CategoryFacetBreadcrumb_1 = __webpack_require__(494);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var CategoryFacetDebug_1 = __webpack_require__(495);
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 // /**
 //  * The _CategoryFacet_ component is a facet that renders values in a hierarchical fashion. It determines the filter to apply depending on the
 //  * current selected path of values.
@@ -37859,8 +37771,8 @@ exports.ResponsiveDropdown = ResponsiveDropdown;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Result_1 = __webpack_require__(39);
-var Result_2 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
+var Result_2 = __webpack_require__(40);
 var ExpressionConstant = /** @class */ (function () {
     function ExpressionConstant(value, id) {
         this.value = value;
@@ -38381,7 +38293,7 @@ var MagicBoxInstance = /** @class */ (function () {
             }
             if (key == 13) {
                 // Enter
-                var suggestion = _this.suggestionsManager.getKeyboardFocusedElement();
+                var suggestion = _this.suggestionsManager.select();
                 if (suggestion == null) {
                     _this.onsubmit && _this.onsubmit();
                 }
@@ -40137,7 +40049,7 @@ var Dropdown_1 = __webpack_require__(52);
 var TextInput_1 = __webpack_require__(50);
 var RadioButton_1 = __webpack_require__(83);
 var ExternalModulesShim_1 = __webpack_require__(23);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var SVGIcons_1 = __webpack_require__(13);
 var SVGDom_1 = __webpack_require__(14);
 var AccessibleButton_1 = __webpack_require__(21);
@@ -41385,7 +41297,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(410);
 var underscore_1 = __webpack_require__(0);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var GlobalExports_1 = __webpack_require__(3);
@@ -42350,41 +42262,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var DistanceEvents_1 = __webpack_require__(146);
@@ -42423,9 +42300,7 @@ var DistanceResources = /** @class */ (function (_super) {
         _this.isFirstPositionResolved = false;
         _this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, DistanceResources, options);
         _this.registerDistanceQuery();
-        _this.bind.onRootElement(EventsModules_1.InitializationEvents.afterComponentsInitialization, function (args) {
-            return _this.onAfterComponentsInitialization(args);
-        });
+        _this.bind.onRootElement(EventsModules_1.InitializationEvents.afterComponentsInitialization, function () { return _this.onAfterComponentsInitialization(); });
         return _this;
     }
     /**
@@ -42451,8 +42326,7 @@ var DistanceResources = /** @class */ (function (_super) {
         var shouldTriggerQuery = this.shouldTriggerQueryWhenPositionSet();
         this.isFirstPositionResolved = true;
         if (shouldTriggerQuery) {
-            this.sendAnalytics();
-            this.queryController.executeQuery();
+            this.executeQuery();
         }
     };
     /**
@@ -42461,68 +42335,47 @@ var DistanceResources = /** @class */ (function (_super) {
      * @returns {Promise<IGeolocationPosition>} A promise of the last resolved position value.
      */
     DistanceResources.prototype.getLastPositionRequest = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!!!this.lastPositionRequest) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.lastPositionRequest];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/, {
-                                latitude: this.latitude,
-                                longitude: this.longitude
-                            }];
-                    case 2:
-                        Promise.reject('No position request was executed yet.');
-                        _a.label = 3;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
+        return this.lastPositionRequest || Promise.reject('No position request was executed yet.');
     };
-    DistanceResources.prototype.sendAnalytics = function () {
-        this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.positionSet, {});
+    DistanceResources.prototype.executeQuery = function () {
+        // Since this DistanceResource component often blocks initial queries,
+        // and relaunch the query automatically when it is able to do so (when a position provider resolves)
+        // we need to have a mechanism to still log something useful for usage analytics, instead of always a "position set".
+        // We want it to be "interface load" on a direct page access, or a "search from link" if coming from an external standalone search box
+        // Everytime this component blocks a query, we keep a copy of the pending search event, and resend this instead of a generic "position set" event.
+        if (this.pendingSearchEventOnCancellation) {
+            this.usageAnalytics.logSearchEvent(this.getPendingEventOnCancellation(), this.pendingSearchEventOnCancellation.getEventMeta());
+            delete this.pendingSearchEventOnCancellation;
+        }
+        else {
+            this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.positionSet, {});
+        }
+        this.queryController.executeQuery();
     };
     DistanceResources.prototype.shouldTriggerQueryWhenPositionSet = function () {
-        // Don't trigger the query if the first one is not yet executed.
-        return !this.queryController.firstQuery && this.options.triggerNewQueryOnNewPosition;
+        // If query has been cancelled, we need to trigger the first one.
+        var triggerFirstQueryWithPosition = this.options.cancelQueryUntilPositionResolved && !this.isFirstPositionResolved;
+        return this.options.triggerNewQueryOnNewPosition || triggerFirstQueryWithPosition;
     };
-    DistanceResources.prototype.onAfterComponentsInitialization = function (afterComponentsInitializationArgs) {
+    DistanceResources.prototype.onAfterComponentsInitialization = function () {
+        var _this = this;
         var args = {
             providers: this.getProvidersFromOptions()
         };
         this.bind.trigger(this.element, DistanceEvents_1.DistanceEvents.onResolvingPosition, args);
-        this.lastPositionRequest = this.tryToSetPositionFromProviders(args.providers);
-        if (this.options.cancelQueryUntilPositionResolved) {
-            afterComponentsInitializationArgs.defer.push(this.lastPositionRequest);
-        }
-    };
-    DistanceResources.prototype.tryToSetPositionFromProviders = function (providers) {
-        return __awaiter(this, void 0, void 0, function () {
-            var position, error_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.tryGetPositionFromProviders(providers)];
-                    case 1:
-                        position = _a.sent();
-                        if (position) {
-                            this.setPosition(position.latitude, position.longitude);
-                        }
-                        else {
-                            this.triggerDistanceNotSet();
-                        }
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_1 = _a.sent();
-                        this.logger.error('An error occurred while trying to resolve the current position.', error_1);
-                        this.triggerDistanceNotSet();
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
+        this.lastPositionRequest = this.tryGetPositionFromProviders(args.providers)
+            .then(function (position) {
+            if (position) {
+                _this.setPosition(position.latitude, position.longitude);
+            }
+            else {
+                _this.triggerDistanceNotSet();
+            }
+            return position;
+        })
+            .catch(function (error) {
+            _this.logger.error('An error occurred while trying to resolve the current position.', error);
+            _this.triggerDistanceNotSet();
         });
     };
     DistanceResources.prototype.getProvidersFromOptions = function () {
@@ -42539,31 +42392,31 @@ var DistanceResources = /** @class */ (function (_super) {
         return providers;
     };
     DistanceResources.prototype.tryGetPositionFromProviders = function (providers) {
-        return __awaiter(this, void 0, void 0, function () {
-            var provider, position, error_2;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!(providers.length > 0)) return [3 /*break*/, 5];
-                        provider = providers.shift();
-                        _a.label = 1;
-                    case 1:
-                        _a.trys.push([1, 3, , 4]);
-                        return [4 /*yield*/, provider.getPosition()];
-                    case 2:
-                        position = _a.sent();
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var tryNextProvider = function () {
+                if (providers.length > 0) {
+                    var provider = providers.shift();
+                    provider
+                        .getPosition()
+                        .then(function (position) {
                         if (!!position.latitude && !!position.longitude) {
-                            return [2 /*return*/, position];
+                            resolve(position);
                         }
-                        return [3 /*break*/, 4];
-                    case 3:
-                        error_2 = _a.sent();
-                        this.logger.warn('An error occurred while trying to resolve the position within a position provider.', error_2);
-                        return [3 /*break*/, 4];
-                    case 4: return [3 /*break*/, 0];
-                    case 5: return [2 /*return*/];
+                        else {
+                            tryNextProvider();
+                        }
+                    })
+                        .catch(function (error) {
+                        _this.logger.warn('An error occurred while trying to resolve the position within a position provider.', error);
+                        tryNextProvider();
+                    });
                 }
-            });
+                else {
+                    resolve();
+                }
+            };
+            tryNextProvider();
         });
     };
     DistanceResources.prototype.triggerDistanceNotSet = function () {
@@ -42571,6 +42424,7 @@ var DistanceResources = /** @class */ (function (_super) {
         this.logger.warn("None of the given position providers could resolve the current position. The distance field will not be calculated and the distance components will be disabled until the next call to 'setPosition'.");
         this.bind.trigger(this.element, DistanceEvents_1.DistanceEvents.onPositionNotResolved, {});
         this.disable();
+        this.executeQuery();
     };
     DistanceResources.prototype.registerDistanceQuery = function () {
         var _this = this;
@@ -42584,6 +42438,11 @@ var DistanceResources = /** @class */ (function (_super) {
                     args.queryBuilder.queryFunctions.push(geoQueryFunction);
                     _this.enableDistanceComponents();
                 }
+            }
+            else if (_this.options.cancelQueryUntilPositionResolved) {
+                _this.pendingSearchEventOnCancellation = _this.usageAnalytics.getPendingSearchEvent();
+                _this.logger.info('Query cancelled, waiting for position.');
+                args.cancel = true;
             }
         });
     };
@@ -42606,6 +42465,12 @@ var DistanceResources = /** @class */ (function (_super) {
     };
     DistanceResources.prototype.getConvertedUnitsFunction = function (queryFunction) {
         return queryFunction + "/" + this.options.unitConversionFactor;
+    };
+    DistanceResources.prototype.getPendingEventOnCancellation = function () {
+        return {
+            name: this.pendingSearchEventOnCancellation.templateSearchEvent.actionCause,
+            type: this.pendingSearchEventOnCancellation.templateSearchEvent.actionType
+        };
     };
     DistanceResources.ID = 'DistanceResources';
     DistanceResources.doExport = function () {
@@ -44209,7 +44074,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Strings_1 = __webpack_require__(7);
 var QueryEvents_1 = __webpack_require__(10);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
@@ -47777,41 +47642,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(449);
 var QuickviewEvents_1 = __webpack_require__(164);
@@ -47845,7 +47675,6 @@ var QuickviewDocument_1 = __webpack_require__(170);
  * > - You can change the appearance of the `Quickview` link/button by adding elements in the inner HTML of its `div`.
  * > - You can change the content of the `Quickview` modal box link by specifying a template `id` or CSS selector (see
  * > the [`contentTemplate`]{@link Quickview.options.contentTemplate} option).
- * > - When using Coveo for Salesforce 3.16, in an environment compliant with LockerService, ensure you use `CoveoSalesforceQuickview` (see [Changing the Default Quick View in Coveo for Salesforce](https://docs.coveo.com/en/1234/)).
  *
  * **Example:**
  * ```html
@@ -47936,7 +47765,7 @@ var Quickview = /** @class */ (function (_super) {
                 Dom_1.$$(document.activeElement).trigger('blur');
             }
             var openerObject_1 = this.prepareOpenQuickviewObject();
-            return this.createModalBox(openerObject_1).then(function () {
+            this.createModalBox(openerObject_1).then(function () {
                 _this.bindQuickviewEvents(openerObject_1);
                 _this.animateAndOpen();
                 _this.logUsageAnalyticsEvent();
@@ -47980,19 +47809,16 @@ var Quickview = /** @class */ (function (_super) {
         }
     };
     Quickview.prototype.bindQuickviewEvents = function (openerObject) {
-        var _this = this;
-        Dom_1.$$(this.modalbox.content).on(QuickviewEvents_1.QuickviewEvents.quickviewLoaded, function () { return __awaiter(_this, void 0, void 0, function () {
-            var anim;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, openerObject.loadingAnimation];
-                    case 1:
-                        anim = _a.sent();
-                        Dom_1.$$(anim).remove();
-                        return [2 /*return*/];
-                }
-            });
-        }); });
+        Dom_1.$$(this.modalbox.content).on(QuickviewEvents_1.QuickviewEvents.quickviewLoaded, function () {
+            if (openerObject.loadingAnimation instanceof HTMLElement) {
+                Dom_1.$$(openerObject.loadingAnimation).remove();
+            }
+            else if (openerObject.loadingAnimation instanceof Promise) {
+                openerObject.loadingAnimation.then(function (anim) {
+                    Dom_1.$$(anim).remove();
+                });
+            }
+        });
     };
     Quickview.prototype.animateAndOpen = function () {
         var quickviewDocument = Dom_1.$$(this.modalbox.modalBox).find('.' + Component_1.Component.computeCssClassName(QuickviewDocument_1.QuickviewDocument));
@@ -48031,66 +47857,27 @@ var Quickview = /** @class */ (function (_super) {
         };
     };
     Quickview.prototype.prepareQuickviewContent = function (loadingAnimation) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            var domContent, initOptions, initParameters, containsQuickviewDocumentAndCustomAnimation;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.instantiateTemplateToDom()];
-                    case 1:
-                        domContent = _a.sent();
-                        initOptions = this.searchInterface.options;
-                        initParameters = {
-                            options: initOptions,
-                            bindings: this.getBindings(),
-                            result: this.result
-                        };
-                        return [4 /*yield*/, Initialization_1.Initialization.automaticallyCreateComponentsInside(domContent.el, initParameters).initResult];
-                    case 2:
-                        _a.sent();
-                        containsQuickviewDocumentAndCustomAnimation = function () {
-                            return domContent.find("." + Component_1.Component.computeCssClassName(QuickviewDocument_1.QuickviewDocument)) != undefined && _this.options.enableLoadingAnimation;
-                        };
-                        if (containsQuickviewDocumentAndCustomAnimation()) {
-                            if (loadingAnimation instanceof HTMLElement) {
-                                domContent.prepend(loadingAnimation);
-                            }
-                            else if (loadingAnimation instanceof Promise) {
-                                loadingAnimation.then(function (anim) {
-                                    domContent.prepend(anim);
-                                });
-                            }
-                        }
-                        return [2 /*return*/, domContent];
+        var _this = this;
+        return this.options.contentTemplate.instantiateToElement(this.result).then(function (built) {
+            var content = Dom_1.$$(built);
+            var initOptions = _this.searchInterface.options;
+            var initParameters = {
+                options: initOptions,
+                bindings: _this.getBindings(),
+                result: _this.result
+            };
+            return Initialization_1.Initialization.automaticallyCreateComponentsInside(content.el, initParameters).initResult.then(function () {
+                if (content.find('.' + Component_1.Component.computeCssClassName(QuickviewDocument_1.QuickviewDocument)) != undefined && _this.options.enableLoadingAnimation) {
+                    if (loadingAnimation instanceof HTMLElement) {
+                        content.prepend(loadingAnimation);
+                    }
+                    else if (loadingAnimation instanceof Promise) {
+                        loadingAnimation.then(function (anim) {
+                            content.prepend(anim);
+                        });
+                    }
                 }
-            });
-        });
-    };
-    Quickview.prototype.instantiateTemplateToDom = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var templateInstantiated, e_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, 3, 6]);
-                        return [4 /*yield*/, this.options.contentTemplate.instantiateToElement(this.result)];
-                    case 1:
-                        templateInstantiated = _a.sent();
-                        return [3 /*break*/, 6];
-                    case 2:
-                        e_1 = _a.sent();
-                        this.logger.warn(e_1);
-                        return [3 /*break*/, 6];
-                    case 3:
-                        if (!!templateInstantiated) return [3 /*break*/, 5];
-                        this.logger.warn('An unexpected error happened while trying to render a custom template quickview, fallbacking on default quickview template...', this.options.contentTemplate);
-                        return [4 /*yield*/, new DefaultQuickviewTemplate_1.DefaultQuickviewTemplate().instantiateToElement(this.result)];
-                    case 4:
-                        templateInstantiated = _a.sent();
-                        _a.label = 5;
-                    case 5: return [7 /*endfinally*/];
-                    case 6: return [2 /*return*/, Dom_1.$$(templateInstantiated)];
-                }
+                return content;
             });
         });
     };
@@ -49009,13 +48796,13 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var InitializationEvents_1 = __webpack_require__(15);
 var PreferencesPanelEvents_1 = __webpack_require__(72);
 var Model_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var QueryStateModel_1 = __webpack_require__(12);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Initialization_1 = __webpack_require__(2);
 var Strings_1 = __webpack_require__(7);
@@ -49803,7 +49590,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var ComponentOptionsModel_1 = __webpack_require__(24);
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var PreferencesPanelEvents_1 = __webpack_require__(72);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Initialization_1 = __webpack_require__(2);
@@ -52623,7 +52410,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(362);
 var underscore_1 = __webpack_require__(0);
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 var QueryEvents_1 = __webpack_require__(10);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
@@ -56178,7 +55965,7 @@ var BaseComponent_1 = __webpack_require__(28);
 exports.BaseComponent = BaseComponent_1.BaseComponent;
 var RootComponent_1 = __webpack_require__(35);
 exports.RootComponent = RootComponent_1.RootComponent;
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 exports.QueryBuilder = QueryBuilder_1.QueryBuilder;
 var ExpressionBuilder_1 = __webpack_require__(55);
 exports.ExpressionBuilder = ExpressionBuilder_1.ExpressionBuilder;
@@ -63965,7 +63752,7 @@ var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var DeviceUtils_1 = __webpack_require__(22);
 var Dom_1 = __webpack_require__(1);
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var PopupUtils_1 = __webpack_require__(70);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
@@ -66145,7 +65932,7 @@ exports.ExpressionFunction = ExpressionFunction;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Result_1 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
 var ExpressionList = /** @class */ (function () {
     function ExpressionList(parts, id) {
         this.parts = parts;
@@ -66229,7 +66016,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Result_1 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
 var _ = __webpack_require__(0);
 var OptionResult = /** @class */ (function (_super) {
     __extends(OptionResult, _super);
@@ -66288,7 +66075,7 @@ exports.OptionResult = OptionResult;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Result_1 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
 var RefResult_1 = __webpack_require__(341);
 var ExpressionEndOfInput_1 = __webpack_require__(157);
 var _ = __webpack_require__(0);
@@ -66400,7 +66187,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Result_1 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
 var _ = __webpack_require__(0);
 var RefResult = /** @class */ (function (_super) {
     __extends(RefResult, _super);
@@ -66460,8 +66247,8 @@ exports.RefResult = RefResult;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Result_1 = __webpack_require__(39);
-var Result_2 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
+var Result_2 = __webpack_require__(40);
 var ExpressionRegExp = /** @class */ (function () {
     function ExpressionRegExp(value, id, grammar) {
         this.value = value;
@@ -66859,10 +66646,10 @@ var SuggestionsManager = /** @class */ (function () {
         var target = Dom_1.$$(e.target);
         var parents = target.parents(this.options.selectableClass);
         if (target.hasClass(this.options.selectableClass)) {
-            this.processMouseSelection(target.el);
+            this.addSelectedClass(target.el);
         }
         else if (parents.length > 0 && this.element.contains(parents[0])) {
-            this.processMouseSelection(parents[0]);
+            this.addSelectedClass(parents[0]);
         }
     };
     SuggestionsManager.prototype.handleMouseOut = function (e) {
@@ -66893,8 +66680,8 @@ var SuggestionsManager = /** @class */ (function () {
     SuggestionsManager.prototype.moveUp = function () {
         return this.returnMoved(this.move('up'));
     };
-    SuggestionsManager.prototype.getKeyboardFocusedElement = function () {
-        var selected = this.keyboardFocusedSuggestion;
+    SuggestionsManager.prototype.select = function () {
+        var selected = this.element.getElementsByClassName(this.options.selectedClass).item(0);
         if (selected != null) {
             Dom_1.$$(selected).trigger('keyboardSelect');
         }
@@ -66983,15 +66770,6 @@ var SuggestionsManager = /** @class */ (function () {
         Dom_1.$$(this.element).toggleClass('magic-box-hasSuggestion', this.hasSuggestions);
         Dom_1.$$(this.magicBoxContainer).setAttribute('aria-expanded', this.hasSuggestions.toString());
     };
-    SuggestionsManager.prototype.processKeyboardSelection = function (suggestion) {
-        this.addSelectedClass(suggestion);
-        this.keyboardFocusedSuggestion = suggestion;
-        Dom_1.$$(this.inputManager.input).setAttribute('aria-activedescendant', Dom_1.$$(suggestion).getAttribute('id'));
-    };
-    SuggestionsManager.prototype.processMouseSelection = function (suggestion) {
-        this.addSelectedClass(suggestion);
-        this.keyboardFocusedSuggestion = null;
-    };
     SuggestionsManager.prototype.buildSuggestionsContainer = function () {
         return Dom_1.$$('div', {
             id: 'coveo-magicbox-suggestions',
@@ -67046,10 +66824,11 @@ var SuggestionsManager = /** @class */ (function () {
         }
         var newlySelected = selectables[index];
         if (newlySelected) {
-            this.processKeyboardSelection(newlySelected);
+            this.addSelectedClass(newlySelected);
+            Dom_1.$$(newlySelected).addClass(this.options.selectedClass);
+            Dom_1.$$(this.inputManager.input).setAttribute('aria-activedescendant', Dom_1.$$(newlySelected).getAttribute('id'));
         }
         else {
-            this.keyboardFocusedSuggestion = null;
             this.inputManager.input.removeAttribute('aria-activedescendant');
         }
         return newlySelected;
@@ -69427,7 +69206,7 @@ var MagicBox_1 = __webpack_require__(160);
 var MagicBoxUtils_1 = __webpack_require__(161);
 var OptionResult_1 = __webpack_require__(339);
 var RefResult_1 = __webpack_require__(341);
-var Result_1 = __webpack_require__(39);
+var Result_1 = __webpack_require__(40);
 var SuggestionsManager_1 = __webpack_require__(348);
 exports.GrammarsImportedLocally = Grammars_1.Grammars;
 function doMagicBoxExport() {
@@ -72184,7 +71963,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var FacetUtils_1 = __webpack_require__(47);
 var Dom_1 = __webpack_require__(1);
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 var Dropdown_1 = __webpack_require__(52);
 var DocumentInput_1 = __webpack_require__(167);
 var SimpleFieldInput = /** @class */ (function (_super) {
@@ -72263,7 +72042,7 @@ var Dropdown_1 = __webpack_require__(52);
 var TextInput_1 = __webpack_require__(50);
 var Dom_1 = __webpack_require__(1);
 var DocumentInput_1 = __webpack_require__(167);
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 var AdvancedFieldInput = /** @class */ (function (_super) {
     __extends(AdvancedFieldInput, _super);
     function AdvancedFieldInput(inputName, fieldName, root) {
@@ -72328,7 +72107,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 var Dropdown_1 = __webpack_require__(52);
 var NumericSpinner_1 = __webpack_require__(84);
 var DocumentInput_1 = __webpack_require__(167);
@@ -72504,41 +72283,6 @@ exports.NavigatorPositionProvider = NavigatorPositionProvider;
 
 "use strict";
 
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var EndpointCaller_1 = __webpack_require__(67);
 var GOOGLE_MAP_BASE_URL = 'https://www.googleapis.com/geolocation/v1/geolocate';
@@ -72554,27 +72298,21 @@ var GoogleApiPositionProvider = /** @class */ (function () {
         this.googleApiKey = googleApiKey;
     }
     GoogleApiPositionProvider.prototype.getPosition = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var responseData, location;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, new EndpointCaller_1.EndpointCaller().call({
-                            errorsAsSuccess: false,
-                            method: 'POST',
-                            queryString: ["key=" + this.googleApiKey],
-                            requestData: {},
-                            responseType: 'json',
-                            url: GOOGLE_MAP_BASE_URL
-                        })];
-                    case 1:
-                        responseData = _a.sent();
-                        location = responseData.data.location;
-                        return [2 /*return*/, {
-                                longitude: location.lng,
-                                latitude: location.lat
-                            }];
-                }
-            });
+        return new EndpointCaller_1.EndpointCaller()
+            .call({
+            errorsAsSuccess: false,
+            method: 'POST',
+            queryString: ["key=" + this.googleApiKey],
+            requestData: {},
+            responseType: 'json',
+            url: GOOGLE_MAP_BASE_URL
+        })
+            .then(function (responseData) {
+            var location = responseData.data.location;
+            return {
+                longitude: location.lng,
+                latitude: location.lat
+            };
         });
     };
     return GoogleApiPositionProvider;
@@ -72640,11 +72378,20 @@ exports.StaticPositionProvider = StaticPositionProvider;
 "use strict";
 
 /// <reference path="../ui/FacetSlider/FacetSlider.ts" />
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var underscore_1 = __webpack_require__(0);
 var QueryEvents_1 = __webpack_require__(10);
 var Logger_1 = __webpack_require__(11);
 var ExpressionBuilder_1 = __webpack_require__(55);
+var QueryBuilder_1 = __webpack_require__(36);
 var DateUtils_1 = __webpack_require__(30);
 var QueryUtils_1 = __webpack_require__(19);
 var FacetSliderQueryController = /** @class */ (function () {
@@ -72764,44 +72511,13 @@ var FacetSliderQueryController = /** @class */ (function () {
         this.processQueryOverride(filter, basicGroupByRequestForGraph, queryBuilder);
         basicGroupByRequestForGraph.sortCriteria = 'nosort';
         basicGroupByRequestForGraph.maximumNumberOfValues = this.facet.options.graph.steps;
+        this.addExpressionToExcludeInvalidDates(basicGroupByRequestForGraph);
         queryBuilder.groupByRequests.push(basicGroupByRequestForGraph);
     };
     FacetSliderQueryController.prototype.putGroupByForSliderIntoQueryBuilder = function (queryBuilder) {
         this.lastGroupByRequestIndex = queryBuilder.groupByRequests.length;
-        var maximumNumberOfValues = 1;
-        if (this.facet.hasAGraph()) {
-            maximumNumberOfValues = this.facet.options.graph.steps;
-        }
-        var rangeValues = undefined;
-        var _a = this.formatStartAndEnd(), start = _a.start, end = _a.end;
-        if (this.facet.isSimpleSliderConfig) {
-            rangeValues = [
-                {
-                    start: start,
-                    end: end,
-                    label: 'slider',
-                    endInclusive: false
-                }
-            ];
-        }
-        // A basic group by request that takes into account the current query
-        // This one will determine if the facet is empty for the current query
-        var basicGroupByRequestForSlider = this.createBasicGroupByRequest();
-        basicGroupByRequestForSlider.maximumNumberOfValues = maximumNumberOfValues;
-        basicGroupByRequestForSlider.sortCriteria = 'nosort';
-        basicGroupByRequestForSlider.generateAutomaticRanges = !this.facet.isSimpleSliderConfig;
-        basicGroupByRequestForSlider.rangeValues = rangeValues;
-        var filter = this.computeOurFilterExpression(this.facet.getSliderBoundaryForQuery());
-        this.processQueryOverride(filter, basicGroupByRequestForSlider, queryBuilder);
-        queryBuilder.groupByRequests.push(basicGroupByRequestForSlider);
-        // We need a group by request for the "full range" that does not take into account the current query
-        // This will determine the full range of the query so that the X range of the slider is static
-        this.groupByRequestForFullRange = queryBuilder.groupByRequests.length;
-        var groupByRequestForFullRange = underscore_1.clone(basicGroupByRequestForSlider);
-        groupByRequestForFullRange.advancedQueryOverride = this.facet.options.queryOverride || '@uri';
-        delete groupByRequestForFullRange.constantQueryOverride;
-        delete groupByRequestForFullRange.queryOverride;
-        queryBuilder.groupByRequests.push(groupByRequestForFullRange);
+        var basicGroupByRequestForSlider = this.putGroupByBasicSliderIntoQueryBuilder(queryBuilder);
+        this.putGroupByForFullRangeSliderIntoQueryBuilder(queryBuilder, basicGroupByRequestForSlider);
     };
     FacetSliderQueryController.prototype.processQueryOverride = function (filter, groupByRequest, queryBuilder) {
         if (filter != undefined) {
@@ -72822,7 +72538,7 @@ var FacetSliderQueryController = /** @class */ (function () {
         }
     };
     FacetSliderQueryController.prototype.createRangeValuesForGraphUsingStartAndEnd = function () {
-        var _a = this.formatStartAndEnd(), start = _a.start, end = _a.end;
+        var _a = this.getFormattedStartAndEnd(), start = _a.start, end = _a.end;
         var oneRange = {
             start: start,
             end: end,
@@ -72874,7 +72590,7 @@ var FacetSliderQueryController = /** @class */ (function () {
             };
         });
     };
-    FacetSliderQueryController.prototype.formatStartAndEnd = function () {
+    FacetSliderQueryController.prototype.getFormattedStartAndEnd = function () {
         var start = this.facet.options.start;
         var end = this.facet.options.end;
         if (this.facet.options.dateField) {
@@ -72919,6 +72635,73 @@ var FacetSliderQueryController = /** @class */ (function () {
     };
     FacetSliderQueryController.prototype.getBrowserCompatibleFormat = function (value) {
         return value.replace('@', 'T').replace(/\//g, '-');
+    };
+    FacetSliderQueryController.prototype.putGroupByForFullRangeSliderIntoQueryBuilder = function (queryBuilder, basicGroupByRequest) {
+        // We need a group by request for the "full range" that does not take into account the current query (query override)
+        // The goal is to obtain a query wich return the whole range of results without taking into account what the users typed in the search box,
+        // so that the X range of the slider is static between each queries.
+        this.lastGroupByRequestForFullRangeIndex = queryBuilder.groupByRequests.length;
+        var groupByRequestForFullRange = underscore_1.clone(basicGroupByRequest);
+        // This removes the "basic" query override. ie: user input
+        delete groupByRequestForFullRange.queryOverride;
+        // This removes any current filter in the facet caused by a selection
+        delete groupByRequestForFullRange.advancedQueryOverride;
+        // We keep the "constantQueryOverride", since it normally contains static filter always applied no matter what.
+        if (this.facet.options.queryOverride) {
+            groupByRequestForFullRange.advancedQueryOverride = this.facet.options.queryOverride;
+        }
+        this.addExpressionToExcludeInvalidDates(groupByRequestForFullRange);
+        queryBuilder.groupByRequests.push(groupByRequestForFullRange);
+    };
+    FacetSliderQueryController.prototype.putGroupByBasicSliderIntoQueryBuilder = function (queryBuilder) {
+        var maximumNumberOfValues = 1;
+        if (this.facet.hasAGraph()) {
+            maximumNumberOfValues = this.facet.options.graph.steps;
+        }
+        var rangeValues;
+        if (this.facet.isSimpleSliderConfig) {
+            rangeValues = [
+                __assign({}, this.getFormattedStartAndEnd(), { label: 'slider', endInclusive: false })
+            ];
+        }
+        // A basic group by request that takes into account the current query
+        // This one will determine if the facet is empty for the current query
+        var basicGroupByRequestForSlider = this.createBasicGroupByRequest();
+        basicGroupByRequestForSlider.maximumNumberOfValues = maximumNumberOfValues;
+        basicGroupByRequestForSlider.sortCriteria = 'nosort';
+        basicGroupByRequestForSlider.generateAutomaticRanges = !this.facet.isSimpleSliderConfig;
+        basicGroupByRequestForSlider.rangeValues = rangeValues;
+        var filter = this.computeOurFilterExpression(this.facet.getSliderBoundaryForQuery());
+        this.processQueryOverride(filter, basicGroupByRequestForSlider, queryBuilder);
+        this.addExpressionToExcludeInvalidDates(basicGroupByRequestForSlider);
+        queryBuilder.groupByRequests.push(basicGroupByRequestForSlider);
+        return basicGroupByRequestForSlider;
+    };
+    FacetSliderQueryController.prototype.addExpressionToExcludeInvalidDates = function (groupByRequest) {
+        if (this.facet.options.dateField) {
+            // When a connector sets an invalid or un-existing date,
+            // the Coveo index will automatically set its value to 1400/01/01 (the "minimum" value in the Boost C++ library).
+            // Here, we try to always force those values out,
+            // by putting a filter on dates above Unix epoch, otherwise all kinds of weird stuff will happen for the end users
+            // For example :
+            // - We'll get extremely huge range of dates, all with no values
+            //   (because it turns out not many document were actually produced in the medieval ages).
+            // - Graphs might get all out of bound, with very tiny slices.
+            // - Moment js will incorrectly evaluate the date.
+            // - You cannot actually query for those invalid document using date queries anyway,
+            //   meaning playing with the slider will always return "no results" if you try and filter on those invalid documents.
+            // Instead of taking the approach of garbage in/garbage out, this tries to do something a bit more sane for end users ...
+            var builderToRemoveInvalidRange = new QueryBuilder_1.QueryBuilder();
+            builderToRemoveInvalidRange.expression.addFieldExpression(this.facet.options.field, '>', [
+                this.getFilterDateFormat(new Date(0))
+            ]);
+            if (groupByRequest.constantQueryOverride) {
+                groupByRequest.constantQueryOverride += " " + builderToRemoveInvalidRange.expression.build();
+            }
+            else {
+                groupByRequest.constantQueryOverride = builderToRemoveInvalidRange.expression.build();
+            }
+        }
     };
     return FacetSliderQueryController;
 }());
@@ -92015,7 +91798,7 @@ var CoveoJQuery_1 = __webpack_require__(150);
 exports.$ = CoveoJQuery_1.jQueryInstance;
 var CoveoUnderscore_1 = __webpack_require__(149);
 exports._ = CoveoUnderscore_1.underscoreInstance;
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 exports.HashUtils = HashUtils_1.HashUtils;
 var DeviceUtils_1 = __webpack_require__(22);
 exports.DeviceUtils = DeviceUtils_1.DeviceUtils;

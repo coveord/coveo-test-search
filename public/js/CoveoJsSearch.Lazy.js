@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Recommendation","11":"OmniboxResultList","12":"CategoryFacet","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "4f435c4b98cbfc71c823" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Recommendation","11":"OmniboxResultList","12":"CategoryFacet","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "a7f65d7223f3cc873f80" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2611,41 +2611,6 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
@@ -2656,7 +2621,7 @@ var ComponentOptionsModel_1 = __webpack_require__(24);
 var ComponentStateModel_1 = __webpack_require__(61);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var JQueryutils_1 = __webpack_require__(59);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -2820,81 +2785,40 @@ var Initialization = /** @class */ (function () {
      * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
      */
     Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
-        var _this = this;
         Assert_1.Assert.exists(element);
         var alreadyInitialized = Component_1.Component.get(element, QueryController_1.QueryController, true);
         if (alreadyInitialized) {
             this.logger.error('This DOM element has already been initialized as a search interface, skipping initialization', element);
-            return Promise.resolve({
-                elem: element
+            return new Promise(function (resolve, reject) {
+                resolve({ elem: element });
             });
         }
         options = Initialization.resolveDefaultOptions(element, options);
-        var waitForAllPromisesToFinish = function (eventType, promises) { return __awaiter(_this, void 0, void 0, function () {
-            var _this = this;
-            var promisesWithErrorsHandledIndividually;
-            return __generator(this, function (_a) {
-                try {
-                    promisesWithErrorsHandledIndividually = promises.map(function (p) {
-                        return p.catch(function (error) {
-                            return _this.logger.warn("An error occurred when trying to defer the \"" + eventType + "\" event. The defer will be ignored.", "Error: " + error);
-                        });
-                    });
-                    return [2 /*return*/, Promise.all(promisesWithErrorsHandledIndividually)];
-                }
-                catch (error) {
-                    this.logger.error("An unexpected error occurred when trying to defer the \"" + event + "\" event. All defers will be ignored.", "Error: " + error);
-                }
-                return [2 /*return*/];
-            });
-        }); };
-        var triggerInitializationEventWithArguments = function (eventType) {
-            var initializationEventArgs = {
-                defer: []
-            };
-            Dom_1.$$(element).trigger(eventType, initializationEventArgs);
-            if (initializationEventArgs.defer.length > 0) {
-                return waitForAllPromisesToFinish(eventType, initializationEventArgs.defer);
-            }
-            else {
-                return Promise.resolve();
-            }
-        };
         Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.beforeInitialization);
         Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.beforeInitialization);
-        var toExecuteOnceSearchInterfaceIsInitialized = function () { return __awaiter(_this, void 0, void 0, function () {
-            var result, searchInterface, shouldLogInActionHistory;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, Initialization.initExternalComponents(element, options)];
-                    case 1:
-                        result = _a.sent();
-                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterComponentsInitialization)];
-                    case 2:
-                        _a.sent();
-                        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
-                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
-                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterInitialization)];
-                    case 3:
-                        _a.sent();
-                        searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
-                        if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
-                            Initialization.logFirstQueryCause(searchInterface);
-                            shouldLogInActionHistory = true;
-                            // We should not log an action history if the interface is a standalone recommendation component.
-                            if (Coveo['Recommendation']) {
-                                shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
-                            }
-                            Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
-                                logInActionsHistory: shouldLogInActionHistory,
-                                isFirstQuery: true
-                            });
-                        }
-                        return [2 /*return*/, result];
+        var toExecuteOnceSearchInterfaceIsInitialized = function () {
+            return Initialization.initExternalComponents(element, options).then(function (result) {
+                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
+                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
+                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterInitialization);
+                var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
+                if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
+                    Initialization.logFirstQueryCause(searchInterface);
+                    var shouldLogInActionHistory = true;
+                    // We should not log an action history if the interface is a standalone recommendation component.
+                    if (Coveo['Recommendation']) {
+                        shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
+                    }
+                    Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
+                        logInActionsHistory: shouldLogInActionHistory,
+                        isFirstQuery: true
+                    });
                 }
+                return result;
             });
-        }); };
+        };
         var resultOfSearchInterfaceInitialization = initSearchInterfaceFunction(element, options);
         // We are executing a "lazy" initialization, which returns a Promise
         // eg : CoveoJsSearch.Lazy.js was included in the page
@@ -7003,7 +6927,7 @@ var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
@@ -9753,8 +9677,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var RootComponent_1 = __webpack_require__(35);
-var QueryBuilder_1 = __webpack_require__(40);
-var LocalStorageUtils_1 = __webpack_require__(37);
+var QueryBuilder_1 = __webpack_require__(36);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var Assert_1 = __webpack_require__(5);
 var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(250);
 var QueryEvents_1 = __webpack_require__(10);
@@ -10288,339 +10212,6 @@ exports.RootComponent = RootComponent;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * This static class is there to contains the different string definition for all the events related to {@link Breadcrumb}.
- */
-var BreadcrumbEvents = /** @class */ (function () {
-    function BreadcrumbEvents() {
-    }
-    /**
-     * Triggered when the breadcrumb needs to update its content. External code can use this event to provide bits of HTML that should be included in the breadcrumb.
-     *
-     * All handlers bound to this event will receive a {@link IPopulateBreadcrumbEventArgs} as an argument.
-     */
-    BreadcrumbEvents.populateBreadcrumb = 'populateBreadcrumb';
-    /**
-     * Triggered when the user clicks the Clear All button in the breadcrumb. When this event is raised, every filter that is included in the breadcrumb should be removed.
-     *
-     * This event does not provide custom event data.
-     */
-    BreadcrumbEvents.clearBreadcrumb = 'clearBreadcrumb';
-    BreadcrumbEvents.redrawBreadcrumb = 'redrawBreadcrumb';
-    return BreadcrumbEvents;
-}());
-exports.BreadcrumbEvents = BreadcrumbEvents;
-
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var localStorage;
-// This check must be made in a try/catch. If cookies are disabled for a
-// browser then window.localStorage will throw an undefined exception.
-try {
-    localStorage = window.localStorage;
-}
-catch (error) {
-    localStorage = null;
-}
-var LocalStorageUtils = /** @class */ (function () {
-    function LocalStorageUtils(id) {
-        this.id = id;
-    }
-    LocalStorageUtils.prototype.save = function (data) {
-        try {
-            if (localStorage != null) {
-                localStorage.setItem(this.getLocalStorageKey(), JSON.stringify(data));
-            }
-        }
-        catch (error) { }
-    };
-    LocalStorageUtils.prototype.load = function () {
-        try {
-            if (localStorage == null) {
-                return null;
-            }
-            var value = localStorage.getItem(this.getLocalStorageKey());
-            return value && JSON.parse(value);
-        }
-        catch (error) {
-            return null;
-        }
-    };
-    LocalStorageUtils.prototype.remove = function (key) {
-        try {
-            if (localStorage != null) {
-                if (key == undefined) {
-                    localStorage.removeItem(this.getLocalStorageKey());
-                }
-                else {
-                    var oldObj = this.load();
-                    delete oldObj[key];
-                    this.save(oldObj);
-                }
-            }
-        }
-        catch (error) { }
-    };
-    LocalStorageUtils.prototype.getLocalStorageKey = function () {
-        return 'coveo-' + this.id;
-    };
-    return LocalStorageUtils;
-}());
-exports.LocalStorageUtils = LocalStorageUtils;
-
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Assert_1 = __webpack_require__(5);
-var Utils_1 = __webpack_require__(4);
-var _ = __webpack_require__(0);
-var MiscModules_1 = __webpack_require__(54);
-var HashUtils = /** @class */ (function () {
-    function HashUtils() {
-    }
-    HashUtils.getHash = function (w) {
-        if (w === void 0) { w = window; }
-        Assert_1.Assert.exists(w);
-        // window.location.hash returns the DECODED hash on Firefox (it's a well known bug),
-        // so any & in values will be already unescaped. This breaks our value splitting.
-        // The following trick works on all browsers.
-        var ret = '#' + (w.location.href.split('#')[1] || '');
-        return HashUtils.getAjaxcrawlableHash(ret);
-    };
-    HashUtils.getValue = function (key, toParse) {
-        Assert_1.Assert.isNonEmptyString(key);
-        Assert_1.Assert.exists(toParse);
-        toParse = HashUtils.getAjaxcrawlableHash(toParse);
-        var paramValue = HashUtils.getRawValue(key, toParse);
-        if (paramValue != undefined) {
-            paramValue = HashUtils.getValueDependingOnType(key, paramValue);
-        }
-        return paramValue;
-    };
-    HashUtils.encodeValues = function (values) {
-        var hash = [];
-        _.each(values, function (valueToEncode, key, obj) {
-            var encodedValue = '';
-            if (Utils_1.Utils.isNonEmptyArray(valueToEncode)) {
-                encodedValue = HashUtils.encodeArray(valueToEncode);
-            }
-            else if (_.isObject(valueToEncode) && Utils_1.Utils.isNonEmptyArray(_.keys(valueToEncode))) {
-                encodedValue = HashUtils.encodeObject(valueToEncode);
-            }
-            else if (!Utils_1.Utils.isNullOrUndefined(valueToEncode)) {
-                encodedValue = Utils_1.Utils.safeEncodeURIComponent(valueToEncode.toString());
-            }
-            if (encodedValue != '') {
-                hash.push(key + '=' + encodedValue);
-            }
-        });
-        return hash.join('&');
-    };
-    HashUtils.getAjaxcrawlableHash = function (hash) {
-        if (hash[1] != undefined && hash[1] == '!') {
-            return hash.substring(0, 1) + hash.substring(2);
-        }
-        else {
-            return hash;
-        }
-    };
-    HashUtils.getRawValue = function (key, toParse) {
-        Assert_1.Assert.exists(key);
-        Assert_1.Assert.exists(toParse);
-        Assert_1.Assert.check(toParse.indexOf('#') == 0 || toParse == '');
-        var toParseArray = toParse.substr(1).split('&');
-        var paramPos = 0;
-        var loop = true;
-        var paramValue = undefined;
-        while (loop) {
-            var paramValuePair = toParseArray[paramPos].split('=');
-            if (paramValuePair[0] == key) {
-                loop = false;
-                paramValue = paramValuePair[1];
-            }
-            else {
-                paramPos++;
-                if (paramPos >= toParseArray.length) {
-                    paramPos = undefined;
-                    loop = false;
-                }
-            }
-        }
-        return paramValue;
-    };
-    HashUtils.getValueDependingOnType = function (key, paramValue) {
-        var type = HashUtils.getValueType(key, paramValue);
-        var returnValue;
-        if (type == 'object') {
-            returnValue = HashUtils.decodeObject(paramValue);
-        }
-        else if (type == 'array') {
-            returnValue = HashUtils.decodeArray(paramValue);
-        }
-        else {
-            try {
-                returnValue = decodeURIComponent(paramValue);
-            }
-            catch (e) {
-                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as a standard value', e, key, paramValue);
-            }
-        }
-        return returnValue;
-    };
-    HashUtils.getValueType = function (key, paramValue) {
-        if (key == 'q') {
-            return 'other';
-        }
-        else if (HashUtils.isObject(paramValue)) {
-            return 'object';
-        }
-        else if (HashUtils.isArray(paramValue)) {
-            return 'array';
-        }
-        else {
-            return 'other';
-        }
-    };
-    HashUtils.isArrayStartNotEncoded = function (value) {
-        return value.substr(0, 1) == HashUtils.DELIMITER.arrayStart;
-    };
-    HashUtils.isArrayStartEncoded = function (value) {
-        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart)) == 0;
-    };
-    HashUtils.isArrayEndNotEncoded = function (value) {
-        return value.substr(value.length - 1);
-    };
-    HashUtils.isArrayEndEncoded = function (value) {
-        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd)) ==
-            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd).length);
-    };
-    HashUtils.isObjectStartNotEncoded = function (value) {
-        return value.substr(0, 1) == HashUtils.DELIMITER.objectStart;
-    };
-    HashUtils.isObjectStartEncoded = function (value) {
-        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectStart)) == 0;
-    };
-    HashUtils.isObjectEndNotEncoded = function (value) {
-        return value.substr(value.length - 1) == HashUtils.DELIMITER.objectEnd;
-    };
-    HashUtils.isObjectEndEncoded = function (value) {
-        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd)) ==
-            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd).length);
-    };
-    HashUtils.isObject = function (value) {
-        var isObjectStart = HashUtils.isObjectStartNotEncoded(value) || HashUtils.isObjectStartEncoded(value);
-        var isObjectEnd = HashUtils.isObjectEndNotEncoded(value) || HashUtils.isObjectEndEncoded(value);
-        return isObjectStart && isObjectEnd;
-    };
-    HashUtils.isArray = function (value) {
-        var isArrayStart = HashUtils.isArrayStartNotEncoded(value) || HashUtils.isArrayStartEncoded(value);
-        var isArrayEnd = HashUtils.isArrayEndNotEncoded(value) || HashUtils.isArrayEndEncoded(value);
-        return isArrayStart && isArrayEnd;
-    };
-    HashUtils.encodeArray = function (array) {
-        var arrayReturn = _.map(array, function (value) {
-            return Utils_1.Utils.safeEncodeURIComponent(value);
-        });
-        return HashUtils.DELIMITER.arrayStart + arrayReturn.join(',') + HashUtils.DELIMITER.arrayEnd;
-    };
-    HashUtils.encodeObject = function (obj) {
-        var _this = this;
-        var retArray = _.map(obj, function (val, key, obj) {
-            return "\"" + Utils_1.Utils.safeEncodeURIComponent(key) + "\":" + _this.encodeValue(val);
-        });
-        return HashUtils.DELIMITER.objectStart + retArray.join(' , ') + HashUtils.DELIMITER.objectEnd;
-    };
-    HashUtils.encodeValue = function (val) {
-        var encodedValue = '';
-        if (_.isArray(val)) {
-            encodedValue = HashUtils.encodeArray(val);
-        }
-        else if (_.isObject(val)) {
-            encodedValue = JSON.stringify(val);
-        }
-        else if (_.isNumber(val) || _.isBoolean(val)) {
-            encodedValue = Utils_1.Utils.safeEncodeURIComponent(val.toString());
-        }
-        else {
-            encodedValue = '"' + Utils_1.Utils.safeEncodeURIComponent(val) + '"';
-        }
-        return encodedValue;
-    };
-    HashUtils.decodeObject = function (obj) {
-        if (HashUtils.isObjectStartEncoded(obj) && HashUtils.isObjectEndEncoded(obj)) {
-            obj = obj.replace(/encodeURIComponent(HashUtils.Delimiter.objectStart)/, HashUtils.DELIMITER.objectStart);
-            obj = obj.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd), HashUtils.DELIMITER.objectEnd);
-        }
-        try {
-            var containsArray = /(\[.*\])/.exec(obj);
-            if (containsArray) {
-                obj = obj.replace(/(\[.*\])/, "[" + this.decodeArray(containsArray[1])
-                    .map(function (val) { return "\"" + val + "\""; })
-                    .join(',') + "]");
-            }
-            var decoded = decodeURIComponent(obj);
-            return JSON.parse(decoded);
-        }
-        catch (e) {
-            new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an object', e, obj);
-            return {};
-        }
-    };
-    HashUtils.decodeArray = function (value) {
-        if (HashUtils.isArrayStartEncoded(value) && HashUtils.isArrayEndEncoded(value)) {
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), HashUtils.DELIMITER.arrayStart);
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), HashUtils.DELIMITER.arrayEnd);
-        }
-        value = value.substr(1);
-        value = value.substr(0, value.length - 1);
-        var array = value.split(',');
-        return _.chain(array)
-            .map(function (val) {
-            try {
-                return decodeURIComponent(val);
-            }
-            catch (e) {
-                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an array', e, val, value);
-                return null;
-            }
-        })
-            .compact()
-            .value();
-    };
-    HashUtils.DELIMITER = {
-        objectStart: '{',
-        objectEnd: '}',
-        arrayStart: '[',
-        arrayEnd: ']',
-        objectStartRegExp: '^{',
-        objectEndRegExp: '}+$',
-        arrayStartRegExp: '^[',
-        arrayEndRegExp: ']+$'
-    };
-    return HashUtils;
-}());
-exports.HashUtils = HashUtils;
-
-
-/***/ }),
-/* 39 */,
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
 var ExpressionBuilder_1 = __webpack_require__(55);
 var QueryBuilderExpression_1 = __webpack_require__(130);
 var _ = __webpack_require__(0);
@@ -10912,6 +10503,331 @@ exports.QueryBuilder = QueryBuilder;
 
 
 /***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * This static class is there to contains the different string definition for all the events related to {@link Breadcrumb}.
+ */
+var BreadcrumbEvents = /** @class */ (function () {
+    function BreadcrumbEvents() {
+    }
+    /**
+     * Triggered when the breadcrumb needs to update its content. External code can use this event to provide bits of HTML that should be included in the breadcrumb.
+     *
+     * All handlers bound to this event will receive a {@link IPopulateBreadcrumbEventArgs} as an argument.
+     */
+    BreadcrumbEvents.populateBreadcrumb = 'populateBreadcrumb';
+    /**
+     * Triggered when the user clicks the Clear All button in the breadcrumb. When this event is raised, every filter that is included in the breadcrumb should be removed.
+     *
+     * This event does not provide custom event data.
+     */
+    BreadcrumbEvents.clearBreadcrumb = 'clearBreadcrumb';
+    BreadcrumbEvents.redrawBreadcrumb = 'redrawBreadcrumb';
+    return BreadcrumbEvents;
+}());
+exports.BreadcrumbEvents = BreadcrumbEvents;
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var localStorage = window.localStorage;
+var LocalStorageUtils = /** @class */ (function () {
+    function LocalStorageUtils(id) {
+        this.id = id;
+    }
+    LocalStorageUtils.prototype.save = function (data) {
+        try {
+            if (localStorage != null) {
+                localStorage.setItem(this.getLocalStorageKey(), JSON.stringify(data));
+            }
+        }
+        catch (error) { }
+    };
+    LocalStorageUtils.prototype.load = function () {
+        try {
+            if (localStorage == null) {
+                return null;
+            }
+            var value = localStorage.getItem(this.getLocalStorageKey());
+            return value && JSON.parse(value);
+        }
+        catch (error) {
+            return null;
+        }
+    };
+    LocalStorageUtils.prototype.remove = function (key) {
+        try {
+            if (localStorage != null) {
+                if (key == undefined) {
+                    localStorage.removeItem(this.getLocalStorageKey());
+                }
+                else {
+                    var oldObj = this.load();
+                    delete oldObj[key];
+                    this.save(oldObj);
+                }
+            }
+        }
+        catch (error) { }
+    };
+    LocalStorageUtils.prototype.getLocalStorageKey = function () {
+        return 'coveo-' + this.id;
+    };
+    return LocalStorageUtils;
+}());
+exports.LocalStorageUtils = LocalStorageUtils;
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Assert_1 = __webpack_require__(5);
+var Utils_1 = __webpack_require__(4);
+var _ = __webpack_require__(0);
+var MiscModules_1 = __webpack_require__(54);
+var HashUtils = /** @class */ (function () {
+    function HashUtils() {
+    }
+    HashUtils.getHash = function (w) {
+        if (w === void 0) { w = window; }
+        Assert_1.Assert.exists(w);
+        // window.location.hash returns the DECODED hash on Firefox (it's a well known bug),
+        // so any & in values will be already unescaped. This breaks our value splitting.
+        // The following trick works on all browsers.
+        var ret = '#' + (w.location.href.split('#')[1] || '');
+        return HashUtils.getAjaxcrawlableHash(ret);
+    };
+    HashUtils.getValue = function (key, toParse) {
+        Assert_1.Assert.isNonEmptyString(key);
+        Assert_1.Assert.exists(toParse);
+        toParse = HashUtils.getAjaxcrawlableHash(toParse);
+        var paramValue = HashUtils.getRawValue(key, toParse);
+        if (paramValue != undefined) {
+            paramValue = HashUtils.getValueDependingOnType(key, paramValue);
+        }
+        return paramValue;
+    };
+    HashUtils.encodeValues = function (values) {
+        var hash = [];
+        _.each(values, function (valueToEncode, key, obj) {
+            var encodedValue = '';
+            if (Utils_1.Utils.isNonEmptyArray(valueToEncode)) {
+                encodedValue = HashUtils.encodeArray(valueToEncode);
+            }
+            else if (_.isObject(valueToEncode) && Utils_1.Utils.isNonEmptyArray(_.keys(valueToEncode))) {
+                encodedValue = HashUtils.encodeObject(valueToEncode);
+            }
+            else if (!Utils_1.Utils.isNullOrUndefined(valueToEncode)) {
+                encodedValue = Utils_1.Utils.safeEncodeURIComponent(valueToEncode.toString());
+            }
+            if (encodedValue != '') {
+                hash.push(key + '=' + encodedValue);
+            }
+        });
+        return hash.join('&');
+    };
+    HashUtils.getAjaxcrawlableHash = function (hash) {
+        if (hash[1] != undefined && hash[1] == '!') {
+            return hash.substring(0, 1) + hash.substring(2);
+        }
+        else {
+            return hash;
+        }
+    };
+    HashUtils.getRawValue = function (key, toParse) {
+        Assert_1.Assert.exists(key);
+        Assert_1.Assert.exists(toParse);
+        Assert_1.Assert.check(toParse.indexOf('#') == 0 || toParse == '');
+        var toParseArray = toParse.substr(1).split('&');
+        var paramPos = 0;
+        var loop = true;
+        var paramValue = undefined;
+        while (loop) {
+            var paramValuePair = toParseArray[paramPos].split('=');
+            if (paramValuePair[0] == key) {
+                loop = false;
+                paramValue = paramValuePair[1];
+            }
+            else {
+                paramPos++;
+                if (paramPos >= toParseArray.length) {
+                    paramPos = undefined;
+                    loop = false;
+                }
+            }
+        }
+        return paramValue;
+    };
+    HashUtils.getValueDependingOnType = function (key, paramValue) {
+        var type = HashUtils.getValueType(key, paramValue);
+        var returnValue;
+        if (type == 'object') {
+            returnValue = HashUtils.decodeObject(paramValue);
+        }
+        else if (type == 'array') {
+            returnValue = HashUtils.decodeArray(paramValue);
+        }
+        else {
+            try {
+                returnValue = decodeURIComponent(paramValue);
+            }
+            catch (e) {
+                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as a standard value', e, key, paramValue);
+            }
+        }
+        return returnValue;
+    };
+    HashUtils.getValueType = function (key, paramValue) {
+        if (key == 'q') {
+            return 'other';
+        }
+        else if (HashUtils.isObject(paramValue)) {
+            return 'object';
+        }
+        else if (HashUtils.isArray(paramValue)) {
+            return 'array';
+        }
+        else {
+            return 'other';
+        }
+    };
+    HashUtils.isArrayStartNotEncoded = function (value) {
+        return value.substr(0, 1) == HashUtils.DELIMITER.arrayStart;
+    };
+    HashUtils.isArrayStartEncoded = function (value) {
+        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart)) == 0;
+    };
+    HashUtils.isArrayEndNotEncoded = function (value) {
+        return value.substr(value.length - 1);
+    };
+    HashUtils.isArrayEndEncoded = function (value) {
+        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd)) ==
+            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd).length);
+    };
+    HashUtils.isObjectStartNotEncoded = function (value) {
+        return value.substr(0, 1) == HashUtils.DELIMITER.objectStart;
+    };
+    HashUtils.isObjectStartEncoded = function (value) {
+        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectStart)) == 0;
+    };
+    HashUtils.isObjectEndNotEncoded = function (value) {
+        return value.substr(value.length - 1) == HashUtils.DELIMITER.objectEnd;
+    };
+    HashUtils.isObjectEndEncoded = function (value) {
+        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd)) ==
+            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd).length);
+    };
+    HashUtils.isObject = function (value) {
+        var isObjectStart = HashUtils.isObjectStartNotEncoded(value) || HashUtils.isObjectStartEncoded(value);
+        var isObjectEnd = HashUtils.isObjectEndNotEncoded(value) || HashUtils.isObjectEndEncoded(value);
+        return isObjectStart && isObjectEnd;
+    };
+    HashUtils.isArray = function (value) {
+        var isArrayStart = HashUtils.isArrayStartNotEncoded(value) || HashUtils.isArrayStartEncoded(value);
+        var isArrayEnd = HashUtils.isArrayEndNotEncoded(value) || HashUtils.isArrayEndEncoded(value);
+        return isArrayStart && isArrayEnd;
+    };
+    HashUtils.encodeArray = function (array) {
+        var arrayReturn = _.map(array, function (value) {
+            return Utils_1.Utils.safeEncodeURIComponent(value);
+        });
+        return HashUtils.DELIMITER.arrayStart + arrayReturn.join(',') + HashUtils.DELIMITER.arrayEnd;
+    };
+    HashUtils.encodeObject = function (obj) {
+        var _this = this;
+        var retArray = _.map(obj, function (val, key, obj) {
+            return "\"" + Utils_1.Utils.safeEncodeURIComponent(key) + "\":" + _this.encodeValue(val);
+        });
+        return HashUtils.DELIMITER.objectStart + retArray.join(' , ') + HashUtils.DELIMITER.objectEnd;
+    };
+    HashUtils.encodeValue = function (val) {
+        var encodedValue = '';
+        if (_.isArray(val)) {
+            encodedValue = HashUtils.encodeArray(val);
+        }
+        else if (_.isObject(val)) {
+            encodedValue = JSON.stringify(val);
+        }
+        else if (_.isNumber(val) || _.isBoolean(val)) {
+            encodedValue = Utils_1.Utils.safeEncodeURIComponent(val.toString());
+        }
+        else {
+            encodedValue = '"' + Utils_1.Utils.safeEncodeURIComponent(val) + '"';
+        }
+        return encodedValue;
+    };
+    HashUtils.decodeObject = function (obj) {
+        if (HashUtils.isObjectStartEncoded(obj) && HashUtils.isObjectEndEncoded(obj)) {
+            obj = obj.replace(/encodeURIComponent(HashUtils.Delimiter.objectStart)/, HashUtils.DELIMITER.objectStart);
+            obj = obj.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd), HashUtils.DELIMITER.objectEnd);
+        }
+        try {
+            var containsArray = /(\[.*\])/.exec(obj);
+            if (containsArray) {
+                obj = obj.replace(/(\[.*\])/, "[" + this.decodeArray(containsArray[1])
+                    .map(function (val) { return "\"" + val + "\""; })
+                    .join(',') + "]");
+            }
+            var decoded = decodeURIComponent(obj);
+            return JSON.parse(decoded);
+        }
+        catch (e) {
+            new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an object', e, obj);
+            return {};
+        }
+    };
+    HashUtils.decodeArray = function (value) {
+        if (HashUtils.isArrayStartEncoded(value) && HashUtils.isArrayEndEncoded(value)) {
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), HashUtils.DELIMITER.arrayStart);
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), HashUtils.DELIMITER.arrayEnd);
+        }
+        value = value.substr(1);
+        value = value.substr(0, value.length - 1);
+        var array = value.split(',');
+        return _.chain(array)
+            .map(function (val) {
+            try {
+                return decodeURIComponent(val);
+            }
+            catch (e) {
+                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an array', e, val, value);
+                return null;
+            }
+        })
+            .compact()
+            .value();
+    };
+    HashUtils.DELIMITER = {
+        objectStart: '{',
+        objectEnd: '}',
+        arrayStart: '[',
+        arrayEnd: ']',
+        objectStartRegExp: '^{',
+        objectEndRegExp: '}+$',
+        arrayStartRegExp: '^[',
+        arrayEndRegExp: ']+$'
+    };
+    return HashUtils;
+}());
+exports.HashUtils = HashUtils;
+
+
+/***/ }),
+/* 40 */,
 /* 41 */,
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -14617,8 +14533,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.0-beta',
-    product: '2.4710.0-beta',
+    lib: '2.4609.7-beta',
+    product: '2.4609.7-beta',
     supportedApiVersion: 2
 };
 
@@ -15151,7 +15067,7 @@ var DomUtils_1 = __webpack_require__(65);
 exports.DomUtils = DomUtils_1.DomUtils;
 var EmailUtils_1 = __webpack_require__(139);
 exports.EmailUtils = EmailUtils_1.EmailUtils;
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 exports.HashUtils = HashUtils_1.HashUtils;
 var HighlightUtils_1 = __webpack_require__(51);
 exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
@@ -15161,7 +15077,7 @@ exports.HTMLUtils = HtmlUtils_1.HTMLUtils;
 var KeyboardUtils_1 = __webpack_require__(26);
 exports.KEYBOARD = KeyboardUtils_1.KEYBOARD;
 exports.KeyboardUtils = KeyboardUtils_1.KeyboardUtils;
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 exports.LocalStorageUtils = LocalStorageUtils_1.LocalStorageUtils;
 var OSUtils_1 = __webpack_require__(127);
 exports.OSUtils = OSUtils_1.OSUtils;
@@ -20084,7 +20000,7 @@ var AdvancedSearchEvents_1 = __webpack_require__(66);
 exports.AdvancedSearchEvents = AdvancedSearchEvents_1.AdvancedSearchEvents;
 var AnalyticsEvents_1 = __webpack_require__(68);
 exports.AnalyticsEvents = AnalyticsEvents_1.AnalyticsEvents;
-var BreadcrumbEvents_1 = __webpack_require__(36);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 exports.BreadcrumbEvents = BreadcrumbEvents_1.BreadcrumbEvents;
 var DebugEvents_1 = __webpack_require__(75);
 exports.DebugEvents = DebugEvents_1.DebugEvents;
@@ -21826,7 +21742,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
 var InitializationEvents_1 = __webpack_require__(15);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var Defer_1 = __webpack_require__(29);
 var RootComponent_1 = __webpack_require__(35);
 var Utils_1 = __webpack_require__(4);
@@ -22095,7 +22011,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var Model_1 = __webpack_require__(16);
 var Logger_1 = __webpack_require__(11);
 var Assert_1 = __webpack_require__(5);
@@ -22405,7 +22321,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentOptions_1 = __webpack_require__(8);
-var LocalStorageUtils_1 = __webpack_require__(37);
+var LocalStorageUtils_1 = __webpack_require__(38);
 var ResultListEvents_1 = __webpack_require__(33);
 var DebugEvents_1 = __webpack_require__(75);
 var Dom_1 = __webpack_require__(1);
@@ -23644,7 +23560,7 @@ __webpack_require__(297);
 var QueryEvents_1 = __webpack_require__(10);
 var InitializationEvents_1 = __webpack_require__(15);
 var ResultListEvents_1 = __webpack_require__(33);
-var HashUtils_1 = __webpack_require__(38);
+var HashUtils_1 = __webpack_require__(39);
 var InitializationPlaceholder = /** @class */ (function () {
     function InitializationPlaceholder(root) {
         this.root = root;
@@ -27033,7 +26949,7 @@ var BaseComponent_1 = __webpack_require__(28);
 exports.BaseComponent = BaseComponent_1.BaseComponent;
 var RootComponent_1 = __webpack_require__(35);
 exports.RootComponent = RootComponent_1.RootComponent;
-var QueryBuilder_1 = __webpack_require__(40);
+var QueryBuilder_1 = __webpack_require__(36);
 exports.QueryBuilder = QueryBuilder_1.QueryBuilder;
 var ExpressionBuilder_1 = __webpack_require__(55);
 exports.ExpressionBuilder = ExpressionBuilder_1.ExpressionBuilder;
