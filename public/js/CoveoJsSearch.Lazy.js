@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Recommendation","11":"OmniboxResultList","12":"CategoryFacet","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "a7f65d7223f3cc873f80" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"CategoryFacet","11":"Recommendation","12":"OmniboxResultList","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "a17686ee921029fcc4c8" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2611,6 +2611,41 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
@@ -2628,7 +2663,7 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
 var SearchInterface_1 = __webpack_require__(17);
 var InitializationHelper_1 = __webpack_require__(304);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 /**
  * The main purpose of this class is to initialize the framework (a.k.a the code executed when calling `Coveo.init`).<br/>
  * It's also in charge or registering the available components, as well as the method that we expost to the global Coveo scope.<br/>
@@ -2785,40 +2820,81 @@ var Initialization = /** @class */ (function () {
      * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
      */
     Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
+        var _this = this;
         Assert_1.Assert.exists(element);
         var alreadyInitialized = Component_1.Component.get(element, QueryController_1.QueryController, true);
         if (alreadyInitialized) {
             this.logger.error('This DOM element has already been initialized as a search interface, skipping initialization', element);
-            return new Promise(function (resolve, reject) {
-                resolve({ elem: element });
+            return Promise.resolve({
+                elem: element
             });
         }
         options = Initialization.resolveDefaultOptions(element, options);
+        var waitForAllPromisesToFinish = function (eventType, promises) { return __awaiter(_this, void 0, void 0, function () {
+            var _this = this;
+            var promisesWithErrorsHandledIndividually;
+            return __generator(this, function (_a) {
+                try {
+                    promisesWithErrorsHandledIndividually = promises.map(function (p) {
+                        return p.catch(function (error) {
+                            return _this.logger.warn("An error occurred when trying to defer the \"" + eventType + "\" event. The defer will be ignored.", "Error: " + error);
+                        });
+                    });
+                    return [2 /*return*/, Promise.all(promisesWithErrorsHandledIndividually)];
+                }
+                catch (error) {
+                    this.logger.error("An unexpected error occurred when trying to defer the \"" + event + "\" event. All defers will be ignored.", "Error: " + error);
+                }
+                return [2 /*return*/];
+            });
+        }); };
+        var triggerInitializationEventWithArguments = function (eventType) {
+            var initializationEventArgs = {
+                defer: []
+            };
+            Dom_1.$$(element).trigger(eventType, initializationEventArgs);
+            if (initializationEventArgs.defer.length > 0) {
+                return waitForAllPromisesToFinish(eventType, initializationEventArgs.defer);
+            }
+            else {
+                return Promise.resolve();
+            }
+        };
         Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.beforeInitialization);
         Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.beforeInitialization);
-        var toExecuteOnceSearchInterfaceIsInitialized = function () {
-            return Initialization.initExternalComponents(element, options).then(function (result) {
-                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
-                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterInitialization);
-                var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
-                if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
-                    Initialization.logFirstQueryCause(searchInterface);
-                    var shouldLogInActionHistory = true;
-                    // We should not log an action history if the interface is a standalone recommendation component.
-                    if (Coveo['Recommendation']) {
-                        shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
-                    }
-                    Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
-                        logInActionsHistory: shouldLogInActionHistory,
-                        isFirstQuery: true
-                    });
+        var toExecuteOnceSearchInterfaceIsInitialized = function () { return __awaiter(_this, void 0, void 0, function () {
+            var result, searchInterface, shouldLogInActionHistory;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Initialization.initExternalComponents(element, options)];
+                    case 1:
+                        result = _a.sent();
+                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterComponentsInitialization)];
+                    case 2:
+                        _a.sent();
+                        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
+                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
+                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterInitialization)];
+                    case 3:
+                        _a.sent();
+                        searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
+                        if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
+                            Initialization.logFirstQueryCause(searchInterface);
+                            shouldLogInActionHistory = true;
+                            // We should not log an action history if the interface is a standalone recommendation component.
+                            if (Coveo['Recommendation']) {
+                                shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
+                            }
+                            Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
+                                logInActionsHistory: shouldLogInActionHistory,
+                                isFirstQuery: true
+                            });
+                        }
+                        return [2 /*return*/, result];
                 }
-                return result;
             });
-        };
+        }); };
         var resultOfSearchInterfaceInitialization = initSearchInterfaceFunction(element, options);
         // We are executing a "lazy" initialization, which returns a Promise
         // eg : CoveoJsSearch.Lazy.js was included in the page
@@ -3981,7 +4057,7 @@ var ComponentOptionsModel_1 = __webpack_require__(24);
 var QueryController_1 = __webpack_require__(34);
 var SearchInterface_1 = __webpack_require__(17);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var DebugEvents_1 = __webpack_require__(75);
 var _ = __webpack_require__(0);
 /**
@@ -5448,6 +5524,10 @@ exports.analyticsActionCauseList = {
         type: 'categoryFacet',
         metaMap: { categoryFacetId: 1, categoryFacetValue: 2, categoryFacetTitle: 3 }
     },
+    categoryFacetReload: {
+        name: 'categoryFacetReload',
+        type: 'categoryFacet'
+    },
     categoryFacetClear: {
         name: 'categoryFacetClear',
         type: 'categoryFacet',
@@ -6579,7 +6659,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var Assert_1 = __webpack_require__(5);
 var Utils_1 = __webpack_require__(4);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var _ = __webpack_require__(0);
 exports.MODEL_EVENTS = {
     PREPROCESS: 'preprocess',
@@ -6931,7 +7011,7 @@ var HashUtils_1 = __webpack_require__(39);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var ComponentOptions_1 = __webpack_require__(8);
 var InitializationPlaceholder_1 = __webpack_require__(138);
 var RootComponent_1 = __webpack_require__(35);
@@ -7891,7 +7971,8 @@ exports.StandaloneSearchInterface = StandaloneSearchInterface;
 
 
 /***/ }),
-/* 18 */
+/* 18 */,
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8034,7 +8115,7 @@ exports.StringUtils = StringUtils;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8241,11 +8322,46 @@ exports.QueryUtils = QueryUtils;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var Logger_1 = __webpack_require__(11);
 var Dom_1 = __webpack_require__(1);
@@ -8373,41 +8489,31 @@ var Template = /** @class */ (function () {
     Template.prototype.getComponentsInside = function (tmplString) {
         var allComponentsInsideCurrentTemplate = _.map(Initialization_1.Initialization.getListOfRegisteredComponents(), function (componentId) {
             var regex = new RegExp("Coveo" + componentId, 'g');
-            if (regex.exec(tmplString)) {
-                return componentId;
-            }
-            else {
-                return null;
-            }
+            return regex.exec(tmplString) ? componentId : null;
         });
         return _.compact(allComponentsInsideCurrentTemplate);
     };
-    Template.prototype.instantiateToElement = function (object, instantiateTemplateOptions) {
-        var _this = this;
-        if (instantiateTemplateOptions === void 0) { instantiateTemplateOptions = {}; }
-        var mergedOptions = new DefaultInstantiateTemplateOptions().merge(instantiateTemplateOptions);
-        var html = this.instantiateToString(object, mergedOptions);
-        if (html == null) {
-            return null;
-        }
-        var allComponentsLazyLoaded = _.map(this.getComponentsInside(html), function (component) {
-            return Initialization_1.LazyInitialization.getLazyRegisteredComponent(component).then(function (lazyLoadedComponent) {
-                return lazyLoadedComponent;
+    Template.prototype.instantiateToElement = function (result, templateOptions) {
+        if (templateOptions === void 0) { templateOptions = {}; }
+        return __awaiter(this, void 0, void 0, function () {
+            var mergedOptions, html, template;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        mergedOptions = new DefaultInstantiateTemplateOptions().merge(templateOptions);
+                        html = this.instantiateToString(result, mergedOptions);
+                        if (html == null) {
+                            return [2 /*return*/, null];
+                        }
+                        return [4 /*yield*/, this.ensureComponentsInHtmlStringHaveLoaded(html)];
+                    case 1:
+                        _a.sent();
+                        template = this.buildTemplate(html, mergedOptions);
+                        this.makeTemplateAccessible(template, result);
+                        this.logger.trace('Instantiated result template', result, template);
+                        return [2 /*return*/, template];
+                }
             });
-        });
-        return Promise.all(allComponentsLazyLoaded).then(function () {
-            var layout = _this.layout || mergedOptions.currentLayout;
-            var elemType = layout === 'table' ? 'tr' : 'div';
-            var element = Dom_1.$$(elemType, {}, html).el;
-            if (!mergedOptions.wrapInDiv && element.children.length === 1) {
-                element = element.children.item(0);
-            }
-            if (layout) {
-                Dom_1.$$(element).addClass("coveo-" + layout + "-layout");
-            }
-            _this.logger.trace('Instantiated result template', object, element);
-            element['template'] = _this;
-            return element;
         });
     };
     Template.prototype.toHtmlElement = function () {
@@ -8433,13 +8539,36 @@ var Template = /** @class */ (function () {
         // Try to get info on the template by returning the first parameter found that is not undefined.
         return this.conditionToParse != undefined ? this.conditionToParse : this.condition != undefined ? this.condition : this.fieldsToMatch;
     };
+    Template.prototype.ensureComponentsInHtmlStringHaveLoaded = function (html) {
+        var components = this.getComponentsInside(html).map(function (component) { return Initialization_1.LazyInitialization.getLazyRegisteredComponent(component); });
+        return Promise.all(components);
+    };
+    Template.prototype.buildTemplate = function (html, templateOptions) {
+        var layout = this.layout || templateOptions.currentLayout;
+        var elemType = layout === 'table' ? 'tr' : 'div';
+        var element = Dom_1.$$(elemType, {}, html).el;
+        if (!templateOptions.wrapInDiv && element.children.length === 1) {
+            element = element.children.item(0);
+        }
+        if (layout) {
+            Dom_1.$$(element).addClass("coveo-" + layout + "-layout");
+        }
+        element['template'] = this;
+        return element;
+    };
+    Template.prototype.makeTemplateAccessible = function (template, result) {
+        template.tabIndex = 0;
+        template.setAttribute('role', 'heading');
+        template.setAttribute('aria-level', '2');
+        template.setAttribute('aria-label', "Result");
+        result && result.title && template.setAttribute('title', result.title);
+    };
     return Template;
 }());
 exports.Template = Template;
 
 
 /***/ }),
-/* 21 */,
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8583,99 +8712,6 @@ exports.ComponentOptionsModel = ComponentOptionsModel;
 
 /***/ }),
 /* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Utils_1 = __webpack_require__(4);
-var _ = __webpack_require__(0);
-var KEYBOARD;
-(function (KEYBOARD) {
-    KEYBOARD[KEYBOARD["BACKSPACE"] = 8] = "BACKSPACE";
-    KEYBOARD[KEYBOARD["TAB"] = 9] = "TAB";
-    KEYBOARD[KEYBOARD["ENTER"] = 13] = "ENTER";
-    KEYBOARD[KEYBOARD["SHIFT"] = 16] = "SHIFT";
-    KEYBOARD[KEYBOARD["CTRL"] = 17] = "CTRL";
-    KEYBOARD[KEYBOARD["ALT"] = 18] = "ALT";
-    KEYBOARD[KEYBOARD["ESCAPE"] = 27] = "ESCAPE";
-    KEYBOARD[KEYBOARD["SPACEBAR"] = 32] = "SPACEBAR";
-    KEYBOARD[KEYBOARD["PAGE_UP"] = 33] = "PAGE_UP";
-    KEYBOARD[KEYBOARD["PAGE_DOWN"] = 34] = "PAGE_DOWN";
-    KEYBOARD[KEYBOARD["HOME"] = 36] = "HOME";
-    KEYBOARD[KEYBOARD["LEFT_ARROW"] = 37] = "LEFT_ARROW";
-    KEYBOARD[KEYBOARD["UP_ARROW"] = 38] = "UP_ARROW";
-    KEYBOARD[KEYBOARD["RIGHT_ARROW"] = 39] = "RIGHT_ARROW";
-    KEYBOARD[KEYBOARD["DOWN_ARROW"] = 40] = "DOWN_ARROW";
-    KEYBOARD[KEYBOARD["INSERT"] = 45] = "INSERT";
-    KEYBOARD[KEYBOARD["DELETE"] = 46] = "DELETE";
-})(KEYBOARD = exports.KEYBOARD || (exports.KEYBOARD = {}));
-var KeyboardUtils = /** @class */ (function () {
-    function KeyboardUtils() {
-    }
-    KeyboardUtils.keysEqual = function (key, code) {
-        if (!Utils_1.Utils.isNullOrUndefined(key.keyCode)) {
-            return key.keyCode == code;
-        }
-        else if (!Utils_1.Utils.isNullOrUndefined(key.which)) {
-            return key.which == code;
-        }
-        return false;
-    };
-    KeyboardUtils.isAllowedKeyForOmnibox = function (e) {
-        var keycode = e.keyCode;
-        var valid = KeyboardUtils.isNumberKeyPushed(keycode) ||
-            (keycode == 32 || keycode == 13) || // spacebar & return key(s)
-            KeyboardUtils.isLetterKeyPushed(keycode) ||
-            (keycode > 95 && keycode < 112) || // numpad keys
-            (keycode > 185 && keycode < 193) || // ;=,-./` (in order)
-            (keycode > 218 && keycode < 223) || // [\]' (in order)
-            (keycode == KEYBOARD.BACKSPACE || keycode == KEYBOARD.DELETE) ||
-            KeyboardUtils.isArrowKeyPushed(keycode);
-        return valid;
-    };
-    KeyboardUtils.isAllowedKeyForSearchAsYouType = function (e) {
-        return KeyboardUtils.isAllowedKeyForOmnibox(e) && !KeyboardUtils.isArrowKeyPushed(e.keyCode);
-    };
-    KeyboardUtils.isDeleteOrBackspace = function (e) {
-        return KeyboardUtils.keysEqual(e, KEYBOARD.BACKSPACE) || KeyboardUtils.keysEqual(e, KEYBOARD.DELETE);
-    };
-    KeyboardUtils.isArrowKeyPushed = function (keycode) {
-        return (keycode == KEYBOARD.LEFT_ARROW || keycode == KEYBOARD.UP_ARROW || keycode == KEYBOARD.RIGHT_ARROW || keycode == KEYBOARD.DOWN_ARROW);
-    };
-    KeyboardUtils.isNumberKeyPushed = function (keycode) {
-        return keycode > 47 && keycode < 58;
-    };
-    KeyboardUtils.isLetterKeyPushed = function (keycode) {
-        return keycode > 64 && keycode < 91;
-    };
-    // Return a keyboard event listener that only executes the function if certain keys are pressed.
-    KeyboardUtils.keypressAction = function (keyCode, action) {
-        return function (e) {
-            var data = [];
-            for (var _i = 1; _i < arguments.length; _i++) {
-                data[_i - 1] = arguments[_i];
-            }
-            if (e) {
-                var eventCode = e.charCode || e.keyCode;
-                if (eventCode) {
-                    if (_.isArray(keyCode) && _.contains(keyCode, eventCode)) {
-                        action(e);
-                    }
-                    else if (eventCode === keyCode) {
-                        action(e);
-                    }
-                }
-            }
-        };
-    };
-    return KeyboardUtils;
-}());
-exports.KeyboardUtils = KeyboardUtils;
-
-
-/***/ }),
-/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9156,7 +9192,7 @@ Initialization_1.Initialization.registerNamedMethod('require', function (modules
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9239,6 +9275,99 @@ var BaseComponent = /** @class */ (function () {
     return BaseComponent;
 }());
 exports.BaseComponent = BaseComponent;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Utils_1 = __webpack_require__(4);
+var _ = __webpack_require__(0);
+var KEYBOARD;
+(function (KEYBOARD) {
+    KEYBOARD[KEYBOARD["BACKSPACE"] = 8] = "BACKSPACE";
+    KEYBOARD[KEYBOARD["TAB"] = 9] = "TAB";
+    KEYBOARD[KEYBOARD["ENTER"] = 13] = "ENTER";
+    KEYBOARD[KEYBOARD["SHIFT"] = 16] = "SHIFT";
+    KEYBOARD[KEYBOARD["CTRL"] = 17] = "CTRL";
+    KEYBOARD[KEYBOARD["ALT"] = 18] = "ALT";
+    KEYBOARD[KEYBOARD["ESCAPE"] = 27] = "ESCAPE";
+    KEYBOARD[KEYBOARD["SPACEBAR"] = 32] = "SPACEBAR";
+    KEYBOARD[KEYBOARD["PAGE_UP"] = 33] = "PAGE_UP";
+    KEYBOARD[KEYBOARD["PAGE_DOWN"] = 34] = "PAGE_DOWN";
+    KEYBOARD[KEYBOARD["HOME"] = 36] = "HOME";
+    KEYBOARD[KEYBOARD["LEFT_ARROW"] = 37] = "LEFT_ARROW";
+    KEYBOARD[KEYBOARD["UP_ARROW"] = 38] = "UP_ARROW";
+    KEYBOARD[KEYBOARD["RIGHT_ARROW"] = 39] = "RIGHT_ARROW";
+    KEYBOARD[KEYBOARD["DOWN_ARROW"] = 40] = "DOWN_ARROW";
+    KEYBOARD[KEYBOARD["INSERT"] = 45] = "INSERT";
+    KEYBOARD[KEYBOARD["DELETE"] = 46] = "DELETE";
+})(KEYBOARD = exports.KEYBOARD || (exports.KEYBOARD = {}));
+var KeyboardUtils = /** @class */ (function () {
+    function KeyboardUtils() {
+    }
+    KeyboardUtils.keysEqual = function (key, code) {
+        if (!Utils_1.Utils.isNullOrUndefined(key.keyCode)) {
+            return key.keyCode == code;
+        }
+        else if (!Utils_1.Utils.isNullOrUndefined(key.which)) {
+            return key.which == code;
+        }
+        return false;
+    };
+    KeyboardUtils.isAllowedKeyForOmnibox = function (e) {
+        var keycode = e.keyCode;
+        var valid = KeyboardUtils.isNumberKeyPushed(keycode) ||
+            (keycode == 32 || keycode == 13) || // spacebar & return key(s)
+            KeyboardUtils.isLetterKeyPushed(keycode) ||
+            (keycode > 95 && keycode < 112) || // numpad keys
+            (keycode > 185 && keycode < 193) || // ;=,-./` (in order)
+            (keycode > 218 && keycode < 223) || // [\]' (in order)
+            (keycode == KEYBOARD.BACKSPACE || keycode == KEYBOARD.DELETE) ||
+            KeyboardUtils.isArrowKeyPushed(keycode);
+        return valid;
+    };
+    KeyboardUtils.isAllowedKeyForSearchAsYouType = function (e) {
+        return KeyboardUtils.isAllowedKeyForOmnibox(e) && !KeyboardUtils.isArrowKeyPushed(e.keyCode);
+    };
+    KeyboardUtils.isDeleteOrBackspace = function (e) {
+        return KeyboardUtils.keysEqual(e, KEYBOARD.BACKSPACE) || KeyboardUtils.keysEqual(e, KEYBOARD.DELETE);
+    };
+    KeyboardUtils.isArrowKeyPushed = function (keycode) {
+        return (keycode == KEYBOARD.LEFT_ARROW || keycode == KEYBOARD.UP_ARROW || keycode == KEYBOARD.RIGHT_ARROW || keycode == KEYBOARD.DOWN_ARROW);
+    };
+    KeyboardUtils.isNumberKeyPushed = function (keycode) {
+        return keycode > 47 && keycode < 58;
+    };
+    KeyboardUtils.isLetterKeyPushed = function (keycode) {
+        return keycode > 64 && keycode < 91;
+    };
+    // Return a keyboard event listener that only executes the function if certain keys are pressed.
+    KeyboardUtils.keypressAction = function (keyCode, action) {
+        return function (e) {
+            var data = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+                data[_i - 1] = arguments[_i];
+            }
+            if (e) {
+                var eventCode = e.charCode || e.keyCode;
+                if (eventCode) {
+                    if (_.isArray(keyCode) && _.contains(keyCode, eventCode)) {
+                        action(e);
+                    }
+                    else if (eventCode === keyCode) {
+                        action(e);
+                    }
+                }
+            }
+        };
+    };
+    return KeyboardUtils;
+}());
+exports.KeyboardUtils = KeyboardUtils;
 
 
 /***/ }),
@@ -9676,21 +9805,21 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var RootComponent_1 = __webpack_require__(35);
-var QueryBuilder_1 = __webpack_require__(36);
-var LocalStorageUtils_1 = __webpack_require__(38);
-var Assert_1 = __webpack_require__(5);
-var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(250);
-var QueryEvents_1 = __webpack_require__(10);
-var QueryUtils_1 = __webpack_require__(19);
-var Defer_1 = __webpack_require__(29);
-var Dom_1 = __webpack_require__(1);
-var Utils_1 = __webpack_require__(4);
-var BaseComponent_1 = __webpack_require__(28);
-var ExternalModulesShim_1 = __webpack_require__(23);
 var coveo_analytics_1 = __webpack_require__(89);
 var _ = __webpack_require__(0);
+var QueryEvents_1 = __webpack_require__(10);
+var ExternalModulesShim_1 = __webpack_require__(23);
+var Assert_1 = __webpack_require__(5);
+var Defer_1 = __webpack_require__(29);
+var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(250);
+var BaseComponent_1 = __webpack_require__(27);
+var QueryBuilder_1 = __webpack_require__(36);
+var RootComponent_1 = __webpack_require__(35);
+var Dom_1 = __webpack_require__(1);
+var LocalStorageUtils_1 = __webpack_require__(38);
+var QueryUtils_1 = __webpack_require__(20);
 var UrlUtils_1 = __webpack_require__(45);
+var Utils_1 = __webpack_require__(4);
 var DefaultQueryOptions = /** @class */ (function () {
     function DefaultQueryOptions() {
         this.searchAsYouType = false;
@@ -9807,7 +9936,6 @@ var QueryController = /** @class */ (function (_super) {
         promise
             .then(function (queryResults) {
             Assert_1.Assert.exists(queryResults);
-            var firstQuery = _this.firstQuery;
             if (_this.firstQuery) {
                 _this.firstQuery = false;
             }
@@ -9817,8 +9945,7 @@ var QueryController = /** @class */ (function (_super) {
                 return;
             }
             _this.logger.debug('Query results received', query, queryResults);
-            var enableHistory = _this.searchInterface && _this.searchInterface.options && _this.searchInterface.options.enableHistory;
-            if ((!firstQuery || enableHistory) && _this.keepLastSearchUid(query, queryResults)) {
+            if (_this.keepLastSearchUid(query, queryResults, options)) {
                 queryResults.searchUid = _this.getLastSearchUid();
                 queryResults._reusedSearchUid = true;
                 QueryUtils_1.QueryUtils.setPropertyOnResults(queryResults, 'queryUid', _this.getLastSearchUid());
@@ -10072,8 +10199,12 @@ var QueryController = /** @class */ (function (_super) {
             this.showingExecutingQueryAnimation = false;
         }
     };
-    QueryController.prototype.keepLastSearchUid = function (query, queryResults) {
-        return this.getLastQueryHash() == this.queryHash(query, queryResults);
+    QueryController.prototype.keepLastSearchUid = function (query, queryResults, options) {
+        if (options.keepLastSearchUid === true) {
+            return true;
+        }
+        var enableHistory = this.searchInterface && this.searchInterface.options && this.searchInterface.options.enableHistory;
+        return enableHistory && this.getLastQueryHash() == this.queryHash(query, queryResults);
     };
     QueryController.prototype.queryHash = function (query, queryResults) {
         var queryHash = JSON.stringify(_.omit(query, 'firstResult', 'groupBy', 'debug'));
@@ -10191,7 +10322,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var RootComponent = /** @class */ (function (_super) {
     __extends(RootComponent, _super);
     function RootComponent(element, type) {
@@ -10540,7 +10671,15 @@ exports.BreadcrumbEvents = BreadcrumbEvents;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var localStorage = window.localStorage;
+var localStorage;
+// This check must be made in a try/catch. If cookies are disabled for a
+// browser then window.localStorage will throw an undefined exception.
+try {
+    localStorage = window.localStorage;
+}
+catch (error) {
+    localStorage = null;
+}
 var LocalStorageUtils = /** @class */ (function () {
     function LocalStorageUtils(id) {
         this.id = id;
@@ -11010,7 +11149,7 @@ var Assert_1 = __webpack_require__(5);
 var Version_1 = __webpack_require__(74);
 var AjaxError_1 = __webpack_require__(235);
 var MissingAuthenticationError_1 = __webpack_require__(236);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var QueryError_1 = __webpack_require__(108);
 var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
@@ -12273,7 +12412,7 @@ var UrlUtils = /** @class */ (function () {
             var paired = underscore_1.pairs(toNormalize.query);
             var mapped = paired.map(function (pair) {
                 var key = pair[0], value = pair[1];
-                if (Utils_1.Utils.isNullOrUndefined(value) || Utils_1.Utils.isNullOrUndefined(key)) {
+                if (!value || !key) {
                     return '';
                 }
                 if (!_this.isEncoded(value)) {
@@ -12366,7 +12505,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Assert_1 = __webpack_require__(5);
 var Utils_1 = __webpack_require__(4);
 var Logger_1 = __webpack_require__(11);
@@ -12481,7 +12620,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 /**
  * A text input widget with standard styling.
  */
@@ -12986,7 +13125,7 @@ if (false) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var _ = __webpack_require__(0);
 /**
  * An `ExpressionBuilder` that is mostly used by the {@link QueryBuilder}.<br/>
@@ -13132,7 +13271,7 @@ exports.ExpressionBuilder = ExpressionBuilder;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Assert_1 = __webpack_require__(5);
 var UnderscoreTemplate_1 = __webpack_require__(46);
 var HtmlTemplate_1 = __webpack_require__(77);
@@ -13636,9 +13775,9 @@ var Dom_1 = __webpack_require__(1);
 var DateUtils_1 = __webpack_require__(30);
 var FileTypes_1 = __webpack_require__(94);
 var Utils_1 = __webpack_require__(4);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var SVGIcons_1 = __webpack_require__(13);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var Logger_1 = __webpack_require__(11);
 var Core_1 = __webpack_require__(49);
 var DomUtils = /** @class */ (function () {
@@ -14475,7 +14614,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var DefaultResultTemplate_1 = __webpack_require__(87);
 var Assert_1 = __webpack_require__(5);
 var _ = __webpack_require__(0);
@@ -14533,8 +14672,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4609.7-beta',
-    product: '2.4609.7-beta',
+    lib: '2.4710.3-beta',
+    product: '2.4710.3-beta',
     supportedApiVersion: 2
 };
 
@@ -14636,7 +14775,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Assert_1 = __webpack_require__(5);
 var TemplateFromAScriptTag_1 = __webpack_require__(120);
 var HtmlTemplate = /** @class */ (function (_super) {
@@ -14852,7 +14991,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Options_1 = __webpack_require__(60);
 var HighlightUtils_1 = __webpack_require__(51);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var Utils_1 = __webpack_require__(4);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
@@ -14902,8 +15041,8 @@ var StreamHighlightUtils = /** @class */ (function () {
 exports.StreamHighlightUtils = StreamHighlightUtils;
 function getRestHighlightsForAllTerms(toHighlight, termsToHighlight, phrasesToHighlight, opts) {
     var indexes = [];
-    var sortedTerms = _.keys(termsToHighlight).sort(termsSorting);
-    _.each(sortedTerms, function (term) {
+    var uniqueTermsToHighlight = getUniqueTermsToHighlight(termsToHighlight, phrasesToHighlight);
+    _.each(uniqueTermsToHighlight, function (term) {
         var termsToIterate = _.compact([term].concat(termsToHighlight[term]).sort(termsSorting));
         termsToIterate = _.map(termsToIterate, function (term) { return Utils_1.Utils.escapeRegexCharacter(term); });
         var regex = regexStart;
@@ -14954,6 +15093,15 @@ function getRestHighlightsForAllTerms(toHighlight, termsToHighlight, phrasesToHi
         .value();
 }
 exports.getRestHighlightsForAllTerms = getRestHighlightsForAllTerms;
+function getUniqueTermsToHighlight(termsToHighlight, phrasesToHighlight) {
+    var sortedTerms = _.keys(termsToHighlight).sort(termsSorting);
+    var termsFromPhrases = _.chain(phrasesToHighlight)
+        .values()
+        .map(_.keys)
+        .flatten()
+        .value();
+    return _.difference(sortedTerms, termsFromPhrases);
+}
 function termsSorting(first, second) {
     return first.length - second.length;
 }
@@ -15074,7 +15222,7 @@ exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
 exports.StringAndHoles = HighlightUtils_1.StringAndHoles;
 var HtmlUtils_1 = __webpack_require__(140);
 exports.HTMLUtils = HtmlUtils_1.HTMLUtils;
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 exports.KEYBOARD = KeyboardUtils_1.KEYBOARD;
 exports.KeyboardUtils = KeyboardUtils_1.KeyboardUtils;
 var LocalStorageUtils_1 = __webpack_require__(38);
@@ -15084,11 +15232,11 @@ exports.OSUtils = OSUtils_1.OSUtils;
 exports.OS_NAME = OSUtils_1.OS_NAME;
 var PopupUtils_1 = __webpack_require__(70);
 exports.PopupUtils = PopupUtils_1.PopupUtils;
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 exports.QueryUtils = QueryUtils_1.QueryUtils;
 var StreamHighlightUtils_1 = __webpack_require__(81);
 exports.StreamHighlightUtils = StreamHighlightUtils_1.StreamHighlightUtils;
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 exports.StringUtils = StringUtils_1.StringUtils;
 var TimeSpanUtils_1 = __webpack_require__(57);
 exports.TimeSpan = TimeSpanUtils_1.TimeSpan;
@@ -15115,7 +15263,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var UnderscoreTemplate_1 = __webpack_require__(46);
 var TemplateCache_1 = __webpack_require__(56);
 var Assert_1 = __webpack_require__(5);
@@ -21416,6 +21564,14 @@ var dict = {
     "Toggle": "Toggle",
     "FilterOn": "Filter on {0}",
     "RemoveFilterOn": "Remove filter on {0}",
+    "Enter": "Enter",
+    "InsertAQuery": "Insert a query",
+    "PressEnterToSend": "Press enter to send",
+    "SortResultsBy": "Sort results by {0}",
+    "DisplayResultsAs": "Display results as {0}",
+    "FacetTitle": "{0} facet",
+    "SelectValueWithResultCount": "Select {0} with {1}",
+    "UnselectValueWithResultCount": "Unselect {0} with {1}",
 };
 function defaultLanguage() {
     var locales = String["locales"] || (String["locales"] = {});
@@ -21551,13 +21707,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var underscore_1 = __webpack_require__(0);
+var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(11);
 var EndpointCaller_1 = __webpack_require__(67);
-var Assert_1 = __webpack_require__(5);
 var CookieUtils_1 = __webpack_require__(69);
-var _ = __webpack_require__(0);
-var Utils_1 = __webpack_require__(4);
 var UrlUtils_1 = __webpack_require__(45);
+var Utils_1 = __webpack_require__(4);
 var AnalyticsEndpoint = /** @class */ (function () {
     function AnalyticsEndpoint(options) {
         this.options = options;
@@ -21621,7 +21777,7 @@ var AnalyticsEndpoint = /** @class */ (function () {
                             paths: [this.options.serviceUrl, '/rest/', versionToCall, '/analytics/', path],
                             query: {
                                 org: this.organization,
-                                visitorId: CookieUtils_1.Cookie.get('visitorId')
+                                visitor: CookieUtils_1.Cookie.get('visitorId')
                             }
                         });
                         if (!(AnalyticsEndpoint.pendingRequest != null)) return [3 /*break*/, 4];
@@ -21692,8 +21848,8 @@ var AnalyticsEndpoint = /** @class */ (function () {
             visitorId = response['visitorId'];
         }
         else if (response['searchEventResponses']) {
-            visitId = _.first(response['searchEventResponses']).visitId;
-            visitorId = _.first(response['searchEventResponses']).visitorId;
+            visitId = underscore_1.first(response['searchEventResponses']).visitId;
+            visitorId = underscore_1.first(response['searchEventResponses']).visitorId;
         }
         if (visitId) {
             this.visitId = visitId;
@@ -22095,7 +22251,7 @@ exports.LocalStorageHistoryController = LocalStorageHistoryController;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var ResponsiveComponents_1 = __webpack_require__(43);
 var _ = __webpack_require__(0);
 var TemplateConditionEvaluator = /** @class */ (function () {
@@ -22325,10 +22481,10 @@ var LocalStorageUtils_1 = __webpack_require__(38);
 var ResultListEvents_1 = __webpack_require__(33);
 var DebugEvents_1 = __webpack_require__(75);
 var Dom_1 = __webpack_require__(1);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var SearchEndpoint_1 = __webpack_require__(44);
 var RootComponent_1 = __webpack_require__(35);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var ExternalModulesShim_1 = __webpack_require__(23);
 var Globalize = __webpack_require__(25);
 var _ = __webpack_require__(0);
@@ -22338,7 +22494,7 @@ var DebugHeader_1 = __webpack_require__(299);
 var QueryEvents_1 = __webpack_require__(10);
 var DebugForResult_1 = __webpack_require__(301);
 var GlobalExports_1 = __webpack_require__(3);
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Debug = /** @class */ (function (_super) {
     __extends(Debug, _super);
     function Debug(element, bindings, options, ModalBox) {
@@ -23003,7 +23159,7 @@ var APIAnalyticsBuilder_1 = __webpack_require__(124);
 var QueryStateModel_1 = __webpack_require__(12);
 var Component_1 = __webpack_require__(6);
 var Version_1 = __webpack_require__(74);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var _ = __webpack_require__(0);
 var LiveAnalyticsClient = /** @class */ (function () {
     function LiveAnalyticsClient(endpoint, rootElement, userId, userDisplayName, anonymous, splitTestRunName, splitTestRunVersion, originLevel1, sendToCloud) {
@@ -23067,8 +23223,8 @@ var LiveAnalyticsClient = /** @class */ (function () {
         var metaObject = this.buildMetaObject(meta, result);
         return this.pushClickEvent(actionCause, metaObject, result, element);
     };
-    LiveAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element) {
-        var metaObject = this.buildMetaObject(meta);
+    LiveAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element, result) {
+        var metaObject = this.buildMetaObject(meta, result);
         return this.pushCustomEvent(actionCause, metaObject, element);
     };
     LiveAnalyticsClient.prototype.getTopQueries = function (params) {
@@ -26939,13 +27095,13 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(27));
+__export(__webpack_require__(26));
 var ComponentOptions_1 = __webpack_require__(8);
 exports.ComponentOptions = ComponentOptions_1.ComponentOptions;
 exports.ComponentOptionsType = ComponentOptions_1.ComponentOptionsType;
 var Component_1 = __webpack_require__(6);
 exports.Component = Component_1.Component;
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 exports.BaseComponent = BaseComponent_1.BaseComponent;
 var RootComponent_1 = __webpack_require__(35);
 exports.RootComponent = RootComponent_1.RootComponent;
@@ -30700,7 +30856,7 @@ exports.DebugHeader = DebugHeader;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var _ = __webpack_require__(0);
 var DebugForResult = /** @class */ (function () {
     function DebugForResult(bindings) {
@@ -30820,7 +30976,7 @@ var Dom_1 = __webpack_require__(1);
 var Logger_1 = __webpack_require__(11);
 var QueryEvents_1 = __webpack_require__(10);
 var underscore_1 = __webpack_require__(0);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var FacetColumnAutoLayoutAdjustment = /** @class */ (function () {
     function FacetColumnAutoLayoutAdjustment() {
     }
@@ -30909,7 +31065,7 @@ exports.FacetColumnAutoLayoutAdjustment = FacetColumnAutoLayoutAdjustment;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var QueryStateModel_1 = __webpack_require__(12);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var FacetValueStateHandler = /** @class */ (function () {
     function FacetValueStateHandler(componentsFetcher) {
         this.componentsFetcher = componentsFetcher;
@@ -31224,10 +31380,11 @@ var Analytics = /** @class */ (function (_super) {
      * ( `{}` ).
      * @param element The HTMLElement that the user has interacted with for this custom event. Default value is the
      * element on which the `Analytics` component is bound.
+     * @param result The IQueryResult that the custom event is linked to, if any.
      */
-    Analytics.prototype.logCustomEvent = function (actionCause, meta, element) {
+    Analytics.prototype.logCustomEvent = function (actionCause, meta, element, result) {
         if (element === void 0) { element = this.element; }
-        this.client.logCustomEvent(actionCause, meta, element);
+        this.client.logCustomEvent(actionCause, meta, element, result);
     };
     /**
      * Logs a `Click` usage analytics event.
@@ -33365,7 +33522,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyOmniboxResultList() {
     Initialization_1.LazyInitialization.registerLazyComponent('OmniboxResultList', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(11).then((function () {
+            __webpack_require__.e/* require.ensure */(12).then((function () {
                 var loaded = __webpack_require__(198)['OmniboxResultList'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('OmniboxResultList', resolve));
@@ -33563,7 +33720,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyRecommendation() {
     Initialization_1.LazyInitialization.registerLazyComponent('Recommendation', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(10).then((function () {
+            __webpack_require__.e/* require.ensure */(11).then((function () {
                 var loaded = __webpack_require__(142)['Recommendation'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Recommendation', resolve));
@@ -34357,7 +34514,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyCategoryFacet() {
     Initialization_1.LazyInitialization.registerLazyComponent('CategoryFacet', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(12).then((function () {
+            __webpack_require__.e/* require.ensure */(10).then((function () {
                 var loaded = __webpack_require__(145)['CategoryFacet'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('CategoryFacet', resolve));

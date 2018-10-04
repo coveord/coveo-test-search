@@ -15304,13 +15304,22 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-tab-list-container {
-  position: absolute;
-  overflow: hidden;
+  max-width: 80%;
   z-index: 11;
 }
 
 .coveo-tab-list-container ol {
   margin: 0;
+}
+
+.coveo-tab-list-container ol a {
+  width: 100%;
+}
+
+.coveo-tab-list-container ol a p {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .coveo-more-tabs-svg {
@@ -16104,6 +16113,7 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-category-facet-values {
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
 }
 
 .coveo-category-facet-value-label {
@@ -16114,22 +16124,21 @@ a.coveo-folding-show-less.coveo-selected * {
   display: -ms-flexbox;
   display: flex;
   padding: 5px 19px 5px 20px;
+}
+
+.coveo-category-facet-value-label.coveo-selectable {
   vertical-align: middle;
   line-height: 22px;
   cursor: pointer;
 }
 
-.coveo-category-facet-value-label:focus,
-.coveo-category-facet-value-label:hover {
+.coveo-category-facet-value-label.coveo-selectable:focus,
+.coveo-category-facet-value-label.coveo-selectable:hover {
   background-color: #e6ecf0;
 }
 
 .coveo-active-category-facet-parent {
   font-weight: bold;
-}
-
-.coveo-category-facet-child-value .coveo-category-facet-value-caption {
-  color: #009ddc;
 }
 
 .coveo-category-facet-non-empty-path .coveo-category-facet-child-value .coveo-category-facet-value-label {
@@ -16253,6 +16262,10 @@ a.coveo-folding-show-less.coveo-selected * {
   padding-left: 36px;
 }
 
+.coveo-category-facet-breadcrumb {
+  display: block;
+}
+
 .coveo-category-facet-breadcrumb .coveo-exclusion-svg {
   fill: #1d4f76;
 }
@@ -16266,7 +16279,6 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
-  color: #009ddc;
 }
 
 .coveo-category-facet-breadcrumb-values:visited,
@@ -16351,7 +16363,7 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-category-facet-search-label {
   vertical-align: middle;
   display: inline-block;
-  color: #009ddc;
+  color: #004990;
 }
 
 .coveo-category-facet-search-value {

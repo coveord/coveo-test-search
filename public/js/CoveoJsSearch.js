@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "a7f65d7223f3cc873f80" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "a17686ee921029fcc4c8" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2688,6 +2688,41 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
@@ -2705,7 +2740,7 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
 var SearchInterface_1 = __webpack_require__(17);
 var InitializationHelper_1 = __webpack_require__(304);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 /**
  * The main purpose of this class is to initialize the framework (a.k.a the code executed when calling `Coveo.init`).<br/>
  * It's also in charge or registering the available components, as well as the method that we expost to the global Coveo scope.<br/>
@@ -2862,40 +2897,81 @@ var Initialization = /** @class */ (function () {
      * @param initSearchInterfaceFunction The function to execute to create the {@link SearchInterface} component. Different init call will create different {@link SearchInterface}.
      */
     Initialization.initializeFramework = function (element, options, initSearchInterfaceFunction) {
+        var _this = this;
         Assert_1.Assert.exists(element);
         var alreadyInitialized = Component_1.Component.get(element, QueryController_1.QueryController, true);
         if (alreadyInitialized) {
             this.logger.error('This DOM element has already been initialized as a search interface, skipping initialization', element);
-            return new Promise(function (resolve, reject) {
-                resolve({ elem: element });
+            return Promise.resolve({
+                elem: element
             });
         }
         options = Initialization.resolveDefaultOptions(element, options);
+        var waitForAllPromisesToFinish = function (eventType, promises) { return __awaiter(_this, void 0, void 0, function () {
+            var _this = this;
+            var promisesWithErrorsHandledIndividually;
+            return __generator(this, function (_a) {
+                try {
+                    promisesWithErrorsHandledIndividually = promises.map(function (p) {
+                        return p.catch(function (error) {
+                            return _this.logger.warn("An error occurred when trying to defer the \"" + eventType + "\" event. The defer will be ignored.", "Error: " + error);
+                        });
+                    });
+                    return [2 /*return*/, Promise.all(promisesWithErrorsHandledIndividually)];
+                }
+                catch (error) {
+                    this.logger.error("An unexpected error occurred when trying to defer the \"" + event + "\" event. All defers will be ignored.", "Error: " + error);
+                }
+                return [2 /*return*/];
+            });
+        }); };
+        var triggerInitializationEventWithArguments = function (eventType) {
+            var initializationEventArgs = {
+                defer: []
+            };
+            Dom_1.$$(element).trigger(eventType, initializationEventArgs);
+            if (initializationEventArgs.defer.length > 0) {
+                return waitForAllPromisesToFinish(eventType, initializationEventArgs.defer);
+            }
+            else {
+                return Promise.resolve();
+            }
+        };
         Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.beforeInitialization);
         Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.beforeInitialization);
-        var toExecuteOnceSearchInterfaceIsInitialized = function () {
-            return Initialization.initExternalComponents(element, options).then(function (result) {
-                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
-                Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
-                Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.afterInitialization);
-                var searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
-                if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
-                    Initialization.logFirstQueryCause(searchInterface);
-                    var shouldLogInActionHistory = true;
-                    // We should not log an action history if the interface is a standalone recommendation component.
-                    if (Coveo['Recommendation']) {
-                        shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
-                    }
-                    Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
-                        logInActionsHistory: shouldLogInActionHistory,
-                        isFirstQuery: true
-                    });
+        var toExecuteOnceSearchInterfaceIsInitialized = function () { return __awaiter(_this, void 0, void 0, function () {
+            var result, searchInterface, shouldLogInActionHistory;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Initialization.initExternalComponents(element, options)];
+                    case 1:
+                        result = _a.sent();
+                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterComponentsInitialization);
+                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterComponentsInitialization)];
+                    case 2:
+                        _a.sent();
+                        Dom_1.$$(element).trigger(InitializationEvents_1.InitializationEvents.restoreHistoryState);
+                        Initialization.performInitFunctionsOption(options, InitializationEvents_1.InitializationEvents.afterInitialization);
+                        return [4 /*yield*/, triggerInitializationEventWithArguments(InitializationEvents_1.InitializationEvents.afterInitialization)];
+                    case 3:
+                        _a.sent();
+                        searchInterface = Component_1.Component.get(element, SearchInterface_1.SearchInterface);
+                        if (Initialization.shouldExecuteFirstQueryAutomatically(searchInterface)) {
+                            Initialization.logFirstQueryCause(searchInterface);
+                            shouldLogInActionHistory = true;
+                            // We should not log an action history if the interface is a standalone recommendation component.
+                            if (Coveo['Recommendation']) {
+                                shouldLogInActionHistory = !(searchInterface instanceof Coveo['Recommendation']);
+                            }
+                            Component_1.Component.get(element, QueryController_1.QueryController).executeQuery({
+                                logInActionsHistory: shouldLogInActionHistory,
+                                isFirstQuery: true
+                            });
+                        }
+                        return [2 /*return*/, result];
                 }
-                return result;
             });
-        };
+        }); };
         var resultOfSearchInterfaceInitialization = initSearchInterfaceFunction(element, options);
         // We are executing a "lazy" initialization, which returns a Promise
         // eg : CoveoJsSearch.Lazy.js was included in the page
@@ -4058,7 +4134,7 @@ var ComponentOptionsModel_1 = __webpack_require__(24);
 var QueryController_1 = __webpack_require__(34);
 var SearchInterface_1 = __webpack_require__(17);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var DebugEvents_1 = __webpack_require__(75);
 var _ = __webpack_require__(0);
 /**
@@ -5525,6 +5601,10 @@ exports.analyticsActionCauseList = {
         type: 'categoryFacet',
         metaMap: { categoryFacetId: 1, categoryFacetValue: 2, categoryFacetTitle: 3 }
     },
+    categoryFacetReload: {
+        name: 'categoryFacetReload',
+        type: 'categoryFacet'
+    },
     categoryFacetClear: {
         name: 'categoryFacetClear',
         type: 'categoryFacet',
@@ -6689,7 +6769,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var Assert_1 = __webpack_require__(5);
 var Utils_1 = __webpack_require__(4);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var _ = __webpack_require__(0);
 exports.MODEL_EVENTS = {
     PREPROCESS: 'preprocess',
@@ -7041,7 +7121,7 @@ var HashUtils_1 = __webpack_require__(39);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var ComponentOptions_1 = __webpack_require__(8);
 var InitializationPlaceholder_1 = __webpack_require__(138);
 var RootComponent_1 = __webpack_require__(35);
@@ -8007,6 +8087,177 @@ exports.StandaloneSearchInterface = StandaloneSearchInterface;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var Logger_1 = __webpack_require__(11);
+var KeyboardUtils_1 = __webpack_require__(28);
+var Dom_1 = __webpack_require__(1);
+__webpack_require__(364);
+var AccessibleButton = /** @class */ (function () {
+    function AccessibleButton() {
+        this.logger = new Logger_1.Logger(this);
+    }
+    AccessibleButton.prototype.withOwner = function (owner) {
+        this.eventOwner = owner;
+        return this;
+    };
+    AccessibleButton.prototype.withElement = function (element) {
+        if (element instanceof HTMLElement) {
+            this.element = Dom_1.$$(element);
+        }
+        else {
+            this.element = element;
+        }
+        return this;
+    };
+    AccessibleButton.prototype.withLabel = function (label) {
+        this.label = label;
+        return this;
+    };
+    AccessibleButton.prototype.withTitle = function (title) {
+        this.title = title;
+        return this;
+    };
+    AccessibleButton.prototype.withSelectAction = function (action) {
+        this.clickAction = action;
+        this.enterKeyboardAction = action;
+        return this;
+    };
+    AccessibleButton.prototype.withClickAction = function (clickAction) {
+        this.clickAction = clickAction;
+        return this;
+    };
+    AccessibleButton.prototype.withEnterKeyboardAction = function (enterAction) {
+        this.enterKeyboardAction = enterAction;
+        return this;
+    };
+    AccessibleButton.prototype.withFocusAndMouseEnterAction = function (action) {
+        this.focusAction = action;
+        this.mouseenterAction = action;
+        return this;
+    };
+    AccessibleButton.prototype.withFocusAction = function (action) {
+        this.focusAction = action;
+        return this;
+    };
+    AccessibleButton.prototype.withMouseEnterAction = function (action) {
+        this.mouseenterAction = action;
+        return this;
+    };
+    AccessibleButton.prototype.withBlurAndMouseLeaveAction = function (action) {
+        this.mouseleaveAction = action;
+        this.blurAction = action;
+        return this;
+    };
+    AccessibleButton.prototype.withMouseLeaveAction = function (action) {
+        this.mouseleaveAction = action;
+        return this;
+    };
+    AccessibleButton.prototype.withBlurAction = function (action) {
+        this.blurAction = action;
+        return this;
+    };
+    AccessibleButton.prototype.build = function () {
+        if (!this.element) {
+            this.element = Dom_1.$$('div');
+        }
+        this.ensureCorrectRole();
+        this.ensureCorrectLabel();
+        this.ensureTitle();
+        this.ensureSelectAction();
+        this.ensureUnselectAction();
+        this.ensureMouseenterAndFocusAction();
+        this.ensureMouseleaveAndBlurAction();
+        this.ensureDifferentiationBetweenKeyboardAndMouseFocus();
+        return this;
+    };
+    AccessibleButton.prototype.ensureDifferentiationBetweenKeyboardAndMouseFocus = function () {
+        var _this = this;
+        var classOnPress = 'coveo-accessible-button-pressed';
+        var classOnFocus = 'coveo-accessible-button-focused';
+        Dom_1.$$(this.element).addClass('coveo-accessible-button');
+        Dom_1.$$(this.element).on('mousedown', function () {
+            Dom_1.$$(_this.element).addClass(classOnPress);
+            Dom_1.$$(_this.element).removeClass(classOnFocus);
+        });
+        Dom_1.$$(this.element).on('mouseup', function () { return Dom_1.$$(_this.element).removeClass(classOnPress); });
+        Dom_1.$$(this.element).on('focus', function () {
+            if (!Dom_1.$$(_this.element).hasClass(classOnPress)) {
+                Dom_1.$$(_this.element).addClass(classOnFocus);
+            }
+        });
+        Dom_1.$$(this.element).on('blur', function () { return Dom_1.$$(_this.element).removeClass(classOnFocus); });
+    };
+    AccessibleButton.prototype.ensureCorrectRole = function () {
+        if (!this.element.getAttribute('role')) {
+            this.element.setAttribute('role', 'button');
+        }
+    };
+    AccessibleButton.prototype.ensureCorrectLabel = function () {
+        if (!this.label) {
+            this.logger.error("Missing label to create an accessible button !");
+            return;
+        }
+        this.element.setAttribute('aria-label', this.label);
+    };
+    AccessibleButton.prototype.ensureTitle = function () {
+        this.title && this.element.setAttribute('title', this.title);
+    };
+    AccessibleButton.prototype.ensureTabIndex = function () {
+        this.element.setAttribute('tabindex', '0');
+    };
+    AccessibleButton.prototype.ensureSelectAction = function () {
+        var _this = this;
+        if (this.enterKeyboardAction) {
+            this.ensureTabIndex();
+            this.bindEvent('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, function (e) { return _this.enterKeyboardAction(e); }));
+        }
+        if (this.clickAction) {
+            this.bindEvent('click', this.clickAction);
+        }
+    };
+    AccessibleButton.prototype.ensureUnselectAction = function () {
+        if (this.blurAction) {
+            this.bindEvent('blur', this.blurAction);
+        }
+        if (this.mouseleaveAction) {
+            this.bindEvent('mouseleave', this.mouseleaveAction);
+        }
+    };
+    AccessibleButton.prototype.ensureMouseenterAndFocusAction = function () {
+        if (this.mouseenterAction) {
+            this.bindEvent('mouseenter', this.mouseenterAction);
+        }
+        if (this.focusAction) {
+            this.bindEvent('focus', this.focusAction);
+        }
+    };
+    AccessibleButton.prototype.ensureMouseleaveAndBlurAction = function () {
+        if (this.mouseleaveAction) {
+            this.bindEvent('mouseleave', this.mouseleaveAction);
+        }
+        if (this.blurAction) {
+            this.bindEvent('blur', this.blurAction);
+        }
+    };
+    AccessibleButton.prototype.bindEvent = function (event, action) {
+        if (this.eventOwner) {
+            this.eventOwner.on(this.element, event, action);
+        }
+        else {
+            Dom_1.$$(this.element).on(event, action);
+        }
+    };
+    return AccessibleButton;
+}());
+exports.AccessibleButton = AccessibleButton;
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
 var latinize = __webpack_require__(295);
@@ -8144,7 +8395,7 @@ exports.StringUtils = StringUtils;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8351,11 +8602,46 @@ exports.QueryUtils = QueryUtils;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var Logger_1 = __webpack_require__(11);
 var Dom_1 = __webpack_require__(1);
@@ -8483,41 +8769,31 @@ var Template = /** @class */ (function () {
     Template.prototype.getComponentsInside = function (tmplString) {
         var allComponentsInsideCurrentTemplate = _.map(Initialization_1.Initialization.getListOfRegisteredComponents(), function (componentId) {
             var regex = new RegExp("Coveo" + componentId, 'g');
-            if (regex.exec(tmplString)) {
-                return componentId;
-            }
-            else {
-                return null;
-            }
+            return regex.exec(tmplString) ? componentId : null;
         });
         return _.compact(allComponentsInsideCurrentTemplate);
     };
-    Template.prototype.instantiateToElement = function (object, instantiateTemplateOptions) {
-        var _this = this;
-        if (instantiateTemplateOptions === void 0) { instantiateTemplateOptions = {}; }
-        var mergedOptions = new DefaultInstantiateTemplateOptions().merge(instantiateTemplateOptions);
-        var html = this.instantiateToString(object, mergedOptions);
-        if (html == null) {
-            return null;
-        }
-        var allComponentsLazyLoaded = _.map(this.getComponentsInside(html), function (component) {
-            return Initialization_1.LazyInitialization.getLazyRegisteredComponent(component).then(function (lazyLoadedComponent) {
-                return lazyLoadedComponent;
+    Template.prototype.instantiateToElement = function (result, templateOptions) {
+        if (templateOptions === void 0) { templateOptions = {}; }
+        return __awaiter(this, void 0, void 0, function () {
+            var mergedOptions, html, template;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        mergedOptions = new DefaultInstantiateTemplateOptions().merge(templateOptions);
+                        html = this.instantiateToString(result, mergedOptions);
+                        if (html == null) {
+                            return [2 /*return*/, null];
+                        }
+                        return [4 /*yield*/, this.ensureComponentsInHtmlStringHaveLoaded(html)];
+                    case 1:
+                        _a.sent();
+                        template = this.buildTemplate(html, mergedOptions);
+                        this.makeTemplateAccessible(template, result);
+                        this.logger.trace('Instantiated result template', result, template);
+                        return [2 /*return*/, template];
+                }
             });
-        });
-        return Promise.all(allComponentsLazyLoaded).then(function () {
-            var layout = _this.layout || mergedOptions.currentLayout;
-            var elemType = layout === 'table' ? 'tr' : 'div';
-            var element = Dom_1.$$(elemType, {}, html).el;
-            if (!mergedOptions.wrapInDiv && element.children.length === 1) {
-                element = element.children.item(0);
-            }
-            if (layout) {
-                Dom_1.$$(element).addClass("coveo-" + layout + "-layout");
-            }
-            _this.logger.trace('Instantiated result template', object, element);
-            element['template'] = _this;
-            return element;
         });
     };
     Template.prototype.toHtmlElement = function () {
@@ -8543,171 +8819,33 @@ var Template = /** @class */ (function () {
         // Try to get info on the template by returning the first parameter found that is not undefined.
         return this.conditionToParse != undefined ? this.conditionToParse : this.condition != undefined ? this.condition : this.fieldsToMatch;
     };
+    Template.prototype.ensureComponentsInHtmlStringHaveLoaded = function (html) {
+        var components = this.getComponentsInside(html).map(function (component) { return Initialization_1.LazyInitialization.getLazyRegisteredComponent(component); });
+        return Promise.all(components);
+    };
+    Template.prototype.buildTemplate = function (html, templateOptions) {
+        var layout = this.layout || templateOptions.currentLayout;
+        var elemType = layout === 'table' ? 'tr' : 'div';
+        var element = Dom_1.$$(elemType, {}, html).el;
+        if (!templateOptions.wrapInDiv && element.children.length === 1) {
+            element = element.children.item(0);
+        }
+        if (layout) {
+            Dom_1.$$(element).addClass("coveo-" + layout + "-layout");
+        }
+        element['template'] = this;
+        return element;
+    };
+    Template.prototype.makeTemplateAccessible = function (template, result) {
+        template.tabIndex = 0;
+        template.setAttribute('role', 'heading');
+        template.setAttribute('aria-level', '2');
+        template.setAttribute('aria-label', "Result");
+        result && result.title && template.setAttribute('title', result.title);
+    };
     return Template;
 }());
 exports.Template = Template;
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Logger_1 = __webpack_require__(11);
-var KeyboardUtils_1 = __webpack_require__(26);
-var Dom_1 = __webpack_require__(1);
-__webpack_require__(364);
-var AccessibleButton = /** @class */ (function () {
-    function AccessibleButton() {
-        this.logger = new Logger_1.Logger(this);
-    }
-    AccessibleButton.prototype.withOwner = function (owner) {
-        this.eventOwner = owner;
-        return this;
-    };
-    AccessibleButton.prototype.withElement = function (element) {
-        if (element instanceof HTMLElement) {
-            this.element = Dom_1.$$(element);
-        }
-        else {
-            this.element = element;
-        }
-        return this;
-    };
-    AccessibleButton.prototype.withLabel = function (label) {
-        this.label = label;
-        return this;
-    };
-    AccessibleButton.prototype.withSelectAction = function (action) {
-        this.clickAction = action;
-        this.enterKeyboardAction = action;
-        return this;
-    };
-    AccessibleButton.prototype.withClickAction = function (clickAction) {
-        this.clickAction = clickAction;
-        return this;
-    };
-    AccessibleButton.prototype.withEnterKeyboardAction = function (enterAction) {
-        this.enterKeyboardAction = enterAction;
-        return this;
-    };
-    AccessibleButton.prototype.withFocusAndMouseEnterAction = function (action) {
-        this.focusAction = action;
-        this.mouseenterAction = action;
-        return this;
-    };
-    AccessibleButton.prototype.withFocusAction = function (action) {
-        this.focusAction = action;
-        return this;
-    };
-    AccessibleButton.prototype.withMouseEnterAction = function (action) {
-        this.mouseenterAction = action;
-        return this;
-    };
-    AccessibleButton.prototype.withBlurAndMouseLeaveAction = function (action) {
-        this.mouseleaveAction = action;
-        this.blurAction = action;
-        return this;
-    };
-    AccessibleButton.prototype.withMouseLeaveAction = function (action) {
-        this.mouseleaveAction = action;
-        return this;
-    };
-    AccessibleButton.prototype.withBlurAction = function (action) {
-        this.blurAction = action;
-        return this;
-    };
-    AccessibleButton.prototype.build = function () {
-        if (!this.element) {
-            this.element = Dom_1.$$('div');
-        }
-        this.ensureCorrectRole();
-        this.ensureCorrectLabel();
-        this.ensureSelectAction();
-        this.ensureUnselectAction();
-        this.ensureMouseenterAndFocusAction();
-        this.ensureMouseleaveAndBlurAction();
-        this.ensureDifferentiationBetweenKeyboardAndMouseFocus();
-        return this;
-    };
-    AccessibleButton.prototype.ensureDifferentiationBetweenKeyboardAndMouseFocus = function () {
-        var _this = this;
-        var classOnPress = 'coveo-accessible-button-pressed';
-        var classOnFocus = 'coveo-accessible-button-focused';
-        Dom_1.$$(this.element).addClass('coveo-accessible-button');
-        Dom_1.$$(this.element).on('mousedown', function () {
-            Dom_1.$$(_this.element).addClass(classOnPress);
-            Dom_1.$$(_this.element).removeClass(classOnFocus);
-        });
-        Dom_1.$$(this.element).on('mouseup', function () { return Dom_1.$$(_this.element).removeClass(classOnPress); });
-        Dom_1.$$(this.element).on('focus', function () {
-            if (!Dom_1.$$(_this.element).hasClass(classOnPress)) {
-                Dom_1.$$(_this.element).addClass(classOnFocus);
-            }
-        });
-        Dom_1.$$(this.element).on('blur', function () { return Dom_1.$$(_this.element).removeClass(classOnFocus); });
-    };
-    AccessibleButton.prototype.ensureCorrectRole = function () {
-        this.element.setAttribute('role', 'button');
-    };
-    AccessibleButton.prototype.ensureCorrectLabel = function () {
-        if (!this.label) {
-            this.logger.error("Missing label to create an accessible button !");
-            return;
-        }
-        this.element.setAttribute('aria-label', this.label);
-        this.element.setAttribute('title', this.label);
-    };
-    AccessibleButton.prototype.ensureTabIndex = function () {
-        this.element.setAttribute('tabindex', '0');
-    };
-    AccessibleButton.prototype.ensureSelectAction = function () {
-        var _this = this;
-        if (this.enterKeyboardAction) {
-            this.ensureTabIndex();
-            this.bindEvent('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, function (e) { return _this.enterKeyboardAction(e); }));
-        }
-        if (this.clickAction) {
-            this.bindEvent('click', this.clickAction);
-        }
-    };
-    AccessibleButton.prototype.ensureUnselectAction = function () {
-        if (this.blurAction) {
-            this.bindEvent('blur', this.blurAction);
-        }
-        if (this.mouseleaveAction) {
-            this.bindEvent('mouseleave', this.mouseleaveAction);
-        }
-    };
-    AccessibleButton.prototype.ensureMouseenterAndFocusAction = function () {
-        if (this.mouseenterAction) {
-            this.bindEvent('mouseenter', this.mouseenterAction);
-        }
-        if (this.focusAction) {
-            this.bindEvent('focus', this.focusAction);
-        }
-    };
-    AccessibleButton.prototype.ensureMouseleaveAndBlurAction = function () {
-        if (this.mouseleaveAction) {
-            this.bindEvent('mouseleave', this.mouseleaveAction);
-        }
-        if (this.blurAction) {
-            this.bindEvent('blur', this.blurAction);
-        }
-    };
-    AccessibleButton.prototype.bindEvent = function (event, action) {
-        if (this.eventOwner) {
-            this.eventOwner.on(this.element, event, action);
-        }
-        else {
-            Dom_1.$$(this.element).on(event, action);
-        }
-    };
-    return AccessibleButton;
-}());
-exports.AccessibleButton = AccessibleButton;
 
 
 /***/ }),
@@ -8854,99 +8992,6 @@ exports.ComponentOptionsModel = ComponentOptionsModel;
 
 /***/ }),
 /* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Utils_1 = __webpack_require__(4);
-var _ = __webpack_require__(0);
-var KEYBOARD;
-(function (KEYBOARD) {
-    KEYBOARD[KEYBOARD["BACKSPACE"] = 8] = "BACKSPACE";
-    KEYBOARD[KEYBOARD["TAB"] = 9] = "TAB";
-    KEYBOARD[KEYBOARD["ENTER"] = 13] = "ENTER";
-    KEYBOARD[KEYBOARD["SHIFT"] = 16] = "SHIFT";
-    KEYBOARD[KEYBOARD["CTRL"] = 17] = "CTRL";
-    KEYBOARD[KEYBOARD["ALT"] = 18] = "ALT";
-    KEYBOARD[KEYBOARD["ESCAPE"] = 27] = "ESCAPE";
-    KEYBOARD[KEYBOARD["SPACEBAR"] = 32] = "SPACEBAR";
-    KEYBOARD[KEYBOARD["PAGE_UP"] = 33] = "PAGE_UP";
-    KEYBOARD[KEYBOARD["PAGE_DOWN"] = 34] = "PAGE_DOWN";
-    KEYBOARD[KEYBOARD["HOME"] = 36] = "HOME";
-    KEYBOARD[KEYBOARD["LEFT_ARROW"] = 37] = "LEFT_ARROW";
-    KEYBOARD[KEYBOARD["UP_ARROW"] = 38] = "UP_ARROW";
-    KEYBOARD[KEYBOARD["RIGHT_ARROW"] = 39] = "RIGHT_ARROW";
-    KEYBOARD[KEYBOARD["DOWN_ARROW"] = 40] = "DOWN_ARROW";
-    KEYBOARD[KEYBOARD["INSERT"] = 45] = "INSERT";
-    KEYBOARD[KEYBOARD["DELETE"] = 46] = "DELETE";
-})(KEYBOARD = exports.KEYBOARD || (exports.KEYBOARD = {}));
-var KeyboardUtils = /** @class */ (function () {
-    function KeyboardUtils() {
-    }
-    KeyboardUtils.keysEqual = function (key, code) {
-        if (!Utils_1.Utils.isNullOrUndefined(key.keyCode)) {
-            return key.keyCode == code;
-        }
-        else if (!Utils_1.Utils.isNullOrUndefined(key.which)) {
-            return key.which == code;
-        }
-        return false;
-    };
-    KeyboardUtils.isAllowedKeyForOmnibox = function (e) {
-        var keycode = e.keyCode;
-        var valid = KeyboardUtils.isNumberKeyPushed(keycode) ||
-            (keycode == 32 || keycode == 13) || // spacebar & return key(s)
-            KeyboardUtils.isLetterKeyPushed(keycode) ||
-            (keycode > 95 && keycode < 112) || // numpad keys
-            (keycode > 185 && keycode < 193) || // ;=,-./` (in order)
-            (keycode > 218 && keycode < 223) || // [\]' (in order)
-            (keycode == KEYBOARD.BACKSPACE || keycode == KEYBOARD.DELETE) ||
-            KeyboardUtils.isArrowKeyPushed(keycode);
-        return valid;
-    };
-    KeyboardUtils.isAllowedKeyForSearchAsYouType = function (e) {
-        return KeyboardUtils.isAllowedKeyForOmnibox(e) && !KeyboardUtils.isArrowKeyPushed(e.keyCode);
-    };
-    KeyboardUtils.isDeleteOrBackspace = function (e) {
-        return KeyboardUtils.keysEqual(e, KEYBOARD.BACKSPACE) || KeyboardUtils.keysEqual(e, KEYBOARD.DELETE);
-    };
-    KeyboardUtils.isArrowKeyPushed = function (keycode) {
-        return (keycode == KEYBOARD.LEFT_ARROW || keycode == KEYBOARD.UP_ARROW || keycode == KEYBOARD.RIGHT_ARROW || keycode == KEYBOARD.DOWN_ARROW);
-    };
-    KeyboardUtils.isNumberKeyPushed = function (keycode) {
-        return keycode > 47 && keycode < 58;
-    };
-    KeyboardUtils.isLetterKeyPushed = function (keycode) {
-        return keycode > 64 && keycode < 91;
-    };
-    // Return a keyboard event listener that only executes the function if certain keys are pressed.
-    KeyboardUtils.keypressAction = function (keyCode, action) {
-        return function (e) {
-            var data = [];
-            for (var _i = 1; _i < arguments.length; _i++) {
-                data[_i - 1] = arguments[_i];
-            }
-            if (e) {
-                var eventCode = e.charCode || e.keyCode;
-                if (eventCode) {
-                    if (_.isArray(keyCode) && _.contains(keyCode, eventCode)) {
-                        action(e);
-                    }
-                    else if (eventCode === keyCode) {
-                        action(e);
-                    }
-                }
-            }
-        };
-    };
-    return KeyboardUtils;
-}());
-exports.KeyboardUtils = KeyboardUtils;
-
-
-/***/ }),
-/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9427,7 +9472,7 @@ Initialization_1.Initialization.registerNamedMethod('require', function (modules
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9510,6 +9555,99 @@ var BaseComponent = /** @class */ (function () {
     return BaseComponent;
 }());
 exports.BaseComponent = BaseComponent;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Utils_1 = __webpack_require__(4);
+var _ = __webpack_require__(0);
+var KEYBOARD;
+(function (KEYBOARD) {
+    KEYBOARD[KEYBOARD["BACKSPACE"] = 8] = "BACKSPACE";
+    KEYBOARD[KEYBOARD["TAB"] = 9] = "TAB";
+    KEYBOARD[KEYBOARD["ENTER"] = 13] = "ENTER";
+    KEYBOARD[KEYBOARD["SHIFT"] = 16] = "SHIFT";
+    KEYBOARD[KEYBOARD["CTRL"] = 17] = "CTRL";
+    KEYBOARD[KEYBOARD["ALT"] = 18] = "ALT";
+    KEYBOARD[KEYBOARD["ESCAPE"] = 27] = "ESCAPE";
+    KEYBOARD[KEYBOARD["SPACEBAR"] = 32] = "SPACEBAR";
+    KEYBOARD[KEYBOARD["PAGE_UP"] = 33] = "PAGE_UP";
+    KEYBOARD[KEYBOARD["PAGE_DOWN"] = 34] = "PAGE_DOWN";
+    KEYBOARD[KEYBOARD["HOME"] = 36] = "HOME";
+    KEYBOARD[KEYBOARD["LEFT_ARROW"] = 37] = "LEFT_ARROW";
+    KEYBOARD[KEYBOARD["UP_ARROW"] = 38] = "UP_ARROW";
+    KEYBOARD[KEYBOARD["RIGHT_ARROW"] = 39] = "RIGHT_ARROW";
+    KEYBOARD[KEYBOARD["DOWN_ARROW"] = 40] = "DOWN_ARROW";
+    KEYBOARD[KEYBOARD["INSERT"] = 45] = "INSERT";
+    KEYBOARD[KEYBOARD["DELETE"] = 46] = "DELETE";
+})(KEYBOARD = exports.KEYBOARD || (exports.KEYBOARD = {}));
+var KeyboardUtils = /** @class */ (function () {
+    function KeyboardUtils() {
+    }
+    KeyboardUtils.keysEqual = function (key, code) {
+        if (!Utils_1.Utils.isNullOrUndefined(key.keyCode)) {
+            return key.keyCode == code;
+        }
+        else if (!Utils_1.Utils.isNullOrUndefined(key.which)) {
+            return key.which == code;
+        }
+        return false;
+    };
+    KeyboardUtils.isAllowedKeyForOmnibox = function (e) {
+        var keycode = e.keyCode;
+        var valid = KeyboardUtils.isNumberKeyPushed(keycode) ||
+            (keycode == 32 || keycode == 13) || // spacebar & return key(s)
+            KeyboardUtils.isLetterKeyPushed(keycode) ||
+            (keycode > 95 && keycode < 112) || // numpad keys
+            (keycode > 185 && keycode < 193) || // ;=,-./` (in order)
+            (keycode > 218 && keycode < 223) || // [\]' (in order)
+            (keycode == KEYBOARD.BACKSPACE || keycode == KEYBOARD.DELETE) ||
+            KeyboardUtils.isArrowKeyPushed(keycode);
+        return valid;
+    };
+    KeyboardUtils.isAllowedKeyForSearchAsYouType = function (e) {
+        return KeyboardUtils.isAllowedKeyForOmnibox(e) && !KeyboardUtils.isArrowKeyPushed(e.keyCode);
+    };
+    KeyboardUtils.isDeleteOrBackspace = function (e) {
+        return KeyboardUtils.keysEqual(e, KEYBOARD.BACKSPACE) || KeyboardUtils.keysEqual(e, KEYBOARD.DELETE);
+    };
+    KeyboardUtils.isArrowKeyPushed = function (keycode) {
+        return (keycode == KEYBOARD.LEFT_ARROW || keycode == KEYBOARD.UP_ARROW || keycode == KEYBOARD.RIGHT_ARROW || keycode == KEYBOARD.DOWN_ARROW);
+    };
+    KeyboardUtils.isNumberKeyPushed = function (keycode) {
+        return keycode > 47 && keycode < 58;
+    };
+    KeyboardUtils.isLetterKeyPushed = function (keycode) {
+        return keycode > 64 && keycode < 91;
+    };
+    // Return a keyboard event listener that only executes the function if certain keys are pressed.
+    KeyboardUtils.keypressAction = function (keyCode, action) {
+        return function (e) {
+            var data = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+                data[_i - 1] = arguments[_i];
+            }
+            if (e) {
+                var eventCode = e.charCode || e.keyCode;
+                if (eventCode) {
+                    if (_.isArray(keyCode) && _.contains(keyCode, eventCode)) {
+                        action(e);
+                    }
+                    else if (eventCode === keyCode) {
+                        action(e);
+                    }
+                }
+            }
+        };
+    };
+    return KeyboardUtils;
+}());
+exports.KeyboardUtils = KeyboardUtils;
 
 
 /***/ }),
@@ -10634,21 +10772,21 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var RootComponent_1 = __webpack_require__(35);
-var QueryBuilder_1 = __webpack_require__(36);
-var LocalStorageUtils_1 = __webpack_require__(38);
-var Assert_1 = __webpack_require__(5);
-var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(250);
-var QueryEvents_1 = __webpack_require__(10);
-var QueryUtils_1 = __webpack_require__(19);
-var Defer_1 = __webpack_require__(29);
-var Dom_1 = __webpack_require__(1);
-var Utils_1 = __webpack_require__(4);
-var BaseComponent_1 = __webpack_require__(28);
-var ExternalModulesShim_1 = __webpack_require__(23);
 var coveo_analytics_1 = __webpack_require__(89);
 var _ = __webpack_require__(0);
+var QueryEvents_1 = __webpack_require__(10);
+var ExternalModulesShim_1 = __webpack_require__(23);
+var Assert_1 = __webpack_require__(5);
+var Defer_1 = __webpack_require__(29);
+var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(250);
+var BaseComponent_1 = __webpack_require__(27);
+var QueryBuilder_1 = __webpack_require__(36);
+var RootComponent_1 = __webpack_require__(35);
+var Dom_1 = __webpack_require__(1);
+var LocalStorageUtils_1 = __webpack_require__(38);
+var QueryUtils_1 = __webpack_require__(20);
 var UrlUtils_1 = __webpack_require__(45);
+var Utils_1 = __webpack_require__(4);
 var DefaultQueryOptions = /** @class */ (function () {
     function DefaultQueryOptions() {
         this.searchAsYouType = false;
@@ -10765,7 +10903,6 @@ var QueryController = /** @class */ (function (_super) {
         promise
             .then(function (queryResults) {
             Assert_1.Assert.exists(queryResults);
-            var firstQuery = _this.firstQuery;
             if (_this.firstQuery) {
                 _this.firstQuery = false;
             }
@@ -10775,8 +10912,7 @@ var QueryController = /** @class */ (function (_super) {
                 return;
             }
             _this.logger.debug('Query results received', query, queryResults);
-            var enableHistory = _this.searchInterface && _this.searchInterface.options && _this.searchInterface.options.enableHistory;
-            if ((!firstQuery || enableHistory) && _this.keepLastSearchUid(query, queryResults)) {
+            if (_this.keepLastSearchUid(query, queryResults, options)) {
                 queryResults.searchUid = _this.getLastSearchUid();
                 queryResults._reusedSearchUid = true;
                 QueryUtils_1.QueryUtils.setPropertyOnResults(queryResults, 'queryUid', _this.getLastSearchUid());
@@ -11030,8 +11166,12 @@ var QueryController = /** @class */ (function (_super) {
             this.showingExecutingQueryAnimation = false;
         }
     };
-    QueryController.prototype.keepLastSearchUid = function (query, queryResults) {
-        return this.getLastQueryHash() == this.queryHash(query, queryResults);
+    QueryController.prototype.keepLastSearchUid = function (query, queryResults, options) {
+        if (options.keepLastSearchUid === true) {
+            return true;
+        }
+        var enableHistory = this.searchInterface && this.searchInterface.options && this.searchInterface.options.enableHistory;
+        return enableHistory && this.getLastQueryHash() == this.queryHash(query, queryResults);
     };
     QueryController.prototype.queryHash = function (query, queryResults) {
         var queryHash = JSON.stringify(_.omit(query, 'firstResult', 'groupBy', 'debug'));
@@ -11149,7 +11289,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var RootComponent = /** @class */ (function (_super) {
     __extends(RootComponent, _super);
     function RootComponent(element, type) {
@@ -11498,7 +11638,15 @@ exports.BreadcrumbEvents = BreadcrumbEvents;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var localStorage = window.localStorage;
+var localStorage;
+// This check must be made in a try/catch. If cookies are disabled for a
+// browser then window.localStorage will throw an undefined exception.
+try {
+    localStorage = window.localStorage;
+}
+catch (error) {
+    localStorage = null;
+}
 var LocalStorageUtils = /** @class */ (function () {
     function LocalStorageUtils(id) {
         this.id = id;
@@ -12896,7 +13044,7 @@ var Assert_1 = __webpack_require__(5);
 var Version_1 = __webpack_require__(74);
 var AjaxError_1 = __webpack_require__(235);
 var MissingAuthenticationError_1 = __webpack_require__(236);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var QueryError_1 = __webpack_require__(108);
 var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
@@ -14159,7 +14307,7 @@ var UrlUtils = /** @class */ (function () {
             var paired = underscore_1.pairs(toNormalize.query);
             var mapped = paired.map(function (pair) {
                 var key = pair[0], value = pair[1];
-                if (Utils_1.Utils.isNullOrUndefined(value) || Utils_1.Utils.isNullOrUndefined(key)) {
+                if (!value || !key) {
                     return '';
                 }
                 if (!_this.isEncoded(value)) {
@@ -14252,7 +14400,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Assert_1 = __webpack_require__(5);
 var Utils_1 = __webpack_require__(4);
 var Logger_1 = __webpack_require__(11);
@@ -14333,8 +14481,8 @@ exports.UnderscoreTemplate = UnderscoreTemplate;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 /// <reference path='Facet.ts' />
-var StringUtils_1 = __webpack_require__(18);
-var QueryUtils_1 = __webpack_require__(19);
+var StringUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var FileTypes_1 = __webpack_require__(94);
 var DateUtils_1 = __webpack_require__(30);
 var Utils_1 = __webpack_require__(4);
@@ -15013,7 +15161,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 /**
  * A text input widget with standard styling.
  */
@@ -15656,7 +15804,7 @@ if (false) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var _ = __webpack_require__(0);
 /**
  * An `ExpressionBuilder` that is mostly used by the {@link QueryBuilder}.<br/>
@@ -15802,7 +15950,7 @@ exports.ExpressionBuilder = ExpressionBuilder;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Assert_1 = __webpack_require__(5);
 var UnderscoreTemplate_1 = __webpack_require__(46);
 var HtmlTemplate_1 = __webpack_require__(77);
@@ -16273,7 +16421,6 @@ var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var DeviceUtils_1 = __webpack_require__(22);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var Utils_1 = __webpack_require__(4);
@@ -16299,6 +16446,7 @@ var OmniboxValueElement_1 = __webpack_require__(334);
 var OmniboxValuesList_1 = __webpack_require__(335);
 var ValueElementRenderer_1 = __webpack_require__(322);
 var DependentFacetManager_1 = __webpack_require__(375);
+var AccessibleButton_1 = __webpack_require__(18);
 /**
  * The `Facet` component displays a *facet* of the results for the current query. A facet is a list of values for a
  * certain field occurring in the results, ordered using a configurable criteria (e.g., number of occurrences).
@@ -16949,31 +17097,26 @@ var Facet = /** @class */ (function (_super) {
     Facet.prototype.updateSearchElement = function (moreValuesAvailable) {
         var _this = this;
         if (moreValuesAvailable === void 0) { moreValuesAvailable = true; }
-        if (moreValuesAvailable) {
-            var renderer = new ValueElementRenderer_1.ValueElementRenderer(this, FacetValues_1.FacetValue.create(Strings_1.l('Search')));
-            var searchButton_1 = renderer.build().withNo([renderer.excludeIcon, renderer.icon]);
-            Dom_1.$$(searchButton_1.listItem).addClass('coveo-facet-search-button');
-            searchButton_1.stylishCheckbox.removeAttribute('tabindex');
-            // Mobile do not like label. Use click event
-            if (DeviceUtils_1.DeviceUtils.isMobileDevice()) {
-                Dom_1.$$(searchButton_1.label).on('click', function (e) {
-                    if (searchButton_1.checkbox.getAttribute('checked')) {
-                        searchButton_1.checkbox.removeAttribute('checked');
-                    }
-                    else {
-                        searchButton_1.checkbox.setAttribute('checked', 'checked');
-                    }
-                    Dom_1.$$(searchButton_1.checkbox).trigger('change');
-                    e.stopPropagation();
-                    e.preventDefault();
-                });
-            }
-            Dom_1.$$(searchButton_1.checkbox).on('change', function () {
-                Dom_1.$$(_this.element).addClass('coveo-facet-searching');
-                _this.facetSearch.focus();
-            });
-            this.facetValuesList.valueContainer.appendChild(searchButton_1.listItem);
+        if (!moreValuesAvailable) {
+            return;
         }
+        var renderer = new ValueElementRenderer_1.ValueElementRenderer(this, FacetValues_1.FacetValue.create(Strings_1.l('Search')));
+        this.searchContainer = renderer.build().withNo([renderer.excludeIcon, renderer.icon]);
+        Dom_1.$$(this.searchContainer.listItem).addClass('coveo-facet-search-button');
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(this.searchContainer.accessibleElement)
+            .withLabel(Strings_1.l('Search'))
+            .withEnterKeyboardAction(function (e) { return _this.toggleSearchMenu(e); })
+            .build();
+        // Mobile do not like label. Use click event
+        if (DeviceUtils_1.DeviceUtils.isMobileDevice()) {
+            Dom_1.$$(this.searchContainer.label).on('click', function (e) { return _this.toggleSearchMenu(e); });
+        }
+        Dom_1.$$(this.searchContainer.checkbox).on('change', function () {
+            Dom_1.$$(_this.element).addClass('coveo-facet-searching');
+            _this.facetSearch.focus();
+        });
+        this.facetValuesList.valueContainer.appendChild(this.searchContainer.listItem);
     };
     Facet.prototype.updateMoreLess = function (lessElementIsShown, moreValuesAvailable) {
         if (lessElementIsShown === void 0) { lessElementIsShown = this.getMinimumNumberOfValuesToDisplay() < this.numberOfValues; }
@@ -17002,6 +17145,18 @@ var Facet = /** @class */ (function (_super) {
     };
     Facet.prototype.handleClickLess = function () {
         this.showLess();
+    };
+    Facet.prototype.toggleSearchMenu = function (e) {
+        var searchButton = this.searchContainer;
+        if (searchButton.checkbox.getAttribute('checked')) {
+            searchButton.checkbox.removeAttribute('checked');
+        }
+        else {
+            searchButton.checkbox.setAttribute('checked', 'checked');
+        }
+        Dom_1.$$(searchButton.checkbox).trigger('change');
+        e.stopPropagation();
+        e.preventDefault();
     };
     Facet.prototype.checkForComputedFieldAndSort = function () {
         if (this.options.sortCriteria.toLowerCase().indexOf('computedfield') != -1 && Utils_1.Utils.isNullOrUndefined(this.options.computedField)) {
@@ -17304,24 +17459,26 @@ var Facet = /** @class */ (function (_super) {
     };
     Facet.prototype.buildMore = function () {
         var _this = this;
-        var more;
         var svgContainer = Dom_1.$$('span', { className: 'coveo-facet-more-icon' }, SVGIcons_1.SVGIcons.icons.arrowDown).el;
         SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer, 'coveo-facet-more-icon-svg');
-        more = Dom_1.$$('div', { className: 'coveo-facet-more', tabindex: 0 }, svgContainer).el;
-        var moreAction = function () { return _this.handleClickMore(); };
-        Dom_1.$$(more).on('click', moreAction);
-        Dom_1.$$(more).on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, moreAction));
+        var more = Dom_1.$$('div', { className: 'coveo-facet-more', tabindex: 0 }, svgContainer).el;
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(more)
+            .withLabel(Strings_1.l('Expand'))
+            .withSelectAction(function () { return _this.handleClickMore(); })
+            .build();
         return more;
     };
     Facet.prototype.buildLess = function () {
         var _this = this;
-        var less;
         var svgContainer = Dom_1.$$('span', { className: 'coveo-facet-less-icon' }, SVGIcons_1.SVGIcons.icons.arrowUp).el;
         SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer, 'coveo-facet-less-icon-svg');
-        less = Dom_1.$$('div', { className: 'coveo-facet-less', tabIndex: 0 }, svgContainer).el;
-        var lessAction = function () { return _this.handleClickLess(); };
-        Dom_1.$$(less).on('click', lessAction);
-        Dom_1.$$(less).on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, lessAction));
+        var less = Dom_1.$$('div', { className: 'coveo-facet-less', tabindex: 0 }, svgContainer).el;
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(less)
+            .withLabel(Strings_1.l('Collapse'))
+            .withSelectAction(function () { return _this.handleClickLess(); })
+            .build();
         return less;
     };
     Facet.prototype.triggerMoreQuery = function () {
@@ -18077,9 +18234,9 @@ var Dom_1 = __webpack_require__(1);
 var DateUtils_1 = __webpack_require__(30);
 var FileTypes_1 = __webpack_require__(94);
 var Utils_1 = __webpack_require__(4);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var SVGIcons_1 = __webpack_require__(13);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var Logger_1 = __webpack_require__(11);
 var Core_1 = __webpack_require__(49);
 var DomUtils = /** @class */ (function () {
@@ -18916,7 +19073,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var DefaultResultTemplate_1 = __webpack_require__(87);
 var Assert_1 = __webpack_require__(5);
 var _ = __webpack_require__(0);
@@ -18974,8 +19131,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4609.7-beta',
-    product: '2.4609.7-beta',
+    lib: '2.4710.3-beta',
+    product: '2.4710.3-beta',
     supportedApiVersion: 2
 };
 
@@ -19077,7 +19234,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Assert_1 = __webpack_require__(5);
 var TemplateFromAScriptTag_1 = __webpack_require__(120);
 var HtmlTemplate = /** @class */ (function (_super) {
@@ -19494,7 +19651,7 @@ var HighlightUtils_1 = __webpack_require__(51);
 var DeviceUtils_1 = __webpack_require__(22);
 var OSUtils_1 = __webpack_require__(127);
 var Initialization_1 = __webpack_require__(2);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var Assert_1 = __webpack_require__(5);
 var Utils_1 = __webpack_require__(4);
 var Defer_1 = __webpack_require__(29);
@@ -19503,7 +19660,7 @@ var StreamHighlightUtils_1 = __webpack_require__(81);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 __webpack_require__(365);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 /**
  * The `ResultLink` component automatically transform a search result title into a clickable link pointing to the
  * original item.
@@ -20001,7 +20158,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Options_1 = __webpack_require__(60);
 var HighlightUtils_1 = __webpack_require__(51);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var Utils_1 = __webpack_require__(4);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
@@ -20051,8 +20208,8 @@ var StreamHighlightUtils = /** @class */ (function () {
 exports.StreamHighlightUtils = StreamHighlightUtils;
 function getRestHighlightsForAllTerms(toHighlight, termsToHighlight, phrasesToHighlight, opts) {
     var indexes = [];
-    var sortedTerms = _.keys(termsToHighlight).sort(termsSorting);
-    _.each(sortedTerms, function (term) {
+    var uniqueTermsToHighlight = getUniqueTermsToHighlight(termsToHighlight, phrasesToHighlight);
+    _.each(uniqueTermsToHighlight, function (term) {
         var termsToIterate = _.compact([term].concat(termsToHighlight[term]).sort(termsSorting));
         termsToIterate = _.map(termsToIterate, function (term) { return Utils_1.Utils.escapeRegexCharacter(term); });
         var regex = regexStart;
@@ -20103,6 +20260,15 @@ function getRestHighlightsForAllTerms(toHighlight, termsToHighlight, phrasesToHi
         .value();
 }
 exports.getRestHighlightsForAllTerms = getRestHighlightsForAllTerms;
+function getUniqueTermsToHighlight(termsToHighlight, phrasesToHighlight) {
+    var sortedTerms = _.keys(termsToHighlight).sort(termsSorting);
+    var termsFromPhrases = _.chain(phrasesToHighlight)
+        .values()
+        .map(_.keys)
+        .flatten()
+        .value();
+    return _.difference(sortedTerms, termsFromPhrases);
+}
 function termsSorting(first, second) {
     return first.length - second.length;
 }
@@ -20473,7 +20639,7 @@ exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
 exports.StringAndHoles = HighlightUtils_1.StringAndHoles;
 var HtmlUtils_1 = __webpack_require__(140);
 exports.HTMLUtils = HtmlUtils_1.HTMLUtils;
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 exports.KEYBOARD = KeyboardUtils_1.KEYBOARD;
 exports.KeyboardUtils = KeyboardUtils_1.KeyboardUtils;
 var LocalStorageUtils_1 = __webpack_require__(38);
@@ -20483,11 +20649,11 @@ exports.OSUtils = OSUtils_1.OSUtils;
 exports.OS_NAME = OSUtils_1.OS_NAME;
 var PopupUtils_1 = __webpack_require__(70);
 exports.PopupUtils = PopupUtils_1.PopupUtils;
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 exports.QueryUtils = QueryUtils_1.QueryUtils;
 var StreamHighlightUtils_1 = __webpack_require__(81);
 exports.StreamHighlightUtils = StreamHighlightUtils_1.StreamHighlightUtils;
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 exports.StringUtils = StringUtils_1.StringUtils;
 var TimeSpanUtils_1 = __webpack_require__(57);
 exports.TimeSpan = TimeSpanUtils_1.TimeSpan;
@@ -20514,7 +20680,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var UnderscoreTemplate_1 = __webpack_require__(46);
 var TemplateCache_1 = __webpack_require__(56);
 var Assert_1 = __webpack_require__(5);
@@ -21904,10 +22070,10 @@ var underscore_1 = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var QueryStateModel_1 = __webpack_require__(12);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var DateUtils_1 = __webpack_require__(30);
 var Dom_1 = __webpack_require__(1);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
@@ -22297,7 +22463,7 @@ var QueryStateModel_1 = __webpack_require__(12);
 var DeviceUtils_1 = __webpack_require__(22);
 var Dom_1 = __webpack_require__(1);
 var DomUtils_1 = __webpack_require__(65);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
@@ -29180,6 +29346,14 @@ var dict = {
     "Toggle": "Toggle",
     "FilterOn": "Filter on {0}",
     "RemoveFilterOn": "Remove filter on {0}",
+    "Enter": "Enter",
+    "InsertAQuery": "Insert a query",
+    "PressEnterToSend": "Press enter to send",
+    "SortResultsBy": "Sort results by {0}",
+    "DisplayResultsAs": "Display results as {0}",
+    "FacetTitle": "{0} facet",
+    "SelectValueWithResultCount": "Select {0} with {1}",
+    "UnselectValueWithResultCount": "Unselect {0} with {1}",
 };
 function defaultLanguage() {
     var locales = String["locales"] || (String["locales"] = {});
@@ -29315,13 +29489,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var underscore_1 = __webpack_require__(0);
+var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(11);
 var EndpointCaller_1 = __webpack_require__(67);
-var Assert_1 = __webpack_require__(5);
 var CookieUtils_1 = __webpack_require__(69);
-var _ = __webpack_require__(0);
-var Utils_1 = __webpack_require__(4);
 var UrlUtils_1 = __webpack_require__(45);
+var Utils_1 = __webpack_require__(4);
 var AnalyticsEndpoint = /** @class */ (function () {
     function AnalyticsEndpoint(options) {
         this.options = options;
@@ -29385,7 +29559,7 @@ var AnalyticsEndpoint = /** @class */ (function () {
                             paths: [this.options.serviceUrl, '/rest/', versionToCall, '/analytics/', path],
                             query: {
                                 org: this.organization,
-                                visitorId: CookieUtils_1.Cookie.get('visitorId')
+                                visitor: CookieUtils_1.Cookie.get('visitorId')
                             }
                         });
                         if (!(AnalyticsEndpoint.pendingRequest != null)) return [3 /*break*/, 4];
@@ -29456,8 +29630,8 @@ var AnalyticsEndpoint = /** @class */ (function () {
             visitorId = response['visitorId'];
         }
         else if (response['searchEventResponses']) {
-            visitId = _.first(response['searchEventResponses']).visitId;
-            visitorId = _.first(response['searchEventResponses']).visitorId;
+            visitId = underscore_1.first(response['searchEventResponses']).visitId;
+            visitorId = underscore_1.first(response['searchEventResponses']).visitorId;
         }
         if (visitId) {
             this.visitId = visitId;
@@ -29859,7 +30033,7 @@ exports.LocalStorageHistoryController = LocalStorageHistoryController;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var ResponsiveComponents_1 = __webpack_require__(43);
 var _ = __webpack_require__(0);
 var TemplateConditionEvaluator = /** @class */ (function () {
@@ -30089,10 +30263,10 @@ var LocalStorageUtils_1 = __webpack_require__(38);
 var ResultListEvents_1 = __webpack_require__(33);
 var DebugEvents_1 = __webpack_require__(75);
 var Dom_1 = __webpack_require__(1);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var SearchEndpoint_1 = __webpack_require__(44);
 var RootComponent_1 = __webpack_require__(35);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var ExternalModulesShim_1 = __webpack_require__(23);
 var Globalize = __webpack_require__(25);
 var _ = __webpack_require__(0);
@@ -30102,7 +30276,7 @@ var DebugHeader_1 = __webpack_require__(299);
 var QueryEvents_1 = __webpack_require__(10);
 var DebugForResult_1 = __webpack_require__(301);
 var GlobalExports_1 = __webpack_require__(3);
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Debug = /** @class */ (function (_super) {
     __extends(Debug, _super);
     function Debug(element, bindings, options, ModalBox) {
@@ -30767,7 +30941,7 @@ var APIAnalyticsBuilder_1 = __webpack_require__(124);
 var QueryStateModel_1 = __webpack_require__(12);
 var Component_1 = __webpack_require__(6);
 var Version_1 = __webpack_require__(74);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var _ = __webpack_require__(0);
 var LiveAnalyticsClient = /** @class */ (function () {
     function LiveAnalyticsClient(endpoint, rootElement, userId, userDisplayName, anonymous, splitTestRunName, splitTestRunVersion, originLevel1, sendToCloud) {
@@ -30831,8 +31005,8 @@ var LiveAnalyticsClient = /** @class */ (function () {
         var metaObject = this.buildMetaObject(meta, result);
         return this.pushClickEvent(actionCause, metaObject, result, element);
     };
-    LiveAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element) {
-        var metaObject = this.buildMetaObject(meta);
+    LiveAnalyticsClient.prototype.logCustomEvent = function (actionCause, meta, element, result) {
+        var metaObject = this.buildMetaObject(meta, result);
         return this.pushCustomEvent(actionCause, metaObject, element);
     };
     LiveAnalyticsClient.prototype.getTopQueries = function (params) {
@@ -32091,7 +32265,7 @@ var Utils_1 = __webpack_require__(4);
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Initialization_1 = __webpack_require__(2);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var ResultLink_1 = __webpack_require__(80);
 /**
  * The YouTubeThumbnail component automatically fetches the thumbnail of a YouTube video.
@@ -32752,6 +32926,10 @@ var Folding = /** @class */ (function (_super) {
             .then(function (results) {
             _this.handlePreprocessMoreResults(results);
             return results.results;
+        })
+            .catch(function (e) {
+            _this.logger.error("Invalid query performed while trying to retrieve more results for folding.", e);
+            return [];
         });
     };
     Folding.prototype.handlePreprocessMoreResults = function (queryResults) {
@@ -32956,7 +33134,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Assert_1 = __webpack_require__(5);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var Initialization_1 = __webpack_require__(2);
 var Utils_1 = __webpack_require__(4);
 var FileTypes_1 = __webpack_require__(94);
@@ -34031,7 +34209,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
@@ -35480,7 +35658,7 @@ var Utils_1 = __webpack_require__(4);
 var Dom_1 = __webpack_require__(1);
 var ResponsiveRecommendation_1 = __webpack_require__(458);
 var coveo_analytics_1 = __webpack_require__(89);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var InitializationEvents_1 = __webpack_require__(15);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
@@ -35873,7 +36051,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Initialization_1 = __webpack_require__(2);
 var ResponsiveResultLayout_1 = __webpack_require__(469);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 exports.defaultLayout = 'list';
 /**
  * The ResultLayoutSelector component allows the end user to switch between multiple {@link ResultList} components that have
@@ -36088,7 +36266,7 @@ var ResultLayoutSelector = /** @class */ (function (_super) {
         var selectAction = function () { return _this.changeLayout(layout); };
         new AccessibleButton_1.AccessibleButton()
             .withElement(btn)
-            .withLabel(Strings_1.l(layout))
+            .withLabel(Strings_1.l('DisplayResultsAs', Strings_1.l(layout)))
             .withSelectAction(selectAction)
             .withOwner(this.bind)
             .build();
@@ -36211,7 +36389,7 @@ var Assert_1 = __webpack_require__(5);
 var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -36647,7 +36825,7 @@ var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
 var CategoryFacetSearch_1 = __webpack_require__(492);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var CategoryFacetBreadcrumb_1 = __webpack_require__(494);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -36697,11 +36875,9 @@ var CategoryFacet = /** @class */ (function (_super) {
         _this.element = element;
         _this.options = options;
         _this.listenToQueryStateChange = true;
-        _this.activePath = [];
         _this.moreValuesToFetch = true;
         _this.numberOfChildValuesCurrentlyDisplayed = 0;
         _this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, CategoryFacet, options);
-        _this.activePath = _this.options.basePath;
         _this.categoryFacetQueryController = new CategoryFacetQueryController_1.CategoryFacetQueryController(_this);
         _this.categoryFacetTemplates = new CategoryFacetTemplates_1.CategoryFacetTemplates();
         _this.categoryValueRoot = new CategoryValueRoot_1.CategoryValueRoot(Dom_1.$$(_this.element), _this.categoryFacetTemplates, _this);
@@ -36719,10 +36895,30 @@ var CategoryFacet = /** @class */ (function (_super) {
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.duringQuery, function () { return _this.addFading(); });
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.deferredQuerySuccess, function () { return _this.removeFading(); });
         _this.bind.onRootElement(BreadcrumbEvents_1.BreadcrumbEvents.populateBreadcrumb, function (args) { return _this.handlePopulateBreadCrumb(args); });
+        _this.bind.onRootElement(BreadcrumbEvents_1.BreadcrumbEvents.clearBreadcrumb, function () { return _this.handleClearBreadcrumb(); });
         _this.buildFacetHeader();
         _this.initQueryStateEvents();
         return _this;
     }
+    Object.defineProperty(CategoryFacet.prototype, "activePath", {
+        get: function () {
+            return this.queryStateModel.get(this.queryStateAttribute) || this.options.basePath;
+        },
+        set: function (newPath) {
+            this.listenToQueryStateChange = false;
+            this.queryStateModel.set(this.queryStateAttribute, newPath);
+            this.listenToQueryStateChange = true;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CategoryFacet.prototype, "queryStateAttribute", {
+        get: function () {
+            return QueryStateModel_1.QueryStateModel.getCategoryFacetId(this.options.id);
+        },
+        enumerable: true,
+        configurable: true
+    });
     CategoryFacet.prototype.handleBuildingQuery = function (args) {
         this.positionInQuery = this.categoryFacetQueryController.putCategoryFacetInQueryBuilder(args.queryBuilder, this.activePath, this.numberOfValues + 1);
     };
@@ -36758,20 +36954,31 @@ var CategoryFacet = /** @class */ (function (_super) {
         }
     };
     /**
-     * Changes the active path and triggers a new query.
+     * Changes the active path.
      *
-     * @returns the query promise.
      */
     CategoryFacet.prototype.changeActivePath = function (path) {
-        var _this = this;
-        this.listenToQueryStateChange = false;
-        this.queryStateModel.set(this.queryStateAttribute, path);
-        this.listenToQueryStateChange = true;
         this.activePath = path;
-        this.showWaitingAnimation();
-        return this.queryController.executeQuery().then(function (queryResults) {
-            _this.hideWaitAnimation();
-            return queryResults;
+    };
+    CategoryFacet.prototype.executeQuery = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.showWaitingAnimation();
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, , 3, 4]);
+                        return [4 /*yield*/, this.queryController.executeQuery()];
+                    case 2:
+                        _a.sent();
+                        return [3 /*break*/, 4];
+                    case 3:
+                        this.hideWaitAnimation();
+                        return [7 /*endfinally*/];
+                    case 4: return [2 /*return*/];
+                }
+            });
         });
     };
     /**
@@ -36779,6 +36986,8 @@ var CategoryFacet = /** @class */ (function (_super) {
      */
     CategoryFacet.prototype.reload = function () {
         this.changeActivePath(this.activePath);
+        this.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetReload);
+        this.executeQuery();
     };
     /**
      * Returns all the visible parent values.
@@ -36793,7 +37002,7 @@ var CategoryFacet = /** @class */ (function (_super) {
         }
         var currentParentvalue = this.categoryValueRoot.children[0];
         var parentValues = [currentParentvalue];
-        while (currentParentvalue.children.length != 0) {
+        while (currentParentvalue.children.length != 0 && !Utils_1.Utils.arrayEqual(currentParentvalue.path, this.activePath)) {
             currentParentvalue = currentParentvalue.children[0];
             parentValues.push(currentParentvalue);
         }
@@ -36847,6 +37056,8 @@ var CategoryFacet = /** @class */ (function (_super) {
         var newPath = this.activePath.slice(0);
         newPath.push(value);
         this.changeActivePath(newPath);
+        this.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect);
+        this.executeQuery();
     };
     /**
      * Deselects the last value in the hierarchy that is applied to the query. When at the top of the hierarchy, this method does nothing.
@@ -36858,12 +37069,16 @@ var CategoryFacet = /** @class */ (function (_super) {
         var newPath = this.activePath.slice(0);
         newPath.pop();
         this.changeActivePath(newPath);
+        this.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect);
+        this.executeQuery();
     };
     /**
      * Reset the facet to its initial state.
      */
     CategoryFacet.prototype.reset = function () {
         this.changeActivePath(this.options.basePath);
+        this.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetClear);
+        this.executeQuery();
     };
     CategoryFacet.prototype.disable = function () {
         _super.prototype.disable.call(this);
@@ -36913,10 +37128,11 @@ var CategoryFacet = /** @class */ (function (_super) {
             this.waitElement.el.style.visibility = 'hidden';
         }
     };
-    CategoryFacet.prototype.logAnalyticsEvent = function (eventName) {
+    CategoryFacet.prototype.logAnalyticsEvent = function (eventName, path) {
+        if (path === void 0) { path = this.activePath; }
         this.usageAnalytics.logSearchEvent(eventName, {
             categoryFacetId: this.options.id,
-            categoryFacetPath: this.activePath,
+            categoryFacetPath: path,
             categoryFacetTitle: this.options.title
         });
     };
@@ -36949,6 +37165,11 @@ var CategoryFacet = /** @class */ (function (_super) {
         }
         for (var i = 0; i < sortedParentValues.length; i++) {
             currentParentValue = currentParentValue.renderAsParent(sortedParentValues[i]);
+            // We do not want to make the "last" parent selectable, as clicking it would be a noop (re-selecting the same filter)
+            var isLastParent = i == sortedParentValues.length - 1;
+            if (!isLastParent) {
+                currentParentValue.makeSelectable().showCollapseArrow();
+            }
             if (needToTruncate && i == numberOfItemsInFirstSlice) {
                 this.addEllipsis(currentParentValue, pathOfLastTruncatedParentValue, sortedParentValues[i].value);
             }
@@ -37013,8 +37234,7 @@ var CategoryFacet = /** @class */ (function (_super) {
     };
     CategoryFacet.prototype.initQueryStateEvents = function () {
         var _this = this;
-        this.queryStateAttribute = QueryStateModel_1.QueryStateModel.getCategoryFacetId(this.options.id);
-        this.queryStateModel.registerNewAttribute(QueryStateModel_1.QueryStateModel.getCategoryFacetId(this.options.id), this.options.basePath);
+        this.queryStateModel.registerNewAttribute(this.queryStateAttribute, this.options.basePath);
         this.bind.onQueryState(Model_1.MODEL_EVENTS.CHANGE, undefined, function (data) { return _this.handleQueryStateChanged(data); });
     };
     CategoryFacet.prototype.addFading = function () {
@@ -37098,6 +37318,9 @@ var CategoryFacet = /** @class */ (function (_super) {
             var categoryFacetBreadcrumbBuilder = new CategoryFacetBreadcrumb_1.CategoryFacetBreadcrumb(this.options.title, resetFacet, lastParentValue);
             args.breadcrumbs.push({ element: categoryFacetBreadcrumbBuilder.build() });
         }
+    };
+    CategoryFacet.prototype.handleClearBreadcrumb = function () {
+        this.changeActivePath(this.options.basePath);
     };
     CategoryFacet.doExport = function () {
         GlobalExports_1.exportGlobally({
@@ -37591,7 +37814,7 @@ exports.EventsUtils = EventsUtils;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var _ = __webpack_require__(0);
 var FacetValuesOrder = /** @class */ (function () {
     function FacetValuesOrder(facet, facetSort) {
@@ -37654,7 +37877,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var EventsUtils_1 = __webpack_require__(153);
 var _ = __webpack_require__(0);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var ResponsiveDropdownEvent;
 (function (ResponsiveDropdownEvent) {
     ResponsiveDropdownEvent["OPEN"] = "responsiveDropdownOpen";
@@ -38293,7 +38516,7 @@ var MagicBoxInstance = /** @class */ (function () {
             }
             if (key == 13) {
                 // Enter
-                var suggestion = _this.suggestionsManager.select();
+                var suggestion = _this.suggestionsManager.getKeyboardFocusedElement();
                 if (suggestion == null) {
                     _this.onsubmit && _this.onsubmit();
                 }
@@ -40052,7 +40275,7 @@ var ExternalModulesShim_1 = __webpack_require__(23);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var SVGIcons_1 = __webpack_require__(13);
 var SVGDom_1 = __webpack_require__(14);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 /**
  * The `AdvancedSearch` component is meant to render a section in the [`Settings`]{@link Settings} menu to allow the end
  * user to easily create complex queries to send to the index.
@@ -40524,7 +40747,7 @@ var Dom_1 = __webpack_require__(1);
 var SearchInterface_1 = __webpack_require__(17);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 /**
  * The AnalyticsSuggestion component provides query suggestions based on the queries that a Coveo Analytics service most
  * commonly logs.
@@ -41111,7 +41334,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentOptions_1 = __webpack_require__(8);
 var Initialization_1 = __webpack_require__(2);
 var FieldValue_1 = __webpack_require__(97);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
@@ -41302,7 +41525,7 @@ var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
@@ -41462,7 +41685,7 @@ var ComponentOptions_1 = __webpack_require__(8);
 var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 __webpack_require__(411);
@@ -41605,7 +41828,7 @@ var Initialization_1 = __webpack_require__(2);
 var CardOverlayEvents_1 = __webpack_require__(412);
 var Dom_1 = __webpack_require__(1);
 var Assert_1 = __webpack_require__(5);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var GlobalExports_1 = __webpack_require__(3);
 __webpack_require__(413);
 var SVGIcons_1 = __webpack_require__(13);
@@ -42102,7 +42325,7 @@ var Assert_1 = __webpack_require__(5);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
@@ -42262,6 +42485,41 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var DistanceEvents_1 = __webpack_require__(146);
@@ -42270,7 +42528,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var EventsModules_1 = __webpack_require__(103);
 var Initialization_1 = __webpack_require__(2);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var GlobalExports_1 = __webpack_require__(3);
 var NavigatorPositionProvider_1 = __webpack_require__(415);
 var GoogleApiPositionProvider_1 = __webpack_require__(416);
@@ -42300,7 +42558,9 @@ var DistanceResources = /** @class */ (function (_super) {
         _this.isFirstPositionResolved = false;
         _this.options = ComponentOptions_1.ComponentOptions.initComponentOptions(element, DistanceResources, options);
         _this.registerDistanceQuery();
-        _this.bind.onRootElement(EventsModules_1.InitializationEvents.afterComponentsInitialization, function () { return _this.onAfterComponentsInitialization(); });
+        _this.bind.onRootElement(EventsModules_1.InitializationEvents.afterComponentsInitialization, function (args) {
+            return _this.onAfterComponentsInitialization(args);
+        });
         return _this;
     }
     /**
@@ -42326,7 +42586,8 @@ var DistanceResources = /** @class */ (function (_super) {
         var shouldTriggerQuery = this.shouldTriggerQueryWhenPositionSet();
         this.isFirstPositionResolved = true;
         if (shouldTriggerQuery) {
-            this.executeQuery();
+            this.sendAnalytics();
+            this.queryController.executeQuery();
         }
     };
     /**
@@ -42335,47 +42596,68 @@ var DistanceResources = /** @class */ (function (_super) {
      * @returns {Promise<IGeolocationPosition>} A promise of the last resolved position value.
      */
     DistanceResources.prototype.getLastPositionRequest = function () {
-        return this.lastPositionRequest || Promise.reject('No position request was executed yet.');
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!!!this.lastPositionRequest) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.lastPositionRequest];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/, {
+                                latitude: this.latitude,
+                                longitude: this.longitude
+                            }];
+                    case 2:
+                        Promise.reject('No position request was executed yet.');
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
     };
-    DistanceResources.prototype.executeQuery = function () {
-        // Since this DistanceResource component often blocks initial queries,
-        // and relaunch the query automatically when it is able to do so (when a position provider resolves)
-        // we need to have a mechanism to still log something useful for usage analytics, instead of always a "position set".
-        // We want it to be "interface load" on a direct page access, or a "search from link" if coming from an external standalone search box
-        // Everytime this component blocks a query, we keep a copy of the pending search event, and resend this instead of a generic "position set" event.
-        if (this.pendingSearchEventOnCancellation) {
-            this.usageAnalytics.logSearchEvent(this.getPendingEventOnCancellation(), this.pendingSearchEventOnCancellation.getEventMeta());
-            delete this.pendingSearchEventOnCancellation;
-        }
-        else {
-            this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.positionSet, {});
-        }
-        this.queryController.executeQuery();
+    DistanceResources.prototype.sendAnalytics = function () {
+        this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.positionSet, {});
     };
     DistanceResources.prototype.shouldTriggerQueryWhenPositionSet = function () {
-        // If query has been cancelled, we need to trigger the first one.
-        var triggerFirstQueryWithPosition = this.options.cancelQueryUntilPositionResolved && !this.isFirstPositionResolved;
-        return this.options.triggerNewQueryOnNewPosition || triggerFirstQueryWithPosition;
+        // Don't trigger the query if the first one is not yet executed.
+        return !this.queryController.firstQuery && this.options.triggerNewQueryOnNewPosition;
     };
-    DistanceResources.prototype.onAfterComponentsInitialization = function () {
-        var _this = this;
+    DistanceResources.prototype.onAfterComponentsInitialization = function (afterComponentsInitializationArgs) {
         var args = {
             providers: this.getProvidersFromOptions()
         };
         this.bind.trigger(this.element, DistanceEvents_1.DistanceEvents.onResolvingPosition, args);
-        this.lastPositionRequest = this.tryGetPositionFromProviders(args.providers)
-            .then(function (position) {
-            if (position) {
-                _this.setPosition(position.latitude, position.longitude);
-            }
-            else {
-                _this.triggerDistanceNotSet();
-            }
-            return position;
-        })
-            .catch(function (error) {
-            _this.logger.error('An error occurred while trying to resolve the current position.', error);
-            _this.triggerDistanceNotSet();
+        this.lastPositionRequest = this.tryToSetPositionFromProviders(args.providers);
+        if (this.options.cancelQueryUntilPositionResolved) {
+            afterComponentsInitializationArgs.defer.push(this.lastPositionRequest);
+        }
+    };
+    DistanceResources.prototype.tryToSetPositionFromProviders = function (providers) {
+        return __awaiter(this, void 0, void 0, function () {
+            var position, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.tryGetPositionFromProviders(providers)];
+                    case 1:
+                        position = _a.sent();
+                        if (position) {
+                            this.setPosition(position.latitude, position.longitude);
+                        }
+                        else {
+                            this.triggerDistanceNotSet();
+                        }
+                        return [3 /*break*/, 3];
+                    case 2:
+                        error_1 = _a.sent();
+                        this.logger.error('An error occurred while trying to resolve the current position.', error_1);
+                        this.triggerDistanceNotSet();
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
+                }
+            });
         });
     };
     DistanceResources.prototype.getProvidersFromOptions = function () {
@@ -42392,31 +42674,31 @@ var DistanceResources = /** @class */ (function (_super) {
         return providers;
     };
     DistanceResources.prototype.tryGetPositionFromProviders = function (providers) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            var tryNextProvider = function () {
-                if (providers.length > 0) {
-                    var provider = providers.shift();
-                    provider
-                        .getPosition()
-                        .then(function (position) {
+        return __awaiter(this, void 0, void 0, function () {
+            var provider, position, error_2;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(providers.length > 0)) return [3 /*break*/, 5];
+                        provider = providers.shift();
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, provider.getPosition()];
+                    case 2:
+                        position = _a.sent();
                         if (!!position.latitude && !!position.longitude) {
-                            resolve(position);
+                            return [2 /*return*/, position];
                         }
-                        else {
-                            tryNextProvider();
-                        }
-                    })
-                        .catch(function (error) {
-                        _this.logger.warn('An error occurred while trying to resolve the position within a position provider.', error);
-                        tryNextProvider();
-                    });
+                        return [3 /*break*/, 4];
+                    case 3:
+                        error_2 = _a.sent();
+                        this.logger.warn('An error occurred while trying to resolve the position within a position provider.', error_2);
+                        return [3 /*break*/, 4];
+                    case 4: return [3 /*break*/, 0];
+                    case 5: return [2 /*return*/];
                 }
-                else {
-                    resolve();
-                }
-            };
-            tryNextProvider();
+            });
         });
     };
     DistanceResources.prototype.triggerDistanceNotSet = function () {
@@ -42424,7 +42706,6 @@ var DistanceResources = /** @class */ (function (_super) {
         this.logger.warn("None of the given position providers could resolve the current position. The distance field will not be calculated and the distance components will be disabled until the next call to 'setPosition'.");
         this.bind.trigger(this.element, DistanceEvents_1.DistanceEvents.onPositionNotResolved, {});
         this.disable();
-        this.executeQuery();
     };
     DistanceResources.prototype.registerDistanceQuery = function () {
         var _this = this;
@@ -42438,11 +42719,6 @@ var DistanceResources = /** @class */ (function (_super) {
                     args.queryBuilder.queryFunctions.push(geoQueryFunction);
                     _this.enableDistanceComponents();
                 }
-            }
-            else if (_this.options.cancelQueryUntilPositionResolved) {
-                _this.pendingSearchEventOnCancellation = _this.usageAnalytics.getPendingSearchEvent();
-                _this.logger.info('Query cancelled, waiting for position.');
-                args.cancel = true;
             }
         });
     };
@@ -42465,12 +42741,6 @@ var DistanceResources = /** @class */ (function (_super) {
     };
     DistanceResources.prototype.getConvertedUnitsFunction = function (queryFunction) {
         return queryFunction + "/" + this.options.unitConversionFactor;
-    };
-    DistanceResources.prototype.getPendingEventOnCancellation = function () {
-        return {
-            name: this.pendingSearchEventOnCancellation.templateSearchEvent.actionCause,
-            type: this.pendingSearchEventOnCancellation.templateSearchEvent.actionType
-        };
     };
     DistanceResources.ID = 'DistanceResources';
     DistanceResources.doExport = function () {
@@ -42633,7 +42903,7 @@ var Assert_1 = __webpack_require__(5);
 var Initialization_1 = __webpack_require__(2);
 var GlobalExports_1 = __webpack_require__(3);
 __webpack_require__(418);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 /**
  * The ErrorReport component takes care of handling fatal error when doing a query on the index / Search API.
  *
@@ -42973,7 +43243,7 @@ var GlobalExports_1 = __webpack_require__(3);
 __webpack_require__(420);
 var SVGIcons_1 = __webpack_require__(13);
 var SearchInterface_1 = __webpack_require__(17);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 /**
  * The ExportToExcel component renders an item in the {@link Settings} menu to allow the end user to export the current
  * search results to the Microsoft Excel format (.xlsx).
@@ -43722,9 +43992,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(427);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var Component_1 = __webpack_require__(6);
@@ -45239,7 +45509,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var QueryEvents_1 = __webpack_require__(10);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var Utils_1 = __webpack_require__(4);
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
@@ -46357,12 +46627,12 @@ var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var GlobalExports_1 = __webpack_require__(3);
 var SVGIcons_1 = __webpack_require__(13);
 var SVGDom_1 = __webpack_require__(14);
 __webpack_require__(444);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 /**
  * The Pager component attaches itself to a `div` element and renders widgets that allow the end user to navigate
  * through the different result pages.
@@ -47331,7 +47601,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var Dom_1 = __webpack_require__(1);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
@@ -47642,6 +47912,41 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(449);
 var QuickviewEvents_1 = __webpack_require__(164);
@@ -47650,10 +47955,10 @@ var ExternalModulesShim_1 = __webpack_require__(23);
 var GlobalExports_1 = __webpack_require__(3);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var DomUtils_1 = __webpack_require__(65);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var Utils_1 = __webpack_require__(4);
@@ -47675,6 +47980,7 @@ var QuickviewDocument_1 = __webpack_require__(170);
  * > - You can change the appearance of the `Quickview` link/button by adding elements in the inner HTML of its `div`.
  * > - You can change the content of the `Quickview` modal box link by specifying a template `id` or CSS selector (see
  * > the [`contentTemplate`]{@link Quickview.options.contentTemplate} option).
+ * > - When using Coveo for Salesforce 3.16, in an environment compliant with LockerService, ensure you use `CoveoSalesforceQuickview` (see [Changing the Default Quick View in Coveo for Salesforce](https://docs.coveo.com/en/1234/)).
  *
  * **Example:**
  * ```html
@@ -47765,7 +48071,7 @@ var Quickview = /** @class */ (function (_super) {
                 Dom_1.$$(document.activeElement).trigger('blur');
             }
             var openerObject_1 = this.prepareOpenQuickviewObject();
-            this.createModalBox(openerObject_1).then(function () {
+            return this.createModalBox(openerObject_1).then(function () {
                 _this.bindQuickviewEvents(openerObject_1);
                 _this.animateAndOpen();
                 _this.logUsageAnalyticsEvent();
@@ -47809,16 +48115,19 @@ var Quickview = /** @class */ (function (_super) {
         }
     };
     Quickview.prototype.bindQuickviewEvents = function (openerObject) {
-        Dom_1.$$(this.modalbox.content).on(QuickviewEvents_1.QuickviewEvents.quickviewLoaded, function () {
-            if (openerObject.loadingAnimation instanceof HTMLElement) {
-                Dom_1.$$(openerObject.loadingAnimation).remove();
-            }
-            else if (openerObject.loadingAnimation instanceof Promise) {
-                openerObject.loadingAnimation.then(function (anim) {
-                    Dom_1.$$(anim).remove();
-                });
-            }
-        });
+        var _this = this;
+        Dom_1.$$(this.modalbox.content).on(QuickviewEvents_1.QuickviewEvents.quickviewLoaded, function () { return __awaiter(_this, void 0, void 0, function () {
+            var anim;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, openerObject.loadingAnimation];
+                    case 1:
+                        anim = _a.sent();
+                        Dom_1.$$(anim).remove();
+                        return [2 /*return*/];
+                }
+            });
+        }); });
     };
     Quickview.prototype.animateAndOpen = function () {
         var quickviewDocument = Dom_1.$$(this.modalbox.modalBox).find('.' + Component_1.Component.computeCssClassName(QuickviewDocument_1.QuickviewDocument));
@@ -47857,27 +48166,66 @@ var Quickview = /** @class */ (function (_super) {
         };
     };
     Quickview.prototype.prepareQuickviewContent = function (loadingAnimation) {
-        var _this = this;
-        return this.options.contentTemplate.instantiateToElement(this.result).then(function (built) {
-            var content = Dom_1.$$(built);
-            var initOptions = _this.searchInterface.options;
-            var initParameters = {
-                options: initOptions,
-                bindings: _this.getBindings(),
-                result: _this.result
-            };
-            return Initialization_1.Initialization.automaticallyCreateComponentsInside(content.el, initParameters).initResult.then(function () {
-                if (content.find('.' + Component_1.Component.computeCssClassName(QuickviewDocument_1.QuickviewDocument)) != undefined && _this.options.enableLoadingAnimation) {
-                    if (loadingAnimation instanceof HTMLElement) {
-                        content.prepend(loadingAnimation);
-                    }
-                    else if (loadingAnimation instanceof Promise) {
-                        loadingAnimation.then(function (anim) {
-                            content.prepend(anim);
-                        });
-                    }
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var domContent, initOptions, initParameters, containsQuickviewDocumentAndCustomAnimation;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.instantiateTemplateToDom()];
+                    case 1:
+                        domContent = _a.sent();
+                        initOptions = this.searchInterface.options;
+                        initParameters = {
+                            options: initOptions,
+                            bindings: this.getBindings(),
+                            result: this.result
+                        };
+                        return [4 /*yield*/, Initialization_1.Initialization.automaticallyCreateComponentsInside(domContent.el, initParameters).initResult];
+                    case 2:
+                        _a.sent();
+                        containsQuickviewDocumentAndCustomAnimation = function () {
+                            return domContent.find("." + Component_1.Component.computeCssClassName(QuickviewDocument_1.QuickviewDocument)) != undefined && _this.options.enableLoadingAnimation;
+                        };
+                        if (containsQuickviewDocumentAndCustomAnimation()) {
+                            if (loadingAnimation instanceof HTMLElement) {
+                                domContent.prepend(loadingAnimation);
+                            }
+                            else if (loadingAnimation instanceof Promise) {
+                                loadingAnimation.then(function (anim) {
+                                    domContent.prepend(anim);
+                                });
+                            }
+                        }
+                        return [2 /*return*/, domContent];
                 }
-                return content;
+            });
+        });
+    };
+    Quickview.prototype.instantiateTemplateToDom = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var templateInstantiated, e_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, 3, 6]);
+                        return [4 /*yield*/, this.options.contentTemplate.instantiateToElement(this.result)];
+                    case 1:
+                        templateInstantiated = _a.sent();
+                        return [3 /*break*/, 6];
+                    case 2:
+                        e_1 = _a.sent();
+                        this.logger.warn(e_1);
+                        return [3 /*break*/, 6];
+                    case 3:
+                        if (!!templateInstantiated) return [3 /*break*/, 5];
+                        this.logger.warn('An unexpected error happened while trying to render a custom template quickview, fallbacking on default quickview template...', this.options.contentTemplate);
+                        return [4 /*yield*/, new DefaultQuickviewTemplate_1.DefaultQuickviewTemplate().instantiateToElement(this.result)];
+                    case 4:
+                        templateInstantiated = _a.sent();
+                        _a.label = 5;
+                    case 5: return [7 /*endfinally*/];
+                    case 6: return [2 /*return*/, Dom_1.$$(templateInstantiated)];
+                }
             });
         });
     };
@@ -48150,7 +48498,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var DefaultResultAttachmentTemplate_1 = __webpack_require__(464);
 var Utils_1 = __webpack_require__(4);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
@@ -48334,7 +48682,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var DefaultFoldingTemplate_1 = __webpack_require__(466);
 var Utils_1 = __webpack_require__(4);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
@@ -48650,7 +48998,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(470);
 var GlobalExports_1 = __webpack_require__(3);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
@@ -49392,7 +49740,7 @@ var QueryEvents_1 = __webpack_require__(10);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var DeviceUtils_1 = __webpack_require__(22);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
@@ -49870,8 +50218,8 @@ var Assert_1 = __webpack_require__(5);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
-var StringUtils_1 = __webpack_require__(18);
+var KeyboardUtils_1 = __webpack_require__(28);
+var StringUtils_1 = __webpack_require__(19);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var Utils_1 = __webpack_require__(4);
@@ -50314,10 +50662,10 @@ var Initialization_1 = __webpack_require__(2);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var _ = __webpack_require__(0);
 var Utils_1 = __webpack_require__(4);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var GlobalExports_1 = __webpack_require__(3);
 var SVGIcons_1 = __webpack_require__(13);
 var SVGDom_1 = __webpack_require__(14);
@@ -50585,7 +50933,7 @@ var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var Dropdown_1 = __webpack_require__(52);
 var SVGIcons_1 = __webpack_require__(13);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var SearchInterface_1 = __webpack_require__(17);
 /**
  * The Search Alerts component renders items in the {@link Settings} menu that allow the end user to follow queries
@@ -51186,7 +51534,7 @@ var InitializationEvents_1 = __webpack_require__(15);
 var SettingsEvents_1 = __webpack_require__(42);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
 var Component_1 = __webpack_require__(6);
@@ -51577,7 +51925,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Initialization_1 = __webpack_require__(2);
 var SortCriteria_1 = __webpack_require__(354);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Strings_1 = __webpack_require__(7);
 /**
  * The `Sort` component renders a widget that the end user can interact with to select the criterion to use when sorting query results.
@@ -51603,15 +51951,8 @@ var Sort = /** @class */ (function (_super) {
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.querySuccess, function (args) { return _this.handleQuerySuccess(args); });
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.buildingQuery, function (args) { return _this.handleBuildingQuery(args); });
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.queryError, function (args) { return _this.handleQueryError(args); });
-        var clickAction = function () { return _this.handleClick(); };
-        new AccessibleButton_1.AccessibleButton()
-            .withElement(_this.element)
-            .withSelectAction(clickAction)
-            .withLabel(_this.options.caption || Strings_1.l('Sort'))
-            .build();
-        if (Utils_1.Utils.isNonEmptyString(_this.options.caption)) {
-            Dom_1.$$(_this.element).text(_this.options.caption);
-        }
+        _this.setTextToCaptionIfDefined();
+        _this.addAccessiblityAttributes();
         if (_this.isToggle()) {
             _this.icon = Dom_1.$$('span', { className: 'coveo-icon' }).el;
             var iconAscending = Dom_1.$$('span', { className: 'coveo-sort-icon-ascending' }, SVGIcons_1.SVGIcons.icons.arrowUp);
@@ -51687,6 +52028,32 @@ var Sort = /** @class */ (function (_super) {
         }
         this.updateAppearance();
     };
+    Sort.prototype.setTextToCaptionIfDefined = function () {
+        this.captionIsDefined && Dom_1.$$(this.element).text(this.options.caption);
+    };
+    Object.defineProperty(Sort.prototype, "captionIsDefined", {
+        get: function () {
+            return Utils_1.Utils.isNonEmptyString(this.options.caption);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Sort.prototype.addAccessiblityAttributes = function () {
+        var _this = this;
+        var localizedCaption = Strings_1.l(this.displayedSortText);
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(this.element)
+            .withSelectAction(function () { return _this.handleClick(); })
+            .withLabel(Strings_1.l('SortResultsBy', localizedCaption))
+            .build();
+    };
+    Object.defineProperty(Sort.prototype, "displayedSortText", {
+        get: function () {
+            return this.captionIsDefined ? this.options.caption : this.element.textContent;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Sort.prototype.handleBuildingQuery = function (data) {
         Assert_1.Assert.exists(data);
         var sort = this.queryStateModel.get(QueryStateModel_1.QueryStateModel.attributesEnum.sort);
@@ -52115,10 +52482,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var ResultLink_1 = __webpack_require__(80);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var Initialization_1 = __webpack_require__(2);
 var Dom_1 = __webpack_require__(1);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var Icon_1 = __webpack_require__(134);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
@@ -52415,7 +52782,7 @@ var QueryEvents_1 = __webpack_require__(10);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var Strings_1 = __webpack_require__(7);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
@@ -55955,13 +56322,13 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(27));
+__export(__webpack_require__(26));
 var ComponentOptions_1 = __webpack_require__(8);
 exports.ComponentOptions = ComponentOptions_1.ComponentOptions;
 exports.ComponentOptionsType = ComponentOptions_1.ComponentOptionsType;
 var Component_1 = __webpack_require__(6);
 exports.Component = Component_1.Component;
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 exports.BaseComponent = BaseComponent_1.BaseComponent;
 var RootComponent_1 = __webpack_require__(35);
 exports.RootComponent = RootComponent_1.RootComponent;
@@ -59716,7 +60083,7 @@ exports.DebugHeader = DebugHeader;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var _ = __webpack_require__(0);
 var DebugForResult = /** @class */ (function () {
     function DebugForResult(bindings) {
@@ -59836,7 +60203,7 @@ var Dom_1 = __webpack_require__(1);
 var Logger_1 = __webpack_require__(11);
 var QueryEvents_1 = __webpack_require__(10);
 var underscore_1 = __webpack_require__(0);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var FacetColumnAutoLayoutAdjustment = /** @class */ (function () {
     function FacetColumnAutoLayoutAdjustment() {
     }
@@ -59925,7 +60292,7 @@ exports.FacetColumnAutoLayoutAdjustment = FacetColumnAutoLayoutAdjustment;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var QueryStateModel_1 = __webpack_require__(12);
-var BaseComponent_1 = __webpack_require__(28);
+var BaseComponent_1 = __webpack_require__(27);
 var FacetValueStateHandler = /** @class */ (function () {
     function FacetValueStateHandler(componentsFetcher) {
         this.componentsFetcher = componentsFetcher;
@@ -60240,10 +60607,11 @@ var Analytics = /** @class */ (function (_super) {
      * ( `{}` ).
      * @param element The HTMLElement that the user has interacted with for this custom event. Default value is the
      * element on which the `Analytics` component is bound.
+     * @param result The IQueryResult that the custom event is linked to, if any.
      */
-    Analytics.prototype.logCustomEvent = function (actionCause, meta, element) {
+    Analytics.prototype.logCustomEvent = function (actionCause, meta, element, result) {
         if (element === void 0) { element = this.element; }
-        this.client.logCustomEvent(actionCause, meta, element);
+        this.client.logCustomEvent(actionCause, meta, element, result);
     };
     /**
      * Logs a `Click` usage analytics event.
@@ -63370,7 +63738,7 @@ var ValueElementRenderer_1 = __webpack_require__(322);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Dom_1 = __webpack_require__(1);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var ValueElement = /** @class */ (function () {
     function ValueElement(facet, facetValue, onSelect, onExclude) {
         this.facet = facet;
@@ -63570,53 +63938,24 @@ var ValueElementRenderer = /** @class */ (function () {
         return this;
     };
     ValueElementRenderer.prototype.build = function () {
-        var _this = this;
-        this.listItem = Dom_1.$$('li', {
-            className: 'coveo-facet-value coveo-facet-selectable'
-        }).el;
-        this.listItem.setAttribute('data-value', this.facetValue.value);
-        this.excludeIcon = this.buildExcludeIcon();
-        this.listItem.appendChild(this.excludeIcon);
-        this.label = Dom_1.$$('label', {
-            className: 'coveo-facet-value-label'
-        }).el;
-        this.listItem.appendChild(this.label);
-        this.excludeIcon = this.buildExcludeIcon();
-        this.listItem.appendChild(this.excludeIcon);
-        Dom_1.$$(this.excludeIcon).on('mouseover', function () {
-            Dom_1.$$(_this.listItem).addClass('coveo-facet-value-will-exclude');
-        });
-        Dom_1.$$(this.excludeIcon).on('mouseout', function () {
-            Dom_1.$$(_this.listItem).removeClass('coveo-facet-value-will-exclude');
-        });
-        if (Utils_1.Utils.exists(this.facetValue.computedField)) {
-            this.computedField = this.buildValueComputedField();
-            if (this.computedField) {
-                this.label.appendChild(this.computedField);
-            }
-            Dom_1.$$(this.label).addClass('coveo-with-computed-field');
-        }
-        var labelDiv = Dom_1.$$('div', {
-            className: 'coveo-facet-value-label-wrapper'
-        }).el;
-        this.label.appendChild(labelDiv);
-        this.checkbox = this.buildValueCheckbox();
-        labelDiv.appendChild(this.checkbox);
-        this.stylishCheckbox = this.buildValueStylishCheckbox();
-        labelDiv.appendChild(this.stylishCheckbox);
-        this.valueCount = this.buildValueCount();
-        if (this.valueCount) {
-            labelDiv.appendChild(this.valueCount);
-        }
-        this.valueCaption = this.buildValueCaption();
-        labelDiv.appendChild(this.valueCaption);
+        this.buildListItem();
+        this.initAndAppendLabel();
+        this.initAndAppendExcludeIcon();
         this.setCssClassOnListValueElement();
+        this.addAccessibilityAttributesToTargetElement();
         return this;
     };
     ValueElementRenderer.prototype.setCssClassOnListValueElement = function () {
         Dom_1.$$(this.listItem).toggleClass('coveo-selected', this.facetValue.selected);
         Dom_1.$$(this.listItem).toggleClass('coveo-excluded', this.facetValue.excluded);
     };
+    Object.defineProperty(ValueElementRenderer.prototype, "accessibleElement", {
+        get: function () {
+            return this.stylishCheckbox;
+        },
+        enumerable: true,
+        configurable: true
+    });
     ValueElementRenderer.prototype.buildExcludeIcon = function () {
         var excludeIcon = Dom_1.$$('div', {
             title: Strings_1.l('Exclude', this.facet.getValueCaption(this.facetValue)),
@@ -63696,33 +64035,122 @@ var ValueElementRenderer = /** @class */ (function () {
         }).el;
     };
     ValueElementRenderer.prototype.buildValueCaption = function () {
-        var caption = this.facet.getValueCaption(this.facetValue);
         var valueCaption = Dom_1.$$('span', {
             className: 'coveo-facet-value-caption',
-            title: caption,
+            title: this.caption,
             'data-original-value': this.facetValue.value
         }).el;
-        Dom_1.$$(valueCaption).text(caption);
+        Dom_1.$$(valueCaption).text(this.caption);
         return valueCaption;
     };
     ValueElementRenderer.prototype.buildValueCount = function () {
-        var count = this.facetValue.getFormattedCount();
-        if (Utils_1.Utils.isNonEmptyString(count)) {
+        if (Utils_1.Utils.isNonEmptyString(this.count)) {
             var countElement = Dom_1.$$('span', {
                 className: 'coveo-facet-value-count'
             }).el;
-            Dom_1.$$(countElement).text(count);
+            Dom_1.$$(countElement).text(this.count);
             return countElement;
         }
         else {
             return undefined;
         }
     };
+    Object.defineProperty(ValueElementRenderer.prototype, "caption", {
+        get: function () {
+            return this.facet.getValueCaption(this.facetValue);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ValueElementRenderer.prototype, "count", {
+        get: function () {
+            return this.facetValue.getFormattedCount();
+        },
+        enumerable: true,
+        configurable: true
+    });
     ValueElementRenderer.prototype.addFocusAndBlurEventListeners = function (elem) {
         var _this = this;
         Dom_1.$$(elem).on('focus', function () { return Dom_1.$$(_this.listItem).addClass('coveo-focused'); });
         Dom_1.$$(elem).on('blur', function () { return Dom_1.$$(_this.listItem).removeClass('coveo-focused'); });
     };
+    ValueElementRenderer.prototype.buildListItem = function () {
+        this.listItem = Dom_1.$$('li', { className: 'coveo-facet-value coveo-facet-selectable' }).el;
+        this.listItem.setAttribute('data-value', this.facetValue.value);
+    };
+    ValueElementRenderer.prototype.initAndAppendLabel = function () {
+        this.label = Dom_1.$$('label', { className: 'coveo-facet-value-label' }).el;
+        this.tryToInitAndAppendComputedField();
+        this.initAndAppendFacetValueLabelWrapper();
+        this.listItem.appendChild(this.label);
+    };
+    ValueElementRenderer.prototype.initAndAppendExcludeIcon = function () {
+        this.excludeIcon = this.buildExcludeIcon();
+        this.attachExcludeIconEventHandlers();
+        this.listItem.appendChild(this.excludeIcon);
+    };
+    ValueElementRenderer.prototype.attachExcludeIconEventHandlers = function () {
+        var _this = this;
+        Dom_1.$$(this.excludeIcon).on('mouseover', function () {
+            Dom_1.$$(_this.listItem).addClass('coveo-facet-value-will-exclude');
+        });
+        Dom_1.$$(this.excludeIcon).on('mouseout', function () {
+            Dom_1.$$(_this.listItem).removeClass('coveo-facet-value-will-exclude');
+        });
+    };
+    ValueElementRenderer.prototype.tryToInitAndAppendComputedField = function () {
+        if (!Utils_1.Utils.exists(this.facetValue.computedField)) {
+            return;
+        }
+        this.computedField = this.buildValueComputedField();
+        if (!this.computedField) {
+            return;
+        }
+        this.label.appendChild(this.computedField);
+        Dom_1.$$(this.label).addClass('coveo-with-computed-field');
+    };
+    ValueElementRenderer.prototype.initAndAppendFacetValueLabelWrapper = function () {
+        this.facetValueLabelWrapper = Dom_1.$$('div', { className: 'coveo-facet-value-label-wrapper' }).el;
+        this.initAndAppendCheckbox();
+        this.initAndAppendStylishCheckbox();
+        this.initAndAppendValueCount();
+        this.initAndAppendValueCaption();
+        this.label.appendChild(this.facetValueLabelWrapper);
+    };
+    ValueElementRenderer.prototype.initAndAppendCheckbox = function () {
+        this.checkbox = this.buildValueCheckbox();
+        this.facetValueLabelWrapper.appendChild(this.checkbox);
+    };
+    ValueElementRenderer.prototype.initAndAppendStylishCheckbox = function () {
+        this.stylishCheckbox = this.buildValueStylishCheckbox();
+        this.facetValueLabelWrapper.appendChild(this.stylishCheckbox);
+    };
+    ValueElementRenderer.prototype.initAndAppendValueCount = function () {
+        this.valueCount = this.buildValueCount();
+        if (!this.valueCount) {
+            return;
+        }
+        this.facetValueLabelWrapper.appendChild(this.valueCount);
+    };
+    ValueElementRenderer.prototype.initAndAppendValueCaption = function () {
+        this.valueCaption = this.buildValueCaption();
+        this.facetValueLabelWrapper.appendChild(this.valueCaption);
+    };
+    ValueElementRenderer.prototype.addAccessibilityAttributesToTargetElement = function () {
+        var el = this.accessibleElement;
+        el.setAttribute('aria-label', this.ariaLabel);
+        el.setAttribute('role', 'heading');
+        el.setAttribute('aria-level', '3');
+    };
+    Object.defineProperty(ValueElementRenderer.prototype, "ariaLabel", {
+        get: function () {
+            var selectOrUnselect = !this.facetValue.selected ? 'SelectValueWithResultCount' : 'UnselectValueWithResultCount';
+            var resultCount = Strings_1.l('ResultCount', this.count);
+            return "" + Strings_1.l(selectOrUnselect, this.caption, resultCount);
+        },
+        enumerable: true,
+        configurable: true
+    });
     return ValueElementRenderer;
 }());
 exports.ValueElementRenderer = ValueElementRenderer;
@@ -63759,6 +64187,7 @@ var SVGIcons_1 = __webpack_require__(13);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var FacetSort_1 = __webpack_require__(324);
+var AccessibleButton_1 = __webpack_require__(18);
 /**
  * Handle the rendering of the {@link Facet} settings menu (typically the ... in the facet header).
  */
@@ -63769,6 +64198,7 @@ var FacetSettings = /** @class */ (function (_super) {
         _this.sorts = sorts;
         _this.facet = facet;
         _this.customSortDirectionChange = false;
+        _this.onDocumentClick = function () { return _this.close(); };
         _this.enabledSortsIgnoreRenderBecauseOfPairs = [];
         _this.filterDuplicateForRendering();
         return _this;
@@ -63779,13 +64209,8 @@ var FacetSettings = /** @class */ (function (_super) {
      */
     FacetSettings.prototype.build = function () {
         var _this = this;
-        this.settingsButton = Dom_1.$$('div', {
-            className: 'coveo-facet-header-settings',
-            title: Strings_1.l('Settings')
-        }).el;
-        this.settingsButton.innerHTML = SVGIcons_1.SVGIcons.icons.more;
-        SVGDom_1.SVGDom.addClassToSVGInContainer(this.settingsButton, 'coveo-facet-settings-more-svg');
-        this.settingsPopup = Dom_1.$$('div', { className: 'coveo-facet-settings-popup' }).el;
+        this.buildSettingsButton();
+        this.buildSettingsPopup();
         if (Utils_1.Utils.isNonEmptyArray(this.enabledSorts)) {
             this.sortSection = this.buildSortSection();
             if (this.enabledSortsAllowDirection()) {
@@ -63806,7 +64231,8 @@ var FacetSettings = /** @class */ (function (_super) {
             _this.appendIfNotUndefined(_this.hideSection);
             _this.appendIfNotUndefined(_this.showSection);
         };
-        this.handleMouseEventOnButton(this.sortSection);
+        this.addOnDocumentClickHandler();
+        this.addOnNukeHandler();
         if (Utils_1.Utils.isNonEmptyArray(this.enabledSorts)) {
             this.settingsPopup.appendChild(this.sortSection.element);
             _.each(this.directionSection, function (d) {
@@ -63903,6 +64329,30 @@ var FacetSettings = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    FacetSettings.prototype.buildSettingsButton = function () {
+        var _this = this;
+        this.settingsButton = Dom_1.$$('div', { className: 'coveo-facet-header-settings' }).el;
+        this.settingsButton.innerHTML = SVGIcons_1.SVGIcons.icons.more;
+        SVGDom_1.SVGDom.addClassToSVGInContainer(this.settingsButton, 'coveo-facet-settings-more-svg');
+        this.hideElementOnMouseEnterLeave(this.settingsButton);
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(this.settingsButton)
+            .withLabel(Strings_1.l('Settings'))
+            .withClickAction(function (e) { return _this.handleSettingsButtonClick(e); })
+            .withEnterKeyboardAction(function (e) { return _this.handleSettingsButtonClick(e); })
+            .build();
+    };
+    FacetSettings.prototype.hideElementOnMouseEnterLeave = function (el) {
+        var _this = this;
+        var mouseLeave = function () { return (_this.closeTimeout = window.setTimeout(function () { return _this.close(); }, 300)); };
+        var mouseEnter = function () { return clearTimeout(_this.closeTimeout); };
+        Dom_1.$$(el).on('mouseleave', mouseLeave);
+        Dom_1.$$(el).on('mouseenter', mouseEnter);
+    };
+    FacetSettings.prototype.buildSettingsPopup = function () {
+        this.settingsPopup = Dom_1.$$('div', { className: 'coveo-facet-settings-popup' }).el;
+        this.hideElementOnMouseEnterLeave(this.settingsPopup);
+    };
     FacetSettings.prototype.buildSortSection = function () {
         var sortSection = this.buildSection('coveo-facet-settings-section-sort');
         var sortSectionIcon = this.buildIcon('coveo-facet-settings-section-sort-svg', SVGIcons_1.SVGIcons.icons.sort);
@@ -64082,14 +64532,10 @@ var FacetSettings = /** @class */ (function (_super) {
         Dom_1.$$(section).addClass(['coveo-facet-settings-section', className]);
         return section;
     };
-    FacetSettings.prototype.handleClickSettingsButtons = function (event, sortSection) {
+    FacetSettings.prototype.handleSettingsButtonClick = function (event) {
         event.stopPropagation();
-        if (!Utils_1.Utils.isNullOrUndefined(this.settingsPopup.parentElement)) {
-            this.close();
-        }
-        else {
-            this.open();
-        }
+        var settingsPopupIsOpen = !Utils_1.Utils.isNullOrUndefined(this.settingsPopup.parentElement);
+        settingsPopupIsOpen ? this.close() : this.open();
     };
     FacetSettings.prototype.handleClickSortButton = function (e, enabledSort) {
         if (this.activeSort != enabledSort && this.activeSort.relatedSort != enabledSort.name) {
@@ -64136,25 +64582,13 @@ var FacetSettings = /** @class */ (function (_super) {
             });
         });
     };
-    FacetSettings.prototype.handleMouseEventOnButton = function (sortSection) {
+    FacetSettings.prototype.addOnNukeHandler = function () {
         var _this = this;
-        var closeTimeout;
-        Dom_1.$$(this.settingsButton).on('click', function (e) { return _this.handleClickSettingsButtons(e, sortSection); });
-        var mouseLeave = function () {
-            closeTimeout = window.setTimeout(function () {
-                _this.close();
-            }, 300);
-        };
-        var mouseEnter = function () {
-            clearTimeout(closeTimeout);
-        };
-        this.onDocumentClick = function (e) { return _this.close(); };
-        document.addEventListener('click', function (e) { return _this.onDocumentClick(e); });
         Dom_1.$$(this.facet.root).on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
-        Dom_1.$$(this.settingsButton).on('mouseleave', mouseLeave);
-        Dom_1.$$(this.settingsPopup).on('mouseleave', mouseLeave);
-        Dom_1.$$(this.settingsButton).on('mouseenter', mouseEnter);
-        Dom_1.$$(this.settingsPopup).on('mouseenter', mouseEnter);
+    };
+    FacetSettings.prototype.addOnDocumentClickHandler = function () {
+        var _this = this;
+        document.addEventListener('click', function () { return _this.onDocumentClick(); });
     };
     FacetSettings.prototype.getCurrentDirectionItem = function (directionSection) {
         var _this = this;
@@ -64614,6 +65048,7 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 __webpack_require__(367);
 var SVGIcons_1 = __webpack_require__(13);
 var SVGDom_1 = __webpack_require__(14);
+var AccessibleButton_1 = __webpack_require__(18);
 var FacetHeader = /** @class */ (function () {
     function FacetHeader(options) {
         this.options = options;
@@ -64748,27 +65183,33 @@ var FacetHeader = /** @class */ (function () {
         }
     };
     FacetHeader.prototype.buildTitle = function () {
-        var title = Dom_1.$$('div', {
-            title: this.options.title,
-            className: 'coveo-facet-header-title'
-        });
+        var title = Dom_1.$$('div', { className: 'coveo-facet-header-title' });
         title.text(this.options.title);
+        title.setAttribute('role', 'heading');
+        title.setAttribute('aria-level', '2');
+        title.setAttribute('aria-label', Strings_1.l('FacetTitle', this.options.title) + ".");
         return title.el;
     };
     FacetHeader.prototype.buildEraser = function () {
         var _this = this;
-        var eraser = Dom_1.$$('div', { title: Strings_1.l('Clear', this.options.title), className: 'coveo-facet-header-eraser' }, SVGIcons_1.SVGIcons.icons.mainClear);
+        var eraser = Dom_1.$$('div', { className: 'coveo-facet-header-eraser' }, SVGIcons_1.SVGIcons.icons.mainClear);
         SVGDom_1.SVGDom.addClassToSVGInContainer(eraser.el, 'coveo-facet-header-eraser-svg');
-        eraser.on('click', function () {
-            var cmp = _this.options.facet || _this.options.facetSlider;
-            cmp.reset();
-            cmp.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetClearAll, {
-                facetId: cmp.options.id,
-                facetTitle: cmp.options.title
-            });
-            cmp.queryController.executeQuery();
-        });
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(eraser.el)
+            .withLabel(Strings_1.l('Reset'))
+            .withClickAction(function () { return _this.onEraserClick(); })
+            .withEnterKeyboardAction(function () { return _this.onEraserClick(); })
+            .build();
         return eraser.el;
+    };
+    FacetHeader.prototype.onEraserClick = function () {
+        var cmp = this.options.facet || this.options.facetSlider;
+        cmp.reset();
+        cmp.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.facetClearAll, {
+            facetId: cmp.options.id,
+            facetTitle: cmp.options.title
+        });
+        cmp.queryController.executeQuery();
     };
     return FacetHeader;
 }());
@@ -65012,7 +65453,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(372);
 var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
@@ -65211,7 +65652,7 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Strings_1 = __webpack_require__(7);
 var Assert_1 = __webpack_require__(5);
 var FacetValues_1 = __webpack_require__(91);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var FacetValueElement_1 = __webpack_require__(92);
 var ExternalModulesShim_1 = __webpack_require__(23);
 var SearchInterface_1 = __webpack_require__(17);
@@ -66366,7 +66807,7 @@ exports.SubExpression = {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var Strings_1 = __webpack_require__(7);
 var InputManager = /** @class */ (function () {
     function InputManager(element, onchange, magicBox) {
@@ -66532,9 +66973,10 @@ var InputManager = /** @class */ (function () {
     InputManager.prototype.addAccessibilitiesProperties = function () {
         this.input.spellcheck = false;
         this.input.setAttribute('form', 'coveo-dummy-form');
+        this.input.setAttribute('role', 'combobox');
         this.input.setAttribute('autocomplete', 'off');
         this.input.setAttribute('aria-autocomplete', 'list');
-        this.input.setAttribute('aria-label', Strings_1.l('Search'));
+        this.input.setAttribute('title', Strings_1.l('InsertAQuery') + ". " + Strings_1.l('PressEnterToSend'));
     };
     InputManager.prototype.focus = function () {
         var _this = this;
@@ -66646,10 +67088,10 @@ var SuggestionsManager = /** @class */ (function () {
         var target = Dom_1.$$(e.target);
         var parents = target.parents(this.options.selectableClass);
         if (target.hasClass(this.options.selectableClass)) {
-            this.addSelectedClass(target.el);
+            this.processMouseSelection(target.el);
         }
         else if (parents.length > 0 && this.element.contains(parents[0])) {
-            this.addSelectedClass(parents[0]);
+            this.processMouseSelection(parents[0]);
         }
     };
     SuggestionsManager.prototype.handleMouseOut = function (e) {
@@ -66680,8 +67122,8 @@ var SuggestionsManager = /** @class */ (function () {
     SuggestionsManager.prototype.moveUp = function () {
         return this.returnMoved(this.move('up'));
     };
-    SuggestionsManager.prototype.select = function () {
-        var selected = this.element.getElementsByClassName(this.options.selectedClass).item(0);
+    SuggestionsManager.prototype.getKeyboardFocusedElement = function () {
+        var selected = this.keyboardFocusedSuggestion;
         if (selected != null) {
             Dom_1.$$(selected).trigger('keyboardSelect');
         }
@@ -66770,6 +67212,15 @@ var SuggestionsManager = /** @class */ (function () {
         Dom_1.$$(this.element).toggleClass('magic-box-hasSuggestion', this.hasSuggestions);
         Dom_1.$$(this.magicBoxContainer).setAttribute('aria-expanded', this.hasSuggestions.toString());
     };
+    SuggestionsManager.prototype.processKeyboardSelection = function (suggestion) {
+        this.addSelectedClass(suggestion);
+        this.keyboardFocusedSuggestion = suggestion;
+        Dom_1.$$(this.inputManager.input).setAttribute('aria-activedescendant', Dom_1.$$(suggestion).getAttribute('id'));
+    };
+    SuggestionsManager.prototype.processMouseSelection = function (suggestion) {
+        this.addSelectedClass(suggestion);
+        this.keyboardFocusedSuggestion = null;
+    };
     SuggestionsManager.prototype.buildSuggestionsContainer = function () {
         return Dom_1.$$('div', {
             id: 'coveo-magicbox-suggestions',
@@ -66824,11 +67275,10 @@ var SuggestionsManager = /** @class */ (function () {
         }
         var newlySelected = selectables[index];
         if (newlySelected) {
-            this.addSelectedClass(newlySelected);
-            Dom_1.$$(newlySelected).addClass(this.options.selectedClass);
-            Dom_1.$$(this.inputManager.input).setAttribute('aria-activedescendant', Dom_1.$$(newlySelected).getAttribute('id'));
+            this.processKeyboardSelection(newlySelected);
         }
         else {
+            this.keyboardFocusedSuggestion = null;
             this.inputManager.input.removeAttribute('aria-activedescendant');
         }
         return newlySelected;
@@ -67258,7 +67708,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var DefaultRecommendationTemplate = /** @class */ (function (_super) {
     __extends(DefaultRecommendationTemplate, _super);
     function DefaultRecommendationTemplate() {
@@ -67298,7 +67748,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var TemplateList_1 = __webpack_require__(73);
 var _ = __webpack_require__(0);
 var TableTemplate = /** @class */ (function (_super) {
@@ -67459,10 +67909,10 @@ var DateUtils_1 = __webpack_require__(30);
 var CurrencyUtils_1 = __webpack_require__(105);
 var HtmlUtils_1 = __webpack_require__(140);
 var Utils_1 = __webpack_require__(4);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var TimeSpanUtils_1 = __webpack_require__(57);
 var EmailUtils_1 = __webpack_require__(139);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var DeviceUtils_1 = __webpack_require__(22);
 var Dom_1 = __webpack_require__(1);
 var SearchEndpoint_1 = __webpack_require__(44);
@@ -68952,12 +69402,11 @@ var CategoryChildrenValueRenderer = /** @class */ (function () {
     CategoryChildrenValueRenderer.prototype.renderChildren = function (values) {
         var _this = this;
         underscore_1.each(values, function (value) {
-            _this.renderValue(value, true);
+            _this.renderValue(value, true).makeSelectable();
         });
     };
     CategoryChildrenValueRenderer.prototype.renderAsParent = function (value) {
         var categoryValue = this.renderValue(value, false);
-        categoryValue.showCollapseArrow();
         return categoryValue;
     };
     CategoryChildrenValueRenderer.prototype.renderValue = function (value, isChild) {
@@ -69008,7 +69457,7 @@ exports.CategoryChildrenValueRenderer = CategoryChildrenValueRenderer;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var KeyboardUtils_1 = __webpack_require__(26);
+var KeyboardUtils_1 = __webpack_require__(28);
 var FacetSearchUserInputHandler = /** @class */ (function () {
     function FacetSearchUserInputHandler(facetSearch) {
         this.facetSearch = facetSearch;
@@ -69276,7 +69725,7 @@ exports.Grammars = {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var Strings_1 = __webpack_require__(7);
-var AccessibleButton_1 = __webpack_require__(21);
+var AccessibleButton_1 = __webpack_require__(18);
 var MagicBoxClear = /** @class */ (function () {
     function MagicBoxClear(magicBox) {
         this.element = Dom_1.$$('div', {
@@ -71119,7 +71568,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var ComponentOptionsModel_1 = __webpack_require__(24);
 var OmniboxEvents_1 = __webpack_require__(31);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var SuggestionsCache_1 = __webpack_require__(353);
 var _ = __webpack_require__(0);
 var QuerySuggestAddon = /** @class */ (function () {
@@ -72283,6 +72732,41 @@ exports.NavigatorPositionProvider = NavigatorPositionProvider;
 
 "use strict";
 
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var EndpointCaller_1 = __webpack_require__(67);
 var GOOGLE_MAP_BASE_URL = 'https://www.googleapis.com/geolocation/v1/geolocate';
@@ -72298,21 +72782,27 @@ var GoogleApiPositionProvider = /** @class */ (function () {
         this.googleApiKey = googleApiKey;
     }
     GoogleApiPositionProvider.prototype.getPosition = function () {
-        return new EndpointCaller_1.EndpointCaller()
-            .call({
-            errorsAsSuccess: false,
-            method: 'POST',
-            queryString: ["key=" + this.googleApiKey],
-            requestData: {},
-            responseType: 'json',
-            url: GOOGLE_MAP_BASE_URL
-        })
-            .then(function (responseData) {
-            var location = responseData.data.location;
-            return {
-                longitude: location.lng,
-                latitude: location.lat
-            };
+        return __awaiter(this, void 0, void 0, function () {
+            var responseData, location;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, new EndpointCaller_1.EndpointCaller().call({
+                            errorsAsSuccess: false,
+                            method: 'POST',
+                            queryString: ["key=" + this.googleApiKey],
+                            requestData: {},
+                            responseType: 'json',
+                            url: GOOGLE_MAP_BASE_URL
+                        })];
+                    case 1:
+                        responseData = _a.sent();
+                        location = responseData.data.location;
+                        return [2 /*return*/, {
+                                longitude: location.lng,
+                                latitude: location.lat
+                            }];
+                }
+            });
         });
     };
     return GoogleApiPositionProvider;
@@ -72393,7 +72883,7 @@ var Logger_1 = __webpack_require__(11);
 var ExpressionBuilder_1 = __webpack_require__(55);
 var QueryBuilder_1 = __webpack_require__(36);
 var DateUtils_1 = __webpack_require__(30);
-var QueryUtils_1 = __webpack_require__(19);
+var QueryUtils_1 = __webpack_require__(20);
 var FacetSliderQueryController = /** @class */ (function () {
     function FacetSliderQueryController(facet) {
         var _this = this;
@@ -88803,7 +89293,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var Dom_1 = __webpack_require__(1);
 var Globalize = __webpack_require__(25);
 var DefaultMatrixResultPreviewTemplate = /** @class */ (function (_super) {
@@ -88900,7 +89390,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var DefaultQuickviewTemplate = /** @class */ (function (_super) {
     __extends(DefaultQuickviewTemplate, _super);
     function DefaultQuickviewTemplate() {
@@ -89495,7 +89985,7 @@ var ResponsiveDropdownHeader_1 = __webpack_require__(320);
 var ResponsiveDropdown_1 = __webpack_require__(155);
 var Strings_1 = __webpack_require__(7);
 var Component_1 = __webpack_require__(6);
-var RegisteredNamedMethods_1 = __webpack_require__(27);
+var RegisteredNamedMethods_1 = __webpack_require__(26);
 var QueryEvents_1 = __webpack_require__(10);
 var _ = __webpack_require__(0);
 __webpack_require__(460);
@@ -89822,7 +90312,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var DefaultResultAttachmentTemplate = /** @class */ (function (_super) {
     __extends(DefaultResultAttachmentTemplate, _super);
     function DefaultResultAttachmentTemplate() {
@@ -89859,7 +90349,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 var DefaultFoldingTemplate = /** @class */ (function (_super) {
     __extends(DefaultFoldingTemplate, _super);
     function DefaultFoldingTemplate() {
@@ -90705,9 +91195,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var CategoryValueChildrenRenderer_1 = __webpack_require__(363);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
+var AccessibleButton_1 = __webpack_require__(18);
+var Strings_1 = __webpack_require__(7);
 var CategoryValue = /** @class */ (function () {
     function CategoryValue(listRoot, categoryValueDescriptor, categoryFacetTemplates, categoryFacet) {
-        var _this = this;
         this.listRoot = listRoot;
         this.categoryValueDescriptor = categoryValueDescriptor;
         this.categoryFacetTemplates = categoryFacetTemplates;
@@ -90717,10 +91208,8 @@ var CategoryValue = /** @class */ (function () {
             value: this.categoryValueDescriptor.value,
             count: this.categoryValueDescriptor.count
         });
-        this.label = Dom_1.$$(this.element.find('.coveo-category-facet-value-label'));
         this.collapseArrow = this.categoryFacetTemplates.buildCollapseArrow();
         this.categoryChildrenValueRenderer = new CategoryValueChildrenRenderer_1.CategoryChildrenValueRenderer(this.element, categoryFacetTemplates, this, this.categoryFacet);
-        this.label.one('click', function () { return _this.onLabelClick(); });
         this.path = this.categoryValueDescriptor.path;
     }
     CategoryValue.prototype.render = function (isChild) {
@@ -90761,16 +91250,29 @@ var CategoryValue = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    CategoryValue.prototype.makeSelectable = function () {
+        var _this = this;
+        this.label = Dom_1.$$(this.element.find('.coveo-category-facet-value-label'));
+        this.label.addClass('coveo-selectable');
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(this.label)
+            .withSelectAction(function () { return _this.onSelect(); })
+            .withLabel(Strings_1.l(this.categoryValueDescriptor.value) + " " + this.categoryValueDescriptor.count)
+            .build();
+        return this;
+    };
     CategoryValue.prototype.showCollapseArrow = function () {
         if (!this.collapseArrow.el.parentElement) {
             var label = this.element.find('label');
             Dom_1.$$(label).prepend(this.collapseArrow.el);
         }
+        return this;
     };
-    CategoryValue.prototype.onLabelClick = function () {
+    CategoryValue.prototype.onSelect = function () {
         if (!this.pastMaximumDepth()) {
-            this.categoryFacet.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect);
+            this.categoryFacet.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect, this.path);
             this.categoryFacet.changeActivePath(this.path);
+            this.categoryFacet.executeQuery();
         }
     };
     CategoryValue.prototype.pastMaximumDepth = function () {
@@ -90946,8 +91448,9 @@ var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var Strings_1 = __webpack_require__(7);
 __webpack_require__(493);
-var StringUtils_1 = __webpack_require__(18);
+var StringUtils_1 = __webpack_require__(19);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
+var AccessibleButton_1 = __webpack_require__(18);
 var CategoryFacetSearch = /** @class */ (function () {
     function CategoryFacetSearch(categoryFacet) {
         var _this = this;
@@ -91006,7 +91509,10 @@ var CategoryFacetSearch = /** @class */ (function () {
         if (this.facetSearchElement.currentResult) {
             var currentResultPathData = this.facetSearchElement.currentResult.el.dataset.path;
             var delimiter = this.categoryFacet.options.delimitingCharacter;
-            this.categoryFacet.changeActivePath(currentResultPathData.split(delimiter));
+            var path = currentResultPathData.split(delimiter);
+            this.categoryFacet.changeActivePath(path);
+            this.categoryFacet.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect, path);
+            this.categoryFacet.executeQuery();
         }
     };
     CategoryFacetSearch.prototype.handleClickElsewhere = function (e) {
@@ -91083,9 +91589,15 @@ var CategoryFacetSearch = /** @class */ (function () {
         var secondRow = Dom_1.$$('div', { className: 'coveo-category-facet-search-second-row' }, pathToValueCaption);
         var item = Dom_1.$$('li', { className: 'coveo-category-facet-search-value' }, firstRow, secondRow);
         item.el.dataset.path = categoryFacetValue.value;
-        item.on('click', function () {
-            _this.categoryFacet.changeActivePath(categoryFacetValue.value.split(_this.categoryFacet.options.delimitingCharacter));
-        });
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(item)
+            .withSelectAction(function () {
+            _this.categoryFacet.changeActivePath(path);
+            _this.categoryFacet.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect, path);
+            _this.categoryFacet.executeQuery();
+        })
+            .withLabel(Strings_1.l(underscore_1.last(path)) + " " + categoryFacetValue.numberOfResults)
+            .build();
         return item;
     };
     CategoryFacetSearch.prototype.noFacetSearchResults = function () {
@@ -91970,7 +92482,7 @@ var YouTubeThumbnail_1 = __webpack_require__(131);
 YouTubeThumbnail_1.YouTubeThumbnail.doExport();
 var YouTubeThumbnailFields_1 = __webpack_require__(151);
 YouTubeThumbnailFields_1.registerFields();
-var Template_1 = __webpack_require__(20);
+var Template_1 = __webpack_require__(21);
 exports.Template = Template_1.Template;
 var Checkbox_1 = __webpack_require__(58);
 Checkbox_1.Checkbox.doExport();

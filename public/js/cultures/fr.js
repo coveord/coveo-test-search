@@ -850,6 +850,14 @@ var dict = {
   "Toggle": "Basculer",
   "FilterOn": "Filtrer sur {0}",
   "RemoveFilterOn": "Enlever le filtre sur {0}",
+  "Enter": "Entrée",
+  "InsertAQuery": "Insérer une requête",
+  "PressEnterToSend": "Appuyez sur Entrée pour envoyer",
+  "SortResultsBy": "Trier les résultats par {0}",
+  "DisplayResultsAs": "Afficher les résultats comme {0}",
+  "FacetTitle": "Facette {0}",
+  "SelectValueWithResultCount": "Sélectionnez {0} avec {1}",
+  "UnselectValueWithResultCount": "Désélectionnez {0} avec {1}",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["fr"] = merge(locales["fr"], dict);
@@ -1632,6 +1640,14 @@ var dict = {
   "Toggle": "Basculer",
   "FilterOn": "Filtrer sur {0}",
   "RemoveFilterOn": "Enlever le filtre sur {0}",
+  "Enter": "Entrée",
+  "InsertAQuery": "Insérer une requête",
+  "PressEnterToSend": "Appuyez sur Entrée pour envoyer",
+  "SortResultsBy": "Trier les résultats par {0}",
+  "DisplayResultsAs": "Afficher les résultats comme {0}",
+  "FacetTitle": "Facette {0}",
+  "SelectValueWithResultCount": "Sélectionnez {0} avec {1}",
+  "UnselectValueWithResultCount": "Désélectionnez {0} avec {1}",
 }
 
   var locales = String["locales"] || (String["locales"] = {});

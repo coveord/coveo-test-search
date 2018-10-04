@@ -804,6 +804,14 @@ var dict = {
   "Toggle": "Toggle",
   "FilterOn": "Filter on {0}",
   "RemoveFilterOn": "Remove filter on {0}",
+  "Enter": "Enter",
+  "InsertAQuery": "Insert a query",
+  "PressEnterToSend": "Press enter to send",
+  "SortResultsBy": "Sort results by {0}",
+  "DisplayResultsAs": "Display results as {0}",
+  "FacetTitle": "{0} facet",
+  "SelectValueWithResultCount": "Select {0} with {1}",
+  "UnselectValueWithResultCount": "Unselect {0} with {1}",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1586,6 +1594,14 @@ var dict = {
   "Toggle": "Toggle",
   "FilterOn": "Filter on {0}",
   "RemoveFilterOn": "Remove filter on {0}",
+  "Enter": "Enter",
+  "InsertAQuery": "Insert a query",
+  "PressEnterToSend": "Press enter to send",
+  "SortResultsBy": "Sort results by {0}",
+  "DisplayResultsAs": "Display results as {0}",
+  "FacetTitle": "{0} facet",
+  "SelectValueWithResultCount": "Select {0} with {1}",
+  "UnselectValueWithResultCount": "Unselect {0} with {1}",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
