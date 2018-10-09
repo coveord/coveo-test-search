@@ -8771,6 +8771,14 @@ input[type=checkbox].coveo-checkbox + button {
   min-width: 18px;
 }
 
+.coveo-visible-to-screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /*
 * @param direction vertical or horizontal
 * @param position type of positioning to apply (relative/absolute)
@@ -10176,10 +10184,6 @@ a.CoveoResultLink.coveo-selected *,
   display: none;
 }
 
-.coveo-facet-settings-popup {
-  z-index: 999;
-}
-
 /*
 * @param direction vertical or horizontal
 * @param position type of positioning to apply (relative/absolute)
@@ -11149,7 +11153,7 @@ a.CoveoResultLink.coveo-selected *,
   overflow: hidden;
   border: thin solid #bcc3ca;
   border-radius: 2px;
-  z-index: 11;
+  z-index: 999;
   background-color: white;
 }
 
@@ -16414,10 +16418,25 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-category-facet-search-path {
   display: block;
   font-size: 11px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .coveo-category-facet-search-path-parents {
   color: #67768b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 5px;
+  direction: rtl;
+}
+
+.coveo-category-facet-search-path-last-value {
+  white-space: nowrap;
 }
 
 .coveo-category-facet-search-second-row {
