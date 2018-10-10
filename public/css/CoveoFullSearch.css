@@ -16110,6 +16110,10 @@ a.coveo-folding-show-less.coveo-selected * {
   display: none;
 }
 
+.CoveoCategoryFacet .coveo-accessible-button {
+  outline: none;
+}
+
 .coveo-category-facet-values-fade .coveo-category-facet-child-value {
   opacity: 0.5;
 }
@@ -16143,6 +16147,7 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-active-category-facet-parent {
   font-weight: bold;
+  margin-left: 15px;
 }
 
 .coveo-category-facet-non-empty-path .coveo-category-facet-child-value .coveo-category-facet-value-label {
@@ -16323,7 +16328,8 @@ a.coveo-folding-show-less.coveo-selected * {
   margin: 0;
 }
 
-.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:hover {
+.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:hover,
+.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:focus {
   background-color: #e6ecf0;
 }
 

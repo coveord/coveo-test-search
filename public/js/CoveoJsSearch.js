@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "f5caed908cbf912fcf62" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "6bc4bc84a0edb143c1d8" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -19099,8 +19099,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.4-beta',
-    product: '2.4710.4-beta',
+    lib: '2.4710.5-beta',
+    product: '2.4710.5-beta',
     supportedApiVersion: 2
 };
 
@@ -36433,6 +36433,7 @@ var Tab = /** @class */ (function (_super) {
             .withElement(element)
             .withSelectAction(function () { return _this.select(); })
             .withLabel(_this.options.caption)
+            .withTitle(_this.options.caption)
             .withOwner(_this.bind)
             .build();
         _this.render();
@@ -91606,7 +91607,20 @@ var CategoryFacetSearch = /** @class */ (function () {
         this.numberOfValuesToFetch = this.categoryFacet.options.numberOfResultsInFacetSearch;
     }
     CategoryFacetSearch.prototype.build = function () {
-        this.container = Dom_1.$$('div', { className: 'coveo-category-facet-search-container' });
+        var _this = this;
+        this.container = Dom_1.$$('div', {
+            className: 'coveo-category-facet-search-container',
+            role: 'heading',
+            'aria-level': 3
+        });
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(this.container)
+            .withSelectAction(function () {
+            Dom_1.$$(_this.categoryFacet.element).addClass('coveo-category-facet-searching');
+            _this.focus();
+        })
+            .withLabel(Strings_1.l('Search'))
+            .build();
         var search = this.facetSearchElement.build();
         var searchPlaceholder = this.buildfacetSearchPlaceholder();
         this.container.append(search);
@@ -91665,12 +91679,7 @@ var CategoryFacetSearch = /** @class */ (function () {
         }
     };
     CategoryFacetSearch.prototype.buildfacetSearchPlaceholder = function () {
-        var _this = this;
         var placeholder = Dom_1.$$('div', { className: 'coveo-category-facet-search-placeholder' });
-        placeholder.on('click', function () {
-            Dom_1.$$(_this.categoryFacet.element).addClass('coveo-category-facet-searching');
-            _this.focus();
-        });
         var icon = Dom_1.$$('div', { className: 'coveo-category-facet-search-icon' }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
         SVGDom_1.SVGDom.addClassToSVGInContainer(icon.el, 'coveo-category-facet-search-icon-svg');
         var label = Dom_1.$$('span', { className: 'coveo-category-facet-search-label' }, Strings_1.l('Search'));
@@ -91700,7 +91709,9 @@ var CategoryFacetSearch = /** @class */ (function () {
                         }
                         this.removeNoResultsCssClasses();
                         this.setFacetSearchResults(categoryFacetValues);
-                        this.facetSearchElement.positionSearchResults(this.categoryFacet.root, this.categoryFacet.element.clientWidth, this.facetSearchElement.search);
+                        if (this.shouldPositionSearchResults) {
+                            this.facetSearchElement.positionSearchResults(this.categoryFacet.root, this.categoryFacet.element.clientWidth, this.facetSearchElement.search);
+                        }
                         this.facetSearchElement.hideFacetSearchWaitingAnimation();
                         return [2 /*return*/];
                 }
@@ -91767,6 +91778,14 @@ var CategoryFacetSearch = /** @class */ (function () {
             categoryFacetTitle: this.categoryFacet.options.title
         }, this.categoryFacet.root);
     };
+    Object.defineProperty(CategoryFacetSearch.prototype, "shouldPositionSearchResults", {
+        get: function () {
+            var searchResults = this.facetSearchElement.searchResults;
+            return searchResults && !searchResults.parentElement;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return CategoryFacetSearch;
 }());
 exports.CategoryFacetSearch = CategoryFacetSearch;
