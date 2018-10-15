@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "6bc4bc84a0edb143c1d8" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "566111bb34ac6567adca" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -19099,8 +19099,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.5-beta',
-    product: '2.4710.5-beta',
+    lib: '2.4710.6-beta',
+    product: '2.4710.6-beta',
     supportedApiVersion: 2
 };
 
@@ -37564,6 +37564,7 @@ var Strings_1 = __webpack_require__(7);
 var Component_1 = __webpack_require__(6);
 var underscore_1 = __webpack_require__(0);
 var RegisteredNamedMethods_1 = __webpack_require__(26);
+var underscore_2 = __webpack_require__(0);
 var QuerySummaryUtils = /** @class */ (function () {
     function QuerySummaryUtils() {
     }
@@ -37641,7 +37642,7 @@ var QuerySummaryUtils = /** @class */ (function () {
         return { first: first, last: last, totalCount: totalCount, query: query };
     };
     QuerySummaryUtils.sanitizeQuery = function (query) {
-        return query.q ? escape(query.q.trim()) : '';
+        return query.q ? underscore_2.escape(query.q.trim()) : '';
     };
     return QuerySummaryUtils;
 }());
@@ -65528,6 +65529,7 @@ var FacetSearchElement = /** @class */ (function () {
     };
     FacetSearchElement.prototype.hideSearchResultsElement = function () {
         Dom_1.$$(this.searchResults).hide();
+        Dom_1.$$(this.searchResults).remove();
     };
     FacetSearchElement.prototype.clearSearchInput = function () {
         if (this.input) {
@@ -91733,13 +91735,11 @@ var CategoryFacetSearch = /** @class */ (function () {
     CategoryFacetSearch.prototype.buildFacetSearchValue = function (categoryFacetValue) {
         var _this = this;
         var path = categoryFacetValue.value.split(this.categoryFacet.options.delimitingCharacter);
-        var pathLastValue = path.length > 1 ? underscore_1.last(path) : '';
         var pathParents = path.slice(0, -1).length != 0 ? path.slice(0, -1).join('/') + "/" : '';
         var value = Dom_1.$$('span', { className: 'coveo-category-facet-search-value-caption' }, underscore_1.last(path));
         var number = Dom_1.$$('span', { className: 'coveo-category-facet-search-value-number' }, categoryFacetValue.numberOfResults.toString(10));
         var pathParentsCaption = Dom_1.$$('span', { className: 'coveo-category-facet-search-path-parents' }, pathParents);
-        var pathValue = Dom_1.$$('span', { className: 'coveo-category-facet-search-path-last-value' }, pathLastValue);
-        var pathToValueCaption = Dom_1.$$('span', { className: 'coveo-category-facet-search-path' }, pathParentsCaption, pathValue);
+        var pathToValueCaption = Dom_1.$$('span', { className: 'coveo-category-facet-search-path' }, pathParentsCaption);
         var firstRow = Dom_1.$$('div', { className: 'coveo-category-facet-search-first-row' }, value, number);
         var secondRow = Dom_1.$$('div', { className: 'coveo-category-facet-search-second-row' }, pathToValueCaption);
         var item = Dom_1.$$('li', {
