@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "566111bb34ac6567adca" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "1579f9b1aa56b7739983" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -10758,7 +10758,6 @@ var Utils_1 = __webpack_require__(4);
 var DefaultQueryOptions = /** @class */ (function () {
     function DefaultQueryOptions() {
         this.searchAsYouType = false;
-        this.closeModalBox = true;
         this.cancel = false;
         this.logInActionsHistory = false;
         this.shouldRedirectStandaloneSearchbox = true;
@@ -10783,6 +10782,8 @@ var QueryController = /** @class */ (function (_super) {
         _this.options = options;
         _this.usageAnalytics = usageAnalytics;
         _this.searchInterface = searchInterface;
+        _this.modalBox = ExternalModulesShim_1.ModalBox;
+        _this.closeModalBox = true;
         _this.showingExecutingQueryAnimation = false;
         _this.localStorage = new LocalStorageUtils_1.LocalStorageUtils('lastQueryHash');
         Assert_1.Assert.exists(element);
@@ -10834,9 +10835,7 @@ var QueryController = /** @class */ (function (_super) {
     QueryController.prototype.executeQuery = function (options) {
         var _this = this;
         options = _.extend(new DefaultQueryOptions(), options);
-        if (options.closeModalBox) {
-            ExternalModulesShim_1.ModalBox.close(true);
-        }
+        this.closeModalBoxIfNeeded(options ? options.closeModalBox : undefined);
         this.logger.debug('Executing new query');
         this.cancelAnyCurrentPendingQuery();
         if (options.beforeExecuteQuery != null) {
@@ -11089,6 +11088,11 @@ var QueryController = /** @class */ (function (_super) {
         }
         this.loadLastQueryHash();
         return this.lastQueryHash || this.queryHash(new QueryBuilder_1.QueryBuilder().build());
+    };
+    QueryController.prototype.closeModalBoxIfNeeded = function (needed) {
+        if (needed != undefined ? needed : this.closeModalBox) {
+            this.modalBox.close(true);
+        }
     };
     QueryController.prototype.getLastSearchUid = function () {
         if (this.lastSearchUid != null) {
@@ -19099,8 +19103,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.6-beta',
-    product: '2.4710.6-beta',
+    lib: '2.4710.7-beta',
+    product: '2.4710.7-beta',
     supportedApiVersion: 2
 };
 
