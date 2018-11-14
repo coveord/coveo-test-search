@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "1579f9b1aa56b7739983" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "4e6ed6227aa7a32e2bcb" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -7409,6 +7409,7 @@ var SearchInterface = /** @class */ (function (_super) {
         this.responsiveComponents = new ResponsiveComponents_1.ResponsiveComponents();
         this.responsiveComponents.setMediumScreenWidth(this.options.responsiveMediumBreakpoint);
         this.responsiveComponents.setSmallScreenWidth(this.options.responsiveSmallBreakpoint);
+        this.responsiveComponents.setResponsiveMode(this.options.responsiveMode);
     };
     SearchInterface.prototype.handleDebugModeChange = function (args) {
         var _this = this;
@@ -8025,6 +8026,28 @@ var SearchInterface = /** @class */ (function (_super) {
         responsiveSmallBreakpoint: ComponentOptions_1.ComponentOptions.buildNumberOption({
             defaultValue: ResponsiveComponents_1.SMALL_SCREEN_WIDTH,
             depend: 'enableAutomaticResponsiveMode'
+        }),
+        /**
+         * Specifies the search interface responsive mode that should be used.
+         *
+         * When the mode is auto, the width of the window/device that displays the search page is used to determine which layout the search page should use
+         * (see [enableAutomaticResponsiveMode]{@link SearchInterface.options.enableAutomaticResponsiveMode}, [responsiveMediumBreakpoint]{@link SearchInterface.options.responsiveMediumBreakpoint}
+         * and [responsiveSmallBreakpoint{@link SearchInterface.options.responsiveSmallBreakpoint}])
+         *
+         * When it's not on auto, the width is ignored and the the layout used depends on this option
+         * (e.g. If set to "small", then the search interface layout will be the same as if it was on a narrow window/device)
+         */
+        responsiveMode: ComponentOptions_1.ComponentOptions.buildCustomOption(function (value) {
+            // Validator function for the string passed, verify it's one of the accepted values.
+            if (value === 'auto' || value === 'small' || value === 'medium' || value === 'large') {
+                return value;
+            }
+            else {
+                console.warn(value + " is not a proper value for responsiveMode, auto has been used instead.");
+                return 'auto';
+            }
+        }, {
+            defaultValue: 'auto'
         })
     };
     SearchInterface.SMALL_INTERFACE_CLASS_NAME = 'coveo-small-search-interface';
@@ -12876,12 +12899,14 @@ var ResponsiveComponents = /** @class */ (function () {
     function ResponsiveComponents(windoh) {
         if (windoh === void 0) { windoh = window; }
         this.windoh = windoh;
+        this.responsiveMode = 'auto';
     }
     /**
      * Set the breakpoint for small screen size.
      * @param width
      */
     ResponsiveComponents.prototype.setSmallScreenWidth = function (width) {
+        Assert_1.Assert.check(this.responsiveMode === 'auto', "Cannot modify medium screen width if responsiveMode is locked on " + this.responsiveMode + ".");
         Assert_1.Assert.check(width < this.getMediumScreenWidth(), "Cannot set small screen width (" + width + ") larger or equal to the current medium screen width (" + this.getMediumScreenWidth() + ")");
         this.smallScreenWidth = width;
     };
@@ -12890,8 +12915,12 @@ var ResponsiveComponents = /** @class */ (function () {
      * @param width
      */
     ResponsiveComponents.prototype.setMediumScreenWidth = function (width) {
+        Assert_1.Assert.check(this.responsiveMode === 'auto', "Cannot modify medium screen width if responsiveMode is locked on " + this.responsiveMode + ".");
         Assert_1.Assert.check(width > this.getSmallScreenWidth(), "Cannot set medium screen width (" + width + ") smaller or equal to the current small screen width (" + this.getSmallScreenWidth() + ")");
         this.mediumScreenWidth = width;
+    };
+    ResponsiveComponents.prototype.setResponsiveMode = function (responsiveMode) {
+        this.responsiveMode = responsiveMode;
     };
     /**
      * Get the current breakpoint for small screen size.
@@ -12900,6 +12929,12 @@ var ResponsiveComponents = /** @class */ (function () {
      * @returns {number}
      */
     ResponsiveComponents.prototype.getSmallScreenWidth = function () {
+        if (this.responsiveMode === 'small') {
+            return Number.POSITIVE_INFINITY;
+        }
+        if (this.responsiveMode !== 'auto') {
+            return 0;
+        }
         if (this.smallScreenWidth == null) {
             return exports.SMALL_SCREEN_WIDTH;
         }
@@ -12912,10 +12947,22 @@ var ResponsiveComponents = /** @class */ (function () {
      * @returns {number}
      */
     ResponsiveComponents.prototype.getMediumScreenWidth = function () {
+        if (this.responsiveMode === 'medium') {
+            return Number.POSITIVE_INFINITY;
+        }
+        if (this.responsiveMode !== 'auto') {
+            return 0;
+        }
         if (this.mediumScreenWidth == null) {
             return exports.MEDIUM_SCREEN_WIDTH;
         }
         return this.mediumScreenWidth;
+    };
+    /** Return the current responsive mode.
+     * @returns {ValidResponsiveMode}
+     */
+    ResponsiveComponents.prototype.getResponsiveMode = function () {
+        return this.responsiveMode;
     };
     /**
      * Return true if the current screen size is smaller than the current breakpoint set for small screen width.
@@ -14279,7 +14326,7 @@ var UrlUtils = /** @class */ (function () {
             var paired = underscore_1.pairs(toNormalize.query);
             var mapped = paired.map(function (pair) {
                 var key = pair[0], value = pair[1];
-                if (!value || !key) {
+                if (UrlUtils.isInvalidQueryStringValue(value) || UrlUtils.isInvalidQueryStringValue(key)) {
                     return '';
                 }
                 if (!_this.isEncoded(value)) {
@@ -14349,6 +14396,12 @@ var UrlUtils = /** @class */ (function () {
     };
     UrlUtils.isEncoded = function (value) {
         return value != decodeURIComponent(value);
+    };
+    UrlUtils.isInvalidQueryStringValue = function (value) {
+        if (underscore_1.isString(value)) {
+            return Utils_1.Utils.isEmptyString(value);
+        }
+        return Utils_1.Utils.isNullOrUndefined(value);
     };
     return UrlUtils;
 }());
@@ -19103,8 +19156,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.7-beta',
-    product: '2.4710.7-beta',
+    lib: '2.4710.9-beta',
+    product: '2.4710.9-beta',
     supportedApiVersion: 2
 };
 
@@ -22184,7 +22237,7 @@ var FieldValue = /** @class */ (function (_super) {
         else {
             element.appendChild(document.createTextNode(toRender));
         }
-        this.bindEventOnValue(element, value);
+        this.bindEventOnValue(element, value, toRender);
         return element;
     };
     FieldValue.prototype.getValueContainer = function () {
@@ -22249,7 +22302,7 @@ var FieldValue = /** @class */ (function (_super) {
         // Add a class to the container so the value and the caption wrap together.
         Dom_1.$$(elem).addClass('coveo-with-label');
     };
-    FieldValue.prototype.bindEventOnValue = function (element, value) {
+    FieldValue.prototype.bindEventOnValue = function (element, originalFacetValue, renderedFacetValue) {
         var _this = this;
         var facetAttributeName = QueryStateModel_1.QueryStateModel.getFacetId(this.options.facet);
         var facets = underscore_1.filter(this.componentStateModel.get(facetAttributeName), function (possibleFacetComponent) {
@@ -22273,13 +22326,15 @@ var FieldValue = /** @class */ (function (_super) {
         var atLeastOneFacetIsEnabled = facets.length > 0;
         if (atLeastOneFacetIsEnabled) {
             var selected_1 = underscore_1.find(facets, function (facet) {
-                var facetValue = facet.values.get(value);
+                var facetValue = facet.values.get(originalFacetValue);
                 return facetValue && facetValue.selected;
             });
+            var label = selected_1 ? Strings_1.l('RemoveFilterOn', renderedFacetValue) : Strings_1.l('FilterOn', renderedFacetValue);
             new AccessibleButton_1.AccessibleButton()
-                .withLabel(selected_1 ? Strings_1.l('RemoveFilterOn', value) : Strings_1.l('FilterOn', value))
+                .withTitle(label)
+                .withLabel(label)
                 .withElement(element)
-                .withSelectAction(function () { return _this.handleSelection(selected_1, facets, value); })
+                .withSelectAction(function () { return _this.handleSelection(selected_1, facets, originalFacetValue); })
                 .build();
             if (selected_1) {
                 Dom_1.$$(element).addClass('coveo-selected');
@@ -22438,6 +22493,41 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(391);
 __webpack_require__(392);
@@ -22699,13 +22789,17 @@ var ResultList = /** @class */ (function (_super) {
             _this.usageAnalytics.logCustomEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.pagerScrolling, {}, _this.element);
             var results = data.results;
             _this.reachedTheEndOfResults = count > data.results.length;
-            _this.buildResults(data).then(function (elements) {
-                _this.renderResults(elements, true);
-                underscore_1.each(results, function (result) {
-                    _this.currentlyDisplayedResults.push(result);
+            _this.buildResults(data).then(function (elements) { return __awaiter(_this, void 0, void 0, function () {
+                var _this = this;
+                return __generator(this, function (_a) {
+                    this.renderResults(elements, true);
+                    underscore_1.each(results, function (result) {
+                        _this.currentlyDisplayedResults.push(result);
+                    });
+                    this.triggerNewResultsDisplayed();
+                    return [2 /*return*/];
                 });
-                _this.triggerNewResultsDisplayed();
-            });
+            }); });
         });
         this.fetchingMoreResults.finally(function () {
             _this.hideWaitingAnimationForInfiniteScrolling();
@@ -22794,18 +22888,25 @@ var ResultList = /** @class */ (function (_super) {
         ResultList.resultCurrentlyBeingRendered = undefined;
         this.reachedTheEndOfResults = data.query.numberOfResults > data.results.results.length;
         this.currentlyDisplayedResults = [];
-        this.buildResults(data.results).then(function (elements) {
-            _this.renderResults(elements);
-            _this.showOrHideElementsDependingOnState(true, _this.currentlyDisplayedResults.length != 0);
-            if (DeviceUtils_1.DeviceUtils.isMobileDevice() && _this.options.mobileScrollContainer != undefined) {
-                _this.options.mobileScrollContainer.scrollTop = 0;
-            }
-            if (_this.options.enableInfiniteScroll && results.results.length == data.queryBuilder.numberOfResults) {
-                // This will check right away if we need to add more results to make the scroll container full & scrolling.
-                _this.scrollBackToTop();
-                _this.handleScrollOfResultList();
-            }
-        });
+        this.buildResults(data.results).then(function (elements) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.renderResults(elements)];
+                    case 1:
+                        _a.sent();
+                        this.showOrHideElementsDependingOnState(true, this.currentlyDisplayedResults.length != 0);
+                        if (DeviceUtils_1.DeviceUtils.isMobileDevice() && this.options.mobileScrollContainer != undefined) {
+                            this.options.mobileScrollContainer.scrollTop = 0;
+                        }
+                        if (this.options.enableInfiniteScroll && results.results.length == data.queryBuilder.numberOfResults) {
+                            // This will check right away if we need to add more results to make the scroll container full & scrolling.
+                            this.scrollBackToTop();
+                            this.handleScrollOfResultList();
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        }); });
     };
     ResultList.prototype.handleScrollOfResultList = function () {
         if (this.isCurrentlyFetchingMoreResults() || !this.options.enableInfiniteScroll) {
@@ -22879,9 +22980,12 @@ var ResultList = /** @class */ (function (_super) {
                     new InitializationPlaceholder_1.InitializationPlaceholder(this.root).withVisibleRootElement().withPlaceholderForResultList();
                 }
                 Defer_1.Defer.defer(function () {
-                    _this.buildResults(args.results).then(function (elements) {
-                        _this.renderResults(elements);
-                    });
+                    _this.buildResults(args.results).then(function (elements) { return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            this.renderResults(elements);
+                            return [2 /*return*/];
+                        });
+                    }); });
                 });
             }
         }
@@ -90834,23 +90938,23 @@ exports.SearchAlertsMessage = SearchAlertsMessage;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Dom_1 = __webpack_require__(1);
+__webpack_require__(485);
+var underscore_1 = __webpack_require__(0);
 var InitializationEvents_1 = __webpack_require__(15);
-var PopupUtils_1 = __webpack_require__(70);
-var EventsUtils_1 = __webpack_require__(154);
-var Utils_1 = __webpack_require__(4);
 var Logger_1 = __webpack_require__(11);
+var Strings_1 = __webpack_require__(7);
+var Dom_1 = __webpack_require__(1);
+var EventsUtils_1 = __webpack_require__(154);
+var PopupUtils_1 = __webpack_require__(70);
+var SVGDom_1 = __webpack_require__(14);
+var SVGIcons_1 = __webpack_require__(13);
+var Utils_1 = __webpack_require__(4);
 var Component_1 = __webpack_require__(6);
 var SearchInterface_1 = __webpack_require__(17);
 var Tab_1 = __webpack_require__(144);
+var ResponsiveComponents_1 = __webpack_require__(43);
 var ResponsiveComponentsManager_1 = __webpack_require__(79);
 var ResponsiveComponentsUtils_1 = __webpack_require__(90);
-var Strings_1 = __webpack_require__(7);
-var ResponsiveComponents_1 = __webpack_require__(43);
-var _ = __webpack_require__(0);
-__webpack_require__(485);
-var SVGIcons_1 = __webpack_require__(13);
-var SVGDom_1 = __webpack_require__(14);
 var ResponsiveTabs = /** @class */ (function () {
     function ResponsiveTabs(coveoRoot, ID) {
         this.coveoRoot = coveoRoot;
@@ -90864,6 +90968,7 @@ var ResponsiveTabs = /** @class */ (function () {
         this.tabSection = Dom_1.$$(this.coveoRoot.find('.coveo-tab-section'));
         this.manageTabSwapping();
         this.bindNukeEvents();
+        this.initialTabOrder = this.tabsInTabSection.slice();
     }
     ResponsiveTabs.init = function (root, component, options) {
         this.logger = new Logger_1.Logger('ResponsiveTabs');
@@ -90880,12 +90985,11 @@ var ResponsiveTabs = /** @class */ (function () {
         else if (!this.needSmallMode() && ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.isSmallTabsActivated(this.coveoRoot)) {
             this.changeToLargeMode();
         }
-        var tabs = this.getTabsInTabSection();
         if (this.shouldAddTabsToDropdown()) {
-            this.addTabsToDropdown(tabs);
+            this.addTabsToDropdown();
         }
         else if (this.shouldRemoveTabsFromDropdown()) {
-            this.removeTabsFromDropdown(tabs);
+            this.removeTabsFromDropdown();
         }
         if (this.dropdownHeader.hasClass('coveo-dropdown-header-active')) {
             this.positionPopup();
@@ -90916,9 +91020,9 @@ var ResponsiveTabs = /** @class */ (function () {
     ResponsiveTabs.prototype.shouldAddTabsToDropdown = function () {
         return this.isOverflowing(this.tabSection.el) && ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.isSmallTabsActivated(this.coveoRoot);
     };
-    ResponsiveTabs.prototype.addTabsToDropdown = function (tabs) {
+    ResponsiveTabs.prototype.addTabsToDropdown = function () {
         var currentTab;
-        if (!this.tabSection.find('.coveo-tab-dropdown-header')) {
+        if (!this.tabSection.find("." + ResponsiveTabs.TAB_IN_DROPDOWN_HEADER_CSS_CLASS)) {
             var facetDropdownHeader = this.tabSection.find('.coveo-facet-dropdown-header');
             if (facetDropdownHeader) {
                 this.dropdownHeader.insertBefore(facetDropdownHeader);
@@ -90927,12 +91031,12 @@ var ResponsiveTabs = /** @class */ (function () {
                 this.tabSection.el.appendChild(this.dropdownHeader.el);
             }
         }
-        for (var i = tabs.length - 1; i >= 0; i--) {
-            currentTab = tabs[i];
-            if (Dom_1.$$(currentTab).hasClass('coveo-selected') && i > 0) {
-                currentTab = tabs[--i];
+        for (var i = this.initialTabOrder.length - 1; i >= 0; i--) {
+            currentTab = this.initialTabOrder[i];
+            if (this.tabIsSelected(currentTab) && i > 0) {
+                currentTab = this.initialTabOrder[--i];
             }
-            this.addToDropdown(currentTab);
+            this.addToDropdownIfNeeded(currentTab);
             if (!this.isOverflowing(this.tabSection.el)) {
                 break;
             }
@@ -90941,53 +91045,44 @@ var ResponsiveTabs = /** @class */ (function () {
     ResponsiveTabs.prototype.shouldRemoveTabsFromDropdown = function () {
         return (!this.isOverflowing(this.tabSection.el) && ResponsiveComponentsUtils_1.ResponsiveComponentsUtils.isSmallTabsActivated(this.coveoRoot) && !this.isDropdownEmpty());
     };
-    ResponsiveTabs.prototype.removeTabsFromDropdown = function (tabs) {
-        var dropdownTabs = this.dropdownContent.findAll('.coveo-tab-dropdown');
-        var lastTabInSection, current;
-        if (tabs) {
-            lastTabInSection = tabs.pop();
-        }
+    ResponsiveTabs.prototype.removeTabsFromDropdown = function () {
+        var _this = this;
+        var dropdownTabs = this.tabsInTabDropdown;
+        var current;
         while (!this.isOverflowing(this.tabSection.el) && !this.isDropdownEmpty()) {
             current = dropdownTabs.shift();
-            this.removeFromDropdown(current);
-            this.fromDropdownToTabSection(Dom_1.$$(current), lastTabInSection);
-            lastTabInSection = _.clone(current);
+            this.removeFromDropdownIfNeeded(current);
+            this.fromDropdownToTabSection(Dom_1.$$(current));
         }
         if (this.isOverflowing(this.tabSection.el)) {
-            var tabs_1 = this.getTabsInTabSection();
-            this.addToDropdown(tabs_1.pop());
+            var unselectedTabs = underscore_1.filter(this.tabsInTabSection, function (tab) { return !_this.tabIsSelected(tab); });
+            this.addToDropdownIfNeeded(unselectedTabs.pop());
         }
         if (this.isDropdownEmpty()) {
             this.cleanUpDropdown();
         }
     };
     ResponsiveTabs.prototype.emptyDropdown = function () {
+        var _this = this;
         if (!this.isDropdownEmpty()) {
-            var dropdownTabs = this.dropdownContent.findAll('.coveo-tab-dropdown');
-            var tabs = this.getTabsInTabSection();
-            var lastTabInSection = void 0;
-            if (tabs) {
-                lastTabInSection = tabs.pop();
-            }
+            var dropdownTabs = this.tabsInTabDropdown;
             while (!this.isDropdownEmpty()) {
                 var current = dropdownTabs.shift();
-                this.removeFromDropdown(current);
-                Dom_1.$$(current).insertBefore(this.dropdownHeader.el);
-                this.fromDropdownToTabSection(Dom_1.$$(current), lastTabInSection);
-                lastTabInSection = _.clone(current);
+                this.removeFromDropdownIfNeeded(current);
             }
+            this.initialTabOrder.forEach(function (tab) { return _this.tabSection.append(tab); });
         }
     };
     ResponsiveTabs.prototype.isLargeFormatOverflowing = function () {
         var virtualTabSection = Dom_1.$$(this.tabSection.el.cloneNode(true));
-        var dropdownHeader = virtualTabSection.find('.coveo-tab-dropdown-header');
+        var dropdownHeader = virtualTabSection.find("." + ResponsiveTabs.TAB_IN_DROPDOWN_HEADER_CSS_CLASS);
         if (dropdownHeader) {
             virtualTabSection.el.removeChild(dropdownHeader);
         }
         virtualTabSection.el.style.position = 'absolute';
         virtualTabSection.el.style.visibility = 'hidden';
         if (!this.isDropdownEmpty()) {
-            _.each(this.dropdownContent.findAll('.CoveoTab'), function (tab) {
+            underscore_1.each(this.dropdownContent.findAll('.CoveoTab'), function (tab) {
                 virtualTabSection.el.appendChild(tab.cloneNode(true));
             });
         }
@@ -91002,7 +91097,7 @@ var ResponsiveTabs = /** @class */ (function () {
         return el.clientWidth < el.scrollWidth;
     };
     ResponsiveTabs.prototype.buildDropdownHeader = function () {
-        var dropdownHeader = Dom_1.$$('a', { className: 'coveo-dropdown-header coveo-tab-dropdown-header' });
+        var dropdownHeader = Dom_1.$$('a', { className: "coveo-dropdown-header " + ResponsiveTabs.TAB_IN_DROPDOWN_HEADER_CSS_CLASS });
         var content = Dom_1.$$('p');
         content.text(this.dropdownHeaderLabel);
         var icon = Dom_1.$$('span', { className: 'coveo-more-tabs' }, SVGIcons_1.SVGIcons.icons.arrowDown);
@@ -91037,8 +91132,8 @@ var ResponsiveTabs = /** @class */ (function () {
             if (Utils_1.Utils.isHtmlElement(event.target)) {
                 var eventTarget = Dom_1.$$(event.target);
                 if (!eventTarget.closest('coveo-tab-list-container') &&
-                    !eventTarget.closest('coveo-tab-dropdown-header') &&
-                    !eventTarget.closest('coveo-tab-dropdown')) {
+                    !eventTarget.closest(ResponsiveTabs.TAB_IN_DROPDOWN_HEADER_CSS_CLASS) &&
+                    !eventTarget.closest(ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS)) {
                     _this.closeDropdown();
                 }
             }
@@ -91049,20 +91144,27 @@ var ResponsiveTabs = /** @class */ (function () {
         this.dropdownContent.detach();
         this.dropdownHeader.removeClass('coveo-dropdown-header-active');
     };
-    ResponsiveTabs.prototype.addToDropdown = function (el) {
-        if (this.dropdownContent) {
-            Dom_1.$$(el).addClass('coveo-tab-dropdown');
-            var list = this.dropdownContent.find('ol');
-            var listElement = Dom_1.$$('li');
-            listElement.el.appendChild(el);
-            Dom_1.$$(list).prepend(listElement.el);
+    ResponsiveTabs.prototype.addToDropdownIfNeeded = function (tab) {
+        if (!this.canAddTabToDropdown(tab)) {
+            return;
         }
+        Dom_1.$$(tab).addClass(ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS);
+        var list = Dom_1.$$(this.dropdownContent.find('ol'));
+        var listElement = Dom_1.$$('li', null, tab);
+        list.prepend(listElement.el);
     };
-    ResponsiveTabs.prototype.removeFromDropdown = function (el) {
-        if (this.dropdownContent) {
-            Dom_1.$$(el).removeClass('coveo-tab-dropdown');
-            Dom_1.$$(el.parentElement).detach();
+    ResponsiveTabs.prototype.removeFromDropdownIfNeeded = function (tab) {
+        if (!this.canRemoveTabFromDropdown(tab)) {
+            return;
         }
+        Dom_1.$$(tab).removeClass(ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS);
+        Dom_1.$$(tab.parentElement).detach();
+    };
+    ResponsiveTabs.prototype.canAddTabToDropdown = function (tab) {
+        return tab && !this.tabIsInDropdown(tab) && this.dropdownHeader;
+    };
+    ResponsiveTabs.prototype.canRemoveTabFromDropdown = function (tab) {
+        return tab && this.tabIsInDropdown(tab) && this.dropdownContent;
     };
     ResponsiveTabs.prototype.cleanUpDropdown = function () {
         this.dropdownHeader.removeClass('coveo-dropdown-header-active');
@@ -91078,18 +91180,16 @@ var ResponsiveTabs = /** @class */ (function () {
     };
     ResponsiveTabs.prototype.manageTabSwapping = function () {
         var _this = this;
-        _.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassNameForType(this.ID)), function (tabElement) {
+        underscore_1.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassNameForType(this.ID)), function (tabElement) {
             var tab = Dom_1.$$(tabElement);
             var fadeOutFadeIn = function (event) {
-                var tabsInSection = _this.getTabsInTabSection();
-                var lastTabInSection = tabsInSection.pop();
-                var lastTabSectionSibling = lastTabInSection.previousSibling;
+                var lastTabInSection = _this.tabsInTabSection.pop();
                 if (event.propertyName == 'opacity') {
                     if (tab.el.style.opacity == '0') {
-                        Dom_1.$$(lastTabInSection).addClass('coveo-tab-dropdown');
+                        Dom_1.$$(lastTabInSection).addClass(ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS);
                         tab.replaceWith(lastTabInSection);
-                        tab.removeClass('coveo-tab-dropdown');
-                        _this.fromDropdownToTabSection(tab, lastTabSectionSibling);
+                        tab.removeClass(ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS);
+                        _this.fromDropdownToTabSection(tab);
                         // Because of the DOM manipulation, sometimes the animation will not trigger. Accessing the computed styles makes sure
                         // the animation will happen.
                         window.getComputedStyle(tab.el).opacity;
@@ -91104,9 +91204,8 @@ var ResponsiveTabs = /** @class */ (function () {
                 }
             };
             tab.on('click', function () {
-                if (tab.hasClass('coveo-tab-dropdown')) {
-                    var tabsInSection = _this.getTabsInTabSection();
-                    var lastTabInSection = tabsInSection.pop();
+                if (_this.tabIsInDropdown(tab)) {
+                    var lastTabInSection = _this.tabsInTabSection.pop();
                     if (lastTabInSection) {
                         EventsUtils_1.EventsUtils.addPrefixedEvent(tab.el, 'TransitionEnd', fadeOutFadeIn);
                         tab.el.style.opacity = lastTabInSection.style.opacity = '0';
@@ -91124,32 +91223,24 @@ var ResponsiveTabs = /** @class */ (function () {
     ResponsiveTabs.prototype.positionPopup = function () {
         PopupUtils_1.PopupUtils.positionPopup(this.dropdownContent.el, this.dropdownHeader.el, this.coveoRoot.el, { horizontal: PopupUtils_1.PopupHorizontalAlignment.INNERRIGHT, vertical: PopupUtils_1.PopupVerticalAlignment.BOTTOM }, this.coveoRoot.el);
     };
-    ResponsiveTabs.prototype.getTabsInTabSection = function () {
-        var _this = this;
-        var tabsInSection = [];
-        _.each(this.tabSection.el.children, function (childElement) {
-            if (Utils_1.Utils.isHtmlElement(childElement)) {
-                var child = Dom_1.$$(childElement);
-                if (!child.hasClass('coveo-tab-dropdown') && child.hasClass(Component_1.Component.computeCssClassNameForType(_this.ID))) {
-                    tabsInSection.push(child.el);
-                }
-            }
-        });
-        return tabsInSection;
-    };
-    ResponsiveTabs.prototype.fromDropdownToTabSection = function (tab, lastTabInTabSection) {
-        if (lastTabInTabSection) {
+    ResponsiveTabs.prototype.fromDropdownToTabSection = function (tab) {
+        var lastTabInTabSection = underscore_1.last(this.tabsInTabSection);
+        if (!lastTabInTabSection) {
+            this.tabSection.prepend(tab.el);
+        }
+        var comesAfterIninitialTabOrder = this.initialTabOrder.indexOf(tab.el) > this.initialTabOrder.indexOf(lastTabInTabSection);
+        if (comesAfterIninitialTabOrder) {
             tab.insertAfter(lastTabInTabSection);
         }
         else {
-            this.tabSection.prepend(tab.el);
+            tab.insertBefore(lastTabInTabSection);
         }
     };
     ResponsiveTabs.prototype.getDropdownHeaderLabel = function () {
         var dropdownHeaderLabel;
-        _.each(Dom_1.$$(this.coveoRoot.find('.coveo-tab-section')).findAll('.' + Component_1.Component.computeCssClassName(Tab_1.Tab)), function (tabElement) {
+        underscore_1.each(Dom_1.$$(this.coveoRoot.find('.coveo-tab-section')).findAll('.' + Component_1.Component.computeCssClassName(Tab_1.Tab)), function (tabElement) {
             var tab = Component_1.Component.get(tabElement, Tab_1.Tab);
-            if (!dropdownHeaderLabel && tab.options.dropdownHeaderLabel) {
+            if (!dropdownHeaderLabel && tab && tab.options.dropdownHeaderLabel) {
                 dropdownHeaderLabel = tab.options.dropdownHeaderLabel;
             }
         });
@@ -91158,7 +91249,43 @@ var ResponsiveTabs = /** @class */ (function () {
         }
         return dropdownHeaderLabel;
     };
+    ResponsiveTabs.prototype.tabIsSelected = function (tab) {
+        return Dom_1.$$(tab).hasClass('coveo-selected');
+    };
+    ResponsiveTabs.prototype.tabIsInDropdown = function (tab) {
+        return Dom_1.$$(tab).hasClass(ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS);
+    };
+    Object.defineProperty(ResponsiveTabs.prototype, "tabsInTabSection", {
+        get: function () {
+            var _this = this;
+            var tabsInSection = [];
+            underscore_1.each(this.tabSection.children(), function (childElement) {
+                if (Utils_1.Utils.isHtmlElement(childElement)) {
+                    var child = Dom_1.$$(childElement);
+                    var childHasTabCssClassName = child.hasClass(Component_1.Component.computeCssClassNameForType(_this.ID));
+                    if (!_this.tabIsInDropdown(child) && childHasTabCssClassName) {
+                        tabsInSection.push(child.el);
+                    }
+                }
+            });
+            return tabsInSection;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ResponsiveTabs.prototype, "tabsInTabDropdown", {
+        get: function () {
+            if (!this.dropdownContent) {
+                return [];
+            }
+            return this.dropdownContent.findAll("." + ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS);
+        },
+        enumerable: true,
+        configurable: true
+    });
     ResponsiveTabs.DROPDOWN_HEADER_LABEL_DEFAULT_VALUE = 'More';
+    ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS = 'coveo-tab-dropdown';
+    ResponsiveTabs.TAB_IN_DROPDOWN_HEADER_CSS_CLASS = ResponsiveTabs.TAB_IN_DROPDOWN_CSS_CLASS + "-header";
     return ResponsiveTabs;
 }());
 exports.ResponsiveTabs = ResponsiveTabs;

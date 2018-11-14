@@ -2,8 +2,249 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AdvancedSearch.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AdvancedSearch__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AdvancedSearch__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Aggregate.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Aggregate__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Aggregate__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AnalyticsSuggestions.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AnalyticsSuggestions__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AnalyticsSuggestions__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AuthenticationProvider.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AuthenticationProvider__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/AuthenticationProvider__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Backdrop.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Backdrop__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Backdrop__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Badge.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Badge__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Badge__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Breadcrumb.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Breadcrumb__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Breadcrumb__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardActionBar.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardActionBar__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardActionBar__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardOverlay.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardOverlay__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CardOverlay__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CategoryFacet.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CategoryFacet__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/CategoryFacet__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterLikedBy.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterLikedBy__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterLikedBy__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostAttachment.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostAttachment__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostAttachment__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostedBy.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostedBy__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterPostedBy__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterTopic.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterTopic__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ChatterTopic__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DatePicker.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DatePicker__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DatePicker__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DidYouMean.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DidYouMean__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DidYouMean__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DistanceResources.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DistanceResources__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/DistanceResources__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Dropdown.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Dropdown__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Dropdown__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ErrorReport.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ErrorReport__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ErrorReport__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Excerpt.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Excerpt__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Excerpt__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ExportToExcel.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ExportToExcel__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ExportToExcel__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Facet.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetRange.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetRange__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetRange__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetSlider.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetSlider__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetSlider__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetValueSuggestions.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetValueSuggestions__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FacetValueSuggestions__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Facet__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Facet__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldSuggestions.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldSuggestions__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldSuggestions__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldTable.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldTable__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldTable__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldValue.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldValue__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FieldValue__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Folding.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FoldingForThread.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FoldingForThread__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FoldingForThread__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Folding__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Folding__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FollowItem.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FollowItem__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FollowItem__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FormGroup.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FormGroup__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/FormGroup__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HiddenQuery.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HiddenQuery__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HiddenQuery__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HierarchicalFacet.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HierarchicalFacet__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/HierarchicalFacet__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Icon.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Icon__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Icon__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Logo.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Logo__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Logo__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Matrix.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Matrix__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Matrix__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/MultiSelect.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/MultiSelect__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/MultiSelect__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/NumericSpinner.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/NumericSpinner__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/NumericSpinner__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Omnibox.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/OmniboxResultList.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/OmniboxResultList__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/OmniboxResultList__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Omnibox__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Omnibox__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Pager.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Pager__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Pager__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PipelineContext.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PipelineContext__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PipelineContext__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PreferencesPanel.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PreferencesPanel__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PreferencesPanel__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PrintableUri.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PrintableUri__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PrintableUri__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PromotedResultsBadge.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PromotedResultsBadge__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/PromotedResultsBadge__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QueryDuration.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QueryDuration__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QueryDuration__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QuerySummary.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QuerySummary__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/QuerySummary__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Querybox.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Querybox__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Querybox__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Quickview.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Quickview__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Quickview__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RadioButton.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RadioButton__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RadioButton__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Recommendation.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Recommendation__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Recommendation__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RelevanceInspector.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RelevanceInspector__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/RelevanceInspector__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultActionsMenu.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultActionsMenu__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultActionsMenu__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultAttachments.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultAttachments__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultAttachments__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultFolding.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultFolding__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultFolding__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLayoutSelector.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLayoutSelector__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLayoutSelector__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLink.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLink__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultLink__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultList.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultList__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultList__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultRating.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultRating__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultRating__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultTagging.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultTagging__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultTagging__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsFiltersPreferences.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsFiltersPreferences__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsFiltersPreferences__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPerPage.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPerPage__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPerPage__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPreferences.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPreferences__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ResultsPreferences__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchAlerts.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchAlerts__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchAlerts__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchButton.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchButton__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SearchButton__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Searchbox.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Searchbox__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Searchbox__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Settings.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Settings__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Settings__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ShareQuery.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ShareQuery__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/ShareQuery__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SimpleFilter.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SimpleFilter__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/SimpleFilter__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Sort.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Sort__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Sort__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Tab.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Tab__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Tab__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TemplateLoader.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TemplateLoader__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TemplateLoader__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Text.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Text__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Text__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Thumbnail.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Thumbnail__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Thumbnail__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TimespanFacet.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TimespanFacet__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/TimespanFacet__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Triggers.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Triggers__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/Triggers__4e6ed6227aa7a32e2bcb.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/YouTubeThumbnail.min__fafb10d248540f117c16.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/YouTubeThumbnail__4e6ed6227aa7a32e2bcb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/YouTubeThumbnail__4e6ed6227aa7a32e2bcb.js.map" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/custom/everything_v2_Lazy.html" afterPath="$PROJECT_DIR$/public/custom/everything_v2_Lazy.html" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +261,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -30,14 +271,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="everything_v2_Lazy.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testPages/everything_v2_Lazy.html">
+      <file leaf-file-name="AllComponents.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testPages/AllComponents.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding>
-                <marker date="1541626260026" expanded="true" signature="2685:2755" ph="..." />
-              </folding>
+            <state relative-caret-position="491">
+              <caret line="339" column="19" lean-forward="false" selection-start-line="339" selection-start-column="19" selection-end-line="339" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,7 +289,12 @@
       <find>searcha</find>
       <find>infi</find>
       <find>salesforce</find>
+      <find>LithiumChildResult</find>
+      <find>data-result-template-id</find>
     </findStrings>
+    <dirStrings>
+      <dir>D:\workspace\coveo\jsuiV1sp\coveo-test-search\testPages</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,9 +310,9 @@
         <option value="$PROJECT_DIR$/testPages/omniboxAnalyticsSAYT.html" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_categoryFacet.html" />
         <option value="$PROJECT_DIR$/testPages/TestNextedQuery.html" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_1.html" />
         <option value="$PROJECT_DIR$/testPages/everything_v2_Lazy.html" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -92,10 +336,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -112,6 +355,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,7 +377,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -225,12 +468,16 @@
       <workItem from="1540237850107" duration="652000" />
       <workItem from="1540238512687" duration="734000" />
       <workItem from="1540242048473" duration="676000" />
-      <workItem from="1541626236726" duration="75000" />
+      <workItem from="1541626236726" duration="819000" />
+      <workItem from="1541685211262" duration="600000" />
+      <workItem from="1541694339689" duration="29000" />
+      <workItem from="1541703556640" duration="1800000" />
+      <workItem from="1542220403773" duration="202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36922000" />
+    <option name="totallyTimeSpent" value="40297000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -245,7 +492,7 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25267667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -253,7 +500,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17488264" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30139187" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3003212" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -322,21 +569,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/0_testAllComponentV2 - french.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -673,21 +905,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/everything_v2_Lazy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/templates/templatesNew.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/AllComponents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="339" column="19" lean-forward="false" selection-start-line="339" selection-start-column="19" selection-end-line="339" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/everything_v2_Lazy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <marker date="1541626260026" expanded="true" signature="2685:2755" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
