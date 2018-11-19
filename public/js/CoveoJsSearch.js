@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "b9d233553f041c2b6be6" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "bfa60ed273f10c468ad4" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -19160,8 +19160,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.10-beta',
-    product: '2.4710.10-beta',
+    lib: '2.4710.12-beta',
+    product: '2.4710.12-beta',
     supportedApiVersion: 2
 };
 
@@ -65158,6 +65158,7 @@ var ResponsiveFacetColumn = /** @class */ (function () {
         }
         switch (this.searchInterface.responsiveComponents.getResponsiveMode()) {
             case 'small':
+            case 'medium':
                 return true;
             case 'auto':
                 return (this.coveoRoot.width() <=
@@ -91038,11 +91039,11 @@ var ResponsiveTabs = /** @class */ (function () {
         }
         switch (this.searchInterface.responsiveComponents.getResponsiveMode()) {
             case 'small':
+            case 'medium':
                 return true;
             case 'auto':
-                return this.shouldAutoModeResolveToSmall();
             default:
-                return false;
+                return this.shouldAutoModeResolveToSmall();
         }
     };
     ResponsiveTabs.prototype.shouldAutoModeResolveToSmall = function () {
