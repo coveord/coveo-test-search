@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "4e6ed6227aa7a32e2bcb" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "b9d233553f041c2b6be6" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -11799,25 +11799,25 @@ var HashUtils = /** @class */ (function () {
         else if (HashUtils.isObject(paramValue)) {
             return 'object';
         }
-        else if (HashUtils.isArray(paramValue)) {
+        else if (HashUtils.startsOrEndsWithSquareBracket(paramValue)) {
             return 'array';
         }
         else {
             return 'other';
         }
     };
-    HashUtils.isArrayStartNotEncoded = function (value) {
-        return value.substr(0, 1) == HashUtils.DELIMITER.arrayStart;
+    HashUtils.startsWithLeftSquareBracket = function (value) {
+        return HashUtils.DELIMITER.arrayStartRegExp.test(value);
     };
-    HashUtils.isArrayStartEncoded = function (value) {
+    HashUtils.startsWithEncodedLeftSquareBracket = function (value) {
         return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart)) == 0;
     };
-    HashUtils.isArrayEndNotEncoded = function (value) {
-        return value.substr(value.length - 1);
+    HashUtils.endsWithRightSquareBracket = function (value) {
+        return HashUtils.DELIMITER.arrayEndRegExp.test(value);
     };
-    HashUtils.isArrayEndEncoded = function (value) {
-        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd)) ==
-            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd).length);
+    HashUtils.endsWithEncodedRightSquareBracket = function (value) {
+        var encodedBracket = Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd);
+        return value.indexOf(encodedBracket) == value.length - encodedBracket.length;
     };
     HashUtils.isObjectStartNotEncoded = function (value) {
         return value.substr(0, 1) == HashUtils.DELIMITER.objectStart;
@@ -11837,10 +11837,10 @@ var HashUtils = /** @class */ (function () {
         var isObjectEnd = HashUtils.isObjectEndNotEncoded(value) || HashUtils.isObjectEndEncoded(value);
         return isObjectStart && isObjectEnd;
     };
-    HashUtils.isArray = function (value) {
-        var isArrayStart = HashUtils.isArrayStartNotEncoded(value) || HashUtils.isArrayStartEncoded(value);
-        var isArrayEnd = HashUtils.isArrayEndNotEncoded(value) || HashUtils.isArrayEndEncoded(value);
-        return isArrayStart && isArrayEnd;
+    HashUtils.startsOrEndsWithSquareBracket = function (value) {
+        var isArrayStart = HashUtils.startsWithLeftSquareBracket(value) || HashUtils.startsWithEncodedLeftSquareBracket(value);
+        var isArrayEnd = HashUtils.endsWithRightSquareBracket(value) || HashUtils.endsWithEncodedRightSquareBracket(value);
+        return isArrayStart || isArrayEnd;
     };
     HashUtils.encodeArray = function (array) {
         var arrayReturn = _.map(array, function (value) {
@@ -11892,13 +11892,8 @@ var HashUtils = /** @class */ (function () {
         }
     };
     HashUtils.decodeArray = function (value) {
-        if (HashUtils.isArrayStartEncoded(value) && HashUtils.isArrayEndEncoded(value)) {
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), HashUtils.DELIMITER.arrayStart);
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), HashUtils.DELIMITER.arrayEnd);
-        }
-        value = value.substr(1);
-        value = value.substr(0, value.length - 1);
-        var array = value.split(',');
+        var valueWithoutSquareBrackets = HashUtils.removeSquareBrackets(value);
+        var array = valueWithoutSquareBrackets.split(',');
         return _.chain(array)
             .map(function (val) {
             try {
@@ -11912,15 +11907,28 @@ var HashUtils = /** @class */ (function () {
             .compact()
             .value();
     };
+    HashUtils.removeSquareBrackets = function (value) {
+        if (HashUtils.startsWithEncodedLeftSquareBracket(value)) {
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), '');
+        }
+        if (HashUtils.endsWithEncodedRightSquareBracket(value)) {
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), '');
+        }
+        if (HashUtils.startsWithLeftSquareBracket(value)) {
+            value = value.replace(HashUtils.DELIMITER.arrayStart, '');
+        }
+        if (HashUtils.endsWithRightSquareBracket(value)) {
+            value = value.replace(HashUtils.DELIMITER.arrayEnd, '');
+        }
+        return value;
+    };
     HashUtils.DELIMITER = {
         objectStart: '{',
         objectEnd: '}',
         arrayStart: '[',
         arrayEnd: ']',
-        objectStartRegExp: '^{',
-        objectEndRegExp: '}+$',
-        arrayStartRegExp: '^[',
-        arrayEndRegExp: ']+$'
+        arrayStartRegExp: /^\[/,
+        arrayEndRegExp: /\]$/
     };
     return HashUtils;
 }());
@@ -13710,7 +13718,12 @@ var SearchEndpoint = /** @class */ (function () {
     };
     SearchEndpoint.prototype.buildBaseQueryString = function (callOptions) {
         callOptions = __assign({}, callOptions);
-        return __assign({}, this.options.queryStringArguments, { authentication: _.isArray(callOptions.authentication) ? callOptions.authentication.join(',') : null });
+        if (_.isArray(callOptions.authentication) && Utils_1.Utils.isNonEmptyArray(callOptions.authentication)) {
+            return __assign({}, this.options.queryStringArguments, { authentication: callOptions.authentication.join(',') });
+        }
+        else {
+            return __assign({}, this.options.queryStringArguments);
+        }
     };
     SearchEndpoint.prototype.buildQueryAsQueryString = function (query, queryObject) {
         queryObject = __assign({}, queryObject);
@@ -14326,9 +14339,6 @@ var UrlUtils = /** @class */ (function () {
             var paired = underscore_1.pairs(toNormalize.query);
             var mapped = paired.map(function (pair) {
                 var key = pair[0], value = pair[1];
-                if (UrlUtils.isInvalidQueryStringValue(value) || UrlUtils.isInvalidQueryStringValue(key)) {
-                    return '';
-                }
                 if (!_this.isEncoded(value)) {
                     return [_this.removeProblematicChars(key), Utils_1.Utils.safeEncodeURIComponent(value)].join('=');
                 }
@@ -14396,12 +14406,6 @@ var UrlUtils = /** @class */ (function () {
     };
     UrlUtils.isEncoded = function (value) {
         return value != decodeURIComponent(value);
-    };
-    UrlUtils.isInvalidQueryStringValue = function (value) {
-        if (underscore_1.isString(value)) {
-            return Utils_1.Utils.isEmptyString(value);
-        }
-        return Utils_1.Utils.isNullOrUndefined(value);
     };
     return UrlUtils;
 }());
@@ -19156,8 +19160,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.9-beta',
-    product: '2.4710.9-beta',
+    lib: '2.4710.10-beta',
+    product: '2.4710.10-beta',
     supportedApiVersion: 2
 };
 
@@ -29929,7 +29933,8 @@ var HistoryController = /** @class */ (function (_super) {
         Assert_1.Assert.isNonEmptyString(key);
         var value;
         try {
-            value = this.hashUtils.getValue(key, this.hashUtils.getHash(this.window));
+            var hash = this.hashUtils.getHash(this.window);
+            value = this.hashUtils.getValue(key, hash);
         }
         catch (error) {
             this.logger.error("Could not parse parameter " + key + " from URI");
@@ -65102,14 +65107,7 @@ var ResponsiveFacetColumn = /** @class */ (function () {
         this.bindDropdownContentEvents();
         this.registerOnCloseHandler();
         this.registerQueryEvents();
-        if (Utils_1.Utils.isNullOrUndefined(options.responsiveBreakpoint)) {
-            this.breakpoint = this.searchInterface
-                ? this.searchInterface.responsiveComponents.getMediumScreenWidth()
-                : new ResponsiveComponents_1.ResponsiveComponents().getMediumScreenWidth();
-        }
-        else {
-            this.breakpoint = options.responsiveBreakpoint;
-        }
+        this.breakpoint = options.responsiveBreakpoint;
     }
     ResponsiveFacetColumn.init = function (responsiveComponentConstructor, root, component, options, ID) {
         var column = this.findColumn(root);
@@ -65154,7 +65152,19 @@ var ResponsiveFacetColumn = /** @class */ (function () {
         });
     };
     ResponsiveFacetColumn.prototype.needSmallMode = function () {
-        return this.coveoRoot.width() <= this.breakpoint;
+        if (!this.searchInterface) {
+            return (this.coveoRoot.width() <=
+                (Utils_1.Utils.isNullOrUndefined(this.breakpoint) ? new ResponsiveComponents_1.ResponsiveComponents().getMediumScreenWidth() : this.breakpoint));
+        }
+        switch (this.searchInterface.responsiveComponents.getResponsiveMode()) {
+            case 'small':
+                return true;
+            case 'auto':
+                return (this.coveoRoot.width() <=
+                    (Utils_1.Utils.isNullOrUndefined(this.breakpoint) ? this.searchInterface.responsiveComponents.getMediumScreenWidth() : this.breakpoint));
+            default:
+                return false;
+        }
     };
     ResponsiveFacetColumn.prototype.changeToSmallMode = function () {
         this.dropdown.close();
@@ -90247,6 +90257,7 @@ var ResponsiveRecommendation = /** @class */ (function () {
         this.recommendationRoot = this.getRecommendationRoot();
         this.dropdownHeaderLabel = options.dropdownHeaderLabel;
         this.breakpoint = this.defineResponsiveBreakpoint(options);
+        this.searchInterface = Component_1.Component.get(this.coveoRoot.el, SearchInterface_1.SearchInterface, false);
         this.dropdown = this.buildDropdown(responsiveDropdown);
         this.facets = this.getFacets();
         this.facetSliders = this.getFacetSliders();
@@ -90290,7 +90301,18 @@ var ResponsiveRecommendation = /** @class */ (function () {
         return this.needSmallMode();
     };
     ResponsiveRecommendation.prototype.needSmallMode = function () {
-        return this.coveoRoot.width() <= this.breakpoint;
+        var isWidthSmallerThanBreakpoint = this.coveoRoot.width() <= this.breakpoint;
+        if (!this.searchInterface) {
+            return isWidthSmallerThanBreakpoint;
+        }
+        switch (this.searchInterface.responsiveComponents.getResponsiveMode()) {
+            case 'small':
+                return true;
+            case 'auto':
+                return isWidthSmallerThanBreakpoint;
+            default:
+                return false;
+        }
     };
     ResponsiveRecommendation.prototype.changeToSmallMode = function () {
         var _this = this;
@@ -90680,10 +90702,24 @@ var ResponsiveResultLayout = /** @class */ (function () {
         this.resultLayout.enableLayouts(layoutsToEnable);
     };
     ResponsiveResultLayout.prototype.needSmallMode = function () {
-        return this.coveoRoot.width() <= this.searchInterface.responsiveComponents.getSmallScreenWidth();
+        switch (this.searchInterface.responsiveComponents.getResponsiveMode()) {
+            case 'small':
+                return true;
+            case 'auto':
+                return this.coveoRoot.width() <= this.searchInterface.responsiveComponents.getSmallScreenWidth();
+            default:
+                return false;
+        }
     };
     ResponsiveResultLayout.prototype.needMediumMode = function () {
-        return this.coveoRoot.width() <= this.searchInterface.responsiveComponents.getMediumScreenWidth();
+        switch (this.searchInterface.responsiveComponents.getResponsiveMode()) {
+            case 'medium':
+                return true;
+            case 'auto':
+                return this.coveoRoot.width() <= this.searchInterface.responsiveComponents.getMediumScreenWidth();
+            default:
+                return false;
+        }
     };
     return ResponsiveResultLayout;
 }());
@@ -90996,6 +91032,20 @@ var ResponsiveTabs = /** @class */ (function () {
         }
     };
     ResponsiveTabs.prototype.needSmallMode = function () {
+        // Ignore everything if the responsiveMode is not auto.
+        if (!this.searchInterface) {
+            return this.shouldAutoModeResolveToSmall();
+        }
+        switch (this.searchInterface.responsiveComponents.getResponsiveMode()) {
+            case 'small':
+                return true;
+            case 'auto':
+                return this.shouldAutoModeResolveToSmall();
+            default:
+                return false;
+        }
+    };
+    ResponsiveTabs.prototype.shouldAutoModeResolveToSmall = function () {
         var mediumWidth = this.searchInterface
             ? this.searchInterface.responsiveComponents.getMediumScreenWidth()
             : new ResponsiveComponents_1.ResponsiveComponents().getMediumScreenWidth();

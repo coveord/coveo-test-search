@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"CategoryFacet","11":"Recommendation","12":"OmniboxResultList","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "4e6ed6227aa7a32e2bcb" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"CategoryFacet","11":"Recommendation","12":"OmniboxResultList","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "b9d233553f041c2b6be6" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -10832,25 +10832,25 @@ var HashUtils = /** @class */ (function () {
         else if (HashUtils.isObject(paramValue)) {
             return 'object';
         }
-        else if (HashUtils.isArray(paramValue)) {
+        else if (HashUtils.startsOrEndsWithSquareBracket(paramValue)) {
             return 'array';
         }
         else {
             return 'other';
         }
     };
-    HashUtils.isArrayStartNotEncoded = function (value) {
-        return value.substr(0, 1) == HashUtils.DELIMITER.arrayStart;
+    HashUtils.startsWithLeftSquareBracket = function (value) {
+        return HashUtils.DELIMITER.arrayStartRegExp.test(value);
     };
-    HashUtils.isArrayStartEncoded = function (value) {
+    HashUtils.startsWithEncodedLeftSquareBracket = function (value) {
         return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart)) == 0;
     };
-    HashUtils.isArrayEndNotEncoded = function (value) {
-        return value.substr(value.length - 1);
+    HashUtils.endsWithRightSquareBracket = function (value) {
+        return HashUtils.DELIMITER.arrayEndRegExp.test(value);
     };
-    HashUtils.isArrayEndEncoded = function (value) {
-        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd)) ==
-            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd).length);
+    HashUtils.endsWithEncodedRightSquareBracket = function (value) {
+        var encodedBracket = Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd);
+        return value.indexOf(encodedBracket) == value.length - encodedBracket.length;
     };
     HashUtils.isObjectStartNotEncoded = function (value) {
         return value.substr(0, 1) == HashUtils.DELIMITER.objectStart;
@@ -10870,10 +10870,10 @@ var HashUtils = /** @class */ (function () {
         var isObjectEnd = HashUtils.isObjectEndNotEncoded(value) || HashUtils.isObjectEndEncoded(value);
         return isObjectStart && isObjectEnd;
     };
-    HashUtils.isArray = function (value) {
-        var isArrayStart = HashUtils.isArrayStartNotEncoded(value) || HashUtils.isArrayStartEncoded(value);
-        var isArrayEnd = HashUtils.isArrayEndNotEncoded(value) || HashUtils.isArrayEndEncoded(value);
-        return isArrayStart && isArrayEnd;
+    HashUtils.startsOrEndsWithSquareBracket = function (value) {
+        var isArrayStart = HashUtils.startsWithLeftSquareBracket(value) || HashUtils.startsWithEncodedLeftSquareBracket(value);
+        var isArrayEnd = HashUtils.endsWithRightSquareBracket(value) || HashUtils.endsWithEncodedRightSquareBracket(value);
+        return isArrayStart || isArrayEnd;
     };
     HashUtils.encodeArray = function (array) {
         var arrayReturn = _.map(array, function (value) {
@@ -10925,13 +10925,8 @@ var HashUtils = /** @class */ (function () {
         }
     };
     HashUtils.decodeArray = function (value) {
-        if (HashUtils.isArrayStartEncoded(value) && HashUtils.isArrayEndEncoded(value)) {
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), HashUtils.DELIMITER.arrayStart);
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), HashUtils.DELIMITER.arrayEnd);
-        }
-        value = value.substr(1);
-        value = value.substr(0, value.length - 1);
-        var array = value.split(',');
+        var valueWithoutSquareBrackets = HashUtils.removeSquareBrackets(value);
+        var array = valueWithoutSquareBrackets.split(',');
         return _.chain(array)
             .map(function (val) {
             try {
@@ -10945,15 +10940,28 @@ var HashUtils = /** @class */ (function () {
             .compact()
             .value();
     };
+    HashUtils.removeSquareBrackets = function (value) {
+        if (HashUtils.startsWithEncodedLeftSquareBracket(value)) {
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), '');
+        }
+        if (HashUtils.endsWithEncodedRightSquareBracket(value)) {
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), '');
+        }
+        if (HashUtils.startsWithLeftSquareBracket(value)) {
+            value = value.replace(HashUtils.DELIMITER.arrayStart, '');
+        }
+        if (HashUtils.endsWithRightSquareBracket(value)) {
+            value = value.replace(HashUtils.DELIMITER.arrayEnd, '');
+        }
+        return value;
+    };
     HashUtils.DELIMITER = {
         objectStart: '{',
         objectEnd: '}',
         arrayStart: '[',
         arrayEnd: ']',
-        objectStartRegExp: '^{',
-        objectEndRegExp: '}+$',
-        arrayStartRegExp: '^[',
-        arrayEndRegExp: ']+$'
+        arrayStartRegExp: /^\[/,
+        arrayEndRegExp: /\]$/
     };
     return HashUtils;
 }());
@@ -11815,7 +11823,12 @@ var SearchEndpoint = /** @class */ (function () {
     };
     SearchEndpoint.prototype.buildBaseQueryString = function (callOptions) {
         callOptions = __assign({}, callOptions);
-        return __assign({}, this.options.queryStringArguments, { authentication: _.isArray(callOptions.authentication) ? callOptions.authentication.join(',') : null });
+        if (_.isArray(callOptions.authentication) && Utils_1.Utils.isNonEmptyArray(callOptions.authentication)) {
+            return __assign({}, this.options.queryStringArguments, { authentication: callOptions.authentication.join(',') });
+        }
+        else {
+            return __assign({}, this.options.queryStringArguments);
+        }
     };
     SearchEndpoint.prototype.buildQueryAsQueryString = function (query, queryObject) {
         queryObject = __assign({}, queryObject);
@@ -12431,9 +12444,6 @@ var UrlUtils = /** @class */ (function () {
             var paired = underscore_1.pairs(toNormalize.query);
             var mapped = paired.map(function (pair) {
                 var key = pair[0], value = pair[1];
-                if (UrlUtils.isInvalidQueryStringValue(value) || UrlUtils.isInvalidQueryStringValue(key)) {
-                    return '';
-                }
                 if (!_this.isEncoded(value)) {
                     return [_this.removeProblematicChars(key), Utils_1.Utils.safeEncodeURIComponent(value)].join('=');
                 }
@@ -12501,12 +12511,6 @@ var UrlUtils = /** @class */ (function () {
     };
     UrlUtils.isEncoded = function (value) {
         return value != decodeURIComponent(value);
-    };
-    UrlUtils.isInvalidQueryStringValue = function (value) {
-        if (underscore_1.isString(value)) {
-            return Utils_1.Utils.isEmptyString(value);
-        }
-        return Utils_1.Utils.isNullOrUndefined(value);
     };
     return UrlUtils;
 }());
@@ -14697,8 +14701,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.9-beta',
-    product: '2.4710.9-beta',
+    lib: '2.4710.10-beta',
+    product: '2.4710.10-beta',
     supportedApiVersion: 2
 };
 
@@ -22075,7 +22079,8 @@ var HistoryController = /** @class */ (function (_super) {
         Assert_1.Assert.isNonEmptyString(key);
         var value;
         try {
-            value = this.hashUtils.getValue(key, this.hashUtils.getHash(this.window));
+            var hash = this.hashUtils.getHash(this.window);
+            value = this.hashUtils.getValue(key, hash);
         }
         catch (error) {
             this.logger.error("Could not parse parameter " + key + " from URI");
