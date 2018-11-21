@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"CategoryFacet","11":"Recommendation","12":"OmniboxResultList","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "bfa60ed273f10c468ad4" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"TimespanFacet","3":"FacetRange","4":"Searchbox","5":"Facet","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"CategoryFacet","11":"Recommendation","12":"OmniboxResultList","13":"Quickview","14":"ResultList","15":"Tab","16":"Backdrop","17":"ResultsFiltersPreferences","18":"SimpleFilter","19":"ResultLayoutSelector","20":"FieldTable","21":"ResultsPreferences","22":"Sort","23":"Settings","24":"YouTubeThumbnail","25":"Thumbnail","26":"PrintableUri","27":"SearchAlerts","28":"Badge","29":"ResultRating","30":"Pager","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultsPerPage","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "8263139a8729eca71db6" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -12444,6 +12444,13 @@ var UrlUtils = /** @class */ (function () {
             var paired = underscore_1.pairs(toNormalize.query);
             var mapped = paired.map(function (pair) {
                 var key = pair[0], value = pair[1];
+                var exceptions = ['pipeline'];
+                var isAnException = underscore_1.isString(key) && underscore_1.contains(exceptions, key.toLowerCase());
+                if (!isAnException) {
+                    if (UrlUtils.isInvalidQueryStringValue(value) || UrlUtils.isInvalidQueryStringValue(key)) {
+                        return '';
+                    }
+                }
                 if (!_this.isEncoded(value)) {
                     return [_this.removeProblematicChars(key), Utils_1.Utils.safeEncodeURIComponent(value)].join('=');
                 }
@@ -12511,6 +12518,12 @@ var UrlUtils = /** @class */ (function () {
     };
     UrlUtils.isEncoded = function (value) {
         return value != decodeURIComponent(value);
+    };
+    UrlUtils.isInvalidQueryStringValue = function (value) {
+        if (underscore_1.isString(value)) {
+            return Utils_1.Utils.isEmptyString(value);
+        }
+        return Utils_1.Utils.isNullOrUndefined(value);
     };
     return UrlUtils;
 }());
@@ -14701,8 +14714,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.12-beta',
-    product: '2.4710.12-beta',
+    lib: '2.4710.14-beta',
+    product: '2.4710.14-beta',
     supportedApiVersion: 2
 };
 
