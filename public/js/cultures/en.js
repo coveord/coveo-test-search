@@ -812,6 +812,8 @@ var dict = {
   "FacetTitle": "{0} facet",
   "SelectValueWithResultCount": "Select {0} with {1}",
   "UnselectValueWithResultCount": "Unselect {0} with {1}",
+  "PageNumber": "Page {0}",
+  "DisplayResultsPerPage": "Display {0} results per page",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1602,6 +1604,8 @@ var dict = {
   "FacetTitle": "{0} facet",
   "SelectValueWithResultCount": "Select {0} with {1}",
   "UnselectValueWithResultCount": "Unselect {0} with {1}",
+  "PageNumber": "Page {0}",
+  "DisplayResultsPerPage": "Display {0} results per page",
 }
 
   var locales = String["locales"] || (String["locales"] = {});

@@ -858,6 +858,8 @@ var dict = {
   "FacetTitle": "Facette {0}",
   "SelectValueWithResultCount": "Sélectionnez {0} avec {1}",
   "UnselectValueWithResultCount": "Désélectionnez {0} avec {1}",
+  "PageNumber": "Page {0}",
+  "DisplayResultsPerPage": "Afficher {0} résultats par page",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["fr"] = merge(locales["fr"], dict);
@@ -1648,6 +1650,8 @@ var dict = {
   "FacetTitle": "Facette {0}",
   "SelectValueWithResultCount": "Sélectionnez {0} avec {1}",
   "UnselectValueWithResultCount": "Désélectionnez {0} avec {1}",
+  "PageNumber": "Page {0}",
+  "DisplayResultsPerPage": "Afficher {0} résultats par page",
 }
 
   var locales = String["locales"] || (String["locales"] = {});

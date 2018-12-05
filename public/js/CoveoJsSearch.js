@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "8263139a8729eca71db6" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "f1482a259202dfb4bd91" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2746,7 +2746,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(11);
 var ComponentOptionsModel_1 = __webpack_require__(25);
@@ -6465,7 +6465,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Assert_1 = __webpack_require__(5);
 var _ = __webpack_require__(0);
 var Utils_1 = __webpack_require__(4);
@@ -6479,7 +6479,8 @@ exports.QUERY_STATE_ATTRIBUTES = {
     HD: 'hd',
     HQ: 'hq',
     QUICKVIEW: 'quickview',
-    DEBUG: 'debug'
+    DEBUG: 'debug',
+    NUMBER_OF_RESULTS: 'numberOfResults'
 };
 /**
  * The `QueryStateModel` class is a key-value store which contains the current state of the components that can affect
@@ -6568,7 +6569,8 @@ var QueryStateModel = /** @class */ (function (_super) {
         layout: 'list',
         tg: '',
         quickview: '',
-        debug: false
+        debug: false,
+        numberOfResults: 10
     };
     QueryStateModel.attributesEnum = {
         q: 'q',
@@ -6581,7 +6583,8 @@ var QueryStateModel = /** @class */ (function (_super) {
         hq: 'hq',
         tg: 'tg',
         quickview: 'quickview',
-        debug: 'debug'
+        debug: 'debug',
+        numberOfResults: 'numberOfResults'
     };
     return QueryStateModel;
 }(Model_1.Model));
@@ -6700,74 +6703,6 @@ exports.SVGDom = SVGDom;
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * This static class is there to contain the different string definitions for all the events related to initialization.
- *
- * Note that these events will only be triggered when the {@link init} function is called.
- *
- * This means these events are normally called only once when the search interface is initialized.
- */
-var InitializationEvents = /** @class */ (function () {
-    function InitializationEvents() {
-    }
-    /**
-     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
-     *
-     * The string value is `beforeInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.beforeInitialization = 'beforeInitialization';
-    /**
-     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
-     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
-     *
-     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
-     *
-     * The string value is `afterComponentsInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
-    /**
-     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
-     *
-     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
-     *
-     * The string value is `restoreHistoryState`.
-     * @type {string}
-     */
-    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
-    /**
-     * Triggered right after the UI is fully initialized.
-     *
-     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
-     *
-     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
-     *
-     * The string value is `afterInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterInitialization = 'afterInitialization';
-    /**
-     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
-     *
-     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
-     *
-     * The string value is `nuke`.
-     * @type {string}
-     */
-    InitializationEvents.nuke = 'nuke';
-    return InitializationEvents;
-}());
-exports.InitializationEvents = InitializationEvents;
-
-
-/***/ }),
-/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7088,6 +7023,74 @@ exports.Model = Model;
 
 
 /***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * This static class is there to contain the different string definitions for all the events related to initialization.
+ *
+ * Note that these events will only be triggered when the {@link init} function is called.
+ *
+ * This means these events are normally called only once when the search interface is initialized.
+ */
+var InitializationEvents = /** @class */ (function () {
+    function InitializationEvents() {
+    }
+    /**
+     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
+     *
+     * The string value is `beforeInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.beforeInitialization = 'beforeInitialization';
+    /**
+     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
+     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
+     *
+     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
+     *
+     * The string value is `afterComponentsInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
+    /**
+     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
+     *
+     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
+     *
+     * The string value is `restoreHistoryState`.
+     * @type {string}
+     */
+    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
+    /**
+     * Triggered right after the UI is fully initialized.
+     *
+     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
+     *
+     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
+     *
+     * The string value is `afterInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterInitialization = 'afterInitialization';
+    /**
+     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
+     *
+     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
+     *
+     * The string value is `nuke`.
+     * @type {string}
+     */
+    InitializationEvents.nuke = 'nuke';
+    return InitializationEvents;
+}());
+exports.InitializationEvents = InitializationEvents;
+
+
+/***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7123,14 +7126,14 @@ var HistoryController_1 = __webpack_require__(117);
 var LocalStorageHistoryController_1 = __webpack_require__(118);
 var NoopHistoryController_1 = __webpack_require__(261);
 var QueryController_1 = __webpack_require__(34);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
 var SentryLogger_1 = __webpack_require__(262);
 var ComponentOptionsModel_1 = __webpack_require__(25);
 var ComponentStateModel_1 = __webpack_require__(61);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var Dom_1 = __webpack_require__(1);
@@ -8950,7 +8953,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var _ = __webpack_require__(0);
 exports.COMPONENT_OPTIONS_ATTRIBUTES = {
     RESULT_LINK: 'resultLink',
@@ -8992,7 +8995,7 @@ var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var QueryController_1 = __webpack_require__(34);
 var QueryStateModel_1 = __webpack_require__(12);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Dom_1 = __webpack_require__(1);
 var Component_1 = __webpack_require__(6);
 var _ = __webpack_require__(0);
@@ -16409,7 +16412,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var ComponentStateModel = /** @class */ (function (_super) {
     __extends(ComponentStateModel, _super);
     function ComponentStateModel(element) {
@@ -16458,7 +16461,7 @@ var SearchAlertEvents_1 = __webpack_require__(64);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var Defer_1 = __webpack_require__(29);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var DeviceUtils_1 = __webpack_require__(22);
@@ -19173,8 +19176,8 @@ exports.TemplateList = TemplateList;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.4710.14-beta',
-    product: '2.4710.14-beta',
+    lib: '2.4710.17-beta',
+    product: '2.4710.17-beta',
     supportedApiVersion: 2
 };
 
@@ -19479,7 +19482,7 @@ exports.PendingSearchEvent = PendingSearchEvent;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Component_1 = __webpack_require__(6);
 var SearchInterface_1 = __webpack_require__(17);
 var Utils_1 = __webpack_require__(4);
@@ -20832,7 +20835,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var PendingSearchEvent_1 = __webpack_require__(78);
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SearchInterface_1 = __webpack_require__(17);
 var Component_1 = __webpack_require__(6);
 var QueryStateModel_1 = __webpack_require__(12);
@@ -21734,7 +21737,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -22556,7 +22559,7 @@ var ResultListEvents_1 = __webpack_require__(33);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var Defer_1 = __webpack_require__(29);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var DeviceUtils_1 = __webpack_require__(22);
 var Dom_1 = __webpack_require__(1);
@@ -28048,7 +28051,7 @@ var DebugEvents_1 = __webpack_require__(75);
 exports.DebugEvents = DebugEvents_1.DebugEvents;
 var DistanceEvents_1 = __webpack_require__(146);
 exports.DistanceEvents = DistanceEvents_1.DistanceEvents;
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 exports.InitializationEvents = InitializationEvents_1.InitializationEvents;
 var OmniboxEvents_1 = __webpack_require__(31);
 exports.OmniboxEvents = OmniboxEvents_1.OmniboxEvents;
@@ -29466,6 +29469,8 @@ var dict = {
     "FacetTitle": "{0} facet",
     "SelectValueWithResultCount": "Select {0} with {1}",
     "UnselectValueWithResultCount": "Unselect {0} with {1}",
+    "PageNumber": "Page {0}",
+    "DisplayResultsPerPage": "Display {0} results per page",
 };
 function defaultLanguage() {
     var locales = String["locales"] || (String["locales"] = {});
@@ -29790,7 +29795,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Dom_1 = __webpack_require__(1);
 var HashUtils_1 = __webpack_require__(39);
 var Defer_1 = __webpack_require__(29);
@@ -29800,7 +29805,7 @@ var _ = __webpack_require__(0);
 var QueryStateModel_1 = __webpack_require__(12);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var SharedAnalyticsCalls_1 = __webpack_require__(85);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 /**
  * This component is instantiated automatically by the framework on the root if the {@link SearchInterface}.<br/>
  * When the {@link SearchInterface.options.enableHistory} option is set to true, this component is instantiated.<br/>
@@ -30063,10 +30068,10 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var LocalStorageUtils_1 = __webpack_require__(38);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Logger_1 = __webpack_require__(11);
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var RootComponent_1 = __webpack_require__(35);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
@@ -33432,7 +33437,7 @@ var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
 var ComponentOptionsModel_1 = __webpack_require__(25);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -34403,7 +34408,7 @@ var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
 __webpack_require__(298);
 var QueryEvents_1 = __webpack_require__(10);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var ResultListEvents_1 = __webpack_require__(33);
 var HashUtils_1 = __webpack_require__(39);
 var InitializationPlaceholder = /** @class */ (function () {
@@ -34810,12 +34815,12 @@ var GlobalExports_1 = __webpack_require__(3);
 var MiscModules_1 = __webpack_require__(54);
 var FacetSliderQueryController_1 = __webpack_require__(425);
 var BreadcrumbEvents_1 = __webpack_require__(37);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var SearchAlertEvents_1 = __webpack_require__(64);
 var SliderEvents_1 = __webpack_require__(104);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -35766,13 +35771,13 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var QuickviewEvents_1 = __webpack_require__(165);
 var QueryStateModel_1 = __webpack_require__(12);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Utils_1 = __webpack_require__(4);
 var Dom_1 = __webpack_require__(1);
 var ResponsiveRecommendation_1 = __webpack_require__(461);
 var coveo_analytics_1 = __webpack_require__(89);
 var RegisteredNamedMethods_1 = __webpack_require__(26);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var DefaultRecommendationTemplate_1 = __webpack_require__(358);
@@ -36146,12 +36151,12 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(471);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var ResultLayoutEvents_1 = __webpack_require__(101);
 var ResultListEvents_1 = __webpack_require__(33);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -36496,10 +36501,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(483);
 var underscore_1 = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var AccessibleButton_1 = __webpack_require__(18);
@@ -36933,7 +36938,7 @@ var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var QueryStateModel_1 = __webpack_require__(12);
 __webpack_require__(494);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Utils_1 = __webpack_require__(4);
 var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
@@ -37667,7 +37672,7 @@ exports.DistanceEvents = DistanceEvents;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 exports.Model = Model_1.Model;
 var QueryStateModel_1 = __webpack_require__(12);
 exports.QueryStateModel = QueryStateModel_1.QueryStateModel;
@@ -38716,7 +38721,7 @@ var MagicBoxInstance = /** @class */ (function () {
             selectedClass: this.options.selectedSuggestionClass,
             timeout: this.options.suggestionTimeout
         });
-        new MagicBoxClear_1.MagicBoxClear(this);
+        this.magicBoxClear = new MagicBoxClear_1.MagicBoxClear(this);
         this.setupHandler();
     }
     MagicBoxInstance.prototype.getResult = function () {
@@ -38727,6 +38732,7 @@ var MagicBoxInstance = /** @class */ (function () {
     };
     MagicBoxInstance.prototype.setText = function (text) {
         Dom_1.$$(this.element).toggleClass('magic-box-notEmpty', text.length > 0);
+        this.magicBoxClear.toggleTabindex(text.length > 0);
         this.result = this.grammar.parse(text);
         this.displayedResult = this.result.clean();
         this.inputManager.setResult(this.displayedResult);
@@ -41235,7 +41241,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SettingsEvents_1 = __webpack_require__(42);
 var DomUtils_1 = __webpack_require__(65);
 var Dom_1 = __webpack_require__(1);
@@ -41766,7 +41772,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(413);
 var underscore_1 = __webpack_require__(0);
 var BreadcrumbEvents_1 = __webpack_require__(37);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -46864,7 +46870,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var DeviceUtils_1 = __webpack_require__(22);
 var QueryEvents_1 = __webpack_require__(10);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var QueryStateModel_2 = __webpack_require__(12);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -46995,7 +47001,11 @@ var Pager = /** @class */ (function (_super) {
                     var listItemValue = document.createElement('a');
                     Dom_1.$$(listItemValue).addClass(['coveo-pager-list-item-text', 'coveo-pager-anchor']);
                     Dom_1.$$(listItemValue).text(i.toString(10));
-                    var listItem = Dom_1.$$('li', { className: 'coveo-pager-list-item', tabindex: 0 }).el;
+                    var listItem = Dom_1.$$('li', {
+                        className: 'coveo-pager-list-item',
+                        tabindex: 0,
+                        ariaLabel: Strings_1.l('PageNumber', i.toString(10))
+                    }).el;
                     if (i == this_1.currentPage) {
                         Dom_1.$$(listItem).addClass('coveo-active');
                     }
@@ -47450,7 +47460,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var ExternalModulesShim_1 = __webpack_require__(24);
 var _ = __webpack_require__(0);
 __webpack_require__(448);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SVGIcons_1 = __webpack_require__(13);
 /**
  * The PreferencesPanel component renders a **Preferences** item inside the {@link Settings} component which the end
@@ -49340,9 +49350,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var LocalStorageUtils_1 = __webpack_require__(38);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var PreferencesPanelEvents_1 = __webpack_require__(72);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var QueryStateModel_1 = __webpack_require__(12);
 var BreadcrumbEvents_1 = __webpack_require__(37);
@@ -49941,6 +49951,8 @@ var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
 __webpack_require__(475);
+var Model_1 = __webpack_require__(15);
+var QueryStateModel_1 = __webpack_require__(12);
 /**
  * The ResultsPerPage component attaches itself to a `div` and allows the end user to choose how many results to
  * display per page.
@@ -49967,7 +49979,8 @@ var ResultsPerPage = /** @class */ (function (_super) {
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.querySuccess, function (args) { return _this.handleQuerySuccess(args); });
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.queryError, function () { return _this.handleQueryError(); });
         _this.bind.onRootElement(QueryEvents_1.QueryEvents.noResults, function (args) { return _this.handleNoResults(); });
-        _this.initComponent(element);
+        _this.bind.onQueryState(Model_1.MODEL_EVENTS.CHANGE_ONE, QueryStateModel_1.QUERY_STATE_ATTRIBUTES.NUMBER_OF_RESULTS, function () { return _this.handleQueryStateModelChanged(); });
+        _this.initComponent();
         return _this;
     }
     /**
@@ -49981,37 +49994,76 @@ var ResultsPerPage = /** @class */ (function (_super) {
     ResultsPerPage.prototype.setResultsPerPage = function (resultsPerPage, analyticCause) {
         if (analyticCause === void 0) { analyticCause = AnalyticsActionListMeta_1.analyticsActionCauseList.pagerResize; }
         Assert_1.Assert.exists(resultsPerPage);
-        Assert_1.Assert.check(this.options.choicesDisplayed.indexOf(resultsPerPage) != -1, 'The specified number of results is not available in the options.');
+        Assert_1.Assert.check(this.isValidChoice(resultsPerPage), 'The specified number of results is not available in the options.');
+        this.updateResultsPerPage(resultsPerPage);
+        this.updateQueryStateModelResultsPerPage();
+        this.logAnalyticsEvent(analyticCause);
+        this.executeQuery();
+    };
+    Object.defineProperty(ResultsPerPage.prototype, "resultsPerPage", {
+        /**
+         * Returns the current number of results per page.
+         */
+        get: function () {
+            return this.currentResultsPerPage;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ResultsPerPage.prototype.updateResultsPerPage = function (resultsPerPage) {
         this.searchInterface.resultsPerPage = resultsPerPage;
         this.currentResultsPerPage = resultsPerPage;
+    };
+    ResultsPerPage.prototype.updateQueryStateModelResultsPerPage = function () {
+        this.queryStateModel.set(QueryStateModel_1.QueryStateModel.attributesEnum.numberOfResults, this.currentResultsPerPage);
+    };
+    ResultsPerPage.prototype.logAnalyticsEvent = function (analyticCause) {
         this.usageAnalytics.logCustomEvent(analyticCause, { currentResultsPerPage: this.currentResultsPerPage }, this.element);
+    };
+    ResultsPerPage.prototype.executeQuery = function () {
         this.queryController.executeQuery({
             ignoreWarningSearchEvent: true,
             keepLastSearchUid: true,
             origin: this
         });
     };
-    ResultsPerPage.prototype.getInitialChoice = function () {
-        var initialChoice = this.options.choicesDisplayed[0];
-        if (this.options.initialChoice !== undefined) {
-            if (this.options.choicesDisplayed.indexOf(this.options.initialChoice) > -1) {
-                initialChoice = this.options.initialChoice;
-            }
-            else {
-                this.logger.warn('The initial number of results is not within the choices displayed. Consider setting a value that can be selected. The first choice will be selected instead.');
-            }
-        }
-        return initialChoice;
+    ResultsPerPage.prototype.handleQueryStateModelChanged = function () {
+        var resultsPerPage = this.getInitialChoice();
+        this.updateResultsPerPage(resultsPerPage);
     };
-    ResultsPerPage.prototype.initComponent = function (element) {
+    ResultsPerPage.prototype.getInitialChoice = function () {
+        var firstDisplayedChoice = this.options.choicesDisplayed[0];
+        var configuredChoice = this.options.initialChoice;
+        var queryStateModelChoice = this.queryStateModel.get(QueryStateModel_1.QueryStateModel.attributesEnum.numberOfResults);
+        var queryStateModelChoiceIsNotDefault = queryStateModelChoice !== firstDisplayedChoice;
+        if (queryStateModelChoiceIsNotDefault && this.isValidChoice(queryStateModelChoice)) {
+            return queryStateModelChoice;
+        }
+        if (configuredChoice !== undefined) {
+            if (this.isValidChoice(configuredChoice)) {
+                return configuredChoice;
+            }
+            this.logInvalidConfiguredChoiceWarning();
+        }
+        return firstDisplayedChoice;
+    };
+    ResultsPerPage.prototype.isValidChoice = function (choice) {
+        return this.options.choicesDisplayed.indexOf(choice) !== -1;
+    };
+    ResultsPerPage.prototype.logInvalidConfiguredChoiceWarning = function () {
+        var configuredChoice = this.options.initialChoice;
+        var validChoices = this.options.choicesDisplayed;
+        this.logger.warn("The choice " + configuredChoice + " is not within the choices displayed. Consider setting a value that is valid: " + validChoices + ". The first choice will be selected instead.");
+    };
+    ResultsPerPage.prototype.initComponent = function () {
         this.span = Dom_1.$$('span', {
             className: 'coveo-results-per-page-text'
         }, Strings_1.l('ResultsPerPage')).el;
-        element.appendChild(this.span);
+        this.element.appendChild(this.span);
         this.list = Dom_1.$$('ul', {
             className: 'coveo-results-per-page-list'
         }).el;
-        element.appendChild(this.list);
+        this.element.appendChild(this.list);
     };
     ResultsPerPage.prototype.render = function () {
         var _this = this;
@@ -50020,7 +50072,8 @@ var ResultsPerPage = /** @class */ (function (_super) {
         var _loop_1 = function () {
             var listItem = Dom_1.$$('li', {
                 className: 'coveo-results-per-page-list-item',
-                tabindex: 0
+                tabindex: 0,
+                ariaLabel: Strings_1.l('DisplayResultsPerPage', numResultsList[i].toString())
             });
             if (numResultsList[i] == this_1.currentResultsPerPage) {
                 listItem.addClass('coveo-active');
@@ -50050,8 +50103,8 @@ var ResultsPerPage = /** @class */ (function (_super) {
         if (this.searchInterface.isResultsPerPageModifiedByPipeline) {
             this.logger.info('Results per page was modified by backend code (query pipeline). ResultsPerPage component will be hidden', this);
             this.reset();
-            this.currentResultsPerPage = this.getInitialChoice();
-            this.searchInterface.resultsPerPage = this.currentResultsPerPage;
+            var resultsPerPage = this.getInitialChoice();
+            this.updateResultsPerPage(resultsPerPage);
             return;
         }
         if (data.results.results.length != 0) {
@@ -51623,13 +51676,13 @@ var Searchbox = /** @class */ (function (_super) {
         if (_this.options.inline) {
             Dom_1.$$(element).addClass('coveo-inline');
         }
+        var div = document.createElement('div');
+        _this.element.appendChild(div);
         if (_this.options.addSearchButton) {
             var anchor = Dom_1.$$('a');
             _this.element.appendChild(anchor.el);
             _this.searchButton = new SearchButton_1.SearchButton(anchor.el, undefined, bindings);
         }
-        var div = document.createElement('div');
-        _this.element.appendChild(div);
         if (_this.options.enableOmnibox) {
             _this.searchbox = new Omnibox_1.Omnibox(div, _this.options, bindings);
         }
@@ -51725,7 +51778,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var popper_js_1 = __webpack_require__(322);
 __webpack_require__(480);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SettingsEvents_1 = __webpack_require__(42);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -52109,7 +52162,7 @@ var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var QueryEvents_1 = __webpack_require__(10);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
@@ -60718,7 +60771,7 @@ var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
 var ComponentOptionsModel_1 = __webpack_require__(25);
 var Dom_1 = __webpack_require__(1);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Utils_1 = __webpack_require__(4);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
 var LiveAnalyticsClient_1 = __webpack_require__(123);
@@ -64438,7 +64491,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(377);
 var _ = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var DeviceUtils_1 = __webpack_require__(22);
@@ -65916,7 +65969,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Facet_1 = __webpack_require__(62);
 var Dom_1 = __webpack_require__(1);
 var Utils_1 = __webpack_require__(4);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var FacetSearchParameters_1 = __webpack_require__(125);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Strings_1 = __webpack_require__(7);
@@ -67371,18 +67424,18 @@ var SuggestionsManager = /** @class */ (function () {
         if (e.relatedTarget) {
             var relatedTargetParents = Dom_1.$$(e.relatedTarget).parents(this.options.selectableClass);
             if (target.hasClass(this.options.selectedClass) && !Dom_1.$$(e.relatedTarget).hasClass(this.options.selectableClass)) {
-                target.removeClass(this.options.selectedClass);
+                this.removeSelectedStatus(target.el);
             }
             else if (relatedTargetParents.length == 0 && targetParents.length > 0) {
-                Dom_1.$$(targetParents[0]).removeClass(this.options.selectedClass);
+                this.removeSelectedStatus(targetParents[0]);
             }
         }
         else {
             if (target.hasClass(this.options.selectedClass)) {
-                target.removeClass(this.options.selectedClass);
+                this.removeSelectedStatus(target.el);
             }
             else if (targetParents.length > 0) {
-                Dom_1.$$(targetParents[0]).removeClass(this.options.selectedClass);
+                this.removeSelectedStatus(targetParents[0]);
             }
         }
     };
@@ -67478,6 +67531,7 @@ var SuggestionsManager = /** @class */ (function () {
             var dom = suggestion.dom ? _this.modifyDomFromExistingSuggestion(suggestion.dom) : _this.createDomFromSuggestion(suggestion);
             dom.setAttribute('id', "magic-box-suggestion-" + underscore_1.indexOf(suggestions, suggestion));
             dom.setAttribute('role', 'option');
+            dom.setAttribute('aria-selected', 'false');
             dom['suggestion'] = suggestion;
             suggestionsContainer.append(dom.el);
         });
@@ -67486,12 +67540,12 @@ var SuggestionsManager = /** @class */ (function () {
         Dom_1.$$(this.magicBoxContainer).setAttribute('aria-expanded', this.hasSuggestions.toString());
     };
     SuggestionsManager.prototype.processKeyboardSelection = function (suggestion) {
-        this.addSelectedClass(suggestion);
+        this.addSelectedStatus(suggestion);
         this.keyboardFocusedSuggestion = suggestion;
         Dom_1.$$(this.inputManager.input).setAttribute('aria-activedescendant', Dom_1.$$(suggestion).getAttribute('id'));
     };
     SuggestionsManager.prototype.processMouseSelection = function (suggestion) {
-        this.addSelectedClass(suggestion);
+        this.addSelectedStatus(suggestion);
         this.keyboardFocusedSuggestion = null;
     };
     SuggestionsManager.prototype.buildSuggestionsContainer = function () {
@@ -67530,9 +67584,9 @@ var SuggestionsManager = /** @class */ (function () {
     };
     SuggestionsManager.prototype.modifyDomFromExistingSuggestion = function (dom) {
         // this need to be done if the selection is in cache and the dom is set in the suggestion
-        Dom_1.$$(dom).removeClass(this.options.selectedClass);
+        this.removeSelectedStatus(dom);
         var found = Dom_1.$$(dom).find('.' + this.options.selectableClass);
-        Dom_1.$$(found).removeClass(this.options.selectedClass);
+        this.removeSelectedStatus(found);
         return Dom_1.$$(dom);
     };
     SuggestionsManager.prototype.move = function (direction) {
@@ -67572,13 +67626,23 @@ var SuggestionsManager = /** @class */ (function () {
         }
         return null;
     };
-    SuggestionsManager.prototype.addSelectedClass = function (suggestion) {
+    SuggestionsManager.prototype.addSelectedStatus = function (suggestion) {
         var selected = this.element.getElementsByClassName(this.options.selectedClass);
         for (var i = 0; i < selected.length; i++) {
             var elem = selected.item(i);
-            Dom_1.$$(elem).removeClass(this.options.selectedClass);
+            this.removeSelectedStatus(elem);
         }
         Dom_1.$$(suggestion).addClass(this.options.selectedClass);
+        this.updateAreaSelectedIfDefined(suggestion, 'true');
+    };
+    SuggestionsManager.prototype.removeSelectedStatus = function (suggestion) {
+        Dom_1.$$(suggestion).removeClass(this.options.selectedClass);
+        this.updateAreaSelectedIfDefined(suggestion, 'false');
+    };
+    SuggestionsManager.prototype.updateAreaSelectedIfDefined = function (suggestion, value) {
+        if (Dom_1.$$(suggestion).getAttribute('aria-selected')) {
+            Dom_1.$$(suggestion).setAttribute('aria-selected', value);
+        }
     };
     SuggestionsManager.prototype.addAccessibilityProperties = function () {
         Dom_1.$$(this.magicBoxContainer).setAttribute('aria-expanded', 'false');
@@ -69844,7 +69908,7 @@ exports.ResponsiveFacets = ResponsiveFacets;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = __webpack_require__(4);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
 var DependentFacetManager = /** @class */ (function () {
@@ -70014,7 +70078,12 @@ var MagicBoxClear = /** @class */ (function () {
             .withLabel(Strings_1.l('Clear'))
             .withSelectAction(function () { return magicBox.clear(); })
             .build();
+        this.toggleTabindex(false);
     }
+    MagicBoxClear.prototype.toggleTabindex = function (hasText) {
+        var tabindex = hasText ? '0' : '-1';
+        this.element.setAttribute('tabindex', tabindex);
+    };
     return MagicBoxClear;
 }());
 exports.MagicBoxClear = MagicBoxClear;
@@ -90990,7 +91059,7 @@ exports.SearchAlertsMessage = SearchAlertsMessage;
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(485);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Logger_1 = __webpack_require__(11);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);

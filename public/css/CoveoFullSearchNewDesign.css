@@ -7848,6 +7848,7 @@ select.coveo-dropdown::-ms-expand {
 .CoveoSearchButton {
   color: white;
   border: 1px solid #bcc3ca;
+  border-left: none;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
@@ -14725,6 +14726,15 @@ a.coveo-folding-show-less.coveo-selected * {
 * @param $size size of the icon to use
 */
 
+.CoveoSearchbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .CoveoSearchbox.coveo-inline {
   overflow: hidden;
 }
@@ -14734,14 +14744,16 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .CoveoSearchbox .CoveoSearchButton {
-  float: right;
   z-index: 2;
-  position: relative;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
 
 .CoveoSearchbox .magic-box {
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
   border: thin solid #bcc3ca;
   border-radius: 2px;
 }
