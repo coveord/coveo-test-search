@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"CategoryFacet","3":"TimespanFacet","4":"FacetRange","5":"Facet","6":"Searchbox","7":"Omnibox","8":"Querybox","9":"FacetSlider","10":"AdvancedSearch","11":"Pager","12":"ResultsPerPage","13":"Recommendation","14":"OmniboxResultList","15":"Quickview","16":"ResultList","17":"Tab","18":"Backdrop","19":"ResultsFiltersPreferences","20":"SimpleFilter","21":"ResultLayoutSelector","22":"FieldTable","23":"ResultsPreferences","24":"Sort","25":"Settings","26":"YouTubeThumbnail","27":"Thumbnail","28":"PrintableUri","29":"SearchAlerts","30":"Badge","31":"ResultRating","32":"Breadcrumb","33":"DistanceResources","34":"ResultFolding","35":"Matrix","36":"FacetValueSuggestions","37":"CardOverlay","38":"SearchButton","39":"FieldValue","40":"AnalyticsSuggestions","41":"ResultLink","42":"ErrorReport","43":"FoldingForThread","44":"FollowItem","45":"ResultTagging","46":"ResultAttachments","47":"QuerySummary","48":"HiddenQuery","49":"FieldSuggestions","50":"CardActionBar","51":"Logo","52":"NumericSpinner","53":"Folding","54":"ChatterPostedBy","55":"ChatterPostAttachment","56":"ChatterLikedBy","57":"DatePicker","58":"RadioButton","59":"MultiSelect","60":"FormGroup","61":"Triggers","62":"Text","63":"ShareQuery","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "0a88e35d40ff12fee241" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"CategoryFacet","3":"TimespanFacet","4":"FacetRange","5":"Facet","6":"Searchbox","7":"Omnibox","8":"Querybox","9":"FacetSlider","10":"AdvancedSearch","11":"Pager","12":"ResultsPerPage","13":"Recommendation","14":"OmniboxResultList","15":"Quickview","16":"ResultList","17":"Tab","18":"ResultsFiltersPreferences","19":"Backdrop","20":"SimpleFilter","21":"ResultLayoutSelector","22":"FieldTable","23":"ResultsPreferences","24":"Sort","25":"Settings","26":"YouTubeThumbnail","27":"Thumbnail","28":"PrintableUri","29":"SearchAlerts","30":"Badge","31":"ResultRating","32":"Breadcrumb","33":"DistanceResources","34":"ResultFolding","35":"Matrix","36":"FacetValueSuggestions","37":"CardOverlay","38":"SearchButton","39":"FieldValue","40":"AnalyticsSuggestions","41":"ResultLink","42":"ErrorReport","43":"FoldingForThread","44":"FollowItem","45":"ResultTagging","46":"ResultAttachments","47":"QuerySummary","48":"HiddenQuery","49":"FieldSuggestions","50":"CardActionBar","51":"Logo","52":"NumericSpinner","53":"Folding","54":"ChatterPostedBy","55":"ChatterPostAttachment","56":"ChatterLikedBy","57":"DatePicker","58":"RadioButton","59":"MultiSelect","60":"FormGroup","61":"Triggers","62":"Text","63":"ShareQuery","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "1ff6126230748cf18d1a" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -14592,8 +14592,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5395.1-beta',
-    product: '2.5395.1-beta',
+    lib: '2.5395.3-beta',
+    product: '2.5395.3-beta',
     supportedApiVersion: 2
 };
 
@@ -33123,7 +33123,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyBackdrop() {
     Initialization_1.LazyInitialization.registerLazyComponent('Backdrop', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(18).then((function () {
+            __webpack_require__.e/* require.ensure */(19).then((function () {
                 var loaded = __webpack_require__(181)['Backdrop'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Backdrop', resolve));
@@ -34157,7 +34157,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyResultsFiltersPreferences() {
     Initialization_1.LazyInitialization.registerLazyComponent('ResultsFiltersPreferences', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(19).then((function () {
+            __webpack_require__.e/* require.ensure */(18).then((function () {
                 var loaded = __webpack_require__(215)['ResultsFiltersPreferences'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ResultsFiltersPreferences', resolve));

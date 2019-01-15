@@ -9979,6 +9979,10 @@ a.CoveoResultLink.coveo-selected *,
   position: relative;
 }
 
+.CoveoTimespanFacet {
+  border: none;
+}
+
 .coveo-facet-column .coveo-topSpace.coveo-with-animation,
 .coveo-facet-column .coveo-bottomSpace.coveo-with-animation {
   -webkit-transition: height 0.5s;
@@ -14430,18 +14434,14 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
 }
 
-.coveo-results-filter-preferences-breadcrumb .coveo-value + .coveo-results-filter-preferences-breadcrumb .coveo-value {
+.coveo-results-filter-preferences-breadcrumb .coveo-value + .coveo-value {
   margin-left: 10px;
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value .coveo-clear {
-  position: relative;
+  display: inline-block;
+  vertical-align: middle;
   margin-left: 5px;
-}
-
-.coveo-results-filter-preferences-breadcrumb .coveo-clear-svg {
-  position: absolute;
-  top: 4px;
 }
 
 /*!
@@ -15348,6 +15348,7 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-small-tabs .coveo-tab-list {
+  text-align: left;
   list-style: none;
   background-color: white;
   border: thin solid #bcc3ca;
@@ -16352,6 +16353,7 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .coveo-category-facet-breadcrumb-values:visited,

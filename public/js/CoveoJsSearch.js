@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "0a88e35d40ff12fee241" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "1ff6126230748cf18d1a" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -19039,8 +19039,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5395.1-beta',
-    product: '2.5395.1-beta',
+    lib: '2.5395.3-beta',
+    product: '2.5395.3-beta',
     supportedApiVersion: 2
 };
 
@@ -31376,6 +31376,10 @@ var CategoryFacet = /** @class */ (function (_super) {
          *        text2.txt
          * ```
          * Setting the `basePath` to `c` would display `folder1` and `folder2` in the `CategoryFacet`, but omit `c`.
+         *
+         * This options accepts an array of values. To specify a "deeper" starting path in your tree, you need to use comma-separated values.
+         *
+         * For example, setting `data-base-path="c,folder1"` on the component markup would display `folder3` in the `CategoryFacet`, but omit `c` and `folder1`.
          *
          */
         basePath: ComponentOptions_1.ComponentOptions.buildListOption({ defaultValue: [] }), 
@@ -52156,6 +52160,7 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Initialization_1 = __webpack_require__(2);
 var Strings_1 = __webpack_require__(7);
 var Utils_1 = __webpack_require__(4);
+var AccessibleButton_1 = __webpack_require__(17);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
@@ -52263,13 +52268,6 @@ var ResultsFiltersPreferences = /** @class */ (function (_super) {
             var valuesContainer = Dom_1.$$('span', { className: 'coveo-values' });
             container.el.appendChild(valuesContainer.el);
             for (var i = 0; i < actives.length; i++) {
-                if (i != 0) {
-                    var separator = Dom_1.$$('span', {
-                        className: 'coveo-separator'
-                    });
-                    separator.text(', ');
-                    valuesContainer.el.appendChild(separator.el);
-                }
                 valuesContainer.el.appendChild(this.buildBreadcrumb(actives[i]));
             }
             args.breadcrumbs.push({ element: container.el });
@@ -52438,11 +52436,16 @@ var ResultsFiltersPreferences = /** @class */ (function (_super) {
         var clear = Dom_1.$$('span', { className: 'coveo-clear' }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
         SVGDom_1.SVGDom.addClassToSVGInContainer(clear.el, 'coveo-clear-svg');
         elem.el.appendChild(clear.el);
-        elem.on('click', function () {
+        var onSelectAction = function () {
             filter.selected = false;
             _this.fromFilterToAnalyticsEvent(filter, 'cleared from breadcrumb');
             _this.fromPreferencesToCheckboxInput();
-        });
+        };
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(elem)
+            .withLabel(Strings_1.l('RemoveFilterOn', filter.caption))
+            .withSelectAction(onSelectAction)
+            .build();
         return elem.el;
     };
     ResultsFiltersPreferences.prototype.confirmDelete = function (filter, filterElement) {
@@ -91838,7 +91841,7 @@ var ResponsiveTabs = /** @class */ (function () {
             tab.on('click', function () { return swapOnSelect(); });
             tab.on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, swapOnSelect));
             tab.on('blur', function (e) {
-                if (!_this.tabIsInDropdown(e.relatedTarget)) {
+                if (e.relatedTarget && !_this.tabIsInDropdown(e.relatedTarget)) {
                     _this.closeDropdown();
                 }
             });
@@ -92593,6 +92596,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
+var AccessibleButton_1 = __webpack_require__(17);
+var Strings_1 = __webpack_require__(7);
 var underscore_1 = __webpack_require__(0);
 var CategoryFacetBreadcrumb = /** @class */ (function () {
     function CategoryFacetBreadcrumb(categoryFacetTitle, onClickHandler, categoryValueDescriptor, basePath) {
@@ -92607,11 +92612,15 @@ var CategoryFacetBreadcrumb = /** @class */ (function () {
         }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
         SVGDom_1.SVGDom.addClassToSVGInContainer(clear.el, 'coveo-facet-breadcrumb-clear-svg');
         var pathToRender = underscore_1.without.apply(void 0, [this.categoryValueDescriptor.path].concat(this.basePath));
-        var title = this.categoryValueDescriptor.value + " " + this.categoryValueDescriptor.count;
+        var captionLabel = pathToRender.join('/');
         var breadcrumbTitle = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-title' }, this.categoryFacetTitle + ": ");
-        var values = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-values' }, pathToRender.join('/'), clear);
-        var breadcrumb = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb', title: title }, breadcrumbTitle, values);
-        breadcrumb.on('click', this.onClickHandler);
+        var valuesContainer = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-values' }, captionLabel, clear);
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(valuesContainer)
+            .withLabel(Strings_1.l('RemoveFilterOn', captionLabel))
+            .withSelectAction(this.onClickHandler)
+            .build();
+        var breadcrumb = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb' }, breadcrumbTitle, valuesContainer);
         return breadcrumb.el;
     };
     return CategoryFacetBreadcrumb;
