@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "3ddfc9a11592ee58e1aa" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "9f312f9f23291385bcbe" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2753,7 +2753,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(11);
 var ComponentOptionsModel_1 = __webpack_require__(25);
@@ -6437,7 +6437,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var Assert_1 = __webpack_require__(5);
 var _ = __webpack_require__(0);
 var Utils_1 = __webpack_require__(4);
@@ -6675,6 +6675,74 @@ exports.SVGDom = SVGDom;
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * This static class is there to contain the different string definitions for all the events related to initialization.
+ *
+ * Note that these events will only be triggered when the {@link init} function is called.
+ *
+ * This means these events are normally called only once when the search interface is initialized.
+ */
+var InitializationEvents = /** @class */ (function () {
+    function InitializationEvents() {
+    }
+    /**
+     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
+     *
+     * The string value is `beforeInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.beforeInitialization = 'beforeInitialization';
+    /**
+     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
+     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
+     *
+     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
+     *
+     * The string value is `afterComponentsInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
+    /**
+     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
+     *
+     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
+     *
+     * The string value is `restoreHistoryState`.
+     * @type {string}
+     */
+    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
+    /**
+     * Triggered right after the UI is fully initialized.
+     *
+     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
+     *
+     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
+     *
+     * The string value is `afterInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterInitialization = 'afterInitialization';
+    /**
+     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
+     *
+     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
+     *
+     * The string value is `nuke`.
+     * @type {string}
+     */
+    InitializationEvents.nuke = 'nuke';
+    return InitializationEvents;
+}());
+exports.InitializationEvents = InitializationEvents;
+
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6995,74 +7063,6 @@ exports.Model = Model;
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * This static class is there to contain the different string definitions for all the events related to initialization.
- *
- * Note that these events will only be triggered when the {@link init} function is called.
- *
- * This means these events are normally called only once when the search interface is initialized.
- */
-var InitializationEvents = /** @class */ (function () {
-    function InitializationEvents() {
-    }
-    /**
-     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
-     *
-     * The string value is `beforeInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.beforeInitialization = 'beforeInitialization';
-    /**
-     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
-     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
-     *
-     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
-     *
-     * The string value is `afterComponentsInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
-    /**
-     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
-     *
-     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
-     *
-     * The string value is `restoreHistoryState`.
-     * @type {string}
-     */
-    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
-    /**
-     * Triggered right after the UI is fully initialized.
-     *
-     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
-     *
-     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
-     *
-     * The string value is `afterInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterInitialization = 'afterInitialization';
-    /**
-     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
-     *
-     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
-     *
-     * The string value is `nuke`.
-     * @type {string}
-     */
-    InitializationEvents.nuke = 'nuke';
-    return InitializationEvents;
-}());
-exports.InitializationEvents = InitializationEvents;
-
-
-/***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7269,14 +7269,14 @@ var HistoryController_1 = __webpack_require__(120);
 var LocalStorageHistoryController_1 = __webpack_require__(121);
 var NoopHistoryController_1 = __webpack_require__(265);
 var QueryController_1 = __webpack_require__(34);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
 var SentryLogger_1 = __webpack_require__(266);
 var ComponentOptionsModel_1 = __webpack_require__(25);
 var ComponentStateModel_1 = __webpack_require__(62);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var Dom_1 = __webpack_require__(1);
@@ -8829,7 +8829,7 @@ var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var QueryController_1 = __webpack_require__(34);
 var QueryStateModel_1 = __webpack_require__(12);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var Dom_1 = __webpack_require__(1);
 var Component_1 = __webpack_require__(6);
 var _ = __webpack_require__(0);
@@ -9334,7 +9334,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var _ = __webpack_require__(0);
 exports.COMPONENT_OPTIONS_ATTRIBUTES = {
     RESULT_LINK: 'resultLink',
@@ -13786,7 +13786,7 @@ var SearchEndpoint = /** @class */ (function () {
     SearchEndpoint.prototype.buildViewAsHtmlQueryString = function (uniqueId, callOptions) {
         callOptions = _.extend({}, callOptions);
         return {
-            uniqueId: uniqueId,
+            uniqueId: Utils_1.Utils.safeEncodeURIComponent(uniqueId),
             enableNavigation: 'true',
             requestedOutputSize: callOptions.requestedOutputSize ? callOptions.requestedOutputSize.toString() : null,
             contentType: callOptions.contentType
@@ -16526,7 +16526,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var ComponentStateModel = /** @class */ (function (_super) {
     __extends(ComponentStateModel, _super);
     function ComponentStateModel(element) {
@@ -16583,7 +16583,7 @@ var SearchAlertEvents_1 = __webpack_require__(66);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var Defer_1 = __webpack_require__(28);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var DeviceUtils_1 = __webpack_require__(26);
@@ -16629,9 +16629,9 @@ var ResponsiveFacetOptions_1 = __webpack_require__(80);
  * This is probably the most complex component in the Coveo JavaScript Search Framework and as such, it allows for many
  * configuration options.
  *
- * See also the [`FacetRange`]{@link FacetRange} and [`HierarchicalFacet`]{@link HierarchicalFacet} components (which
- * extend this component), and the [`FacetSlider`]{@link FacetSlider} component (which does not properly extend this
- * component, but is very similar).
+ * See also the [`FacetRange`]{@link FacetRange} and [`TimespanFacet`]{@link TimespanFacet} components (which
+ * extend this component), and the [`FacetSlider`]{@link FacetSlider} and [`CategoryFacet`]{@link CategoryFacet} components (which do not extend this
+ * component, but are very similar).
  */
 var Facet = /** @class */ (function (_super) {
     __extends(Facet, _super);
@@ -17634,7 +17634,7 @@ var Facet = /** @class */ (function (_super) {
         var more = Dom_1.$$('div', { className: 'coveo-facet-more', tabindex: 0 }, svgContainer).el;
         new AccessibleButton_1.AccessibleButton()
             .withElement(more)
-            .withLabel(Strings_1.l('Expand'))
+            .withLabel(Strings_1.l('ExpandFacet', this.options.title))
             .withSelectAction(function () { return _this.handleClickMore(); })
             .build();
         return more;
@@ -17646,7 +17646,7 @@ var Facet = /** @class */ (function (_super) {
         var less = Dom_1.$$('div', { className: 'coveo-facet-less', tabindex: 0 }, svgContainer).el;
         new AccessibleButton_1.AccessibleButton()
             .withElement(less)
-            .withLabel(Strings_1.l('Collapse'))
+            .withLabel(Strings_1.l('CollapseFacet', this.options.title))
             .withSelectAction(function () { return _this.handleClickLess(); })
             .build();
         return less;
@@ -19050,8 +19050,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5549.0-beta',
-    product: '2.5549.0-beta',
+    lib: '2.5652.1-beta',
+    product: '2.5652.1-beta',
     supportedApiVersion: 2
 };
 
@@ -19354,7 +19354,7 @@ exports.PendingSearchEvent = PendingSearchEvent;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var Component_1 = __webpack_require__(6);
 var SearchInterface_1 = __webpack_require__(18);
 var Utils_1 = __webpack_require__(4);
@@ -20315,7 +20315,7 @@ var ResultListEvents_1 = __webpack_require__(29);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var Defer_1 = __webpack_require__(28);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var DeviceUtils_1 = __webpack_require__(26);
 var Dom_1 = __webpack_require__(1);
@@ -21572,7 +21572,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var PendingSearchEvent_1 = __webpack_require__(78);
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var SearchInterface_1 = __webpack_require__(18);
 var Component_1 = __webpack_require__(6);
 var QueryStateModel_1 = __webpack_require__(12);
@@ -25151,7 +25151,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -30752,13 +30752,12 @@ var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var QueryStateModel_1 = __webpack_require__(12);
 __webpack_require__(497);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var Utils_1 = __webpack_require__(4);
 var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
 var CategoryFacetSearch_1 = __webpack_require__(498);
-var KeyboardUtils_1 = __webpack_require__(30);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var CategoryFacetBreadcrumb_1 = __webpack_require__(500);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -30767,6 +30766,7 @@ var QueryBuilder_1 = __webpack_require__(36);
 var ResponsiveFacets_1 = __webpack_require__(162);
 var ResponsiveFacetOptions_1 = __webpack_require__(80);
 var CategoryFacetHeader_1 = __webpack_require__(502);
+var AccessibleButton_1 = __webpack_require__(17);
 /**
  * The `CategoryFacet` component is a facet that renders values in a hierarchical fashion. It determines the filter to apply depending on the
  * current selected path of values.
@@ -31220,20 +31220,24 @@ var CategoryFacet = /** @class */ (function (_super) {
         var _this = this;
         var svgContainer = Dom_1.$$('span', { className: 'coveo-facet-more-icon' }, SVGIcons_1.SVGIcons.icons.arrowDown).el;
         SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer, 'coveo-facet-more-icon-svg');
-        var more = Dom_1.$$('div', { className: 'coveo-category-facet-more', tabindex: 0 }, svgContainer);
-        var showMoreHandler = function () { return _this.showMore(); };
-        more.on('click', function () { return _this.showMore(); });
-        more.on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, showMoreHandler));
+        var more = Dom_1.$$('div', { className: 'coveo-category-facet-more' }, svgContainer);
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(more)
+            .withSelectAction(function () { return _this.showMore(); })
+            .withLabel(Strings_1.l('ExpandFacet', this.options.title))
+            .build();
         return more.el;
     };
     CategoryFacet.prototype.buildLessButton = function () {
         var _this = this;
         var svgContainer = Dom_1.$$('span', { className: 'coveo-facet-less-icon' }, SVGIcons_1.SVGIcons.icons.arrowUp).el;
         SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer, 'coveo-facet-less-icon-svg');
-        var less = Dom_1.$$('div', { className: 'coveo-category-facet-less', tabindex: 0 }, svgContainer);
-        var showLessHandler = function () { return _this.showLess(); };
-        less.on('click', showLessHandler);
-        less.on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, showLessHandler));
+        var less = Dom_1.$$('div', { className: 'coveo-category-facet-less' }, svgContainer);
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(less)
+            .withSelectAction(function () { return _this.showLess(); })
+            .withLabel(Strings_1.l('CollapseFacet', this.options.title))
+            .build();
         return less.el;
     };
     CategoryFacet.prototype.handlePopulateBreadCrumb = function (args) {
@@ -31444,7 +31448,7 @@ var DebugEvents_1 = __webpack_require__(75);
 exports.DebugEvents = DebugEvents_1.DebugEvents;
 var DistanceEvents_1 = __webpack_require__(149);
 exports.DistanceEvents = DistanceEvents_1.DistanceEvents;
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 exports.InitializationEvents = InitializationEvents_1.InitializationEvents;
 var OmniboxEvents_1 = __webpack_require__(32);
 exports.OmniboxEvents = OmniboxEvents_1.OmniboxEvents;
@@ -32588,6 +32592,8 @@ var dict = {
     "Collapse": "Collapse",
     "Collapsable": "Collapsible",
     "Expand": "Expand",
+    "CollapseFacet": "Collapse {0} facet",
+    "ExpandFacet": "Expand {0} facet",
     "Today": "Today",
     "Yesterday": "Yesterday",
     "Tomorrow": "Tomorrow",
@@ -33134,7 +33140,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var Dom_1 = __webpack_require__(1);
 var HashUtils_1 = __webpack_require__(39);
 var Defer_1 = __webpack_require__(28);
@@ -33144,7 +33150,7 @@ var _ = __webpack_require__(0);
 var QueryStateModel_1 = __webpack_require__(12);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var SharedAnalyticsCalls_1 = __webpack_require__(87);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 /**
  * This component is instantiated automatically by the framework on the root if the {@link SearchInterface}.<br/>
  * When the {@link SearchInterface.options.enableHistory} option is set to true, this component is instantiated.<br/>
@@ -33408,10 +33414,10 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var LocalStorageUtils_1 = __webpack_require__(38);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var Logger_1 = __webpack_require__(11);
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var RootComponent_1 = __webpack_require__(35);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
@@ -35747,7 +35753,7 @@ var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
 __webpack_require__(302);
 var QueryEvents_1 = __webpack_require__(10);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var ResultListEvents_1 = __webpack_require__(29);
 var HashUtils_1 = __webpack_require__(39);
 var ComponentsTypes_1 = __webpack_require__(130);
@@ -36308,47 +36314,37 @@ var GlobalExports_1 = __webpack_require__(3);
 var ResponsiveFacetOptions_1 = __webpack_require__(80);
 var ResponsiveFacets_1 = __webpack_require__(162);
 /**
- * The FacetRange component displays a {@link Facet} whose values are expressed as ranges. These ranges are computed
- * from the results of the current query.
+ * A `FacetRange` is a [facet](https://docs.coveo.com/en/198/) whose values are expressed as ranges.
  *
- * This component inherits from the Facet component. This implies that you must specify a valid
- * [field]{@link Facet.options.field} value for this component to work.
+ * You must set the [`field`]{@link Facet.options.field} option to a value targeting a numeric or date [field](https://docs.coveo.com/en/200/) in your index for this component to work.
  *
- * Most of the options available for a Facet component are also available for a FacetRange component. There are some
- * exceptions, however.
+ * This component extends the [`Facet`]{@link Facet} component and supports all `Facet` options except:
  *
- * Here is the list of Facet options which the FacetRange component does not support.
- * - The **Settings** menu options:
- *   - [enableSettings]{@link Facet.options.enableSettings}
- *   - [enableSettingsFacetState]{@link Facet.options.enableSettingsFacetState}
- *   - [enableCollapse]{@link Facet.options.enableCollapse}
- *   - [availableSorts]{@link Facet.options.availableSorts}
- *   - [customSort]{@link Facet.options.customSort}
- *   - [computedFieldCaption]{@link Facet.options.computedFieldCaption}
- * - The **Facet Search** options:
- *   - [enableFacetSearch]{@link Facet.options.enableFacetSearch}
- *   - [facetSearchDelay]{@link Facet.options.facetSearchDelay}
- *   - [facetSearchIgnoreAccents]{@link Facet.options.facetSearchIgnoreAccents}
- *   - [numberOfValuesInFacetSearch]{@link Facet.options.numberOfValuesInFacetSearch}
- * - The **More and Less** options:
- *   - [enableMoreLess]{@link Facet.options.enableMoreLess}
- *   - [pageSize]{@link Facet.options.pageSize}
- *
- *
- *  Moreover, while the [numberOfValues]{@link Facet.options.numberOfValues} option still allows you to specify the
- *  maximum number of values to display in a FacetRange component, it is not possible for the end to display additional
- *  values, since the component does not support the **More** button.
+ * - **Settings** menu options
+ *   - [`enableSettings`]{@link Facet.options.enableSettings}
+ *   - [`enableSettingsFacetState`]{@link Facet.options.enableSettingsFacetState}
+ *   - [`enableCollapse`]{@link Facet.options.enableCollapse}
+ *   - [`availableSorts`]{@link Facet.options.availableSorts}
+ *   - [`customSort`]{@link Facet.options.customSort}
+ *   - [`computedFieldCaption`]{@link Facet.options.computedFieldCaption}
+ * - **Facet Search** options
+ *   - [`enableFacetSearch`]{@link Facet.options.enableFacetSearch}
+ *   - [`facetSearchDelay`]{@link Facet.options.facetSearchDelay}
+ *   - [`facetSearchIgnoreAccents`]{@link Facet.options.facetSearchIgnoreAccents}
+ *   - [`numberOfValuesInFacetSearch`]{@link Facet.options.numberOfValuesInFacetSearch}
+ * - **More and Less** options
+ *   - [`enableMoreLess`]{@link Facet.options.enableMoreLess}
+ *   - [`pageSize`]{@link Facet.options.pageSize}
  *
  *  @notSupportedIn salesforcefree
  */
 var FacetRange = /** @class */ (function (_super) {
     __extends(FacetRange, _super);
     /**
-     * Creates a new FacetRange component.
-     * @param element The HTMLElement on which to instantiate the component.
-     * @param options The options for the FacetRange component.
-     * @param bindings The bindings that the component requires to function normally. If not set, these will be
-     * automatically resolved (with a slower execution time).
+     * Creates a new `FacetRange`.
+     * @param element The HTML element on which to instantiate the component.
+     * @param options The configuration options to apply when creating the component.
+     * @param bindings The bindings required by the component.
      */
     function FacetRange(element, options, bindings) {
         var _this = _super.call(this, element, ComponentOptions_1.ComponentOptions.initComponentOptions(element, FacetRange, options), bindings, FacetRange.ID) || this;
@@ -36452,62 +36448,20 @@ var FacetRange = /** @class */ (function (_super) {
      */
     FacetRange.options = __assign({ 
         /**
-         * Specifies whether the field for which you require ranges is a date field.
+         * Whether the specified [`field`]{@link Facet.options.field} option value targets a date field in your index.
          *
-         * This allows the component to correctly build the outgoing {@link IGroupByRequest}.
+         * This allows the component to correctly build the outgoing [Group By](https://docs.coveo.com/en/203/).
          *
-         * Default value is `false`.
+         * **Default:** `false`.
          */
         dateField: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }), 
         /**
-         * Specifies an array of {@link IRangeValue} to use as Facet values.
+         * The list of [range values]{@link IRangeValue} to request (see [Requesting Specific FacetRange Values](https://docs.coveo.com/en/2790/)).
          *
-         *
-         * **Examples:**
-         *
-         * You can set the option in the ['init']{@link init} call:
-         * ```javascript
-         * var myRanges = [
-         *   {
-         *      start: 0,
-         *      end: 100,
-         *      label: "0 - 100",
-         *      endInclusive: false
-         *    },
-         *    {
-         *      start: 100,
-         *      end: 200,
-         *      label: "100 - 200",
-         *      endInclusive: false
-         *    },
-         *    {
-         *      start: 200,
-         *      end: 300,
-         *      label: "200 - 300",
-         *      endInclusive: false
-         *    }
-         * ]
-         *
-         * Coveo.init(document.querySelector('#search'), {
-         *    FacetRange : {
-         *        ranges : myRanges
-         *    }
-         * })
-         * ```
-         *
-         * Or directly in the markup:
-         * ```html
-         * <!-- Ensure that the double quotes are properly handled in data-ranges. -->
-         * <div class='CoveoFacetRange' data-field='@myotherfield' data-ranges='[{"start": 0, "end": 100, "label": "0 - 100", "endInclusive": false}, {"start": 100, "end": 200, "label": "100 - 200", "endInclusive": false}]'></div>
-         * ```
+         * By default, the index automatically generates range values.
          *
          * **Note:**
-         * > Ranges can overlap.
-         *
-         * By default, the index automatically generates the ranges. However, the index cannot automatically generate the
-         * ranges if the [field]{@link Facet.options.field} you specify for the FacetRange component is generated by a query
-         * function (see [Query Function](https://developers.coveo.com/x/XQCq)). When this is the case, you must specify the
-         * ranges at query time.
+         * > The index cannot automatically generate range values for a `FacetRange` whose [`field`]{@link Facet.options.field} option value references a dynamic field generated by a [query function](https://docs.coveo.com/en/232/). In such a case, you _must_ use the `ranges` option.
          */
         ranges: ComponentOptions_1.ComponentOptions.buildJsonOption() }, ResponsiveFacetOptions_1.ResponsiveFacetOptions);
     return FacetRange;
@@ -37202,7 +37156,7 @@ var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
 var ComponentOptionsModel_1 = __webpack_require__(25);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -37673,15 +37627,13 @@ var Omnibox = /** @class */ (function (_super) {
     };
     Omnibox.prototype.triggerNewQuery = function (searchAsYouType, analyticsEvent) {
         clearTimeout(this.searchAsYouTypeTimeout);
-        var text = this.getQuery(searchAsYouType);
-        if (this.shouldExecuteQuery(searchAsYouType)) {
-            this.lastQuery = text;
-            analyticsEvent();
-            this.queryController.executeQuery({
-                searchAsYouType: searchAsYouType,
-                logInActionsHistory: true
-            });
-        }
+        this.lastQuery = this.getQuery(searchAsYouType);
+        analyticsEvent();
+        this.queryController.executeQuery({
+            searchAsYouType: searchAsYouType,
+            logInActionsHistory: true,
+            cancel: !this.shouldExecuteQuery(searchAsYouType)
+        });
     };
     Omnibox.prototype.getQuery = function (searchAsYouType) {
         if (this.lastQuery == this.magicBox.getText()) {
@@ -38209,12 +38161,12 @@ var GlobalExports_1 = __webpack_require__(3);
 var MiscModules_1 = __webpack_require__(55);
 var FacetSliderQueryController_1 = __webpack_require__(428);
 var BreadcrumbEvents_1 = __webpack_require__(37);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var SearchAlertEvents_1 = __webpack_require__(66);
 var SliderEvents_1 = __webpack_require__(108);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -39144,13 +39096,13 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var QuickviewEvents_1 = __webpack_require__(169);
 var QueryStateModel_1 = __webpack_require__(12);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var Utils_1 = __webpack_require__(4);
 var Dom_1 = __webpack_require__(1);
 var ResponsiveRecommendation_1 = __webpack_require__(464);
 var coveo_analytics_1 = __webpack_require__(73);
 var RegisteredNamedMethods_1 = __webpack_require__(22);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var DefaultRecommendationTemplate_1 = __webpack_require__(343);
@@ -39524,12 +39476,12 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(474);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var ResultLayoutEvents_1 = __webpack_require__(100);
 var ResultListEvents_1 = __webpack_require__(29);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -39867,10 +39819,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(486);
 var underscore_1 = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var AccessibleButton_1 = __webpack_require__(17);
@@ -40298,7 +40250,7 @@ exports.DistanceEvents = DistanceEvents;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 exports.Model = Model_1.Model;
 var QueryStateModel_1 = __webpack_require__(12);
 exports.QueryStateModel = QueryStateModel_1.QueryStateModel;
@@ -40798,6 +40750,8 @@ var Dom_1 = __webpack_require__(1);
 var EventsUtils_1 = __webpack_require__(157);
 var _ = __webpack_require__(0);
 var AccessibleButton_1 = __webpack_require__(17);
+var KeyboardUtils_1 = __webpack_require__(30);
+var InitializationEvents_1 = __webpack_require__(15);
 var ResponsiveDropdownEvent;
 (function (ResponsiveDropdownEvent) {
     ResponsiveDropdownEvent["OPEN"] = "responsiveDropdownOpen";
@@ -40805,6 +40759,7 @@ var ResponsiveDropdownEvent;
 })(ResponsiveDropdownEvent = exports.ResponsiveDropdownEvent || (exports.ResponsiveDropdownEvent = {}));
 var ResponsiveDropdown = /** @class */ (function () {
     function ResponsiveDropdown(dropdownContent, dropdownHeader, coveoRoot) {
+        var _this = this;
         this.dropdownContent = dropdownContent;
         this.dropdownHeader = dropdownHeader;
         this.coveoRoot = coveoRoot;
@@ -40812,9 +40767,14 @@ var ResponsiveDropdown = /** @class */ (function () {
         this.onOpenHandlers = [];
         this.onCloseHandlers = [];
         this.popupBackgroundIsEnabled = true;
+        this.closeIfOpened = function () {
+            _this.isOpened && _this.close();
+        };
         this.popupBackground = this.buildPopupBackground();
         this.bindOnClickDropdownHeaderEvent();
         this.saveContentPosition();
+        this.bindOnKeyboardEscapeEvent();
+        this.bindNukeEvents();
     }
     ResponsiveDropdown.prototype.registerOnOpenHandler = function (handler, context) {
         this.onOpenHandlers.push({ handler: handler, context: context });
@@ -40858,6 +40818,18 @@ var ResponsiveDropdown = /** @class */ (function () {
             .withSelectAction(function () { return (_this.isOpened ? _this.close() : _this.open()); })
             .withLabel('Filters')
             .build();
+    };
+    ResponsiveDropdown.prototype.bindOnKeyboardEscapeEvent = function () {
+        Dom_1.$$(document.documentElement).on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ESCAPE, this.closeIfOpened));
+    };
+    ResponsiveDropdown.prototype.unbindOnKeyboardEscapeEvent = function () {
+        Dom_1.$$(document.documentElement).off('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ESCAPE, this.closeIfOpened));
+    };
+    ResponsiveDropdown.prototype.bindNukeEvents = function () {
+        var _this = this;
+        Dom_1.$$(this.coveoRoot).on(InitializationEvents_1.InitializationEvents.nuke, function () {
+            _this.unbindOnKeyboardEscapeEvent();
+        });
     };
     ResponsiveDropdown.prototype.showPopupBackground = function () {
         if (this.popupBackgroundIsEnabled) {
@@ -43914,7 +43886,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var SettingsEvents_1 = __webpack_require__(42);
 var DomUtils_1 = __webpack_require__(65);
 var Dom_1 = __webpack_require__(1);
@@ -44445,7 +44417,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(416);
 var underscore_1 = __webpack_require__(0);
 var BreadcrumbEvents_1 = __webpack_require__(37);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -49551,7 +49523,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var DeviceUtils_1 = __webpack_require__(26);
 var QueryEvents_1 = __webpack_require__(10);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var QueryStateModel_2 = __webpack_require__(12);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -49612,6 +49584,26 @@ var Pager = /** @class */ (function (_super) {
         element.appendChild(_this.list);
         return _this;
     }
+    Object.defineProperty(Pager.prototype, "currentPage", {
+        /**
+         * The current page (1-based index).
+         */
+        get: function () {
+            return this._currentPage;
+        },
+        set: function (value) {
+            var sanitizedValue = value;
+            if (isNaN(value)) {
+                this.logger.warn("Unable to set pager current page to an invalid value: " + value + ". Resetting to 1.");
+                sanitizedValue = 1;
+            }
+            sanitizedValue = Math.max(Math.min(sanitizedValue, this.getMaxNumberOfPagesForCurrentResultsPerPage()), 1);
+            sanitizedValue = Math.floor(sanitizedValue);
+            this._currentPage = sanitizedValue;
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
      * Sets the current page, then executes a query.
      *
@@ -49623,7 +49615,7 @@ var Pager = /** @class */ (function (_super) {
     Pager.prototype.setPage = function (pageNumber, analyticCause) {
         if (analyticCause === void 0) { analyticCause = AnalyticsActionListMeta_1.analyticsActionCauseList.pagerNumber; }
         Assert_1.Assert.exists(pageNumber);
-        this.currentPage = Math.max(Math.min(pageNumber, this.getMaxNumberOfPagesForCurrentResultsPerPage()), 1);
+        this.currentPage = pageNumber;
         this.updateQueryStateModel(this.getFirstResultNumber(this.currentPage));
         this.usageAnalytics.logCustomEvent(analyticCause, { pagerNumber: this.currentPage }, this.element);
         this.queryController.executeQuery({
@@ -50143,7 +50135,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var ExternalModulesShim_1 = __webpack_require__(24);
 var _ = __webpack_require__(0);
 __webpack_require__(451);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var SVGIcons_1 = __webpack_require__(13);
 /**
  * The PreferencesPanel component renders a **Preferences** item inside the {@link Settings} component which the end
@@ -52178,9 +52170,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var LocalStorageUtils_1 = __webpack_require__(38);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var PreferencesPanelEvents_1 = __webpack_require__(72);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var QueryStateModel_1 = __webpack_require__(12);
 var BreadcrumbEvents_1 = __webpack_require__(37);
@@ -52778,7 +52770,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
 var AccessibleButton_1 = __webpack_require__(17);
 __webpack_require__(478);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var ResultListEvents_1 = __webpack_require__(29);
 var ResultListUtils_1 = __webpack_require__(367);
@@ -54617,7 +54609,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var popper_js_1 = __webpack_require__(91);
 __webpack_require__(483);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var SettingsEvents_1 = __webpack_require__(42);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -55001,7 +54993,7 @@ var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var QueryEvents_1 = __webpack_require__(10);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
@@ -63617,7 +63609,7 @@ var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
 var ComponentOptionsModel_1 = __webpack_require__(25);
 var Dom_1 = __webpack_require__(1);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var Utils_1 = __webpack_require__(4);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
 var LiveAnalyticsClient_1 = __webpack_require__(126);
@@ -64773,7 +64765,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(380);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var AccessibleButton_1 = __webpack_require__(17);
@@ -65828,7 +65820,7 @@ var FacetHeader = /** @class */ (function () {
         SVGDom_1.SVGDom.addClassToSVGInContainer(eraser.el, 'coveo-facet-header-eraser-svg');
         new AccessibleButton_1.AccessibleButton()
             .withElement(eraser.el)
-            .withLabel(Strings_1.l('Reset'))
+            .withLabel(Strings_1.l('Clear', this.options.title))
             .withClickAction(function () { return _this.onEraserClick(); })
             .withEnterKeyboardAction(function () { return _this.onEraserClick(); })
             .build();
@@ -66156,7 +66148,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Facet_1 = __webpack_require__(63);
 var Dom_1 = __webpack_require__(1);
 var Utils_1 = __webpack_require__(4);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var FacetSearchParameters_1 = __webpack_require__(128);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Strings_1 = __webpack_require__(7);
@@ -66451,7 +66443,10 @@ var FacetSearch = /** @class */ (function () {
         else {
             this.currentlyDisplayedResults = underscore_1.pluck(facetValues, 'value');
         }
-        underscore_1.each(Dom_1.$$(this.searchResults).findAll('.coveo-facet-selectable'), function (elem) {
+        underscore_1.each(Dom_1.$$(this.searchResults).findAll('.coveo-facet-selectable'), function (elem, index) {
+            Dom_1.$$(elem).setAttribute('id', "coveo-facet-search-" + _this.facet.options.id + "-suggestion-" + index);
+            Dom_1.$$(elem).setAttribute('role', 'option');
+            Dom_1.$$(elem).setAttribute('aria-selected', 'false');
             Dom_1.$$(elem).addClass('coveo-facet-search-selectable');
         });
     };
@@ -66555,8 +66550,9 @@ var FacetSearchElement = /** @class */ (function () {
         this.facetSearch = facetSearch;
         this.searchBarIsAnimating = false;
         this.triggeredScroll = false;
+        this.facetSearchId = underscore_1.uniqueId('coveo-facet-search-results');
         this.facetSearchUserInputHandler = new FacetSearchUserInputHandler_1.FacetSearchUserInputHandler(this.facetSearch);
-        this.searchResults = Dom_1.$$('ul', { className: 'coveo-facet-search-results' }).el;
+        this.searchResults = Dom_1.$$('ul', { id: this.facetSearchId, className: 'coveo-facet-search-results', role: 'listbox' }).el;
         Dom_1.$$(this.searchResults).on('scroll', function () { return _this.handleScrollEvent(); });
         Dom_1.$$(this.searchResults).hide();
     }
@@ -66573,12 +66569,11 @@ var FacetSearchElement = /** @class */ (function () {
         SVGDom_1.SVGDom.addClassToSVGInContainer(this.clear, 'coveo-facet-search-clear-svg');
         this.clear.style.display = 'none';
         this.search.appendChild(this.clear);
-        var middle = document.createElement('div');
-        Dom_1.$$(middle).addClass('coveo-facet-search-middle');
-        this.search.appendChild(middle);
+        this.combobox = this.buildCombobox();
+        this.search.appendChild(this.combobox);
         this.input = this.buildInputElement();
         Component_1.Component.pointElementsToDummyForm(this.input);
-        middle.appendChild(this.input);
+        this.combobox.appendChild(this.input);
         Dom_1.$$(this.input).on('keyup', function (e) {
             _this.facetSearchUserInputHandler.handleKeyboardEvent(e);
         });
@@ -66590,6 +66585,19 @@ var FacetSearchElement = /** @class */ (function () {
         });
         this.detectSearchBarAnimation();
         return this.search;
+    };
+    FacetSearchElement.prototype.buildCombobox = function () {
+        return Dom_1.$$('div', {
+            className: 'coveo-facet-search-middle',
+            ariaHaspopup: 'listbox',
+            ariaExpanded: 'true'
+        }).el;
+    };
+    FacetSearchElement.prototype.updateSelectedOption = function (option) {
+        this.input.setAttribute('aria-activedescendant', option.getAttribute('id'));
+        var previouslySelectedOption = Dom_1.$$(this.searchResults).find('[aria-selected^="true"]');
+        previouslySelectedOption && previouslySelectedOption.setAttribute('aria-selected', 'false');
+        option.setAttribute('aria-selected', 'true');
     };
     FacetSearchElement.prototype.showFacetSearchWaitingAnimation = function () {
         this.magnifier && Dom_1.$$(this.magnifier).hide();
@@ -66619,7 +66627,7 @@ var FacetSearchElement = /** @class */ (function () {
         var _this = this;
         if (this.searchResults != null) {
             root.appendChild(this.searchResults);
-            this.searchResults.style.display = 'block';
+            Dom_1.$$(this.searchResults).show();
             this.searchResults.style.width = facetWidth - FacetSearchElement.FACET_SEARCH_PADDING + 'px';
             if (Dom_1.$$(this.searchResults).css('display') == 'none') {
                 this.searchResults.style.display = '';
@@ -66643,6 +66651,7 @@ var FacetSearchElement = /** @class */ (function () {
         this.currentResult && this.currentResult.removeClass('coveo-facet-search-current-result');
         this.currentResult = toSet;
         toSet.addClass('coveo-facet-search-current-result');
+        this.updateSelectedOption(toSet);
     };
     FacetSearchElement.prototype.moveCurrentResultDown = function () {
         var nextResult = this.currentResult.el.nextElementSibling;
@@ -66684,6 +66693,7 @@ var FacetSearchElement = /** @class */ (function () {
     FacetSearchElement.prototype.handleFacetSearchFocus = function () {
         if (this.facetSearch.currentlyDisplayedResults == null) {
             this.facetSearch.displayNewValues();
+            this.addAriaAttributes();
         }
     };
     FacetSearchElement.prototype.setupFacetSearchResultsEvents = function (el) {
@@ -66708,6 +66718,7 @@ var FacetSearchElement = /** @class */ (function () {
         });
     };
     FacetSearchElement.prototype.hideSearchResultsElement = function () {
+        this.removeAriaAttributes();
         Dom_1.$$(this.searchResults).hide();
         Dom_1.$$(this.searchResults).remove();
     };
@@ -66734,10 +66745,12 @@ var FacetSearchElement = /** @class */ (function () {
     FacetSearchElement.prototype.buildInputElement = function () {
         return Dom_1.$$('input', {
             className: 'coveo-facet-search-input',
-            type: 'test',
+            type: 'text',
             autocapitalize: 'off',
             autocorrect: 'off',
-            'aria-label': Strings_1.l('Search')
+            ariaLabel: Strings_1.l('Search'),
+            ariaHaspopup: 'true',
+            ariaAutocomplete: 'list'
         }).el;
     };
     FacetSearchElement.prototype.positionPopUp = function (nextTo, root) {
@@ -66753,6 +66766,23 @@ var FacetSearchElement = /** @class */ (function () {
         else {
             this.facetSearchUserInputHandler.handleFacetSearchResultsScroll();
         }
+    };
+    FacetSearchElement.prototype.addAriaAttributes = function () {
+        if (!this.input || !this.combobox) {
+            return;
+        }
+        this.combobox.setAttribute('role', 'combobox');
+        this.combobox.setAttribute('aria-owns', this.facetSearchId);
+        this.input.setAttribute('aria-controls', this.facetSearchId);
+    };
+    FacetSearchElement.prototype.removeAriaAttributes = function () {
+        if (!this.input || !this.combobox) {
+            return;
+        }
+        this.combobox.removeAttribute('role');
+        this.combobox.removeAttribute('aria-owns');
+        this.input.removeAttribute('aria-controls');
+        this.input.removeAttribute('aria-activedescendant');
     };
     FacetSearchElement.FACET_SEARCH_PADDING = 40;
     return FacetSearchElement;
@@ -70296,7 +70326,7 @@ exports.FacetSearchUserInputHandler = FacetSearchUserInputHandler;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = __webpack_require__(4);
-var Model_1 = __webpack_require__(15);
+var Model_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
 var DependentFacetManager = /** @class */ (function () {
@@ -91578,7 +91608,7 @@ exports.SearchAlertsMessage = SearchAlertsMessage;
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(488);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(15);
 var Logger_1 = __webpack_require__(11);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -92199,10 +92229,12 @@ var CategoryValue = /** @class */ (function () {
         var _this = this;
         this.label = Dom_1.$$(this.element.find('.coveo-category-facet-value-label'));
         this.label.addClass('coveo-selectable');
+        var countLabel = Strings_1.l('ResultCount', this.categoryValueDescriptor.count.toString());
+        var label = Strings_1.l('SelectValueWithResultCount', this.categoryValueDescriptor.value, countLabel);
         new AccessibleButton_1.AccessibleButton()
             .withElement(this.label)
             .withSelectAction(function () { return _this.onSelect(); })
-            .withLabel(Strings_1.l(this.categoryValueDescriptor.value) + " " + this.categoryValueDescriptor.count)
+            .withLabel(label)
             .build();
         return this;
     };
@@ -92546,7 +92578,7 @@ var CategoryFacetSearch = /** @class */ (function () {
         Dom_1.$$(this.facetSearchElement.searchResults).empty();
         this.currentlyDisplayedResults = underscore_1.pluck(categoryFacetValues, 'value');
         for (var i = 0; i < categoryFacetValues.length; i++) {
-            var searchResult = this.buildFacetSearchValue(categoryFacetValues[i]);
+            var searchResult = this.buildFacetSearchValue(categoryFacetValues[i], i);
             if (i == 0) {
                 this.facetSearchElement.setAsCurrentResult(searchResult);
             }
@@ -92554,7 +92586,7 @@ var CategoryFacetSearch = /** @class */ (function () {
         }
         this.highlightCurrentQueryWithinSearchResults();
     };
-    CategoryFacetSearch.prototype.buildFacetSearchValue = function (categoryFacetValue) {
+    CategoryFacetSearch.prototype.buildFacetSearchValue = function (categoryFacetValue, index) {
         var _this = this;
         var path = categoryFacetValue.value.split(this.categoryFacet.options.delimitingCharacter);
         var pathParents = path.slice(0, -1).length != 0 ? path.slice(0, -1).join('/') + "/" : '';
@@ -92565,10 +92597,15 @@ var CategoryFacetSearch = /** @class */ (function () {
         var firstRow = Dom_1.$$('div', { className: 'coveo-category-facet-search-first-row' }, value, number);
         var secondRow = Dom_1.$$('div', { className: 'coveo-category-facet-search-second-row' }, pathToValueCaption);
         var item = Dom_1.$$('li', {
+            id: "coveo-category-facet-search-suggestion-" + index,
+            role: 'option',
+            ariaSelected: 'false',
             className: 'coveo-category-facet-search-value',
             title: path
         }, firstRow, secondRow);
         item.el.dataset.path = categoryFacetValue.value;
+        var countLabel = Strings_1.l('ResultCount', categoryFacetValue.numberOfResults.toString());
+        var label = Strings_1.l('SelectValueWithResultCount', underscore_1.last(path), countLabel);
         new AccessibleButton_1.AccessibleButton()
             .withElement(item)
             .withSelectAction(function () {
@@ -92576,7 +92613,7 @@ var CategoryFacetSearch = /** @class */ (function () {
             _this.categoryFacet.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect, path);
             _this.categoryFacet.executeQuery();
         })
-            .withLabel(Strings_1.l(underscore_1.last(path)) + " " + categoryFacetValue.numberOfResults)
+            .withLabel(label)
             .build();
         return item;
     };
