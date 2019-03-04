@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"CategoryFacet","3":"TimespanFacet","4":"FacetRange","5":"Facet","6":"Searchbox","7":"Omnibox","8":"Querybox","9":"FacetSlider","10":"AdvancedSearch","11":"Pager","12":"ResultsPerPage","13":"Recommendation","14":"OmniboxResultList","15":"Quickview","16":"ResultList","17":"Tab","18":"ResultsFiltersPreferences","19":"Backdrop","20":"SimpleFilter","21":"ResultLayoutSelector","22":"FieldTable","23":"ResultsPreferences","24":"Sort","25":"Settings","26":"YouTubeThumbnail","27":"Thumbnail","28":"PrintableUri","29":"SearchAlerts","30":"Badge","31":"ResultRating","32":"Breadcrumb","33":"DistanceResources","34":"ResultFolding","35":"Matrix","36":"FacetValueSuggestions","37":"CardOverlay","38":"SearchButton","39":"FieldValue","40":"AnalyticsSuggestions","41":"ResultLink","42":"ErrorReport","43":"FoldingForThread","44":"FollowItem","45":"ResultTagging","46":"ResultAttachments","47":"QuerySummary","48":"HiddenQuery","49":"FieldSuggestions","50":"CardActionBar","51":"Logo","52":"NumericSpinner","53":"Folding","54":"ChatterPostedBy","55":"ChatterPostAttachment","56":"ChatterLikedBy","57":"DatePicker","58":"RadioButton","59":"MultiSelect","60":"FormGroup","61":"Triggers","62":"Text","63":"ShareQuery","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "6c9f8e33b3b5b261fda9" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"HierarchicalFacet","2":"CategoryFacet","3":"TimespanFacet","4":"FacetRange","5":"Facet","6":"Searchbox","7":"Omnibox","8":"Querybox","9":"FacetSlider","10":"AdvancedSearch","11":"Pager","12":"ResultsPerPage","13":"Recommendation","14":"OmniboxResultList","15":"Quickview","16":"ResultList","17":"Tab","18":"ResultsFiltersPreferences","19":"Backdrop","20":"SimpleFilter","21":"ResultLayoutSelector","22":"FieldTable","23":"ResultsPreferences","24":"Sort","25":"Settings","26":"YouTubeThumbnail","27":"Thumbnail","28":"PrintableUri","29":"SearchAlerts","30":"Badge","31":"ResultRating","32":"Breadcrumb","33":"DistanceResources","34":"ResultFolding","35":"Matrix","36":"FacetValueSuggestions","37":"CardOverlay","38":"SearchButton","39":"FieldValue","40":"AnalyticsSuggestions","41":"ResultLink","42":"ErrorReport","43":"FoldingForThread","44":"FollowItem","45":"ResultTagging","46":"ResultAttachments","47":"QuerySummary","48":"HiddenQuery","49":"FieldSuggestions","50":"CardActionBar","51":"Logo","52":"NumericSpinner","53":"Folding","54":"ChatterPostedBy","55":"ChatterPostAttachment","56":"ChatterLikedBy","57":"DatePicker","58":"RadioButton","59":"MultiSelect","60":"FormGroup","61":"Triggers","62":"Text","63":"ShareQuery","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"ExportToExcel","69":"Excerpt","70":"DidYouMean","71":"AuthenticationProvider","72":"TemplateLoader","73":"PipelineContext","74":"Icon","75":"Dropdown","76":"ChatterTopic","77":"Aggregate"}[chunkId]||chunkId) + "__" + "f256002937603e833f62" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -7799,6 +7799,10 @@ var SearchInterface = /** @class */ (function (_super) {
          */
         enableDebugInfo: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
         /**
+         * **Note:**
+         *
+         * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this option is obsolete in Coveo Cloud V2.
+         *
          * Specifies whether to enable collaborative rating, which you can leverage using the
          * [`ResultRating`]{@link ResultRating} component.
          *
@@ -9550,6 +9554,10 @@ var DateUtils = /** @class */ (function () {
         var daysDifference = dateOnly.diff(today, 'days');
         return daysDifference == 0 || daysDifference == 1 || daysDifference == -1;
     };
+    DateUtils.getMomentJsFormat = function (format) {
+        // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
+        return format.replace(/yyyy/g, 'YYYY');
+    };
     /**
      * Creates a string from a Date object. The resulting string is formatted according to a set of options.
      * This method calls [ `keepOnlyDatePart` ]{@link DateUtils.keepOnlyDatePart} to remove time information from the date.
@@ -9569,8 +9577,7 @@ var DateUtils = /** @class */ (function () {
         var dateOnly = moment(DateUtils.keepOnlyDatePart(date));
         var today = moment(DateUtils.keepOnlyDatePart(options.now));
         if (options.predefinedFormat) {
-            // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
-            return dateOnly.format(options.predefinedFormat.replace(/yyyy/g, 'YYYY'));
+            return dateOnly.format(this.getMomentJsFormat(options.predefinedFormat));
         }
         if (options.useTodayYesterdayAndTomorrow) {
             if (DateUtils.isTodayYesterdayOrTomorrow(date, options)) {
@@ -9631,7 +9638,7 @@ var DateUtils = /** @class */ (function () {
             return '';
         }
         if (options.predefinedFormat) {
-            return moment(date).format(options.predefinedFormat);
+            return moment(date).format(this.getMomentJsFormat(options.predefinedFormat));
         }
         var today = DateUtils.keepOnlyDatePart(options.now);
         var datePart = DateUtils.dateToString(date, options);
@@ -11659,6 +11666,10 @@ var SearchEndpoint = /** @class */ (function () {
         });
     };
     /**
+     * **Note:**
+     *
+     * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this method is obsolete in Coveo Cloud V2.
+     *
      * Rates a single item in the index (granted that collaborative rating is enabled on your index)
      * @param ratingRequest The item id, and the rating to add.
      * @param callOptions An additional set of options to use for this call.
@@ -11860,7 +11871,7 @@ var SearchEndpoint = /** @class */ (function () {
         // In this reality however, we must support GET calls (ex: GET /html) for CORS/JSONP/IE reasons.
         // Therefore, we cherry-pick parts of the query to include in a 'query string' instead of a body payload.
         var queryParameters = {};
-        ['q', 'aq', 'cq', 'dq', 'searchHub', 'tab', 'locale', 'pipeline', 'lowercaseOperators'].forEach(function (key) {
+        ['q', 'aq', 'cq', 'dq', 'searchHub', 'tab', 'locale', 'pipeline', 'lowercaseOperators', 'timezone'].forEach(function (key) {
             queryParameters[key] = queryObject[key];
         });
         var context = {};
@@ -14592,8 +14603,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5395.7-beta',
-    product: '2.5395.7-beta',
+    lib: '2.5549.3-beta',
+    product: '2.5549.3-beta',
     supportedApiVersion: 2
 };
 
@@ -23624,7 +23635,7 @@ var ComponentsTypes = /** @class */ (function () {
     }
     Object.defineProperty(ComponentsTypes, "allFacetsType", {
         get: function () {
-            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet'];
+            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet', 'NoNameFacet'];
         },
         enumerable: true,
         configurable: true
@@ -33019,6 +33030,8 @@ var LazyPromotedResultsBadge_1 = __webpack_require__(585);
 LazyPromotedResultsBadge_1.lazyPromotedResultsBadge();
 var LazyCategoryFacet_1 = __webpack_require__(586);
 LazyCategoryFacet_1.lazyCategoryFacet();
+// import { lazyNoNameFacet } from './ui/NoNameFacet/LazyNoNameFacet';
+// lazyNoNameFacet();
 var SwapVar_1 = __webpack_require__(325);
 SwapVar_1.swapVar(this);
 
