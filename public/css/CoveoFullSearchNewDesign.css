@@ -16308,15 +16308,18 @@ a.coveo-folding-show-less.coveo-selected * {
   animation-iteration-count: infinite;
 }
 
-.coveo-category-facet-more,
-.coveo-category-facet-less {
+.coveo-category-facet-more-less-container {
   width: 100%;
   height: 15px;
   background: #f7f8f9;
-  cursor: pointer;
   text-align: center;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+.coveo-category-facet-more,
+.coveo-category-facet-less {
+  cursor: pointer;
 }
 
 .coveo-category-facet-more:hover,
