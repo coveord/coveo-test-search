@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "dfa3551418ffdee318a5" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "1c48c91010c619ef9e27" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2474,13 +2474,6 @@ var Dom = /** @class */ (function () {
         return Dom.ONLY_WHITE_SPACE_REGEX.test(this.el.innerHTML);
     };
     /**
-     * Check if the element is not a locked node (`{ toString(): string }`) and thus have base element properties.
-     * @returns {boolean}
-     */
-    Dom.prototype.isValid = function () {
-        return this.el != null && this.el.getAttribute != undefined;
-    };
-    /**
      * Check if the element is a descendant of parent
      * @param other
      */
@@ -2760,7 +2753,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(34);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(11);
 var ComponentOptionsModel_1 = __webpack_require__(25);
@@ -6444,7 +6437,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Assert_1 = __webpack_require__(5);
 var _ = __webpack_require__(0);
 var Utils_1 = __webpack_require__(4);
@@ -6682,74 +6675,6 @@ exports.SVGDom = SVGDom;
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * This static class is there to contain the different string definitions for all the events related to initialization.
- *
- * Note that these events will only be triggered when the {@link init} function is called.
- *
- * This means these events are normally called only once when the search interface is initialized.
- */
-var InitializationEvents = /** @class */ (function () {
-    function InitializationEvents() {
-    }
-    /**
-     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
-     *
-     * The string value is `beforeInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.beforeInitialization = 'beforeInitialization';
-    /**
-     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
-     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
-     *
-     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
-     *
-     * The string value is `afterComponentsInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
-    /**
-     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
-     *
-     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
-     *
-     * The string value is `restoreHistoryState`.
-     * @type {string}
-     */
-    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
-    /**
-     * Triggered right after the UI is fully initialized.
-     *
-     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
-     *
-     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
-     *
-     * The string value is `afterInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterInitialization = 'afterInitialization';
-    /**
-     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
-     *
-     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
-     *
-     * The string value is `nuke`.
-     * @type {string}
-     */
-    InitializationEvents.nuke = 'nuke';
-    return InitializationEvents;
-}());
-exports.InitializationEvents = InitializationEvents;
-
-
-/***/ }),
-/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7070,6 +6995,74 @@ exports.Model = Model;
 
 
 /***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * This static class is there to contain the different string definitions for all the events related to initialization.
+ *
+ * Note that these events will only be triggered when the {@link init} function is called.
+ *
+ * This means these events are normally called only once when the search interface is initialized.
+ */
+var InitializationEvents = /** @class */ (function () {
+    function InitializationEvents() {
+    }
+    /**
+     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
+     *
+     * The string value is `beforeInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.beforeInitialization = 'beforeInitialization';
+    /**
+     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
+     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
+     *
+     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
+     *
+     * The string value is `afterComponentsInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
+    /**
+     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
+     *
+     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
+     *
+     * The string value is `restoreHistoryState`.
+     * @type {string}
+     */
+    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
+    /**
+     * Triggered right after the UI is fully initialized.
+     *
+     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
+     *
+     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
+     *
+     * The string value is `afterInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterInitialization = 'afterInitialization';
+    /**
+     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
+     *
+     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
+     *
+     * The string value is `nuke`.
+     * @type {string}
+     */
+    InitializationEvents.nuke = 'nuke';
+    return InitializationEvents;
+}());
+exports.InitializationEvents = InitializationEvents;
+
+
+/***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7276,14 +7269,14 @@ var HistoryController_1 = __webpack_require__(120);
 var LocalStorageHistoryController_1 = __webpack_require__(121);
 var NoopHistoryController_1 = __webpack_require__(265);
 var QueryController_1 = __webpack_require__(34);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
 var SentryLogger_1 = __webpack_require__(266);
 var ComponentOptionsModel_1 = __webpack_require__(25);
 var ComponentStateModel_1 = __webpack_require__(62);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var Dom_1 = __webpack_require__(1);
@@ -8086,10 +8079,6 @@ var SearchInterface = /** @class */ (function (_super) {
          */
         enableDebugInfo: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
         /**
-         * **Note:**
-         *
-         * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this option is obsolete in Coveo Cloud V2.
-         *
          * Specifies whether to enable collaborative rating, which you can leverage using the
          * [`ResultRating`]{@link ResultRating} component.
          *
@@ -8836,7 +8825,7 @@ var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var QueryController_1 = __webpack_require__(34);
 var QueryStateModel_1 = __webpack_require__(12);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Dom_1 = __webpack_require__(1);
 var Component_1 = __webpack_require__(6);
 var _ = __webpack_require__(0);
@@ -9341,7 +9330,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var _ = __webpack_require__(0);
 exports.COMPONENT_OPTIONS_ATTRIBUTES = {
     RESULT_LINK: 'resultLink',
@@ -9841,10 +9830,6 @@ var DateUtils = /** @class */ (function () {
         var daysDifference = dateOnly.diff(today, 'days');
         return daysDifference == 0 || daysDifference == 1 || daysDifference == -1;
     };
-    DateUtils.getMomentJsFormat = function (format) {
-        // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
-        return format.replace(/yyyy/g, 'YYYY');
-    };
     /**
      * Creates a string from a Date object. The resulting string is formatted according to a set of options.
      * This method calls [ `keepOnlyDatePart` ]{@link DateUtils.keepOnlyDatePart} to remove time information from the date.
@@ -9864,7 +9849,8 @@ var DateUtils = /** @class */ (function () {
         var dateOnly = moment(DateUtils.keepOnlyDatePart(date));
         var today = moment(DateUtils.keepOnlyDatePart(options.now));
         if (options.predefinedFormat) {
-            return dateOnly.format(this.getMomentJsFormat(options.predefinedFormat));
+            // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
+            return dateOnly.format(options.predefinedFormat.replace(/yyyy/g, 'YYYY'));
         }
         if (options.useTodayYesterdayAndTomorrow) {
             if (DateUtils.isTodayYesterdayOrTomorrow(date, options)) {
@@ -9925,7 +9911,7 @@ var DateUtils = /** @class */ (function () {
             return '';
         }
         if (options.predefinedFormat) {
-            return moment(date).format(this.getMomentJsFormat(options.predefinedFormat));
+            return moment(date).format(options.predefinedFormat);
         }
         var today = DateUtils.keepOnlyDatePart(options.now);
         var datePart = DateUtils.dateToString(date, options);
@@ -9992,21 +9978,14 @@ var DateUtils = /** @class */ (function () {
     };
     Object.defineProperty(DateUtils, "currentGlobalizeCalendar", {
         get: function () {
-            return Globalize.culture(DateUtils.currentLocale).calendar;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DateUtils, "currentLocale", {
-        get: function () {
-            return String['locale'];
+            return Globalize.culture(DateUtils.momentjsCompatibleLocale).calendar;
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateUtils, "momentjsCompatibleLocale", {
         get: function () {
-            var currentLocale = DateUtils.currentLocale;
+            var currentLocale = String['locale'];
             // Our cultures.js directory contains 'no' which is the equivalent to 'nn' for momentJS
             if (currentLocale.toLowerCase() == 'no') {
                 currentLocale = 'nn';
@@ -13575,10 +13554,6 @@ var SearchEndpoint = /** @class */ (function () {
         });
     };
     /**
-     * **Note:**
-     *
-     * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this method is obsolete in Coveo Cloud V2.
-     *
      * Rates a single item in the index (granted that collaborative rating is enabled on your index)
      * @param ratingRequest The item id, and the rating to add.
      * @param callOptions An additional set of options to use for this call.
@@ -13780,7 +13755,7 @@ var SearchEndpoint = /** @class */ (function () {
         // In this reality however, we must support GET calls (ex: GET /html) for CORS/JSONP/IE reasons.
         // Therefore, we cherry-pick parts of the query to include in a 'query string' instead of a body payload.
         var queryParameters = {};
-        ['q', 'aq', 'cq', 'dq', 'searchHub', 'tab', 'locale', 'pipeline', 'lowercaseOperators', 'timezone'].forEach(function (key) {
+        ['q', 'aq', 'cq', 'dq', 'searchHub', 'tab', 'locale', 'pipeline', 'lowercaseOperators'].forEach(function (key) {
             queryParameters[key] = queryObject[key];
         });
         var context = {};
@@ -13800,7 +13775,7 @@ var SearchEndpoint = /** @class */ (function () {
     SearchEndpoint.prototype.buildViewAsHtmlQueryString = function (uniqueId, callOptions) {
         callOptions = _.extend({}, callOptions);
         return {
-            uniqueId: Utils_1.Utils.safeEncodeURIComponent(uniqueId),
+            uniqueId: uniqueId,
             enableNavigation: 'true',
             requestedOutputSize: callOptions.requestedOutputSize ? callOptions.requestedOutputSize.toString() : null,
             contentType: callOptions.contentType
@@ -16540,7 +16515,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var ComponentStateModel = /** @class */ (function (_super) {
     __extends(ComponentStateModel, _super);
     function ComponentStateModel(element) {
@@ -16597,7 +16572,7 @@ var SearchAlertEvents_1 = __webpack_require__(66);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var Defer_1 = __webpack_require__(28);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var DeviceUtils_1 = __webpack_require__(26);
@@ -16643,9 +16618,9 @@ var ResponsiveFacetOptions_1 = __webpack_require__(80);
  * This is probably the most complex component in the Coveo JavaScript Search Framework and as such, it allows for many
  * configuration options.
  *
- * See also the [`FacetRange`]{@link FacetRange} and [`TimespanFacet`]{@link TimespanFacet} components (which
- * extend this component), and the [`FacetSlider`]{@link FacetSlider} and [`CategoryFacet`]{@link CategoryFacet} components (which do not extend this
- * component, but are very similar).
+ * See also the [`FacetRange`]{@link FacetRange} and [`HierarchicalFacet`]{@link HierarchicalFacet} components (which
+ * extend this component), and the [`FacetSlider`]{@link FacetSlider} component (which does not properly extend this
+ * component, but is very similar).
  */
 var Facet = /** @class */ (function (_super) {
     __extends(Facet, _super);
@@ -17648,7 +17623,7 @@ var Facet = /** @class */ (function (_super) {
         var more = Dom_1.$$('div', { className: 'coveo-facet-more', tabindex: 0 }, svgContainer).el;
         new AccessibleButton_1.AccessibleButton()
             .withElement(more)
-            .withLabel(Strings_1.l('ExpandFacet', this.options.title))
+            .withLabel(Strings_1.l('Expand'))
             .withSelectAction(function () { return _this.handleClickMore(); })
             .build();
         return more;
@@ -17660,7 +17635,7 @@ var Facet = /** @class */ (function (_super) {
         var less = Dom_1.$$('div', { className: 'coveo-facet-less', tabindex: 0 }, svgContainer).el;
         new AccessibleButton_1.AccessibleButton()
             .withElement(less)
-            .withLabel(Strings_1.l('CollapseFacet', this.options.title))
+            .withLabel(Strings_1.l('Collapse'))
             .withSelectAction(function () { return _this.handleClickLess(); })
             .build();
         return less;
@@ -17880,8 +17855,8 @@ var Facet = /** @class */ (function (_super) {
          * Possible values are:
          * - `"occurrences"`
          * - `"score"`
-         * - `"alphaascending"`
-         * - `"alphadescending"`
+         * - `"alphaAscending"`
+         * - `alphaDescending`
          * - `"computedfieldascending"`
          * - `"computedfielddescending"`
          * - `"custom"`
@@ -17893,10 +17868,10 @@ var Facet = /** @class */ (function (_super) {
          *
          * > * Using value captions will disable alphabetical sorts (see the [valueCaption]{@link Facet.options.valueCaption} option).
          *
-         * Default value is `occurrences,score,alphaascending,alphadescending`.
+         * Default value is `occurrences,score,alphaAscending,alphaDescending`.
          */
         availableSorts: ComponentOptions_1.ComponentOptions.buildListOption({
-            defaultValue: ['occurrences', 'score', 'alphaascending', 'alphadescending'],
+            defaultValue: ['occurrences', 'score', 'alphaAscending', 'alphaDescending'],
             depend: 'enableSettings',
             section: 'Sorting',
             values: ['AlphaAscending', 'AlphaDescending', 'ComputedFieldAscending', 'ComputedFieldDescending', 'ChiSquare', 'NoSort']
@@ -18269,7 +18244,7 @@ var Facet = /** @class */ (function (_super) {
          * <div class='CoveoFacet' data-field='@myfield' data-title='My Parent Facet' data-id='myParentCustomId'></div>
          *
          * <!-- The "dependent" Facet must refer to the custom `id` of its "parent" Facet, which is 'myParentCustomId'. -->
-         * <div class='CoveoFacet' data-field='@myotherfield' data-title='My Dependent Facet' data-depends-on='myParentCustomId'></div>
+         * <div class='CoveoFacet' data-field='@myotherfield data-title='My Dependent Facet' data-depends-on='myParentCustomId'></div>
          * ```
          *
          * Default value is `undefined`
@@ -19064,8 +19039,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5652.3-beta',
-    product: '2.5652.3-beta',
+    lib: '2.5395.11-beta',
+    product: '2.5395.11-beta',
     supportedApiVersion: 2
 };
 
@@ -19368,7 +19343,7 @@ exports.PendingSearchEvent = PendingSearchEvent;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Component_1 = __webpack_require__(6);
 var SearchInterface_1 = __webpack_require__(18);
 var Utils_1 = __webpack_require__(4);
@@ -19390,7 +19365,7 @@ var ResponsiveComponentsManager = /** @class */ (function () {
         this.searchBoxElement = this.getSearchBoxElement();
         this.logger = new Logger_1.Logger(this);
         this.resizeListener = underscore_1.debounce(function () {
-            if (_this.isAbleToDetermineMode()) {
+            if (_this.coveoRoot.width() != 0) {
                 _this.addDropdownHeaderWrapperIfNeeded();
                 if (_this.shouldSwitchToSmallMode()) {
                     _this.coveoRoot.addClass('coveo-small-interface');
@@ -19546,9 +19521,6 @@ var ResponsiveComponentsManager = /** @class */ (function () {
             // If the interface gets nuked, we need to remove all reference to componentManagers stored which match the current search interface
             ResponsiveComponentsManager.componentManagers = _.filter(ResponsiveComponentsManager.componentManagers, function (manager) { return manager.coveoRoot.el != _this.coveoRoot.el; });
         });
-    };
-    ResponsiveComponentsManager.prototype.isAbleToDetermineMode = function () {
-        return this.coveoRoot.width() != 0 || this.searchInterface.options.responsiveMode !== 'auto';
     };
     ResponsiveComponentsManager.DROPDOWN_HEADER_WRAPPER_CSS_CLASS = 'coveo-dropdown-header-wrapper';
     ResponsiveComponentsManager.componentManagers = [];
@@ -19778,7 +19750,7 @@ var AccessibleButton_1 = __webpack_require__(17);
  * The `ResultLink` component automatically transform a search result title into a clickable link pointing to the
  * original item.
  *
- * This component is a result template component (see [Result Templates](https://docs.coveo.com/en/413/)).
+ * This component is a result template component (see [Result Templates](https://developers.coveo.com/x/aIGfAQ)).
  */
 var ResultLink = /** @class */ (function (_super) {
     __extends(ResultLink, _super);
@@ -20101,7 +20073,7 @@ var ResultLink = /** @class */ (function (_super) {
          * default field):
          *
          * ```html
-         * <a class="CoveoResultLink" data-field="@uri"></a>
+         * <a class="CoveoResultLink" field="@uri"></a>
          * ```
          *
          * - In the following result template, the custom `getMyKBUri()` function provides the `href` value:
@@ -20144,7 +20116,7 @@ var ResultLink = /** @class */ (function (_super) {
          *
          * If this option is `true`, clicking the `ResultLink` calls the
          * [`openLinkInNewWindow`]{@link ResultLink.openLinkInNewWindow} method instead of the
-         * [`openLink`]{@link ResultLink.openLink} method.
+         * [ `openLink`]{@link ResultLink.openLink} method.
          *
          * **Note:**
          * > If a search page contains a [`ResultPreferences`]{@link ResultsPreferences} component whose
@@ -20237,6 +20209,9 @@ var ResultLink = /** @class */ (function (_super) {
          *
          * **Example:**
          * ```javascript
+         *
+         *
+         *
          * // You can set the option in the 'init' call:
          * Coveo.init(document.querySelector("#search"), {
          *   ResultLink : {
@@ -20332,7 +20307,7 @@ var ResultListEvents_1 = __webpack_require__(29);
 var GlobalExports_1 = __webpack_require__(3);
 var Assert_1 = __webpack_require__(5);
 var Defer_1 = __webpack_require__(28);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var DeviceUtils_1 = __webpack_require__(26);
 var Dom_1 = __webpack_require__(1);
@@ -21589,7 +21564,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var PendingSearchEvent_1 = __webpack_require__(78);
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SearchInterface_1 = __webpack_require__(18);
 var Component_1 = __webpack_require__(6);
 var QueryStateModel_1 = __webpack_require__(12);
@@ -25168,7 +25143,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -30769,12 +30744,13 @@ var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var QueryStateModel_1 = __webpack_require__(12);
 __webpack_require__(497);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Utils_1 = __webpack_require__(4);
 var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
 var CategoryFacetSearch_1 = __webpack_require__(498);
+var KeyboardUtils_1 = __webpack_require__(30);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var CategoryFacetBreadcrumb_1 = __webpack_require__(500);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -30783,7 +30759,6 @@ var QueryBuilder_1 = __webpack_require__(36);
 var ResponsiveFacets_1 = __webpack_require__(162);
 var ResponsiveFacetOptions_1 = __webpack_require__(80);
 var CategoryFacetHeader_1 = __webpack_require__(502);
-var AccessibleButton_1 = __webpack_require__(17);
 /**
  * The `CategoryFacet` component is a facet that renders values in a hierarchical fashion. It determines the filter to apply depending on the
  * current selected path of values.
@@ -30810,7 +30785,7 @@ var CategoryFacet = /** @class */ (function (_super) {
         _this.categoryValueRoot.path = _this.activePath;
         _this.currentPage = 0;
         _this.numberOfValues = _this.options.numberOfValues;
-        if (_this.isFacetSearchAvailable) {
+        if (_this.options.enableFacetSearch) {
             _this.categoryFacetSearch = new CategoryFacetSearch_1.CategoryFacetSearch(_this);
         }
         if (_this.options.debug) {
@@ -30852,27 +30827,6 @@ var CategoryFacet = /** @class */ (function (_super) {
     CategoryFacet.prototype.handleBuildingQuery = function (args) {
         this.positionInQuery = this.categoryFacetQueryController.putCategoryFacetInQueryBuilder(args.queryBuilder, this.activePath, this.numberOfValues + 1);
     };
-    Object.defineProperty(CategoryFacet.prototype, "isFacetSearchAvailable", {
-        get: function () {
-            if (this.areValueCaptionsSpecified) {
-                return false;
-            }
-            if (!this.options.enableFacetSearch) {
-                return false;
-            }
-            return true;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CategoryFacet.prototype, "areValueCaptionsSpecified", {
-        get: function () {
-            var valueCaptions = this.options.valueCaption;
-            return underscore_1.keys(valueCaptions).length !== 0;
-        },
-        enumerable: true,
-        configurable: true
-    });
     CategoryFacet.prototype.handleNoResults = function () {
         if (this.isPristine()) {
             this.hide();
@@ -30907,12 +30861,10 @@ var CategoryFacet = /** @class */ (function (_super) {
             return;
         }
         this.renderValues(categoryFacetResult, numberOfRequestedValues);
-        if (this.isFacetSearchAvailable) {
+        if (this.options.enableFacetSearch) {
             var facetSearch = this.categoryFacetSearch.build();
             Dom_1.$$(facetSearch).insertAfter(this.categoryValueRoot.listRoot.el);
         }
-        this.moreLessContainer = Dom_1.$$('div', { className: 'coveo-category-facet-more-less-container' });
-        Dom_1.$$(this.element).append(this.moreLessContainer.el);
         if (this.options.enableMoreLess) {
             this.renderMoreLess();
         }
@@ -31088,16 +31040,6 @@ var CategoryFacet = /** @class */ (function (_super) {
             });
         });
     };
-    /**
-     *
-     * @param value The string to find a caption for.
-     * Returns the caption for a value or the value itself if no caption is available.
-     */
-    CategoryFacet.prototype.getCaption = function (value) {
-        var valueCaptions = this.options.valueCaption;
-        var caption = valueCaptions[value];
-        return caption ? caption : value;
-    };
     CategoryFacet.prototype.showWaitingAnimation = function () {
         this.ensureDom();
         if (!this.showingWaitAnimation) {
@@ -31249,6 +31191,8 @@ var CategoryFacet = /** @class */ (function (_super) {
         return sortedParentvalues;
     };
     CategoryFacet.prototype.renderMoreLess = function () {
+        this.moreLessContainer = Dom_1.$$('div', { className: 'coveo-category-facet-more-less-container' });
+        Dom_1.$$(this.element).append(this.moreLessContainer.el);
         if (this.numberOfChildValuesCurrentlyDisplayed > this.options.numberOfValues) {
             this.moreLessContainer.append(this.buildLessButton());
         }
@@ -31258,7 +31202,7 @@ var CategoryFacet = /** @class */ (function (_super) {
     };
     CategoryFacet.prototype.clear = function () {
         this.categoryValueRoot.clear();
-        if (this.isFacetSearchAvailable) {
+        if (this.options.enableFacetSearch) {
             this.categoryFacetSearch.clear();
         }
         this.moreLessContainer && this.moreLessContainer.detach();
@@ -31268,24 +31212,20 @@ var CategoryFacet = /** @class */ (function (_super) {
         var _this = this;
         var svgContainer = Dom_1.$$('span', { className: 'coveo-facet-more-icon' }, SVGIcons_1.SVGIcons.icons.arrowDown).el;
         SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer, 'coveo-facet-more-icon-svg');
-        var more = Dom_1.$$('div', { className: 'coveo-category-facet-more' }, svgContainer);
-        new AccessibleButton_1.AccessibleButton()
-            .withElement(more)
-            .withSelectAction(function () { return _this.showMore(); })
-            .withLabel(Strings_1.l('ExpandFacet', this.options.title))
-            .build();
+        var more = Dom_1.$$('div', { className: 'coveo-category-facet-more', tabindex: 0 }, svgContainer);
+        var showMoreHandler = function () { return _this.showMore(); };
+        more.on('click', function () { return _this.showMore(); });
+        more.on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, showMoreHandler));
         return more.el;
     };
     CategoryFacet.prototype.buildLessButton = function () {
         var _this = this;
         var svgContainer = Dom_1.$$('span', { className: 'coveo-facet-less-icon' }, SVGIcons_1.SVGIcons.icons.arrowUp).el;
         SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer, 'coveo-facet-less-icon-svg');
-        var less = Dom_1.$$('div', { className: 'coveo-category-facet-less' }, svgContainer);
-        new AccessibleButton_1.AccessibleButton()
-            .withElement(less)
-            .withSelectAction(function () { return _this.showLess(); })
-            .withLabel(Strings_1.l('CollapseFacet', this.options.title))
-            .build();
+        var less = Dom_1.$$('div', { className: 'coveo-category-facet-less', tabindex: 0 }, svgContainer);
+        var showLessHandler = function () { return _this.showLess(); };
+        less.on('click', showLessHandler);
+        less.on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ENTER, showLessHandler));
         return less.el;
     };
     CategoryFacet.prototype.handlePopulateBreadCrumb = function (args) {
@@ -31305,7 +31245,7 @@ var CategoryFacet = /** @class */ (function (_super) {
             _this.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.breadcrumbFacet);
             _this.reset();
         };
-        var categoryFacetBreadcrumbBuilder = new CategoryFacetBreadcrumb_1.CategoryFacetBreadcrumb(this, resetFacet, lastParentValue);
+        var categoryFacetBreadcrumbBuilder = new CategoryFacetBreadcrumb_1.CategoryFacetBreadcrumb(this.options.title, resetFacet, lastParentValue, this.options.basePath);
         args.breadcrumbs.push({ element: categoryFacetBreadcrumbBuilder.build() });
     };
     CategoryFacet.prototype.handleClearBreadcrumb = function () {
@@ -31468,49 +31408,7 @@ var CategoryFacet = /** @class */ (function (_super) {
          * This options logs messages in the console for any potential encountered issues.
          * This option can have negative effects on performance, and should only be activated when debugging.
          */
-        debug: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }), 
-        /**
-         * Specifies a JSON object describing a mapping of facet values to their desired captions. See
-         * [Normalizing Facet Value Captions](https://developers.coveo.com/x/jBsvAg).
-         *
-         * If this option is specified, the facet search box will be unavailable.
-         *
-         * **Examples:**
-         *
-         * You can set the option in the ['init']{@link init} call:
-         * ```javascript
-         * var myValueCaptions = {
-         *   "txt" : "Text files",
-         *   "html" : "Web page",
-         *   [ ... ]
-         * };
-         *
-         * Coveo.init(document.querySelector("#search"), {
-         *   Facet : {
-         *     valueCaption : myValueCaptions
-         *   }
-         * });
-         * ```
-         *
-         * Or before the `init` call, using the ['options']{@link options} top-level function:
-         * ```javascript
-         * Coveo.options(document.querySelector("#search"), {
-         *   Facet : {
-         *     valueCaption : myValueCaptions
-         *   }
-         * });
-         * ```
-         *
-         * Or directly in the markup:
-         * ```html
-         * <!-- Ensure that the double quotes are properly handled in data-value-caption. -->
-         * <div class='CoveoCategoryFacet' data-field='@myotherfield' data-value-caption='{"txt":"Text files","html":"Web page"}'></div>
-         * ```
-         *
-         * **Note:**
-         * > Using value captions will disable alphabetical sorts (see the [availableSorts]{@link Facet.options.availableSorts} option).
-         */
-        valueCaption: ComponentOptions_1.ComponentOptions.buildJsonOption({ defaultValue: {} }) }, ResponsiveFacetOptions_1.ResponsiveFacetOptions);
+        debug: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }) }, ResponsiveFacetOptions_1.ResponsiveFacetOptions);
     CategoryFacet.MAXIMUM_NUMBER_OF_VALUES_BEFORE_TRUNCATING = 15;
     CategoryFacet.NUMBER_OF_VALUES_TO_KEEP_AFTER_TRUNCATING = 10;
     CategoryFacet.WAIT_ELEMENT_CLASS = 'coveo-category-facet-header-wait-animation';
@@ -31538,7 +31436,7 @@ var DebugEvents_1 = __webpack_require__(75);
 exports.DebugEvents = DebugEvents_1.DebugEvents;
 var DistanceEvents_1 = __webpack_require__(149);
 exports.DistanceEvents = DistanceEvents_1.DistanceEvents;
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 exports.InitializationEvents = InitializationEvents_1.InitializationEvents;
 var OmniboxEvents_1 = __webpack_require__(32);
 exports.OmniboxEvents = OmniboxEvents_1.OmniboxEvents;
@@ -32682,8 +32580,6 @@ var dict = {
     "Collapse": "Collapse",
     "Collapsable": "Collapsible",
     "Expand": "Expand",
-    "CollapseFacet": "Collapse {0} facet",
-    "ExpandFacet": "Expand {0} facet",
     "Today": "Today",
     "Yesterday": "Yesterday",
     "Tomorrow": "Tomorrow",
@@ -33230,7 +33126,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Dom_1 = __webpack_require__(1);
 var HashUtils_1 = __webpack_require__(39);
 var Defer_1 = __webpack_require__(28);
@@ -33240,7 +33136,7 @@ var _ = __webpack_require__(0);
 var QueryStateModel_1 = __webpack_require__(12);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var SharedAnalyticsCalls_1 = __webpack_require__(87);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 /**
  * This component is instantiated automatically by the framework on the root if the {@link SearchInterface}.<br/>
  * When the {@link SearchInterface.options.enableHistory} option is set to true, this component is instantiated.<br/>
@@ -33504,10 +33400,10 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var LocalStorageUtils_1 = __webpack_require__(38);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Logger_1 = __webpack_require__(11);
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var RootComponent_1 = __webpack_require__(35);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
@@ -35129,7 +35025,7 @@ var ComponentsTypes = /** @class */ (function () {
     }
     Object.defineProperty(ComponentsTypes, "allFacetsType", {
         get: function () {
-            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet', 'NoNameFacet'];
+            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet'];
         },
         enumerable: true,
         configurable: true
@@ -35843,7 +35739,7 @@ var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
 __webpack_require__(302);
 var QueryEvents_1 = __webpack_require__(10);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var ResultListEvents_1 = __webpack_require__(29);
 var HashUtils_1 = __webpack_require__(39);
 var ComponentsTypes_1 = __webpack_require__(130);
@@ -36404,37 +36300,47 @@ var GlobalExports_1 = __webpack_require__(3);
 var ResponsiveFacetOptions_1 = __webpack_require__(80);
 var ResponsiveFacets_1 = __webpack_require__(162);
 /**
- * A `FacetRange` is a [facet](https://docs.coveo.com/en/198/) whose values are expressed as ranges.
+ * The FacetRange component displays a {@link Facet} whose values are expressed as ranges. These ranges are computed
+ * from the results of the current query.
  *
- * You must set the [`field`]{@link Facet.options.field} option to a value targeting a numeric or date [field](https://docs.coveo.com/en/200/) in your index for this component to work.
+ * This component inherits from the Facet component. This implies that you must specify a valid
+ * [field]{@link Facet.options.field} value for this component to work.
  *
- * This component extends the [`Facet`]{@link Facet} component and supports all `Facet` options except:
+ * Most of the options available for a Facet component are also available for a FacetRange component. There are some
+ * exceptions, however.
  *
- * - **Settings** menu options
- *   - [`enableSettings`]{@link Facet.options.enableSettings}
- *   - [`enableSettingsFacetState`]{@link Facet.options.enableSettingsFacetState}
- *   - [`enableCollapse`]{@link Facet.options.enableCollapse}
- *   - [`availableSorts`]{@link Facet.options.availableSorts}
- *   - [`customSort`]{@link Facet.options.customSort}
- *   - [`computedFieldCaption`]{@link Facet.options.computedFieldCaption}
- * - **Facet Search** options
- *   - [`enableFacetSearch`]{@link Facet.options.enableFacetSearch}
- *   - [`facetSearchDelay`]{@link Facet.options.facetSearchDelay}
- *   - [`facetSearchIgnoreAccents`]{@link Facet.options.facetSearchIgnoreAccents}
- *   - [`numberOfValuesInFacetSearch`]{@link Facet.options.numberOfValuesInFacetSearch}
- * - **More and Less** options
- *   - [`enableMoreLess`]{@link Facet.options.enableMoreLess}
- *   - [`pageSize`]{@link Facet.options.pageSize}
+ * Here is the list of Facet options which the FacetRange component does not support.
+ * - The **Settings** menu options:
+ *   - [enableSettings]{@link Facet.options.enableSettings}
+ *   - [enableSettingsFacetState]{@link Facet.options.enableSettingsFacetState}
+ *   - [enableCollapse]{@link Facet.options.enableCollapse}
+ *   - [availableSorts]{@link Facet.options.availableSorts}
+ *   - [customSort]{@link Facet.options.customSort}
+ *   - [computedFieldCaption]{@link Facet.options.computedFieldCaption}
+ * - The **Facet Search** options:
+ *   - [enableFacetSearch]{@link Facet.options.enableFacetSearch}
+ *   - [facetSearchDelay]{@link Facet.options.facetSearchDelay}
+ *   - [facetSearchIgnoreAccents]{@link Facet.options.facetSearchIgnoreAccents}
+ *   - [numberOfValuesInFacetSearch]{@link Facet.options.numberOfValuesInFacetSearch}
+ * - The **More and Less** options:
+ *   - [enableMoreLess]{@link Facet.options.enableMoreLess}
+ *   - [pageSize]{@link Facet.options.pageSize}
+ *
+ *
+ *  Moreover, while the [numberOfValues]{@link Facet.options.numberOfValues} option still allows you to specify the
+ *  maximum number of values to display in a FacetRange component, it is not possible for the end to display additional
+ *  values, since the component does not support the **More** button.
  *
  *  @notSupportedIn salesforcefree
  */
 var FacetRange = /** @class */ (function (_super) {
     __extends(FacetRange, _super);
     /**
-     * Creates a new `FacetRange`.
-     * @param element The HTML element on which to instantiate the component.
-     * @param options The configuration options to apply when creating the component.
-     * @param bindings The bindings required by the component.
+     * Creates a new FacetRange component.
+     * @param element The HTMLElement on which to instantiate the component.
+     * @param options The options for the FacetRange component.
+     * @param bindings The bindings that the component requires to function normally. If not set, these will be
+     * automatically resolved (with a slower execution time).
      */
     function FacetRange(element, options, bindings) {
         var _this = _super.call(this, element, ComponentOptions_1.ComponentOptions.initComponentOptions(element, FacetRange, options), bindings, FacetRange.ID) || this;
@@ -36538,20 +36444,62 @@ var FacetRange = /** @class */ (function (_super) {
      */
     FacetRange.options = __assign({ 
         /**
-         * Whether the specified [`field`]{@link Facet.options.field} option value targets a date field in your index.
+         * Specifies whether the field for which you require ranges is a date field.
          *
-         * This allows the component to correctly build the outgoing [Group By](https://docs.coveo.com/en/203/).
+         * This allows the component to correctly build the outgoing {@link IGroupByRequest}.
          *
-         * **Default:** `false`.
+         * Default value is `false`.
          */
         dateField: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }), 
         /**
-         * The list of [range values]{@link IRangeValue} to request (see [Requesting Specific FacetRange Values](https://docs.coveo.com/en/2790/)).
+         * Specifies an array of {@link IRangeValue} to use as Facet values.
          *
-         * By default, the index automatically generates range values.
+         *
+         * **Examples:**
+         *
+         * You can set the option in the ['init']{@link init} call:
+         * ```javascript
+         * var myRanges = [
+         *   {
+         *      start: 0,
+         *      end: 100,
+         *      label: "0 - 100",
+         *      endInclusive: false
+         *    },
+         *    {
+         *      start: 100,
+         *      end: 200,
+         *      label: "100 - 200",
+         *      endInclusive: false
+         *    },
+         *    {
+         *      start: 200,
+         *      end: 300,
+         *      label: "200 - 300",
+         *      endInclusive: false
+         *    }
+         * ]
+         *
+         * Coveo.init(document.querySelector('#search'), {
+         *    FacetRange : {
+         *        ranges : myRanges
+         *    }
+         * })
+         * ```
+         *
+         * Or directly in the markup:
+         * ```html
+         * <!-- Ensure that the double quotes are properly handled in data-ranges. -->
+         * <div class='CoveoFacetRange' data-field='@myotherfield' data-ranges='[{"start": 0, "end": 100, "label": "0 - 100", "endInclusive": false}, {"start": 100, "end": 200, "label": "100 - 200", "endInclusive": false}]'></div>
+         * ```
          *
          * **Note:**
-         * > The index cannot automatically generate range values for a `FacetRange` whose [`field`]{@link Facet.options.field} option value references a dynamic field generated by a [query function](https://docs.coveo.com/en/232/). In such a case, you _must_ use the `ranges` option.
+         * > Ranges can overlap.
+         *
+         * By default, the index automatically generates the ranges. However, the index cannot automatically generate the
+         * ranges if the [field]{@link Facet.options.field} you specify for the FacetRange component is generated by a query
+         * function (see [Query Function](https://developers.coveo.com/x/XQCq)). When this is the case, you must specify the
+         * ranges at query time.
          */
         ranges: ComponentOptions_1.ComponentOptions.buildJsonOption() }, ResponsiveFacetOptions_1.ResponsiveFacetOptions);
     return FacetRange;
@@ -37246,7 +37194,7 @@ var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(71);
 var Assert_1 = __webpack_require__(5);
 var ComponentOptionsModel_1 = __webpack_require__(25);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -37717,14 +37665,15 @@ var Omnibox = /** @class */ (function (_super) {
     };
     Omnibox.prototype.triggerNewQuery = function (searchAsYouType, analyticsEvent) {
         clearTimeout(this.searchAsYouTypeTimeout);
-        var shouldExecuteQuery = this.shouldExecuteQuery(searchAsYouType);
-        this.lastQuery = this.getQuery(searchAsYouType);
-        shouldExecuteQuery && analyticsEvent();
-        this.queryController.executeQuery({
-            searchAsYouType: searchAsYouType,
-            logInActionsHistory: true,
-            cancel: !shouldExecuteQuery
-        });
+        var text = this.getQuery(searchAsYouType);
+        if (this.shouldExecuteQuery(searchAsYouType)) {
+            this.lastQuery = text;
+            analyticsEvent();
+            this.queryController.executeQuery({
+                searchAsYouType: searchAsYouType,
+                logInActionsHistory: true
+            });
+        }
     };
     Omnibox.prototype.getQuery = function (searchAsYouType) {
         if (this.lastQuery == this.magicBox.getText()) {
@@ -38252,12 +38201,12 @@ var GlobalExports_1 = __webpack_require__(3);
 var MiscModules_1 = __webpack_require__(55);
 var FacetSliderQueryController_1 = __webpack_require__(428);
 var BreadcrumbEvents_1 = __webpack_require__(37);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var SearchAlertEvents_1 = __webpack_require__(66);
 var SliderEvents_1 = __webpack_require__(108);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -39187,13 +39136,13 @@ var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var QuickviewEvents_1 = __webpack_require__(169);
 var QueryStateModel_1 = __webpack_require__(12);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Utils_1 = __webpack_require__(4);
 var Dom_1 = __webpack_require__(1);
 var ResponsiveRecommendation_1 = __webpack_require__(464);
 var coveo_analytics_1 = __webpack_require__(73);
 var RegisteredNamedMethods_1 = __webpack_require__(22);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var DefaultRecommendationTemplate_1 = __webpack_require__(343);
@@ -39567,12 +39516,12 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(474);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var ResultLayoutEvents_1 = __webpack_require__(100);
 var ResultListEvents_1 = __webpack_require__(29);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -39910,10 +39859,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(486);
 var underscore_1 = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var SearchEndpoint_1 = __webpack_require__(44);
 var AccessibleButton_1 = __webpack_require__(17);
@@ -40341,7 +40290,7 @@ exports.DistanceEvents = DistanceEvents;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 exports.Model = Model_1.Model;
 var QueryStateModel_1 = __webpack_require__(12);
 exports.QueryStateModel = QueryStateModel_1.QueryStateModel;
@@ -40841,8 +40790,6 @@ var Dom_1 = __webpack_require__(1);
 var EventsUtils_1 = __webpack_require__(157);
 var _ = __webpack_require__(0);
 var AccessibleButton_1 = __webpack_require__(17);
-var KeyboardUtils_1 = __webpack_require__(30);
-var InitializationEvents_1 = __webpack_require__(15);
 var ResponsiveDropdownEvent;
 (function (ResponsiveDropdownEvent) {
     ResponsiveDropdownEvent["OPEN"] = "responsiveDropdownOpen";
@@ -40850,7 +40797,6 @@ var ResponsiveDropdownEvent;
 })(ResponsiveDropdownEvent = exports.ResponsiveDropdownEvent || (exports.ResponsiveDropdownEvent = {}));
 var ResponsiveDropdown = /** @class */ (function () {
     function ResponsiveDropdown(dropdownContent, dropdownHeader, coveoRoot) {
-        var _this = this;
         this.dropdownContent = dropdownContent;
         this.dropdownHeader = dropdownHeader;
         this.coveoRoot = coveoRoot;
@@ -40858,14 +40804,9 @@ var ResponsiveDropdown = /** @class */ (function () {
         this.onOpenHandlers = [];
         this.onCloseHandlers = [];
         this.popupBackgroundIsEnabled = true;
-        this.closeIfOpened = function () {
-            _this.isOpened && _this.close();
-        };
         this.popupBackground = this.buildPopupBackground();
         this.bindOnClickDropdownHeaderEvent();
         this.saveContentPosition();
-        this.bindOnKeyboardEscapeEvent();
-        this.bindNukeEvents();
     }
     ResponsiveDropdown.prototype.registerOnOpenHandler = function (handler, context) {
         this.onOpenHandlers.push({ handler: handler, context: context });
@@ -40909,18 +40850,6 @@ var ResponsiveDropdown = /** @class */ (function () {
             .withSelectAction(function () { return (_this.isOpened ? _this.close() : _this.open()); })
             .withLabel('Filters')
             .build();
-    };
-    ResponsiveDropdown.prototype.bindOnKeyboardEscapeEvent = function () {
-        Dom_1.$$(document.documentElement).on('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ESCAPE, this.closeIfOpened));
-    };
-    ResponsiveDropdown.prototype.unbindOnKeyboardEscapeEvent = function () {
-        Dom_1.$$(document.documentElement).off('keyup', KeyboardUtils_1.KeyboardUtils.keypressAction(KeyboardUtils_1.KEYBOARD.ESCAPE, this.closeIfOpened));
-    };
-    ResponsiveDropdown.prototype.bindNukeEvents = function () {
-        var _this = this;
-        Dom_1.$$(this.coveoRoot).on(InitializationEvents_1.InitializationEvents.nuke, function () {
-            _this.unbindOnKeyboardEscapeEvent();
-        });
     };
     ResponsiveDropdown.prototype.showPopupBackground = function () {
         if (this.popupBackgroundIsEnabled) {
@@ -41271,9 +41200,6 @@ var FacetQueryController = /** @class */ (function () {
         }
         else {
             mergeWith.constant = mergeWith.constant + " " + this.additionalFilter;
-        }
-        if (!mergeWith.advanced) {
-            mergeWith.advanced = queryBuilder.advancedExpression.build();
         }
         return mergeWith;
     };
@@ -43971,7 +43897,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SettingsEvents_1 = __webpack_require__(42);
 var DomUtils_1 = __webpack_require__(65);
 var Dom_1 = __webpack_require__(1);
@@ -44502,7 +44428,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(416);
 var underscore_1 = __webpack_require__(0);
 var BreadcrumbEvents_1 = __webpack_require__(37);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryEvents_1 = __webpack_require__(10);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -49608,7 +49534,7 @@ var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var DeviceUtils_1 = __webpack_require__(26);
 var QueryEvents_1 = __webpack_require__(10);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var QueryStateModel_2 = __webpack_require__(12);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -49669,26 +49595,6 @@ var Pager = /** @class */ (function (_super) {
         element.appendChild(_this.list);
         return _this;
     }
-    Object.defineProperty(Pager.prototype, "currentPage", {
-        /**
-         * The current page (1-based index).
-         */
-        get: function () {
-            return this._currentPage;
-        },
-        set: function (value) {
-            var sanitizedValue = value;
-            if (isNaN(value)) {
-                this.logger.warn("Unable to set pager current page to an invalid value: " + value + ". Resetting to 1.");
-                sanitizedValue = 1;
-            }
-            sanitizedValue = Math.max(Math.min(sanitizedValue, this.getMaxNumberOfPagesForCurrentResultsPerPage()), 1);
-            sanitizedValue = Math.floor(sanitizedValue);
-            this._currentPage = sanitizedValue;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /**
      * Sets the current page, then executes a query.
      *
@@ -49700,7 +49606,7 @@ var Pager = /** @class */ (function (_super) {
     Pager.prototype.setPage = function (pageNumber, analyticCause) {
         if (analyticCause === void 0) { analyticCause = AnalyticsActionListMeta_1.analyticsActionCauseList.pagerNumber; }
         Assert_1.Assert.exists(pageNumber);
-        this.currentPage = pageNumber;
+        this.currentPage = Math.max(Math.min(pageNumber, this.getMaxNumberOfPagesForCurrentResultsPerPage()), 1);
         this.updateQueryStateModel(this.getFirstResultNumber(this.currentPage));
         this.usageAnalytics.logCustomEvent(analyticCause, { pagerNumber: this.currentPage }, this.element);
         this.queryController.executeQuery({
@@ -50220,7 +50126,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var ExternalModulesShim_1 = __webpack_require__(24);
 var _ = __webpack_require__(0);
 __webpack_require__(451);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SVGIcons_1 = __webpack_require__(13);
 /**
  * The PreferencesPanel component renders a **Preferences** item inside the {@link Settings} component which the end
@@ -52122,10 +52028,6 @@ var RatingValues;
     RatingValues[RatingValues["Best"] = 5] = "Best";
 })(RatingValues = exports.RatingValues || (exports.RatingValues = {}));
 /**
- * **Note:**
- *
- * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this component is obsolete in Coveo Cloud V2.
- *
  * The `ResultRating` component renders a 5-star rating widget. Interactive rating is possible if
  * the [`enableCollaborativeRating`]{@link SearchInterface.options.enableCollaborativeRating} option of your
  * search interface is `true`, and if collaborative rating is enabled on your Coveo index.
@@ -52255,9 +52157,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
 var LocalStorageUtils_1 = __webpack_require__(38);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var PreferencesPanelEvents_1 = __webpack_require__(72);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var QueryStateModel_1 = __webpack_require__(12);
 var BreadcrumbEvents_1 = __webpack_require__(37);
@@ -52855,7 +52757,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
 var AccessibleButton_1 = __webpack_require__(17);
 __webpack_require__(478);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var ResultListEvents_1 = __webpack_require__(29);
 var ResultListUtils_1 = __webpack_require__(367);
@@ -54694,7 +54596,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var popper_js_1 = __webpack_require__(91);
 __webpack_require__(483);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var SettingsEvents_1 = __webpack_require__(42);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
@@ -55078,7 +54980,7 @@ var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 var QueryEvents_1 = __webpack_require__(10);
 var Assert_1 = __webpack_require__(5);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
 var SVGDom_1 = __webpack_require__(14);
@@ -63694,7 +63596,7 @@ var Assert_1 = __webpack_require__(5);
 var QueryEvents_1 = __webpack_require__(10);
 var ComponentOptionsModel_1 = __webpack_require__(25);
 var Dom_1 = __webpack_require__(1);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var Utils_1 = __webpack_require__(4);
 var NoopAnalyticsClient_1 = __webpack_require__(76);
 var LiveAnalyticsClient_1 = __webpack_require__(126);
@@ -64850,7 +64752,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(380);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var QueryStateModel_1 = __webpack_require__(12);
 var Strings_1 = __webpack_require__(7);
 var AccessibleButton_1 = __webpack_require__(17);
@@ -65854,19 +65756,14 @@ var FacetHeader = /** @class */ (function () {
     };
     FacetHeader.prototype.buildOperatorToggle = function () {
         var _this = this;
-        var label = Strings_1.l('SwitchTo', this.options.facet.options.useAnd ? Strings_1.l('Or') : Strings_1.l('And'));
         var icon = Dom_1.$$('span', { className: 'coveo-' + (this.options.facet.options.useAnd ? 'and' : 'or') }, SVGIcons_1.SVGIcons.icons.orAnd);
         SVGDom_1.SVGDom.addClassToSVGInContainer(icon.el, 'coveo-or-and-svg');
         var toggle = Dom_1.$$('div', {
             className: 'coveo-facet-header-operator',
-            title: label
+            title: Strings_1.l('SwitchTo', this.options.facet.options.useAnd ? Strings_1.l('Or') : Strings_1.l('And'))
         });
         toggle.append(icon.el);
-        new AccessibleButton_1.AccessibleButton()
-            .withElement(toggle)
-            .withLabel(label)
-            .withSelectAction(function () { return _this.handleOperatorClick(); })
-            .build();
+        Dom_1.$$(toggle).on('click', function () { return _this.handleOperatorClick(); });
         return toggle.el;
     };
     FacetHeader.prototype.handleOperatorClick = function () {
@@ -65905,7 +65802,7 @@ var FacetHeader = /** @class */ (function () {
         SVGDom_1.SVGDom.addClassToSVGInContainer(eraser.el, 'coveo-facet-header-eraser-svg');
         new AccessibleButton_1.AccessibleButton()
             .withElement(eraser.el)
-            .withLabel(Strings_1.l('Clear', this.options.title))
+            .withLabel(Strings_1.l('Reset'))
             .withClickAction(function () { return _this.onEraserClick(); })
             .withEnterKeyboardAction(function () { return _this.onEraserClick(); })
             .build();
@@ -66233,7 +66130,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Facet_1 = __webpack_require__(63);
 var Dom_1 = __webpack_require__(1);
 var Utils_1 = __webpack_require__(4);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var FacetSearchParameters_1 = __webpack_require__(128);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Strings_1 = __webpack_require__(7);
@@ -66528,10 +66425,7 @@ var FacetSearch = /** @class */ (function () {
         else {
             this.currentlyDisplayedResults = underscore_1.pluck(facetValues, 'value');
         }
-        underscore_1.each(Dom_1.$$(this.searchResults).findAll('.coveo-facet-selectable'), function (elem, index) {
-            Dom_1.$$(elem).setAttribute('id', "coveo-facet-search-" + _this.facet.options.id + "-suggestion-" + index);
-            Dom_1.$$(elem).setAttribute('role', 'option');
-            Dom_1.$$(elem).setAttribute('aria-selected', 'false');
+        underscore_1.each(Dom_1.$$(this.searchResults).findAll('.coveo-facet-selectable'), function (elem) {
             Dom_1.$$(elem).addClass('coveo-facet-search-selectable');
         });
     };
@@ -66635,9 +66529,8 @@ var FacetSearchElement = /** @class */ (function () {
         this.facetSearch = facetSearch;
         this.searchBarIsAnimating = false;
         this.triggeredScroll = false;
-        this.facetSearchId = underscore_1.uniqueId('coveo-facet-search-results');
         this.facetSearchUserInputHandler = new FacetSearchUserInputHandler_1.FacetSearchUserInputHandler(this.facetSearch);
-        this.searchResults = Dom_1.$$('ul', { id: this.facetSearchId, className: 'coveo-facet-search-results', role: 'listbox' }).el;
+        this.searchResults = Dom_1.$$('ul', { className: 'coveo-facet-search-results' }).el;
         Dom_1.$$(this.searchResults).on('scroll', function () { return _this.handleScrollEvent(); });
         Dom_1.$$(this.searchResults).hide();
     }
@@ -66654,11 +66547,12 @@ var FacetSearchElement = /** @class */ (function () {
         SVGDom_1.SVGDom.addClassToSVGInContainer(this.clear, 'coveo-facet-search-clear-svg');
         this.clear.style.display = 'none';
         this.search.appendChild(this.clear);
-        this.combobox = this.buildCombobox();
-        this.search.appendChild(this.combobox);
+        var middle = document.createElement('div');
+        Dom_1.$$(middle).addClass('coveo-facet-search-middle');
+        this.search.appendChild(middle);
         this.input = this.buildInputElement();
         Component_1.Component.pointElementsToDummyForm(this.input);
-        this.combobox.appendChild(this.input);
+        middle.appendChild(this.input);
         Dom_1.$$(this.input).on('keyup', function (e) {
             _this.facetSearchUserInputHandler.handleKeyboardEvent(e);
         });
@@ -66670,19 +66564,6 @@ var FacetSearchElement = /** @class */ (function () {
         });
         this.detectSearchBarAnimation();
         return this.search;
-    };
-    FacetSearchElement.prototype.buildCombobox = function () {
-        return Dom_1.$$('div', {
-            className: 'coveo-facet-search-middle',
-            ariaHaspopup: 'listbox',
-            ariaExpanded: 'true'
-        }).el;
-    };
-    FacetSearchElement.prototype.updateSelectedOption = function (option) {
-        this.input.setAttribute('aria-activedescendant', option.getAttribute('id'));
-        var previouslySelectedOption = Dom_1.$$(this.searchResults).find('[aria-selected^="true"]');
-        previouslySelectedOption && previouslySelectedOption.setAttribute('aria-selected', 'false');
-        option.setAttribute('aria-selected', 'true');
     };
     FacetSearchElement.prototype.showFacetSearchWaitingAnimation = function () {
         this.magnifier && Dom_1.$$(this.magnifier).hide();
@@ -66712,7 +66593,7 @@ var FacetSearchElement = /** @class */ (function () {
         var _this = this;
         if (this.searchResults != null) {
             root.appendChild(this.searchResults);
-            Dom_1.$$(this.searchResults).show();
+            this.searchResults.style.display = 'block';
             this.searchResults.style.width = facetWidth - FacetSearchElement.FACET_SEARCH_PADDING + 'px';
             if (Dom_1.$$(this.searchResults).css('display') == 'none') {
                 this.searchResults.style.display = '';
@@ -66736,7 +66617,6 @@ var FacetSearchElement = /** @class */ (function () {
         this.currentResult && this.currentResult.removeClass('coveo-facet-search-current-result');
         this.currentResult = toSet;
         toSet.addClass('coveo-facet-search-current-result');
-        this.updateSelectedOption(toSet);
     };
     FacetSearchElement.prototype.moveCurrentResultDown = function () {
         var nextResult = this.currentResult.el.nextElementSibling;
@@ -66778,7 +66658,6 @@ var FacetSearchElement = /** @class */ (function () {
     FacetSearchElement.prototype.handleFacetSearchFocus = function () {
         if (this.facetSearch.currentlyDisplayedResults == null) {
             this.facetSearch.displayNewValues();
-            this.addAriaAttributes();
         }
     };
     FacetSearchElement.prototype.setupFacetSearchResultsEvents = function (el) {
@@ -66803,7 +66682,6 @@ var FacetSearchElement = /** @class */ (function () {
         });
     };
     FacetSearchElement.prototype.hideSearchResultsElement = function () {
-        this.removeAriaAttributes();
         Dom_1.$$(this.searchResults).hide();
         Dom_1.$$(this.searchResults).remove();
     };
@@ -66830,12 +66708,10 @@ var FacetSearchElement = /** @class */ (function () {
     FacetSearchElement.prototype.buildInputElement = function () {
         return Dom_1.$$('input', {
             className: 'coveo-facet-search-input',
-            type: 'text',
+            type: 'test',
             autocapitalize: 'off',
             autocorrect: 'off',
-            ariaLabel: Strings_1.l('Search'),
-            ariaHaspopup: 'true',
-            ariaAutocomplete: 'list'
+            'aria-label': Strings_1.l('Search')
         }).el;
     };
     FacetSearchElement.prototype.positionPopUp = function (nextTo, root) {
@@ -66851,23 +66727,6 @@ var FacetSearchElement = /** @class */ (function () {
         else {
             this.facetSearchUserInputHandler.handleFacetSearchResultsScroll();
         }
-    };
-    FacetSearchElement.prototype.addAriaAttributes = function () {
-        if (!this.input || !this.combobox) {
-            return;
-        }
-        this.combobox.setAttribute('role', 'combobox');
-        this.combobox.setAttribute('aria-owns', this.facetSearchId);
-        this.input.setAttribute('aria-controls', this.facetSearchId);
-    };
-    FacetSearchElement.prototype.removeAriaAttributes = function () {
-        if (!this.input || !this.combobox) {
-            return;
-        }
-        this.combobox.removeAttribute('role');
-        this.combobox.removeAttribute('aria-owns');
-        this.input.removeAttribute('aria-controls');
-        this.input.removeAttribute('aria-activedescendant');
     };
     FacetSearchElement.FACET_SEARCH_PADDING = 40;
     return FacetSearchElement;
@@ -67994,8 +67853,8 @@ var SuggestionsManager = /** @class */ (function () {
     SuggestionsManager.prototype.handleMouseOut = function (e) {
         var target = Dom_1.$$(e.target);
         var targetParents = target.parents(this.options.selectableClass);
-        //e.relatedTarget is not available if moving off the browser window or is an empty object `{}` when moving out of namespace in LockerService.
-        if (e.relatedTarget && Dom_1.$$(e.relatedTarget).isValid()) {
+        //e.relatedTarget is not available if moving off the browser window
+        if (e.relatedTarget) {
             var relatedTargetParents = Dom_1.$$(e.relatedTarget).parents(this.options.selectableClass);
             if (target.hasClass(this.options.selectedClass) && !Dom_1.$$(e.relatedTarget).hasClass(this.options.selectableClass)) {
                 this.removeSelectedStatus(target.el);
@@ -70411,7 +70270,7 @@ exports.FacetSearchUserInputHandler = FacetSearchUserInputHandler;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = __webpack_require__(4);
-var Model_1 = __webpack_require__(16);
+var Model_1 = __webpack_require__(15);
 var QueryStateModel_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
 var DependentFacetManager = /** @class */ (function () {
@@ -72741,6 +72600,7 @@ var underscore_1 = __webpack_require__(0);
 var QueryStateModel_1 = __webpack_require__(12);
 var coveo_analytics_1 = __webpack_require__(73);
 var CookieUtils_1 = __webpack_require__(59);
+var Utils_1 = __webpack_require__(4);
 var QuerySuggestAddon = /** @class */ (function () {
     function QuerySuggestAddon(omnibox) {
         var _this = this;
@@ -72834,7 +72694,11 @@ var QuerySuggestAddon = /** @class */ (function () {
     };
     Object.defineProperty(QuerySuggestAddon.prototype, "tab", {
         get: function () {
-            return this.omnibox.getBindings().queryStateModel.get(QueryStateModel_1.QUERY_STATE_ATTRIBUTES.T);
+            var tab = this.omnibox.getBindings().queryStateModel.get(QueryStateModel_1.QUERY_STATE_ATTRIBUTES.T);
+            if (Utils_1.Utils.isNonEmptyString(tab)) {
+                return tab;
+            }
+            return undefined;
         },
         enumerable: true,
         configurable: true
@@ -91693,7 +91557,7 @@ exports.SearchAlertsMessage = SearchAlertsMessage;
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(488);
 var underscore_1 = __webpack_require__(0);
-var InitializationEvents_1 = __webpack_require__(15);
+var InitializationEvents_1 = __webpack_require__(16);
 var Logger_1 = __webpack_require__(11);
 var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
@@ -92265,7 +92129,7 @@ var CategoryValue = /** @class */ (function () {
         this.categoryFacet = categoryFacet;
         this.isActive = false;
         this.element = this.categoryFacetTemplates.buildListElement({
-            value: this.captionedValueDescriptorValue,
+            value: this.categoryValueDescriptor.value,
             count: this.categoryValueDescriptor.count
         });
         this.collapseArrow = this.categoryFacetTemplates.buildCollapseArrow();
@@ -92312,14 +92176,12 @@ var CategoryValue = /** @class */ (function () {
     });
     CategoryValue.prototype.makeSelectable = function () {
         var _this = this;
-        var element = Dom_1.$$(this.element.find('.coveo-category-facet-value-label'));
-        element.addClass('coveo-selectable');
-        var countLabel = Strings_1.l('ResultCount', this.categoryValueDescriptor.count.toString());
-        var label = Strings_1.l('SelectValueWithResultCount', this.captionedValueDescriptorValue, countLabel);
+        this.label = Dom_1.$$(this.element.find('.coveo-category-facet-value-label'));
+        this.label.addClass('coveo-selectable');
         new AccessibleButton_1.AccessibleButton()
-            .withElement(element)
+            .withElement(this.label)
             .withSelectAction(function () { return _this.onSelect(); })
-            .withLabel(label)
+            .withLabel(Strings_1.l(this.categoryValueDescriptor.value) + " " + this.categoryValueDescriptor.count)
             .build();
         return this;
     };
@@ -92330,14 +92192,6 @@ var CategoryValue = /** @class */ (function () {
         }
         return this;
     };
-    Object.defineProperty(CategoryValue.prototype, "captionedValueDescriptorValue", {
-        get: function () {
-            var value = this.categoryValueDescriptor.value;
-            return this.categoryFacet.getCaption(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
     CategoryValue.prototype.onSelect = function () {
         if (!this.pastMaximumDepth()) {
             this.categoryFacet.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect, this.path);
@@ -92671,7 +92525,7 @@ var CategoryFacetSearch = /** @class */ (function () {
         Dom_1.$$(this.facetSearchElement.searchResults).empty();
         this.currentlyDisplayedResults = underscore_1.pluck(categoryFacetValues, 'value');
         for (var i = 0; i < categoryFacetValues.length; i++) {
-            var searchResult = this.buildFacetSearchValue(categoryFacetValues[i], i);
+            var searchResult = this.buildFacetSearchValue(categoryFacetValues[i]);
             if (i == 0) {
                 this.facetSearchElement.setAsCurrentResult(searchResult);
             }
@@ -92679,7 +92533,7 @@ var CategoryFacetSearch = /** @class */ (function () {
         }
         this.highlightCurrentQueryWithinSearchResults();
     };
-    CategoryFacetSearch.prototype.buildFacetSearchValue = function (categoryFacetValue, index) {
+    CategoryFacetSearch.prototype.buildFacetSearchValue = function (categoryFacetValue) {
         var _this = this;
         var path = categoryFacetValue.value.split(this.categoryFacet.options.delimitingCharacter);
         var pathParents = path.slice(0, -1).length != 0 ? path.slice(0, -1).join('/') + "/" : '';
@@ -92690,15 +92544,10 @@ var CategoryFacetSearch = /** @class */ (function () {
         var firstRow = Dom_1.$$('div', { className: 'coveo-category-facet-search-first-row' }, value, number);
         var secondRow = Dom_1.$$('div', { className: 'coveo-category-facet-search-second-row' }, pathToValueCaption);
         var item = Dom_1.$$('li', {
-            id: "coveo-category-facet-search-suggestion-" + index,
-            role: 'option',
-            ariaSelected: 'false',
             className: 'coveo-category-facet-search-value',
             title: path
         }, firstRow, secondRow);
         item.el.dataset.path = categoryFacetValue.value;
-        var countLabel = Strings_1.l('ResultCount', categoryFacetValue.numberOfResults.toString());
-        var label = Strings_1.l('SelectValueWithResultCount', underscore_1.last(path), countLabel);
         new AccessibleButton_1.AccessibleButton()
             .withElement(item)
             .withSelectAction(function () {
@@ -92706,7 +92555,7 @@ var CategoryFacetSearch = /** @class */ (function () {
             _this.categoryFacet.logAnalyticsEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.categoryFacetSelect, path);
             _this.categoryFacet.executeQuery();
         })
-            .withLabel(label)
+            .withLabel(Strings_1.l(underscore_1.last(path)) + " " + categoryFacetValue.numberOfResults)
             .build();
         return item;
     };
@@ -92764,20 +92613,20 @@ var AccessibleButton_1 = __webpack_require__(17);
 var Strings_1 = __webpack_require__(7);
 var underscore_1 = __webpack_require__(0);
 var CategoryFacetBreadcrumb = /** @class */ (function () {
-    function CategoryFacetBreadcrumb(categoryFacet, onClickHandler, categoryValueDescriptor) {
-        this.categoryFacet = categoryFacet;
+    function CategoryFacetBreadcrumb(categoryFacetTitle, onClickHandler, categoryValueDescriptor, basePath) {
+        this.categoryFacetTitle = categoryFacetTitle;
         this.onClickHandler = onClickHandler;
         this.categoryValueDescriptor = categoryValueDescriptor;
+        this.basePath = basePath;
     }
     CategoryFacetBreadcrumb.prototype.build = function () {
-        var _this = this;
         var clear = Dom_1.$$('span', {
             className: 'coveo-facet-breadcrumb-clear'
         }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
         SVGDom_1.SVGDom.addClassToSVGInContainer(clear.el, 'coveo-facet-breadcrumb-clear-svg');
-        var pathToRender = underscore_1.without.apply(void 0, [this.categoryValueDescriptor.path].concat(this.categoryFacet.options.basePath));
-        var captionLabel = pathToRender.map(function (pathPart) { return _this.categoryFacet.getCaption(pathPart); }).join('/');
-        var breadcrumbTitle = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-title' }, this.categoryFacet.options.title + ": ");
+        var pathToRender = underscore_1.without.apply(void 0, [this.categoryValueDescriptor.path].concat(this.basePath));
+        var captionLabel = pathToRender.join('/');
+        var breadcrumbTitle = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-title' }, this.categoryFacetTitle + ": ");
         var valuesContainer = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-values' }, captionLabel, clear);
         new AccessibleButton_1.AccessibleButton()
             .withElement(valuesContainer)
@@ -93692,8 +93541,6 @@ var SimpleFilter_1 = __webpack_require__(229);
 SimpleFilter_1.SimpleFilter.doExport();
 var TimespanFacet_1 = __webpack_require__(230);
 TimespanFacet_1.TimespanFacet.doExport();
-// import { NoNameFacet } from './ui/NoNameFacet/NoNameFacet';
-// NoNameFacet.doExport();
 var PromotedResultsBadge_1 = __webpack_require__(231);
 PromotedResultsBadge_1.PromotedResultsBadge.doExport();
 var CategoryFacet_1 = __webpack_require__(106);
