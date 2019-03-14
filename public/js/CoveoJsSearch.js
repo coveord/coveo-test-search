@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "1c48c91010c619ef9e27" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "7d06ecf6982206f62d19" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -8079,6 +8079,10 @@ var SearchInterface = /** @class */ (function (_super) {
          */
         enableDebugInfo: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: true }),
         /**
+         * **Note:**
+         *
+         * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this option is obsolete in Coveo Cloud V2.
+         *
          * Specifies whether to enable collaborative rating, which you can leverage using the
          * [`ResultRating`]{@link ResultRating} component.
          *
@@ -9830,6 +9834,10 @@ var DateUtils = /** @class */ (function () {
         var daysDifference = dateOnly.diff(today, 'days');
         return daysDifference == 0 || daysDifference == 1 || daysDifference == -1;
     };
+    DateUtils.getMomentJsFormat = function (format) {
+        // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
+        return format.replace(/yyyy/g, 'YYYY');
+    };
     /**
      * Creates a string from a Date object. The resulting string is formatted according to a set of options.
      * This method calls [ `keepOnlyDatePart` ]{@link DateUtils.keepOnlyDatePart} to remove time information from the date.
@@ -9849,8 +9857,7 @@ var DateUtils = /** @class */ (function () {
         var dateOnly = moment(DateUtils.keepOnlyDatePart(date));
         var today = moment(DateUtils.keepOnlyDatePart(options.now));
         if (options.predefinedFormat) {
-            // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
-            return dateOnly.format(options.predefinedFormat.replace(/yyyy/g, 'YYYY'));
+            return dateOnly.format(this.getMomentJsFormat(options.predefinedFormat));
         }
         if (options.useTodayYesterdayAndTomorrow) {
             if (DateUtils.isTodayYesterdayOrTomorrow(date, options)) {
@@ -9911,7 +9918,7 @@ var DateUtils = /** @class */ (function () {
             return '';
         }
         if (options.predefinedFormat) {
-            return moment(date).format(options.predefinedFormat);
+            return moment(date).format(this.getMomentJsFormat(options.predefinedFormat));
         }
         var today = DateUtils.keepOnlyDatePart(options.now);
         var datePart = DateUtils.dateToString(date, options);
@@ -13554,6 +13561,10 @@ var SearchEndpoint = /** @class */ (function () {
         });
     };
     /**
+     * **Note:**
+     *
+     * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this method is obsolete in Coveo Cloud V2.
+     *
      * Rates a single item in the index (granted that collaborative rating is enabled on your index)
      * @param ratingRequest The item id, and the rating to add.
      * @param callOptions An additional set of options to use for this call.
@@ -13755,7 +13766,7 @@ var SearchEndpoint = /** @class */ (function () {
         // In this reality however, we must support GET calls (ex: GET /html) for CORS/JSONP/IE reasons.
         // Therefore, we cherry-pick parts of the query to include in a 'query string' instead of a body payload.
         var queryParameters = {};
-        ['q', 'aq', 'cq', 'dq', 'searchHub', 'tab', 'locale', 'pipeline', 'lowercaseOperators'].forEach(function (key) {
+        ['q', 'aq', 'cq', 'dq', 'searchHub', 'tab', 'locale', 'pipeline', 'lowercaseOperators', 'timezone'].forEach(function (key) {
             queryParameters[key] = queryObject[key];
         });
         var context = {};
@@ -17855,8 +17866,8 @@ var Facet = /** @class */ (function (_super) {
          * Possible values are:
          * - `"occurrences"`
          * - `"score"`
-         * - `"alphaAscending"`
-         * - `alphaDescending`
+         * - `"alphaascending"`
+         * - `"alphadescending"`
          * - `"computedfieldascending"`
          * - `"computedfielddescending"`
          * - `"custom"`
@@ -17868,10 +17879,10 @@ var Facet = /** @class */ (function (_super) {
          *
          * > * Using value captions will disable alphabetical sorts (see the [valueCaption]{@link Facet.options.valueCaption} option).
          *
-         * Default value is `occurrences,score,alphaAscending,alphaDescending`.
+         * Default value is `occurrences,score,alphaascending,alphadescending`.
          */
         availableSorts: ComponentOptions_1.ComponentOptions.buildListOption({
-            defaultValue: ['occurrences', 'score', 'alphaAscending', 'alphaDescending'],
+            defaultValue: ['occurrences', 'score', 'alphaascending', 'alphadescending'],
             depend: 'enableSettings',
             section: 'Sorting',
             values: ['AlphaAscending', 'AlphaDescending', 'ComputedFieldAscending', 'ComputedFieldDescending', 'ChiSquare', 'NoSort']
@@ -18244,7 +18255,7 @@ var Facet = /** @class */ (function (_super) {
          * <div class='CoveoFacet' data-field='@myfield' data-title='My Parent Facet' data-id='myParentCustomId'></div>
          *
          * <!-- The "dependent" Facet must refer to the custom `id` of its "parent" Facet, which is 'myParentCustomId'. -->
-         * <div class='CoveoFacet' data-field='@myotherfield data-title='My Dependent Facet' data-depends-on='myParentCustomId'></div>
+         * <div class='CoveoFacet' data-field='@myotherfield' data-title='My Dependent Facet' data-depends-on='myParentCustomId'></div>
          * ```
          *
          * Default value is `undefined`
@@ -19039,8 +19050,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5395.11-beta',
-    product: '2.5395.11-beta',
+    lib: '2.5549.5-beta',
+    product: '2.5549.5-beta',
     supportedApiVersion: 2
 };
 
@@ -19750,7 +19761,7 @@ var AccessibleButton_1 = __webpack_require__(17);
  * The `ResultLink` component automatically transform a search result title into a clickable link pointing to the
  * original item.
  *
- * This component is a result template component (see [Result Templates](https://developers.coveo.com/x/aIGfAQ)).
+ * This component is a result template component (see [Result Templates](https://docs.coveo.com/en/413/)).
  */
 var ResultLink = /** @class */ (function (_super) {
     __extends(ResultLink, _super);
@@ -20073,7 +20084,7 @@ var ResultLink = /** @class */ (function (_super) {
          * default field):
          *
          * ```html
-         * <a class="CoveoResultLink" field="@uri"></a>
+         * <a class="CoveoResultLink" data-field="@uri"></a>
          * ```
          *
          * - In the following result template, the custom `getMyKBUri()` function provides the `href` value:
@@ -20116,7 +20127,7 @@ var ResultLink = /** @class */ (function (_super) {
          *
          * If this option is `true`, clicking the `ResultLink` calls the
          * [`openLinkInNewWindow`]{@link ResultLink.openLinkInNewWindow} method instead of the
-         * [ `openLink`]{@link ResultLink.openLink} method.
+         * [`openLink`]{@link ResultLink.openLink} method.
          *
          * **Note:**
          * > If a search page contains a [`ResultPreferences`]{@link ResultsPreferences} component whose
@@ -20209,9 +20220,6 @@ var ResultLink = /** @class */ (function (_super) {
          *
          * **Example:**
          * ```javascript
-         *
-         *
-         *
          * // You can set the option in the 'init' call:
          * Coveo.init(document.querySelector("#search"), {
          *   ResultLink : {
@@ -35025,7 +35033,7 @@ var ComponentsTypes = /** @class */ (function () {
     }
     Object.defineProperty(ComponentsTypes, "allFacetsType", {
         get: function () {
-            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet'];
+            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet', 'NoNameFacet'];
         },
         enumerable: true,
         configurable: true
@@ -41200,6 +41208,9 @@ var FacetQueryController = /** @class */ (function () {
         }
         else {
             mergeWith.constant = mergeWith.constant + " " + this.additionalFilter;
+        }
+        if (!mergeWith.advanced) {
+            mergeWith.advanced = queryBuilder.advancedExpression.build();
         }
         return mergeWith;
     };
@@ -52028,6 +52039,10 @@ var RatingValues;
     RatingValues[RatingValues["Best"] = 5] = "Best";
 })(RatingValues = exports.RatingValues || (exports.RatingValues = {}));
 /**
+ * **Note:**
+ *
+ * > The Coveo Cloud V2 platform does not support collaborative rating. Therefore, this component is obsolete in Coveo Cloud V2.
+ *
  * The `ResultRating` component renders a 5-star rating widget. Interactive rating is possible if
  * the [`enableCollaborativeRating`]{@link SearchInterface.options.enableCollaborativeRating} option of your
  * search interface is `true`, and if collaborative rating is enabled on your Coveo index.
@@ -65756,14 +65771,19 @@ var FacetHeader = /** @class */ (function () {
     };
     FacetHeader.prototype.buildOperatorToggle = function () {
         var _this = this;
+        var label = Strings_1.l('SwitchTo', this.options.facet.options.useAnd ? Strings_1.l('Or') : Strings_1.l('And'));
         var icon = Dom_1.$$('span', { className: 'coveo-' + (this.options.facet.options.useAnd ? 'and' : 'or') }, SVGIcons_1.SVGIcons.icons.orAnd);
         SVGDom_1.SVGDom.addClassToSVGInContainer(icon.el, 'coveo-or-and-svg');
         var toggle = Dom_1.$$('div', {
             className: 'coveo-facet-header-operator',
-            title: Strings_1.l('SwitchTo', this.options.facet.options.useAnd ? Strings_1.l('Or') : Strings_1.l('And'))
+            title: label
         });
         toggle.append(icon.el);
-        Dom_1.$$(toggle).on('click', function () { return _this.handleOperatorClick(); });
+        new AccessibleButton_1.AccessibleButton()
+            .withElement(toggle)
+            .withLabel(label)
+            .withSelectAction(function () { return _this.handleOperatorClick(); })
+            .build();
         return toggle.el;
     };
     FacetHeader.prototype.handleOperatorClick = function () {
@@ -93541,6 +93561,8 @@ var SimpleFilter_1 = __webpack_require__(229);
 SimpleFilter_1.SimpleFilter.doExport();
 var TimespanFacet_1 = __webpack_require__(230);
 TimespanFacet_1.TimespanFacet.doExport();
+// import { NoNameFacet } from './ui/NoNameFacet/NoNameFacet';
+// NoNameFacet.doExport();
 var PromotedResultsBadge_1 = __webpack_require__(231);
 PromotedResultsBadge_1.PromotedResultsBadge.doExport();
 var CategoryFacet_1 = __webpack_require__(106);
