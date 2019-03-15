@@ -11187,6 +11187,373 @@ a.CoveoResultLink.coveo-selected *,
 * @param $size size of the icon to use
 */
 
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
+.CoveoCategoryFacet.coveo-hidden {
+  display: none;
+}
+
+.coveo-category-facet-values-fade .coveo-category-facet-child-value {
+  opacity: 0.5;
+}
+
+.coveo-category-facet-values {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.coveo-category-facet-value-label {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 19px 5px 20px;
+}
+
+.coveo-category-facet-value-label.coveo-selectable {
+  vertical-align: middle;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.coveo-category-facet-value-label.coveo-selectable:focus,
+.coveo-category-facet-value-label.coveo-selectable:hover {
+  background-color: #e6ecf0;
+}
+
+.coveo-active-category-facet-parent {
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.coveo-category-facet-non-empty-path .coveo-category-facet-child-value .coveo-category-facet-value-label {
+  padding-left: 53px;
+}
+
+.coveo-category-facet-last-value {
+  color: black;
+}
+
+.coveo-category-facet-last-value .coveo-category-facet-value-label:hover,
+.coveo-category-facet-last-value .coveo-category-facet-value-label:focus {
+  background-color: white;
+}
+
+.coveo-category-facet-value-caption {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+}
+
+.coveo-category-facet-value-count {
+  margin: 0 5px;
+}
+
+.coveo-category-facet-collapse-children {
+  cursor: pointer;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+.coveo-category-facet-header {
+  padding: 10px 20px 6px;
+  color: #1d4f76;
+  background-color: #f7f8f9;
+}
+
+.coveo-category-facet-collapse-children-svg {
+  transform: rotate(90deg);
+  color: #bcc3ca;
+  width: 10px;
+  height: 6px;
+  vertical-align: 2px;
+}
+
+.coveo-category-facet-title {
+  display: inline-block;
+}
+
+.coveo-category-facet-header-wait-animation {
+  margin-left: 10px;
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 20px;
+}
+
+.coveo-category-facet-header-wait-animation .coveo-category-facet-header-wait-animation-svg {
+  color: #1d4f76;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation-name: coveo-spin;
+  -moz-animation-name: coveo-spin;
+  animation-name: coveo-spin;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.coveo-category-facet-more-less-container {
+  width: 100%;
+  height: 15px;
+  background: #f7f8f9;
+  text-align: center;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.coveo-category-facet-more,
+.coveo-category-facet-less {
+  cursor: pointer;
+}
+
+.coveo-category-facet-more:hover,
+.coveo-category-facet-more:focus,
+.coveo-category-facet-less:hover,
+.coveo-category-facet-less:focus {
+  background: #bcc3ca;
+  outline: none;
+}
+
+.coveo-category-facet-header-eraser {
+  float: right;
+}
+
+.coveo-category-facet-non-empty-path .coveo-category-facet-header-eraser {
+  visibility: visible;
+}
+
+.coveo-category-facet-all-categories {
+  padding: 5px 19px 5px 20px;
+  vertical-align: middle;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.coveo-category-facet-all-categories:focus,
+.coveo-category-facet-all-categories:hover {
+  background-color: #e6ecf0;
+}
+
+.coveo-category-facet-ellipsis-caption {
+  padding: 5px 19px 5px 20px;
+  padding-left: 36px;
+}
+
+.coveo-category-facet-breadcrumb {
+  display: block;
+}
+
+.coveo-category-facet-breadcrumb .coveo-exclusion-svg {
+  fill: #1d4f76;
+}
+
+.coveo-category-facet-breadcrumb-title {
+  color: #67768b;
+  margin-right: 14px;
+}
+
+.coveo-category-facet-breadcrumb-values {
+  color: #004990;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.coveo-category-facet-breadcrumb-values:visited,
+.coveo-category-facet-breadcrumb-values:visited:hover {
+  color: #609;
+}
+
+.coveo-category-facet-breadcrumb-values:hover,
+.coveo-category-facet-breadcrumb-values:hover a {
+  text-decoration: underline;
+}
+
+.coveo-category-facet-breadcrumb-values.coveo-selected * {
+  color: #004990;
+}
+
+.coveo-category-facet-breadcrumb-values:hover .coveo-exclusion-svg {
+  fill: #cc0d00;
+}
+
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
+.coveo-category-facet-search-container {
+  padding: 0 20px;
+  height: 32px;
+  line-height: 30px;
+}
+
+.coveo-category-facet-search-container .coveo-facet-search {
+  margin: 0;
+}
+
+.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container {
+  outline: none;
+}
+
+.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:hover,
+.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:focus {
+  background-color: #e6ecf0;
+}
+
+.coveo-category-facet-search-icon {
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin-right: 15px;
+  display: inline-block;
+  bottom: 1px;
+  color: #bcc3ca;
+  border: thin solid #bcc3ca;
+  border-radius: 2px;
+  border-style: dashed;
+}
+
+.coveo-category-facet-search-icon-svg {
+  color: #bcc3ca;
+  width: 16px;
+  height: 11px;
+  bottom: 7px;
+  position: relative;
+}
+
+.coveo-category-facet-search-icon-svg .coveo-more-svg {
+  fill: #bcc3ca;
+}
+
+.coveo-category-facet-searching .coveo-category-facet-search-placeholder {
+  display: none;
+}
+
+.coveo-category-facet-searching .coveo-facet-search {
+  display: block;
+}
+
+.coveo-category-facet-search-placeholder {
+  cursor: pointer;
+}
+
+.coveo-category-facet-search-label {
+  vertical-align: middle;
+  display: inline-block;
+  color: #004990;
+}
+
+.coveo-category-facet-search-value {
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.coveo-category-facet-search-value:hover {
+  background-color: #e6ecf0;
+  -webkit-box-pack: distribute;
+  -moz-box-pack: distribute;
+  box-pack: distribute;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: distribute;
+}
+
+.coveo-category-facet-search-first-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+}
+
+.coveo-category-facet-search-value-caption {
+  line-height: 17px;
+}
+
+.coveo-category-facet-search-value-number {
+  color: #67768b;
+}
+
+.coveo-category-facet-search-path {
+  display: block;
+  font-size: 11px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.coveo-category-facet-search-path-parents {
+  color: #67768b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 5px;
+  direction: rtl;
+}
+
+.coveo-category-facet-search-path-last-value {
+  white-space: nowrap;
+}
+
+.coveo-category-facet-search-second-row {
+  height: 13px;
+}
+
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
 .coveo-facet-settings-popup {
   position: absolute;
   overflow: hidden;
@@ -16169,370 +16536,6 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-recommended-result-badge {
   background-color: #004990;
-}
-
-/*
-* @param direction vertical or horizontal
-* @param position type of positioning to apply (relative/absolute)
-*/
-
-/*
-* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
-* @param $size size of the icon to use
-*/
-
-/*
-* @param direction vertical or horizontal
-* @param position type of positioning to apply (relative/absolute)
-*/
-
-/*
-* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
-* @param $size size of the icon to use
-*/
-
-.CoveoCategoryFacet.coveo-hidden {
-  display: none;
-}
-
-.coveo-category-facet-values-fade .coveo-category-facet-child-value {
-  opacity: 0.5;
-}
-
-.coveo-category-facet-values {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
-}
-
-.coveo-category-facet-value-label {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5px 19px 5px 20px;
-}
-
-.coveo-category-facet-value-label.coveo-selectable {
-  vertical-align: middle;
-  line-height: 22px;
-  cursor: pointer;
-}
-
-.coveo-category-facet-value-label.coveo-selectable:focus,
-.coveo-category-facet-value-label.coveo-selectable:hover {
-  background-color: #e6ecf0;
-}
-
-.coveo-active-category-facet-parent {
-  font-weight: bold;
-  margin-left: 15px;
-}
-
-.coveo-category-facet-non-empty-path .coveo-category-facet-child-value .coveo-category-facet-value-label {
-  padding-left: 53px;
-}
-
-.coveo-category-facet-last-value {
-  color: black;
-}
-
-.coveo-category-facet-last-value .coveo-category-facet-value-label:hover,
-.coveo-category-facet-last-value .coveo-category-facet-value-label:focus {
-  background-color: white;
-}
-
-.coveo-category-facet-value-caption {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  -webkit-flex-grow: 1;
-  -moz-flex-grow: 1;
-  flex-grow: 1;
-  -ms-flex-positive: 1;
-}
-
-.coveo-category-facet-value-count {
-  margin: 0 5px;
-}
-
-.coveo-category-facet-collapse-children {
-  cursor: pointer;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-.coveo-category-facet-header {
-  padding: 10px 20px 6px;
-  color: #1d4f76;
-  background-color: #f7f8f9;
-}
-
-.coveo-category-facet-collapse-children-svg {
-  transform: rotate(90deg);
-  color: #bcc3ca;
-  width: 10px;
-  height: 6px;
-  vertical-align: 2px;
-}
-
-.coveo-category-facet-title {
-  display: inline-block;
-}
-
-.coveo-category-facet-header-wait-animation {
-  margin-left: 10px;
-  position: relative;
-  display: inline-block;
-  width: 18px;
-  height: 20px;
-}
-
-.coveo-category-facet-header-wait-animation .coveo-category-facet-header-wait-animation-svg {
-  color: #1d4f76;
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-animation-name: coveo-spin;
-  -moz-animation-name: coveo-spin;
-  animation-name: coveo-spin;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.coveo-category-facet-more,
-.coveo-category-facet-less {
-  width: 100%;
-  height: 15px;
-  background: #f7f8f9;
-  cursor: pointer;
-  text-align: center;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-.coveo-category-facet-more:hover,
-.coveo-category-facet-more:focus,
-.coveo-category-facet-less:hover,
-.coveo-category-facet-less:focus {
-  background: #bcc3ca;
-  outline: none;
-}
-
-.coveo-category-facet-header-eraser {
-  float: right;
-}
-
-.coveo-category-facet-non-empty-path .coveo-category-facet-header-eraser {
-  visibility: visible;
-}
-
-.coveo-category-facet-all-categories {
-  padding: 5px 19px 5px 20px;
-  vertical-align: middle;
-  line-height: 22px;
-  cursor: pointer;
-}
-
-.coveo-category-facet-all-categories:focus,
-.coveo-category-facet-all-categories:hover {
-  background-color: #e6ecf0;
-}
-
-.coveo-category-facet-ellipsis-caption {
-  padding: 5px 19px 5px 20px;
-  padding-left: 36px;
-}
-
-.coveo-category-facet-breadcrumb {
-  display: block;
-}
-
-.coveo-category-facet-breadcrumb .coveo-exclusion-svg {
-  fill: #1d4f76;
-}
-
-.coveo-category-facet-breadcrumb-title {
-  color: #67768b;
-  margin-right: 14px;
-}
-
-.coveo-category-facet-breadcrumb-values {
-  color: #004990;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.coveo-category-facet-breadcrumb-values:visited,
-.coveo-category-facet-breadcrumb-values:visited:hover {
-  color: #609;
-}
-
-.coveo-category-facet-breadcrumb-values:hover,
-.coveo-category-facet-breadcrumb-values:hover a {
-  text-decoration: underline;
-}
-
-.coveo-category-facet-breadcrumb-values.coveo-selected * {
-  color: #004990;
-}
-
-.coveo-category-facet-breadcrumb-values:hover .coveo-exclusion-svg {
-  fill: #cc0d00;
-}
-
-/*
-* @param direction vertical or horizontal
-* @param position type of positioning to apply (relative/absolute)
-*/
-
-/*
-* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
-* @param $size size of the icon to use
-*/
-
-.coveo-category-facet-search-container {
-  padding: 0 20px;
-  height: 32px;
-  line-height: 30px;
-}
-
-.coveo-category-facet-search-container .coveo-facet-search {
-  margin: 0;
-}
-
-.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container {
-  outline: none;
-}
-
-.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:hover,
-.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:focus {
-  background-color: #e6ecf0;
-}
-
-.coveo-category-facet-search-icon {
-  vertical-align: middle;
-  width: 18px;
-  height: 18px;
-  margin-right: 15px;
-  display: inline-block;
-  bottom: 1px;
-  color: #bcc3ca;
-  border: thin solid #bcc3ca;
-  border-radius: 2px;
-  border-style: dashed;
-}
-
-.coveo-category-facet-search-icon-svg {
-  color: #bcc3ca;
-  width: 16px;
-  height: 11px;
-  bottom: 7px;
-  position: relative;
-}
-
-.coveo-category-facet-search-icon-svg .coveo-more-svg {
-  fill: #bcc3ca;
-}
-
-.coveo-category-facet-searching .coveo-category-facet-search-placeholder {
-  display: none;
-}
-
-.coveo-category-facet-searching .coveo-facet-search {
-  display: block;
-}
-
-.coveo-category-facet-search-placeholder {
-  cursor: pointer;
-}
-
-.coveo-category-facet-search-label {
-  vertical-align: middle;
-  display: inline-block;
-  color: #004990;
-}
-
-.coveo-category-facet-search-value {
-  font-size: 12px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.coveo-category-facet-search-value:hover {
-  background-color: #e6ecf0;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
-  box-pack: distribute;
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  -ms-justify-content: space-around;
-  -o-justify-content: space-around;
-  justify-content: space-around;
-  -ms-flex-pack: distribute;
-}
-
-.coveo-category-facet-search-first-row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  -ms-flex-pack: justify;
-}
-
-.coveo-category-facet-search-value-caption {
-  line-height: 17px;
-}
-
-.coveo-category-facet-search-value-number {
-  color: #67768b;
-}
-
-.coveo-category-facet-search-path {
-  display: block;
-  font-size: 11px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.coveo-category-facet-search-path-parents {
-  color: #67768b;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-right: 5px;
-  direction: rtl;
-}
-
-.coveo-category-facet-search-path-last-value {
-  white-space: nowrap;
-}
-
-.coveo-category-facet-search-second-row {
-  height: 13px;
 }
 
 
