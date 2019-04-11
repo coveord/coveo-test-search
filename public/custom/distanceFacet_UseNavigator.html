@@ -11,10 +11,19 @@
     <script src="../js/templates/templates.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            Coveo.SearchEndpoint.configureSampleEndpointV2();
-            Coveo.init(document.querySelector("#search"));
-        })
+        document.addEventListener("DOMContentLoaded", function () {
+            Coveo.SearchEndpoint.endpoints['default'] = new Coveo.SearchEndpoint({
+                restUri: 'https://platformqa.cloud.coveo.com/rest/search',
+                accessToken: 'xx7d4c8f7d-11b7-4ed7-80bf-ef3f8de31697',
+                queryStringArguments: {
+                    organizationId: 'qasitecorecloud'
+                }
+            });
+            Coveo.Analytics.options.endpoint.defaultValue = 'https://ua1staging.coveo.com';
+            Coveo.Analytics.options.searchHub.defaultValue = 'default';
+            Coveo.Analytics.options.organization.defaultValue = 'qasitecorecloud';
+            Coveo.init(document.querySelector('#search'));
+        });
 
     </script>
 
@@ -25,7 +34,7 @@
       </div>
 
       <!--Use Navigator-->
-       <div class="CoveoDistanceResources" data-distance-field="@distance" data-distance-field="@distance" data-longitude-field='@longitude1' data-latitude-field='@latitude1' data-unit-display-name='km' data-use-navigator="true" data-unit-conversion-factor='1000'></div>
+       <div class="CoveoDistanceResources" data-distance-field="@distance" data-unit-display-name='km' data-use-navigator="true" data-unit-conversion-factor='1000'></div>
 
     <div class="coveo-tab-section">
       <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
