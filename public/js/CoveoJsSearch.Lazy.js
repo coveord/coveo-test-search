@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"HierarchicalFacet","3":"TimespanFacet","4":"FacetRange","5":"Searchbox","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Pager","11":"ResultsPerPage","12":"Recommendation","13":"OmniboxResultList","14":"Quickview","15":"ResultList","16":"Tab","17":"ResultsFiltersPreferences","18":"Backdrop","19":"SimpleFilter","20":"ResultLayoutSelector","21":"FieldTable","22":"ResultsPreferences","23":"Sort","24":"Settings","25":"YouTubeThumbnail","26":"Thumbnail","27":"PrintableUri","28":"SearchAlerts","29":"Badge","30":"ResultRating","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"ExportToExcel","68":"Excerpt","69":"DidYouMean","70":"AuthenticationProvider","71":"TemplateLoader","72":"PipelineContext","73":"Icon","74":"Dropdown","75":"ChatterTopic","76":"Aggregate"}[chunkId]||chunkId) + "__" + "9f79925ee4edb95591e4" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"HierarchicalFacet","3":"TimespanFacet","4":"FacetRange","5":"Searchbox","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Pager","11":"ResultsPerPage","12":"Recommendation","13":"OmniboxResultList","14":"Quickview","15":"ResultList","16":"Tab","17":"ResultsFiltersPreferences","18":"Backdrop","19":"SimpleFilter","20":"ResultLayoutSelector","21":"FieldTable","22":"ResultsPreferences","23":"Sort","24":"Settings","25":"YouTubeThumbnail","26":"Thumbnail","27":"PrintableUri","28":"SearchAlerts","29":"Badge","30":"ResultRating","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"ExportToExcel","68":"Excerpt","69":"DidYouMean","70":"AuthenticationProvider","71":"TemplateLoader","72":"PipelineContext","73":"Icon","74":"Dropdown","75":"ChatterTopic","76":"Aggregate"}[chunkId]||chunkId) + "__" + "2e85dd54d427decf5c7a" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -14642,8 +14642,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5926.4-beta',
-    product: '2.5926.4-beta',
+    lib: '2.5926.7-beta',
+    product: '2.5926.7-beta',
     supportedApiVersion: 2
 };
 
