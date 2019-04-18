@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"HierarchicalFacet","3":"TimespanFacet","4":"FacetRange","5":"Searchbox","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Pager","11":"ResultsPerPage","12":"Recommendation","13":"OmniboxResultList","14":"Quickview","15":"ResultList","16":"Tab","17":"ResultsFiltersPreferences","18":"Backdrop","19":"SimpleFilter","20":"ResultLayoutSelector","21":"FieldTable","22":"ResultsPreferences","23":"Sort","24":"Settings","25":"YouTubeThumbnail","26":"Thumbnail","27":"PrintableUri","28":"SearchAlerts","29":"Badge","30":"ResultRating","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"ExportToExcel","68":"Excerpt","69":"DidYouMean","70":"AuthenticationProvider","71":"TemplateLoader","72":"PipelineContext","73":"Icon","74":"Dropdown","75":"ChatterTopic","76":"Aggregate"}[chunkId]||chunkId) + "__" + "b2853abde23c6878bb34" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"HierarchicalFacet","3":"TimespanFacet","4":"FacetRange","5":"Searchbox","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Pager","11":"ResultsPerPage","12":"Recommendation","13":"OmniboxResultList","14":"Quickview","15":"ResultList","16":"Tab","17":"ResultsFiltersPreferences","18":"Backdrop","19":"SimpleFilter","20":"ResultLayoutSelector","21":"FieldTable","22":"ResultsPreferences","23":"Sort","24":"Settings","25":"YouTubeThumbnail","26":"Thumbnail","27":"PrintableUri","28":"SearchAlerts","29":"Badge","30":"ResultRating","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"ExportToExcel","68":"Excerpt","69":"DidYouMean","70":"AuthenticationProvider","71":"TemplateLoader","72":"PipelineContext","73":"Icon","74":"Dropdown","75":"ChatterTopic","76":"Aggregate"}[chunkId]||chunkId) + "__" + "5d8084491af1464dbdb6" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -152,7 +152,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 508);
+/******/ 	return __webpack_require__(__webpack_require__.s = 507);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2696,7 +2696,7 @@ var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
 var SearchInterface_1 = __webpack_require__(18);
-var InitializationHelper_1 = __webpack_require__(311);
+var InitializationHelper_1 = __webpack_require__(310);
 var RegisteredNamedMethods_1 = __webpack_require__(22);
 /**
  * The main purpose of this class is to initialize the framework (a.k.a the code executed when calling `Coveo.init`).<br/>
@@ -5167,7 +5167,7 @@ exports.analyticsActionCauseList = {
         type: 'search box'
     },
     /**
-     * Identifies the search as you type event that gets logged when a query is automatically generated, and results are displayed while a user is entering text in the search box before they voluntarily submit the query.
+     * The search-as-you-type event that gets logged when a query is automatically generated, and results are displayed while a user is entering text in the search box before they voluntarily submit the query.
      *
      * `actionCause`: `'searchboxAsYouType'`
      * `actionType`: `'search box'`
@@ -5177,7 +5177,7 @@ exports.analyticsActionCauseList = {
         type: 'search box'
     },
     /**
-     * Identifies the search as you type event that gets logged when a breadcrumb facet is selected and the query is updated.
+     * The search-as-you-type event that gets logged when a breadcrumb facet is selected and the query is updated.
      *
      * `actionCause`: `'breadcrumbFacet'`
      * `actionType`: `'breadcrumb'`
@@ -6530,39 +6530,39 @@ var SVGIcons = /** @class */ (function () {
     function SVGIcons() {
     }
     SVGIcons.icons = {
-        search: __webpack_require__(267),
-        more: __webpack_require__(268),
-        loading: __webpack_require__(269),
-        checkboxHookExclusionMore: __webpack_require__(270),
-        arrowUp: __webpack_require__(271),
-        arrowDown: __webpack_require__(272),
-        mainClear: __webpack_require__(273),
-        orAnd: __webpack_require__(274),
-        sort: __webpack_require__(275),
-        ascending: __webpack_require__(276),
-        descending: __webpack_require__(277),
-        dropdownMore: __webpack_require__(278),
-        dropdownLess: __webpack_require__(279),
-        facetCollapse: __webpack_require__(280),
-        facetExpand: __webpack_require__(281),
-        dropdownShareQuery: __webpack_require__(282),
-        dropdownPreferences: __webpack_require__(283),
-        dropdownAuthenticate: __webpack_require__(284),
-        dropdownExport: __webpack_require__(285),
-        dropdownFollowQuery: __webpack_require__(286),
-        quickview: __webpack_require__(287),
-        pagerRightArrow: __webpack_require__(288),
-        pagerLeftArrow: __webpack_require__(289),
-        replies: __webpack_require__(290),
-        video: __webpack_require__(291),
-        coveoLogo: __webpack_require__(292),
-        coveoPoweredBy: __webpack_require__(293),
-        taggingOk: __webpack_require__(294),
-        edit: __webpack_require__(295),
-        star: __webpack_require__(296),
-        listLayout: __webpack_require__(297),
-        cardLayout: __webpack_require__(298),
-        tableLayout: __webpack_require__(299)
+        search: __webpack_require__(266),
+        more: __webpack_require__(267),
+        loading: __webpack_require__(268),
+        checkboxHookExclusionMore: __webpack_require__(269),
+        arrowUp: __webpack_require__(270),
+        arrowDown: __webpack_require__(271),
+        mainClear: __webpack_require__(272),
+        orAnd: __webpack_require__(273),
+        sort: __webpack_require__(274),
+        ascending: __webpack_require__(275),
+        descending: __webpack_require__(276),
+        dropdownMore: __webpack_require__(277),
+        dropdownLess: __webpack_require__(278),
+        facetCollapse: __webpack_require__(279),
+        facetExpand: __webpack_require__(280),
+        dropdownShareQuery: __webpack_require__(281),
+        dropdownPreferences: __webpack_require__(282),
+        dropdownAuthenticate: __webpack_require__(283),
+        dropdownExport: __webpack_require__(284),
+        dropdownFollowQuery: __webpack_require__(285),
+        quickview: __webpack_require__(286),
+        pagerRightArrow: __webpack_require__(287),
+        pagerLeftArrow: __webpack_require__(288),
+        replies: __webpack_require__(289),
+        video: __webpack_require__(290),
+        coveoLogo: __webpack_require__(291),
+        coveoPoweredBy: __webpack_require__(292),
+        taggingOk: __webpack_require__(293),
+        edit: __webpack_require__(294),
+        star: __webpack_require__(295),
+        listLayout: __webpack_require__(296),
+        cardLayout: __webpack_require__(297),
+        tableLayout: __webpack_require__(298)
     };
     return SVGIcons;
 }());
@@ -6985,22 +6985,21 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var fastclick = __webpack_require__(257);
-var jstz = __webpack_require__(258);
+var jstz = __webpack_require__(257);
+__webpack_require__(260);
 __webpack_require__(261);
 __webpack_require__(262);
 __webpack_require__(263);
-__webpack_require__(264);
 var underscore_1 = __webpack_require__(0);
 var HistoryController_1 = __webpack_require__(120);
 var LocalStorageHistoryController_1 = __webpack_require__(121);
-var NoopHistoryController_1 = __webpack_require__(265);
+var NoopHistoryController_1 = __webpack_require__(264);
 var QueryController_1 = __webpack_require__(34);
 var InitializationEvents_1 = __webpack_require__(15);
 var QueryEvents_1 = __webpack_require__(10);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(72);
 var Assert_1 = __webpack_require__(5);
-var SentryLogger_1 = __webpack_require__(266);
+var SentryLogger_1 = __webpack_require__(265);
 var ComponentOptionsModel_1 = __webpack_require__(25);
 var ComponentStateModel_1 = __webpack_require__(63);
 var Model_1 = __webpack_require__(16);
@@ -7017,9 +7016,9 @@ var InitializationPlaceholder_1 = __webpack_require__(135);
 var RootComponent_1 = __webpack_require__(35);
 var Debug_1 = __webpack_require__(124);
 var ResponsiveComponents_1 = __webpack_require__(43);
-var FacetColumnAutoLayoutAdjustment_1 = __webpack_require__(307);
-var FacetValueStateHandler_1 = __webpack_require__(308);
-var AriaLive_1 = __webpack_require__(309);
+var FacetColumnAutoLayoutAdjustment_1 = __webpack_require__(306);
+var FacetValueStateHandler_1 = __webpack_require__(307);
+var AriaLive_1 = __webpack_require__(308);
 /**
  * The SearchInterface component is the root and main component of your Coveo search interface. You should place all
  * other Coveo components inside the SearchInterface component.
@@ -7089,7 +7088,6 @@ var SearchInterface = /** @class */ (function (_super) {
         Assert_1.Assert.exists(_this.options);
         _this.root = element;
         _this.setupQueryMode();
-        _this.setupMobileFastclick(element);
         _this.queryStateModel = new QueryStateModel_1.QueryStateModel(element);
         _this.componentStateModel = new ComponentStateModel_1.ComponentStateModel(element);
         _this.componentOptionsModel = new ComponentOptionsModel_1.ComponentOptionsModel(element);
@@ -7251,12 +7249,6 @@ var SearchInterface = /** @class */ (function (_super) {
         else {
             this.initializeEmptyQueryNotAllowed();
         }
-    };
-    SearchInterface.prototype.setupMobileFastclick = function (element) {
-        // The definition file for fastclick does not match the way that fast click gets loaded (AMD)
-        // So we have to do some typecasting gymnastics
-        var attachFastclick = fastclick.attach;
-        attachFastclick(element);
     };
     SearchInterface.prototype.setupEventsHandlers = function () {
         var _this = this;
@@ -8008,7 +8000,7 @@ exports.StandaloneSearchInterface = StandaloneSearchInterface;
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
-var latinize = __webpack_require__(300);
+var latinize = __webpack_require__(299);
 var _ = __webpack_require__(0);
 var StringUtils = /** @class */ (function () {
     function StringUtils() {
@@ -8359,7 +8351,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Logger_1 = __webpack_require__(11);
 var Dom_1 = __webpack_require__(1);
 var TemplateConditionEvaluator_1 = __webpack_require__(122);
-var TemplateFieldsEvaluator_1 = __webpack_require__(301);
+var TemplateFieldsEvaluator_1 = __webpack_require__(300);
 var ResponsiveComponents_1 = __webpack_require__(43);
 var _ = __webpack_require__(0);
 var Initialization_1 = __webpack_require__(2);
@@ -10496,8 +10488,14 @@ var QueryBuilder = /** @class */ (function () {
         this.rankingFunctions = [];
         /**
          * Specifies an array of Group By operations that can be performed on the query results to extract facets.
+         * Cannot be used alongside [`facetRequests`]{@link QueryBuilder.facetRequests}
          */
         this.groupByRequests = [];
+        /**
+         * Specifies an array of request for the MLFacet component.
+         * Cannot be used alongside [`groupByRequests`]{@link QueryBuilder.groupByRequests}
+         */
+        this.facetRequests = [];
         /**
          * Specifies an array of request for the CategoryFacet component.
          */
@@ -10542,7 +10540,8 @@ var QueryBuilder = /** @class */ (function () {
             sortField: this.sortField,
             queryFunctions: this.queryFunctions,
             rankingFunctions: this.rankingFunctions,
-            groupBy: this.groupByRequests,
+            groupBy: this.groupBy,
+            facets: this.facets,
             categoryFacets: this.categoryFacets,
             retrieveFirstSentences: this.retrieveFirstSentences,
             timezone: this.timezone,
@@ -10668,6 +10667,26 @@ var QueryBuilder = /** @class */ (function () {
         var query = this.build();
         return Utils_1.Utils.isNonEmptyString(query.q) || Utils_1.Utils.isNonEmptyString(query.lq);
     };
+    Object.defineProperty(QueryBuilder.prototype, "groupBy", {
+        get: function () {
+            if (Utils_1.Utils.isEmptyArray(this.groupByRequests)) {
+                return undefined;
+            }
+            return this.groupByRequests;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(QueryBuilder.prototype, "facets", {
+        get: function () {
+            if (Utils_1.Utils.isEmptyArray(this.facetRequests)) {
+                return undefined;
+            }
+            return this.facetRequests;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return QueryBuilder;
 }());
 exports.QueryBuilder = QueryBuilder;
@@ -12697,7 +12716,7 @@ __export(__webpack_require__(107));
 __export(__webpack_require__(254));
 __export(__webpack_require__(150));
 __export(__webpack_require__(256));
-__export(__webpack_require__(312));
+__export(__webpack_require__(311));
 __export(__webpack_require__(90));
 
 
@@ -13591,7 +13610,7 @@ exports.ExpressionBuilder = ExpressionBuilder;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(305);
+__webpack_require__(304);
 var GlobalExports_1 = __webpack_require__(3);
 var Dom_1 = __webpack_require__(1);
 /**
@@ -13604,10 +13623,12 @@ var Checkbox = /** @class */ (function () {
      * instance as an argument.
      * @param label The label to display next to the checkbox.
      */
-    function Checkbox(onChange, label) {
+    function Checkbox(onChange, label, ariaLabel, labelSuffix) {
         if (onChange === void 0) { onChange = function (checkbox) { }; }
         this.onChange = onChange;
         this.label = label;
+        this.ariaLabel = ariaLabel;
+        this.labelSuffix = labelSuffix;
         this.buildContent();
     }
     /**
@@ -13684,12 +13705,15 @@ var Checkbox = /** @class */ (function () {
             className: 'coveo-checkbox',
             value: this.label
         }).el;
-        var button = Dom_1.$$('button', { type: 'button', className: 'coveo-checkbox-button', 'aria-label': this.label });
+        var button = Dom_1.$$('button', { type: 'button', className: 'coveo-checkbox-button', 'aria-label': this.ariaLabel || this.label });
         var labelSpan = Dom_1.$$('span', { className: 'coveo-checkbox-span-label' });
         labelSpan.text(this.label);
+        var labelSuffixSpan = Dom_1.$$('span', { className: 'coveo-checkbox-span-label-suffix' });
+        labelSuffixSpan.text(this.labelSuffix);
         label.append(this.checkbox);
         label.append(button.el);
         label.append(labelSpan.el);
+        this.labelSuffix && label.append(labelSuffixSpan.el);
         button.on('click', function (e) {
             e.preventDefault();
             _this.toggle();
@@ -14618,8 +14642,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5652.8-beta',
-    product: '2.5652.8-beta',
+    lib: '2.5926.10',
+    product: '2.5926.10',
     supportedApiVersion: 2
 };
 
@@ -21664,6 +21688,7 @@ var dict = {
     "UnselectValueWithResultCount": "Unselect {0} with {1}",
     "PageNumber": "Page {0}",
     "DisplayResultsPerPage": "Display {0} results per page",
+    "GroupByAndFacetRequestsCannotCoexist": "The query is invalid because it contains both Group By and Facet requests. Ensure that the search interface does not initialize MLFacet components alongside Facet components (or alongside any component extending the Facet component, such as FacetRange or FacetSlider).",
 };
 function defaultLanguage() {
     var locales = String["locales"] || (String["locales"] = {});
@@ -22582,11 +22607,11 @@ var BaseComponent_1 = __webpack_require__(27);
 var ExternalModulesShim_1 = __webpack_require__(24);
 var Globalize = __webpack_require__(23);
 var _ = __webpack_require__(0);
-__webpack_require__(303);
+__webpack_require__(302);
 var Strings_1 = __webpack_require__(7);
-var DebugHeader_1 = __webpack_require__(304);
+var DebugHeader_1 = __webpack_require__(303);
 var QueryEvents_1 = __webpack_require__(10);
-var DebugForResult_1 = __webpack_require__(306);
+var DebugForResult_1 = __webpack_require__(305);
 var GlobalExports_1 = __webpack_require__(3);
 var Template_1 = __webpack_require__(21);
 var Debug = /** @class */ (function (_super) {
@@ -23694,7 +23719,7 @@ var ComponentsTypes = /** @class */ (function () {
     }
     Object.defineProperty(ComponentsTypes, "allFacetsType", {
         get: function () {
-            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet', 'NoNameFacet'];
+            return ['Facet', 'FacetSlider', 'FacetRange', 'TimespanFacet', 'HierarchicalFacet', 'CategoryFacet', 'MLFacet'];
         },
         enumerable: true,
         configurable: true
@@ -23838,7 +23863,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
-__webpack_require__(302);
+__webpack_require__(301);
 var QueryEvents_1 = __webpack_require__(10);
 var InitializationEvents_1 = __webpack_require__(15);
 var ResultListEvents_1 = __webpack_require__(29);
@@ -27344,854 +27369,6 @@ exports.initCoveoJQuery = CoveoJQuery_1.initCoveoJQuery;
 /* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
-	'use strict';
-
-	/**
-	 * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
-	 *
-	 * @codingstandard ftlabs-jsv2
-	 * @copyright The Financial Times Limited [All Rights Reserved]
-	 * @license MIT License (see LICENSE.txt)
-	 */
-
-	/*jslint browser:true, node:true*/
-	/*global define, Event, Node*/
-
-
-	/**
-	 * Instantiate fast-clicking listeners on the specified layer.
-	 *
-	 * @constructor
-	 * @param {Element} layer The layer to listen on
-	 * @param {Object} [options={}] The options to override the defaults
-	 */
-	function FastClick(layer, options) {
-		var oldOnClick;
-
-		options = options || {};
-
-		/**
-		 * Whether a click is currently being tracked.
-		 *
-		 * @type boolean
-		 */
-		this.trackingClick = false;
-
-
-		/**
-		 * Timestamp for when click tracking started.
-		 *
-		 * @type number
-		 */
-		this.trackingClickStart = 0;
-
-
-		/**
-		 * The element being tracked for a click.
-		 *
-		 * @type EventTarget
-		 */
-		this.targetElement = null;
-
-
-		/**
-		 * X-coordinate of touch start event.
-		 *
-		 * @type number
-		 */
-		this.touchStartX = 0;
-
-
-		/**
-		 * Y-coordinate of touch start event.
-		 *
-		 * @type number
-		 */
-		this.touchStartY = 0;
-
-
-		/**
-		 * ID of the last touch, retrieved from Touch.identifier.
-		 *
-		 * @type number
-		 */
-		this.lastTouchIdentifier = 0;
-
-
-		/**
-		 * Touchmove boundary, beyond which a click will be cancelled.
-		 *
-		 * @type number
-		 */
-		this.touchBoundary = options.touchBoundary || 10;
-
-
-		/**
-		 * The FastClick layer.
-		 *
-		 * @type Element
-		 */
-		this.layer = layer;
-
-		/**
-		 * The minimum time between tap(touchstart and touchend) events
-		 *
-		 * @type number
-		 */
-		this.tapDelay = options.tapDelay || 200;
-
-		/**
-		 * The maximum time for a tap
-		 *
-		 * @type number
-		 */
-		this.tapTimeout = options.tapTimeout || 700;
-
-		if (FastClick.notNeeded(layer)) {
-			return;
-		}
-
-		// Some old versions of Android don't have Function.prototype.bind
-		function bind(method, context) {
-			return function() { return method.apply(context, arguments); };
-		}
-
-
-		var methods = ['onMouse', 'onClick', 'onTouchStart', 'onTouchMove', 'onTouchEnd', 'onTouchCancel'];
-		var context = this;
-		for (var i = 0, l = methods.length; i < l; i++) {
-			context[methods[i]] = bind(context[methods[i]], context);
-		}
-
-		// Set up event handlers as required
-		if (deviceIsAndroid) {
-			layer.addEventListener('mouseover', this.onMouse, true);
-			layer.addEventListener('mousedown', this.onMouse, true);
-			layer.addEventListener('mouseup', this.onMouse, true);
-		}
-
-		layer.addEventListener('click', this.onClick, true);
-		layer.addEventListener('touchstart', this.onTouchStart, false);
-		layer.addEventListener('touchmove', this.onTouchMove, false);
-		layer.addEventListener('touchend', this.onTouchEnd, false);
-		layer.addEventListener('touchcancel', this.onTouchCancel, false);
-
-		// Hack is required for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
-		// which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
-		// layer when they are cancelled.
-		if (!Event.prototype.stopImmediatePropagation) {
-			layer.removeEventListener = function(type, callback, capture) {
-				var rmv = Node.prototype.removeEventListener;
-				if (type === 'click') {
-					rmv.call(layer, type, callback.hijacked || callback, capture);
-				} else {
-					rmv.call(layer, type, callback, capture);
-				}
-			};
-
-			layer.addEventListener = function(type, callback, capture) {
-				var adv = Node.prototype.addEventListener;
-				if (type === 'click') {
-					adv.call(layer, type, callback.hijacked || (callback.hijacked = function(event) {
-						if (!event.propagationStopped) {
-							callback(event);
-						}
-					}), capture);
-				} else {
-					adv.call(layer, type, callback, capture);
-				}
-			};
-		}
-
-		// If a handler is already declared in the element's onclick attribute, it will be fired before
-		// FastClick's onClick handler. Fix this by pulling out the user-defined handler function and
-		// adding it as listener.
-		if (typeof layer.onclick === 'function') {
-
-			// Android browser on at least 3.2 requires a new reference to the function in layer.onclick
-			// - the old one won't work if passed to addEventListener directly.
-			oldOnClick = layer.onclick;
-			layer.addEventListener('click', function(event) {
-				oldOnClick(event);
-			}, false);
-			layer.onclick = null;
-		}
-	}
-
-	/**
-	* Windows Phone 8.1 fakes user agent string to look like Android and iPhone.
-	*
-	* @type boolean
-	*/
-	var deviceIsWindowsPhone = navigator.userAgent.indexOf("Windows Phone") >= 0;
-
-	/**
-	 * Android requires exceptions.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsAndroid = navigator.userAgent.indexOf('Android') > 0 && !deviceIsWindowsPhone;
-
-
-	/**
-	 * iOS requires exceptions.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsIOS = /iP(ad|hone|od)/.test(navigator.userAgent) && !deviceIsWindowsPhone;
-
-
-	/**
-	 * iOS 4 requires an exception for select elements.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsIOS4 = deviceIsIOS && (/OS 4_\d(_\d)?/).test(navigator.userAgent);
-
-
-	/**
-	 * iOS 6.0-7.* requires the target element to be manually derived
-	 *
-	 * @type boolean
-	 */
-	var deviceIsIOSWithBadTarget = deviceIsIOS && (/OS [6-7]_\d/).test(navigator.userAgent);
-
-	/**
-	 * BlackBerry requires exceptions.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsBlackBerry10 = navigator.userAgent.indexOf('BB10') > 0;
-
-	/**
-	 * Determine whether a given element requires a native click.
-	 *
-	 * @param {EventTarget|Element} target Target DOM element
-	 * @returns {boolean} Returns true if the element needs a native click
-	 */
-	FastClick.prototype.needsClick = function(target) {
-		switch (target.nodeName.toLowerCase()) {
-
-		// Don't send a synthetic click to disabled inputs (issue #62)
-		case 'button':
-		case 'select':
-		case 'textarea':
-			if (target.disabled) {
-				return true;
-			}
-
-			break;
-		case 'input':
-
-			// File inputs need real clicks on iOS 6 due to a browser bug (issue #68)
-			if ((deviceIsIOS && target.type === 'file') || target.disabled) {
-				return true;
-			}
-
-			break;
-		case 'label':
-		case 'iframe': // iOS8 homescreen apps can prevent events bubbling into frames
-		case 'video':
-			return true;
-		}
-
-		return (/\bneedsclick\b/).test(target.className);
-	};
-
-
-	/**
-	 * Determine whether a given element requires a call to focus to simulate click into element.
-	 *
-	 * @param {EventTarget|Element} target Target DOM element
-	 * @returns {boolean} Returns true if the element requires a call to focus to simulate native click.
-	 */
-	FastClick.prototype.needsFocus = function(target) {
-		switch (target.nodeName.toLowerCase()) {
-		case 'textarea':
-			return true;
-		case 'select':
-			return !deviceIsAndroid;
-		case 'input':
-			switch (target.type) {
-			case 'button':
-			case 'checkbox':
-			case 'file':
-			case 'image':
-			case 'radio':
-			case 'submit':
-				return false;
-			}
-
-			// No point in attempting to focus disabled inputs
-			return !target.disabled && !target.readOnly;
-		default:
-			return (/\bneedsfocus\b/).test(target.className);
-		}
-	};
-
-
-	/**
-	 * Send a click event to the specified element.
-	 *
-	 * @param {EventTarget|Element} targetElement
-	 * @param {Event} event
-	 */
-	FastClick.prototype.sendClick = function(targetElement, event) {
-		var clickEvent, touch;
-
-		// On some Android devices activeElement needs to be blurred otherwise the synthetic click will have no effect (#24)
-		if (document.activeElement && document.activeElement !== targetElement) {
-			document.activeElement.blur();
-		}
-
-		touch = event.changedTouches[0];
-
-		// Synthesise a click event, with an extra attribute so it can be tracked
-		clickEvent = document.createEvent('MouseEvents');
-		clickEvent.initMouseEvent(this.determineEventType(targetElement), true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
-		clickEvent.forwardedTouchEvent = true;
-		targetElement.dispatchEvent(clickEvent);
-	};
-
-	FastClick.prototype.determineEventType = function(targetElement) {
-
-		//Issue #159: Android Chrome Select Box does not open with a synthetic click event
-		if (deviceIsAndroid && targetElement.tagName.toLowerCase() === 'select') {
-			return 'mousedown';
-		}
-
-		return 'click';
-	};
-
-
-	/**
-	 * @param {EventTarget|Element} targetElement
-	 */
-	FastClick.prototype.focus = function(targetElement) {
-		var length;
-
-		// Issue #160: on iOS 7, some input elements (e.g. date datetime month) throw a vague TypeError on setSelectionRange. These elements don't have an integer value for the selectionStart and selectionEnd properties, but unfortunately that can't be used for detection because accessing the properties also throws a TypeError. Just check the type instead. Filed as Apple bug #15122724.
-		if (deviceIsIOS && targetElement.setSelectionRange && targetElement.type.indexOf('date') !== 0 && targetElement.type !== 'time' && targetElement.type !== 'month') {
-			length = targetElement.value.length;
-			targetElement.setSelectionRange(length, length);
-		} else {
-			targetElement.focus();
-		}
-	};
-
-
-	/**
-	 * Check whether the given target element is a child of a scrollable layer and if so, set a flag on it.
-	 *
-	 * @param {EventTarget|Element} targetElement
-	 */
-	FastClick.prototype.updateScrollParent = function(targetElement) {
-		var scrollParent, parentElement;
-
-		scrollParent = targetElement.fastClickScrollParent;
-
-		// Attempt to discover whether the target element is contained within a scrollable layer. Re-check if the
-		// target element was moved to another parent.
-		if (!scrollParent || !scrollParent.contains(targetElement)) {
-			parentElement = targetElement;
-			do {
-				if (parentElement.scrollHeight > parentElement.offsetHeight) {
-					scrollParent = parentElement;
-					targetElement.fastClickScrollParent = parentElement;
-					break;
-				}
-
-				parentElement = parentElement.parentElement;
-			} while (parentElement);
-		}
-
-		// Always update the scroll top tracker if possible.
-		if (scrollParent) {
-			scrollParent.fastClickLastScrollTop = scrollParent.scrollTop;
-		}
-	};
-
-
-	/**
-	 * @param {EventTarget} targetElement
-	 * @returns {Element|EventTarget}
-	 */
-	FastClick.prototype.getTargetElementFromEventTarget = function(eventTarget) {
-
-		// On some older browsers (notably Safari on iOS 4.1 - see issue #56) the event target may be a text node.
-		if (eventTarget.nodeType === Node.TEXT_NODE) {
-			return eventTarget.parentNode;
-		}
-
-		return eventTarget;
-	};
-
-
-	/**
-	 * On touch start, record the position and scroll offset.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onTouchStart = function(event) {
-		var targetElement, touch, selection;
-
-		// Ignore multiple touches, otherwise pinch-to-zoom is prevented if both fingers are on the FastClick element (issue #111).
-		if (event.targetTouches.length > 1) {
-			return true;
-		}
-
-		targetElement = this.getTargetElementFromEventTarget(event.target);
-		touch = event.targetTouches[0];
-
-		if (deviceIsIOS) {
-
-			// Only trusted events will deselect text on iOS (issue #49)
-			selection = window.getSelection();
-			if (selection.rangeCount && !selection.isCollapsed) {
-				return true;
-			}
-
-			if (!deviceIsIOS4) {
-
-				// Weird things happen on iOS when an alert or confirm dialog is opened from a click event callback (issue #23):
-				// when the user next taps anywhere else on the page, new touchstart and touchend events are dispatched
-				// with the same identifier as the touch event that previously triggered the click that triggered the alert.
-				// Sadly, there is an issue on iOS 4 that causes some normal touch events to have the same identifier as an
-				// immediately preceeding touch event (issue #52), so this fix is unavailable on that platform.
-				// Issue 120: touch.identifier is 0 when Chrome dev tools 'Emulate touch events' is set with an iOS device UA string,
-				// which causes all touch events to be ignored. As this block only applies to iOS, and iOS identifiers are always long,
-				// random integers, it's safe to to continue if the identifier is 0 here.
-				if (touch.identifier && touch.identifier === this.lastTouchIdentifier) {
-					event.preventDefault();
-					return false;
-				}
-
-				this.lastTouchIdentifier = touch.identifier;
-
-				// If the target element is a child of a scrollable layer (using -webkit-overflow-scrolling: touch) and:
-				// 1) the user does a fling scroll on the scrollable layer
-				// 2) the user stops the fling scroll with another tap
-				// then the event.target of the last 'touchend' event will be the element that was under the user's finger
-				// when the fling scroll was started, causing FastClick to send a click event to that layer - unless a check
-				// is made to ensure that a parent layer was not scrolled before sending a synthetic click (issue #42).
-				this.updateScrollParent(targetElement);
-			}
-		}
-
-		this.trackingClick = true;
-		this.trackingClickStart = event.timeStamp;
-		this.targetElement = targetElement;
-
-		this.touchStartX = touch.pageX;
-		this.touchStartY = touch.pageY;
-
-		// Prevent phantom clicks on fast double-tap (issue #36)
-		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
-			event.preventDefault();
-		}
-
-		return true;
-	};
-
-
-	/**
-	 * Based on a touchmove event object, check whether the touch has moved past a boundary since it started.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.touchHasMoved = function(event) {
-		var touch = event.changedTouches[0], boundary = this.touchBoundary;
-
-		if (Math.abs(touch.pageX - this.touchStartX) > boundary || Math.abs(touch.pageY - this.touchStartY) > boundary) {
-			return true;
-		}
-
-		return false;
-	};
-
-
-	/**
-	 * Update the last position.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onTouchMove = function(event) {
-		if (!this.trackingClick) {
-			return true;
-		}
-
-		// If the touch has moved, cancel the click tracking
-		if (this.targetElement !== this.getTargetElementFromEventTarget(event.target) || this.touchHasMoved(event)) {
-			this.trackingClick = false;
-			this.targetElement = null;
-		}
-
-		return true;
-	};
-
-
-	/**
-	 * Attempt to find the labelled control for the given label element.
-	 *
-	 * @param {EventTarget|HTMLLabelElement} labelElement
-	 * @returns {Element|null}
-	 */
-	FastClick.prototype.findControl = function(labelElement) {
-
-		// Fast path for newer browsers supporting the HTML5 control attribute
-		if (labelElement.control !== undefined) {
-			return labelElement.control;
-		}
-
-		// All browsers under test that support touch events also support the HTML5 htmlFor attribute
-		if (labelElement.htmlFor) {
-			return document.getElementById(labelElement.htmlFor);
-		}
-
-		// If no for attribute exists, attempt to retrieve the first labellable descendant element
-		// the list of which is defined here: http://www.w3.org/TR/html5/forms.html#category-label
-		return labelElement.querySelector('button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea');
-	};
-
-
-	/**
-	 * On touch end, determine whether to send a click event at once.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onTouchEnd = function(event) {
-		var forElement, trackingClickStart, targetTagName, scrollParent, touch, targetElement = this.targetElement;
-
-		if (!this.trackingClick) {
-			return true;
-		}
-
-		// Prevent phantom clicks on fast double-tap (issue #36)
-		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
-			this.cancelNextClick = true;
-			return true;
-		}
-
-		if ((event.timeStamp - this.trackingClickStart) > this.tapTimeout) {
-			return true;
-		}
-
-		// Reset to prevent wrong click cancel on input (issue #156).
-		this.cancelNextClick = false;
-
-		this.lastClickTime = event.timeStamp;
-
-		trackingClickStart = this.trackingClickStart;
-		this.trackingClick = false;
-		this.trackingClickStart = 0;
-
-		// On some iOS devices, the targetElement supplied with the event is invalid if the layer
-		// is performing a transition or scroll, and has to be re-detected manually. Note that
-		// for this to function correctly, it must be called *after* the event target is checked!
-		// See issue #57; also filed as rdar://13048589 .
-		if (deviceIsIOSWithBadTarget) {
-			touch = event.changedTouches[0];
-
-			// In certain cases arguments of elementFromPoint can be negative, so prevent setting targetElement to null
-			targetElement = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset) || targetElement;
-			targetElement.fastClickScrollParent = this.targetElement.fastClickScrollParent;
-		}
-
-		targetTagName = targetElement.tagName.toLowerCase();
-		if (targetTagName === 'label') {
-			forElement = this.findControl(targetElement);
-			if (forElement) {
-				this.focus(targetElement);
-				if (deviceIsAndroid) {
-					return false;
-				}
-
-				targetElement = forElement;
-			}
-		} else if (this.needsFocus(targetElement)) {
-
-			// Case 1: If the touch started a while ago (best guess is 100ms based on tests for issue #36) then focus will be triggered anyway. Return early and unset the target element reference so that the subsequent click will be allowed through.
-			// Case 2: Without this exception for input elements tapped when the document is contained in an iframe, then any inputted text won't be visible even though the value attribute is updated as the user types (issue #37).
-			if ((event.timeStamp - trackingClickStart) > 100 || (deviceIsIOS && window.top !== window && targetTagName === 'input')) {
-				this.targetElement = null;
-				return false;
-			}
-
-			this.focus(targetElement);
-			this.sendClick(targetElement, event);
-
-			// Select elements need the event to go through on iOS 4, otherwise the selector menu won't open.
-			// Also this breaks opening selects when VoiceOver is active on iOS6, iOS7 (and possibly others)
-			if (!deviceIsIOS || targetTagName !== 'select') {
-				this.targetElement = null;
-				event.preventDefault();
-			}
-
-			return false;
-		}
-
-		if (deviceIsIOS && !deviceIsIOS4) {
-
-			// Don't send a synthetic click event if the target element is contained within a parent layer that was scrolled
-			// and this tap is being used to stop the scrolling (usually initiated by a fling - issue #42).
-			scrollParent = targetElement.fastClickScrollParent;
-			if (scrollParent && scrollParent.fastClickLastScrollTop !== scrollParent.scrollTop) {
-				return true;
-			}
-		}
-
-		// Prevent the actual click from going though - unless the target node is marked as requiring
-		// real clicks or if it is in the whitelist in which case only non-programmatic clicks are permitted.
-		if (!this.needsClick(targetElement)) {
-			event.preventDefault();
-			this.sendClick(targetElement, event);
-		}
-
-		return false;
-	};
-
-
-	/**
-	 * On touch cancel, stop tracking the click.
-	 *
-	 * @returns {void}
-	 */
-	FastClick.prototype.onTouchCancel = function() {
-		this.trackingClick = false;
-		this.targetElement = null;
-	};
-
-
-	/**
-	 * Determine mouse events which should be permitted.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onMouse = function(event) {
-
-		// If a target element was never set (because a touch event was never fired) allow the event
-		if (!this.targetElement) {
-			return true;
-		}
-
-		if (event.forwardedTouchEvent) {
-			return true;
-		}
-
-		// Programmatically generated events targeting a specific element should be permitted
-		if (!event.cancelable) {
-			return true;
-		}
-
-		// Derive and check the target element to see whether the mouse event needs to be permitted;
-		// unless explicitly enabled, prevent non-touch click events from triggering actions,
-		// to prevent ghost/doubleclicks.
-		if (!this.needsClick(this.targetElement) || this.cancelNextClick) {
-
-			// Prevent any user-added listeners declared on FastClick element from being fired.
-			if (event.stopImmediatePropagation) {
-				event.stopImmediatePropagation();
-			} else {
-
-				// Part of the hack for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
-				event.propagationStopped = true;
-			}
-
-			// Cancel the event
-			event.stopPropagation();
-			event.preventDefault();
-
-			return false;
-		}
-
-		// If the mouse event is permitted, return true for the action to go through.
-		return true;
-	};
-
-
-	/**
-	 * On actual clicks, determine whether this is a touch-generated click, a click action occurring
-	 * naturally after a delay after a touch (which needs to be cancelled to avoid duplication), or
-	 * an actual click which should be permitted.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onClick = function(event) {
-		var permitted;
-
-		// It's possible for another FastClick-like library delivered with third-party code to fire a click event before FastClick does (issue #44). In that case, set the click-tracking flag back to false and return early. This will cause onTouchEnd to return early.
-		if (this.trackingClick) {
-			this.targetElement = null;
-			this.trackingClick = false;
-			return true;
-		}
-
-		// Very odd behaviour on iOS (issue #18): if a submit element is present inside a form and the user hits enter in the iOS simulator or clicks the Go button on the pop-up OS keyboard the a kind of 'fake' click event will be triggered with the submit-type input element as the target.
-		if (event.target.type === 'submit' && event.detail === 0) {
-			return true;
-		}
-
-		permitted = this.onMouse(event);
-
-		// Only unset targetElement if the click is not permitted. This will ensure that the check for !targetElement in onMouse fails and the browser's click doesn't go through.
-		if (!permitted) {
-			this.targetElement = null;
-		}
-
-		// If clicks are permitted, return true for the action to go through.
-		return permitted;
-	};
-
-
-	/**
-	 * Remove all FastClick's event listeners.
-	 *
-	 * @returns {void}
-	 */
-	FastClick.prototype.destroy = function() {
-		var layer = this.layer;
-
-		if (deviceIsAndroid) {
-			layer.removeEventListener('mouseover', this.onMouse, true);
-			layer.removeEventListener('mousedown', this.onMouse, true);
-			layer.removeEventListener('mouseup', this.onMouse, true);
-		}
-
-		layer.removeEventListener('click', this.onClick, true);
-		layer.removeEventListener('touchstart', this.onTouchStart, false);
-		layer.removeEventListener('touchmove', this.onTouchMove, false);
-		layer.removeEventListener('touchend', this.onTouchEnd, false);
-		layer.removeEventListener('touchcancel', this.onTouchCancel, false);
-	};
-
-
-	/**
-	 * Check whether FastClick is needed.
-	 *
-	 * @param {Element} layer The layer to listen on
-	 */
-	FastClick.notNeeded = function(layer) {
-		var metaViewport;
-		var chromeVersion;
-		var blackberryVersion;
-		var firefoxVersion;
-
-		// Devices that don't support touch don't need FastClick
-		if (typeof window.ontouchstart === 'undefined') {
-			return true;
-		}
-
-		// Chrome version - zero for other browsers
-		chromeVersion = +(/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
-
-		if (chromeVersion) {
-
-			if (deviceIsAndroid) {
-				metaViewport = document.querySelector('meta[name=viewport]');
-
-				if (metaViewport) {
-					// Chrome on Android with user-scalable="no" doesn't need FastClick (issue #89)
-					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
-						return true;
-					}
-					// Chrome 32 and above with width=device-width or less don't need FastClick
-					if (chromeVersion > 31 && document.documentElement.scrollWidth <= window.outerWidth) {
-						return true;
-					}
-				}
-
-			// Chrome desktop doesn't need FastClick (issue #15)
-			} else {
-				return true;
-			}
-		}
-
-		if (deviceIsBlackBerry10) {
-			blackberryVersion = navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/);
-
-			// BlackBerry 10.3+ does not require Fastclick library.
-			// https://github.com/ftlabs/fastclick/issues/251
-			if (blackberryVersion[1] >= 10 && blackberryVersion[2] >= 3) {
-				metaViewport = document.querySelector('meta[name=viewport]');
-
-				if (metaViewport) {
-					// user-scalable=no eliminates click delay.
-					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
-						return true;
-					}
-					// width=device-width (or less than device-width) eliminates click delay.
-					if (document.documentElement.scrollWidth <= window.outerWidth) {
-						return true;
-					}
-				}
-			}
-		}
-
-		// IE10 with -ms-touch-action: none or manipulation, which disables double-tap-to-zoom (issue #97)
-		if (layer.style.msTouchAction === 'none' || layer.style.touchAction === 'manipulation') {
-			return true;
-		}
-
-		// Firefox version - zero for other browsers
-		firefoxVersion = +(/Firefox\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
-
-		if (firefoxVersion >= 27) {
-			// Firefox 27+ does not have tap delay if the content is not zoomable - https://bugzilla.mozilla.org/show_bug.cgi?id=922896
-
-			metaViewport = document.querySelector('meta[name=viewport]');
-			if (metaViewport && (metaViewport.content.indexOf('user-scalable=no') !== -1 || document.documentElement.scrollWidth <= window.outerWidth)) {
-				return true;
-			}
-		}
-
-		// IE11: prefixed -ms-touch-action is no longer supported and it's recomended to use non-prefixed version
-		// http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx
-		if (layer.style.touchAction === 'none' || layer.style.touchAction === 'manipulation') {
-			return true;
-		}
-
-		return false;
-	};
-
-
-	/**
-	 * Factory method for creating a FastClick object
-	 *
-	 * @param {Element} layer The layer to listen on
-	 * @param {Object} [options={}] The options to override the defaults
-	 */
-	FastClick.attach = function(layer, options) {
-		return new FastClick(layer, options);
-	};
-
-
-	if (true) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
-			return FastClick;
-		}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else if (typeof module !== 'undefined' && module.exports) {
-		module.exports = FastClick.attach;
-		module.exports.FastClick = FastClick;
-	} else {
-		window.FastClick = FastClick;
-	}
-}());
-
-
-/***/ }),
-/* 258 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root) {/*global exports, Intl*/
 /**
  * This script gives you the zone info key representing your device's time zone setting.
@@ -29613,7 +28790,7 @@ jstz.olson.dst_rules = {
 };
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = jstz;
-} else if (("function" !== 'undefined' && __webpack_require__(259) !== null) && (__webpack_require__(260) != null)) {
+} else if (("function" !== 'undefined' && __webpack_require__(258) !== null) && (__webpack_require__(259) != null)) {
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
         return jstz;
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -29629,7 +28806,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 
 /***/ }),
-/* 259 */
+/* 258 */
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -29638,13 +28815,19 @@ module.exports = function() {
 
 
 /***/ }),
-/* 260 */
+/* 259 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
 module.exports = __webpack_amd_options__;
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 261 */
@@ -29666,12 +28849,6 @@ module.exports = __webpack_amd_options__;
 
 /***/ }),
 /* 264 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29688,7 +28865,7 @@ exports.NoopHistoryController = NoopHistoryController;
 
 
 /***/ }),
-/* 266 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29748,205 +28925,205 @@ exports.SentryLogger = SentryLogger;
 
 
 /***/ }),
-/* 267 */
+/* 266 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 20 20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-magnifier-circle-svg\" d=\"m8.368 16.736c-4.614 0-8.368-3.754-8.368-8.368s3.754-8.368 8.368-8.368 8.368 3.754 8.368 8.368-3.754 8.368-8.368 8.368m0-14.161c-3.195 0-5.793 2.599-5.793 5.793s2.599 5.793 5.793 5.793 5.793-2.599 5.793-5.793-2.599-5.793-5.793-5.793\"></path><path d=\"m18.713 20c-.329 0-.659-.126-.91-.377l-4.552-4.551c-.503-.503-.503-1.318 0-1.82.503-.503 1.318-.503 1.82 0l4.552 4.551c.503.503.503 1.318 0 1.82-.252.251-.581.377-.91.377\"></path></g></svg>"
 
 /***/ }),
-/* 268 */
+/* 267 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 16 16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-more-background-svg\" fill-opacity=\"0\" d=\"m8.03.819c3.987 0 7.227 3.222 7.227 7.181s-3.239 7.181-7.227 7.181c-3.976 0-7.209-3.222-7.209-7.181s3.237-7.181 7.209-7.181\"></path><path d=\"m0 8c0 4.416 3.572 8 7.991 8 4.425 0 8.009-3.581 8.009-8 0-4.416-3.581-8-8.009-8-4.416 0-7.991 3.581-7.991 8m8.031-6.4c3.553 0 6.441 2.872 6.441 6.4s-2.887 6.4-6.441 6.4c-3.544 0-6.425-2.872-6.425-6.4s2.885-6.4 6.425-6.4\"></path><path d=\"m10.988 9.024c.551 0 1-.449 1-1s-.449-1-1-1-1 .449-1 1 .449 1 1 1\"></path><path d=\"m7.991 9c .551 0 1-.449 1-1s-.449-1-1-1-1 .449-1 1 .449 1 1 1\"></path><path d=\"m4.994 9c .551 0 1-.449 1-1s-.449-1-1-1-1 .449-1 1 .449 1 1 1\"></path></g></svg>"
 
 /***/ }),
-/* 269 */
+/* 268 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 18 18\" viewBox=\"0 0 18 18\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m16.76 8.051c-.448 0-.855-.303-.969-.757-.78-3.117-3.573-5.294-6.791-5.294s-6.01 2.177-6.79 5.294c-.134.537-.679.861-1.213.727-.536-.134-.861-.677-.728-1.212 1.004-4.009 4.594-6.809 8.731-6.809 4.138 0 7.728 2.8 8.73 6.809.135.536-.191 1.079-.727 1.213-.081.02-.162.029-.243.029z\"></path><path d=\"m9 18c-4.238 0-7.943-3.007-8.809-7.149-.113-.541.234-1.071.774-1.184.541-.112 1.071.232 1.184.773.674 3.222 3.555 5.56 6.851 5.56s6.178-2.338 6.852-5.56c.113-.539.634-.892 1.184-.773.54.112.887.643.773 1.184-.866 4.142-4.57 7.149-8.809 7.149z\"></path></g></svg>"
 
 /***/ }),
-/* 270 */
+/* 269 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 11 11\" viewBox=\"0 0 11 11\" xmlns=\"http://www.w3.org/2000/svg\"><g class=\"coveo-more-svg\" fill=\"none\"><path d=\"m10.083 4.583h-3.666v-3.666c0-.524-.393-.917-.917-.917s-.917.393-.917.917v3.667h-3.666c-.524-.001-.917.392-.917.916s.393.917.917.917h3.667v3.667c-.001.523.392.916.916.916s.917-.393.917-.917v-3.666h3.667c.523 0 .916-.393.916-.917-.001-.524-.394-.917-.917-.917z\"></path></g><g class=\"coveo-line-svg\" fill=\"none\"><path d=\"m10 6.5h-9c-.552 0-1-.448-1-1 0-.552.448-1 1-1h9c .552 0 1 .448 1 1 0 .552-.448 1-1 1z\"></path></g><g class=\"coveo-exclusion-svg\" fill=\"none\"><path d=\"m9.233 7.989-2.489-2.489 2.489-2.489c.356-.356.356-.889 0-1.244-.356-.356-.889-.356-1.244 0l-2.489 2.489-2.489-2.489c-.356-.356-.889-.356-1.244 0-.356.356-.356.889 0 1.244l2.489 2.489-2.489 2.489c-.356.356-.356.889 0 1.244.356.356.889.356 1.244 0l2.489-2.489 2.489 2.489c.356.356.889.356 1.244 0 .356-.355.356-.889 0-1.244z\"></path></g><g class=\"coveo-hook-svg\" fill=\"none\"><path d=\"m10.252 2.213c-.155-.142-.354-.211-.573-.213-.215.005-.414.091-.561.24l-4.873 4.932-2.39-2.19c-.154-.144-.385-.214-.57-.214-.214.004-.415.09-.563.24-.148.147-.227.343-.222.549.005.207.093.4.249.542l2.905 2.662c.168.154.388.239.618.239h.022.003c.237-.007.457-.101.618-.266l5.362-5.428c.148-.148.228-.344.223-.551s-.093-.399-.248-.542z\"></path></g></svg>"
 
 /***/ }),
-/* 271 */
+/* 270 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 10 6\" viewBox=\"0 0 10 6\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m5 .068c.222 0 .443.084.612.253l4.134 4.134c.338.338.338.886 0 1.224s-.886.338-1.224 0l-3.522-3.521-3.523 3.521c-.336.338-.886.338-1.224 0s-.337-.886.001-1.224l4.134-4.134c.168-.169.39-.253.612-.253z\"></path></g></svg>"
 
 /***/ }),
-/* 272 */
+/* 271 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 10 6\" viewBox=\"0 0 10 6\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m5 5.932c-.222 0-.443-.084-.612-.253l-4.134-4.134c-.338-.338-.338-.886 0-1.224s.886-.338 1.224 0l3.522 3.521 3.523-3.521c.336-.338.886-.338 1.224 0s .337.886-.001 1.224l-4.135 4.134c-.168.169-.39.253-.611.253z\"></path></g></svg>"
 
 /***/ }),
-/* 273 */
+/* 272 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 13 13\" viewBox=\"0 0 13 13\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m7.881 6.501 4.834-4.834c.38-.38.38-1.001 0-1.381s-1.001-.38-1.381 0l-4.834 4.834-4.834-4.835c-.38-.38-1.001-.38-1.381 0s-.38 1.001 0 1.381l4.834 4.834-4.834 4.834c-.38.38-.38 1.001 0 1.381s1.001.38 1.381 0l4.834-4.834 4.834 4.834c.38.38 1.001.38 1.381 0s .38-1.001 0-1.381z\"></path></g></svg>"
 
 /***/ }),
-/* 274 */
+/* 273 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 18 18\" viewBox=\"0 0 18 18\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-and-svg\" d=\"m13.769 5.294h-1.063v-1.063c0-2.329-1.894-4.231-4.231-4.231h-4.244c-2.329 0-4.231 1.894-4.231 4.231v4.244c0 2.329 1.894 4.231 4.231 4.231h1.063v1.063c0 2.329 1.894 4.231 4.231 4.231h4.244c2.329 0 4.231-1.894 4.231-4.231v-4.244c0-2.329-1.894-4.231-4.231-4.231zm2.731 8.475c0 1.506-1.225 2.731-2.731 2.731h-4.244c-1.506 0-2.731-1.225-2.731-2.731v-2.563h-2.563c-1.506 0-2.731-1.225-2.731-2.731v-4.244c0-1.506 1.225-2.731 2.731-2.731h4.244c1.506 0 2.731 1.225 2.731 2.731v2.563h2.563c1.506 0 2.731 1.225 2.731 2.731z\"></path><path class=\"coveo-or-svg\" d=\"m11.206 6.794v1.909c0 1.38-1.123 2.503-2.503 2.503h-1.909v-1.909c0-1.38 1.123-2.503 2.503-2.503zm1.5-1.5h-3.409c-2.209 0-4.003 1.792-4.003 4.003v3.409h3.409c2.209 0 4.003-1.792 4.003-4.003z\"></path></g></svg>"
 
 /***/ }),
-/* 275 */
+/* 274 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 15 14\" viewBox=\"0 0 15 14\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-active-shape-svg\" d=\"m13.002 4.076 0 0c0 .536-.439.975-.975.975h-2.925c-.536 0-.975-.439-.975-.975l0 0c0-.536.439-.975.975-.975h2.925c.537 0 .975.438.975.975z\"></path><path class=\"coveo-active-shape-svg\" d=\"m13.002 9.925 0 0c0 .536-.439.975-.975.975h-2.925c-.536 0-.975-.439-.975-.975l0 0c0-.536.439-.975.975-.975h2.925c.537 0 .975.439.975.975z\"></path><path class=\"coveo-active-shape-svg\" d=\"m15 7 0 0c0 .536-.439.975-.975.975h-4.923c-.536 0-.974-.438-.974-.975l0 0c0-.536.439-.975.975-.975h4.923c.535.001.974.439.974.975z\"></path><path d=\"m4.956 9.837-.671.671v-7.015l.671.671c.381.381.997.381 1.379 0 .381-.38.381-.997 0-1.379l-2.335-2.336c-.183-.184-.431-.286-.69-.286s-.506.102-.689.286l-2.335 2.336c-.381.381-.381.997 0 1.379s.997.381 1.379 0l .671-.671v7.015l-.671-.671c-.381-.381-.997-.381-1.379 0-.381.38-.381.997 0 1.379l2.335 2.336c.182.183.431.286.689.286s.506-.103.69-.287l2.335-2.336c.381-.381.381-.997 0-1.379-.382-.381-.998-.381-1.379.001z\"></path></g></svg>"
 
 /***/ }),
-/* 276 */
+/* 275 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 15 12\" viewBox=\"0 0 15 12\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-active-shape-svg\" d=\"m10.936 2.021 0 0c0 .549-.452.998-1.004.998h-1.004c-.552 0-1.004-.449-1.004-.998l0 0c0-.549.452-.998 1.004-.998h1.004c.552 0 1.004.449 1.004.998z\"></path><path class=\"coveo-active-shape-svg\" d=\"m12.943 5.015 0 0c0 .549-.452.998-1.004.998h-3.011c-.552 0-1.004-.449-1.004-.998l0 0c0-.549.452-.998 1.004-.998h3.011c.553 0 1.004.449 1.004.998z\"></path><path class=\"coveo-active-shape-svg\" d=\"m15 8.008 0 0c0 .549-.452.998-1.004.998h-5.068c-.552 0-1.004-.449-1.004-.998l0 0c0-.549.452-.998 1.004-.998h5.068c.552 0 1.004.449 1.004.998z\"></path><path d=\"m6.521 2.683-2.403-2.391c-.188-.187-.444-.292-.71-.292s-.521.105-.71.292l-2.404 2.391c-.392.39-.392 1.021 0 1.411s1.027.39 1.419 0l .691-.687v7.594c0 .55.452.999 1.004.999s1.004-.449 1.004-.998v-7.594l.691.687c.392.39 1.027.39 1.419 0s .392-1.021-.001-1.412z\"></path></g></svg>"
 
 /***/ }),
-/* 277 */
+/* 276 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 15 12\" viewBox=\"0 0 15 12\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m6.521 7.906c-.392-.39-1.027-.39-1.419 0l-.69.686v-7.594c0-.549-.452-.998-1.004-.998s-1.004.449-1.004.998v7.594l-.69-.686c-.392-.39-1.027-.39-1.419 0-.392.39-.392 1.021 0 1.411l2.404 2.391c.188.187.443.292.709.292s.522-.105.71-.292l2.404-2.391c.392-.391.392-1.022-.001-1.411z\"></path><path class=\"coveo-active-shape-svg\" d=\"m9.932 11.001h-1.004c-.552 0-1.004-.449-1.004-.998l0 0c0-.549.452-.998 1.004-.998h1.004c.552 0 1.004.449 1.004.998l0 0c0 .549-.452.998-1.004.998z\"></path><path class=\"coveo-active-shape-svg\" d=\"m11.94 8.007h-3.012c-.552 0-1.004-.449-1.004-.998l0 0c0-.549.452-.998 1.004-.998h3.011c.552 0 1.004.449 1.004.998l0 0c0 .549-.451.998-1.003.998z\"></path><path class=\"coveo-active-shape-svg\" d=\"m13.996 5.014h-5.068c-.552 0-1.004-.449-1.004-.998l0 0c0-.549.452-.998 1.004-.998h5.068c.552 0 1.004.449 1.004.998l0 0c0 .548-.452.998-1.004.998z\"></path></g></svg>"
 
 /***/ }),
-/* 278 */
+/* 277 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 16 16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-active-shape-svg\" d=\"m14 2v12h-12v-12zm1.306-2h-14.607c-.386 0-.699.318-.699.694v14.607c0 .384.315.699.699.699h14.602c.385 0 .699-.316.699-.694v-14.612c0-.383-.311-.694-.694-.694z\"></path><path d=\"m10.969 7.055h-1.97v-1.968c0-.571-.448-1.032-1-1.032s-1 .462-1 1.032v1.969h-1.969c-.57 0-1.032.448-1.032 1s .463 1 1.032 1h1.97v1.969c0 .57.448 1.032 1 1.032s1-.463 1-1.032v-1.97h1.969c.571 0 1.032-.448 1.032-1 .001-.552-.462-1-1.032-1z\"></path></g></svg>"
 
 /***/ }),
-/* 279 */
+/* 278 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 16 16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-active-shape-svg\" d=\"m14 2v12h-11.999v-12zm1.306-2h-14.607c-.386 0-.699.318-.699.694v14.607c0 .384.315.699.699.699h14.602c.385 0 .699-.316.699-.694v-14.612c0-.383-.311-.694-.694-.694z\"></path><path d=\"m10.969 9.055h-5.939c-.569 0-1.032-.448-1.032-1s .462-1 1.032-1h5.938c.57 0 1.032.448 1.032 1 .001.552-.46 1-1.031 1\"></path></g></svg>"
 
 /***/ }),
-/* 280 */
+/* 279 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 16 16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-active-shape-svg\" d=\"m8.01 0c-4.425 0-8.01 3.581-8.01 7.992 0 4.425 3.581 8.01 7.999 8.01l.003-.003c4.417 0 7.999-3.581 7.999-7.999 0-4.417-3.581-7.999-7.992-7.999m.002 1.5c3.58 0 6.493 2.916 6.493 6.5s-2.916 6.5-6.5 6.5h-.172c-3.506-.09-6.331-2.975-6.331-6.508 0-3.58 2.92-6.493 6.51-6.492\"></path><path d=\"m11.04 10.27c-.192 0-.384-.073-.53-.22l-2.51-2.51-2.51 2.51c-.293.293-.768.293-1.061 0s-.293-.768 0-1.061l3.041-3.04c.141-.14.332-.219.53-.219l0 0c .199 0 .39.079.53.22l3.04 3.041c.293.293.293.768 0 1.061-.146.145-.337.218-.53.218z\"></path></g></svg>"
 
 /***/ }),
-/* 281 */
+/* 280 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 16 16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-active-shape-svg\" d=\"m7.991 16.002c4.425 0 8.01-3.581 8.01-7.992 0-4.425-3.581-8.01-7.999-8.01l-.003.003c-4.417 0-7.999 3.581-7.999 7.999 0 4.417 3.581 7.999 7.992 7.999m-.002-1.5c-3.58 0-6.493-2.916-6.493-6.5s2.916-6.5 6.5-6.5h.172c3.506.09 6.331 2.975 6.331 6.508 0 3.58-2.92 6.493-6.51 6.493\"></path><path d=\"m4.961 5.732c.192 0 .384.073.53.22l2.51 2.51 2.51-2.51c.293-.293.768-.293 1.061 0s .293.768 0 1.061l-3.041 3.04c-.141.14-.332.219-.53.219l0 0c-.199 0-.39-.079-.53-.22l-3.04-3.041c-.293-.293-.293-.768 0-1.061.146-.145.337-.218.53-.218z\"></path></g></svg>"
 
 /***/ }),
-/* 282 */
+/* 281 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg viewBox=\"0 0 18 14\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\" fill-rule=\"evenodd\"><path class=\"coveo-active-shape-svg\" d=\"m12.1 13.5c-.426 0-.771-.332-.771-.74 0-.409.346-.74.771-.74h1.862c1.374 0 2.49-1.136 2.49-2.534v-.193c0-1.144-.756-2.15-1.839-2.448l-.488-.134-.066-.484c-.132-.979-1.11-1.673-2.041-1.458l-.635.143-.253-.578c-.626-1.429-2.024-2.352-3.562-2.352-2.147 0-3.892 1.769-3.892 3.944 0 .082.002.164.007.246l.032.541-.529.192c-.986.359-1.65 1.319-1.65 2.388v.192c0 1.398 1.117 2.535 2.49 2.535h.782c.426 0 .771.332.771.74 0 .409-.346.74-.771.74h-.782c-2.224 0-4.03-1.802-4.03-4.02v-.192c0-1.496.842-2.861 2.143-3.549.097-2.908 2.496-5.243 5.432-5.243 1.968 0 3.767 1.061 4.726 2.747 1.501-.024 2.798.945 3.198 2.327 1.495.61 2.501 2.077 2.501 3.717v.193c0 2.215-1.808 4.02-4.03 4.02h-1.863\"></path><path d=\"m9 5.234c-.098-.149-.3-.233-.511-.234-.212 0-.413.084-.561.232l-3.193 3.176c-.311.309-.312.812-.003 1.123.155.156.359.233.563.233.202 0 .406-.076.56-.231l1.822-1.813v5.485c0 .438.356.794.794.794.438 0 .794-.356.794-.794v-5.504l1.82 1.83c.309.311.812.312 1.122.002.31-.309.312-.812.002-1.123l-3.21-3.176\"></path></g></svg>"
 
 /***/ }),
-/* 283 */
+/* 282 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 22 22\" viewBox=\"0 0 22 22\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path class=\"coveo-active-shape-svg\" d=\"m12.989 21.947h-3.978c-.752 0-1.388-.557-1.48-1.295l-.298-2.075c-.309-.154-.611-.33-.905-.526l-1.968.79c-.722.268-1.508-.028-1.858-.668l-1.977-3.419c-.366-.671-.207-1.47.365-1.922l1.669-1.306c-.013-.186-.019-.359-.019-.526s.006-.34.02-.526l-1.665-1.303c-.586-.462-.742-1.292-.365-1.932l1.985-3.434c.343-.633 1.136-.923 1.836-.65l1.98.796c.3-.2.6-.375.901-.527l.301-2.096c.089-.719.726-1.275 1.478-1.275h3.979c.753 0 1.39.557 1.479 1.296l.298 2.074c.31.154.611.33.905.526l1.968-.791c.721-.263 1.508.028 1.857.667l1.979 3.421c.365.671.207 1.47-.365 1.922l-1.669 1.305c.012.166.02.342.02.527s-.008.361-.02.526l1.665 1.302c.576.457.734 1.256.381 1.903l-2 3.463c-.35.636-1.146.922-1.84.649l-1.978-.794c-.301.199-.6.374-.902.526l-.3 2.095c-.088.72-.725 1.277-1.478 1.277m-3.539-2h3.1l.396-2.762.529-.217c.485-.2.964-.478 1.461-.851l.45-.337 2.585 1.038 1.554-2.688-2.198-1.718.071-.563c.035-.277.062-.555.062-.85s-.027-.572-.062-.85l-.071-.563 2.198-1.718-1.555-2.688-2.592 1.042-.452-.348c-.466-.358-.94-.633-1.451-.843l-.529-.217-.396-2.761h-3.1l-.396 2.762-.53.217c-.485.199-.962.477-1.46.85l-.451.337-2.584-1.038-1.554 2.688 2.196 1.718-.07.562c-.034.277-.061.564-.061.851s.027.573.062.852l.07.562-2.196 1.718 1.554 2.688 2.591-1.041.452.348c.465.356.939.632 1.452.843l.529.217z\"></path><path d=\"m11 15c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4m0-6c-1.103 0-2 .897-2 2s .897 2 2 2 2-.897 2-2-.897-2-2-2\"></path></g></svg>"
 
 /***/ }),
-/* 284 */
+/* 283 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 12 16\" viewBox=\"0 0 12 16\" xmlns=\"http://www.w3.org/2000/svg\"><g class=\"coveo-dropdown-authenticate-svg\" fill=\"none\"><path d=\"m10 5h-8c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5c0-1.1-.9-2-2-2m0 1.5c.3 0 .5.2.5.5v5c0 .3-.2.5-.5.5h-8c-.3 0-.5-.2-.5-.5v-5c0-.3.2-.5.5-.5z\"></path><path d=\"m10 5h-1.6v-1.1c0-1.3-1.1-2.4-2.4-2.4s-2.4 1.1-2.4 2.4v1.1h-1.6v-1.1c0-2.1 1.8-3.9 4-3.9s4 1.8 4 3.9z\"></path></g><g class=\"coveo-dropdown-authenticate-hover-svg\" fill=\"none\"><path class=\"coveo-active-shape-svg\" d=\"m10 7h-8c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5c0-1.1-.9-2-2-2m0 1.5c.3 0 .5.2.5.5v5c0 .3-.2.5-.5.5h-8c-.3 0-.5-.2-.5-.5v-5c0-.3.2-.5.5-.5z\"></path><path d=\"m5.1.1c-1.8.4-3.1 2.1-3.1 4v2.9h1.6v-3.1c0-1.7 1.8-3 3.6-2.1.8.4 1.2 1.3 1.2 2.2v.6c0 .4.4.8.8.8s.8-.4.8-.8v-.7c0-2.4-2.3-4.4-4.9-3.8z\"></path></g></svg>"
 
 /***/ }),
-/* 285 */
+/* 284 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 14 14\" viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\" transform=\"matrix(0 1 -1 0 20 0)\"><path d=\"m7.699 8.591 1.05 1.05c.49.49 1.05 0 1.05 0s .49-.56 0-1.05l-2.31-2.381c-.28-.28-.7-.28-.98 0l-2.309 2.451c-.49.49 0 .98 0 .98s.56.49 1.05 0l1.05-1.05v7.91c0 .42.35.7.7.7s.7-.35.7-.7z\"></path><path class=\"coveo-active-shape-svg\" d=\"m10.5 12.301h2.033l.065 6.301h-11.198v-6.301h2.1c.386 0 .7-.314.7-.7l0 0c0-.386-.314-.7-.7-.7h-2.806c-.383-.001-.694.31-.694.694v7.706c0 .385.318.699.694.699h12.607c.384 0 .699-.315.699-.699v-7.7c0-.386-.316-.699-.694-.699h-2.806c-.386 0-.7.314-.7.7l0 0c0 .385.314.699.7.699z\"></path></g></svg>"
 
 /***/ }),
-/* 286 */
+/* 285 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 15 12\" viewBox=\"0 0 15 12\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m9.224 11.999c-.198 0-.496-.103-.694-.308-.397-.411-.397-1.025 0-1.436l3.965-4.409-3.966-4.102c-.397-.411-.397-1.025 0-1.436s.991-.411 1.388 0l4.859 4.922c.298.308.298.718 0 1.025l-4.859 5.435c-.198.206-.496.309-.693.309\"></path><path class=\"coveo-active-shape-svg\" d=\"m4.958.411c-.397-.411-.991-.411-1.388 0s-.397 1.025 0 1.436l2.973 2.974h-5.552c-.594 0-.991.41-.991 1.025s.397 1.025.991 1.025h5.651l-3.074 3.384c-.397.411-.397 1.025 0 1.436.199.206.398.309.695.309.298 0 .495-.103.694-.308l4.859-5.333c.298-.308.298-.718 0-1.025z\"></path></g></svg>"
 
 /***/ }),
-/* 287 */
+/* 286 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 20 12\" viewBox=\"0 0 20 12\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m10 4.3c-1 0-1.7.8-1.7 1.7 0 1 .8 1.7 1.7 1.7 1 0 1.7-.8 1.7-1.7 0-1-.7-1.7-1.7-1.7m0 4.7c-1.6 0-3-1.4-3-3s1.4-3 3-3 3 1.4 3 3-1.4 3-3 3\"></path><path d=\"m19.8 6.4v-.001c.069-.117.109-.253.109-.399s-.04-.282-.109-.399v-.001c-.005-.008.005.007 0 0-2.203-3.473-5.917-5.6-9.8-5.6-3.884 0-7.655 2.091-9.8 5.602l0 0c-.069.117-.109.253-.109.398s.04.281.109.398c0 0-.001-.002 0 0 2.203 3.475 5.916 5.602 9.8 5.602 3.883 0 7.597-2.127 9.8-5.6.005-.007-.005.008 0 0zm-9.8 4.1c-3.236 0-6.28-1.635-8.189-4.339-.067-.095-.067-.228-.002-.324 1.908-2.797 4.953-4.337 8.191-4.337 3.235 0 6.278 1.634 8.187 4.337.068.096.068.231 0 .327-1.909 2.702-4.952 4.336-8.187 4.336z\"></path></g></svg>"
 
 /***/ }),
-/* 288 */
+/* 287 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 11 20\" viewBox=\"0 0 11 20\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m .308 18.189c-.412.413-.411 1.086 0 1.5.2.201.465.311.746.311.282 0 .547-.11.747-.31l8.891-8.939c.199-.2.307-.466.307-.75 0-.286-.109-.551-.305-.748l-8.893-8.942c-.199-.2-.465-.311-.747-.311-.001 0-.001 0-.001 0-.281 0-.546.11-.745.309-.198.201-.308.468-.308.753 0 .284.11.548.306.745l8.145 8.193z\"></path></g></svg>"
 
 /***/ }),
-/* 289 */
+/* 288 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 11 20\" viewBox=\"0 0 11 20\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m10.692 1.811c.412-.413.411-1.086 0-1.5-.2-.201-.465-.311-.746-.311-.283 0-.548.11-.747.31l-8.892 8.939c-.198.2-.307.466-.307.75 0 .286.109.551.305.748l8.893 8.941c.2.201.466.312.748.312h.001c.281 0 .546-.11.745-.309.199-.201.308-.468.308-.753 0-.284-.109-.548-.306-.745l-8.146-8.194z\"></path></g></svg>"
 
 /***/ }),
-/* 290 */
+/* 289 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"translate(1)\"><path d=\"m4 5h7v1h-7v-1m0 3h7v1h-7v-1m0 3h7v1h-7v-1\"></path><path d=\"m15 1c.009-.525.066-1-1-1h-12.998c-.651 0-1 .33-1 1v15c0 .66.351 1 1 1h1.998v2c.075.546.383 1 1 1h13c.718 0 1-.295 1-1v-16c.001-.468-.406-.99-1-1h-2v-1m-13 14v-13h11v13h-11m14 3h-11v-.995l9-.005c.5.005.976-.428 1-1l.021-12h.979v14\"></path></g></svg>"
 
 /***/ }),
-/* 291 */
+/* 290 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 60 60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><path clip-rule=\"evenodd\" d=\"m3.753 60c-2.073 0-3.753-1.667-3.753-3.753v-52.494c0-2.073 1.667-3.753 3.753-3.753h52.494c2.073 0 3.753 1.667 3.753 3.753v52.493c0 2.074-1.667 3.754-3.753 3.754z\" fill=\"#cc0d00\" fill-rule=\"evenodd\"></path><path d=\"m42.8 21.536h-8.96c-.267-.64-.64-1.173-1.12-1.653l3.36-4.32c.533-.693.427-1.707-.267-2.24-.693-.533-1.707-.427-2.24.267l-3.733 4.8c-.32 0-.587-.053-.907-.053s-.587.053-.853.053l-3.733-4.8c-.533-.693-1.547-.8-2.24-.267s-.8 1.547-.267 2.24l3.36 4.32c-.48.48-.853 1.013-1.12 1.653h-6.88c-1.76 0-3.2 1.44-3.2 3.2v14.933c0 1.76 1.44 3.2 3.2 3.2h25.6c1.76 0 3.2-1.44 3.2-3.2v-14.933c0-1.76-1.44-3.2-3.2-3.2zm-4.267 17.067c0 .587-.48 1.067-1.067 1.067h-19.2c-.587 0-1.067-.48-1.067-1.067v-12.8c0-.587.48-1.067 1.067-1.067h19.2c.587 0 1.067.48 1.067 1.067zm3.734-5.334c-.907 0-1.6-.693-1.6-1.6s.693-1.6 1.6-1.6 1.6.693 1.6 1.6-.694 1.6-1.6 1.6zm0-5.333c-.907 0-1.6-.693-1.6-1.6s.693-1.6 1.6-1.6 1.6.693 1.6 1.6-.694 1.6-1.6 1.6z\" fill=\"#fff\"></path></svg>"
 
 /***/ }),
-/* 292 */
+/* 291 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 279.21 92.68\"><defs><style>.cls-1{fill:#004990;}.cls-2{fill:#f58020;}</style></defs><title>coveo_logo_blue_orange</title><g id=\"Layer_2\" data-name=\"Layer 2\"><g id=\"Layer_1-2\" data-name=\"Layer 1\"><path class=\"cls-1\" d=\"M34.73,60.22A15.78,15.78,0,0,0,22.4,54.37c-8.12,0-14.28,7.14-14.28,15.09,0,8.93,6.17,15.26,14.93,15.26,4.71,0,8.6-2.27,11.85-5.68V89.6A25.1,25.1,0,0,1,23,92.52c-12.66,0-23-9.74-23-22.72C0,56.48,10.39,46.58,23.54,46.58A22.78,22.78,0,0,1,34.9,49.51Z\"></path><path class=\"cls-1\" d=\"M57.46,69.63A14.77,14.77,0,1,0,72.23,54.7,14.86,14.86,0,0,0,57.46,69.63m37.66,0a22.59,22.59,0,0,1-23,22.89,22.89,22.89,0,1,1,0-45.77,22.59,22.59,0,0,1,23,22.89\"></path><polygon class=\"cls-1\" points=\"126.6 74.99 139.1 48.04 148.35 48.04 126.6 92.68 105.02 48.04 114.27 48.04 126.6 74.99\"></polygon><path class=\"cls-1\" d=\"M191.53,64.76c-1-6.49-5.19-10.71-11.85-10.71-6.49,0-11.2,4.55-12.34,10.71ZM167,70.93c0,7.3,5,14.28,13,14.28,6.33,0,9.74-3.25,12.82-8.44l7,3.9a22.37,22.37,0,0,1-20,11.85c-13.15,0-21.1-9.9-21.1-22.72,0-13.31,7.14-23.21,20.94-23.21S199.8,56.65,199.8,69.47v1.46Z\"></path><path class=\"cls-1\" d=\"M220.58,69.63A14.77,14.77,0,1,0,235.35,54.7a14.86,14.86,0,0,0-14.77,14.93m37.82,0a23,23,0,1,1-23-22.89,22.59,22.59,0,0,1,23,22.89\"></path><path class=\"cls-1\" d=\"M262.3,41h5.55v1.24h-2.16V50.1h-1.22V42.27H262.3Z\"></path><path class=\"cls-1\" d=\"M276.73,40.65l2.48,9.45H278l-1.5-5.77-2.58,6.12-2.59-6.17L269.8,50.1h-1.21l2.48-9.45,2.84,6.76Z\"></path><polygon class=\"cls-2\" points=\"197.04 20.53 161.34 0 161.34 41.06 197.04 20.53\"></polygon></g></g></svg>"
 
 /***/ }),
-/* 293 */
+/* 292 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 279.21 92.68\"><defs><style>.cls-1{fill:#5d7289;}</style></defs><title>coveo_logo_grey</title><g id=\"Layer_2\" data-name=\"Layer 2\"><g id=\"Layer_1-2\" data-name=\"Layer 1\"><path class=\"cls-1\" d=\"M34.73,60.22A15.78,15.78,0,0,0,22.4,54.37c-8.12,0-14.28,7.14-14.28,15.09,0,8.93,6.17,15.26,14.93,15.26,4.71,0,8.6-2.27,11.85-5.68V89.6A25.1,25.1,0,0,1,23,92.52c-12.66,0-23-9.74-23-22.72C0,56.48,10.39,46.58,23.54,46.58A22.78,22.78,0,0,1,34.9,49.51Z\"></path><path class=\"cls-1\" d=\"M57.46,69.63A14.77,14.77,0,1,0,72.23,54.7,14.86,14.86,0,0,0,57.46,69.63m37.66,0a22.59,22.59,0,0,1-23,22.89,22.89,22.89,0,1,1,0-45.77,22.59,22.59,0,0,1,23,22.89\"></path><polygon class=\"cls-1\" points=\"126.6 74.99 139.1 48.04 148.35 48.04 126.6 92.68 105.02 48.04 114.27 48.04 126.6 74.99\"></polygon><path class=\"cls-1\" d=\"M191.53,64.76c-1-6.49-5.19-10.71-11.85-10.71-6.49,0-11.2,4.55-12.34,10.71ZM167,70.93c0,7.3,5,14.28,13,14.28,6.33,0,9.74-3.25,12.82-8.44l7,3.9a22.37,22.37,0,0,1-20,11.85c-13.15,0-21.1-9.9-21.1-22.72,0-13.31,7.14-23.21,20.94-23.21S199.8,56.65,199.8,69.47v1.46Z\"></path><path class=\"cls-1\" d=\"M220.58,69.63A14.77,14.77,0,1,0,235.35,54.7a14.86,14.86,0,0,0-14.77,14.93m37.82,0a23,23,0,1,1-23-22.89,22.59,22.59,0,0,1,23,22.89\"></path><path class=\"cls-1\" d=\"M262.3,41h5.55v1.24h-2.16V50.1h-1.22V42.27H262.3Z\"></path><path class=\"cls-1\" d=\"M276.73,40.65l2.48,9.45H278l-1.5-5.77-2.58,6.12-2.59-6.17L269.8,50.1h-1.21l2.48-9.45,2.84,6.76Z\"></path><polygon class=\"cls-1\" points=\"197.04 20.53 161.34 0 161.34 41.06 197.04 20.53\"></polygon></g></g></svg>"
 
 /***/ }),
-/* 294 */
+/* 293 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 9 7\" viewBox=\"0 0 9 7\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m8.755.446c-.154-.145-.35-.216-.567-.218-.212.005-.409.093-.555.246l-4.176 4.422-2.117-2.003c-.152-.147-.381-.22-.564-.22-.211.004-.41.092-.556.247-.147.151-.225.352-.22.563.005.213.092.41.246.557l2.627 2.487c.166.158.384.245.611.245h.022.003c.234-.007.452-.103.611-.272l4.66-4.931c.146-.153.225-.354.22-.566-.005-.213-.092-.41-.245-.557z\"></path></g></svg>"
 
 /***/ }),
-/* 295 */
+/* 294 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 20 20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m1 4c0-.552.448-1 1-1h7c .552 0 1 .448 1 1v0c0 .552-.448 1-1 1h-6v12h12v-6c0-.552.448-1 1-1h0c .552 0 1 .448 1 1v7c0 .552-.448 1-1 1h-14c-.552 0-1-.448-1-1z\"></path><path d=\"m17.8.8c-.2-.2-.5-.2-.7 0l-1.7 1.7 2 2 1.7-1.7c.2-.2.2-.5 0-.7z\"></path><path d=\"m14.5 3.5-6.9 6.9c-.1.1-.2.2-.2.3l-1.2 2.8c-.1.2.1.4.3.3l2.8-1.2c.1 0 .2-.1.3-.2l6.9-6.9z\"></path></g></svg>"
 
 /***/ }),
-/* 296 */
+/* 295 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 16 16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m8.683.852 1.558 4.794h5.041c.695 0 .985.889.421 1.298l-4.077 2.963 1.558 4.794c.215.661-.542 1.211-1.104.802l-4.08-2.962-4.077 2.963c-.562.409-1.32-.141-1.104-.802l1.558-4.794-4.079-2.963c-.563-.409-.274-1.298.421-1.298h5.041l1.558-4.794c.214-.662 1.15-.662 1.365-.001z\"></path></g></svg>"
 
 /***/ }),
-/* 297 */
+/* 296 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg enable-background=\"new 0 0 19 14\" viewBox=\"0 0 19 14\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\"><path d=\"m19 12c0 .552-.397 1-.813 1h-11.375c-.416 0-.813-.448-.813-1s .397-1 .813-1h11.375c.416 0 .813.448.813 1\"></path><path d=\"m19 7c0 .552-.397 1-.813 1h-11.375c-.416 0-.813-.448-.813-1s .397-1 .813-1h11.375c.416 0 .813.448.813 1\"></path><path d=\"m19 2c0 .552-.397 1-.813 1h-11.375c-.416 0-.813-.448-.813-1s .397-1 .813-1h11.375c.416 0 .813.448.813 1\"></path><path d=\"m2 10c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2\"></path><path d=\"m2 5c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2\"></path><path d=\"m2 0c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2\"></path></g></svg>"
 
 /***/ }),
-/* 298 */
+/* 297 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\" fill-rule=\"evenodd\"><rect x=\"12\" y=\"12\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect x=\"6\" y=\"12\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect y=\"12\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect x=\"12\" y=\"6\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect x=\"6\" y=\"6\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect y=\"6\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect x=\"12\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect x=\"6\" width=\"4\" height=\"4\" rx=\"1\"></rect><rect width=\"4\" height=\"4\" rx=\"1\"></rect></g></svg>"
 
 /***/ }),
-/* 299 */
+/* 298 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg viewBox=\"0 0 18 13\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"currentColor\" fill-rule=\"evenodd\"><rect x=\"11\" y=\"10\" width=\"7\" height=\"3\" rx=\"1\"></rect><rect x=\"11\" y=\"5\" width=\"7\" height=\"3\" rx=\"1\"></rect><rect x=\"11\" width=\"7\" height=\"3\" rx=\"1\"></rect><rect y=\"10\" width=\"9\" height=\"3\" rx=\"1\"></rect><rect y=\"5\" width=\"9\" height=\"3\" rx=\"1\"></rect><rect width=\"9\" height=\"3\" rx=\"1\"></rect></g></svg>"
 
 /***/ }),
-/* 300 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {
@@ -30875,7 +30052,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root
 
 
 /***/ }),
-/* 301 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30909,6 +30086,12 @@ exports.TemplateFieldsEvaluator = TemplateFieldsEvaluator;
 
 
 /***/ }),
+/* 301 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 302 */
 /***/ (function(module, exports) {
 
@@ -30916,12 +30099,6 @@ exports.TemplateFieldsEvaluator = TemplateFieldsEvaluator;
 
 /***/ }),
 /* 303 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31070,13 +30247,13 @@ exports.DebugHeader = DebugHeader;
 
 
 /***/ }),
-/* 305 */
+/* 304 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 306 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31192,7 +30369,7 @@ exports.DebugForResult = DebugForResult;
 
 
 /***/ }),
-/* 307 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31278,7 +30455,7 @@ exports.FacetColumnAutoLayoutAdjustment = FacetColumnAutoLayoutAdjustment;
 
 
 /***/ }),
-/* 308 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31347,13 +30524,13 @@ var FacetValueStateToHiddenQueryTransformer = /** @class */ (function () {
 
 
 /***/ }),
-/* 309 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(310);
+__webpack_require__(309);
 var Dom_1 = __webpack_require__(1);
 var QueryEvents_1 = __webpack_require__(10);
 var QuerySummaryUtils_1 = __webpack_require__(151);
@@ -31409,13 +30586,13 @@ exports.AriaLive = AriaLive;
 
 
 /***/ }),
-/* 310 */
+/* 309 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 311 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31473,7 +30650,7 @@ exports.InitializationHelper = InitializationHelper;
 
 
 /***/ }),
-/* 312 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31492,7 +30669,7 @@ exports.UnderscoreTemplate = UnderscoreTemplate_1.UnderscoreTemplate;
 
 
 /***/ }),
-/* 313 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31520,7 +30697,7 @@ var Model_1 = __webpack_require__(16);
 var Utils_1 = __webpack_require__(4);
 var NoopAnalyticsClient_1 = __webpack_require__(77);
 var LiveAnalyticsClient_1 = __webpack_require__(126);
-var MultiAnalyticsClient_1 = __webpack_require__(314);
+var MultiAnalyticsClient_1 = __webpack_require__(313);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var RecommendationAnalyticsClient_1 = __webpack_require__(152);
 var _ = __webpack_require__(0);
@@ -31933,7 +31110,7 @@ exports.Analytics = Analytics;
 
 
 /***/ }),
-/* 314 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32014,7 +31191,7 @@ exports.MultiAnalyticsClient = MultiAnalyticsClient;
 
 
 /***/ }),
-/* 315 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32029,7 +31206,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 316 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32044,7 +31221,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 317 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32059,7 +31236,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 318 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32074,7 +31251,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 319 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32089,7 +31266,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 320 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32104,7 +31281,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 321 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32125,7 +31302,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 322 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32148,7 +31325,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 323 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32163,7 +31340,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 324 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32185,7 +31362,7 @@ exports.registerFields = registerFields;
 
 
 /***/ }),
-/* 325 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32224,6 +31401,7 @@ exports.swapVar = swapVar;
 
 
 /***/ }),
+/* 325 */,
 /* 326 */,
 /* 327 */,
 /* 328 */,
@@ -32403,8 +31581,7 @@ exports.swapVar = swapVar;
 /* 502 */,
 /* 503 */,
 /* 504 */,
-/* 505 */,
-/* 506 */
+/* 505 */
 /***/ (function(module, exports) {
 
 /*
@@ -32460,7 +31637,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 507 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -32832,14 +32009,14 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 508 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(509);
+module.exports = __webpack_require__(508);
 
 
 /***/ }),
-/* 509 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32865,198 +32042,198 @@ var Initialization_2 = __webpack_require__(2);
 exports.LazyInitialization = Initialization_2.LazyInitialization;
 exports.EagerInitialization = Initialization_2.EagerInitialization;
 exports.Initialization = Initialization_2.Initialization;
-var Analytics_1 = __webpack_require__(313);
+var Analytics_1 = __webpack_require__(312);
 Analytics_1.Analytics.doExport();
-var LazyAdvancedSearch_1 = __webpack_require__(510);
+var LazyAdvancedSearch_1 = __webpack_require__(509);
 LazyAdvancedSearch_1.lazyAdvancedSearch();
-var LazyAggregate_1 = __webpack_require__(511);
+var LazyAggregate_1 = __webpack_require__(510);
 LazyAggregate_1.lazyAggregate();
-var LazyAnalyticsSuggestions_1 = __webpack_require__(512);
+var LazyAnalyticsSuggestions_1 = __webpack_require__(511);
 LazyAnalyticsSuggestions_1.lazyAnalyticsSuggestions();
-var LazyAuthenticationProvider_1 = __webpack_require__(513);
+var LazyAuthenticationProvider_1 = __webpack_require__(512);
 LazyAuthenticationProvider_1.lazyAuthenticationProvider();
-var LazyBackdrop_1 = __webpack_require__(514);
+var LazyBackdrop_1 = __webpack_require__(513);
 LazyBackdrop_1.lazyBackdrop();
-var LazyBadge_1 = __webpack_require__(515);
+var LazyBadge_1 = __webpack_require__(514);
 LazyBadge_1.lazyBadge();
-var LazyBreadcrumb_1 = __webpack_require__(516);
+var LazyBreadcrumb_1 = __webpack_require__(515);
 LazyBreadcrumb_1.lazyBreadcrumb();
-var LazyCardActionBar_1 = __webpack_require__(517);
+var LazyCardActionBar_1 = __webpack_require__(516);
 LazyCardActionBar_1.lazyCardActionBar();
-var LazyCardOverlay_1 = __webpack_require__(518);
+var LazyCardOverlay_1 = __webpack_require__(517);
 LazyCardOverlay_1.lazyCardOverlay();
-var LazyChatterLikedBy_1 = __webpack_require__(519);
+var LazyChatterLikedBy_1 = __webpack_require__(518);
 LazyChatterLikedBy_1.lazyChatterLikedBy();
-var ChatterLikedByFields_1 = __webpack_require__(315);
+var ChatterLikedByFields_1 = __webpack_require__(314);
 ChatterLikedByFields_1.registerFields();
-var LazyChatterPostAttachment_1 = __webpack_require__(520);
+var LazyChatterPostAttachment_1 = __webpack_require__(519);
 LazyChatterPostAttachment_1.lazyChatterPostAttachment();
-var ChatterPostAttachmentFields_1 = __webpack_require__(316);
+var ChatterPostAttachmentFields_1 = __webpack_require__(315);
 ChatterPostAttachmentFields_1.registerFields();
-var LazyChatterPostedBy_1 = __webpack_require__(521);
+var LazyChatterPostedBy_1 = __webpack_require__(520);
 LazyChatterPostedBy_1.lazyChatterPostedBy();
-var ChatterPostedByFields_1 = __webpack_require__(317);
+var ChatterPostedByFields_1 = __webpack_require__(316);
 ChatterPostedByFields_1.registerFields();
-var LazyChatterTopic_1 = __webpack_require__(522);
+var LazyChatterTopic_1 = __webpack_require__(521);
 LazyChatterTopic_1.lazyChatterTopic();
-var ChatterTopicFields_1 = __webpack_require__(318);
+var ChatterTopicFields_1 = __webpack_require__(317);
 ChatterTopicFields_1.registerFields();
-var LazyDebug_1 = __webpack_require__(523);
+var LazyDebug_1 = __webpack_require__(522);
 LazyDebug_1.lazyDebug();
-var LazyDidYouMean_1 = __webpack_require__(524);
+var LazyDidYouMean_1 = __webpack_require__(523);
 LazyDidYouMean_1.lazyDidYouMean();
-var LazyDistanceResources_1 = __webpack_require__(525);
+var LazyDistanceResources_1 = __webpack_require__(524);
 LazyDistanceResources_1.lazyDistanceResources();
-var LazyErrorReport_1 = __webpack_require__(526);
+var LazyErrorReport_1 = __webpack_require__(525);
 LazyErrorReport_1.lazyErrorReport();
-var LazyExcerpt_1 = __webpack_require__(527);
+var LazyExcerpt_1 = __webpack_require__(526);
 LazyExcerpt_1.lazyExcerpt();
-var LazyExportToExcel_1 = __webpack_require__(528);
+var LazyExportToExcel_1 = __webpack_require__(527);
 LazyExportToExcel_1.lazyExportToExcel();
-var LazyFacet_1 = __webpack_require__(529);
+var LazyFacet_1 = __webpack_require__(528);
 LazyFacet_1.lazyFacet();
-var LazyFacetRange_1 = __webpack_require__(530);
+var LazyFacetRange_1 = __webpack_require__(529);
 LazyFacetRange_1.lazyFacetRange();
-var LazyFacetSlider_1 = __webpack_require__(531);
+var LazyFacetSlider_1 = __webpack_require__(530);
 LazyFacetSlider_1.lazyFacetSlider();
-var LazyFieldSuggestions_1 = __webpack_require__(532);
+var LazyFieldSuggestions_1 = __webpack_require__(531);
 LazyFieldSuggestions_1.lazyFieldSuggestions();
-var LazyFacetValueSuggestions_1 = __webpack_require__(533);
+var LazyFacetValueSuggestions_1 = __webpack_require__(532);
 LazyFacetValueSuggestions_1.lazyFacetValueSuggestions();
-var LazyFieldTable_1 = __webpack_require__(534);
+var LazyFieldTable_1 = __webpack_require__(533);
 LazyFieldTable_1.lazyFieldTable();
-var LazyFieldValue_1 = __webpack_require__(535);
+var LazyFieldValue_1 = __webpack_require__(534);
 LazyFieldValue_1.lazyFieldValue();
-var LazyFolding_1 = __webpack_require__(536);
+var LazyFolding_1 = __webpack_require__(535);
 LazyFolding_1.lazyFolding();
-var LazyFoldingForThread_1 = __webpack_require__(537);
+var LazyFoldingForThread_1 = __webpack_require__(536);
 LazyFoldingForThread_1.lazyFoldingForThread();
-var LazyHiddenQuery_1 = __webpack_require__(538);
+var LazyHiddenQuery_1 = __webpack_require__(537);
 LazyHiddenQuery_1.lazyHiddenQuery();
-var LazyHierarchicalFacet_1 = __webpack_require__(539);
+var LazyHierarchicalFacet_1 = __webpack_require__(538);
 LazyHierarchicalFacet_1.lazyHierarchicalFacet();
-var LazyIcon_1 = __webpack_require__(540);
+var LazyIcon_1 = __webpack_require__(539);
 LazyIcon_1.lazyIcon();
-var IconFields_1 = __webpack_require__(319);
+var IconFields_1 = __webpack_require__(318);
 IconFields_1.registerFields();
-var LazyLogo_1 = __webpack_require__(541);
+var LazyLogo_1 = __webpack_require__(540);
 LazyLogo_1.lazyLogo();
-var LazyMatrix_1 = __webpack_require__(542);
+var LazyMatrix_1 = __webpack_require__(541);
 LazyMatrix_1.lazyMatrix();
-var LazyOmnibox_1 = __webpack_require__(543);
+var LazyOmnibox_1 = __webpack_require__(542);
 LazyOmnibox_1.lazyOmnibox();
-var LazyOmniboxResultList_1 = __webpack_require__(544);
+var LazyOmniboxResultList_1 = __webpack_require__(543);
 LazyOmniboxResultList_1.lazyOmniboxResultList();
-var LazyPager_1 = __webpack_require__(545);
+var LazyPager_1 = __webpack_require__(544);
 LazyPager_1.lazyPager();
-var LazyPipelineContext_1 = __webpack_require__(546);
+var LazyPipelineContext_1 = __webpack_require__(545);
 LazyPipelineContext_1.lazyPipelineContext();
-var LazyPreferencesPanel_1 = __webpack_require__(547);
+var LazyPreferencesPanel_1 = __webpack_require__(546);
 LazyPreferencesPanel_1.lazyPreferencesPanel();
-var LazyPrintableUri_1 = __webpack_require__(548);
+var LazyPrintableUri_1 = __webpack_require__(547);
 LazyPrintableUri_1.lazyPrintableUri();
-var PrintableUriFields_1 = __webpack_require__(320);
+var PrintableUriFields_1 = __webpack_require__(319);
 PrintableUriFields_1.registerFields();
-var LazyQuerybox_1 = __webpack_require__(549);
+var LazyQuerybox_1 = __webpack_require__(548);
 LazyQuerybox_1.lazyQuerybox();
-var LazyQueryDuration_1 = __webpack_require__(550);
+var LazyQueryDuration_1 = __webpack_require__(549);
 LazyQueryDuration_1.lazyQueryDuration();
-var LazyQuerySummary_1 = __webpack_require__(551);
+var LazyQuerySummary_1 = __webpack_require__(550);
 LazyQuerySummary_1.lazyQuerySummary();
-var LazyQuickview_1 = __webpack_require__(552);
+var LazyQuickview_1 = __webpack_require__(551);
 LazyQuickview_1.lazyQuickview();
-var QuickviewFields_1 = __webpack_require__(321);
+var QuickviewFields_1 = __webpack_require__(320);
 QuickviewFields_1.registerFields();
-var LazyRecommendation_1 = __webpack_require__(553);
+var LazyRecommendation_1 = __webpack_require__(552);
 LazyRecommendation_1.lazyRecommendation();
-var LazyResultActionsMenu_1 = __webpack_require__(554);
+var LazyResultActionsMenu_1 = __webpack_require__(553);
 LazyResultActionsMenu_1.lazyResultActionsMenu();
-var LazyResultAttachments_1 = __webpack_require__(555);
+var LazyResultAttachments_1 = __webpack_require__(554);
 LazyResultAttachments_1.lazyResultAttachment();
-var LazyResultFolding_1 = __webpack_require__(556);
+var LazyResultFolding_1 = __webpack_require__(555);
 LazyResultFolding_1.lazyResultFolding();
-var LazyResultLayoutSelector_1 = __webpack_require__(557);
+var LazyResultLayoutSelector_1 = __webpack_require__(556);
 LazyResultLayoutSelector_1.lazyResultLayoutSelector();
-var LazyResultLink_1 = __webpack_require__(558);
+var LazyResultLink_1 = __webpack_require__(557);
 LazyResultLink_1.lazyResultLink();
-var ResultLinkFields_1 = __webpack_require__(322);
+var ResultLinkFields_1 = __webpack_require__(321);
 ResultLinkFields_1.registerFields();
-var LazyResultList_1 = __webpack_require__(559);
+var LazyResultList_1 = __webpack_require__(558);
 LazyResultList_1.lazyResultList();
-var LazyResultRating_1 = __webpack_require__(560);
+var LazyResultRating_1 = __webpack_require__(559);
 LazyResultRating_1.lazyResultRating();
-var LazyResultsFiltersPreferences_1 = __webpack_require__(561);
+var LazyResultsFiltersPreferences_1 = __webpack_require__(560);
 LazyResultsFiltersPreferences_1.lazyResultsFiltersPreferences();
-var LazyResultsPerPage_1 = __webpack_require__(562);
+var LazyResultsPerPage_1 = __webpack_require__(561);
 LazyResultsPerPage_1.lazyResultsPerPage();
-var LazyResultsPreferences_1 = __webpack_require__(563);
+var LazyResultsPreferences_1 = __webpack_require__(562);
 LazyResultsPreferences_1.lazyResultsPreferences();
-var LazyResultTagging_1 = __webpack_require__(564);
+var LazyResultTagging_1 = __webpack_require__(563);
 LazyResultTagging_1.lazyResultTagging();
-var LazyFollowItem_1 = __webpack_require__(565);
+var LazyFollowItem_1 = __webpack_require__(564);
 LazyFollowItem_1.lazyFollowItem();
-var FollowItemFields_1 = __webpack_require__(323);
+var FollowItemFields_1 = __webpack_require__(322);
 FollowItemFields_1.registerFields();
-var LazySearchAlerts_1 = __webpack_require__(566);
+var LazySearchAlerts_1 = __webpack_require__(565);
 LazySearchAlerts_1.lazySearchAlerts();
-var LazySearchbox_1 = __webpack_require__(567);
+var LazySearchbox_1 = __webpack_require__(566);
 LazySearchbox_1.lazySearchbox();
-var LazySearchButton_1 = __webpack_require__(568);
+var LazySearchButton_1 = __webpack_require__(567);
 LazySearchButton_1.lazySearchButton();
-var LazySettings_1 = __webpack_require__(569);
+var LazySettings_1 = __webpack_require__(568);
 LazySettings_1.lazySettings();
-var LazyShareQuery_1 = __webpack_require__(570);
+var LazyShareQuery_1 = __webpack_require__(569);
 LazyShareQuery_1.lazyShareQuery();
-var LazySort_1 = __webpack_require__(571);
+var LazySort_1 = __webpack_require__(570);
 LazySort_1.lazySort();
-var LazyTab_1 = __webpack_require__(572);
+var LazyTab_1 = __webpack_require__(571);
 LazyTab_1.lazyTab();
-var LazyTemplateLoader_1 = __webpack_require__(573);
+var LazyTemplateLoader_1 = __webpack_require__(572);
 LazyTemplateLoader_1.lazyTemplateLoader();
-var LazyText_1 = __webpack_require__(574);
+var LazyText_1 = __webpack_require__(573);
 LazyText_1.lazyText();
-var LazyThumbnail_1 = __webpack_require__(575);
+var LazyThumbnail_1 = __webpack_require__(574);
 LazyThumbnail_1.lazyThumbnail();
-var ThumbnailFields_1 = __webpack_require__(324);
+var ThumbnailFields_1 = __webpack_require__(323);
 ThumbnailFields_1.registerFields();
-var LazyTriggers_1 = __webpack_require__(576);
+var LazyTriggers_1 = __webpack_require__(575);
 LazyTriggers_1.lazyTriggers();
-var LazyYouTubeThumbnail_1 = __webpack_require__(577);
+var LazyYouTubeThumbnail_1 = __webpack_require__(576);
 LazyYouTubeThumbnail_1.lazyYouTubeThumbnail();
 var YouTubeThumbnailFields_1 = __webpack_require__(155);
 YouTubeThumbnailFields_1.registerFields();
-var LazyCheckbox_1 = __webpack_require__(578);
+var LazyCheckbox_1 = __webpack_require__(577);
 LazyCheckbox_1.lazyCheckbox();
-var LazyDatePicker_1 = __webpack_require__(579);
+var LazyDatePicker_1 = __webpack_require__(578);
 LazyDatePicker_1.lazyDatePicker();
-var LazyDropdown_1 = __webpack_require__(580);
+var LazyDropdown_1 = __webpack_require__(579);
 LazyDropdown_1.lazyDropdown();
-var LazyFormGroup_1 = __webpack_require__(581);
+var LazyFormGroup_1 = __webpack_require__(580);
 LazyFormGroup_1.lazyFormGroup();
-var LazyMultiSelect_1 = __webpack_require__(582);
+var LazyMultiSelect_1 = __webpack_require__(581);
 LazyMultiSelect_1.lazyMultiSelect();
-var LazyNumericSpinner_1 = __webpack_require__(583);
+var LazyNumericSpinner_1 = __webpack_require__(582);
 LazyNumericSpinner_1.lazyNumericSpinner();
-var LazyRadioButton_1 = __webpack_require__(584);
+var LazyRadioButton_1 = __webpack_require__(583);
 LazyRadioButton_1.lazyRadioButton();
-var LazyTextInput_1 = __webpack_require__(585);
+var LazyTextInput_1 = __webpack_require__(584);
 LazyTextInput_1.lazyTextInput();
-var LazySimpleFilter_1 = __webpack_require__(586);
+var LazySimpleFilter_1 = __webpack_require__(585);
 LazySimpleFilter_1.lazySimpleFilter();
-var LazyTimespanFacet_1 = __webpack_require__(587);
+var LazyTimespanFacet_1 = __webpack_require__(586);
 LazyTimespanFacet_1.lazyTimespanFacet();
-var LazyPromotedResultsBadge_1 = __webpack_require__(588);
+var LazyPromotedResultsBadge_1 = __webpack_require__(587);
 LazyPromotedResultsBadge_1.lazyPromotedResultsBadge();
-var LazyCategoryFacet_1 = __webpack_require__(589);
+var LazyCategoryFacet_1 = __webpack_require__(588);
 LazyCategoryFacet_1.lazyCategoryFacet();
-// import { lazyNoNameFacet } from './ui/NoNameFacet/LazyNoNameFacet';
-// lazyNoNameFacet();
-var SwapVar_1 = __webpack_require__(325);
+// import { lazyMLFacet } from './ui/MLFacet/LazyMLFacet';
+// lazyMLFacet();
+var SwapVar_1 = __webpack_require__(324);
 SwapVar_1.swapVar(this);
 
 
 /***/ }),
-/* 510 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33078,7 +32255,7 @@ exports.lazyAdvancedSearch = lazyAdvancedSearch;
 
 
 /***/ }),
-/* 511 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33100,7 +32277,7 @@ exports.lazyAggregate = lazyAggregate;
 
 
 /***/ }),
-/* 512 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33122,7 +32299,7 @@ exports.lazyAnalyticsSuggestions = lazyAnalyticsSuggestions;
 
 
 /***/ }),
-/* 513 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33144,7 +32321,7 @@ exports.lazyAuthenticationProvider = lazyAuthenticationProvider;
 
 
 /***/ }),
-/* 514 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33166,7 +32343,7 @@ exports.lazyBackdrop = lazyBackdrop;
 
 
 /***/ }),
-/* 515 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33188,7 +32365,7 @@ exports.lazyBadge = lazyBadge;
 
 
 /***/ }),
-/* 516 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33210,7 +32387,7 @@ exports.lazyBreadcrumb = lazyBreadcrumb;
 
 
 /***/ }),
-/* 517 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33232,7 +32409,7 @@ exports.lazyCardActionBar = lazyCardActionBar;
 
 
 /***/ }),
-/* 518 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33254,7 +32431,7 @@ exports.lazyCardOverlay = lazyCardOverlay;
 
 
 /***/ }),
-/* 519 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33276,7 +32453,7 @@ exports.lazyChatterLikedBy = lazyChatterLikedBy;
 
 
 /***/ }),
-/* 520 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33298,7 +32475,7 @@ exports.lazyChatterPostAttachment = lazyChatterPostAttachment;
 
 
 /***/ }),
-/* 521 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33320,7 +32497,7 @@ exports.lazyChatterPostedBy = lazyChatterPostedBy;
 
 
 /***/ }),
-/* 522 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33342,7 +32519,7 @@ exports.lazyChatterTopic = lazyChatterTopic;
 
 
 /***/ }),
-/* 523 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33364,7 +32541,7 @@ exports.lazyDebug = lazyDebug;
 
 
 /***/ }),
-/* 524 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33386,7 +32563,7 @@ exports.lazyDidYouMean = lazyDidYouMean;
 
 
 /***/ }),
-/* 525 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33408,7 +32585,7 @@ exports.lazyDistanceResources = lazyDistanceResources;
 
 
 /***/ }),
-/* 526 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33430,7 +32607,7 @@ exports.lazyErrorReport = lazyErrorReport;
 
 
 /***/ }),
-/* 527 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33452,7 +32629,7 @@ exports.lazyExcerpt = lazyExcerpt;
 
 
 /***/ }),
-/* 528 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33474,7 +32651,7 @@ exports.lazyExportToExcel = lazyExportToExcel;
 
 
 /***/ }),
-/* 529 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33496,7 +32673,7 @@ exports.lazyFacet = lazyFacet;
 
 
 /***/ }),
-/* 530 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33518,7 +32695,7 @@ exports.lazyFacetRange = lazyFacetRange;
 
 
 /***/ }),
-/* 531 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33540,7 +32717,7 @@ exports.lazyFacetSlider = lazyFacetSlider;
 
 
 /***/ }),
-/* 532 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33562,7 +32739,7 @@ exports.lazyFieldSuggestions = lazyFieldSuggestions;
 
 
 /***/ }),
-/* 533 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33584,7 +32761,7 @@ exports.lazyFacetValueSuggestions = lazyFacetValueSuggestions;
 
 
 /***/ }),
-/* 534 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33606,7 +32783,7 @@ exports.lazyFieldTable = lazyFieldTable;
 
 
 /***/ }),
-/* 535 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33628,7 +32805,7 @@ exports.lazyFieldValue = lazyFieldValue;
 
 
 /***/ }),
-/* 536 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33650,7 +32827,7 @@ exports.lazyFolding = lazyFolding;
 
 
 /***/ }),
-/* 537 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33672,7 +32849,7 @@ exports.lazyFoldingForThread = lazyFoldingForThread;
 
 
 /***/ }),
-/* 538 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33694,7 +32871,7 @@ exports.lazyHiddenQuery = lazyHiddenQuery;
 
 
 /***/ }),
-/* 539 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33716,7 +32893,7 @@ exports.lazyHierarchicalFacet = lazyHierarchicalFacet;
 
 
 /***/ }),
-/* 540 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33738,7 +32915,7 @@ exports.lazyIcon = lazyIcon;
 
 
 /***/ }),
-/* 541 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33760,7 +32937,7 @@ exports.lazyLogo = lazyLogo;
 
 
 /***/ }),
-/* 542 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33782,7 +32959,7 @@ exports.lazyMatrix = lazyMatrix;
 
 
 /***/ }),
-/* 543 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33804,7 +32981,7 @@ exports.lazyOmnibox = lazyOmnibox;
 
 
 /***/ }),
-/* 544 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33826,7 +33003,7 @@ exports.lazyOmniboxResultList = lazyOmniboxResultList;
 
 
 /***/ }),
-/* 545 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33848,7 +33025,7 @@ exports.lazyPager = lazyPager;
 
 
 /***/ }),
-/* 546 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33870,7 +33047,7 @@ exports.lazyPipelineContext = lazyPipelineContext;
 
 
 /***/ }),
-/* 547 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33892,7 +33069,7 @@ exports.lazyPreferencesPanel = lazyPreferencesPanel;
 
 
 /***/ }),
-/* 548 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33914,7 +33091,7 @@ exports.lazyPrintableUri = lazyPrintableUri;
 
 
 /***/ }),
-/* 549 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33936,7 +33113,7 @@ exports.lazyQuerybox = lazyQuerybox;
 
 
 /***/ }),
-/* 550 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33958,7 +33135,7 @@ exports.lazyQueryDuration = lazyQueryDuration;
 
 
 /***/ }),
-/* 551 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33980,7 +33157,7 @@ exports.lazyQuerySummary = lazyQuerySummary;
 
 
 /***/ }),
-/* 552 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34002,7 +33179,7 @@ exports.lazyQuickview = lazyQuickview;
 
 
 /***/ }),
-/* 553 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34024,7 +33201,7 @@ exports.lazyRecommendation = lazyRecommendation;
 
 
 /***/ }),
-/* 554 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34046,7 +33223,7 @@ exports.lazyResultActionsMenu = lazyResultActionsMenu;
 
 
 /***/ }),
-/* 555 */
+/* 554 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34068,7 +33245,7 @@ exports.lazyResultAttachment = lazyResultAttachment;
 
 
 /***/ }),
-/* 556 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34090,7 +33267,7 @@ exports.lazyResultFolding = lazyResultFolding;
 
 
 /***/ }),
-/* 557 */
+/* 556 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34112,7 +33289,7 @@ exports.lazyResultLayoutSelector = lazyResultLayoutSelector;
 
 
 /***/ }),
-/* 558 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34134,7 +33311,7 @@ exports.lazyResultLink = lazyResultLink;
 
 
 /***/ }),
-/* 559 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34156,7 +33333,7 @@ exports.lazyResultList = lazyResultList;
 
 
 /***/ }),
-/* 560 */
+/* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34178,7 +33355,7 @@ exports.lazyResultRating = lazyResultRating;
 
 
 /***/ }),
-/* 561 */
+/* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34200,7 +33377,7 @@ exports.lazyResultsFiltersPreferences = lazyResultsFiltersPreferences;
 
 
 /***/ }),
-/* 562 */
+/* 561 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34222,7 +33399,7 @@ exports.lazyResultsPerPage = lazyResultsPerPage;
 
 
 /***/ }),
-/* 563 */
+/* 562 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34244,7 +33421,7 @@ exports.lazyResultsPreferences = lazyResultsPreferences;
 
 
 /***/ }),
-/* 564 */
+/* 563 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34266,7 +33443,7 @@ exports.lazyResultTagging = lazyResultTagging;
 
 
 /***/ }),
-/* 565 */
+/* 564 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34288,7 +33465,7 @@ exports.lazyFollowItem = lazyFollowItem;
 
 
 /***/ }),
-/* 566 */
+/* 565 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34310,7 +33487,7 @@ exports.lazySearchAlerts = lazySearchAlerts;
 
 
 /***/ }),
-/* 567 */
+/* 566 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34332,7 +33509,7 @@ exports.lazySearchbox = lazySearchbox;
 
 
 /***/ }),
-/* 568 */
+/* 567 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34354,7 +33531,7 @@ exports.lazySearchButton = lazySearchButton;
 
 
 /***/ }),
-/* 569 */
+/* 568 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34376,7 +33553,7 @@ exports.lazySettings = lazySettings;
 
 
 /***/ }),
-/* 570 */
+/* 569 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34398,7 +33575,7 @@ exports.lazyShareQuery = lazyShareQuery;
 
 
 /***/ }),
-/* 571 */
+/* 570 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34420,7 +33597,7 @@ exports.lazySort = lazySort;
 
 
 /***/ }),
-/* 572 */
+/* 571 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34442,7 +33619,7 @@ exports.lazyTab = lazyTab;
 
 
 /***/ }),
-/* 573 */
+/* 572 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34464,7 +33641,7 @@ exports.lazyTemplateLoader = lazyTemplateLoader;
 
 
 /***/ }),
-/* 574 */
+/* 573 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34486,7 +33663,7 @@ exports.lazyText = lazyText;
 
 
 /***/ }),
-/* 575 */
+/* 574 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34508,7 +33685,7 @@ exports.lazyThumbnail = lazyThumbnail;
 
 
 /***/ }),
-/* 576 */
+/* 575 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34530,7 +33707,7 @@ exports.lazyTriggers = lazyTriggers;
 
 
 /***/ }),
-/* 577 */
+/* 576 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34554,7 +33731,7 @@ exports.lazyYouTubeThumbnail = lazyYouTubeThumbnail;
 
 
 /***/ }),
-/* 578 */
+/* 577 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34576,7 +33753,7 @@ exports.lazyCheckbox = lazyCheckbox;
 
 
 /***/ }),
-/* 579 */
+/* 578 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34598,7 +33775,7 @@ exports.lazyDatePicker = lazyDatePicker;
 
 
 /***/ }),
-/* 580 */
+/* 579 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34620,7 +33797,7 @@ exports.lazyDropdown = lazyDropdown;
 
 
 /***/ }),
-/* 581 */
+/* 580 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34642,7 +33819,7 @@ exports.lazyFormGroup = lazyFormGroup;
 
 
 /***/ }),
-/* 582 */
+/* 581 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34664,7 +33841,7 @@ exports.lazyMultiSelect = lazyMultiSelect;
 
 
 /***/ }),
-/* 583 */
+/* 582 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34686,7 +33863,7 @@ exports.lazyNumericSpinner = lazyNumericSpinner;
 
 
 /***/ }),
-/* 584 */
+/* 583 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34708,7 +33885,7 @@ exports.lazyRadioButton = lazyRadioButton;
 
 
 /***/ }),
-/* 585 */
+/* 584 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34730,7 +33907,7 @@ exports.lazyTextInput = lazyTextInput;
 
 
 /***/ }),
-/* 586 */
+/* 585 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34752,7 +33929,7 @@ exports.lazySimpleFilter = lazySimpleFilter;
 
 
 /***/ }),
-/* 587 */
+/* 586 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34774,7 +33951,7 @@ exports.lazyTimespanFacet = lazyTimespanFacet;
 
 
 /***/ }),
-/* 588 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34796,7 +33973,7 @@ exports.lazyPromotedResultsBadge = lazyPromotedResultsBadge;
 
 
 /***/ }),
-/* 589 */
+/* 588 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

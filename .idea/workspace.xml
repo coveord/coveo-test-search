@@ -18,24 +18,24 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
-          <entry key="project.open.time.0" value="24" />
+          <entry key="project.closed" value="27" />
+          <entry key="project.open.time.0" value="25" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="49" />
-          <entry key="json" value="53" />
+          <entry key="json" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="49" />
-          <entry key="JSON" value="53" />
+          <entry key="JSON" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -61,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -378,12 +378,13 @@
       <workItem from="1555005888718" duration="639000" />
       <workItem from="1555006874873" duration="1159000" />
       <workItem from="1555369214630" duration="1607000" />
-      <workItem from="1555541236302" duration="6000" />
+      <workItem from="1555541236302" duration="717000" />
+      <workItem from="1555621657388" duration="17000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68519000" />
+    <option name="totallyTimeSpent" value="69247000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -396,9 +397,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20671141" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -416,7 +416,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.295302" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.295302" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -574,7 +574,7 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
