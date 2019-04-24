@@ -172,7 +172,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "5d8084491af1464dbdb6" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "bd5581421b57372497fb" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -9833,8 +9833,25 @@ var DateUtils = /** @class */ (function () {
         return daysDifference == 0 || daysDifference == 1 || daysDifference == -1;
     };
     DateUtils.getMomentJsFormat = function (format) {
-        // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
-        return format.replace(/yyyy/g, 'YYYY');
+        var correctedFormat = format;
+        var fourLowercaseY = DateUtils.buildRegexMatchingExactCharSequence('y', 4);
+        correctedFormat = correctedFormat.replace(fourLowercaseY, 'YYYY');
+        var twoLowercaseY = DateUtils.buildRegexMatchingExactCharSequence('y', 2);
+        correctedFormat = correctedFormat.replace(twoLowercaseY, 'YY');
+        var twoLowercaseD = DateUtils.buildRegexMatchingExactCharSequence('d', 2);
+        correctedFormat = correctedFormat.replace(twoLowercaseD, 'DD');
+        var oneLowercaseD = DateUtils.buildRegexMatchingExactCharSequence('d', 1);
+        correctedFormat = correctedFormat.replace(oneLowercaseD, 'D');
+        var twoLowercaseH = DateUtils.buildRegexMatchingExactCharSequence('h', 2);
+        correctedFormat = correctedFormat.replace(twoLowercaseH, 'H');
+        return correctedFormat;
+    };
+    DateUtils.buildRegexMatchingExactCharSequence = function (char, sequenceLength) {
+        var negativeLookBehind = "(?<!" + char + ")";
+        var charSequence = char + "{" + sequenceLength + "}";
+        var negativeLookAhead = "(?!" + char + ")";
+        var exactSequence = "" + negativeLookBehind + charSequence + negativeLookAhead;
+        return new RegExp(exactSequence, 'g');
     };
     /**
      * Creates a string from a Date object. The resulting string is formatted according to a set of options.
@@ -19943,8 +19960,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5926.10',
-    product: '2.5926.10',
+    lib: '2.6063.0-beta',
+    product: '2.6063.0-beta',
     supportedApiVersion: 2
 };
 
@@ -43315,7 +43332,6 @@ var RadioButton_1 = __webpack_require__(86);
 var ExternalModulesShim_1 = __webpack_require__(24);
 var BreadcrumbEvents_1 = __webpack_require__(37);
 var SVGIcons_1 = __webpack_require__(13);
-var SVGDom_1 = __webpack_require__(14);
 var AccessibleButton_1 = __webpack_require__(17);
 /**
  * The `AdvancedSearch` component is meant to render a section in the [`Settings`]{@link Settings} menu to allow the end
@@ -43423,14 +43439,13 @@ var AdvancedSearch = /** @class */ (function (_super) {
     AdvancedSearch.prototype.buildBreadcrumbTitle = function () {
         return Dom_1.$$('span', {
             className: 'coveo-advanced-search-breadcrumb-title'
-        }, Strings_1.l('FiltersInAdvancedSearch') + ' : ');
+        }, Strings_1.l('FiltersInAdvancedSearch') + ":");
     };
     AdvancedSearch.prototype.buildBreacrumbClear = function () {
         var _this = this;
         var clear = Dom_1.$$('span', {
             className: 'coveo-advanced-search-breadcrumb-clear'
-        }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
-        SVGDom_1.SVGDom.addClassToSVGInContainer(clear.el, 'coveo-advanced-search-breadcrumb-clear-svg');
+        }, SVGIcons_1.SVGIcons.icons.mainClear);
         var selectAction = function () {
             _this.handleClearBreadcrumb();
             _this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.breadcrumbAdvancedSearch, {});
@@ -44568,8 +44583,6 @@ var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
 var AccessibleButton_1 = __webpack_require__(17);
 var Dom_1 = __webpack_require__(1);
-var SVGDom_1 = __webpack_require__(14);
-var SVGIcons_1 = __webpack_require__(13);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Component_1 = __webpack_require__(6);
 var ComponentOptions_1 = __webpack_require__(8);
@@ -44656,23 +44669,17 @@ var Breadcrumb = /** @class */ (function (_super) {
             Dom_1.$$(elem).addClass('coveo-breadcrumb-item');
             breadcrumbItems.appendChild(elem);
         });
+        var clearText = Dom_1.$$('div', undefined, Strings_1.l('ClearAllFilters')).el;
         var clear = Dom_1.$$('div', {
             className: 'coveo-breadcrumb-clear-all',
             title: Strings_1.l('ClearAllFilters')
-        }).el;
+        }, clearText).el;
         new AccessibleButton_1.AccessibleButton()
             .withElement(clear)
             .withSelectAction(function () { return _this.clearBreadcrumbs(); })
             .withOwner(this.bind)
             .withLabel(Strings_1.l('ClearAllFilters'))
             .build();
-        var clearIcon = Dom_1.$$('div', {
-            className: 'coveo-icon coveo-breadcrumb-clear-all-icon'
-        }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore).el;
-        SVGDom_1.SVGDom.addClassToSVGInContainer(clearIcon, 'coveo-breadcrumb-clear-all-svg');
-        clear.appendChild(clearIcon);
-        var clearText = Dom_1.$$('div', undefined, Strings_1.l('Clear', '')).el;
-        clear.appendChild(clearText);
         this.element.appendChild(clear);
     };
     Breadcrumb.prototype.redrawBreadcrumb = function () {
@@ -47401,7 +47408,6 @@ var _ = __webpack_require__(0);
 var GlobalExports_1 = __webpack_require__(3);
 __webpack_require__(446);
 var SVGIcons_1 = __webpack_require__(13);
-var SVGDom_1 = __webpack_require__(14);
 /**
  * The HiddenQuery component handles a "hidden" query parameter (`hq`) and its description (`hd`).
  *
@@ -47464,17 +47470,11 @@ var HiddenQuery = /** @class */ (function (_super) {
             Dom_1.$$(title).addClass('coveo-hidden-query-breadcrumb-title');
             Dom_1.$$(title).text(this.options.title);
             elem.appendChild(title);
-            var values = document.createElement('span');
-            Dom_1.$$(values).addClass('coveo-hidden-query-breadcrumb-values');
-            elem.appendChild(values);
-            var value = Dom_1.$$('span', { className: 'coveo-hidden-query-breadcrumb-value' }, description);
-            values.appendChild(value.el);
-            var svgContainer = Dom_1.$$('span', { className: 'coveo-hidden-query-breadcrum-clear-icon' }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
-            SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer.el, 'coveo-hidden-query-breadcrumb-clear-svg');
-            var clear = Dom_1.$$('span', { className: 'coveo-hidden-query-breadcrumb-clear' });
-            clear.append(svgContainer.el);
-            elem.appendChild(clear.el);
-            Dom_1.$$(elem).on('click', function () { return _this.clear(); });
+            var value = Dom_1.$$('span', { className: 'coveo-hidden-query-breadcrumb-value' }, description).el;
+            elem.appendChild(value);
+            var clear = Dom_1.$$('span', { className: 'coveo-hidden-query-breadcrumb-clear' }, SVGIcons_1.SVGIcons.icons.mainClear);
+            value.appendChild(clear.el);
+            Dom_1.$$(value).on('click', function () { return _this.clear(); });
             args.breadcrumbs.push({
                 element: elem
             });
@@ -47518,7 +47518,7 @@ var HiddenQuery = /** @class */ (function (_super) {
          * Default value is the localized string f
          * or `"Additional filters:"`
          */
-        title: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: Strings_1.l('AdditionalFilters') + ': ' })
+        title: ComponentOptions_1.ComponentOptions.buildLocalizedStringOption({ defaultValue: Strings_1.l('AdditionalFilters') + ':' })
     };
     return HiddenQuery;
 }(Component_1.Component));
@@ -52615,8 +52615,7 @@ var ResultsFiltersPreferences = /** @class */ (function (_super) {
         var caption = Dom_1.$$('span', { className: 'coveo-caption' });
         caption.text(filter.caption);
         elem.el.appendChild(caption.el);
-        var clear = Dom_1.$$('span', { className: 'coveo-clear' }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
-        SVGDom_1.SVGDom.addClassToSVGInContainer(clear.el, 'coveo-clear-svg');
+        var clear = Dom_1.$$('span', { className: 'coveo-clear' }, SVGIcons_1.SVGIcons.icons.mainClear);
         elem.el.appendChild(clear.el);
         var onSelectAction = function () {
             filter.selected = false;
@@ -56339,15 +56338,14 @@ var SimpleFilter = /** @class */ (function (_super) {
         var _this = this;
         if (this.getSelectedLabeledCheckboxes().length > 0) {
             var elem = Dom_1.$$('div', { className: 'coveo-simplefilter-breadcrumb' });
-            var title = Dom_1.$$('span', { className: 'coveo-simplefilter-breadcrumb-title' }, this.options.title);
+            var title = Dom_1.$$('span', { className: 'coveo-simplefilter-breadcrumb-title' }, this.options.title + ":");
             elem.append(title.el);
             var values_1 = Dom_1.$$('span', { className: 'coveo-simplefilter-breadcrumb-values' });
             elem.append(values_1.el);
             underscore_1.each(this.getSelectedLabeledCheckboxes(), function (selectedlabeledCheckbox) {
                 var value = Dom_1.$$('span', { className: 'coveo-simplefilter-breadcrumb-value' }, _this.getValueCaption(selectedlabeledCheckbox.label));
                 values_1.append(value.el);
-                var svgContainer = Dom_1.$$('span', { className: 'coveo-simplefilter-breadcrumb-clear' }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
-                SVGDom_1.SVGDom.addClassToSVGInContainer(svgContainer.el, 'coveo-simplefilter-breadcrumb-clear-svg');
+                var svgContainer = Dom_1.$$('span', { className: 'coveo-simplefilter-breadcrumb-clear' }, SVGIcons_1.SVGIcons.icons.mainClear);
                 value.append(svgContainer.el);
                 value.el.title = _this.getValueCaption(selectedlabeledCheckbox.label);
                 Dom_1.$$(value).on('click', function () { return _this.handleRemoveFromBreadcrumb(selectedlabeledCheckbox); });
@@ -62303,27 +62301,35 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var _ = __webpack_require__(0);
+var underscore_1 = __webpack_require__(0);
 var TemplateFieldsEvaluator = /** @class */ (function () {
     function TemplateFieldsEvaluator() {
     }
     TemplateFieldsEvaluator.evaluateFieldsToMatch = function (toMatches, result) {
         var templateShouldBeLoaded = true;
-        _.each(toMatches, function (toMatch) {
+        underscore_1.each(toMatches, function (toMatch) {
             var matchAtLeastOnce = false;
             if (!toMatch.values) {
                 matchAtLeastOnce = result.raw[toMatch.field] != null;
             }
             else {
-                _.each(toMatch.values, function (value) {
+                underscore_1.each(toMatch.values, function (value) {
                     if (!matchAtLeastOnce) {
-                        matchAtLeastOnce = result.raw[toMatch.field] && result.raw[toMatch.field].toLowerCase() == value.toLowerCase();
+                        var fieldValue = result.raw[toMatch.field];
+                        var fieldValues = TemplateFieldsEvaluator.getFieldValueAsArray(fieldValue);
+                        matchAtLeastOnce = TemplateFieldsEvaluator.isMatch(fieldValues, value);
                     }
                 });
             }
             templateShouldBeLoaded = templateShouldBeLoaded && matchAtLeastOnce;
         });
         return templateShouldBeLoaded;
+    };
+    TemplateFieldsEvaluator.getFieldValueAsArray = function (fieldValue) {
+        return typeof fieldValue === 'string' ? [fieldValue] : fieldValue;
+    };
+    TemplateFieldsEvaluator.isMatch = function (fieldValues, value) {
+        return underscore_1.find(fieldValues, function (fieldValue) { return fieldValue.toLowerCase() == value.toLowerCase(); }) != undefined;
     };
     return TemplateFieldsEvaluator;
 }());
@@ -65696,7 +65702,6 @@ var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
 var AccessibleButton_1 = __webpack_require__(17);
 var Dom_1 = __webpack_require__(1);
-var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var Strings_1 = __webpack_require__(7);
@@ -65746,8 +65751,7 @@ var BreadcrumbValueElement = /** @class */ (function () {
     BreadcrumbValueElement.prototype.buildClear = function () {
         var clear = Dom_1.$$('span', {
             className: 'coveo-facet-breadcrumb-clear'
-        }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
-        SVGDom_1.SVGDom.addClassToSVGInContainer(clear.el, 'coveo-facet-breadcrumb-clear-svg');
+        }, SVGIcons_1.SVGIcons.icons.mainClear);
         return clear;
     };
     BreadcrumbValueElement.prototype.buildCaption = function () {
@@ -70480,7 +70484,6 @@ exports.CategoryFacetSearch = CategoryFacetSearch;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
-var SVGDom_1 = __webpack_require__(14);
 var SVGIcons_1 = __webpack_require__(13);
 var AccessibleButton_1 = __webpack_require__(17);
 var Strings_1 = __webpack_require__(7);
@@ -70495,11 +70498,10 @@ var CategoryFacetBreadcrumb = /** @class */ (function () {
         var _this = this;
         var clear = Dom_1.$$('span', {
             className: 'coveo-facet-breadcrumb-clear'
-        }, SVGIcons_1.SVGIcons.icons.checkboxHookExclusionMore);
-        SVGDom_1.SVGDom.addClassToSVGInContainer(clear.el, 'coveo-facet-breadcrumb-clear-svg');
+        }, SVGIcons_1.SVGIcons.icons.mainClear);
         var pathToRender = underscore_1.without.apply(void 0, [this.categoryValueDescriptor.path].concat(this.categoryFacet.options.basePath));
         var captionLabel = pathToRender.map(function (pathPart) { return _this.categoryFacet.getCaption(pathPart); }).join('/');
-        var breadcrumbTitle = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-title' }, this.categoryFacet.options.title + ": ");
+        var breadcrumbTitle = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-title' }, this.categoryFacet.options.title + ":");
         var valuesContainer = Dom_1.$$('span', { className: 'coveo-category-facet-breadcrumb-values' }, captionLabel, clear);
         new AccessibleButton_1.AccessibleButton()
             .withElement(valuesContainer)

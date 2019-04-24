@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"HierarchicalFacet","3":"TimespanFacet","4":"FacetRange","5":"Searchbox","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Pager","11":"ResultsPerPage","12":"Recommendation","13":"OmniboxResultList","14":"Quickview","15":"ResultList","16":"Tab","17":"ResultsFiltersPreferences","18":"Backdrop","19":"SimpleFilter","20":"ResultLayoutSelector","21":"FieldTable","22":"ResultsPreferences","23":"Sort","24":"Settings","25":"YouTubeThumbnail","26":"Thumbnail","27":"PrintableUri","28":"SearchAlerts","29":"Badge","30":"ResultRating","31":"Breadcrumb","32":"DistanceResources","33":"ResultFolding","34":"Matrix","35":"FacetValueSuggestions","36":"CardOverlay","37":"SearchButton","38":"FieldValue","39":"AnalyticsSuggestions","40":"ResultLink","41":"ErrorReport","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"HiddenQuery","48":"FieldSuggestions","49":"CardActionBar","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"DatePicker","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"ShareQuery","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"ExportToExcel","68":"Excerpt","69":"DidYouMean","70":"AuthenticationProvider","71":"TemplateLoader","72":"PipelineContext","73":"Icon","74":"Dropdown","75":"ChatterTopic","76":"Aggregate"}[chunkId]||chunkId) + "__" + "5d8084491af1464dbdb6" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"HierarchicalFacet","3":"TimespanFacet","4":"FacetRange","5":"Searchbox","6":"Omnibox","7":"Querybox","8":"FacetSlider","9":"AdvancedSearch","10":"Pager","11":"ResultsPerPage","12":"Recommendation","13":"OmniboxResultList","14":"Quickview","15":"ResultList","16":"Tab","17":"ResultsFiltersPreferences","18":"Backdrop","19":"SimpleFilter","20":"ResultLayoutSelector","21":"FieldTable","22":"ResultsPreferences","23":"Sort","24":"Settings","25":"YouTubeThumbnail","26":"Thumbnail","27":"PrintableUri","28":"SearchAlerts","29":"Badge","30":"ResultRating","31":"DistanceResources","32":"ResultFolding","33":"Matrix","34":"FacetValueSuggestions","35":"CardOverlay","36":"SearchButton","37":"FieldValue","38":"AnalyticsSuggestions","39":"ResultLink","40":"ErrorReport","41":"Breadcrumb","42":"FoldingForThread","43":"FollowItem","44":"ResultTagging","45":"ResultAttachments","46":"QuerySummary","47":"FieldSuggestions","48":"CardActionBar","49":"Logo","50":"NumericSpinner","51":"Folding","52":"ChatterPostedBy","53":"ChatterPostAttachment","54":"ChatterLikedBy","55":"DatePicker","56":"RadioButton","57":"MultiSelect","58":"FormGroup","59":"Triggers","60":"Text","61":"ShareQuery","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"HiddenQuery","67":"ExportToExcel","68":"Excerpt","69":"DidYouMean","70":"AuthenticationProvider","71":"TemplateLoader","72":"PipelineContext","73":"Icon","74":"Dropdown","75":"ChatterTopic","76":"Aggregate"}[chunkId]||chunkId) + "__" + "bd5581421b57372497fb" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -9554,8 +9554,25 @@ var DateUtils = /** @class */ (function () {
         return daysDifference == 0 || daysDifference == 1 || daysDifference == -1;
     };
     DateUtils.getMomentJsFormat = function (format) {
-        // yyyy was used to format dates before implementing moment.js, which only recognizes YYYY.
-        return format.replace(/yyyy/g, 'YYYY');
+        var correctedFormat = format;
+        var fourLowercaseY = DateUtils.buildRegexMatchingExactCharSequence('y', 4);
+        correctedFormat = correctedFormat.replace(fourLowercaseY, 'YYYY');
+        var twoLowercaseY = DateUtils.buildRegexMatchingExactCharSequence('y', 2);
+        correctedFormat = correctedFormat.replace(twoLowercaseY, 'YY');
+        var twoLowercaseD = DateUtils.buildRegexMatchingExactCharSequence('d', 2);
+        correctedFormat = correctedFormat.replace(twoLowercaseD, 'DD');
+        var oneLowercaseD = DateUtils.buildRegexMatchingExactCharSequence('d', 1);
+        correctedFormat = correctedFormat.replace(oneLowercaseD, 'D');
+        var twoLowercaseH = DateUtils.buildRegexMatchingExactCharSequence('h', 2);
+        correctedFormat = correctedFormat.replace(twoLowercaseH, 'H');
+        return correctedFormat;
+    };
+    DateUtils.buildRegexMatchingExactCharSequence = function (char, sequenceLength) {
+        var negativeLookBehind = "(?<!" + char + ")";
+        var charSequence = char + "{" + sequenceLength + "}";
+        var negativeLookAhead = "(?!" + char + ")";
+        var exactSequence = "" + negativeLookBehind + charSequence + negativeLookAhead;
+        return new RegExp(exactSequence, 'g');
     };
     /**
      * Creates a string from a Date object. The resulting string is formatted according to a set of options.
@@ -14642,8 +14659,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.5926.10',
-    product: '2.5926.10',
+    lib: '2.6063.0-beta',
+    product: '2.6063.0-beta',
     supportedApiVersion: 2
 };
 
@@ -30058,27 +30075,35 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var _ = __webpack_require__(0);
+var underscore_1 = __webpack_require__(0);
 var TemplateFieldsEvaluator = /** @class */ (function () {
     function TemplateFieldsEvaluator() {
     }
     TemplateFieldsEvaluator.evaluateFieldsToMatch = function (toMatches, result) {
         var templateShouldBeLoaded = true;
-        _.each(toMatches, function (toMatch) {
+        underscore_1.each(toMatches, function (toMatch) {
             var matchAtLeastOnce = false;
             if (!toMatch.values) {
                 matchAtLeastOnce = result.raw[toMatch.field] != null;
             }
             else {
-                _.each(toMatch.values, function (value) {
+                underscore_1.each(toMatch.values, function (value) {
                     if (!matchAtLeastOnce) {
-                        matchAtLeastOnce = result.raw[toMatch.field] && result.raw[toMatch.field].toLowerCase() == value.toLowerCase();
+                        var fieldValue = result.raw[toMatch.field];
+                        var fieldValues = TemplateFieldsEvaluator.getFieldValueAsArray(fieldValue);
+                        matchAtLeastOnce = TemplateFieldsEvaluator.isMatch(fieldValues, value);
                     }
                 });
             }
             templateShouldBeLoaded = templateShouldBeLoaded && matchAtLeastOnce;
         });
         return templateShouldBeLoaded;
+    };
+    TemplateFieldsEvaluator.getFieldValueAsArray = function (fieldValue) {
+        return typeof fieldValue === 'string' ? [fieldValue] : fieldValue;
+    };
+    TemplateFieldsEvaluator.isMatch = function (fieldValues, value) {
+        return underscore_1.find(fieldValues, function (fieldValue) { return fieldValue.toLowerCase() == value.toLowerCase(); }) != undefined;
     };
     return TemplateFieldsEvaluator;
 }());
@@ -32288,7 +32313,7 @@ var Initialization_1 = __webpack_require__(2);
 function lazyAnalyticsSuggestions() {
     Initialization_1.LazyInitialization.registerLazyComponent('AnalyticsSuggestions', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(39).then((function () {
+            __webpack_require__.e/* require.ensure */(38).then((function () {
                 var loaded = __webpack_require__(179)['AnalyticsSuggestions'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('AnalyticsSuggestions', resolve));
@@ -32376,7 +32401,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyBreadcrumb() {
     Initialization_1.LazyInitialization.registerLazyComponent('Breadcrumb', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(31).then((function () {
+            __webpack_require__.e/* require.ensure */(41).then((function () {
                 var loaded = __webpack_require__(183)['Breadcrumb'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Breadcrumb', resolve));
@@ -32398,7 +32423,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyCardActionBar() {
     Initialization_1.LazyInitialization.registerLazyComponent('CardActionBar', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(49).then((function () {
+            __webpack_require__.e/* require.ensure */(48).then((function () {
                 var loaded = __webpack_require__(184)['CardActionBar'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('CardActionBar', resolve));
@@ -32420,7 +32445,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyCardOverlay() {
     Initialization_1.LazyInitialization.registerLazyComponent('CardOverlay', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(36).then((function () {
+            __webpack_require__.e/* require.ensure */(35).then((function () {
                 var loaded = __webpack_require__(185)['CardOverlay'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('CardOverlay', resolve));
@@ -32442,7 +32467,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyChatterLikedBy() {
     Initialization_1.LazyInitialization.registerLazyComponent('ChatterLikedBy', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(55).then((function () {
+            __webpack_require__.e/* require.ensure */(54).then((function () {
                 var loaded = __webpack_require__(186)['ChatterLikedBy'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ChatterLikedBy', resolve));
@@ -32464,7 +32489,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyChatterPostAttachment() {
     Initialization_1.LazyInitialization.registerLazyComponent('ChatterPostAttachment', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(54).then((function () {
+            __webpack_require__.e/* require.ensure */(53).then((function () {
                 var loaded = __webpack_require__(187)['ChatterPostAttachment'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ChatterPostAttachment', resolve));
@@ -32486,7 +32511,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyChatterPostedBy() {
     Initialization_1.LazyInitialization.registerLazyComponent('ChatterPostedBy', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(53).then((function () {
+            __webpack_require__.e/* require.ensure */(52).then((function () {
                 var loaded = __webpack_require__(188)['ChatterPostedBy'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ChatterPostedBy', resolve));
@@ -32574,7 +32599,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyDistanceResources() {
     Initialization_1.LazyInitialization.registerLazyComponent('DistanceResources', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(32).then((function () {
+            __webpack_require__.e/* require.ensure */(31).then((function () {
                 var loaded = __webpack_require__(191)['DistanceResources'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('DistanceResources', resolve));
@@ -32596,7 +32621,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyErrorReport() {
     Initialization_1.LazyInitialization.registerLazyComponent('ErrorReport', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(41).then((function () {
+            __webpack_require__.e/* require.ensure */(40).then((function () {
                 var loaded = __webpack_require__(192)['ErrorReport'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ErrorReport', resolve));
@@ -32728,7 +32753,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyFieldSuggestions() {
     Initialization_1.LazyInitialization.registerLazyComponent('FieldSuggestions', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(48).then((function () {
+            __webpack_require__.e/* require.ensure */(47).then((function () {
                 var loaded = __webpack_require__(195)['FieldSuggestions'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('FieldSuggestions', resolve));
@@ -32750,7 +32775,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyFacetValueSuggestions() {
     Initialization_1.LazyInitialization.registerLazyComponent('FacetValueSuggestions', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(35).then((function () {
+            __webpack_require__.e/* require.ensure */(34).then((function () {
                 var loaded = __webpack_require__(196)['FacetValueSuggestions'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('FacetValueSuggestions', resolve));
@@ -32794,7 +32819,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyFieldValue() {
     Initialization_1.LazyInitialization.registerLazyComponent('FieldValue', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(38).then((function () {
+            __webpack_require__.e/* require.ensure */(37).then((function () {
                 var loaded = __webpack_require__(102)['FieldValue'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('FieldValue', resolve));
@@ -32816,7 +32841,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyFolding() {
     Initialization_1.LazyInitialization.registerLazyComponent('Folding', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(52).then((function () {
+            __webpack_require__.e/* require.ensure */(51).then((function () {
                 var loaded = __webpack_require__(140)['Folding'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Folding', resolve));
@@ -32860,7 +32885,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyHiddenQuery() {
     Initialization_1.LazyInitialization.registerLazyComponent('HiddenQuery', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(47).then((function () {
+            __webpack_require__.e/* require.ensure */(66).then((function () {
                 var loaded = __webpack_require__(199)['HiddenQuery'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('HiddenQuery', resolve));
@@ -32926,7 +32951,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyLogo() {
     Initialization_1.LazyInitialization.registerLazyComponent('Logo', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(50).then((function () {
+            __webpack_require__.e/* require.ensure */(49).then((function () {
                 var loaded = __webpack_require__(201)['Logo'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Logo', resolve));
@@ -32948,7 +32973,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyMatrix() {
     Initialization_1.LazyInitialization.registerLazyComponent('Matrix', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(34).then((function () {
+            __webpack_require__.e/* require.ensure */(33).then((function () {
                 var loaded = __webpack_require__(202)['Matrix'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Matrix', resolve));
@@ -33058,7 +33083,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyPreferencesPanel() {
     Initialization_1.LazyInitialization.registerLazyComponent('PreferencesPanel', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(66).then((function () {
+            __webpack_require__.e/* require.ensure */(65).then((function () {
                 var loaded = __webpack_require__(206)['PreferencesPanel'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('lazyPreferencesPanel', resolve));
@@ -33124,7 +33149,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyQueryDuration() {
     Initialization_1.LazyInitialization.registerLazyComponent('QueryDuration', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(64).then((function () {
+            __webpack_require__.e/* require.ensure */(63).then((function () {
                 var loaded = __webpack_require__(208)['QueryDuration'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('QueryDuration', resolve));
@@ -33212,7 +33237,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyResultActionsMenu() {
     Initialization_1.LazyInitialization.registerLazyComponent('ResultActionsMenu', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(63).then((function () {
+            __webpack_require__.e/* require.ensure */(62).then((function () {
                 var loaded = __webpack_require__(211)['ResultActionsMenu'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ResultActionsMenu', resolve));
@@ -33256,7 +33281,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyResultFolding() {
     Initialization_1.LazyInitialization.registerLazyComponent('ResultFolding', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(33).then((function () {
+            __webpack_require__.e/* require.ensure */(32).then((function () {
                 var loaded = __webpack_require__(213)['ResultFolding'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ResultFolding', resolve));
@@ -33300,7 +33325,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyResultLink() {
     Initialization_1.LazyInitialization.registerLazyComponent('ResultLink', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(40).then((function () {
+            __webpack_require__.e/* require.ensure */(39).then((function () {
                 var loaded = __webpack_require__(83)['ResultLink'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ResultLink', resolve));
@@ -33520,7 +33545,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazySearchButton() {
     Initialization_1.LazyInitialization.registerLazyComponent('SearchButton', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(37).then((function () {
+            __webpack_require__.e/* require.ensure */(36).then((function () {
                 var loaded = __webpack_require__(144)['SearchButton'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('SearchButton', resolve));
@@ -33564,7 +33589,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyShareQuery() {
     Initialization_1.LazyInitialization.registerLazyComponent('ShareQuery', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(62).then((function () {
+            __webpack_require__.e/* require.ensure */(61).then((function () {
                 var loaded = __webpack_require__(223)['ShareQuery'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ShareQuery', resolve));
@@ -33652,7 +33677,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyText() {
     Initialization_1.LazyInitialization.registerLazyComponent('Text', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(61).then((function () {
+            __webpack_require__.e/* require.ensure */(60).then((function () {
                 var loaded = __webpack_require__(226)['Text'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Text', resolve));
@@ -33696,7 +33721,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyTriggers() {
     Initialization_1.LazyInitialization.registerLazyComponent('Triggers', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(60).then((function () {
+            __webpack_require__.e/* require.ensure */(59).then((function () {
                 var loaded = __webpack_require__(228)['Triggers'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Triggers', resolve));
@@ -33764,7 +33789,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyDatePicker() {
     Initialization_1.LazyInitialization.registerLazyModule('Datepicker', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(56).then((function () {
+            __webpack_require__.e/* require.ensure */(55).then((function () {
                 var loaded = __webpack_require__(105)['DatePicker'];
                 GlobalExports_1.lazyExportModule(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('DatePicker', resolve));
@@ -33808,7 +33833,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyFormGroup() {
     Initialization_1.LazyInitialization.registerLazyModule('FormGroup', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(59).then((function () {
+            __webpack_require__.e/* require.ensure */(58).then((function () {
                 var loaded = __webpack_require__(103)['FormGroup'];
                 GlobalExports_1.lazyExportModule(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('FormGroup', resolve));
@@ -33830,7 +33855,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyMultiSelect() {
     Initialization_1.LazyInitialization.registerLazyModule('MultiSelect', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(58).then((function () {
+            __webpack_require__.e/* require.ensure */(57).then((function () {
                 var loaded = __webpack_require__(143)['MultiSelect'];
                 GlobalExports_1.lazyExportModule(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('MultiSelect', resolve));
@@ -33852,7 +33877,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyNumericSpinner() {
     Initialization_1.LazyInitialization.registerLazyModule('NumericSpinner', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(51).then((function () {
+            __webpack_require__.e/* require.ensure */(50).then((function () {
                 var loaded = __webpack_require__(87)['NumericSpinner'];
                 GlobalExports_1.lazyExportModule(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('NumericSpinner', resolve));
@@ -33874,7 +33899,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyRadioButton() {
     Initialization_1.LazyInitialization.registerLazyModule('RadioButton', function () {
         return new Promise(function (resolve, reject) {
-            __webpack_require__.e/* require.ensure */(57).then((function () {
+            __webpack_require__.e/* require.ensure */(56).then((function () {
                 var loaded = __webpack_require__(86)['RadioButton'];
                 GlobalExports_1.lazyExportModule(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('RadioButton', resolve));
@@ -33962,7 +33987,7 @@ var GlobalExports_1 = __webpack_require__(3);
 function lazyPromotedResultsBadge() {
     Initialization_1.LazyInitialization.registerLazyComponent('PromotedResultsBadge', function () {
         return new Promise(function (resolve) {
-            __webpack_require__.e/* require.ensure */(65).then((function () {
+            __webpack_require__.e/* require.ensure */(64).then((function () {
                 var loaded = __webpack_require__(231)['PromotedResultsBadge'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('PromotedResultsBadge', resolve));
