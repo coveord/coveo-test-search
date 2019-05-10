@@ -816,6 +816,7 @@ var dict = {
   "UnselectValueWithResultCount": "Unselect {0} with {1}",
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Display {0} results per page",
+  "GroupByAndFacetRequestsCannotCoexist": "The query is invalid because it contains both Group By and Facet requests. Ensure that the search interface does not initialize MLFacet components alongside Facet components (or alongside any component extending the Facet component, such as FacetRange or FacetSlider).",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1610,6 +1611,7 @@ var dict = {
   "UnselectValueWithResultCount": "Unselect {0} with {1}",
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Display {0} results per page",
+  "GroupByAndFacetRequestsCannotCoexist": "The query is invalid because it contains both Group By and Facet requests. Ensure that the search interface does not initialize MLFacet components alongside Facet components (or alongside any component extending the Facet component, such as FacetRange or FacetSlider).",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
