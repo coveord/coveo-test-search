@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "534d22ec2a29a4e24190" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "c337aa1f1e23bedec2b9" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -20002,8 +20002,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.6063.2-beta',
-    product: '2.6063.2-beta',
+    lib: '2.6063.4-beta',
+    product: '2.6063.4-beta',
     supportedApiVersion: 2
 };
 
@@ -93360,13 +93360,13 @@ var MLFacetValues = /** @class */ (function () {
     };
     MLFacetValues.prototype.buildShowLess = function () {
         var _this = this;
-        var showLess = Dom_1.$$('button', { className: 'coveo-ml-facet-show-less', ariaLabel: Strings_1.l('ShowLess') }, "- " + Strings_1.l('ShowLess'));
+        var showLess = Dom_1.$$('button', { className: 'coveo-ml-facet-show-less' }, Strings_1.l('ShowLess'));
         showLess.on('click', function () { return _this.facet.showLessValues(); });
         return showLess.el;
     };
     MLFacetValues.prototype.buildShowMore = function () {
         var _this = this;
-        var showMore = Dom_1.$$('button', { className: 'coveo-ml-facet-show-more', ariaLabel: Strings_1.l('ShowMore') }, "+ " + Strings_1.l('ShowMore'));
+        var showMore = Dom_1.$$('button', { className: 'coveo-ml-facet-show-more' }, Strings_1.l('ShowMore'));
         showMore.on('click', function () { return _this.facet.showMoreValues(); });
         return showMore.el;
     };

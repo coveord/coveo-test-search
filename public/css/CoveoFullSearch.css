@@ -9232,6 +9232,8 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -9263,6 +9265,8 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -9414,6 +9418,8 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -10172,6 +10178,8 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -11249,6 +11257,8 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -12094,6 +12104,8 @@ a.CoveoResultLink.coveo-selected *,
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -14663,6 +14675,8 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -15938,6 +15952,8 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -16433,6 +16449,8 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -16494,22 +16512,6 @@ a.coveo-folding-show-less.coveo-selected * {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-lines: single;
-  -moz-box-lines: single;
-  box-lines: single;
-  -webkit-flex-wrap: nowrap;
-  -moz-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-pack: end;
-  -moz-box-pack: end;
-  box-pack: end;
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  -o-justify-content: flex-end;
-  justify-content: flex-end;
-  -ms-flex-pack: end;
 }
 
 .coveo-ml-facet-header-title {
@@ -16531,14 +16533,15 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-ml-facet-header-wait-animation {
+  margin-left: 12px;
+}
+
+.coveo-ml-facet-header-wait-animation-svg {
   width: 16px;
   height: 16px;
   color: #004990;
   display: inline-block;
   vertical-align: middle;
-}
-
-.coveo-ml-facet-header-wait-animation-svg {
   color: #1d4f76;
   display: inline-block;
   vertical-align: middle;
@@ -16565,19 +16568,11 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-ml-facet-header-btn {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: right;
-  -moz-align-self: right;
-  align-self: right;
-  -ms-flex-item-align: right;
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -16614,6 +16609,7 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-ml-facet-values {
   padding: 15px 0;
   margin: 0;
+  white-space: normal;
 }
 
 .coveo-ml-facet-value {
@@ -16657,6 +16653,8 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  overflow: visible;
+  width: auto;
   padding: 0;
   margin: 0;
   background: none;
@@ -16688,8 +16686,19 @@ a.coveo-folding-show-less.coveo-selected * {
   color: #004990;
 }
 
+.coveo-ml-facet-show-more::before,
+.coveo-ml-facet-show-less::before {
+  width: 15px;
+  display: inline-block;
+  content: '+';
+}
+
 .coveo-ml-facet-show-less {
   color: #313a45;
+}
+
+.coveo-ml-facet-show-less::before {
+  content: '-';
 }
 
 .coveo-ml-facet-collapsed .coveo-ml-facet-value,
