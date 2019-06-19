@@ -817,6 +817,12 @@ var dict = {
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Display {0} results per page",
   "GroupByAndFacetRequestsCannotCoexist": "The query is invalid because it contains both Group By and Facet requests. Ensure that the search interface does not initialize DynamicFacet components alongside Facet components (or alongside any component extending the Facet component, such as FacetRange or FacetSlider).",
+  "MustContain": "Must contain:",
+  "Missing": "Missing:",
+  "Filters": "Filters",
+  "FiltersDropdown": "Filters dropdown",
+  "OpenFiltersDropdown": "Open the filters dropdown",
+  "CloseFiltersDropdown": "Close the filters dropdown",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1612,6 +1618,12 @@ var dict = {
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Display {0} results per page",
   "GroupByAndFacetRequestsCannotCoexist": "The query is invalid because it contains both Group By and Facet requests. Ensure that the search interface does not initialize DynamicFacet components alongside Facet components (or alongside any component extending the Facet component, such as FacetRange or FacetSlider).",
+  "MustContain": "Must contain:",
+  "Missing": "Missing:",
+  "Filters": "Filters",
+  "FiltersDropdown": "Filters dropdown",
+  "OpenFiltersDropdown": "Open the filters dropdown",
+  "CloseFiltersDropdown": "Close the filters dropdown",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
