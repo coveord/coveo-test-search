@@ -863,12 +863,6 @@ var dict = {
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Afficher {0} résultats par page",
   "GroupByAndFacetRequestsCannotCoexist": "La requête n'est pas valide car elle contient les requêtes Group By et Facet. Assurez-vous que l'interface de recherche n'initialise pas les composants DynamicFacet aux côtés des composants Facet (ou de tout composant d'extension du composant Facet, tel que FacetRange ou FacetSlider).",
-  "MustContain": "Doit contenir:",
-  "Missing": "Manquant(s):",
-  "Filters": "Filtres",
-  "FiltersDropdown": "Menu déroulant de filtres",
-  "OpenFiltersDropdown": "Ouvrir le menu déroulant de filtres",
-  "CloseFiltersDropdown": "Fermer le menu déroulant de filtres",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["fr"] = merge(locales["fr"], dict);
@@ -1664,12 +1658,6 @@ var dict = {
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Afficher {0} résultats par page",
   "GroupByAndFacetRequestsCannotCoexist": "La requête n'est pas valide car elle contient les requêtes Group By et Facet. Assurez-vous que l'interface de recherche n'initialise pas les composants DynamicFacet aux côtés des composants Facet (ou de tout composant d'extension du composant Facet, tel que FacetRange ou FacetSlider).",
-  "MustContain": "Doit contenir:",
-  "Missing": "Manquant(s):",
-  "Filters": "Filtres",
-  "FiltersDropdown": "Menu déroulant de filtres",
-  "OpenFiltersDropdown": "Ouvrir le menu déroulant de filtres",
-  "CloseFiltersDropdown": "Fermer le menu déroulant de filtres",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
