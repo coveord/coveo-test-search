@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "681e99ab0b1a1812e1f7" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "6b3c130bd0e2576fd128" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -23184,8 +23184,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.6459.3-beta',
-    product: '2.6459.3-beta',
+    lib: '2.6459.5-beta',
+    product: '2.6459.5-beta',
     supportedApiVersion: 2
 };
 
