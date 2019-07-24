@@ -173,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "89b60709bc734b8dceec" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "be8bf400bc2c9618a18b" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -23247,8 +23247,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.6459.7-beta',
-    product: '2.6459.7-beta',
+    lib: '2.6459.8-beta',
+    product: '2.6459.8-beta',
     supportedApiVersion: 2
 };
 
@@ -48611,19 +48611,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Component_1 = __webpack_require__(6);
-var ComponentOptions_1 = __webpack_require__(8);
-var OmniboxEvents_1 = __webpack_require__(35);
-var Initialization_1 = __webpack_require__(2);
-var AnalyticsActionListMeta_1 = __webpack_require__(9);
-var Dom_1 = __webpack_require__(1);
-var GlobalExports_1 = __webpack_require__(3);
 __webpack_require__(460);
 var _ = __webpack_require__(0);
-var ModelsModules_1 = __webpack_require__(184);
-var UtilsModules_1 = __webpack_require__(114);
-var FacetValueSuggestionsProvider_1 = __webpack_require__(550);
+var OmniboxEvents_1 = __webpack_require__(35);
+var GlobalExports_1 = __webpack_require__(3);
 var MiscModules_1 = __webpack_require__(65);
+var ModelsModules_1 = __webpack_require__(184);
+var Dom_1 = __webpack_require__(1);
+var UtilsModules_1 = __webpack_require__(114);
+var AnalyticsActionListMeta_1 = __webpack_require__(9);
+var Component_1 = __webpack_require__(6);
+var ComponentOptions_1 = __webpack_require__(8);
+var Initialization_1 = __webpack_require__(2);
+var FacetValueSuggestionsProvider_1 = __webpack_require__(550);
 /**
  * The `FieldValueSuggestions` component provides query suggestions based on a particular field values.
  *
@@ -48776,7 +48776,8 @@ var FacetValueSuggestions = /** @class */ (function (_super) {
         // Copy the state here, else it will directly modify queryStateModel.defaultAttributes.fv.
         var fvState = __assign({}, this.queryStateModel.get(ModelsModules_1.QueryStateModel.attributesEnum.fv));
         var existingValues = fvState[this.options.field.toString()] || [];
-        fvState[this.options.field.toString()] = existingValues.concat([row.value]);
+        var valuesToSetInState = this.options.isCategoryField ? row.value.split(this.options.categoryFieldDelimitingCharacter) : [row.value];
+        fvState[this.options.field.toString()] = existingValues.concat(valuesToSetInState);
         this.queryStateModel.set(ModelsModules_1.QueryStateModel.attributesEnum.fv, fvState);
         omnibox.magicBox.blur();
         this.usageAnalytics.logSearchEvent(AnalyticsActionListMeta_1.analyticsActionCauseList.omniboxField, {});
@@ -48875,7 +48876,23 @@ var FacetValueSuggestions = /** @class */ (function (_super) {
          */
         templateHelper: ComponentOptions_1.ComponentOptions.buildCustomOption(function () {
             return null;
-        })
+        }),
+        /**
+         * Specifies wether the field to suggest is a "Category field", ie., it has the format used by the [`CategoryFacet`]{@link CategoryFacet} component.
+         *
+         * This option is required to ensure that on selection, the corresponding [`CategoryFacet`]{@link CategoryFacet} component in the page, if any, will properly handle the filter format.
+         *
+         * See also the [`categoryFieldDelimitingCharacter`]{@link categoryFieldDelimitingCharacter} option.
+         *
+         * Default value is `false`.
+         */
+        isCategoryField: ComponentOptions_1.ComponentOptions.buildBooleanOption({ defaultValue: false }),
+        /**
+         * Specifies the delimiting character used by the category field, if the [`isCategoryField`]{@link isCategoryField} option is set to true.
+         *
+         * Default value is `|`.
+         */
+        categoryFieldDelimitingCharacter: ComponentOptions_1.ComponentOptions.buildStringOption({ defaultValue: '|', depend: 'isCategoryField' })
     };
     return FacetValueSuggestions;
 }(Component_1.Component));
