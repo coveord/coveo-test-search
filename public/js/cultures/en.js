@@ -503,6 +503,7 @@ var dict = {
   "Remove": "Remove",
   "Search": "Search",
   "SearchFor": "Search for {0}",
+  "SubmitSearch": "Submit search",
   "ShareQuery": "Share Query",
   "Preferences": "Preferences",
   "LinkOpeningSettings": "Link opening settings",
@@ -594,6 +595,9 @@ var dict = {
   "Expand": "Expand",
   "CollapseFacet": "Collapse {0} facet",
   "ExpandFacet": "Expand {0} facet",
+  "ShowLessFacetResults": "Show less results for {0} facet",
+  "ShowMoreFacetResults": "Show more results for {0} facet",
+  "SearchFacetResults": "Search for values in {0} facet",
   "Today": "Today",
   "Yesterday": "Yesterday",
   "Tomorrow": "Tomorrow",
@@ -814,6 +818,8 @@ var dict = {
   "FacetTitle": "{0} facet",
   "SelectValueWithResultCount": "Select {0} with {1}",
   "UnselectValueWithResultCount": "Unselect {0} with {1}",
+  "ExcludeValueWithResultCount": "Exclude {0} with {1}",
+  "UnexcludeValueWithResultCount": "Unexclude {0} with {1}",
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Display {0} results per page",
   "GroupByAndFacetRequestsCannotCoexist": "The query is invalid because it contains both Group By and Facet requests. Ensure that the search interface does not initialize DynamicFacet components alongside Facet components (or alongside any component extending the Facet component, such as FacetRange or FacetSlider).",
@@ -823,6 +829,8 @@ var dict = {
   "FiltersDropdown": "Filters dropdown",
   "OpenFiltersDropdown": "Open the filters dropdown",
   "CloseFiltersDropdown": "Close the filters dropdown",
+  "NoValuesFound": "No values found.",
+  "QuerySuggestPreview": "Query result item(s) for",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1304,6 +1312,7 @@ var dict = {
   "Remove": "Remove",
   "Search": "Search",
   "SearchFor": "Search for {0}",
+  "SubmitSearch": "Submit search",
   "ShareQuery": "Share Query",
   "Preferences": "Preferences",
   "LinkOpeningSettings": "Link opening settings",
@@ -1395,6 +1404,9 @@ var dict = {
   "Expand": "Expand",
   "CollapseFacet": "Collapse {0} facet",
   "ExpandFacet": "Expand {0} facet",
+  "ShowLessFacetResults": "Show less results for {0} facet",
+  "ShowMoreFacetResults": "Show more results for {0} facet",
+  "SearchFacetResults": "Search for values in {0} facet",
   "Today": "Today",
   "Yesterday": "Yesterday",
   "Tomorrow": "Tomorrow",
@@ -1615,6 +1627,8 @@ var dict = {
   "FacetTitle": "{0} facet",
   "SelectValueWithResultCount": "Select {0} with {1}",
   "UnselectValueWithResultCount": "Unselect {0} with {1}",
+  "ExcludeValueWithResultCount": "Exclude {0} with {1}",
+  "UnexcludeValueWithResultCount": "Unexclude {0} with {1}",
   "PageNumber": "Page {0}",
   "DisplayResultsPerPage": "Display {0} results per page",
   "GroupByAndFacetRequestsCannotCoexist": "The query is invalid because it contains both Group By and Facet requests. Ensure that the search interface does not initialize DynamicFacet components alongside Facet components (or alongside any component extending the Facet component, such as FacetRange or FacetSlider).",
@@ -1624,6 +1638,8 @@ var dict = {
   "FiltersDropdown": "Filters dropdown",
   "OpenFiltersDropdown": "Open the filters dropdown",
   "CloseFiltersDropdown": "Close the filters dropdown",
+  "NoValuesFound": "No values found.",
+  "QuerySuggestPreview": "Query result item(s) for",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
