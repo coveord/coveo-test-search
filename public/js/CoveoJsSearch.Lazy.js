@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"Omnibox","8":"FieldTable","9":"ImageFieldValue","10":"Badge","11":"FieldValue","12":"Querybox","13":"AdvancedSearch","14":"FacetSlider","15":"Pager","16":"ResultsPerPage","17":"QuerySuggestPreview","18":"OmniboxResultList","19":"ResultList","20":"Quickview","21":"Recommendation","22":"ResultsFiltersPreferences","23":"ResultsPreferences","24":"Tab","25":"Backdrop","26":"SearchAlerts","27":"SimpleFilter","28":"DistanceResources","29":"Sort","30":"YouTubeThumbnail","31":"Thumbnail","32":"ResultLayoutSelector","33":"ResultFolding","34":"PrintableUri","35":"Matrix","36":"CardOverlay","37":"FoldingForThread","38":"FollowItem","39":"Settings","40":"ResultTagging","41":"ResultRating","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardActionBar","47":"SearchButton","48":"Logo","49":"NumericSpinner","50":"Folding","51":"ChatterPostedBy","52":"ChatterPostAttachment","53":"ChatterLikedBy","54":"AnalyticsSuggestions","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"ShareQuery","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"Breadcrumb","73":"AuthenticationProvider","74":"TemplateLoader","75":"PipelineContext","76":"Icon","77":"Dropdown","78":"ChatterTopic","79":"Aggregate"}[chunkId]||chunkId) + "__" + "0e0504a965c87ce7bb27" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"Omnibox","8":"FieldTable","9":"ImageFieldValue","10":"Badge","11":"FieldValue","12":"Querybox","13":"AdvancedSearch","14":"FacetSlider","15":"Pager","16":"ResultsPerPage","17":"QuerySuggestPreview","18":"OmniboxResultList","19":"ResultList","20":"Quickview","21":"Recommendation","22":"ResultsFiltersPreferences","23":"ResultsPreferences","24":"Tab","25":"Backdrop","26":"SearchAlerts","27":"SimpleFilter","28":"DistanceResources","29":"Sort","30":"YouTubeThumbnail","31":"Thumbnail","32":"ResultLayoutSelector","33":"ResultFolding","34":"PrintableUri","35":"Matrix","36":"CardOverlay","37":"FoldingForThread","38":"FollowItem","39":"Settings","40":"ResultTagging","41":"ResultRating","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardActionBar","47":"SearchButton","48":"Logo","49":"NumericSpinner","50":"Folding","51":"ChatterPostedBy","52":"ChatterPostAttachment","53":"ChatterLikedBy","54":"AnalyticsSuggestions","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"ShareQuery","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"Breadcrumb","73":"AuthenticationProvider","74":"TemplateLoader","75":"PipelineContext","76":"Icon","77":"Dropdown","78":"ChatterTopic","79":"Aggregate"}[chunkId]||chunkId) + "__" + "7a880a992d37985f65d0" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -9662,109 +9662,6 @@ exports.ComponentOptionsModel = ComponentOptionsModel;
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var _ = __webpack_require__(0);
-var Defer = /** @class */ (function () {
-    function Defer() {
-    }
-    Defer.defer = function (code) {
-        Defer.functions.push(code);
-        Defer.arm();
-    };
-    Defer.flush = function () {
-        while (Defer.popOne()) { }
-    };
-    Defer.arm = function () {
-        _.defer(function () {
-            if (Defer.popOne()) {
-                Defer.arm();
-            }
-        });
-    };
-    Defer.popOne = function () {
-        if (Defer.functions.length > 0) {
-            var fun = Defer.functions[0];
-            Defer.functions = _.rest(Defer.functions);
-            fun();
-            return Defer.functions.length > 0;
-        }
-        else {
-            return false;
-        }
-    };
-    Defer.functions = [];
-    return Defer;
-}());
-exports.Defer = Defer;
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * The `ResultListEvents` static class contains the string definitions of all events that strongly relate to the result
- * list.
- *
- * See [Events](https://developers.coveo.com/x/bYGfAQ).
- */
-var ResultListEvents = /** @class */ (function () {
-    function ResultListEvents() {
-    }
-    /**
-     * Triggered when the result list has just finished rendering the current page of results.
-     *
-     * @type {string} The string value is `newResultsDisplayed`.
-     */
-    ResultListEvents.newResultsDisplayed = 'newResultsDisplayed';
-    /**
-     * Triggered each time the result list has just finished rendering a single result.
-     *
-     * All `newResultDisplayed` event handlers receive a
-     * [`DisplayedNewResultEventArgs`]{@link IDisplayedNewResultEventArgs} object as an argument.
-     *
-     * @type {string} The string value is `newResultDisplayed`.
-     */
-    ResultListEvents.newResultDisplayed = 'newResultDisplayed';
-    /**
-     * Triggered by the [`ResultLink`]{@link ResultLink} result template component when its
-     * [`openQuickview`]{@link ResultLink.options.openQuickview} option is set to `true` and the end user clicks the
-     * result link. The [`Quickview`]{@link Quickview} component listens to this event to be able to open the quickview
-     * modal window in reaction.
-     *
-     * See also the [`openQuickview`]{@link QuickviewEvents.openQuickview} event (which is identical to this one, except
-     * that it is triggered by the [`QuickviewDocument`] result template component instead).
-     *
-     * All `openQuickview` event handlers receive an [`OpenQuickviewEventArgs`]{@link IOpenQuickviewEventArgs} object as
-     * an argument
-     *
-     * @type {string} The string value is `openQuickview`.
-     */
-    ResultListEvents.openQuickview = 'openQuickview';
-    /**
-     * Triggered by the [`ResultLayout`]{@link ResultLayout} component whenever the current result layout changes (see
-     * [Result Layouts](https://developers.coveo.com/x/yQUvAg)).
-     *
-     * All `changeLayout` event handlers receive a [`ChangeLayoutEventArgs`]{@link IChangeLayoutEventArgs} object as an
-     * argument.
-     *
-     * @type {string} The string value is `changeLayout`.
-     */
-    ResultListEvents.changeLayout = 'changeLayout';
-    return ResultListEvents;
-}());
-exports.ResultListEvents = ResultListEvents;
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -10118,6 +10015,109 @@ exports.DateUtils = DateUtils;
 
 
 /***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var _ = __webpack_require__(0);
+var Defer = /** @class */ (function () {
+    function Defer() {
+    }
+    Defer.defer = function (code) {
+        Defer.functions.push(code);
+        Defer.arm();
+    };
+    Defer.flush = function () {
+        while (Defer.popOne()) { }
+    };
+    Defer.arm = function () {
+        _.defer(function () {
+            if (Defer.popOne()) {
+                Defer.arm();
+            }
+        });
+    };
+    Defer.popOne = function () {
+        if (Defer.functions.length > 0) {
+            var fun = Defer.functions[0];
+            Defer.functions = _.rest(Defer.functions);
+            fun();
+            return Defer.functions.length > 0;
+        }
+        else {
+            return false;
+        }
+    };
+    Defer.functions = [];
+    return Defer;
+}());
+exports.Defer = Defer;
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * The `ResultListEvents` static class contains the string definitions of all events that strongly relate to the result
+ * list.
+ *
+ * See [Events](https://developers.coveo.com/x/bYGfAQ).
+ */
+var ResultListEvents = /** @class */ (function () {
+    function ResultListEvents() {
+    }
+    /**
+     * Triggered when the result list has just finished rendering the current page of results.
+     *
+     * @type {string} The string value is `newResultsDisplayed`.
+     */
+    ResultListEvents.newResultsDisplayed = 'newResultsDisplayed';
+    /**
+     * Triggered each time the result list has just finished rendering a single result.
+     *
+     * All `newResultDisplayed` event handlers receive a
+     * [`DisplayedNewResultEventArgs`]{@link IDisplayedNewResultEventArgs} object as an argument.
+     *
+     * @type {string} The string value is `newResultDisplayed`.
+     */
+    ResultListEvents.newResultDisplayed = 'newResultDisplayed';
+    /**
+     * Triggered by the [`ResultLink`]{@link ResultLink} result template component when its
+     * [`openQuickview`]{@link ResultLink.options.openQuickview} option is set to `true` and the end user clicks the
+     * result link. The [`Quickview`]{@link Quickview} component listens to this event to be able to open the quickview
+     * modal window in reaction.
+     *
+     * See also the [`openQuickview`]{@link QuickviewEvents.openQuickview} event (which is identical to this one, except
+     * that it is triggered by the [`QuickviewDocument`] result template component instead).
+     *
+     * All `openQuickview` event handlers receive an [`OpenQuickviewEventArgs`]{@link IOpenQuickviewEventArgs} object as
+     * an argument
+     *
+     * @type {string} The string value is `openQuickview`.
+     */
+    ResultListEvents.openQuickview = 'openQuickview';
+    /**
+     * Triggered by the [`ResultLayout`]{@link ResultLayout} component whenever the current result layout changes (see
+     * [Result Layouts](https://developers.coveo.com/x/yQUvAg)).
+     *
+     * All `changeLayout` event handlers receive a [`ChangeLayoutEventArgs`]{@link IChangeLayoutEventArgs} object as an
+     * argument.
+     *
+     * @type {string} The string value is `changeLayout`.
+     */
+    ResultListEvents.changeLayout = 'changeLayout';
+    return ResultListEvents;
+}());
+exports.ResultListEvents = ResultListEvents;
+
+
+/***/ }),
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10309,8 +10309,7 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 37 */,
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10341,6 +10340,7 @@ exports.BreadcrumbEvents = BreadcrumbEvents;
 
 
 /***/ }),
+/* 38 */,
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10540,7 +10540,7 @@ var _ = __webpack_require__(0);
 var QueryEvents_1 = __webpack_require__(10);
 var ExternalModulesShim_1 = __webpack_require__(27);
 var Assert_1 = __webpack_require__(5);
-var Defer_1 = __webpack_require__(29);
+var Defer_1 = __webpack_require__(30);
 var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(296);
 var BaseComponent_1 = __webpack_require__(33);
 var QueryBuilder_1 = __webpack_require__(43);
@@ -14492,7 +14492,7 @@ exports.TimeSpan = TimeSpan;
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
 exports.Assert = Assert_1.Assert;
-var Defer_1 = __webpack_require__(29);
+var Defer_1 = __webpack_require__(30);
 exports.Defer = Defer_1.Defer;
 var L10N_1 = __webpack_require__(144);
 exports.L10N = L10N_1.L10N;
@@ -14915,7 +14915,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
-var DateUtils_1 = __webpack_require__(31);
+var DateUtils_1 = __webpack_require__(29);
 var FileTypes_1 = __webpack_require__(105);
 var Utils_1 = __webpack_require__(4);
 var StringUtils_1 = __webpack_require__(19);
@@ -15067,7 +15067,7 @@ exports.AdvancedSearchEvents = AdvancedSearchEvents;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
-var DateUtils_1 = __webpack_require__(31);
+var DateUtils_1 = __webpack_require__(29);
 var GlobalExports_1 = __webpack_require__(3);
 var Strings_1 = __webpack_require__(7);
 var Assert_1 = __webpack_require__(5);
@@ -18211,8 +18211,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.7023.0-beta',
-    product: '2.7023.0-beta',
+    lib: '2.7023.2-beta',
+    product: '2.7023.2-beta',
     supportedApiVersion: 2
 };
 
@@ -18464,7 +18464,7 @@ var Dom_1 = __webpack_require__(1);
 var SearchInterface_1 = __webpack_require__(18);
 var Component_1 = __webpack_require__(6);
 var QueryController_1 = __webpack_require__(40);
-var Defer_1 = __webpack_require__(29);
+var Defer_1 = __webpack_require__(30);
 var APIAnalyticsBuilder_1 = __webpack_require__(163);
 var AnalyticsEvents_1 = __webpack_require__(61);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -19264,7 +19264,7 @@ var CookieUtils_1 = __webpack_require__(69);
 exports.Cookie = CookieUtils_1.Cookie;
 var CurrencyUtils_1 = __webpack_require__(125);
 exports.CurrencyUtils = CurrencyUtils_1.CurrencyUtils;
-var DateUtils_1 = __webpack_require__(31);
+var DateUtils_1 = __webpack_require__(29);
 exports.DateUtils = DateUtils_1.DateUtils;
 var DeviceUtils_1 = __webpack_require__(22);
 exports.DeviceUtils = DeviceUtils_1.DeviceUtils;
@@ -24299,7 +24299,7 @@ var AdvancedSearchEvents_1 = __webpack_require__(81);
 exports.AdvancedSearchEvents = AdvancedSearchEvents_1.AdvancedSearchEvents;
 var AnalyticsEvents_1 = __webpack_require__(61);
 exports.AnalyticsEvents = AnalyticsEvents_1.AnalyticsEvents;
-var BreadcrumbEvents_1 = __webpack_require__(38);
+var BreadcrumbEvents_1 = __webpack_require__(37);
 exports.BreadcrumbEvents = BreadcrumbEvents_1.BreadcrumbEvents;
 var DebugEvents_1 = __webpack_require__(93);
 exports.DebugEvents = DebugEvents_1.DebugEvents;
@@ -24313,7 +24313,7 @@ var PreferencesPanelEvents_1 = __webpack_require__(90);
 exports.PreferencesPanelEvents = PreferencesPanelEvents_1.PreferencesPanelEvents;
 var QueryEvents_1 = __webpack_require__(10);
 exports.QueryEvents = QueryEvents_1.QueryEvents;
-var ResultListEvents_1 = __webpack_require__(30);
+var ResultListEvents_1 = __webpack_require__(31);
 exports.ResultListEvents = ResultListEvents_1.ResultListEvents;
 var ResultLayoutEvents_1 = __webpack_require__(121);
 exports.ResultLayoutEvents = ResultLayoutEvents_1.ResultLayoutEvents;
@@ -26031,7 +26031,7 @@ var Assert_1 = __webpack_require__(5);
 var InitializationEvents_1 = __webpack_require__(15);
 var Dom_1 = __webpack_require__(1);
 var HashUtils_1 = __webpack_require__(45);
-var Defer_1 = __webpack_require__(29);
+var Defer_1 = __webpack_require__(30);
 var RootComponent_1 = __webpack_require__(41);
 var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
@@ -26612,7 +26612,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentOptions_1 = __webpack_require__(8);
 var LocalStorageUtils_1 = __webpack_require__(44);
-var ResultListEvents_1 = __webpack_require__(30);
+var ResultListEvents_1 = __webpack_require__(31);
 var DebugEvents_1 = __webpack_require__(93);
 var Dom_1 = __webpack_require__(1);
 var StringUtils_1 = __webpack_require__(19);
@@ -27503,7 +27503,7 @@ var PendingSearchAsYouTypeSearchEvent_1 = __webpack_require__(117);
 var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(11);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
-var Defer_1 = __webpack_require__(29);
+var Defer_1 = __webpack_require__(30);
 var Dom_1 = __webpack_require__(1);
 var AnalyticsEvents_1 = __webpack_require__(61);
 var APIAnalyticsBuilder_1 = __webpack_require__(163);
@@ -27913,7 +27913,7 @@ var _ = __webpack_require__(0);
 __webpack_require__(344);
 var QueryEvents_1 = __webpack_require__(10);
 var InitializationEvents_1 = __webpack_require__(15);
-var ResultListEvents_1 = __webpack_require__(30);
+var ResultListEvents_1 = __webpack_require__(31);
 var HashUtils_1 = __webpack_require__(45);
 var ComponentsTypes_1 = __webpack_require__(58);
 var InitializationPlaceholder = /** @class */ (function () {
@@ -34624,7 +34624,7 @@ exports.TemplateFieldsEvaluator = TemplateFieldsEvaluator;
 Object.defineProperty(exports, "__esModule", { value: true });
 var underscore_1 = __webpack_require__(0);
 var QueryEvents_1 = __webpack_require__(10);
-var ResultListEvents_1 = __webpack_require__(30);
+var ResultListEvents_1 = __webpack_require__(31);
 var ComponentOptionsModel_1 = __webpack_require__(28);
 var Dom_1 = __webpack_require__(1);
 var Checkbox_1 = __webpack_require__(60);

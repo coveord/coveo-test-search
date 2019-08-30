@@ -10206,6 +10206,11 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoResult .CoveoResultFolding .coveo-child-result .CoveoQuickview {
   margin-left: 5px;
+  display: inline-block;
+}
+
+.CoveoResult .CoveoResultFolding .coveo-child-result .CoveoQuickview .coveo-icon-for-quickview-svg {
+  margin-top: 0;
 }
 
 .CoveoResult.coveo-is-recommendation {
@@ -11059,11 +11064,13 @@ a.CoveoResultLink.coveo-selected *,
   display: none;
 }
 
-.coveo-facet-empty {
+.coveo-facet-empty,
+.coveo-hidden {
   display: none;
 }
 
-.coveo-facet-empty.coveo-with-placeholder {
+.coveo-facet-empty.coveo-with-placeholder,
+.coveo-hidden.coveo-with-placeholder {
   display: block;
 }
 
@@ -12094,6 +12101,10 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoCategoryFacet.coveo-hidden {
   display: none;
+}
+
+.CoveoCategoryFacet.coveo-hidden.coveo-with-placeholder {
+  display: block;
 }
 
 .coveo-category-facet-values-fade .coveo-category-facet-child-value {
@@ -13360,7 +13371,6 @@ a.CoveoResultLink.coveo-selected *,
   position: relative;
   text-align: left;
   color: #212121;
-  border: 1px solid #9e9e9e;
 }
 
 .magic-box .magic-box-input {
@@ -13489,7 +13499,11 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion .coveo-magicbox-suggestions {
-  border: 1px solid #9e9e9e;
+  border: thin solid #bcc3ca;
+}
+
+.magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container {
+  border: thin solid #bcc3ca;
 }
 
 .magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container .coveo-magicbox-suggestions {
@@ -13599,8 +13613,20 @@ a.CoveoResultLink.coveo-selected *,
   top: 0;
   left: 0;
   right: 0;
+}
+
+.magic-box.magic-box-inline .magic-box-suggestions.magic-box-hasSuggestion .coveo-magicbox-suggestions {
   border: none;
-  border-top: 1px solid #9e9e9e;
+  border-top: thin solid #bcc3ca;
+}
+
+.magic-box.magic-box-inline .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container {
+  border: none;
+  border-top: thin solid #bcc3ca;
+}
+
+.magic-box.magic-box-inline .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container .coveo-magicbox-suggestions {
+  border-top: none;
 }
 
 .coveo-waiting-for-first-query .coveo-omnibox {
@@ -13710,8 +13736,7 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoOmnibox.magic-box .coveo-omnibox-facet-value {
   width: 100%;
-  display: inline-block;
-  float: right;
+  display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -13728,7 +13753,6 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .CoveoOmnibox.magic-box .coveo-omnibox-facet-header {
-  float: left;
   width: 100%;
   padding: 5px;
   height: 26px;
@@ -13773,7 +13797,6 @@ a.CoveoResultLink.coveo-selected *,
   display: inline-flex;
   flex-wrap: nowrap;
   align-items: stretch;
-  border: thin solid #bcc3ca;
   min-width: 100%;
 }
 
@@ -13831,7 +13854,6 @@ a.CoveoResultLink.coveo-selected *,
   position: relative;
   text-align: left;
   color: #212121;
-  border: 1px solid #9e9e9e;
 }
 
 .magic-box .magic-box-input {
@@ -13960,7 +13982,11 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion .coveo-magicbox-suggestions {
-  border: 1px solid #9e9e9e;
+  border: thin solid #bcc3ca;
+}
+
+.magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container {
+  border: thin solid #bcc3ca;
 }
 
 .magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container .coveo-magicbox-suggestions {
@@ -14070,8 +14096,20 @@ a.CoveoResultLink.coveo-selected *,
   top: 0;
   left: 0;
   right: 0;
+}
+
+.magic-box.magic-box-inline .magic-box-suggestions.magic-box-hasSuggestion .coveo-magicbox-suggestions {
   border: none;
-  border-top: 1px solid #9e9e9e;
+  border-top: thin solid #bcc3ca;
+}
+
+.magic-box.magic-box-inline .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container {
+  border: none;
+  border-top: thin solid #bcc3ca;
+}
+
+.magic-box.magic-box-inline .magic-box-suggestions.magic-box-hasSuggestion .coveo-suggestion-container .coveo-magicbox-suggestions {
+  border-top: none;
 }
 
 /*
@@ -14670,7 +14708,6 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-icon-for-quickview {
   text-align: center;
-  max-width: 32px;
 }
 
 .coveo-icon-for-quickview-svg {
@@ -17101,6 +17138,11 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoResult .CoveoResultFolding .coveo-child-result .CoveoQuickview {
   margin-left: 5px;
+  display: inline-block;
+}
+
+.CoveoResult .CoveoResultFolding .coveo-child-result .CoveoQuickview .coveo-icon-for-quickview-svg {
+  margin-top: 0;
 }
 
 .CoveoResult.coveo-is-recommendation {
