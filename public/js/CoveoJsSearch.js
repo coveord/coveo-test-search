@@ -175,7 +175,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "7a880a992d37985f65d0" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector"}[chunkId]||chunkId) + "__" + "6fc696767d23f47f2fdc" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -4352,7 +4352,7 @@ var Component = /** @class */ (function (_super) {
         _this.element = element;
         _this.type = type;
         _this.bind = new Component.ComponentEventClass(_this);
-        _this.root = bindings.root || _this.resolveRoot();
+        _this.root = bindings.root || Component.resolveRoot(element);
         _this.queryStateModel = bindings.queryStateModel || _this.resolveQueryStateModel();
         _this.componentStateModel = bindings.componentStateModel || _this.resolveComponentStateModel();
         _this.queryController = bindings.queryController || _this.resolveQueryController();
@@ -4386,10 +4386,6 @@ var Component = /** @class */ (function (_super) {
     };
     Component.prototype.resolveSearchInterface = function () {
         return Component.resolveBinding(this.element, SearchInterface_1.SearchInterface);
-    };
-    Component.prototype.resolveRoot = function () {
-        var resolvedSearchInterface = Component.resolveBinding(this.element, SearchInterface_1.SearchInterface);
-        return resolvedSearchInterface ? resolvedSearchInterface.element : undefined;
     };
     Component.prototype.resolveQueryController = function () {
         return Component.resolveBinding(this.element, QueryController_1.QueryController);
@@ -4463,6 +4459,11 @@ var Component = /** @class */ (function (_super) {
         if (jQuery) {
             jQuery(element).data(result);
         }
+    };
+    Component.resolveRoot = function (element) {
+        Assert_1.Assert.exists(element);
+        var resolvedSearchInterface = Component.resolveBinding(element, SearchInterface_1.SearchInterface);
+        return resolvedSearchInterface ? resolvedSearchInterface.element : document.body;
     };
     Component.resolveBinding = function (element, componentClass) {
         Assert_1.Assert.exists(element);
@@ -24305,8 +24306,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.7023.2-beta',
-    product: '2.7023.2-beta',
+    lib: '2.7023.3-beta',
+    product: '2.7023.3-beta',
     supportedApiVersion: 2
 };
 
@@ -33076,7 +33077,7 @@ var Querybox = /** @class */ (function (_super) {
             Term: '[Spaces?][Word]',
             Spaces: / +/,
             Word: /[^ ]+/
-        }), _this.root, {
+        }), {
             inline: true
         });
         var input = Dom_1.$$(_this.magicBox.element).find('input');
@@ -39951,7 +39952,7 @@ var Omnibox = /** @class */ (function (_super) {
     };
     Omnibox.prototype.createMagicBox = function () {
         var grammar = this.createGrammar();
-        this.magicBox = MagicBox_1.createMagicBox(this.element, new Grammar_1.Grammar(grammar.start, grammar.expressions), this.root, {
+        this.magicBox = MagicBox_1.createMagicBox(this.element, new Grammar_1.Grammar(grammar.start, grammar.expressions), {
             inline: this.options.inline,
             selectableSuggestionClass: 'coveo-omnibox-selectable',
             selectedSuggestionClass: 'coveo-omnibox-selected',
@@ -44193,13 +44194,12 @@ var InputManager_1 = __webpack_require__(460);
 var MagicBoxClear_1 = __webpack_require__(526);
 var SuggestionsManager_1 = __webpack_require__(461);
 var MagicBoxInstance = /** @class */ (function () {
-    function MagicBoxInstance(element, grammar, options, root) {
+    function MagicBoxInstance(element, grammar, options) {
         if (options === void 0) { options = {}; }
         var _this = this;
         this.element = element;
         this.grammar = grammar;
         this.options = options;
-        this.root = root;
         this.lastSuggestions = [];
         if (underscore_1.isUndefined(this.options.inline)) {
             this.options.inline = false;
@@ -44226,7 +44226,7 @@ var MagicBoxInstance = /** @class */ (function () {
                 _this.setText(text);
                 _this.onselect && _this.onselect(_this.getFirstSuggestionText());
             }
-        }, this, root);
+        }, this);
         this.inputManager.ontabpress = function () {
             _this.ontabpress && _this.ontabpress();
         };
@@ -44238,7 +44238,7 @@ var MagicBoxInstance = /** @class */ (function () {
         var suggestionsContainer = document.createElement('div');
         suggestionsContainer.className = 'magic-box-suggestions';
         this.element.appendChild(suggestionsContainer);
-        this.suggestionsManager = new SuggestionsManager_1.SuggestionsManager(suggestionsContainer, this.element, this.root, this.inputManager, {
+        this.suggestionsManager = new SuggestionsManager_1.SuggestionsManager(suggestionsContainer, this.element, this.inputManager, {
             selectableClass: this.options.selectableSuggestionClass,
             selectedClass: this.options.selectedSuggestionClass,
             timeout: this.options.suggestionTimeout
@@ -44392,8 +44392,8 @@ var MagicBoxInstance = /** @class */ (function () {
     return MagicBoxInstance;
 }());
 exports.MagicBoxInstance = MagicBoxInstance;
-function createMagicBox(element, grammar, root, options) {
-    return new MagicBoxInstance(element, grammar, options, root);
+function createMagicBox(element, grammar, options) {
+    return new MagicBoxInstance(element, grammar, options);
 }
 exports.createMagicBox = createMagicBox;
 function requestAnimationFrame(callback) {
@@ -78175,11 +78175,11 @@ var Strings_1 = __webpack_require__(7);
 var Dom_1 = __webpack_require__(1);
 var KeyboardUtils_1 = __webpack_require__(26);
 var InputManager = /** @class */ (function () {
-    function InputManager(element, onchange, magicBox, root) {
+    function InputManager(element, onchange, magicBox) {
         this.onchange = onchange;
         this.magicBox = magicBox;
-        this.root = root;
         this.hasFocus = false;
+        this.root = Core_1.Component.resolveRoot(element);
         this.underlay = document.createElement('div');
         this.underlay.className = 'magic-box-underlay';
         this.highlightContainer = document.createElement('span');
@@ -78446,12 +78446,12 @@ var Direction;
     Direction["Right"] = "Right";
 })(Direction || (Direction = {}));
 var SuggestionsManager = /** @class */ (function () {
-    function SuggestionsManager(element, magicBoxContainer, root, inputManager, options) {
+    function SuggestionsManager(element, magicBoxContainer, inputManager, options) {
         var _this = this;
         this.element = element;
         this.magicBoxContainer = magicBoxContainer;
-        this.root = root;
         this.inputManager = inputManager;
+        this.root = Component_1.Component.resolveRoot(element);
         this.options = underscore_1.defaults(options, {
             selectableClass: 'magic-box-suggestion',
             selectedClass: 'magic-box-selected'
@@ -102019,10 +102019,7 @@ var ResponsiveRecommendation = /** @class */ (function () {
         this.breakpoint = this.defineResponsiveBreakpoint(options);
         this.searchInterface = Component_1.Component.get(this.coveoRoot.el, SearchInterface_1.SearchInterface, false);
         this.dropdown = this.buildDropdown(responsiveDropdown);
-        this.facets = this.getFacets();
-        this.facetSliders = this.getFacetSliders();
         this.registerOnOpenHandler();
-        this.registerOnCloseHandler();
         this.registerQueryEvents();
         this.handleResizeEvent();
     }
@@ -102135,41 +102132,31 @@ var ResponsiveRecommendation = /** @class */ (function () {
     };
     ResponsiveRecommendation.prototype.getFacetSliders = function () {
         var facetSliders = [];
-        _.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassNameForType("FacetSlider")), function (facetSliderElement) {
+        this.coveoRoot.findAll(Component_1.Component.computeSelectorForType('FacetSlider')).forEach(function (facetSliderElement) {
             var facetSlider = Component_1.Component.get(facetSliderElement);
-            facetSliders.push(facetSlider);
+            facetSlider && facetSliders.push(facetSlider);
         });
         return facetSliders;
     };
     ResponsiveRecommendation.prototype.getFacets = function () {
         var facets = [];
-        _.each(this.coveoRoot.findAll('.' + Component_1.Component.computeCssClassNameForType('Facet')), function (facetElement) {
+        this.coveoRoot.findAll(Component_1.Component.computeSelectorForType('Facet')).forEach(function (facetElement) {
             var facet = Component_1.Component.get(facetElement);
-            facets.push(facet);
+            facet && facets.push(facet);
         });
         return facets;
     };
-    ResponsiveRecommendation.prototype.dismissFacetSearches = function () {
-        _.each(this.facets, function (facet) {
-            if (facet.facetSearch && facet.facetSearch.currentlyDisplayedResults) {
-                facet.facetSearch.completelyDismissSearch();
-            }
-        });
-    };
     ResponsiveRecommendation.prototype.enableFacetPreservePosition = function () {
-        _.each(this.facets, function (facet) { return (facet.options.preservePosition = true); });
+        this.getFacets().forEach(function (facet) { return (facet.options.preservePosition = true); });
     };
     ResponsiveRecommendation.prototype.disableFacetPreservePosition = function () {
-        _.each(this.facets, function (facet) { return (facet.options.preservePosition = false); });
+        this.getFacets().forEach(function (facet) { return (facet.options.preservePosition = false); });
     };
     ResponsiveRecommendation.prototype.drawFacetSliderGraphs = function () {
-        _.each(this.facetSliders, function (facetSlider) { return facetSlider.drawDelayedGraphData(); });
+        this.getFacetSliders().forEach(function (facetSlider) { return facetSlider.drawDelayedGraphData(); });
     };
     ResponsiveRecommendation.prototype.registerOnOpenHandler = function () {
         this.dropdown.registerOnOpenHandler(this.drawFacetSliderGraphs, this);
-    };
-    ResponsiveRecommendation.prototype.registerOnCloseHandler = function () {
-        this.dropdown.registerOnCloseHandler(this.dismissFacetSearches, this);
     };
     ResponsiveRecommendation.prototype.getRecommendationRoot = function () {
         return Dom_1.$$(this.coveoRoot.find('.' + Component_1.Component.computeCssClassName(Recommendation_1.Recommendation)));

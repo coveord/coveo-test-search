@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"Omnibox","8":"FieldTable","9":"ImageFieldValue","10":"Badge","11":"FieldValue","12":"Querybox","13":"AdvancedSearch","14":"FacetSlider","15":"Pager","16":"ResultsPerPage","17":"QuerySuggestPreview","18":"OmniboxResultList","19":"ResultList","20":"Quickview","21":"Recommendation","22":"ResultsFiltersPreferences","23":"ResultsPreferences","24":"Tab","25":"Backdrop","26":"SearchAlerts","27":"SimpleFilter","28":"DistanceResources","29":"Sort","30":"YouTubeThumbnail","31":"Thumbnail","32":"ResultLayoutSelector","33":"ResultFolding","34":"PrintableUri","35":"Matrix","36":"CardOverlay","37":"FoldingForThread","38":"FollowItem","39":"Settings","40":"ResultTagging","41":"ResultRating","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardActionBar","47":"SearchButton","48":"Logo","49":"NumericSpinner","50":"Folding","51":"ChatterPostedBy","52":"ChatterPostAttachment","53":"ChatterLikedBy","54":"AnalyticsSuggestions","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"ShareQuery","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"Breadcrumb","73":"AuthenticationProvider","74":"TemplateLoader","75":"PipelineContext","76":"Icon","77":"Dropdown","78":"ChatterTopic","79":"Aggregate"}[chunkId]||chunkId) + "__" + "7a880a992d37985f65d0" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"Omnibox","8":"FieldTable","9":"ImageFieldValue","10":"Badge","11":"FieldValue","12":"Querybox","13":"AdvancedSearch","14":"FacetSlider","15":"Pager","16":"ResultsPerPage","17":"QuerySuggestPreview","18":"OmniboxResultList","19":"ResultList","20":"Quickview","21":"Recommendation","22":"ResultsFiltersPreferences","23":"ResultsPreferences","24":"Tab","25":"Backdrop","26":"SearchAlerts","27":"SimpleFilter","28":"DistanceResources","29":"Sort","30":"YouTubeThumbnail","31":"Thumbnail","32":"ResultLayoutSelector","33":"ResultFolding","34":"PrintableUri","35":"Matrix","36":"CardOverlay","37":"FoldingForThread","38":"FollowItem","39":"Settings","40":"ResultTagging","41":"ResultRating","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardActionBar","47":"SearchButton","48":"Logo","49":"NumericSpinner","50":"Folding","51":"ChatterPostedBy","52":"ChatterPostAttachment","53":"ChatterLikedBy","54":"AnalyticsSuggestions","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"ShareQuery","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"Breadcrumb","73":"AuthenticationProvider","74":"TemplateLoader","75":"PipelineContext","76":"Icon","77":"Dropdown","78":"ChatterTopic","79":"Aggregate"}[chunkId]||chunkId) + "__" + "6fc696767d23f47f2fdc" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -4273,7 +4273,7 @@ var Component = /** @class */ (function (_super) {
         _this.element = element;
         _this.type = type;
         _this.bind = new Component.ComponentEventClass(_this);
-        _this.root = bindings.root || _this.resolveRoot();
+        _this.root = bindings.root || Component.resolveRoot(element);
         _this.queryStateModel = bindings.queryStateModel || _this.resolveQueryStateModel();
         _this.componentStateModel = bindings.componentStateModel || _this.resolveComponentStateModel();
         _this.queryController = bindings.queryController || _this.resolveQueryController();
@@ -4307,10 +4307,6 @@ var Component = /** @class */ (function (_super) {
     };
     Component.prototype.resolveSearchInterface = function () {
         return Component.resolveBinding(this.element, SearchInterface_1.SearchInterface);
-    };
-    Component.prototype.resolveRoot = function () {
-        var resolvedSearchInterface = Component.resolveBinding(this.element, SearchInterface_1.SearchInterface);
-        return resolvedSearchInterface ? resolvedSearchInterface.element : undefined;
     };
     Component.prototype.resolveQueryController = function () {
         return Component.resolveBinding(this.element, QueryController_1.QueryController);
@@ -4384,6 +4380,11 @@ var Component = /** @class */ (function (_super) {
         if (jQuery) {
             jQuery(element).data(result);
         }
+    };
+    Component.resolveRoot = function (element) {
+        Assert_1.Assert.exists(element);
+        var resolvedSearchInterface = Component.resolveBinding(element, SearchInterface_1.SearchInterface);
+        return resolvedSearchInterface ? resolvedSearchInterface.element : document.body;
     };
     Component.resolveBinding = function (element, componentClass) {
         Assert_1.Assert.exists(element);
@@ -18211,8 +18212,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.7023.2-beta',
-    product: '2.7023.2-beta',
+    lib: '2.7023.3-beta',
+    product: '2.7023.3-beta',
     supportedApiVersion: 2
 };
 
