@@ -796,8 +796,8 @@ var dict = {
   "WithinLastMonth": "Within last month",
   "WithinLastYear": "Within last year",
   "RelevanceInspector": "Relevance Inspector",
-  "KeywordInCategory": "{0} in {1}",
-  "ResultCount": "{0} results",
+  "KeywordInCategory": "{0} <span class=\"coveo-omnibox-suggestion-category\">in {1}</span>",
+  "ResultCount": "{0} result<pl>s</pl>",
   "ShowingResults": "{0} result<pl>s</pl>",
   "ShowingResultsWithQuery": "{0} result<pl>s</pl> for {1}",
   "NumberOfVideos": "Number of videos",
@@ -831,6 +831,7 @@ var dict = {
   "CloseFiltersDropdown": "Close the filters dropdown",
   "NoValuesFound": "No values found.",
   "QuerySuggestPreview": "Query result item(s) for",
+  "To": "to",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1605,8 +1606,8 @@ var dict = {
   "WithinLastMonth": "Within last month",
   "WithinLastYear": "Within last year",
   "RelevanceInspector": "Relevance Inspector",
-  "KeywordInCategory": "{0} in {1}",
-  "ResultCount": "{0} results",
+  "KeywordInCategory": "{0} <span class=\"coveo-omnibox-suggestion-category\">in {1}</span>",
+  "ResultCount": "{0} result<pl>s</pl>",
   "ShowingResults": "{0} result<pl>s</pl>",
   "ShowingResultsWithQuery": "{0} result<pl>s</pl> for {1}",
   "NumberOfVideos": "Number of videos",
@@ -1640,6 +1641,7 @@ var dict = {
   "CloseFiltersDropdown": "Close the filters dropdown",
   "NoValuesFound": "No values found.",
   "QuerySuggestPreview": "Query result item(s) for",
+  "To": "to",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
