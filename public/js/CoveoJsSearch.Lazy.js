@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"DynamicFacetRange","8":"Omnibox","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Querybox","14":"AdvancedSearch","15":"FacetSlider","16":"Pager","17":"ResultsPerPage","18":"QuerySuggestPreview","19":"OmniboxResultList","20":"ResultList","21":"Quickview","22":"Recommendation","23":"ResultsFiltersPreferences","24":"ResultsPreferences","25":"Tab","26":"Backdrop","27":"SearchAlerts","28":"SimpleFilter","29":"DistanceResources","30":"Sort","31":"YouTubeThumbnail","32":"Thumbnail","33":"ResultLayoutSelector","34":"ResultFolding","35":"PrintableUri","36":"Matrix","37":"CardOverlay","38":"FoldingForThread","39":"FollowItem","40":"Settings","41":"ResultTagging","42":"ResultRating","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardActionBar","48":"SearchButton","49":"Logo","50":"NumericSpinner","51":"Folding","52":"ChatterPostedBy","53":"ChatterPostAttachment","54":"ChatterLikedBy","55":"AnalyticsSuggestions","56":"RadioButton","57":"MultiSelect","58":"FormGroup","59":"Triggers","60":"Text","61":"ShareQuery","62":"ResultLink","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"MissingTerms","68":"HiddenQuery","69":"ExportToExcel","70":"Excerpt","71":"ErrorReport","72":"DidYouMean","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"PipelineContext","77":"Icon","78":"Dropdown","79":"ChatterTopic","80":"Aggregate"}[chunkId]||chunkId) + "__" + "ce7a2aca8fe89a4c1371" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"DynamicFacetRange","8":"Omnibox","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Querybox","14":"AdvancedSearch","15":"FacetSlider","16":"Pager","17":"ResultsPerPage","18":"QuerySuggestPreview","19":"OmniboxResultList","20":"ResultList","21":"Quickview","22":"Recommendation","23":"ResultsFiltersPreferences","24":"ResultsPreferences","25":"Tab","26":"Backdrop","27":"SearchAlerts","28":"SimpleFilter","29":"DistanceResources","30":"Sort","31":"YouTubeThumbnail","32":"Thumbnail","33":"ResultLayoutSelector","34":"ResultFolding","35":"PrintableUri","36":"Matrix","37":"CardOverlay","38":"FoldingForThread","39":"FollowItem","40":"Settings","41":"ResultTagging","42":"ResultRating","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardActionBar","48":"SearchButton","49":"Logo","50":"NumericSpinner","51":"Folding","52":"ChatterPostedBy","53":"ChatterPostAttachment","54":"ChatterLikedBy","55":"AnalyticsSuggestions","56":"RadioButton","57":"MultiSelect","58":"FormGroup","59":"Triggers","60":"Text","61":"ShareQuery","62":"ResultLink","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"MissingTerms","68":"HiddenQuery","69":"ExportToExcel","70":"Excerpt","71":"ErrorReport","72":"DidYouMean","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"PipelineContext","77":"Icon","78":"Dropdown","79":"ChatterTopic","80":"Aggregate"}[chunkId]||chunkId) + "__" + "4e938e4dfdb7c3d63d42" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -4708,7 +4708,7 @@ var ComponentOptions = /** @class */ (function () {
     /**
      * Builds a query expression option.
      *
-     * The query expression option should follow the [Coveo Cloud Query Syntax Reference](https://www.coveo.com/go?dest=cloudhelp&lcid=9&context=357).
+     * The query expression option should follow the [Coveo Cloud Query Syntax Reference](http://www.coveo.com/go?dest=cloudhelp&lcid=9&context=357).
      *
      * **Markup Example:**
      *
@@ -7355,10 +7355,10 @@ var InitializationPlaceholder_1 = __webpack_require__(166);
 var RootComponent_1 = __webpack_require__(41);
 var Debug_1 = __webpack_require__(151);
 var MissingTermManager_1 = __webpack_require__(192);
-var OmniboxAnalytics_1 = __webpack_require__(408);
 var ResponsiveComponents_1 = __webpack_require__(50);
-var FacetColumnAutoLayoutAdjustment_1 = __webpack_require__(409);
-var FacetValueStateHandler_1 = __webpack_require__(410);
+var FacetColumnAutoLayoutAdjustment_1 = __webpack_require__(408);
+var FacetValueStateHandler_1 = __webpack_require__(409);
+var OmniboxAnalytics_1 = __webpack_require__(410);
 /**
  * The SearchInterface component is the root and main component of your Coveo search interface. You should place all
  * other Coveo components inside the SearchInterface component.
@@ -8207,7 +8207,7 @@ var SearchInterface = /** @class */ (function (_super) {
          * Specifies the name of the query pipeline to use for the queries.
          *
          * You can specify a value for this option if your index is in a Coveo Cloud organization in which pipelines have
-         * been created (see [Managing Query Pipelines](https://www.coveo.com/go?dest=cloudhelp&lcid=9&context=128)).
+         * been created (see [Managing Query Pipelines](http://www.coveo.com/go?dest=cloudhelp&lcid=9&context=128)).
          *
          * **Note:**
          *
@@ -11234,7 +11234,7 @@ var QueryBuilder = /** @class */ (function () {
         /**
          * Whether to interpret special query syntax (e.g., `@objecttype=message`) in the basic
          * [`expression`]{@link QueryBuilder.expression} (see
-         * [Coveo Query Syntax Reference](https://www.coveo.com/go?dest=adminhelp70&lcid=9&context=10005)).
+         * [Coveo Query Syntax Reference](http://www.coveo.com/go?dest=adminhelp70&lcid=9&context=10005)).
          *
          * See also [`enableLowercaseOperators`]{@link QueryBuilder.enableLowercaseOperators}.
          *
@@ -18326,8 +18326,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.0.377-beta',
-    product: '2.0.377-beta',
+    lib: '2.7219.4-beta',
+    product: '2.7219.4-beta',
     supportedApiVersion: 2
 };
 
@@ -41241,71 +41241,6 @@ module.exports = [
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var underscore_1 = __webpack_require__(0);
-var OmniboxAnalytics = /** @class */ (function () {
-    function OmniboxAnalytics() {
-        this.partialQueries = [];
-        this.suggestions = [];
-        this.analyticsLengthLimit = 256;
-    }
-    OmniboxAnalytics.prototype.buildCustomDataForPartialQueries = function () {
-        this.partialQuery = underscore_1.last(this.partialQueries);
-        return {
-            partialQueries: this.cleanCustomData(this.partialQueries),
-            suggestionRanking: this.suggestionRanking,
-            suggestions: this.cleanCustomData(this.suggestions),
-            partialQuery: this.partialQuery
-        };
-    };
-    OmniboxAnalytics.prototype.cleanCustomData = function (toClean, rejectLength) {
-        var _this = this;
-        if (rejectLength === void 0) { rejectLength = this.analyticsLengthLimit; }
-        var filterOutConsecutiveValues = this.filterOutConsecutiveValues(toClean);
-        // Custom dimensions cannot be an array in analytics service: Send a string joined by ; instead.
-        // Need to replace ;
-        var redimensionedArray = filterOutConsecutiveValues.map(function (value) { return _this.removeSemicolons(value); });
-        // Reduce right to get the last X words that adds to less then rejectLength
-        var reducedToRejectLengthOrLess = this.reduceAnalyticsToLengthLimit(redimensionedArray, rejectLength);
-        var cleanStrings = reducedToRejectLengthOrLess.reverse();
-        var ret = cleanStrings.join(';');
-        // analytics service can store max 256 char in a custom event
-        // if we're over that, call cleanup again with an arbitrary 10 less char accepted
-        if (ret.length >= this.analyticsLengthLimit) {
-            return this.cleanCustomData(cleanStrings, rejectLength - 10);
-        }
-        return cleanStrings.join(';');
-    };
-    OmniboxAnalytics.prototype.filterOutConsecutiveValues = function (toClean) {
-        return underscore_1.compact(underscore_1.filter(toClean, function (partial, pos, array) {
-            return pos === 0 || partial !== array[pos - 1];
-        }));
-    };
-    OmniboxAnalytics.prototype.removeSemicolons = function (partial) {
-        return partial.replace(/;/g, '');
-    };
-    OmniboxAnalytics.prototype.reduceAnalyticsToLengthLimit = function (toClean, rejectLength) {
-        var reducedToRejectLengthOrLess = [];
-        underscore_1.reduceRight(toClean, function (memo, partial) {
-            var totalSoFar = memo + partial.length;
-            if (totalSoFar <= rejectLength) {
-                reducedToRejectLengthOrLess.push(partial);
-            }
-            return totalSoFar;
-        }, 0);
-        return reducedToRejectLengthOrLess;
-    };
-    return OmniboxAnalytics;
-}());
-exports.OmniboxAnalytics = OmniboxAnalytics;
-
-
-/***/ }),
-/* 409 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var Logger_1 = __webpack_require__(11);
 var QueryEvents_1 = __webpack_require__(10);
@@ -41386,7 +41321,7 @@ exports.FacetColumnAutoLayoutAdjustment = FacetColumnAutoLayoutAdjustment;
 
 
 /***/ }),
-/* 410 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41451,6 +41386,71 @@ var FacetValueStateToHiddenQueryTransformer = /** @class */ (function () {
     };
     return FacetValueStateToHiddenQueryTransformer;
 }());
+
+
+/***/ }),
+/* 410 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var underscore_1 = __webpack_require__(0);
+var OmniboxAnalytics = /** @class */ (function () {
+    function OmniboxAnalytics() {
+        this.partialQueries = [];
+        this.suggestions = [];
+        this.analyticsLengthLimit = 256;
+    }
+    OmniboxAnalytics.prototype.buildCustomDataForPartialQueries = function () {
+        this.partialQuery = underscore_1.last(this.partialQueries);
+        return {
+            partialQueries: this.cleanCustomData(this.partialQueries),
+            suggestionRanking: this.suggestionRanking,
+            suggestions: this.cleanCustomData(this.suggestions),
+            partialQuery: this.partialQuery
+        };
+    };
+    OmniboxAnalytics.prototype.cleanCustomData = function (toClean, rejectLength) {
+        var _this = this;
+        if (rejectLength === void 0) { rejectLength = this.analyticsLengthLimit; }
+        var filterOutConsecutiveValues = this.filterOutConsecutiveValues(toClean);
+        // Custom dimensions cannot be an array in analytics service: Send a string joined by ; instead.
+        // Need to replace ;
+        var redimensionedArray = filterOutConsecutiveValues.map(function (value) { return _this.removeSemicolons(value); });
+        // Reduce right to get the last X words that adds to less then rejectLength
+        var reducedToRejectLengthOrLess = this.reduceAnalyticsToLengthLimit(redimensionedArray, rejectLength);
+        var cleanStrings = reducedToRejectLengthOrLess.reverse();
+        var ret = cleanStrings.join(';');
+        // analytics service can store max 256 char in a custom event
+        // if we're over that, call cleanup again with an arbitrary 10 less char accepted
+        if (ret.length >= this.analyticsLengthLimit) {
+            return this.cleanCustomData(cleanStrings, rejectLength - 10);
+        }
+        return cleanStrings.join(';');
+    };
+    OmniboxAnalytics.prototype.filterOutConsecutiveValues = function (toClean) {
+        return underscore_1.compact(underscore_1.filter(toClean, function (partial, pos, array) {
+            return pos === 0 || partial !== array[pos - 1];
+        }));
+    };
+    OmniboxAnalytics.prototype.removeSemicolons = function (partial) {
+        return partial.replace(/;/g, '');
+    };
+    OmniboxAnalytics.prototype.reduceAnalyticsToLengthLimit = function (toClean, rejectLength) {
+        var reducedToRejectLengthOrLess = [];
+        underscore_1.reduceRight(toClean, function (memo, partial) {
+            var totalSoFar = memo + partial.length;
+            if (totalSoFar <= rejectLength) {
+                reducedToRejectLengthOrLess.push(partial);
+            }
+            return totalSoFar;
+        }, 0);
+        return reducedToRejectLengthOrLess;
+    };
+    return OmniboxAnalytics;
+}());
+exports.OmniboxAnalytics = OmniboxAnalytics;
 
 
 /***/ }),
