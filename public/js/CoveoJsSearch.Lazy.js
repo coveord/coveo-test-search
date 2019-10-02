@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"DynamicFacetRange","8":"Omnibox","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Querybox","14":"AdvancedSearch","15":"FacetSlider","16":"Pager","17":"ResultsPerPage","18":"QuerySuggestPreview","19":"OmniboxResultList","20":"ResultList","21":"Quickview","22":"Recommendation","23":"ResultsFiltersPreferences","24":"ResultsPreferences","25":"Tab","26":"Backdrop","27":"SearchAlerts","28":"SimpleFilter","29":"DistanceResources","30":"Sort","31":"YouTubeThumbnail","32":"Thumbnail","33":"ResultLayoutSelector","34":"ResultFolding","35":"PrintableUri","36":"Matrix","37":"CardOverlay","38":"FoldingForThread","39":"FollowItem","40":"Settings","41":"ResultTagging","42":"ResultRating","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardActionBar","48":"SearchButton","49":"Logo","50":"NumericSpinner","51":"Folding","52":"ChatterPostedBy","53":"ChatterPostAttachment","54":"ChatterLikedBy","55":"AnalyticsSuggestions","56":"RadioButton","57":"MultiSelect","58":"FormGroup","59":"Triggers","60":"Text","61":"ShareQuery","62":"ResultLink","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"MissingTerms","68":"HiddenQuery","69":"ExportToExcel","70":"Excerpt","71":"ErrorReport","72":"DidYouMean","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"PipelineContext","77":"Icon","78":"Dropdown","79":"ChatterTopic","80":"Aggregate"}[chunkId]||chunkId) + "__" + "b0b67eb9dd8b3faf8cc7" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"DynamicFacetRange","8":"Omnibox","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Querybox","14":"AdvancedSearch","15":"FacetSlider","16":"Pager","17":"ResultsPerPage","18":"QuerySuggestPreview","19":"OmniboxResultList","20":"ResultList","21":"Quickview","22":"Recommendation","23":"ResultsFiltersPreferences","24":"ResultsPreferences","25":"Tab","26":"Backdrop","27":"SearchAlerts","28":"SimpleFilter","29":"DistanceResources","30":"Sort","31":"YouTubeThumbnail","32":"Thumbnail","33":"ResultLayoutSelector","34":"ResultFolding","35":"PrintableUri","36":"Matrix","37":"CardOverlay","38":"FoldingForThread","39":"FollowItem","40":"Settings","41":"ResultTagging","42":"ResultRating","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardActionBar","48":"SearchButton","49":"Logo","50":"NumericSpinner","51":"Folding","52":"ChatterPostedBy","53":"ChatterPostAttachment","54":"ChatterLikedBy","55":"AnalyticsSuggestions","56":"RadioButton","57":"MultiSelect","58":"FormGroup","59":"Triggers","60":"Text","61":"ShareQuery","62":"ResultLink","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"MissingTerms","68":"HiddenQuery","69":"ExportToExcel","70":"Excerpt","71":"ErrorReport","72":"DidYouMean","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"PipelineContext","77":"Icon","78":"Dropdown","79":"ChatterTopic","80":"Aggregate"}[chunkId]||chunkId) + "__" + "ebfaf048f8ff1970e3a2" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -4278,7 +4278,6 @@ var Component = /** @class */ (function (_super) {
         _this.componentStateModel = bindings.componentStateModel || _this.resolveComponentStateModel();
         _this.queryController = bindings.queryController || _this.resolveQueryController();
         _this.searchInterface = bindings.searchInterface || _this.resolveSearchInterface();
-        _this.usageAnalytics = bindings.usageAnalytics || _this.resolveUA();
         _this.componentOptionsModel = bindings.componentOptionsModel || _this.resolveComponentOptionsModel();
         _this.ensureDom = _.once(function () { return _this.createDom(); });
         if (_this.searchInterface != null) {
@@ -4302,6 +4301,16 @@ var Component = /** @class */ (function (_super) {
             usageAnalytics: this.usageAnalytics
         };
     };
+    Object.defineProperty(Component.prototype, "usageAnalytics", {
+        /**
+         * A reference to the {@link Analytics.client}.
+         */
+        get: function () {
+            return this.resolveUA();
+        },
+        enumerable: true,
+        configurable: true
+    });
     Component.prototype.createDom = function () {
         // By default we do nothing
     };
@@ -4321,8 +4330,7 @@ var Component = /** @class */ (function (_super) {
         return Component.resolveBinding(this.element, ComponentOptionsModel_1.ComponentOptionsModel);
     };
     Component.prototype.resolveUA = function () {
-        var searchInterface = this.resolveSearchInterface();
-        return searchInterface && searchInterface.usageAnalytics ? searchInterface.usageAnalytics : new NoopAnalyticsClient_1.NoopAnalyticsClient();
+        return this.searchInterface && this.searchInterface.usageAnalytics ? this.searchInterface.usageAnalytics : new NoopAnalyticsClient_1.NoopAnalyticsClient();
     };
     Component.prototype.resolveResult = function () {
         return Component.getResult(this.element);
@@ -7591,7 +7599,7 @@ var SearchInterface = /** @class */ (function (_super) {
             this.historyManager = new LocalStorageHistoryController_1.LocalStorageHistoryController(element, _window, this.queryStateModel, this.queryController);
             return;
         }
-        this.historyManager = new HistoryController_1.HistoryController(element, _window, this.queryStateModel, this.queryController, this.usageAnalytics);
+        this.historyManager = new HistoryController_1.HistoryController(element, _window, this.queryStateModel, this.queryController);
     };
     SearchInterface.prototype.setupQueryMode = function () {
         if (this.options.allowQueriesWithoutKeywords) {
@@ -10649,11 +10657,12 @@ var QueryController = /** @class */ (function (_super) {
      * Create a new query controller
      * @param element
      * @param options
+     * @param usageAnalytics **Deprecated.** Since the [October 2019 Release (v2.7219)](https://docs.coveo.com/en/3084/), the class retrieves and uses the {@link AnalyticsClient} from its `searchInterface` constructor parameter.
+     * @param searchInterface
      */
     function QueryController(element, options, usageAnalytics, searchInterface) {
         var _this = _super.call(this, element, QueryController.ID) || this;
         _this.options = options;
-        _this.usageAnalytics = usageAnalytics;
         _this.searchInterface = searchInterface;
         _this.modalBox = ExternalModulesShim_1.ModalBox;
         _this.closeModalBox = true;
@@ -10665,6 +10674,13 @@ var QueryController = /** @class */ (function (_super) {
         _this.enableHistory();
         return _this;
     }
+    Object.defineProperty(QueryController.prototype, "usageAnalytics", {
+        get: function () {
+            return this.searchInterface.usageAnalytics;
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
      * Set the {@link SearchEndpoint} that the query controller should use to execute query
      * @param endpoint
@@ -18326,8 +18342,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.7219.6-beta',
-    product: '2.7219.6-beta',
+    lib: '2.7219.8-beta',
+    product: '2.7219.8-beta',
     supportedApiVersion: 2
 };
 
@@ -26173,14 +26189,13 @@ var HistoryController = /** @class */ (function (_super) {
      * @param window
      * @param queryStateModel
      * @param queryController
-     * @param usageAnalytics
+     * @param usageAnalytics **Deprecated.** Since the [October 2019 Release (v2.7219)](https://docs.coveo.com/en/3084/), the class retrieves and uses the {@link AnalyticsClient} from the `queryController` constructor parameter.
      */
     function HistoryController(element, window, queryStateModel, queryController, usageAnalytics) {
         var _this = _super.call(this, element, HistoryController.ID) || this;
         _this.window = window;
         _this.queryStateModel = queryStateModel;
         _this.queryController = queryController;
-        _this.usageAnalytics = usageAnalytics;
         _this.ignoreNextHashChange = false;
         _this.initialHashChange = false;
         _this.willUpdateHash = false;
@@ -26203,6 +26218,13 @@ var HistoryController = /** @class */ (function (_super) {
         Dom_1.$$(_this.element).on(InitializationEvents_1.InitializationEvents.nuke, function () { return _this.handleNuke(); });
         return _this;
     }
+    Object.defineProperty(HistoryController.prototype, "usageAnalytics", {
+        get: function () {
+            return this.queryController.usageAnalytics;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(HistoryController.prototype, "hashUtils", {
         get: function () {
             return this.hashUtilsModule ? this.hashUtilsModule : HashUtils_1.HashUtils;
@@ -27852,6 +27874,7 @@ var Analytics = /** @class */ (function (_super) {
         }
         _super.prototype.enable.call(this);
         this.initializeAnalyticsClient();
+        this.updateSearchInterfaceUAClient();
         this.resolveQueryController().enableHistory();
     };
     /**
@@ -27872,9 +27895,14 @@ var Analytics = /** @class */ (function (_super) {
             return this.logger.warn('The Analytics component is already disabled.');
         }
         this.clearLocalData();
+        this.client.cancelAllPendingEvents();
         this.client = new NoopAnalyticsClient_1.NoopAnalyticsClient();
+        this.updateSearchInterfaceUAClient();
         this.resolveQueryController().disableHistory();
         _super.prototype.disable.call(this);
+    };
+    Analytics.prototype.updateSearchInterfaceUAClient = function () {
+        this.searchInterface.usageAnalytics = this.client;
     };
     /**
      * Attempts to push data representing a single Coveo usage analytics event to the Google Tag Manager data layer.
