@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,25 +18,25 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="63" />
-          <entry key="project.open.time.0" value="56" />
+          <entry key="project.closed" value="64" />
+          <entry key="project.open.time.0" value="57" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="66" />
+          <entry key="project.opened" value="68" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="79" />
-          <entry key="json" value="161" />
+          <entry key="json" value="163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="79" />
-          <entry key="JSON" value="161" />
+          <entry key="JSON" value="163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -75,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="116">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -165,8 +158,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -352,12 +345,14 @@
       <workItem from="1569527844305" duration="1178000" />
       <workItem from="1569614726953" duration="367000" />
       <workItem from="1569865016011" duration="568000" />
-      <workItem from="1570049545027" duration="125000" />
+      <workItem from="1570049545027" duration="785000" />
+      <workItem from="1570111168923" duration="599000" />
+      <workItem from="1570633417504" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97738000" />
+    <option name="totallyTimeSpent" value="99000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -639,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state relative-caret-position="116">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
