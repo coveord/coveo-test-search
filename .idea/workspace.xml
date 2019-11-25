@@ -30,13 +30,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="79" />
-          <entry key="json" value="183" />
+          <entry key="json" value="185" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="79" />
-          <entry key="JSON" value="183" />
+          <entry key="JSON" value="185" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -147,8 +147,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="973" />
-    <option name="y" value="-1042" />
+    <option name="x" value="961" />
+    <option name="y" value="-1077" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -343,12 +343,12 @@
       <workItem from="1574089370532" duration="1913000" />
       <workItem from="1574438570079" duration="837000" />
       <workItem from="1574692591870" duration="742000" />
-      <workItem from="1574709599960" duration="15000" />
+      <workItem from="1574709599960" duration="401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103366000" />
+    <option name="totallyTimeSpent" value="103752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,7 +360,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="973" y="-1042" width="1936" height="1056" extended-state="0" />
+    <frame x="961" y="-1077" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20095949" />
@@ -382,7 +382,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.2782516" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3065032" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />

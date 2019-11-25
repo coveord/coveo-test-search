@@ -11494,17 +11494,17 @@ a.CoveoResultLink.coveo-selected *,
   fill: #4f5658;
 }
 
-.coveo-facet-value:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg {
+.coveo-facet-value.coveo-with-hover:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg {
   width: 14px;
   height: 12px;
   bottom: 2px;
 }
 
-.coveo-facet-value:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg .coveo-hook-svg {
+.coveo-facet-value.coveo-with-hover:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg .coveo-hook-svg {
   fill: #4f5658;
 }
 
-.coveo-facet-value:hover.coveo-excluded .coveo-facet-value-checkbox .coveo-hook-svg {
+.coveo-facet-value.coveo-with-hover:hover.coveo-excluded .coveo-facet-value-checkbox .coveo-hook-svg {
   fill-opacity: 0;
 }
 
@@ -11568,24 +11568,24 @@ a.CoveoResultLink.coveo-selected *,
   vertical-align: middle;
 }
 
-.coveo-facet-value:hover,
-.coveo-facet-value.coveo-focused {
-  background-color: #e6ecf0;
-}
-
 .coveo-facet-value.coveo-selected {
   font-weight: bold;
+}
+
+.coveo-facet-value.coveo-with-hover:hover,
+.coveo-facet-value.coveo-with-hover.coveo-focused {
+  background-color: #e6ecf0;
 }
 
 .coveo-facet-value.coveo-excluded .coveo-facet-value-exclude {
   visibility: hidden;
 }
 
-.coveo-facet-value.coveo-excluded:hover .coveo-facet-value-exclude {
+.coveo-facet-value.coveo-excluded.coveo-with-hover:hover .coveo-facet-value-exclude {
   visibility: hidden;
 }
 
-.coveo-facet-value:hover .coveo-facet-value-exclude {
+.coveo-facet-value.coveo-with-hover:hover .coveo-facet-value-exclude {
   visibility: visible;
 }
 
@@ -11815,17 +11815,17 @@ a.CoveoResultLink.coveo-selected *,
   fill: black;
 }
 
-.coveo-facet-search-results .coveo-facet-value:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg {
+.coveo-facet-search-results .coveo-facet-value.coveo-with-hover:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg {
   width: 11px;
   height: 9px;
   bottom: 4px;
 }
 
-.coveo-facet-search-results .coveo-facet-value:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg .coveo-hook-svg {
+.coveo-facet-search-results .coveo-facet-value.coveo-with-hover:hover:not(.coveo-facet-search-button):not(.coveo-excluded):not(.coveo-facet-value-will-exclude):not(.coveo-has-childs-selected) .coveo-facet-value-checkbox svg .coveo-hook-svg {
   fill: black;
 }
 
-.coveo-facet-search-results .coveo-facet-value:hover.coveo-excluded .coveo-facet-value-checkbox .coveo-hook-svg {
+.coveo-facet-search-results .coveo-facet-value.coveo-with-hover:hover.coveo-excluded .coveo-facet-value-checkbox .coveo-hook-svg {
   fill-opacity: 0;
 }
 
