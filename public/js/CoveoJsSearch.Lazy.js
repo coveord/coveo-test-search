@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"DynamicFacetRange","8":"Omnibox","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Querybox","14":"AdvancedSearch","15":"FacetSlider","16":"Pager","17":"ResultsPerPage","18":"QuerySuggestPreview","19":"OmniboxResultList","20":"ResultList","21":"Quickview","22":"Recommendation","23":"ResultsFiltersPreferences","24":"ResultsPreferences","25":"Tab","26":"Backdrop","27":"SearchAlerts","28":"SimpleFilter","29":"DistanceResources","30":"Sort","31":"YouTubeThumbnail","32":"Thumbnail","33":"ResultLayoutSelector","34":"ResultFolding","35":"PrintableUri","36":"Matrix","37":"CardOverlay","38":"FoldingForThread","39":"FollowItem","40":"Settings","41":"ResultTagging","42":"ResultRating","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardActionBar","48":"SearchButton","49":"Logo","50":"NumericSpinner","51":"Folding","52":"ChatterPostedBy","53":"ChatterPostAttachment","54":"ChatterLikedBy","55":"AnalyticsSuggestions","56":"RadioButton","57":"MultiSelect","58":"FormGroup","59":"Triggers","60":"Text","61":"ShareQuery","62":"ResultLink","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"MissingTerms","68":"HiddenQuery","69":"ExportToExcel","70":"Excerpt","71":"ErrorReport","72":"DidYouMean","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"PipelineContext","77":"Icon","78":"Dropdown","79":"ChatterTopic","80":"Aggregate"}[chunkId]||chunkId) + "__" + "520d550f53b319596b7e" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"HierarchicalFacet","4":"TimespanFacet","5":"FacetRange","6":"Searchbox","7":"DynamicFacetRange","8":"Omnibox","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Querybox","14":"AdvancedSearch","15":"FacetSlider","16":"Pager","17":"ResultsPerPage","18":"QuerySuggestPreview","19":"OmniboxResultList","20":"ResultList","21":"Quickview","22":"Recommendation","23":"ResultsFiltersPreferences","24":"ResultsPreferences","25":"Tab","26":"Backdrop","27":"SearchAlerts","28":"SimpleFilter","29":"DistanceResources","30":"Sort","31":"YouTubeThumbnail","32":"Thumbnail","33":"ResultLayoutSelector","34":"ResultFolding","35":"PrintableUri","36":"Matrix","37":"CardOverlay","38":"FoldingForThread","39":"FollowItem","40":"Settings","41":"ResultTagging","42":"ResultRating","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardActionBar","48":"SearchButton","49":"Logo","50":"NumericSpinner","51":"Folding","52":"ChatterPostedBy","53":"ChatterPostAttachment","54":"ChatterLikedBy","55":"AnalyticsSuggestions","56":"RadioButton","57":"MultiSelect","58":"FormGroup","59":"Triggers","60":"Text","61":"ShareQuery","62":"ResultLink","63":"ResultActionsMenu","64":"QueryDuration","65":"PromotedResultsBadge","66":"PreferencesPanel","67":"MissingTerms","68":"HiddenQuery","69":"ExportToExcel","70":"Excerpt","71":"ErrorReport","72":"DidYouMean","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"PipelineContext","77":"Icon","78":"Dropdown","79":"ChatterTopic","80":"Aggregate"}[chunkId]||chunkId) + "__" + "307707d43816d9bd0bcd" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2515,25 +2515,6 @@ var Dom = /** @class */ (function () {
     Dom.prototype.clone = function (deep) {
         if (deep === void 0) { deep = false; }
         return $$(this.el.cloneNode(deep));
-    };
-    /**
-     * Determine if an element support a particular native DOM event.
-     * @param eventName The event to evaluate. Eg: touchstart, touchend, click, scroll.
-     */
-    Dom.prototype.canHandleEvent = function (eventName) {
-        var eventToEvaluate = "on" + eventName;
-        var isSupported = eventToEvaluate in this.el;
-        // This is a protection against false negative.
-        // Some browser will incorrectly report that the event is not supported at this point
-        // To make sure, we need to try and set a fake function as a property on the element,
-        // and then check if it got hooked properly as a 'function' or as something else, meaning
-        // the property is really not defined on the element.
-        if (!isSupported && this.el.setAttribute) {
-            this.el.setAttribute(eventToEvaluate, 'return;');
-            isSupported = typeof this.el[eventToEvaluate] == 'function';
-            this.el.removeAttribute(eventToEvaluate);
-        }
-        return isSupported;
     };
     Dom.prototype.buildIE11CustomEvent = function (type, data) {
         var event = document.createEvent('CustomEvent');
@@ -18361,8 +18342,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.7219.21-beta',
-    product: '2.7219.21-beta',
+    lib: '2.7219.15',
+    product: '2.7219.15',
     supportedApiVersion: 2
 };
 

@@ -18,25 +18,25 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="68" />
-          <entry key="project.open.time.0" value="61" />
+          <entry key="project.closed" value="69" />
+          <entry key="project.open.time.0" value="62" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="72" />
+          <entry key="project.opened" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="79" />
-          <entry key="json" value="179" />
+          <entry key="json" value="183" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="79" />
-          <entry key="JSON" value="179" />
+          <entry key="JSON" value="183" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -146,9 +146,9 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-902" />
-    <option name="y" value="-1088" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="973" />
+    <option name="y" value="-1042" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -342,12 +342,13 @@
       <workItem from="1572536295828" duration="568000" />
       <workItem from="1574089370532" duration="1913000" />
       <workItem from="1574438570079" duration="837000" />
-      <workItem from="1574692591870" duration="7000" />
+      <workItem from="1574692591870" duration="742000" />
+      <workItem from="1574709599960" duration="15000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102616000" />
+    <option name="totallyTimeSpent" value="103366000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,10 +360,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-902" y="-1088" width="1936" height="1056" extended-state="6" />
+    <frame x="973" y="-1042" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988273" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20095949" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
