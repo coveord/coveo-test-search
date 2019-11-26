@@ -864,6 +864,12 @@
 .coveo-icon.objecttype.incident,
 .coveo-icon.filetype.Exchangetask,
 .coveo-icon.filetype.exchangetask,
+.coveo-icon.filetype.Sn_hr_core_case,
+.coveo-icon.filetype.sn_hr_core_case,
+.coveo-icon.filetype.Sn_customerservice_case,
+.coveo-icon.filetype.sn_customerservice_case,
+.coveo-icon.filetype.Incident,
+.coveo-icon.filetype.incident,
 .coveo-icon.filetype.Spprojecttask,
 .coveo-icon.filetype.spprojecttask,
 .coveo-icon.filetype.Spprojecttasklist,
@@ -877,6 +883,8 @@
 .coveo-icon.filetype.exchangemdn,
 .coveo-icon.filetype.Exchangeobject,
 .coveo-icon.filetype.exchangeobject,
+.coveo-icon.filetype.Sc_cat_item,
+.coveo-icon.filetype.sc_cat_item,
 .coveo-icon.filetype.Sparea,
 .coveo-icon.filetype.sparea,
 .coveo-icon.filetype.Spcustomlist,
@@ -1008,6 +1016,8 @@
 .coveo-icon.filetype.Sppicturelibrarylist,
 .coveo-icon.filetype.sppicturelibrarylist,
 .coveo-filetype-kb,
+.coveo-icon.filetype.Kb_knowledge,
+.coveo-icon.filetype.kb_knowledge,
 .coveo-icon.filetype.Spdatasource,
 .coveo-icon.filetype.spdatasource,
 .coveo-icon.filetype.Spdatasourcelist,
@@ -1408,6 +1418,12 @@
 .coveo-icon.filetype.exchangerssfeed,
 .coveo-icon.filetype.Exchangeofficecom,
 .coveo-icon.filetype.exchangeofficecom,
+.coveo-icon.filetype.Kb_social_qa_answer,
+.coveo-icon.filetype.kb_social_qa_answer,
+.coveo-icon.filetype.Kb_social_qa_question,
+.coveo-icon.filetype.kb_social_qa_question,
+.coveo-icon.filetype.Kb_social_qa_comment,
+.coveo-icon.filetype.kb_social_qa_comment,
 .coveo-icon.filetype.Spannouncement,
 .coveo-icon.filetype.spannouncement,
 .coveo-icon.filetype.Spannouncementlist,
@@ -1581,6 +1597,12 @@
 .coveo-icon.objecttype.coveo-small.incident,
 .coveo-icon.filetype.coveo-small.Exchangetask,
 .coveo-icon.filetype.coveo-small.exchangetask,
+.coveo-icon.filetype.coveo-small.Sn_hr_core_case,
+.coveo-icon.filetype.coveo-small.sn_hr_core_case,
+.coveo-icon.filetype.coveo-small.Sn_customerservice_case,
+.coveo-icon.filetype.coveo-small.sn_customerservice_case,
+.coveo-icon.filetype.coveo-small.Incident,
+.coveo-icon.filetype.coveo-small.incident,
 .coveo-icon.filetype.coveo-small.Spprojecttask,
 .coveo-icon.filetype.coveo-small.spprojecttask,
 .coveo-icon.filetype.coveo-small.Spprojecttasklist,
@@ -1594,6 +1616,8 @@
 .coveo-icon.filetype.coveo-small.exchangemdn,
 .coveo-icon.filetype.coveo-small.Exchangeobject,
 .coveo-icon.filetype.coveo-small.exchangeobject,
+.coveo-icon.filetype.coveo-small.Sc_cat_item,
+.coveo-icon.filetype.coveo-small.sc_cat_item,
 .coveo-icon.filetype.coveo-small.Sparea,
 .coveo-icon.filetype.coveo-small.sparea,
 .coveo-icon.filetype.coveo-small.Spcustomlist,
@@ -1725,6 +1749,8 @@
 .coveo-icon.filetype.coveo-small.Sppicturelibrarylist,
 .coveo-icon.filetype.coveo-small.sppicturelibrarylist,
 .coveo-filetype-kb-small,
+.coveo-icon.filetype.coveo-small.Kb_knowledge,
+.coveo-icon.filetype.coveo-small.kb_knowledge,
 .coveo-icon.filetype.coveo-small.Spdatasource,
 .coveo-icon.filetype.coveo-small.spdatasource,
 .coveo-icon.filetype.coveo-small.Spdatasourcelist,
@@ -2125,6 +2151,12 @@
 .coveo-icon.filetype.coveo-small.exchangerssfeed,
 .coveo-icon.filetype.coveo-small.Exchangeofficecom,
 .coveo-icon.filetype.coveo-small.exchangeofficecom,
+.coveo-icon.filetype.coveo-small.Kb_social_qa_answer,
+.coveo-icon.filetype.coveo-small.kb_social_qa_answer,
+.coveo-icon.filetype.coveo-small.Kb_social_qa_question,
+.coveo-icon.filetype.coveo-small.kb_social_qa_question,
+.coveo-icon.filetype.coveo-small.Kb_social_qa_comment,
+.coveo-icon.filetype.coveo-small.kb_social_qa_comment,
 .coveo-icon.filetype.coveo-small.Spannouncement,
 .coveo-icon.filetype.coveo-small.spannouncement,
 .coveo-icon.filetype.coveo-small.Spannouncementlist,
@@ -2336,6 +2368,12 @@
 .coveo-icon.objecttype.incident,
 .coveo-icon.filetype.Exchangetask,
 .coveo-icon.filetype.exchangetask,
+.coveo-icon.filetype.Sn_hr_core_case,
+.coveo-icon.filetype.sn_hr_core_case,
+.coveo-icon.filetype.Sn_customerservice_case,
+.coveo-icon.filetype.sn_customerservice_case,
+.coveo-icon.filetype.Incident,
+.coveo-icon.filetype.incident,
 .coveo-icon.filetype.Spprojecttask,
 .coveo-icon.filetype.spprojecttask,
 .coveo-icon.filetype.Spprojecttasklist,
@@ -2347,6 +2385,12 @@
 .coveo-icon.objecttype.coveo-small.incident,
 .coveo-icon.filetype.coveo-small.Exchangetask,
 .coveo-icon.filetype.coveo-small.exchangetask,
+.coveo-icon.filetype.coveo-small.Sn_hr_core_case,
+.coveo-icon.filetype.coveo-small.sn_hr_core_case,
+.coveo-icon.filetype.coveo-small.Sn_customerservice_case,
+.coveo-icon.filetype.coveo-small.sn_customerservice_case,
+.coveo-icon.filetype.coveo-small.Incident,
+.coveo-icon.filetype.coveo-small.incident,
 .coveo-icon.filetype.coveo-small.Spprojecttask,
 .coveo-icon.filetype.coveo-small.spprojecttask,
 .coveo-icon.filetype.coveo-small.Spprojecttasklist,
@@ -2363,6 +2407,8 @@
 .coveo-icon.filetype.exchangemdn,
 .coveo-icon.filetype.Exchangeobject,
 .coveo-icon.filetype.exchangeobject,
+.coveo-icon.filetype.Sc_cat_item,
+.coveo-icon.filetype.sc_cat_item,
 .coveo-icon.filetype.Sparea,
 .coveo-icon.filetype.sparea,
 .coveo-icon.filetype.Spcustomlist,
@@ -2422,6 +2468,8 @@
 .coveo-icon.filetype.coveo-small.exchangemdn,
 .coveo-icon.filetype.coveo-small.Exchangeobject,
 .coveo-icon.filetype.coveo-small.exchangeobject,
+.coveo-icon.filetype.coveo-small.Sc_cat_item,
+.coveo-icon.filetype.coveo-small.sc_cat_item,
 .coveo-icon.filetype.coveo-small.Sparea,
 .coveo-icon.filetype.coveo-small.sparea,
 .coveo-icon.filetype.coveo-small.Spcustomlist,
@@ -2648,6 +2696,8 @@
 }
 
 .coveo-filetype-kb,
+.coveo-icon.filetype.Kb_knowledge,
+.coveo-icon.filetype.kb_knowledge,
 .coveo-icon.filetype.Spdatasource,
 .coveo-icon.filetype.spdatasource,
 .coveo-icon.filetype.Spdatasourcelist,
@@ -2657,6 +2707,8 @@
 .coveo-icon.filetype.Spipfslist,
 .coveo-icon.filetype.spipfslist,
 .coveo-filetype-kb-small,
+.coveo-icon.filetype.coveo-small.Kb_knowledge,
+.coveo-icon.filetype.coveo-small.kb_knowledge,
 .coveo-icon.filetype.coveo-small.Spdatasource,
 .coveo-icon.filetype.coveo-small.spdatasource,
 .coveo-icon.filetype.coveo-small.Spdatasourcelist,
@@ -2718,6 +2770,12 @@
 .coveo-icon.filetype.exchangerssfeed,
 .coveo-icon.filetype.Exchangeofficecom,
 .coveo-icon.filetype.exchangeofficecom,
+.coveo-icon.filetype.Kb_social_qa_answer,
+.coveo-icon.filetype.kb_social_qa_answer,
+.coveo-icon.filetype.Kb_social_qa_question,
+.coveo-icon.filetype.kb_social_qa_question,
+.coveo-icon.filetype.Kb_social_qa_comment,
+.coveo-icon.filetype.kb_social_qa_comment,
 .coveo-icon.filetype.Spannouncement,
 .coveo-icon.filetype.spannouncement,
 .coveo-icon.filetype.Spannouncementlist,
@@ -2783,6 +2841,12 @@
 .coveo-icon.filetype.coveo-small.exchangerssfeed,
 .coveo-icon.filetype.coveo-small.Exchangeofficecom,
 .coveo-icon.filetype.coveo-small.exchangeofficecom,
+.coveo-icon.filetype.coveo-small.Kb_social_qa_answer,
+.coveo-icon.filetype.coveo-small.kb_social_qa_answer,
+.coveo-icon.filetype.coveo-small.Kb_social_qa_question,
+.coveo-icon.filetype.coveo-small.kb_social_qa_question,
+.coveo-icon.filetype.coveo-small.Kb_social_qa_comment,
+.coveo-icon.filetype.coveo-small.kb_social_qa_comment,
 .coveo-icon.filetype.coveo-small.Spannouncement,
 .coveo-icon.filetype.coveo-small.spannouncement,
 .coveo-icon.filetype.coveo-small.Spannouncementlist,
@@ -13821,59 +13885,6 @@ a.CoveoResultLink.coveo-selected *,
 * @param $size size of the icon to use
 */
 
-.coveo-suggestion-container {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  min-width: 100%;
-}
-
-.coveo-suggestion-container .coveo-magicbox-suggestions {
-  border: none;
-  float: left;
-}
-
-.coveo-suggestion-container .coveo-preview-container {
-  border: none;
-  background: #fff;
-  flex: 1 1 100%;
-}
-
-.coveo-suggestion-container .coveo-preview-results {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-
-.coveo-suggestion-container .coveo-preview-layout {
-  text-align: center;
-  padding: 20px;
-  align-items: flex-start;
-}
-
-.coveo-suggestion-container .coveo-preview-header {
-  padding: 10px;
-  font-weight: normal;
-  margin-top: 0;
-}
-
-.coveo-suggestion-container .coveo-preview-selectable.coveo-omnibox-selected,
-.coveo-suggestion-container .coveo-preview-selectable:hover {
-  outline: thin solid #bcc3ca;
-  outline-offset: -1px;
-}
-
-/*
-* @param direction vertical or horizontal
-* @param position type of positioning to apply (relative/absolute)
-*/
-
-/*
-* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
-* @param $size size of the icon to use
-*/
-
 .magic-box {
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
@@ -15648,30 +15659,6 @@ a.coveo-folding-show-less.coveo-selected * {
   height: 9px;
 }
 
-/*!
- Material Components for the web
- Copyright (c) 2017 Google Inc.
- License: Apache-2.0
-*/
-.mdc-select{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-size:1rem;font-weight:400;letter-spacing:.04em;line-height:1.75rem;text-decoration:inherit;text-transform:inherit;color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87));padding-left:0;padding-right:24px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%230' fill-rule='evenodd' opacity='.54' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;max-width:calc(100% - 24px);height:32px;-webkit-transition:border-bottom-color .15s cubic-bezier(.4,0,.6,1) 0ms,background-color .15s cubic-bezier(.4,0,.6,1) 0ms;transition:border-bottom-color .15s cubic-bezier(.4,0,.6,1) 0ms,background-color .15s cubic-bezier(.4,0,.6,1) 0ms;border:none;border-bottom:1px solid rgba(0,0,0,.12);border-radius:0;background-repeat:no-repeat;background-position:100%;font-family:Roboto,sans-serif;font-size:.936rem;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}.mdc-select[dir=rtl],[dir=rtl] .mdc-select{padding-left:24px;padding-right:0}.mdc-select::-ms-expand{display:none}.mdc-select:focus{border-bottom-color:#3f51b5;border-bottom-color:var(--mdc-theme-primary,#3f51b5);outline:none;background-color:rgba(0,0,0,.06)}.mdc-select[dir=rtl],[dir=rtl] .mdc-select{background-position:0}.mdc-select--theme-dark,.mdc-theme--dark .mdc-select{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff);background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' fill-rule='evenodd' opacity='.54' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");border-bottom:1px solid hsla(0,0%,100%,.12)}.mdc-select--theme-dark:focus,.mdc-theme--dark .mdc-select:focus{border-bottom-color:#3f51b5;border-bottom-color:var(--mdc-theme-primary,#3f51b5);background-color:hsla(0,0%,100%,.09)}.mdc-select__menu{position:fixed;top:0;left:0;max-height:100%;-webkit-transform-origin:center center;transform-origin:center center;z-index:4}.mdc-select__selected-text{-webkit-transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,-webkit-transform 125ms cubic-bezier(.4,0,.6,1) 0ms;transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,-webkit-transform 125ms cubic-bezier(.4,0,.6,1) 0ms;transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,transform 125ms cubic-bezier(.4,0,.6,1) 0ms;transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,transform 125ms cubic-bezier(.4,0,.6,1) 0ms,-webkit-transform 125ms cubic-bezier(.4,0,.6,1) 0ms;white-space:nowrap;overflow:hidden}.mdc-select--open .mdc-select__selected-text{-webkit-transform:translateY(8px);transform:translateY(8px);-webkit-transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,-webkit-transform 125ms cubic-bezier(0,0,.2,1) 125ms;transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,-webkit-transform 125ms cubic-bezier(0,0,.2,1) 125ms;transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,transform 125ms cubic-bezier(0,0,.2,1) 125ms;transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,transform 125ms cubic-bezier(0,0,.2,1) 125ms,-webkit-transform 125ms cubic-bezier(0,0,.2,1) 125ms;opacity:0}.mdc-select--disabled,.mdc-select[disabled]{color:rgba(0,0,0,.38);color:var(--mdc-theme-text-disabled-on-light,rgba(0,0,0,.38));background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%230' fill-rule='evenodd' opacity='.38' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");border-bottom-style:dotted;cursor:default;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mdc-select--theme-dark.mdc-select--disabled,.mdc-select--theme-dark.mdc-select[disabled],.mdc-theme--dark .mdc-select--disabled,.mdc-theme--dark .mdc-select[disabled]{color:hsla(0,0%,100%,.5);color:var(--mdc-theme-text-disabled-on-dark,hsla(0,0%,100%,.5));background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' fill-rule='evenodd' opacity='.38' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");border-bottom:1px dotted hsla(0,0%,100%,.38)}.mdc-select__menu .mdc-list-item{font-family:Roboto,sans-serif;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-size:1rem;font-weight:400;letter-spacing:.04em;line-height:1.75rem;text-decoration:inherit;text-transform:inherit;color:rgba(0,0,0,.54);color:var(--mdc-theme-text-secondary-on-light,rgba(0,0,0,.54))}.mdc-select__menu .mdc-list-item[aria-selected=true]{color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-item,.mdc-theme--dark .mdc-select__menu .mdc-list-item{color:hsla(0,0%,100%,.7);color:var(--mdc-theme-text-secondary-on-dark,hsla(0,0%,100%,.7))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-item[aria-selected=true],.mdc-theme--dark .mdc-select__menu .mdc-list-item[aria-selected=true]{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-select__menu .mdc-list-group,.mdc-select__menu .mdc-list-group>.mdc-list-item:first-child{margin-top:12px}.mdc-select__menu .mdc-list-group{color:rgba(0,0,0,.38);color:var(--mdc-theme-text-hint-on-light,rgba(0,0,0,.38));font-weight:400}.mdc-select__menu .mdc-list-group .mdc-list-item{color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-group,.mdc-theme--dark .mdc-select__menu .mdc-list-group{color:hsla(0,0%,100%,.5);color:var(--mdc-theme-text-hint-on-dark,hsla(0,0%,100%,.5))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-group .mdc-list-item,.mdc-theme--dark .mdc-select__menu .mdc-list-group .mdc-list-item{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-multi-select{border-color:rgba(0,0,0,.38);border:1px solid var(--mdc-theme-text-hint-on-light,rgba(0,0,0,.38));width:250px;padding:0;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.mdc-multi-select--theme-dark,.mdc-theme--dark .mdc-multi-select{border-color:hsla(0,0%,100%,.5);border-color:var(--mdc-theme-text-hint-on-dark,hsla(0,0%,100%,.5))}.mdc-multi-select .mdc-list-group{color:rgba(0,0,0,.38);color:var(--mdc-theme-text-hint-on-light,rgba(0,0,0,.38));margin:16px 0 0;padding:0 0 0 16px;font-weight:400}.mdc-multi-select .mdc-list-group--theme-dark,.mdc-theme--dark .mdc-multi-select .mdc-list-group{color:hsla(0,0%,100%,.5);color:var(--mdc-theme-text-hint-on-dark,hsla(0,0%,100%,.5))}.mdc-multi-select .mdc-list-group:last-child{margin-bottom:16px}.mdc-multi-select .mdc-list-group .mdc-list-divider{margin-left:-16px}.mdc-multi-select .mdc-list-item{color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87));margin:0 0 0 -16px;padding:0 16px}.mdc-multi-select .mdc-list-item--theme-dark,.mdc-theme--dark .mdc-multi-select .mdc-list-item{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-multi-select .mdc-list-item:first-child{margin-top:12px}.mdc-multi-select .mdc-list-item:last-child{margin-bottom:8px}.mdc-multi-select .mdc-list-item:checked{background-color:#fff;background-color:var(--mdc-theme-background,#fff)}.mdc-multi-select .mdc-list-item:checked--theme-dark,.mdc-theme--dark .mdc-multi-select .mdc-list-item:checked{background-color:#fff;background-color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-multi-select .mdc-list-divider{margin-bottom:8px;padding-top:8px;font-size:0}.mdc-multi-select:focus .mdc-list-item:checked{background-color:#3f51b5;background-color:var(--mdc-theme-primary,#3f51b5)}.mdc-multi-select:focus .mdc-list-item:checked--theme-dark,.mdc-theme--dark .mdc-multi-select:focus .mdc-list-item:checked{background-color:#fff;background-color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-list-item {
-  height: 30px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
-}
-
 /*
 * @param direction vertical or horizontal
 * @param position type of positioning to apply (relative/absolute)
@@ -15698,6 +15685,30 @@ a.coveo-folding-show-less.coveo-selected * {
   font-size: 16px;
   display: block;
   margin-bottom: 10px;
+}
+
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+.mdc-select{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-size:1rem;font-weight:400;letter-spacing:.04em;line-height:1.75rem;text-decoration:inherit;text-transform:inherit;color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87));padding-left:0;padding-right:24px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%230' fill-rule='evenodd' opacity='.54' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;max-width:calc(100% - 24px);height:32px;-webkit-transition:border-bottom-color .15s cubic-bezier(.4,0,.6,1) 0ms,background-color .15s cubic-bezier(.4,0,.6,1) 0ms;transition:border-bottom-color .15s cubic-bezier(.4,0,.6,1) 0ms,background-color .15s cubic-bezier(.4,0,.6,1) 0ms;border:none;border-bottom:1px solid rgba(0,0,0,.12);border-radius:0;background-repeat:no-repeat;background-position:100%;font-family:Roboto,sans-serif;font-size:.936rem;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}.mdc-select[dir=rtl],[dir=rtl] .mdc-select{padding-left:24px;padding-right:0}.mdc-select::-ms-expand{display:none}.mdc-select:focus{border-bottom-color:#3f51b5;border-bottom-color:var(--mdc-theme-primary,#3f51b5);outline:none;background-color:rgba(0,0,0,.06)}.mdc-select[dir=rtl],[dir=rtl] .mdc-select{background-position:0}.mdc-select--theme-dark,.mdc-theme--dark .mdc-select{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff);background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' fill-rule='evenodd' opacity='.54' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");border-bottom:1px solid hsla(0,0%,100%,.12)}.mdc-select--theme-dark:focus,.mdc-theme--dark .mdc-select:focus{border-bottom-color:#3f51b5;border-bottom-color:var(--mdc-theme-primary,#3f51b5);background-color:hsla(0,0%,100%,.09)}.mdc-select__menu{position:fixed;top:0;left:0;max-height:100%;-webkit-transform-origin:center center;transform-origin:center center;z-index:4}.mdc-select__selected-text{-webkit-transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,-webkit-transform 125ms cubic-bezier(.4,0,.6,1) 0ms;transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,-webkit-transform 125ms cubic-bezier(.4,0,.6,1) 0ms;transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,transform 125ms cubic-bezier(.4,0,.6,1) 0ms;transition:opacity 125ms cubic-bezier(.4,0,.6,1) 0ms,transform 125ms cubic-bezier(.4,0,.6,1) 0ms,-webkit-transform 125ms cubic-bezier(.4,0,.6,1) 0ms;white-space:nowrap;overflow:hidden}.mdc-select--open .mdc-select__selected-text{-webkit-transform:translateY(8px);transform:translateY(8px);-webkit-transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,-webkit-transform 125ms cubic-bezier(0,0,.2,1) 125ms;transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,-webkit-transform 125ms cubic-bezier(0,0,.2,1) 125ms;transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,transform 125ms cubic-bezier(0,0,.2,1) 125ms;transition:opacity 125ms cubic-bezier(0,0,.2,1) 125ms,transform 125ms cubic-bezier(0,0,.2,1) 125ms,-webkit-transform 125ms cubic-bezier(0,0,.2,1) 125ms;opacity:0}.mdc-select--disabled,.mdc-select[disabled]{color:rgba(0,0,0,.38);color:var(--mdc-theme-text-disabled-on-light,rgba(0,0,0,.38));background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%230' fill-rule='evenodd' opacity='.38' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");border-bottom-style:dotted;cursor:default;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mdc-select--theme-dark.mdc-select--disabled,.mdc-select--theme-dark.mdc-select[disabled],.mdc-theme--dark .mdc-select--disabled,.mdc-theme--dark .mdc-select[disabled]{color:hsla(0,0%,100%,.5);color:var(--mdc-theme-text-disabled-on-dark,hsla(0,0%,100%,.5));background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='5' viewBox='7 10 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' fill-rule='evenodd' opacity='.38' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");border-bottom:1px dotted hsla(0,0%,100%,.38)}.mdc-select__menu .mdc-list-item{font-family:Roboto,sans-serif;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-size:1rem;font-weight:400;letter-spacing:.04em;line-height:1.75rem;text-decoration:inherit;text-transform:inherit;color:rgba(0,0,0,.54);color:var(--mdc-theme-text-secondary-on-light,rgba(0,0,0,.54))}.mdc-select__menu .mdc-list-item[aria-selected=true]{color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-item,.mdc-theme--dark .mdc-select__menu .mdc-list-item{color:hsla(0,0%,100%,.7);color:var(--mdc-theme-text-secondary-on-dark,hsla(0,0%,100%,.7))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-item[aria-selected=true],.mdc-theme--dark .mdc-select__menu .mdc-list-item[aria-selected=true]{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-select__menu .mdc-list-group,.mdc-select__menu .mdc-list-group>.mdc-list-item:first-child{margin-top:12px}.mdc-select__menu .mdc-list-group{color:rgba(0,0,0,.38);color:var(--mdc-theme-text-hint-on-light,rgba(0,0,0,.38));font-weight:400}.mdc-select__menu .mdc-list-group .mdc-list-item{color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-group,.mdc-theme--dark .mdc-select__menu .mdc-list-group{color:hsla(0,0%,100%,.5);color:var(--mdc-theme-text-hint-on-dark,hsla(0,0%,100%,.5))}.mdc-select--theme-dark .mdc-select__menu .mdc-list-group .mdc-list-item,.mdc-theme--dark .mdc-select__menu .mdc-list-group .mdc-list-item{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-multi-select{border-color:rgba(0,0,0,.38);border:1px solid var(--mdc-theme-text-hint-on-light,rgba(0,0,0,.38));width:250px;padding:0;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.mdc-multi-select--theme-dark,.mdc-theme--dark .mdc-multi-select{border-color:hsla(0,0%,100%,.5);border-color:var(--mdc-theme-text-hint-on-dark,hsla(0,0%,100%,.5))}.mdc-multi-select .mdc-list-group{color:rgba(0,0,0,.38);color:var(--mdc-theme-text-hint-on-light,rgba(0,0,0,.38));margin:16px 0 0;padding:0 0 0 16px;font-weight:400}.mdc-multi-select .mdc-list-group--theme-dark,.mdc-theme--dark .mdc-multi-select .mdc-list-group{color:hsla(0,0%,100%,.5);color:var(--mdc-theme-text-hint-on-dark,hsla(0,0%,100%,.5))}.mdc-multi-select .mdc-list-group:last-child{margin-bottom:16px}.mdc-multi-select .mdc-list-group .mdc-list-divider{margin-left:-16px}.mdc-multi-select .mdc-list-item{color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-light,rgba(0,0,0,.87));margin:0 0 0 -16px;padding:0 16px}.mdc-multi-select .mdc-list-item--theme-dark,.mdc-theme--dark .mdc-multi-select .mdc-list-item{color:#fff;color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-multi-select .mdc-list-item:first-child{margin-top:12px}.mdc-multi-select .mdc-list-item:last-child{margin-bottom:8px}.mdc-multi-select .mdc-list-item:checked{background-color:#fff;background-color:var(--mdc-theme-background,#fff)}.mdc-multi-select .mdc-list-item:checked--theme-dark,.mdc-theme--dark .mdc-multi-select .mdc-list-item:checked{background-color:#fff;background-color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-multi-select .mdc-list-divider{margin-bottom:8px;padding-top:8px;font-size:0}.mdc-multi-select:focus .mdc-list-item:checked{background-color:#3f51b5;background-color:var(--mdc-theme-primary,#3f51b5)}.mdc-multi-select:focus .mdc-list-item:checked--theme-dark,.mdc-theme--dark .mdc-multi-select:focus .mdc-list-item:checked{background-color:#fff;background-color:var(--mdc-theme-text-primary-on-dark,#fff)}.mdc-list-item {
+  height: 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
 }
 
 /*
@@ -17396,6 +17407,59 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .CoveoMissingTerms .coveo-missing-term {
   text-decoration: line-through;
+}
+
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
+.coveo-suggestion-container {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  min-width: 100%;
+}
+
+.coveo-suggestion-container .coveo-magicbox-suggestions {
+  border: none;
+  float: left;
+}
+
+.coveo-suggestion-container .coveo-preview-container {
+  border: none;
+  background: #fff;
+  flex: 1 1 100%;
+}
+
+.coveo-suggestion-container .coveo-preview-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.coveo-suggestion-container .coveo-preview-layout {
+  text-align: center;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.coveo-suggestion-container .coveo-preview-header {
+  padding: 10px;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.coveo-suggestion-container .coveo-preview-selectable.coveo-omnibox-selected,
+.coveo-suggestion-container .coveo-preview-selectable:hover {
+  outline: thin solid #bcc3ca;
+  outline-offset: -1px;
 }
 
 

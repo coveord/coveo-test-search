@@ -18,25 +18,25 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="69" />
-          <entry key="project.open.time.0" value="62" />
+          <entry key="project.closed" value="70" />
+          <entry key="project.open.time.0" value="63" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="73" />
+          <entry key="project.opened" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="79" />
-          <entry key="json" value="185" />
+          <entry key="json" value="189" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="79" />
-          <entry key="JSON" value="185" />
+          <entry key="JSON" value="189" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="390">
+              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -343,12 +343,13 @@
       <workItem from="1574089370532" duration="1913000" />
       <workItem from="1574438570079" duration="837000" />
       <workItem from="1574692591870" duration="742000" />
-      <workItem from="1574709599960" duration="401000" />
+      <workItem from="1574709599960" duration="624000" />
+      <workItem from="1574780313809" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103752000" />
+    <option name="totallyTimeSpent" value="103988000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,7 +364,7 @@
     <frame x="961" y="-1077" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20095949" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -640,8 +641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="390">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
     </entry>
