@@ -891,7 +891,7 @@ var dict = {
   "OpenFiltersDropdown": "Ouvrir le menu déroulant de filtres",
   "CloseFiltersDropdown": "Fermer le menu déroulant de filtres",
   "NoValuesFound": "Aucune valeur trouvée.",
-  "QuerySuggestPreview": "Résultat(s) de la requête pour",
+  "QuerySuggestPreview": "Recommendations de produits pour",
   "To": "à",
 }
   var locales = String["locales"] || (String["locales"] = {});
@@ -1716,7 +1716,7 @@ var dict = {
   "OpenFiltersDropdown": "Ouvrir le menu déroulant de filtres",
   "CloseFiltersDropdown": "Fermer le menu déroulant de filtres",
   "NoValuesFound": "Aucune valeur trouvée.",
-  "QuerySuggestPreview": "Résultat(s) de la requête pour",
+  "QuerySuggestPreview": "Recommendations de produits pour",
   "To": "à",
 }
 

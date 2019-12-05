@@ -17428,12 +17428,14 @@ a.coveo-folding-show-less.coveo-selected * {
   border: none;
   float: left;
   flex-basis: 30%;
+  max-width: 30%;
 }
 
 .coveo-suggestion-container .coveo-preview-container {
   border: none;
   background: #fff;
   flex-basis: 70%;
+  max-width: 70%;
 }
 
 .coveo-suggestion-container .coveo-preview-container .coveo-preview-results {
@@ -17494,9 +17496,8 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-suggestion-container .coveo-preview-container .coveo-preview-header {
   padding: 10px;
-  font-weight: normal;
+  font-weight: bold;
   margin-top: 0;
-  text-align: center;
 }
 
 .coveo-suggestion-container .coveo-preview-container .coveo-preview-selectable.coveo-omnibox-selected,

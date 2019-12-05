@@ -845,7 +845,7 @@ var dict = {
   "OpenFiltersDropdown": "Open the filters dropdown",
   "CloseFiltersDropdown": "Close the filters dropdown",
   "NoValuesFound": "No values found.",
-  "QuerySuggestPreview": "Query result item(s) for",
+  "QuerySuggestPreview": "Product recommendations for",
   "To": "to",
 }
   var locales = String["locales"] || (String["locales"] = {});
@@ -1670,7 +1670,7 @@ var dict = {
   "OpenFiltersDropdown": "Open the filters dropdown",
   "CloseFiltersDropdown": "Close the filters dropdown",
   "NoValuesFound": "No values found.",
-  "QuerySuggestPreview": "Query result item(s) for",
+  "QuerySuggestPreview": "Product recommendations for",
   "To": "to",
 }
 
