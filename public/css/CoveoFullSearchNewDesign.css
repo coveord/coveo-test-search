@@ -9639,10 +9639,13 @@ a.CoveoResultLink.coveo-selected *,
 
 .CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicFacet .coveo-dynamic-facet-header,
 .CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicFacet .coveo-dynamic-facet-values,
+.CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicFacet .coveo-dynamic-hierarchical-facet-values,
 .CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicFacetRange .coveo-dynamic-facet-header,
 .CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicFacetRange .coveo-dynamic-facet-values,
+.CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicFacetRange .coveo-dynamic-hierarchical-facet-values,
 .CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicHierarchicalFacet .coveo-dynamic-facet-header,
-.CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicHierarchicalFacet .coveo-dynamic-facet-values {
+.CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicHierarchicalFacet .coveo-dynamic-facet-values,
+.CoveoSearchInterface.coveo-small-facets .coveo-facet-column.coveo-facet-dropdown-content .CoveoDynamicHierarchicalFacet .coveo-dynamic-hierarchical-facet-values {
   padding: 5px;
 }
 
@@ -9789,6 +9792,7 @@ a.CoveoResultLink.coveo-selected *,
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  text-transform: capitalize;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
@@ -17543,12 +17547,14 @@ button.coveo-dynamic-hierarchical-facet-all {
 
 .coveo-dynamic-hierarchical-facet-value-arrow {
   position: absolute;
+  top: -1px;
   left: 0;
 }
 
 .coveo-dynamic-hierarchical-facet-value-arrow-svg {
-  width: 25px;
-  height: 25px;
+  transform: rotate(90deg);
+  width: 14px;
+  height: 14px;
   color: #004990;
   display: inline-block;
   vertical-align: middle;
