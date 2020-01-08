@@ -17471,13 +17471,13 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-value,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-less,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-more {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-value.coveo-with-space,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-less.coveo-with-space,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-more.coveo-with-space {
-  padding-left: 60px;
+  padding-left: 40px;
 }
 
 .coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-value:not(.coveo-selected),
@@ -17517,7 +17517,7 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .coveo-dynamic-hierarchical-facet-value.coveo-with-space {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 .coveo-dynamic-hierarchical-facet-value:disabled {
