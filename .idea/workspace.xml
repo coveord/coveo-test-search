@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="" />
+    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,24 +20,24 @@
         <counts>
           <entry key="project.closed" value="84" />
           <entry key="project.open.time.0" value="71" />
-          <entry key="project.open.time.1" value="9" />
+          <entry key="project.open.time.1" value="10" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="87" />
+          <entry key="project.opened" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="127" />
-          <entry key="json" value="197" />
+          <entry key="json" value="198" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="127" />
-          <entry key="JSON" value="197" />
+          <entry key="JSON" value="198" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -67,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -84,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
+            <state relative-caret-position="1794">
               <caret line="69" column="122" selection-start-line="69" selection-start-column="122" selection-end-line="69" selection-end-column="122" />
             </state>
           </provider>
@@ -185,11 +188,6 @@
             <path>
               <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
               <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
-              <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
-              <item name="testPages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -382,6 +380,7 @@
       <workItem from="1578276133769" duration="1002000" />
       <workItem from="1578320452177" duration="1027000" />
       <workItem from="1578493785468" duration="1301000" />
+      <workItem from="1580827734563" duration="1017000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -394,7 +393,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116332000" />
+    <option name="totallyTimeSpent" value="117349000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,8 +406,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2637584" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17248322" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -427,7 +427,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.33825505" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.29395974" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -711,6 +711,13 @@
     <entry file="file://$PROJECT_DIR$/public/custom/searchboxQueryPreviewSuggestion.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/DynamicFacets.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
@@ -720,15 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
+        <state relative-caret-position="1794">
           <caret line="69" column="122" selection-start-line="69" selection-start-column="122" selection-end-line="69" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
     </entry>

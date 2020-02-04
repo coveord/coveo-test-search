@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"QuerySuggestPreview","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Searchbox","14":"Omnibox","15":"Querybox","16":"AdvancedSearch","17":"FacetSlider","18":"Pager","19":"ResultsPerPage","20":"OmniboxResultList","21":"ResultList","22":"Quickview","23":"Recommendation","24":"ResultsFiltersPreferences","25":"ResultsPreferences","26":"Tab","27":"Backdrop","28":"SearchAlerts","29":"SimpleFilter","30":"DistanceResources","31":"Sort","32":"YouTubeThumbnail","33":"Thumbnail","34":"ResultLayoutSelector","35":"ResultFolding","36":"PrintableUri","37":"Matrix","38":"CardOverlay","39":"FoldingForThread","40":"FollowItem","41":"Settings","42":"ResultTagging","43":"ResultRating","44":"ResultAttachments","45":"QuerySummary","46":"FieldSuggestions","47":"FacetValueSuggestions","48":"CardActionBar","49":"SearchButton","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"AnalyticsSuggestions","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"StarRating","63":"ShareQuery","64":"ResultLink","65":"ResultActionsMenu","66":"QueryDuration","67":"PromotedResultsBadge","68":"PreferencesPanel","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"PipelineContext","79":"Icon","80":"Dropdown","81":"ChatterTopic","82":"Aggregate"}[chunkId]||chunkId) + "__" + "67d1b45348b1bee638ae" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"QuerySuggestPreview","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Searchbox","14":"Omnibox","15":"Querybox","16":"AdvancedSearch","17":"FacetSlider","18":"Pager","19":"ResultsPerPage","20":"OmniboxResultList","21":"ResultList","22":"Quickview","23":"Recommendation","24":"ResultsFiltersPreferences","25":"ResultsPreferences","26":"Tab","27":"Backdrop","28":"SearchAlerts","29":"SimpleFilter","30":"DistanceResources","31":"Sort","32":"YouTubeThumbnail","33":"Thumbnail","34":"ResultLayoutSelector","35":"ResultFolding","36":"PrintableUri","37":"Matrix","38":"CardOverlay","39":"FoldingForThread","40":"FollowItem","41":"Settings","42":"ResultTagging","43":"ResultRating","44":"ResultAttachments","45":"QuerySummary","46":"FieldSuggestions","47":"FacetValueSuggestions","48":"CardActionBar","49":"SearchButton","50":"Logo","51":"NumericSpinner","52":"Folding","53":"ChatterPostedBy","54":"ChatterPostAttachment","55":"ChatterLikedBy","56":"AnalyticsSuggestions","57":"RadioButton","58":"MultiSelect","59":"FormGroup","60":"Triggers","61":"Text","62":"StarRating","63":"ShareQuery","64":"ResultLink","65":"ResultActionsMenu","66":"QueryDuration","67":"PromotedResultsBadge","68":"PreferencesPanel","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"PipelineContext","79":"Icon","80":"Dropdown","81":"ChatterTopic","82":"Aggregate"}[chunkId]||chunkId) + "__" + "29b2d8654e5e75b04690" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -13661,7 +13661,6 @@ var ResponsiveComponentsManager = /** @class */ (function () {
             window.addEventListener('resize', this.resizeListener);
         }
         this.bindNukeEvents();
-        ResponsiveComponentsManager.componentManagers.push(this);
     }
     // Register takes a class and will instantiate it after framework initialization has completed.
     ResponsiveComponentsManager.register = function (responsiveComponentConstructor, root, ID, component, options) {
@@ -13674,6 +13673,7 @@ var ResponsiveComponentsManager = /** @class */ (function () {
                 var responsiveComponentsManager = _.find(_this.componentManagers, function (componentManager) { return root.el == componentManager.coveoRoot.el; });
                 if (!responsiveComponentsManager) {
                     responsiveComponentsManager = new ResponsiveComponentsManager(root);
+                    _this.componentManagers.push(responsiveComponentsManager);
                 }
                 if (!Utils_1.Utils.isNullOrUndefined(options.enableResponsiveMode) && !options.enableResponsiveMode) {
                     responsiveComponentsManager.disableComponent(ID);
@@ -18373,8 +18373,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.7968.11-beta',
-    product: '2.7968.11-beta',
+    lib: '2.7968.10',
+    product: '2.7968.10',
     supportedApiVersion: 2
 };
 
