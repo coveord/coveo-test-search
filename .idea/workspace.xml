@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/DynamicFacets.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/DynamicFacets.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,38 +17,38 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="86" />
-          <entry key="project.open.time.0" value="73" />
+          <entry key="project.closed" value="88" />
+          <entry key="project.open.time.0" value="75" />
           <entry key="project.open.time.1" value="10" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="90" />
+          <entry key="project.opened" value="92" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="166" />
+          <entry key="html" value="169" />
           <entry key="json" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="166" />
+          <entry key="HTML" value="169" />
           <entry key="JSON" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="html" value="41" />
+          <entry key="html" value="43" />
           <entry key="json" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="41" />
+          <entry key="HTML" value="43" />
           <entry key="JSON" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
@@ -69,17 +68,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="114">
               <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testPages/DynamicFacets.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="41" column="303" selection-start-line="41" selection-start-column="303" selection-end-line="41" selection-end-column="303" />
+            <state relative-caret-position="478">
+              <caret line="28" column="224" selection-start-line="28" selection-start-column="224" selection-end-line="28" selection-end-column="224" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox_main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="523">
+              <caret line="33" column="232" selection-start-line="33" selection-start-column="232" selection-end-line="33" selection-end-column="232" />
             </state>
           </provider>
         </entry>
@@ -127,13 +135,13 @@
         <option value="$PROJECT_DIR$/testPages/distanceFacet_StaticPositionProvider.html" />
         <option value="$PROJECT_DIR$/testPages/jsui2421_pager.html" />
         <option value="$PROJECT_DIR$/testPages/mlfacetinDev.html" />
-        <option value="$PROJECT_DIR$/testPages/standaloneSearchBox.html" />
-        <option value="$PROJECT_DIR$/testPages/standaloneSearchBox_main.html" />
         <option value="$PROJECT_DIR$/testPages/searchboxQueryPreviewSuggestion.html" />
         <option value="$PROJECT_DIR$/public/custom/searchboxQueryPreviewSuggestion.html" />
         <option value="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/testPages/DynamicFacets.html" />
+        <option value="$PROJECT_DIR$/testPages/standaloneSearchBox_main.html" />
+        <option value="$PROJECT_DIR$/testPages/standaloneSearchBox.html" />
       </list>
     </option>
   </component>
@@ -164,15 +172,14 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1275" />
-    <option name="height" value="1010" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,12 +196,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jsui_local" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -378,7 +386,9 @@
       <workItem from="1578493785468" duration="1301000" />
       <workItem from="1580827734563" duration="2172000" />
       <workItem from="1580935930015" duration="1843000" />
-      <workItem from="1580940466022" duration="48000" />
+      <workItem from="1580940466022" duration="378000" />
+      <workItem from="1581090705648" duration="22000" />
+      <workItem from="1581091602032" duration="536000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -391,7 +401,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120395000" />
+    <option name="totallyTimeSpent" value="121283000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,7 +416,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17449665" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17986578" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -685,20 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox_main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="31" column="72" selection-start-line="31" selection-start-column="72" selection-end-line="31" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/searchboxQueryPreviewSuggestion.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="806">
@@ -716,17 +712,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/DynamicFacets.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="114">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/DynamicFacets.html">
+    <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="41" column="303" selection-start-line="41" selection-start-column="303" selection-end-line="41" selection-end-column="303" />
+        <state relative-caret-position="478">
+          <caret line="28" column="224" selection-start-line="28" selection-start-column="224" selection-end-line="28" selection-end-column="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox_main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="33" column="232" selection-start-line="33" selection-start-column="232" selection-end-line="33" selection-end-column="232" />
         </state>
       </provider>
     </entry>

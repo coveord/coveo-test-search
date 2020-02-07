@@ -2,44 +2,47 @@
 <html>
 
 <head>
+    <title>All - E1 - En - Lazy</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height" >
-    <title>1263</title>
-    <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css"/>
-    <script src="../js/CoveoJsSearch.js"></script>
+    <meta name="viewport" content="width=device-width, height=device-height">
+    <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css" />
+    <script src="../js/CoveoJsSearch.Lazy.js"></script>
     <script src="../js/CoveoJsSearch.Dependencies.js"></script>
     <script src="../js/templates/templatesNew.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             Coveo.SearchEndpoint.configureSampleEndpointV2();
-            Coveo.init(document.querySelector('.CoveoSearchInterface'), {
-                externalComponents: [document.querySelector('.coveo-search-section')]
-            });
-        });
+            Coveo.init(document.querySelector("#search"));
+        })
     </script>
+
 </head>
 
-<body id="search" data-enable-history="true" data-design="new">
-<div class="CoveoAnalytics"></div>
-<div class='coveo-search-section' id='MyOutsideSearchBox'>
-    <div class="CoveoSearchbox" data-enable-omnibox="true" data-trigger-query-on-clear="true"></div>
-    <div class="CoveoFacetValueSuggestions" data-field="@objecttype" data-number-of-suggestions="100" data-use-query-suggestions="true" data-use-value-from-searchbox="true" data-display-estimate-number-of-results="true"></div>
-</div>
-<div style="height: 20px; color: green">Hallo world</div>
-<div class='CoveoSearchInterface' id='MySearchInterface'>
+<body>
+<div id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-enable-collaborative-rating="true">
+    <div class="CoveoAnalytics"></div>
+
     <div class="coveo-tab-section">
         <a class="CoveoTab" data-id="All" data-caption="All Content" data-responsive-breakpoint="1000"></a>
         <a class="CoveoTab" data-id="Chatter" data-caption="Chatter" data-expression="@objecttype==(FeedItem,FeedComment)" data-layout="list"></a>
+
+    </div>
+    <div class='coveo-search-section'>
+        <div class="CoveoSettings"></div>
+        <div class="CoveoSearchbox" data-enable-omnibox="true" data-placeholder='Enter your query here' data-enable-reveal-query-suggest-addon="true" data-enable-search-as-you-type="false">
+            <div class="CoveoFacetValueSuggestions" data-field="@objecttype" data-number-of-suggestions="100" data-use-query-suggestions="true" data-use-value-from-searchbox="true" data-display-estimate-number-of-results="true"></div>
+            <div class="CoveoFacetValueSuggestions" data-field="@filetype" data-number-of-suggestions="100" data-use-query-suggestions="true" data-use-value-from-searchbox="true" data-display-estimate-number-of-results="true"></div>
+
+        </div>
     </div>
     <div id="coveo-main-section" class="coveo-main-section">
-        <div id="coveo-facet-column" class="coveo-facet-column">
-            <div class="CoveoFacet" data-title="Object Type" data-field="@objecttype" data-enable-settings-facet-state="true" data-enable-toggling-operator="true" data-number-of-values-in-facet-search="10" data-page-size="15" data-allowed-values="" data-responsive-breakpoint="900" data-enable-collapse="true"></div>
-            <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All" data-value-caption='{"html" : "bla bla bla"}'></div>
-            <div class="CoveoFacet" data-title="Language" data-field="@language"></div>
-            <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
-            <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All"></div>
-            <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="All"></div>
+        <div  class="coveo-facet-column">
+            <div class="CoveoDynamicFacet" data-title="Object Type" data-field="@objecttype"></div>
+            <div class="CoveoDynamicFacet" data-title="FileType" data-field="@filetype" data-value-caption='{"html" : "bla bla bla"}'></div>
+            <div class="CoveoDynamicFacet" data-title="Language" data-field="@language"></div>
+            <div class="CoveoDynamicFacet" data-title="Author" data-field="@author"></div>
+            <div class="CoveoDynamicFacet" data-title="Year" data-field="@year"></div>
+            <div class="CoveoDynamicFacet" data-title="Month" data-field="@month" data-tab="All"></div>
 
         </div>
         <div id="coveo-results-column" class="coveo-results-column">

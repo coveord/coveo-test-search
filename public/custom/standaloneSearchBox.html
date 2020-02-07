@@ -23,8 +23,10 @@
 <body id="search">
 <div class='coveo-search-section'>
     <div class="searchbtn">Click to search</div>
-    <div class="CoveoSearchbox" data-enable-omnibox="true" data-trigger-query-on-clear="true"></div>
+    <div class="CoveoSearchbox" data-enable-omnibox="true" data-trigger-query-on-clear="false" data-enable-query-syntax='true' data-query-suggest-character-threshold="1">
+    </div>
     <div class="CoveoFacetValueSuggestions" data-field="@objecttype" data-number-of-suggestions="100" data-use-query-suggestions="true" data-use-value-from-searchbox="true" data-display-estimate-number-of-results="true"></div>
+    <div class="CoveoFacetValueSuggestions" data-field="@filetype" data-number-of-suggestions="100" data-use-query-suggestions="true" data-use-value-from-searchbox="true" data-display-estimate-number-of-results="true"></div>
 </div>
 </body>
 </html>
