@@ -761,7 +761,6 @@ var dict = {
   "PreviousMonth": "Mes anterior",
   "NextMonth": "Mes siguiente",
   "Title": "Título",
-  "DeselectFilterValues": "Quitar los filtros activos en el campo {0}",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["es-ES"] = merge(locales["es-ES"], dict);
@@ -1455,7 +1454,6 @@ var dict = {
   "PreviousMonth": "Mes anterior",
   "NextMonth": "Mes siguiente",
   "Title": "Título",
-  "DeselectFilterValues": "Quitar los filtros activos en el campo {0}",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
