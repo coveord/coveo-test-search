@@ -345,7 +345,8 @@
   float: left;
   margin-right: 2.84259%;
   width: 28.01019%;
-  padding: 5px 15px;
+  margin-right: 0;
+  padding: 13px 10px 5px;
 }
 
 .CoveoSearchInterface .coveo-facet-column:last-child {
@@ -7312,7 +7313,9 @@
   -moz-flex-basis: 115px;
   flex-basis: 115px;
   -ms-flex-preferred-size: 115px;
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIiB2aWV3Qm94PSIwIDAgNC45NSAxMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fS5jbHMtMntmaWxsOiM0NDQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5hcnJvd3M8L3RpdGxlPjxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjQuOTUiIGhlaWdodD0iMTAiLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMS40MSA0LjY3IDIuNDggMy4xOCAzLjU0IDQuNjcgMS40MSA0LjY3Ii8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjMuNTQgNS4zMyAyLjQ4IDYuODIgMS40MSA1LjMzIDMuNTQgNS4zMyIvPjwvc3ZnPg==) no-repeat 95% 50%;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIiB2aWV3Qm94PSIwIDAgNC45NSAxMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fS5jbHMtMntmaWxsOiM0NDQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5hcnJvd3M8L3RpdGxlPjxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjQuOTUiIGhlaWdodD0iMTAiLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMS40MSA0LjY3IDIuNDggMy4xOCAzLjU0IDQuNjcgMS40MSA0LjY3Ii8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjMuNTQgNS4zMyAyLjQ4IDYuODIgMS40MSA1LjMzIDMuNTQgNS4zMyIvPjwvc3ZnPg==) no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
   vertical-align: middle;
   height: 30px;
   min-width: 150px;
@@ -10012,13 +10015,17 @@ a.CoveoResultLink.coveo-selected *,
   content: '-';
 }
 
+.coveo-dynamic-facet-collapsed-values {
+  display: none;
+}
+
 .coveo-dynamic-facet-collapsed .coveo-dynamic-facet-value,
 .coveo-dynamic-facet-collapsed .coveo-dynamic-facet-show-more,
 .coveo-dynamic-facet-collapsed .coveo-dynamic-facet-show-less {
   display: none;
 }
 
-.coveo-dynamic-facet-collapsed .coveo-dynamic-facet-value.coveo-selected {
+.coveo-dynamic-facet-collapsed .coveo-dynamic-facet-collapsed-values {
   display: inherit;
 }
 
@@ -10961,28 +10968,31 @@ a.CoveoResultLink.coveo-selected *,
   font-size: 16px;
 }
 
-.CoveoDidYouMean a {
+.CoveoDidYouMean button {
   color: #004990;
   text-decoration: none;
   cursor: pointer;
+  border: none;
+  font-size: 1em;
+  padding: 0;
   text-decoration: none;
 }
 
-.CoveoDidYouMean a:visited,
-.CoveoDidYouMean a:visited:hover {
+.CoveoDidYouMean button:visited,
+.CoveoDidYouMean button:visited:hover {
   color: #609;
 }
 
-.CoveoDidYouMean a:hover,
-.CoveoDidYouMean a:hover a {
+.CoveoDidYouMean button:hover,
+.CoveoDidYouMean button:hover a {
   text-decoration: underline;
 }
 
-.CoveoDidYouMean a.coveo-selected * {
+.CoveoDidYouMean button.coveo-selected * {
   color: #004990;
 }
 
-.CoveoDidYouMean a:hover {
+.CoveoDidYouMean button:hover {
   text-decoration: underline;
 }
 
@@ -14756,7 +14766,7 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-quickview-time {
   font-size: 12px;
-  color: #b4b4b4;
+  color: #4f5658;
   font-weight: normal;
   vertical-align: middle;
 }
@@ -15409,6 +15419,7 @@ a.coveo-folding-show-less.coveo-selected * {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  pointer-events: none;
 }
 
 .coveo-star-rating-star + .coveo-star-rating-star {
@@ -16829,8 +16840,8 @@ a.coveo-folding-show-less.coveo-selected * {
   position: relative;
   border: thin solid #bcc3ca;
   background-color: white;
-  max-width: 250px;
-  min-width: 150px;
+  max-width: 280px;
+  min-width: 180px;
 }
 
 .CoveoSimpleFilter:hover {
@@ -16839,7 +16850,7 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-simplefilter-selecttext {
   margin-left: 5px;
-  max-width: 250px;
+  max-width: 280px;
   overflow: hidden;
   text-overflow: ellipsis;
   pointer-events: none;
@@ -16899,7 +16910,7 @@ a.coveo-folding-show-less.coveo-selected * {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 2px;
+  padding-top: 1px;
 }
 
 .coveo-simplefilter-circle {
@@ -17041,8 +17052,38 @@ a.coveo-folding-show-less.coveo-selected * {
   justify-content: flex-end;
   -ms-flex-pack: end;
   color: #1d4f76;
-  width: 10px;
-  height: 6px;
+  width: 12px;
+  height: 8px;
+}
+
+.coveo-simplefilter-eraser {
+  position: relative;
+  top: 1px;
+  margin: 0 5px 0 10px;
+  pointer-events: auto;
+  padding: 0;
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #1d4f76;
+}
+
+.coveo-simplefilter-eraser .coveo-exclusion-svg {
+  fill: #1d4f76;
+}
+
+.coveo-simplefilter-eraser svg {
+  width: 12px;
+  height: 12px;
+}
+
+.coveo-simplefilter-eraser:hover {
+  color: #cc0d00;
+}
+
+.coveo-simplefilter-eraser:hover .coveo-exclusion-svg {
+  fill: #cc0d00;
 }
 
 .coveo-simplefilter-empty {
@@ -17480,9 +17521,10 @@ a.coveo-folding-show-less.coveo-selected * {
   padding-left: 40px;
 }
 
-.coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-value:not(.coveo-selected),
-.coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-show-less,
-.coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-show-more {
+.coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-all:not(.coveo-show-when-collapsed),
+.coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-value:not(.coveo-show-when-collapsed),
+.coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-show-less:not(.coveo-show-when-collapsed),
+.coveo-dynamic-hierarchical-facet-collapsed .coveo-dynamic-hierarchical-facet-show-more:not(.coveo-show-when-collapsed) {
   display: none;
 }
 
@@ -17785,16 +17827,69 @@ button.coveo-dynamic-hierarchical-facet-all {
   margin-top: 20px;
 }
 
-.coveo-suggestion-container .coveo-preview-container .coveo-preview-header {
-  padding: 10px;
-  font-weight: bold;
-  margin-top: 0;
-}
-
 .coveo-suggestion-container .coveo-preview-container .coveo-preview-selectable.coveo-omnibox-selected,
 .coveo-suggestion-container .coveo-preview-container .coveo-preview-selectable:hover {
   outline: thin solid #bcc3ca;
   outline-offset: -1px;
+}
+
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
+.CoveoSortDropdown .coveo-dropdown {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 5px 10px;
+  border-bottom: thin solid #bcc3ca;
+  text-transform: uppercase;
+  border-bottom: 2px solid #bcc3ca;
+  text-indent: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  background-position-y: -5px;
+  font-family: inherit;
+}
+
+.CoveoSortDropdown .coveo-dropdown.coveo-selected,
+.CoveoSortDropdown .coveo-dropdown.coveo-selected:hover {
+  border-bottom: 2px solid #263e55;
+}
+
+.CoveoSortDropdown .coveo-dropdown:hover {
+  color: #263e55;
+}
+
+.CoveoSortDropdown .coveo-dropdown:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.CoveoSortDropdown .CoveoSort {
+  display: none;
 }
 
 

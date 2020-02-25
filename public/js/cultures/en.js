@@ -847,8 +847,12 @@ var dict = {
   "OpenFiltersDropdown": "Open the filters dropdown",
   "CloseFiltersDropdown": "Close the filters dropdown",
   "NoValuesFound": "No values found.",
-  "QuerySuggestPreview": "Product recommendations for",
   "To": "to",
+  "DeselectFilterValues": "Deselect all active filters on {0} field",
+  "Rated": "Rated {0} out of {1} star<pl>s</pl>",
+  "RatedBy": "by {0} user<pl>s</pl>",
+  "NoRatings": "No ratings",
+  "Pagination": "Pagination",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1674,8 +1678,12 @@ var dict = {
   "OpenFiltersDropdown": "Open the filters dropdown",
   "CloseFiltersDropdown": "Close the filters dropdown",
   "NoValuesFound": "No values found.",
-  "QuerySuggestPreview": "Product recommendations for",
   "To": "to",
+  "DeselectFilterValues": "Deselect all active filters on {0} field",
+  "Rated": "Rated {0} out of {1} star<pl>s</pl>",
+  "RatedBy": "by {0} user<pl>s</pl>",
+  "NoRatings": "No ratings",
+  "Pagination": "Pagination",
 }
 
   var locales = String["locales"] || (String["locales"] = {});

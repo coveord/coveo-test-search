@@ -893,8 +893,12 @@ var dict = {
   "OpenFiltersDropdown": "Ouvrir le menu déroulant de filtres",
   "CloseFiltersDropdown": "Fermer le menu déroulant de filtres",
   "NoValuesFound": "Aucune valeur trouvée.",
-  "QuerySuggestPreview": "Recommendations de produits pour",
   "To": "à",
+  "DeselectFilterValues": "Effacer tout de filtres actifs dans {0}",
+  "Rated": "Évalué {0} sur {1} étoile<pl>s<pl/>",
+  "RatedBy": "par {0} utilisateur<pl>s</pl>",
+  "NoRatings": "Aucune évaluation",
+  "Pagination": "Pagination",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["fr"] = merge(locales["fr"], dict);
@@ -1720,8 +1724,12 @@ var dict = {
   "OpenFiltersDropdown": "Ouvrir le menu déroulant de filtres",
   "CloseFiltersDropdown": "Fermer le menu déroulant de filtres",
   "NoValuesFound": "Aucune valeur trouvée.",
-  "QuerySuggestPreview": "Recommendations de produits pour",
   "To": "à",
+  "DeselectFilterValues": "Effacer tout de filtres actifs dans {0}",
+  "Rated": "Évalué {0} sur {1} étoile<pl>s<pl/>",
+  "RatedBy": "par {0} utilisateur<pl>s</pl>",
+  "NoRatings": "Aucune évaluation",
+  "Pagination": "Pagination",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
