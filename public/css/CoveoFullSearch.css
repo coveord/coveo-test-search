@@ -10016,6 +10016,7 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-dynamic-facet-collapsed-values {
+  line-height: 1.6em;
   display: none;
 }
 
@@ -17059,9 +17060,8 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-simplefilter-eraser {
   position: relative;
   top: 1px;
-  margin: 0 5px 0 10px;
+  padding: 0 5px 0 10px;
   pointer-events: auto;
-  padding: 0;
   vertical-align: middle;
   border: none;
   background-color: transparent;
@@ -17509,12 +17509,14 @@ a.coveo-folding-show-less.coveo-selected * {
   list-style: none;
 }
 
+.coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-all,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-value,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-less,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-more {
   padding-left: 20px;
 }
 
+.coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-all.coveo-with-space,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-value.coveo-with-space,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-less.coveo-with-space,
 .coveo-dynamic-hierarchical-facet-values.coveo-with-space .coveo-dynamic-hierarchical-facet-show-more.coveo-with-space {
@@ -17531,6 +17533,7 @@ a.coveo-folding-show-less.coveo-selected * {
 button.coveo-dynamic-hierarchical-facet-value,
 button.coveo-dynamic-hierarchical-facet-all {
   display: inline-flex;
+  position: relative;
 }
 
 .coveo-dynamic-hierarchical-facet-value,
@@ -17552,10 +17555,6 @@ button.coveo-dynamic-hierarchical-facet-all {
 .coveo-dynamic-hierarchical-facet-all:hover,
 .coveo-dynamic-hierarchical-facet-all.coveo-focused {
   opacity: 0.6;
-}
-
-.coveo-dynamic-hierarchical-facet-value {
-  position: relative;
 }
 
 .coveo-dynamic-hierarchical-facet-value.coveo-with-space {
