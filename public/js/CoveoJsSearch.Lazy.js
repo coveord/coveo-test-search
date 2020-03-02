@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"QuerySuggestPreview","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Searchbox","14":"Omnibox","15":"Querybox","16":"AdvancedSearch","17":"FacetSlider","18":"Pager","19":"ResultsPerPage","20":"OmniboxResultList","21":"ResultList","22":"Quickview","23":"Recommendation","24":"Backdrop","25":"SortDropdown","26":"ResultsFiltersPreferences","27":"ResultsPreferences","28":"YouTubeThumbnail","29":"Tab","30":"SearchAlerts","31":"SimpleFilter","32":"DistanceResources","33":"Sort","34":"Thumbnail","35":"ResultLayoutSelector","36":"ResultFolding","37":"PrintableUri","38":"Matrix","39":"CardOverlay","40":"FoldingForThread","41":"FollowItem","42":"Settings","43":"ResultTagging","44":"ResultRating","45":"ResultAttachments","46":"QuerySummary","47":"FieldSuggestions","48":"FacetValueSuggestions","49":"CardActionBar","50":"SearchButton","51":"Logo","52":"NumericSpinner","53":"Folding","54":"ChatterPostedBy","55":"ChatterPostAttachment","56":"ChatterLikedBy","57":"AnalyticsSuggestions","58":"RadioButton","59":"MultiSelect","60":"FormGroup","61":"Triggers","62":"Text","63":"StarRating","64":"ShareQuery","65":"ResultLink","66":"ResultActionsMenu","67":"QueryDuration","68":"PromotedResultsBadge","69":"PreferencesPanel","70":"MissingTerms","71":"HiddenQuery","72":"ExportToExcel","73":"Excerpt","74":"ErrorReport","75":"DidYouMean","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"PipelineContext","80":"Icon","81":"Dropdown","82":"CommerceQuery","83":"ChatterTopic","84":"Aggregate"}[chunkId]||chunkId) + "__" + "d93e5a1d62ee4235da70" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"QuerySuggestPreview","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Searchbox","14":"Omnibox","15":"Querybox","16":"AdvancedSearch","17":"FacetSlider","18":"Pager","19":"ResultsPerPage","20":"OmniboxResultList","21":"ResultList","22":"Quickview","23":"Recommendation","24":"Backdrop","25":"SortDropdown","26":"ResultsFiltersPreferences","27":"ResultsPreferences","28":"YouTubeThumbnail","29":"Tab","30":"SearchAlerts","31":"SimpleFilter","32":"DistanceResources","33":"Sort","34":"Thumbnail","35":"ResultLayoutSelector","36":"ResultFolding","37":"PrintableUri","38":"Matrix","39":"CardOverlay","40":"FoldingForThread","41":"FollowItem","42":"Settings","43":"ResultTagging","44":"ResultRating","45":"ResultAttachments","46":"QuerySummary","47":"FieldSuggestions","48":"FacetValueSuggestions","49":"CardActionBar","50":"SearchButton","51":"Logo","52":"NumericSpinner","53":"Folding","54":"ChatterPostedBy","55":"ChatterPostAttachment","56":"ChatterLikedBy","57":"AnalyticsSuggestions","58":"RadioButton","59":"MultiSelect","60":"FormGroup","61":"Triggers","62":"Text","63":"StarRating","64":"ShareQuery","65":"ResultLink","66":"ResultActionsMenu","67":"QueryDuration","68":"PromotedResultsBadge","69":"PreferencesPanel","70":"MissingTerms","71":"HiddenQuery","72":"ExportToExcel","73":"Excerpt","74":"ErrorReport","75":"DidYouMean","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"PipelineContext","80":"Icon","81":"Dropdown","82":"CommerceQuery","83":"ChatterTopic","84":"Aggregate"}[chunkId]||chunkId) + "__" + "7cfa116e647fd00e32fd" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -4393,6 +4393,16 @@ var Component = /** @class */ (function (_super) {
     };
     Component.prototype.resolveResult = function () {
         return Component.getResult(this.element);
+    };
+    Component.prototype.removeTabSupport = function () {
+        if (this.element.hasAttribute('data-tab')) {
+            this.logger.warn('The "data-tab" attribute is not supported for this component and was removed.');
+            this.element.removeAttribute('data-tab');
+        }
+        if (this.element.hasAttribute('data-tab-not')) {
+            this.logger.warn('The "data-tab-not" attribute is not supported for this component and was removed.');
+            this.element.removeAttribute('data-tab-not');
+        }
     };
     Component.prototype.initDebugInfo = function () {
         var _this = this;
@@ -18556,8 +18566,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.8521.3-beta',
-    product: '2.8521.3-beta',
+    lib: '2.8521.4-beta',
+    product: '2.8521.4-beta',
     supportedApiVersion: 2
 };
 
