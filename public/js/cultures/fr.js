@@ -877,6 +877,8 @@ var dict = {
   "InsertAQuery": "Insérer une requête",
   "PressEnterToSend": "Appuyez sur Entrée pour envoyer",
   "SortResultsBy": "Trier les résultats par {0}",
+  "SortResultsByAscending": "Trier en ordre croissant de {0}",
+  "SortResultsByDescending": "Trier en ordre décroissant de {0}",
   "DisplayResultsAs": "Afficher les résultats comme {0}",
   "FacetTitle": "Facette {0}",
   "SelectValueWithResultCount": "Sélectionner {0} avec {1}",
@@ -899,6 +901,7 @@ var dict = {
   "RatedBy": "par {0} utilisateur<pl>s</pl>",
   "NoRatings": "Aucune évaluation",
   "Pagination": "Pagination",
+  "ThumbnailOf": "Aperçu de « {0} »",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["fr"] = merge(locales["fr"], dict);
@@ -1708,6 +1711,8 @@ var dict = {
   "InsertAQuery": "Insérer une requête",
   "PressEnterToSend": "Appuyez sur Entrée pour envoyer",
   "SortResultsBy": "Trier les résultats par {0}",
+  "SortResultsByAscending": "Trier en ordre croissant de {0}",
+  "SortResultsByDescending": "Trier en ordre décroissant de {0}",
   "DisplayResultsAs": "Afficher les résultats comme {0}",
   "FacetTitle": "Facette {0}",
   "SelectValueWithResultCount": "Sélectionner {0} avec {1}",
@@ -1730,6 +1735,7 @@ var dict = {
   "RatedBy": "par {0} utilisateur<pl>s</pl>",
   "NoRatings": "Aucune évaluation",
   "Pagination": "Pagination",
+  "ThumbnailOf": "Aperçu de « {0} »",
 }
 
   var locales = String["locales"] || (String["locales"] = {});

@@ -831,6 +831,8 @@ var dict = {
   "InsertAQuery": "Insert a query",
   "PressEnterToSend": "Press enter to send",
   "SortResultsBy": "Sort results by {0}",
+  "SortResultsByAscending": "Sort by {0} in ascending order",
+  "SortResultsByDescending": "Sort by {0} in descending order",
   "DisplayResultsAs": "Display results as {0}",
   "FacetTitle": "{0} facet",
   "SelectValueWithResultCount": "Select {0} with {1}",
@@ -853,6 +855,7 @@ var dict = {
   "RatedBy": "by {0} user<pl>s</pl>",
   "NoRatings": "No ratings",
   "Pagination": "Pagination",
+  "ThumbnailOf": "Thumbnail of \"{0}\"",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1662,6 +1665,8 @@ var dict = {
   "InsertAQuery": "Insert a query",
   "PressEnterToSend": "Press enter to send",
   "SortResultsBy": "Sort results by {0}",
+  "SortResultsByAscending": "Sort by {0} in ascending order",
+  "SortResultsByDescending": "Sort by {0} in descending order",
   "DisplayResultsAs": "Display results as {0}",
   "FacetTitle": "{0} facet",
   "SelectValueWithResultCount": "Select {0} with {1}",
@@ -1684,6 +1689,7 @@ var dict = {
   "RatedBy": "by {0} user<pl>s</pl>",
   "NoRatings": "No ratings",
   "Pagination": "Pagination",
+  "ThumbnailOf": "Thumbnail of \"{0}\"",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
