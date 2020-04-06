@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="" />
+    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,37 +19,37 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="100" />
-          <entry key="project.open.time.0" value="82" />
+          <entry key="project.open.time.0" value="83" />
           <entry key="project.open.time.1" value="11" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="7" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="103" />
+          <entry key="project.opened" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="173" />
-          <entry key="json" value="217" />
+          <entry key="html" value="220" />
+          <entry key="json" value="218" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="173" />
-          <entry key="JSON" value="217" />
+          <entry key="HTML" value="220" />
+          <entry key="JSON" value="218" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="html" value="46" />
+          <entry key="html" value="47" />
           <entry key="json" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="46" />
+          <entry key="HTML" value="47" />
           <entry key="JSON" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
@@ -72,11 +75,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testPages/DynamicFacets.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
               <caret line="39" column="54" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -162,13 +174,13 @@
         <option value="$PROJECT_DIR$/testPages/mlfacetinDev.html" />
         <option value="$PROJECT_DIR$/testPages/searchboxQueryPreviewSuggestion.html" />
         <option value="$PROJECT_DIR$/public/custom/searchboxQueryPreviewSuggestion.html" />
-        <option value="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" />
         <option value="$PROJECT_DIR$/testPages/standaloneSearchBox_main.html" />
         <option value="$PROJECT_DIR$/testPages/standaloneSearchBox.html" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_simplefilterfacet.html" />
         <option value="$PROJECT_DIR$/testPages/SortDropdown.html" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/testPages/DynamicFacets.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" />
       </list>
     </option>
   </component>
@@ -427,6 +439,7 @@
       <workItem from="1585158121622" duration="726000" />
       <workItem from="1585337584517" duration="389000" />
       <workItem from="1585338611795" duration="866000" />
+      <workItem from="1586178366794" duration="713000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -439,7 +452,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130510000" />
+    <option name="totallyTimeSpent" value="131223000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,9 +464,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-543" y="-1087" width="1550" height="838" extended-state="6" />
+    <frame x="1377" y="-1060" width="1358" height="814" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18456376" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18412943" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -472,7 +486,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.30268458" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.34745762" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -739,20 +753,6 @@
     <entry file="file://$PROJECT_DIR$/public/custom/searchboxQueryPreviewSuggestion.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1794">
-          <caret line="69" column="122" selection-start-line="69" selection-start-column="122" selection-end-line="69" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/SortDropdown.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
@@ -781,10 +781,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/DynamicFacets.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="39" column="54" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
         </state>
       </provider>
     </entry>
