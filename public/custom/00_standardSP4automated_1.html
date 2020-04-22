@@ -9,7 +9,7 @@
   <script src="../js/templates/templatesNew.js"></script>
   <script>
       document.addEventListener('DOMContentLoaded', function(){
-          Coveo.SearchEndpoint.configureSampleEndpoint();
+          Coveo.SearchEndpoint.configureSampleEndpointV2();
           Coveo.init(document.body);
       });
       var testthis = function () {
@@ -17,7 +17,7 @@
       };
   </script>
 </head>
-<body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-pipeline="PipelineTest">
+<body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-pipeline="lvuAgentPanel">
 <div class="CoveoAnalytics"></div>
 <div class="CoveoFoldingForThread" data-field="@sffeeditemid" data-tab="Chatter" data-parent-field="@sfid" data-child-field="@sffeeditemid" data-rearrange="date descending" data-range="0"></div>
 <div class="CoveoFolding" data-field="@litopicurl" data-expand-expression="@filetype==lithiummessage" data-rearrange="date ascending" data-tab="Lithium"></div>

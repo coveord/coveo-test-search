@@ -11,7 +11,7 @@
     <script src="../js/templates/templatesNew.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            Coveo.SearchEndpoint.configureSampleEndpoint();
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
             Coveo.init(document.querySelector("#search"));
         });
     </script>
@@ -20,7 +20,7 @@
 
 <body>
 <div id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-enable-collaborative-rating="true"
-     data-maximum-age="0" data-pipeline="PipelineTest">
+     data-maximum-age="0" data-pipeline="lvuAgentPanel">
     <div class="CoveoFoldingForThread" data-field="@sffeeditemid" data-tab="Chatter" data-parent-field="@sfid" data-child-field="@sffeeditemid"
          data-rearrange="date descending" data-range="0"></div>
     <div class="CoveoFolding" data-field="@litopicurl" data-expand-expression="@filetype==lithiummessage" data-rearrange="date ascending"
