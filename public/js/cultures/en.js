@@ -856,6 +856,7 @@ var dict = {
   "NoRatings": "No ratings",
   "Pagination": "Pagination",
   "ThumbnailOf": "Thumbnail of \"{0}\"",
+  "CollapsedUriParts": "Collapsed URI parts",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1690,6 +1691,7 @@ var dict = {
   "NoRatings": "No ratings",
   "Pagination": "Pagination",
   "ThumbnailOf": "Thumbnail of \"{0}\"",
+  "CollapsedUriParts": "Collapsed URI parts",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
