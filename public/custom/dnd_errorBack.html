@@ -14,7 +14,7 @@
       });
   </script>
 </head>
-<body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-pipeline="lvuAgentPanel">
+<body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-pipeline="">
 <div class="CoveoAnalytics"></div>
 <div class="coveo-tab-section">
   <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
@@ -31,6 +31,9 @@
     <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
     <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All"></div>
     <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="All"></div>
+    <div class="CoveoHierarchicalFacet" data-title="Product" data-field="@hierarchicfield" data-level-start="1" data-injection-depth="100000"
+         data-enable-settings="true" data-id="Product" data-is-multi-value-field="true" data-tab="All">
+    </div>
     <div class="CoveoTimespanFacet" data-tab="All"></div>
   </div>
   <div class="coveo-results-column">

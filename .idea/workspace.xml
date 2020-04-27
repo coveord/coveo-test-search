@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="" />
+    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/dnd_errorBack.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/dnd_errorBack.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -28,19 +31,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="272" />
+          <entry key="html" value="274" />
           <entry key="json" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="272" />
+          <entry key="HTML" value="274" />
           <entry key="JSON" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="html" value="51" />
           <entry key="json" value="5" />
         </counts>
@@ -49,7 +52,7 @@
         <counts>
           <entry key="HTML" value="51" />
           <entry key="JSON" value="5" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -64,7 +67,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
@@ -76,17 +79,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="1215">
+              <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="63" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testPages/dnd_errorBack.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="520">
+              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -158,6 +161,7 @@
       <find>searchbox</find>
       <find>search-as-</find>
       <find>AnalyticsEndpointCaller</find>
+      <find>hie</find>
     </findStrings>
     <dirStrings>
       <dir>D:\workspace\coveo\jsuiV1sp\coveo-test-search\testPages</dir>
@@ -196,8 +200,8 @@
         <option value="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_2.html" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_1.html" />
-        <option value="$PROJECT_DIR$/testPages/dnd_errorBack.html" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/testPages/dnd_errorBack.html" />
       </list>
     </option>
   </component>
@@ -252,7 +256,14 @@
               <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
               <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
@@ -474,7 +485,7 @@
       <workItem from="1587588343847" duration="821000" />
       <workItem from="1587648607089" duration="20000" />
       <workItem from="1588012639146" duration="797000" />
-      <workItem from="1588014001863" duration="240000" />
+      <workItem from="1588014001863" duration="812000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -487,7 +498,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136149000" />
+    <option name="totallyTimeSpent" value="136721000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,10 +510,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="950" y="-1061" width="1358" height="814" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18567026" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21744967" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -521,7 +532,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3713405" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.30402684" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -768,20 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/dnd_errorBack.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/DynamicFacets.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1014">
@@ -835,6 +832,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/dnd_errorBack.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
         </state>
       </provider>
     </entry>
