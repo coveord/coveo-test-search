@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"QuerySuggestPreview","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Searchbox","14":"Omnibox","15":"Querybox","16":"AdvancedSearch","17":"FacetSlider","18":"ResultsPerPage","19":"Pager","20":"OmniboxResultList","21":"ResultList","22":"Quickview","23":"Recommendation","24":"Backdrop","25":"SortDropdown","26":"ResultsPreferences","27":"ResultsFiltersPreferences","28":"YouTubeThumbnail","29":"Tab","30":"DistanceResources","31":"SearchAlerts","32":"SimpleFilter","33":"Thumbnail","34":"PrintableUri","35":"Matrix","36":"FoldingForThread","37":"Sort","38":"ResultLayoutSelector","39":"ResultFolding","40":"ResultAttachments","41":"QuerySummary","42":"FieldSuggestions","43":"FacetValueSuggestions","44":"CardOverlay","45":"Folding","46":"ChatterPostedBy","47":"ChatterPostAttachment","48":"ChatterLikedBy","49":"AnalyticsSuggestions","50":"FollowItem","51":"RadioButton","52":"MultiSelect","53":"FormGroup","54":"Triggers","55":"Text","56":"StarRating","57":"ShareQuery","58":"Settings","59":"ResultTagging","60":"ResultRating","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"CardActionBar","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"SearchButton","77":"PipelineContext","78":"Logo","79":"Icon","80":"NumericSpinner","81":"Dropdown","82":"CommerceQuery","83":"ChatterTopic","84":"Aggregate"}[chunkId]||chunkId) + "__" + "a9fe0f628e585580a020" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"QuerySuggestPreview","9":"FieldTable","10":"ImageFieldValue","11":"Badge","12":"FieldValue","13":"Searchbox","14":"Omnibox","15":"Querybox","16":"AdvancedSearch","17":"FacetSlider","18":"ResultsPerPage","19":"Pager","20":"OmniboxResultList","21":"ResultList","22":"Quickview","23":"Recommendation","24":"Backdrop","25":"SortDropdown","26":"ResultsPreferences","27":"ResultsFiltersPreferences","28":"YouTubeThumbnail","29":"Tab","30":"DistanceResources","31":"SearchAlerts","32":"SimpleFilter","33":"Thumbnail","34":"PrintableUri","35":"Matrix","36":"FoldingForThread","37":"Sort","38":"ResultLayoutSelector","39":"ResultFolding","40":"ResultAttachments","41":"QuerySummary","42":"FieldSuggestions","43":"FacetValueSuggestions","44":"CardOverlay","45":"Folding","46":"ChatterPostedBy","47":"ChatterPostAttachment","48":"ChatterLikedBy","49":"AnalyticsSuggestions","50":"FollowItem","51":"RadioButton","52":"MultiSelect","53":"FormGroup","54":"Triggers","55":"Text","56":"StarRating","57":"ShareQuery","58":"Settings","59":"ResultTagging","60":"ResultRating","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"CardActionBar","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"SearchButton","77":"PipelineContext","78":"Logo","79":"Icon","80":"NumericSpinner","81":"Dropdown","82":"CommerceQuery","83":"ChatterTopic","84":"Aggregate"}[chunkId]||chunkId) + "__" + "dbc1949e2493782cca27" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -4179,23 +4179,19 @@ var ComponentEvents = /** @class */ (function () {
         });
     };
     ComponentEvents.prototype.on = function (arg, event, handler) {
-        if (!JQueryutils_1.JQueryUtils.getJQuery() || !JQueryutils_1.JQueryUtils.isInstanceOfJQuery(arg)) {
-            var htmlEl = arg;
-            Dom_1.$$(htmlEl).on(event, this.wrapToCallIfEnabled(handler));
+        if (this.shouldTreatElementAsJQuery(arg)) {
+            arg.on(event, this.wrapToCallIfEnabled(handler));
         }
         else {
-            var jq = arg;
-            jq.on(event, this.wrapToCallIfEnabled(handler));
+            Dom_1.$$(arg).on(event, this.wrapToCallIfEnabled(handler));
         }
     };
     ComponentEvents.prototype.one = function (arg, event, handler) {
-        if (arg instanceof HTMLElement) {
-            var htmlEl = arg;
-            Dom_1.$$(htmlEl).one(event, this.wrapToCallIfEnabled(handler));
+        if (this.shouldTreatElementAsJQuery(arg)) {
+            arg.one(event, this.wrapToCallIfEnabled(handler));
         }
         else {
-            var jq = arg;
-            jq.one(event, this.wrapToCallIfEnabled(handler));
+            Dom_1.$$(arg).one(event, this.wrapToCallIfEnabled(handler));
         }
     };
     /**
@@ -4249,14 +4245,13 @@ var ComponentEvents = /** @class */ (function () {
         this.oneRootElement(this.getQueryStateEventName(eventType, attribute), handler);
     };
     ComponentEvents.prototype.trigger = function (arg, event, args) {
+        var _this = this;
         this.wrapToCallIfEnabled(function () {
-            if (arg instanceof HTMLElement) {
-                var htmlEl = arg;
-                Dom_1.$$(htmlEl).trigger(event, args);
+            if (_this.shouldTreatElementAsJQuery(arg)) {
+                arg.trigger(event, args);
             }
             else {
-                var jq = arg;
-                jq.trigger(event, args);
+                Dom_1.$$(arg).trigger(event, args);
             }
         })(args);
     };
@@ -4278,7 +4273,7 @@ var ComponentEvents = /** @class */ (function () {
                         args = [args[0].detail];
                     }
                 }
-                else if (args && JQueryutils_1.JQueryUtils.isInstanceOfJqueryEvent(args[0])) {
+                else if (args && _this.shouldTreatEventAsJQuery(args[0])) {
                     if (args[1] != undefined) {
                         args = [args[1]];
                     }
@@ -4293,6 +4288,21 @@ var ComponentEvents = /** @class */ (function () {
                 return func.apply(_this.owner, args);
             }
         };
+    };
+    ComponentEvents.prototype.shouldTreatElementAsJQuery = function (arg) {
+        if (Dom_1.Dom.useNativeJavaScriptEvents === true) {
+            return false;
+        }
+        if (JQueryutils_1.JQueryUtils.getJQuery() && JQueryutils_1.JQueryUtils.isInstanceOfJQuery(arg)) {
+            return true;
+        }
+        return false;
+    };
+    ComponentEvents.prototype.shouldTreatEventAsJQuery = function (arg) {
+        if (Dom_1.Dom.useNativeJavaScriptEvents === true) {
+            return false;
+        }
+        return JQueryutils_1.JQueryUtils.getJQuery() && JQueryutils_1.JQueryUtils.isInstanceOfJqueryEvent(arg);
     };
     ComponentEvents.prototype.getQueryStateEventName = function (eventType, attribute) {
         return this.getModelEvent(this.owner.queryStateModel, eventType, attribute);
@@ -7456,7 +7466,7 @@ var SearchInterface = /** @class */ (function (_super) {
         _this.componentOptionsModel = new ComponentOptionsModel_1.ComponentOptionsModel(element);
         _this.usageAnalytics = _this.initializeAnalytics();
         _this.queryController = new QueryController_1.QueryController(element, _this.options, _this.usageAnalytics, _this);
-        _this.facetValueStateHandler = new FacetValueStateHandler_1.FacetValueStateHandler(_this.element);
+        _this.facetValueStateHandler = new FacetValueStateHandler_1.FacetValueStateHandler(_this);
         new SentryLogger_1.SentryLogger(_this.queryController);
         var missingTermManagerArgs = {
             element: _this.element,
@@ -7906,7 +7916,7 @@ var SearchInterface = /** @class */ (function (_super) {
     Object.defineProperty(SearchInterface.prototype, "duplicatesFacets", {
         get: function () {
             var duplicate = [];
-            var facets = ComponentsTypes_1.ComponentsTypes.getAllFacetsInstance(this.root);
+            var facets = ComponentsTypes_1.ComponentsTypes.getAllFacetsFromSearchInterface(this);
             facets.forEach(function (facet) {
                 facets.forEach(function (cmp) {
                     if (facet == cmp) {
@@ -12018,15 +12028,18 @@ var ComponentsTypes = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    ComponentsTypes.getAllFacetsElements = function (root) {
+    ComponentsTypes.getAllFacetElementsFromElement = function (root) {
         var selectors = ComponentsTypes.allFacetsClassname.map(function (className) { return "." + className; }).join(', ');
         var hasNoFacetChild = function (element) { return !Dom_1.$$(element).findAll(selectors).length; };
         return Dom_1.$$(root)
             .findAll(selectors)
             .filter(hasNoFacetChild);
     };
-    ComponentsTypes.getAllFacetsInstance = function (root) {
-        return ComponentsTypes.getAllFacetsElements(root).map(function (element) { return Component_1.Component.get(element); });
+    ComponentsTypes.getAllFacetInstancesFromElement = function (root) {
+        return ComponentsTypes.getAllFacetElementsFromElement(root).map(function (element) { return Component_1.Component.get(element); });
+    };
+    ComponentsTypes.getAllFacetsFromSearchInterface = function (searchInterface) {
+        return ComponentsTypes.allFacetsType.reduce(function (facets, facetType) { return facets.concat(searchInterface.getComponents(facetType)); }, []);
     };
     return ComponentsTypes;
 }());
@@ -18658,8 +18671,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.8959.1-beta',
-    product: '2.8959.1-beta',
+    lib: '2.8959.2-beta',
+    product: '2.8959.2-beta',
     supportedApiVersion: 2
 };
 
@@ -29036,7 +29049,7 @@ var InitializationPlaceholder = /** @class */ (function () {
         // Render an arbitrary number of placeholder facet.
         // Facets should become usable on the first deferredQuerySuccess
         var _this = this;
-        var facetElements = ComponentsTypes_1.ComponentsTypes.getAllFacetsElements(this.root);
+        var facetElements = ComponentsTypes_1.ComponentsTypes.getAllFacetElementsFromElement(this.root);
         if (Utils_1.Utils.isNonEmptyArray(facetElements)) {
             var placeholders_1 = [];
             _.each(facetElements, function (facetElement) { return Dom_1.$$(facetElement).addClass(InitializationPlaceholder.INITIALIZATION_CLASS); });
@@ -42467,11 +42480,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var QueryStateModel_1 = __webpack_require__(13);
 var ComponentsTypes_1 = __webpack_require__(48);
 var FacetValueStateHandler = /** @class */ (function () {
-    function FacetValueStateHandler(root) {
-        this.root = root;
+    function FacetValueStateHandler(searchInterface) {
+        this.searchInterface = searchInterface;
     }
     FacetValueStateHandler.prototype.handleFacetValueState = function (stateToSet) {
-        var allFacets = ComponentsTypes_1.ComponentsTypes.getAllFacetsInstance(this.root);
+        var allFacets = ComponentsTypes_1.ComponentsTypes.getAllFacetsFromSearchInterface(this.searchInterface);
         var fvState = stateToSet.fv;
         var facetValueStateToFacetState = new FacetValueStateToFacetStateTransformer(stateToSet, fvState, allFacets);
         var facetValueStateToHiddenQuery = new FacetValueStateToHiddenQueryTransformer(stateToSet, fvState);

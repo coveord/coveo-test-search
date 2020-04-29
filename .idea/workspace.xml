@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/dnd_errorBack.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/dnd_errorBack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,39 +18,39 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="107" />
+          <entry key="project.closed" value="109" />
           <entry key="project.open.time.0" value="88" />
-          <entry key="project.open.time.1" value="11" />
+          <entry key="project.open.time.1" value="12" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="7" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="112" />
+          <entry key="project.opened" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="274" />
-          <entry key="json" value="229" />
+          <entry key="json" value="230" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="274" />
-          <entry key="JSON" value="229" />
+          <entry key="JSON" value="230" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="3" />
-          <entry key="html" value="51" />
+          <entry key="html" value="52" />
           <entry key="json" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="51" />
+          <entry key="HTML" value="52" />
           <entry key="JSON" value="5" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
@@ -70,8 +70,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="90">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testPages/TestNextedQuery.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="23" column="101" selection-start-line="21" selection-start-column="41" selection-end-line="23" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -85,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testPages/dnd_errorBack.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="338">
+              <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -200,8 +209,8 @@
         <option value="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_2.html" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_1.html" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/testPages/dnd_errorBack.html" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -240,6 +249,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,7 +271,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,7 +482,9 @@
       <workItem from="1587648607089" duration="20000" />
       <workItem from="1588012639146" duration="797000" />
       <workItem from="1588014001863" duration="1596000" />
-      <workItem from="1588017583908" duration="806000" />
+      <workItem from="1588017583908" duration="1264000" />
+      <workItem from="1588106741736" duration="1198000" />
+      <workItem from="1588169129675" duration="1813000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -486,7 +497,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138311000" />
+    <option name="totallyTimeSpent" value="141780000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,7 +512,7 @@
     <frame x="950" y="-1061" width="1358" height="814" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21263482" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21571648" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -520,7 +531,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.30402684" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.30354393" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -611,13 +622,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testPages/everything_v2_Lazy.html" />
     <entry file="file://$PROJECT_DIR$/public/js/templates/templatesNew.js" />
-    <entry file="file://$PROJECT_DIR$/testPages/TestNextedQuery.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/custom/jsui1841_customizeOmnibox.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -774,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1586">
@@ -832,8 +829,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testPages/dnd_errorBack.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="338">
+          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/TestNextedQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="23" column="101" selection-start-line="21" selection-start-column="41" selection-end-line="23" selection-end-column="101" />
         </state>
       </provider>
     </entry>
