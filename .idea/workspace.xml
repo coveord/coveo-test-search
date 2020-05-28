@@ -30,13 +30,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="304" />
+          <entry key="html" value="305" />
           <entry key="json" value="238" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="304" />
+          <entry key="HTML" value="305" />
           <entry key="JSON" value="238" />
         </counts>
       </usages-collector>
@@ -458,7 +458,7 @@
       <workItem from="1589902742736" duration="1058000" />
       <workItem from="1590003163261" duration="29000" />
       <workItem from="1590590930722" duration="660000" />
-      <workItem from="1590686012963" duration="1147000" />
+      <workItem from="1590686012963" duration="1772000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -471,7 +471,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147316000" />
+    <option name="totallyTimeSpent" value="147941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
