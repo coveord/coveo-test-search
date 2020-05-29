@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"Quickview","19":"Recommendation","20":"Backdrop","21":"SortDropdown","22":"ResultsPreferences","23":"ResultsFiltersPreferences","24":"YouTubeThumbnail","25":"Tab","26":"FieldTable","27":"ImageFieldValue","28":"DistanceResources","29":"Badge","30":"SearchAlerts","31":"SimpleFilter","32":"Thumbnail","33":"PrintableUri","34":"Matrix","35":"FoldingForThread","36":"FieldValue","37":"Sort","38":"ResultLayoutSelector","39":"ResultFolding","40":"ResultAttachments","41":"QuerySummary","42":"FieldSuggestions","43":"FacetValueSuggestions","44":"CardOverlay","45":"Folding","46":"ChatterPostedBy","47":"ChatterPostAttachment","48":"ChatterLikedBy","49":"AnalyticsSuggestions","50":"FollowItem","51":"RadioButton","52":"MultiSelect","53":"FormGroup","54":"Triggers","55":"Text","56":"StarRating","57":"ShareQuery","58":"Settings","59":"ResultTagging","60":"ResultRating","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"CardActionBar","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"SearchButton","77":"PipelineContext","78":"Logo","79":"Icon","80":"NumericSpinner","81":"Dropdown","82":"FacetsMobileMode","83":"CommerceQuery","84":"ChatterTopic","85":"Aggregate"}[chunkId]||chunkId) + "__" + "adbc40cb40499612c8d5" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"Quickview","19":"Recommendation","20":"Backdrop","21":"SortDropdown","22":"ResultsPreferences","23":"ResultsFiltersPreferences","24":"YouTubeThumbnail","25":"Tab","26":"FieldTable","27":"ImageFieldValue","28":"DistanceResources","29":"Badge","30":"SearchAlerts","31":"SimpleFilter","32":"Thumbnail","33":"PrintableUri","34":"Matrix","35":"FoldingForThread","36":"FieldValue","37":"Sort","38":"ResultLayoutSelector","39":"ResultFolding","40":"ResultAttachments","41":"QuerySummary","42":"FieldSuggestions","43":"FacetValueSuggestions","44":"CardOverlay","45":"Folding","46":"ChatterPostedBy","47":"ChatterPostAttachment","48":"ChatterLikedBy","49":"AnalyticsSuggestions","50":"FollowItem","51":"RadioButton","52":"MultiSelect","53":"FormGroup","54":"Triggers","55":"Text","56":"StarRating","57":"ShareQuery","58":"Settings","59":"ResultTagging","60":"ResultRating","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"CardActionBar","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"SearchButton","77":"PipelineContext","78":"Logo","79":"Icon","80":"NumericSpinner","81":"Dropdown","82":"FacetsMobileMode","83":"CommerceQuery","84":"ChatterTopic","85":"Aggregate"}[chunkId]||chunkId) + "__" + "d0924bbac77d1b43c3f6" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -18765,8 +18765,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.9159.0-beta',
-    product: '2.9159.0-beta',
+    lib: '2.9159.2-beta',
+    product: '2.9159.2-beta',
     supportedApiVersion: 2
 };
 
@@ -19293,7 +19293,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = __webpack_require__(4);
 var Strings_1 = __webpack_require__(6);
 var Assert_1 = __webpack_require__(5);
-var _ = __webpack_require__(0);
+var underscore_1 = __webpack_require__(0);
 // On-demand mapping of file types to captions. Used by facets, but I don't
 // really like this. Maybe a dedicated filetype facet would be better? Hmm...
 var fileTypeCaptions;
@@ -19330,10 +19330,7 @@ var FileTypes = /** @class */ (function () {
         if (localizedString.toLowerCase() == variableValue.toLowerCase()) {
             localizedString = Strings_1.l(objecttype);
         }
-        return {
-            icon: 'coveo-icon objecttype ' + loweredCaseObjecttype.replace(' ', '-'),
-            caption: localizedString
-        };
+        return this.safelyBuildFileTypeInfo('objecttype', loweredCaseObjecttype, localizedString);
     };
     FileTypes.getFileType = function (filetype) {
         // We must use lowercase filetypes because that's how the CSS classes
@@ -19352,17 +19349,14 @@ var FileTypes = /** @class */ (function () {
             // The main dictionary by using the original value.
             localizedString = Strings_1.l(filetype);
         }
-        return {
-            icon: 'coveo-icon filetype ' + loweredCaseFiletype.replace(' ', '-'),
-            caption: localizedString
-        };
+        return this.safelyBuildFileTypeInfo('filetype', loweredCaseFiletype, localizedString);
     };
     FileTypes.getFileTypeCaptions = function () {
         if (fileTypeCaptions == undefined) {
             fileTypeCaptions = {};
             var strings = String['locales'][String['locale'].toLowerCase()];
             Assert_1.Assert.isNotUndefined(strings);
-            _.each(_.keys(strings), function (key) {
+            underscore_1.keys(strings).forEach(function (key) {
                 if (key.indexOf('filetype_') == 0) {
                     fileTypeCaptions[key.substr('filetype_'.length)] = key.toLocaleString();
                 }
@@ -19372,6 +19366,12 @@ var FileTypes = /** @class */ (function () {
             });
         }
         return fileTypeCaptions;
+    };
+    FileTypes.safelyBuildFileTypeInfo = function (fieldname, iconClass, caption) {
+        return {
+            icon: "coveo-icon " + fieldname + " " + underscore_1.escape(iconClass.replace(' ', '-')),
+            caption: underscore_1.escape(caption)
+        };
     };
     return FileTypes;
 }());
