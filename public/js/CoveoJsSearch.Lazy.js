@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"Quickview","19":"Recommendation","20":"Backdrop","21":"SortDropdown","22":"ResultsPreferences","23":"ResultsFiltersPreferences","24":"YouTubeThumbnail","25":"Tab","26":"FieldTable","27":"ImageFieldValue","28":"DistanceResources","29":"Badge","30":"SearchAlerts","31":"SimpleFilter","32":"Thumbnail","33":"PrintableUri","34":"Matrix","35":"FoldingForThread","36":"FieldValue","37":"Sort","38":"ResultLayoutSelector","39":"ResultFolding","40":"ResultAttachments","41":"QuerySummary","42":"FieldSuggestions","43":"FacetValueSuggestions","44":"CardOverlay","45":"Folding","46":"ChatterPostedBy","47":"ChatterPostAttachment","48":"ChatterLikedBy","49":"AnalyticsSuggestions","50":"FollowItem","51":"RadioButton","52":"MultiSelect","53":"FormGroup","54":"Triggers","55":"Text","56":"StarRating","57":"ShareQuery","58":"Settings","59":"ResultTagging","60":"ResultRating","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"CardActionBar","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"SearchButton","77":"PipelineContext","78":"Logo","79":"Icon","80":"NumericSpinner","81":"Dropdown","82":"FacetsMobileMode","83":"CommerceQuery","84":"ChatterTopic","85":"Aggregate"}[chunkId]||chunkId) + "__" + "d0924bbac77d1b43c3f6" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"Quickview","19":"Recommendation","20":"Backdrop","21":"SortDropdown","22":"ResultsPreferences","23":"ResultsFiltersPreferences","24":"YouTubeThumbnail","25":"Tab","26":"FieldTable","27":"ImageFieldValue","28":"DistanceResources","29":"Badge","30":"SearchAlerts","31":"SimpleFilter","32":"Thumbnail","33":"PrintableUri","34":"Matrix","35":"FoldingForThread","36":"FieldValue","37":"Sort","38":"ResultLayoutSelector","39":"ResultFolding","40":"ResultAttachments","41":"QuerySummary","42":"FieldSuggestions","43":"FacetValueSuggestions","44":"CardOverlay","45":"Folding","46":"ChatterPostedBy","47":"ChatterPostAttachment","48":"ChatterLikedBy","49":"AnalyticsSuggestions","50":"FollowItem","51":"RadioButton","52":"MultiSelect","53":"FormGroup","54":"Triggers","55":"Text","56":"StarRating","57":"ShareQuery","58":"Settings","59":"ResultTagging","60":"ResultRating","61":"ResultLink","62":"ResultActionsMenu","63":"QueryDuration","64":"PromotedResultsBadge","65":"PreferencesPanel","66":"MissingTerms","67":"HiddenQuery","68":"ExportToExcel","69":"Excerpt","70":"ErrorReport","71":"DidYouMean","72":"CardActionBar","73":"Breadcrumb","74":"AuthenticationProvider","75":"TemplateLoader","76":"SearchButton","77":"PipelineContext","78":"Logo","79":"Icon","80":"NumericSpinner","81":"Dropdown","82":"FacetsMobileMode","83":"CommerceQuery","84":"ChatterTopic","85":"Aggregate"}[chunkId]||chunkId) + "__" + "b83b964372ca2bceff65" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -18765,8 +18765,8 @@ exports.storage = storage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.9159.2-beta',
-    product: '2.9159.2-beta',
+    lib: '2.9159.4-beta',
+    product: '2.9159.4-beta',
     supportedApiVersion: 2
 };
 
@@ -26232,6 +26232,7 @@ var dict = {
     "ThumbnailOf": "Thumbnail of \"{0}\"",
     "CollapsedUriParts": "Collapsed URI parts",
     "HierarchicalFacetValueIndentedUnder": "{0} under {1}",
+    "HierarchicalFacetValuePathPrefix": "in",
 };
 function defaultLanguage() {
     var locales = String["locales"] || (String["locales"] = {});

@@ -17695,7 +17695,18 @@ button.coveo-dynamic-hierarchical-facet-all {
   cursor: pointer;
 }
 
-.coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-results-count {
+.coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-header {
+  display: flex;
+}
+
+.coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-header .coveo-dynamic-hierarchical-facet-search-value-label {
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-header .coveo-dynamic-hierarchical-facet-search-value-results-count {
+  flex-shrink: 0;
   margin-left: 5px;
   color: #657381;
   font-weight: lighter;
@@ -17709,8 +17720,13 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-path .coveo-dynamic-hierarchical-facet-search-value-path-ellipsis,
+.coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-path .coveo-dynamic-hierarchical-facet-search-value-path-prefix,
 .coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-path .coveo-dynamic-hierarchical-facet-search-value-path-part {
   display: inline;
+}
+
+.coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-path .coveo-dynamic-hierarchical-facet-search-value-path-prefix {
+  white-space: pre;
 }
 
 .coveo-dynamic-hierarchical-facet-search-value .coveo-dynamic-hierarchical-facet-search-value-path .coveo-dynamic-hierarchical-facet-search-value-path-part {
