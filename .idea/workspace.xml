@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,15 +17,15 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="119" />
+          <entry key="project.closed" value="121" />
           <entry key="project.open.time.0" value="94" />
           <entry key="project.open.time.1" value="14" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="8" />
+          <entry key="project.open.time.2" value="9" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="125" />
+          <entry key="project.opened" value="126" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -222,10 +221,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -473,7 +472,8 @@
       <workItem from="1590696355228" duration="833000" />
       <workItem from="1590773810995" duration="778000" />
       <workItem from="1591033708708" duration="886000" />
-      <workItem from="1591199784243" duration="1239000" />
+      <workItem from="1591199784243" duration="1948000" />
+      <workItem from="1591624227919" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -486,7 +486,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153029000" />
+    <option name="totallyTimeSpent" value="153751000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,7 +499,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26174498" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -520,7 +519,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.26979867" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3657718" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />

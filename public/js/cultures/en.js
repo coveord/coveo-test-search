@@ -857,6 +857,8 @@ var dict = {
   "Pagination": "Pagination",
   "ThumbnailOf": "Thumbnail of \"{0}\"",
   "CollapsedUriParts": "Collapsed URI parts",
+  "HierarchicalFacetValueIndentedUnder": "{0} under {1}",
+  "HierarchicalFacetValuePathPrefix": "in",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1692,6 +1694,8 @@ var dict = {
   "Pagination": "Pagination",
   "ThumbnailOf": "Thumbnail of \"{0}\"",
   "CollapsedUriParts": "Collapsed URI parts",
+  "HierarchicalFacetValueIndentedUnder": "{0} under {1}",
+  "HierarchicalFacetValuePathPrefix": "in",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
