@@ -18,27 +18,27 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="122" />
+          <entry key="project.closed" value="123" />
           <entry key="project.open.time.0" value="95" />
-          <entry key="project.open.time.1" value="14" />
+          <entry key="project.open.time.1" value="15" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="10" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="128" />
+          <entry key="project.opened" value="129" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="328" />
-          <entry key="json" value="248" />
+          <entry key="json" value="254" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="328" />
-          <entry key="JSON" value="248" />
+          <entry key="JSON" value="254" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -221,9 +221,9 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="y" value="-1089" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -476,7 +476,8 @@
       <workItem from="1591199784243" duration="1948000" />
       <workItem from="1591624227919" duration="13000" />
       <workItem from="1592225801809" duration="599000" />
-      <workItem from="1593450576652" duration="146000" />
+      <workItem from="1593450576652" duration="821000" />
+      <workItem from="1593716923429" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -489,7 +490,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154496000" />
+    <option name="totallyTimeSpent" value="155184000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -794,7 +795,7 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
     </entry>
