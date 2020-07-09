@@ -11218,6 +11218,9 @@ a.CoveoResultLink.coveo-selected *,
   display: none;
   margin: 2px 20px 1px;
   padding: 4px;
+}
+
+.coveo-facet-search:not(.without-animation) {
   -webkit-animation: grow 0.3s linear;
   -moz-animation: grow 0.3s linear;
   animation: grow 0.3s linear;
@@ -11345,6 +11348,7 @@ a.CoveoResultLink.coveo-selected *,
 .coveo-category-facet-values {
   list-style: none;
   padding: 0;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
@@ -11558,18 +11562,26 @@ a.CoveoResultLink.coveo-selected *,
   padding: 0 20px;
   height: 32px;
   line-height: 30px;
+  margin: 5px 0;
 }
 
 .coveo-category-facet-search-container .coveo-facet-search {
   margin: 0;
 }
 
-.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container {
+.coveo-category-facet-search-container + .coveo-category-facet-values {
+  margin-top: 0;
+}
+
+.CoveoCategoryFacet:not(.coveo-category-facet-searching)
+.coveo-category-facet-search-container:not(.coveo-category-facet-search-without-button) {
   outline: none;
 }
 
-.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:hover,
-.CoveoCategoryFacet:not(.coveo-category-facet-searching) .coveo-category-facet-search-container:focus {
+.CoveoCategoryFacet:not(.coveo-category-facet-searching)
+.coveo-category-facet-search-container:not(.coveo-category-facet-search-without-button):hover,
+.CoveoCategoryFacet:not(.coveo-category-facet-searching)
+.coveo-category-facet-search-container:not(.coveo-category-facet-search-without-button):focus {
   background-color: #e6ecf0;
 }
 
@@ -11598,11 +11610,13 @@ a.CoveoResultLink.coveo-selected *,
   fill: grey;
 }
 
-.coveo-category-facet-searching .coveo-category-facet-search-placeholder {
+.coveo-category-facet-searching .coveo-category-facet-search-placeholder,
+.coveo-category-facet-search-without-button .coveo-category-facet-search-placeholder {
   display: none;
 }
 
-.coveo-category-facet-searching .coveo-facet-search {
+.coveo-category-facet-searching .coveo-facet-search,
+.coveo-category-facet-search-without-button .coveo-facet-search {
   display: block;
 }
 
