@@ -902,9 +902,6 @@ var dict = {
   "NoRatings": "Aucune évaluation",
   "Pagination": "Pagination",
   "ThumbnailOf": "Aperçu de « {0} »",
-  "CollapsedUriParts": "Segments d'URI réduits",
-  "HierarchicalFacetValueIndentedUnder": "{0} sous {1}",
-  "HierarchicalFacetValuePathPrefix": "dans",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["fr"] = merge(locales["fr"], dict);
@@ -1739,9 +1736,6 @@ var dict = {
   "NoRatings": "Aucune évaluation",
   "Pagination": "Pagination",
   "ThumbnailOf": "Aperçu de « {0} »",
-  "CollapsedUriParts": "Segments d'URI réduits",
-  "HierarchicalFacetValueIndentedUnder": "{0} sous {1}",
-  "HierarchicalFacetValuePathPrefix": "dans",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
