@@ -10211,6 +10211,7 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-facet-footer.coveo-facet-empty {
+  display: block;
   visibility: hidden;
 }
 
