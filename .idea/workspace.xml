@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/brokenHierarchical.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/brokenHierarchical.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,27 +19,27 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="137" />
-          <entry key="project.open.time.0" value="104" />
+          <entry key="project.closed" value="138" />
+          <entry key="project.open.time.0" value="105" />
           <entry key="project.open.time.1" value="17" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="11" />
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="143" />
+          <entry key="project.opened" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="355" />
+          <entry key="html" value="361" />
           <entry key="js" value="22" />
           <entry key="json" value="305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="355" />
+          <entry key="HTML" value="361" />
           <entry key="JSON" value="305" />
           <entry key="JavaScript" value="22" />
         </counts>
@@ -54,14 +47,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="3" />
-          <entry key="html" value="54" />
+          <entry key="html" value="55" />
           <entry key="js" value="1" />
           <entry key="json" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="54" />
+          <entry key="HTML" value="55" />
           <entry key="JSON" value="5" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
@@ -79,7 +72,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
@@ -98,76 +91,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testPages/jsui3051_FacetSelectAll.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="33" column="143" selection-start-line="32" selection-start-column="12" selection-end-line="33" selection-end-column="143" />
-              <folding>
-                <element signature="n#div#12;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testPages/TestNextedQuery.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="23" column="101" selection-start-line="21" selection-start-column="41" selection-end-line="23" selection-end-column="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1638">
-              <caret line="63" column="121" selection-start-line="63" selection-start-column="121" selection-end-line="63" selection-end-column="121" />
+            <state relative-caret-position="218">
+              <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="366" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testPages/SortDropdown.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testPages/00_standardSP4automated_simplefilterfacet.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
-              <caret line="28" column="224" selection-start-line="28" selection-start-column="224" selection-end-line="28" selection-end-column="224" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox_main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="33" column="232" selection-start-line="33" selection-start-column="232" selection-end-line="33" selection-end-column="232" />
+            <state relative-caret-position="286">
+              <caret line="38" column="366" selection-start-line="38" selection-start-column="366" selection-end-line="38" selection-end-column="366" />
             </state>
           </provider>
         </entry>
@@ -224,11 +160,11 @@
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_2.html" />
         <option value="$PROJECT_DIR$/testPages/00_standardSP4automated_1.html" />
         <option value="$PROJECT_DIR$/testPages/dnd_errorBack.html" />
-        <option value="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" />
-        <option value="$PROJECT_DIR$/testPages/brokenHierarchical.html" />
         <option value="$PROJECT_DIR$/testPages/jsui3051_FacetSelectAll.html" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/testPages/0_DynamicFacet_All.html" />
+        <option value="$PROJECT_DIR$/testPages/brokenHierarchical.html" />
       </list>
     </option>
   </component>
@@ -256,8 +192,8 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1929" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
@@ -267,6 +203,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,11 +211,15 @@
               <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
               <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="coveo-test-search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coveo-test-search" type="462c0819:PsiDirectoryNode" />
+              <item name="testPages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -521,7 +462,8 @@
       <workItem from="1598293029779" duration="1125000" />
       <workItem from="1598623552001" duration="28000" />
       <workItem from="1598627420857" duration="256000" />
-      <workItem from="1600698687250" duration="20000" />
+      <workItem from="1600698687250" duration="732000" />
+      <workItem from="1600720487257" duration="87000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -534,7 +476,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167662000" />
+    <option name="totallyTimeSpent" value="168461000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,7 +488,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1927" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26979867" />
@@ -568,7 +510,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.38120806" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.38120806" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -836,6 +778,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/jsui3051_FacetSelectAll.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
@@ -853,20 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="63" column="121" selection-start-line="63" selection-start-column="121" selection-end-line="63" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/SortDropdown.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
@@ -881,31 +823,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="28" column="224" selection-start-line="28" selection-start-column="224" selection-end-line="28" selection-end-column="224" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox_main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
+        <state relative-caret-position="582">
           <caret line="33" column="232" selection-start-line="33" selection-start-column="232" selection-end-line="33" selection-end-column="232" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/testPages/standaloneSearchBox.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="582">
+          <caret line="28" column="224" selection-start-line="28" selection-start-column="224" selection-end-line="28" selection-end-column="224" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state relative-caret-position="218">
+          <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="366" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="38" column="366" selection-start-line="38" selection-start-column="366" selection-end-line="38" selection-end-column="366" />
         </state>
       </provider>
     </entry>
