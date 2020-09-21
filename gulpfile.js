@@ -19,6 +19,4 @@ gulp.task("copySearchUi", function () {
 
 })
 
-gulp.task('default', ['copyCustomUi', 'copySearchUi'], function () {
-
-})
+gulp.task('default', gulp.series('copyCustomUi', 'copySearchUi',function () {}));

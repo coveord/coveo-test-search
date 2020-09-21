@@ -8,15 +8,15 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cheerio": "^0.20.0",
-    "coveo-search-ui": "2.9659.0",
+    "coveo-search-ui": "2.9856.3",
     "express": "4.x",
     "foreman": "1.4.1",
     "json5": "^0.5.0",
     "serve-index": "^1.8.0",
     "serve-static": "^1.11.1",
     "underscore": "^1.8.3",
-    "gulp": "^3.9.0",
-    "gulp-debug": "2.1.2"
+    "gulp": "^4.0.2",
+    "gulp-debug": "4.0.0"
   },
   "scripts": {
     "start": "node gulpfile.js"

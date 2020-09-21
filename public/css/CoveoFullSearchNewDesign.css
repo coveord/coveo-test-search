@@ -4462,6 +4462,1874 @@
   background-image: url( ../image/webpage.svg);
 }
 
+/* Used as the background color for the active state on rows or items on list-like components. */
+
+/* Light variant of COLOR_BACKGROUND. */
+
+/* Used as the background color for the hover state on rows or items on list-like components. */
+
+/* Dark color for UI elements related to errors. Accessible with white text. */
+
+/* Background color for UI elements related to providing neutral information (not error, success, or warning). */
+
+/* Alternative background color for dark portions of the app. */
+
+/* Used as the background color for the new state on rows or items on list-like components. */
+
+/* Dark color for UI elements that have to do with success. Accessible with white text. */
+
+/* Used as background for loading stencils on white background. */
+
+/* Color for UI elements that have to do with warning. */
+
+/* Background color for highlighting text in search results. */
+
+/* Hover color for UI elements related to destructive actions. */
+
+/* Default background color for the whole app. */
+
+/* Our product brand blue, darkened to meet accessibility color contrast ratios with white text. */
+
+/* The color of the mask overlay that appears when you enter a modal state. */
+
+/* Dark variant of COLOR_BACKGROUND. */
+
+/* Our product brand blue. */
+
+/* Color for UI elements related to destructive actions. */
+
+/* Color for UI elements that have to do with success. */
+
+/* Dark Color for UI elements that have to do with warning. */
+
+/* Color for UI elements related to the offline state. */
+
+/* Used as an alternate background for loading stencils on gray backgrounds. */
+
+/* Light variant of COLOR_BACKGROUND_INVERSE. */
+
+/* Background color for UI elements related to the concept of an external user or customer. */
+
+/* Color for UI elements related to errors. */
+
+/* Second default background color for the app. */
+
+/* Darker color for UI elements that have to do with success. Accessible with white text. */
+
+/* Used as the background color for selected rows or items on list-like components. */
+
+/* Our product brand blue, darkened even further. */
+
+/* Background color for text selected with a mouse. */
+
+/* Active color for UI elements related to destructive actions. */
+
+/* Default background color for dark portions of the app (like Stage Left or tooltips). */
+
+/* Background color for highlighting UI elements. */
+
+/* Dark alternative border color for UI elements related to errors. */
+
+/* Our product brand blue, darkened to meet accessibility color contrast ratios with white text. */
+
+/* Border color for UI elements related to providing neutral information (not error, success, or warning). */
+
+/* Border color for UI elements that have to do with warnings. */
+
+/* Hover border color for UI elements that have to do with destructive actions. */
+
+/* Default border color for UI elements. */
+
+/* Dark alternative border color for UI elements that have to do with success. */
+
+/* Border color for UI elements that have to do with destructive actions. */
+
+/* Darkest separator color - used as an alternate separator color when more differentiation is desired. */
+
+/* Border color for UI elements related to the offline state. */
+
+/* Border color for UI elements that have to do with success. */
+
+/* Lightest separator color - used as default separator on white backgrounds. */
+
+/* Our product brand blue. */
+
+/* Used to delineate the boundary of a component that is being clicked. Specific to builders. */
+
+/* Border color for UI elements that have to do with errors. */
+
+/* Used to delineate the boundary of a component that is being hovered over. Specific to builders. */
+
+/* Used as the border color for the hover state on selected rows or items on list-like components. */
+
+/* Border color for UI elements related to the concept of an external user or customer. */
+
+/* Used to delineate the boundary of a selected component. Specific to builders. */
+
+/* Used as the border color for selected rows or items on list-like components. */
+
+/* Medium separator color - used as default separator on light gray backgrounds. */
+
+/* Border color to match UI elements using color-background-inverse. */
+
+/* Active border color for UI elements that have to do with destructive actions. */
+
+/* Alternative border color for UI elements related to errors. */
+
+/* Used as a separator on dark backgrounds, such as stage left navigation. */
+
+/* Icons in lists, record home icon, unbound input elements */
+
+/* Circle for global use, action icon bgd shape */
+
+/* Shadow for active states on interactive elements. */
+
+/* Shadow for drag-n-drop. */
+
+/* Shadow for drop down. */
+
+/* 0 seconds, 0 frames */
+
+/* 0.05 seconds, 3 frames */
+
+/* 0.1 seconds, 6 frames */
+
+/* 0.2 seconds, 12 frames */
+
+/* 0.4 seconds, 24 frames */
+
+/* 3.2 seconds, 192 frames */
+
+/* Default font-family for Salesforce applications */
+
+/* Constant typography token for font size 1 */
+
+/* Constant typography token for font size 2 */
+
+/* Constant typography token for font size 3 */
+
+/* Variable typography token for font size 10 */
+
+/* Constant typography token for font size 4 */
+
+/* Variable typography token for font size 11 */
+
+/* Constant typography token for font size 5 */
+
+/* Constant typography token for font size 6 */
+
+/* Constant typography token for font size 7 */
+
+/* Constant typography token for font size 8 */
+
+/* Variable typography token for font size 1 */
+
+/* Constant typography token for font size 9 */
+
+/* Variable typography token for font size 2 */
+
+/* Variable typography token for font size 3 */
+
+/* Constant typography token for font size 10 */
+
+/* Variable typography token for font size 4 */
+
+/* Constant typography token for font size 11 */
+
+/* Variable typography token for font size 5 */
+
+/* Variable typography token for font size 6 */
+
+/* Variable typography token for font size 7 */
+
+/* Variable typography token for font size 8 */
+
+/* Variable typography token for font size 9 */
+
+/* Use for large headings only. */
+
+/* Most all body copy. */
+
+/* Used sparingly for emphasized text within regular body copy. */
+
+/* Unitless line-heights for reusability */
+
+/* Unitless line-heights for reusability */
+
+/* Remove extra leading. Unitless line-heights for reusability */
+
+/* Variable unitless line-heights for reusability */
+
+/* 50% transparency of an element */
+
+/* 80% transparency of an element */
+
+/* Disabled state of BRAND_HEADER_CONTRAST_WEAK */
+
+/* Gray Color 11 */
+
+/* Transparent value of BRAND_PRIMARY at 10% */
+
+/* Gray Color 12 */
+
+/* These RGBA values need to be updated if BRAND_BACKGROUND_DARK changes, solves webkit bug */
+
+/* Gray Color 13 */
+
+/* Background color a branded app header */
+
+/* Active / Hover state of BRAND_LIGHT */
+
+/* Variant of BRAND_HEADER_CONTRAST that provides a warm color */
+
+/* Disabled state of BRAND_HEADER_ICON */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST */
+
+/* Primary page background color */
+
+/* Primary brand color */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST_WEAK */
+
+/* Active / Hover state of BRAND_CONTRAST */
+
+/* Variant of BRAND_HEADER_CONTRAST that provides a cool color */
+
+/* Variant of BRAND_HEADER that is accessible with BRAND_HEADER */
+
+/* Dark variant of BRAND that is accessible with light colors */
+
+/* Dark variant of BRAND that is accessible with white */
+
+/* Dark variant of BRAND_BACKGROUND_PRIMARY, used within gradient of background color */
+
+/* Active / Hover state of BRAND_TEXT_LINK */
+
+/* Gray Color 1 */
+
+/* Gray Color 2 */
+
+/* Active / Hover state of BRAND_HEADER_ICON */
+
+/* Gray Color 3 */
+
+/* Icons of BRAND_HEADER that is accessible with BRAND_HEADER */
+
+/* Disabled state of BRAND_A11Y */
+
+/* Primary text link brand color */
+
+/* Gray Color 4 */
+
+/* Gray Color 5 */
+
+/* Gray Color 6 */
+
+/* Active / Hover state of BRAND_A11Y */
+
+/* Gray Color 7 */
+
+/* Active / Hover state of BRAND_DARK */
+
+/* Gray Color 8 */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST_COOL */
+
+/* Gray Color 9 */
+
+/* Variant of BRAND that is accessible with BRAND */
+
+/* Weak contrast ratio, useful for iconography */
+
+/* Active / Hover state of BRAND_PRIMARY */
+
+/* These RGBA values need to be updated if BRAND_BACKGROUND_PRIMARY changes, solves webkit bug */
+
+/* Variant of BRAND_HEADER that is accessible with BRAND_HEADER */
+
+/* Transparent value of BRAND_PRIMARY */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST_WARM */
+
+/* Transparent value of BRAND_PRIMARY at 40% */
+
+/* Light variant of BRAND that is accessible with dark colors */
+
+/* Gray Color 10 */
+
+/* Generic sizing token scale for UI components. */
+
+/* Generic sizing token scale for UI components. */
+
+/* Large utility icon without border. */
+
+/* Generic sizing token scale for UI components. */
+
+/* Search Results: Outer colored tile */
+
+/* Generic sizing token scale for UI components. */
+
+/* Medium utility icon without border. */
+
+/* Very small icon button boundary. */
+
+/* Small utility icon without border. */
+
+/* Stage left & actions: Outer colored tile */
+
+/* Anchor: Icon content (white shape) */
+
+/* Anchor: Outer colored tile */
+
+/* Generic sizing token scale for UI components. */
+
+/* Stage left & actions: Icon content (white shape) */
+
+/* Generic sizing token scale for UI components. */
+
+/* Very small icons in icon buttons. */
+
+/* Variable medium boundary for square icons */
+
+/* Icon button boundary. */
+
+/* Generic sizing token scale for UI components. */
+
+/* Anchor: avatar */
+
+/* Generic sizing token scale for UI components. */
+
+/* Search Results: Icon content (white shape) */
+
+/* Very very small icon button boundary. */
+
+/* Alternate medium tap target size */
+
+/* Variable spacing token for size X Large */
+
+/* Variable horizontal spacing token for size Small */
+
+/* Variable horizontal spacing token for size XX Large */
+
+/* Constant spacing token for size X small */
+
+/* Constant spacing token for size XXX small */
+
+/* Constant spacing token for size XX small */
+
+/* Variable vertical spacing token for size Large */
+
+/* Variable spacing token for size Large */
+
+/* Variable spacing token for size Medium */
+
+/* Variable vertical spacing token for size Medium */
+
+/* Variable vertical spacing token for size X Small */
+
+/* Constant spacing token for size Small */
+
+/* Variable vertical spacing token for size XXX Small */
+
+/* Variable spacing token for size X Small */
+
+/* Variable spacing token for size XXX Small */
+
+/* Variable horizontal spacing token for size X Large */
+
+/* Variable horizontal spacing token for size XX Small */
+
+/* Variable spacing token for size XX Large */
+
+/* Constant spacing token for size Medium */
+
+/* Variable vertical spacing token for size XX Large */
+
+/* Variable vertical spacing token for size Small */
+
+/* Variable spacing token for size Small */
+
+/* Constant spacing token for 0 */
+
+/* Variable horizontal spacing token for size Large */
+
+/* Constant spacing token for size X Large */
+
+/* Constant spacing token for size XX Large */
+
+/* Variable horizontal spacing token for size XXX Small */
+
+/* Variable horizontal spacing token for size X Small */
+
+/* Variable spacing token for size XX Small */
+
+/* Variable horizontal spacing token for size Medium */
+
+/* Variable vertical spacing token for size XX Small */
+
+/* Variable vertical spacing token for size X Large */
+
+/* Constant spacing token for size Large */
+
+/* Action label text color */
+
+/* Link color on dark background */
+
+/* Link color on dark background - active state */
+
+/* Action label active text color */
+
+/* Color for texts or icons that are related to warnings on a dark background. */
+
+/* Focus link text */
+
+/* Text color for destructive actions - hover state */
+
+/* Disabled link text */
+
+/* Body text color */
+
+/* Text color for destructive actions */
+
+/* Hover link text */
+
+/* Text color for success text. */
+
+/* Color for text that is purposefully de-emphasized to create visual hierarchy. */
+
+/* Input placeholder text on dark backgrounds. */
+
+/* Link text (508) */
+
+/* Color for texts that are related to warnings on a light background. */
+
+/* Default icon color. */
+
+/* Our product brand blue. */
+
+/* Error text for inputs and error misc */
+
+/* Customer text used in anchor subtitle */
+
+/* Text color found on any primary brand color */
+
+/* Active link text */
+
+/* Color of required field marker. */
+
+/* Link color on dark background - disabled state */
+
+/* Inverse text color for dark backgrounds */
+
+/* Input placeholder text. */
+
+/* Weak inverse text color for dark backgrounds */
+
+/* Link color on dark background - hover state */
+
+/* Text color for success text on dark backgrounds. */
+
+/* Text color for field labels. */
+
+/* Tap target size for elements that rely on width and height dimensions */
+
+/* Small tap target size for elements that rely on width and height dimensions */
+
+/* X-small tap target size for elements that rely on width and height dimensions */
+
+/* Xx-small tap target size for elements that rely on width and height dimensions */
+
+/* Tap target size for elements that rely on height or line-height */
+
+/* Small tap target size for elements that rely on height or line-height */
+
+/* Dropdown */
+
+/* Docked element */
+
+/* Notifications under modals */
+
+/* Spinner */
+
+/* Default */
+
+/* Deep dive */
+
+/* Toasts */
+
+/* Dialog */
+
+/* Popup */
+
+/* Modal */
+
+/* Stickied element */
+
+/* Overlay */
+
+/* The color of the mask overlay that appears when you enter a modal state. */
+
+/* Winter 18 token, this has been deprecated. Please use BRAND_BACKGROUND_DARK_TRANSPARENT instead. These RGBA values need to be updated if BRAND_BAND_COLOR_BACKGROUND_PRIMARY changes, solves webkit bug */
+
+/* Used when further differentiation is needed because colorBackground and colorBackgroundAlt are both being used in close proximity. */
+
+/* Hover color for utility bar item. */
+
+/* Use COLOR_BACKGROUND_PAGE_HEADER instead. */
+
+/* Winter 18 token, this has been deprecated. Please use BRAND_BACKGROUND_PRIMARY_DARK instead. */
+
+/* Winter 18 token, this has been deprecated. Please use BRAND_BACKGROUND_PRIMARY_TRANSPARENT instead. These RGBA values need to be updated if BRAND_BAND_COLOR_BACKGROUND_PRIMARY changes, solves webkit bug */
+
+/* Secondary top bar background color (child browser, file preview, etc.) */
+
+/* Used as the default background color for temporary dialog elements, such as the progress spinner background. */
+
+/* Used as gray background when more contrast is desired. */
+
+/* Background color for payloads in the feed. */
+
+/* Winter 18 token, this has been deprecated. Please use BRAND_BACKGROUND_PRIMARY instead. */
+
+/* Used as gray background in conjunction with Shade when more contrast is desired. */
+
+/* Background for utility icons that live in the action bar on mobile. */
+
+/* Winter 18 token, this has been deprecated. Please use BRAND_BACKGROUND_PRIMARY instead. */
+
+/* Our product brand blue. */
+
+/* Hover stroke color for our product brand blue. */
+
+/* Active stroke color for our product brand blue. */
+
+/* Disabled stroke color. */
+
+/* Stroke color for our global header buttons. */
+
+/* Hard dropshadow found on general UI elements such as containers */
+
+/* Soft dropshadow found on general UI elements such as containers */
+
+/* Custom glow for focus states on UI elements with explicit containers on dark or vibrantly colored backgrounds. */
+
+/* Custom glow for focus states on UI link elements with explicit containers on dark or vibrantly colored backgrounds. */
+
+/* Tertiary body text color */
+
+/* Active state on a standalone link on a dark background. */
+
+/* Icon color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Color for text on toast messages. */
+
+/* Hover state on a standalone link on a dark background. */
+
+/* Modal header button text color */
+
+/* Color for interactive utility icons */
+
+/* Secondary body text color */
+
+/* Text in stage left navigation. */
+
+/* Background color for a new notification list item. */
+
+/* Disabled input */
+
+/* Hovered toggle background color. */
+
+/* Toggle background color. */
+
+/* Default Page Header background color */
+
+/* Disabled checkboxes */
+
+/* Color of the spinner dot. */
+
+/* The color of the mask overlay that provides user feedback on interaction. */
+
+/* The background color of an internal scrollbar. */
+
+/* Disabled toggle background color. */
+
+/* Background color for toast messaging. */
+
+/* Background color of comment posts in the feed. */
+
+/* Color of mask overlay that sits on top of an image when text is present. */
+
+/* The background color of an internal scrollbar track. */
+
+/* Border color on disabled form elements. */
+
+/* Border color on notification reminders. */
+
+/* Border color for default secondary button */
+
+/* Border color on form elements. */
+
+/* Hard dropshadow on page header */
+
+/* Hard dropshadow found on outer cards */
+
+/* Use for active tab. */
+
+/* Use for active tab. */
+
+/* Icon color on dark background */
+
+/* Input icon */
+
+/* Icon color on dark background - active state */
+
+/* Color for disabled text in a tab group. */
+
+/* Input disabled text */
+
+/* Default icon color - disabled state */
+
+/* Text color for default secondary button - disabled state */
+
+/* Color for disabled toggles */
+
+/* Color for default text in a tab group. */
+
+/* Icon color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Text color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Text color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Icon color on dark background - hover state */
+
+/* Header for desktop. */
+
+/* Medium tap target size */
+
+/* Used as the background color for the active state on rows or items on list-like components. */
+
+/* Light variant of COLOR_BACKGROUND. */
+
+/* Used as the background color for the hover state on rows or items on list-like components. */
+
+/* Dark color for UI elements related to errors. Accessible with white text. */
+
+/* Background color for UI elements related to providing neutral information (not error, success, or warning). */
+
+/* Alternative background color for dark portions of the app. */
+
+/* Used as the background color for the new state on rows or items on list-like components. */
+
+/* Dark color for UI elements that have to do with success. Accessible with white text. */
+
+/* Used as background for loading stencils on white background. */
+
+/* Color for UI elements that have to do with warning. */
+
+/* Background color for highlighting text in search results. */
+
+/* Hover color for UI elements related to destructive actions. */
+
+/* Default background color for the whole app. */
+
+/* Our product brand blue, darkened to meet accessibility color contrast ratios with white text. */
+
+/* The color of the mask overlay that appears when you enter a modal state. */
+
+/* Dark variant of COLOR_BACKGROUND. */
+
+/* Our product brand blue. */
+
+/* Color for UI elements related to destructive actions. */
+
+/* Color for UI elements that have to do with success. */
+
+/* Dark Color for UI elements that have to do with warning. */
+
+/* Color for UI elements related to the offline state. */
+
+/* Used as an alternate background for loading stencils on gray backgrounds. */
+
+/* Light variant of COLOR_BACKGROUND_INVERSE. */
+
+/* Background color for UI elements related to the concept of an external user or customer. */
+
+/* Color for UI elements related to errors. */
+
+/* Second default background color for the app. */
+
+/* Darker color for UI elements that have to do with success. Accessible with white text. */
+
+/* Used as the background color for selected rows or items on list-like components. */
+
+/* Our product brand blue, darkened even further. */
+
+/* Background color for text selected with a mouse. */
+
+/* Active color for UI elements related to destructive actions. */
+
+/* Default background color for dark portions of the app (like Stage Left or tooltips). */
+
+/* Background color for highlighting UI elements. */
+
+/* Dark alternative border color for UI elements related to errors. */
+
+/* Our product brand blue, darkened to meet accessibility color contrast ratios with white text. */
+
+/* Border color for UI elements related to providing neutral information (not error, success, or warning). */
+
+/* Border color for UI elements that have to do with warnings. */
+
+/* Hover border color for UI elements that have to do with destructive actions. */
+
+/* Default border color for UI elements. */
+
+/* Dark alternative border color for UI elements that have to do with success. */
+
+/* Border color for UI elements that have to do with destructive actions. */
+
+/* Darkest separator color - used as an alternate separator color when more differentiation is desired. */
+
+/* Border color for UI elements related to the offline state. */
+
+/* Border color for UI elements that have to do with success. */
+
+/* Lightest separator color - used as default separator on white backgrounds. */
+
+/* Our product brand blue. */
+
+/* Used to delineate the boundary of a component that is being clicked. Specific to builders. */
+
+/* Border color for UI elements that have to do with errors. */
+
+/* Used to delineate the boundary of a component that is being hovered over. Specific to builders. */
+
+/* Used as the border color for the hover state on selected rows or items on list-like components. */
+
+/* Border color for UI elements related to the concept of an external user or customer. */
+
+/* Used to delineate the boundary of a selected component. Specific to builders. */
+
+/* Used as the border color for selected rows or items on list-like components. */
+
+/* Medium separator color - used as default separator on light gray backgrounds. */
+
+/* Border color to match UI elements using color-background-inverse. */
+
+/* Active border color for UI elements that have to do with destructive actions. */
+
+/* Alternative border color for UI elements related to errors. */
+
+/* Used as a separator on dark backgrounds, such as stage left navigation. */
+
+/* Icons in lists, record home icon, unbound input elements */
+
+/* Circle for global use, action icon bgd shape */
+
+/* Shadow for active states on interactive elements. */
+
+/* Shadow for drag-n-drop. */
+
+/* Shadow for drop down. */
+
+/* 0 seconds, 0 frames */
+
+/* 0.05 seconds, 3 frames */
+
+/* 0.1 seconds, 6 frames */
+
+/* 0.2 seconds, 12 frames */
+
+/* 0.4 seconds, 24 frames */
+
+/* 3.2 seconds, 192 frames */
+
+/* Default font-family for Salesforce applications */
+
+/* Constant typography token for font size 1 */
+
+/* Constant typography token for font size 2 */
+
+/* Constant typography token for font size 3 */
+
+/* Variable typography token for font size 10 */
+
+/* Constant typography token for font size 4 */
+
+/* Variable typography token for font size 11 */
+
+/* Constant typography token for font size 5 */
+
+/* Constant typography token for font size 6 */
+
+/* Constant typography token for font size 7 */
+
+/* Constant typography token for font size 8 */
+
+/* Variable typography token for font size 1 */
+
+/* Constant typography token for font size 9 */
+
+/* Variable typography token for font size 2 */
+
+/* Variable typography token for font size 3 */
+
+/* Constant typography token for font size 10 */
+
+/* Variable typography token for font size 4 */
+
+/* Constant typography token for font size 11 */
+
+/* Variable typography token for font size 5 */
+
+/* Variable typography token for font size 6 */
+
+/* Variable typography token for font size 7 */
+
+/* Variable typography token for font size 8 */
+
+/* Variable typography token for font size 9 */
+
+/* Use for large headings only. */
+
+/* Most all body copy. */
+
+/* Used sparingly for emphasized text within regular body copy. */
+
+/* Unitless line-heights for reusability */
+
+/* Unitless line-heights for reusability */
+
+/* Remove extra leading. Unitless line-heights for reusability */
+
+/* Variable unitless line-heights for reusability */
+
+/* 50% transparency of an element */
+
+/* 80% transparency of an element */
+
+/* Disabled state of BRAND_HEADER_CONTRAST_WEAK */
+
+/* Gray Color 11 */
+
+/* Transparent value of BRAND_PRIMARY at 10% */
+
+/* Gray Color 12 */
+
+/* These RGBA values need to be updated if BRAND_BACKGROUND_DARK changes, solves webkit bug */
+
+/* Gray Color 13 */
+
+/* Background color a branded app header */
+
+/* Active / Hover state of BRAND_LIGHT */
+
+/* Variant of BRAND_HEADER_CONTRAST that provides a warm color */
+
+/* Disabled state of BRAND_HEADER_ICON */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST */
+
+/* Primary page background color */
+
+/* Primary brand color */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST_WEAK */
+
+/* Active / Hover state of BRAND_CONTRAST */
+
+/* Variant of BRAND_HEADER_CONTRAST that provides a cool color */
+
+/* Variant of BRAND_HEADER that is accessible with BRAND_HEADER */
+
+/* Dark variant of BRAND that is accessible with light colors */
+
+/* Dark variant of BRAND that is accessible with white */
+
+/* Dark variant of BRAND_BACKGROUND_PRIMARY, used within gradient of background color */
+
+/* Active / Hover state of BRAND_TEXT_LINK */
+
+/* Gray Color 1 */
+
+/* Gray Color 2 */
+
+/* Active / Hover state of BRAND_HEADER_ICON */
+
+/* Gray Color 3 */
+
+/* Icons of BRAND_HEADER that is accessible with BRAND_HEADER */
+
+/* Disabled state of BRAND_A11Y */
+
+/* Primary text link brand color */
+
+/* Gray Color 4 */
+
+/* Gray Color 5 */
+
+/* Gray Color 6 */
+
+/* Active / Hover state of BRAND_A11Y */
+
+/* Gray Color 7 */
+
+/* Active / Hover state of BRAND_DARK */
+
+/* Gray Color 8 */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST_COOL */
+
+/* Gray Color 9 */
+
+/* Variant of BRAND that is accessible with BRAND */
+
+/* Weak contrast ratio, useful for iconography */
+
+/* Active / Hover state of BRAND_PRIMARY */
+
+/* These RGBA values need to be updated if BRAND_BACKGROUND_PRIMARY changes, solves webkit bug */
+
+/* Variant of BRAND_HEADER that is accessible with BRAND_HEADER */
+
+/* Transparent value of BRAND_PRIMARY */
+
+/* Active / Hover state of BRAND_HEADER_CONTRAST_WARM */
+
+/* Transparent value of BRAND_PRIMARY at 40% */
+
+/* Light variant of BRAND that is accessible with dark colors */
+
+/* Gray Color 10 */
+
+/* Generic sizing token scale for UI components. */
+
+/* Generic sizing token scale for UI components. */
+
+/* Large utility icon without border. */
+
+/* Generic sizing token scale for UI components. */
+
+/* Search Results: Outer colored tile */
+
+/* Generic sizing token scale for UI components. */
+
+/* Medium utility icon without border. */
+
+/* Very small icon button boundary. */
+
+/* Small utility icon without border. */
+
+/* Stage left & actions: Outer colored tile */
+
+/* Anchor: Icon content (white shape) */
+
+/* Anchor: Outer colored tile */
+
+/* Generic sizing token scale for UI components. */
+
+/* Stage left & actions: Icon content (white shape) */
+
+/* Generic sizing token scale for UI components. */
+
+/* Very small icons in icon buttons. */
+
+/* Variable medium boundary for square icons */
+
+/* Icon button boundary. */
+
+/* Generic sizing token scale for UI components. */
+
+/* Anchor: avatar */
+
+/* Generic sizing token scale for UI components. */
+
+/* Search Results: Icon content (white shape) */
+
+/* Very very small icon button boundary. */
+
+/* Alternate medium tap target size */
+
+/* Variable spacing token for size X Large */
+
+/* Variable horizontal spacing token for size Small */
+
+/* Variable horizontal spacing token for size XX Large */
+
+/* Constant spacing token for size X small */
+
+/* Constant spacing token for size XXX small */
+
+/* Constant spacing token for size XX small */
+
+/* Variable vertical spacing token for size Large */
+
+/* Variable spacing token for size Large */
+
+/* Variable spacing token for size Medium */
+
+/* Variable vertical spacing token for size Medium */
+
+/* Variable vertical spacing token for size X Small */
+
+/* Constant spacing token for size Small */
+
+/* Variable vertical spacing token for size XXX Small */
+
+/* Variable spacing token for size X Small */
+
+/* Variable spacing token for size XXX Small */
+
+/* Variable horizontal spacing token for size X Large */
+
+/* Variable horizontal spacing token for size XX Small */
+
+/* Variable spacing token for size XX Large */
+
+/* Constant spacing token for size Medium */
+
+/* Variable vertical spacing token for size XX Large */
+
+/* Variable vertical spacing token for size Small */
+
+/* Variable spacing token for size Small */
+
+/* Constant spacing token for 0 */
+
+/* Variable horizontal spacing token for size Large */
+
+/* Constant spacing token for size X Large */
+
+/* Constant spacing token for size XX Large */
+
+/* Variable horizontal spacing token for size XXX Small */
+
+/* Variable horizontal spacing token for size X Small */
+
+/* Variable spacing token for size XX Small */
+
+/* Variable horizontal spacing token for size Medium */
+
+/* Variable vertical spacing token for size XX Small */
+
+/* Variable vertical spacing token for size X Large */
+
+/* Constant spacing token for size Large */
+
+/* Action label text color */
+
+/* Link color on dark background */
+
+/* Link color on dark background - active state */
+
+/* Action label active text color */
+
+/* Color for texts or icons that are related to warnings on a dark background. */
+
+/* Focus link text */
+
+/* Text color for destructive actions - hover state */
+
+/* Disabled link text */
+
+/* Body text color */
+
+/* Text color for destructive actions */
+
+/* Hover link text */
+
+/* Text color for success text. */
+
+/* Color for text that is purposefully de-emphasized to create visual hierarchy. */
+
+/* Input placeholder text on dark backgrounds. */
+
+/* Link text (508) */
+
+/* Color for texts that are related to warnings on a light background. */
+
+/* Default icon color. */
+
+/* Our product brand blue. */
+
+/* Error text for inputs and error misc */
+
+/* Customer text used in anchor subtitle */
+
+/* Text color found on any primary brand color */
+
+/* Active link text */
+
+/* Color of required field marker. */
+
+/* Link color on dark background - disabled state */
+
+/* Inverse text color for dark backgrounds */
+
+/* Input placeholder text. */
+
+/* Weak inverse text color for dark backgrounds */
+
+/* Link color on dark background - hover state */
+
+/* Text color for success text on dark backgrounds. */
+
+/* Text color for field labels. */
+
+/* Tap target size for elements that rely on width and height dimensions */
+
+/* Small tap target size for elements that rely on width and height dimensions */
+
+/* X-small tap target size for elements that rely on width and height dimensions */
+
+/* Xx-small tap target size for elements that rely on width and height dimensions */
+
+/* Tap target size for elements that rely on height or line-height */
+
+/* Small tap target size for elements that rely on height or line-height */
+
+/* Dropdown */
+
+/* Docked element */
+
+/* Notifications under modals */
+
+/* Spinner */
+
+/* Default */
+
+/* Deep dive */
+
+/* Toasts */
+
+/* Dialog */
+
+/* Popup */
+
+/* Modal */
+
+/* Stickied element */
+
+/* Overlay */
+
+/* Brandable modal header */
+
+/* Background color for notification list item. */
+
+/* Notifications badge background color. */
+
+/* Notifications badge background color. */
+
+/* The color of the mask overlay that appears when you enter a modal state. */
+
+/* Color of the indicator dot. */
+
+/* Used when further differentiation is needed because colorBackground and colorBackgroundAlt are both being used in close proximity. */
+
+/* Hover color for utility bar item. */
+
+/* Brand hover fill color */
+
+/* Brand fill color */
+
+/* Background color for default desktop chrome (ex. global header) */
+
+/* Active button backgrounds on modal headers */
+
+/* Selected checkboxes */
+
+/* Default checkboxes */
+
+/* The color of the mask overlay that appears when you enter a modal state. */
+
+/* Background color for default mobile chrome (ex. global header) */
+
+/* Background color for search input fields. */
+
+/* Secondary top bar background color (child browser, file preview, etc.) */
+
+/* Used as the default background color for temporary dialog elements, such as the progress spinner background. */
+
+/* Used as gray background when more contrast is desired. */
+
+/* Standard modal header */
+
+/* Hovered active toggle background color. */
+
+/* Background color for payloads in the feed. */
+
+/* Button backgrounds on modal headers */
+
+/* Brand active fill color */
+
+/* Active color for utility bar item. */
+
+/* Stage left org switcher dropdown arrow background color. */
+
+/* Active toggle background color. */
+
+/* Alternative color for UI elements related to errors. */
+
+/* Winter 18 token, this has been deprecated. Please use BRAND_BACKGROUND_PRIMARY instead. */
+
+/* Used as gray background in conjunction with Shade when more contrast is desired. */
+
+/* Notifications badge background color. */
+
+/* Background for utility icons that live in the action bar on mobile. */
+
+/* The borders to create the checkmark */
+
+/* Disabled stroke color. */
+
+/* Active stroke color for our product brand blue. */
+
+/* Border color for brandable primary button */
+
+/* Used to delineate the boundary of a selected canvas element that is being hovered over. Specific to builders. */
+
+/* Used to delineate the boundary of a selected canvas element. Specific to builders. */
+
+/* Hover stroke color for our product brand blue. */
+
+/* Stroke color for our global header buttons. */
+
+/* Our product brand blue. */
+
+/* Used to delineate the boundary of a specific region. Specific to builders. */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Custom glow for focus states on UI link elements with explicit containers on dark or vibrantly colored backgrounds. */
+
+/* Deprecated: Use SHADOW_DOCKED */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Soft dropshadow found on general UI elements such as containers */
+
+/* Deprecated */
+
+/* Hard dropshadow found on general UI elements such as containers */
+
+/* Shadow above overflow menu close bar. */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Shadow for overlays. */
+
+/* Shadow for buttons. */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Inset shadow for editable grid */
+
+/* Deprecated */
+
+/* Deprecated */
+
+/* Shadow on images. */
+
+/* Deprecated */
+
+/* Medium headings. */
+
+/* Small body text. */
+
+/* Extra large headings. */
+
+/* Extra extra small text. */
+
+/* Large headings. */
+
+/* Extra large body text. */
+
+/* Extra Extra small headings. */
+
+/* Extra small headings. */
+
+/* Large body text. */
+
+/* Medium body text. */
+
+/* Extra small body text. */
+
+/* Small headings. */
+
+/* Deprecated: use FONT_FAMILY instead for regular body text and FONT_FAMILY_HEADING for headings. */
+
+/* Use squareIconMediumBoundary */
+
+/* Small tap target size */
+
+/* Very small icons to replace force font with temporary override. */
+
+/* Large tap target size. */
+
+/* Hovered icon color for a button that has a parent element that has a hover state */
+
+/* Color for text on a selected tab in a tab group. */
+
+/* Icon color for a button that has a parent element that has a hover state on a dark background. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Color for disabled text in a tab group. */
+
+/* Tertiary body text color */
+
+/* Active state on a standalone link on a dark background. */
+
+/* Primary body text color */
+
+/* Color for text in focus state in a tab group. */
+
+/* Icon color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Text color for pills. */
+
+/* Color for text in active state in a tab group. */
+
+/* Color for text in hover state in a tab group. */
+
+/* Color for text on toast messages. */
+
+/* Color for disabled toggles */
+
+/* Top bar icon color */
+
+/* Top bar active icon color */
+
+/* Color for non-interactive icons that represent a selected item in a list */
+
+/* Hover state on a standalone link on a dark background. */
+
+/* Modal header title */
+
+/* Modal header button text color */
+
+/* Color for interactive utility icons */
+
+/* Secondary body text color */
+
+/* Text in stage left navigation. */
+
+/* Default value for text-transform */
+
+/* Background color for a new notification list item. */
+
+/* Focused header button icon color */
+
+/* Background color for reminder notification on hover */
+
+/* Notifications badge background color. */
+
+/* Hovered header button icon color */
+
+/* Disabled input */
+
+/* Hovered toggle background color. */
+
+/* Background color for reminder notification */
+
+/* Hovered background color for success buttons */
+
+/* Header button icon color */
+
+/* Toggle background color. */
+
+/* Background color for success buttons */
+
+/* Disabled checkboxes */
+
+/* Background color for pills. */
+
+/* Color of the spinner dot. */
+
+/* The color of the mask overlay that provides user feedback on interaction. */
+
+/* Selected input field (when user has clicked or tabbed into field) */
+
+/* The background color of an internal scrollbar. */
+
+/* Disabled toggle background color. */
+
+/* Background color for toast messaging. */
+
+/* Background color of comment posts in the feed. */
+
+/* Default input field */
+
+/* Background color for success toast messaging. */
+
+/* Color of mask overlay that sits on top of an image when text is present. */
+
+/* Active background color for success buttons */
+
+/* Background color for error toast messaging. */
+
+/* The background color of an internal scrollbar track. */
+
+/* Background color for input field that has encountered an error. */
+
+/* Border color for disabled inverse button. */
+
+/* Hovered border color for a button with an icon that has a parent element that has a hover state */
+
+/* Border color for a button with an icon that has a parent element that has a hover state */
+
+/* Border color for an active tab. */
+
+/* Border color on disabled form elements. */
+
+/* Border color on notification reminders. */
+
+/* Border color for brandable primary button - disabled state */
+
+/* Border color for default secondary button */
+
+/* Border color on active form elements. */
+
+/* Border color on form elements. */
+
+/* These borders create the faux checkmark when the checkbox toggle is in the checked state. */
+
+/* Border color for a selected tab in a tab group. */
+
+/* Shadow for notifications that should be elevated above other components but under modals. */
+
+/* Custom glow for focus states on UI elements with explicit containers. */
+
+/* Custom glow for focus states on UI button elements with explicit containers on dark or vibrantly colored backgrounds. */
+
+/* Shadow to make inline edit card pop out. */
+
+/* Shadow on elements that are docked to the bottom of the viewport. */
+
+/* Shadow for header. */
+
+/* 4.8 seconds */
+
+/* 9.6 seconds */
+
+/* Line heights for tabs */
+
+/* Minimum height of a pill. */
+
+/* Brand header. Phone 44px; Tablet 50px */
+
+/* Action footer menu. Phone 44px; Tablet 50px */
+
+/* Text input height */
+
+/* Stage left for desktop when closed (showing icons only). */
+
+/* Stage left for desktop when open. */
+
+/* Maximum width for action overflow menu so that it's not full-screen for tablet. */
+
+/* Default amount of line breaks before text is truncated */
+
+/* Icon color on dark background */
+
+/* Text color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Input icon */
+
+/* Icon color on dark background - active state */
+
+/* Text color for default secondary button - hover state */
+
+/* Input disabled text */
+
+/* Text color for default secondary button */
+
+/* Default icon color - disabled state */
+
+/* Text color for brandable primary button - disabled state */
+
+/* Text color for brandable primary button - hover state */
+
+/* Default icon color - hover state. */
+
+/* Text color for brandable primary button */
+
+/* Text color for default secondary button - disabled state */
+
+/* Color for default text in a tab group. */
+
+/* Default icon color - active state. */
+
+/* Icon color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Text color for brandable primary button - active state */
+
+/* Text color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Text color for default secondary button - active state */
+
+/* Icon color on dark background - disabled state */
+
+/* Text color for a button that has a parent element that has a hover state. This is the default text/icon color for that button before its parent has been hovered over. */
+
+/* Icon color on dark background - hover state */
+
+/* Typed input text */
+
+/* White avatar group background color. */
+
+/* Dark gray avatar group background color. */
+
+/* White badge background color. */
+
+/* Dark gray badge background color. */
+
+/* Default secondary button - focus state */
+
+/* Use BRAND_ACCESSIBLE to pick up theming capabilities */
+
+/* Disabled button backgrounds on inverse/dark backgrounds */
+
+/* Default secondary button - hover state */
+
+/* Default secondary button */
+
+/* Background color for icon-only button - disabled state */
+
+/* Background color for icon-only button - focus state */
+
+/* Brandable primary button - disabled state */
+
+/* Brandable primary button - hover state */
+
+/* Active button backgrounds on inverse backgrounds on mobile */
+
+/* Background color for icon-only button - hover state */
+
+/* Brandable primary button */
+
+/* Background color for icon-only button */
+
+/* Default secondary button - disabled state */
+
+/* Background color for icon-only button - active state */
+
+/* Brandable primary button - active state */
+
+/* Button backgrounds on inverse/dark backgrounds */
+
+/* Default secondary button - active state */
+
+/* Line heights for regular buttons */
+
+/* Line heights for small buttons */
+
+/* Line height for touch screens */
+
+/* Default Card component background color. */
+
+/* Use for active tab. */
+
+/* Use for vertical spacing between cards */
+
+/* Default background for carousel card */
+
+/* Default background for carousel navigation indicators */
+
+/* Default hover background for carousel navigation indicators */
+
+/* Default focus background for carousel navigation indicators */
+
+/* Default background for active state on carousel navigation indicators */
+
+/* Default width for carousel indicator width */
+
+/* Inbound chat message background color. */
+
+/* Outbound chat message background color. */
+
+/* Outbound agent chat message background color. */
+
+/* Status chat message background color. */
+
+/* Line heights for toggle buttons */
+
+/* Slider size for toggle. */
+
+/* Slider width. */
+
+/* Slider height. */
+
+/* Alternating row background color for tables */
+
+/* Default background color for table headers */
+
+/* Hover state for table header cells */
+
+/* Focused state for table header cells */
+
+/* Resizable handle color for table header cells */
+
+/* Docked panel header’s background color. */
+
+/* Docked panel’s background color when open. */
+
+/* Height of the docked bar. */
+
+/* Utility bar notifications badge background color. */
+
+/* Utility bar notifications focus background color. */
+
+/* Default color for animated icon waffle for app switcher. */
+
+/* Default background color for a typing icon dot. */
+
+/* Active background color for a typing icon dot when animcating. */
+
+/* Brand fill color */
+
+/* Global action icon size */
+
+/* Typing icon size */
+
+/* Background color for Einstein header */
+
+/* Text shadow color for Einstein header background to make text more readable */
+
+/* Global Header background color */
+
+/* Global identity icon size. */
+
+/* Hovered context bar item background color. */
+
+/* Active context bar item background color. */
+
+/* Default context bar background color. */
+
+/* Context TAB bar item background color. */
+
+/* Hovered context bar item background color. */
+
+/* A Gradient used for putting shadows on the bottom when box-shadow is not possible. */
+
+/* Active context bar item background color. */
+
+/* Brand color in context bar for default theme */
+
+/* Highlight for context bar action (hover and focus states). */
+
+/* Divider in context bar */
+
+/* Border color in context bar */
+
+/* Border color in context bar on dark background */
+
+/* Border color in context bar for default theme */
+
+/* Alternate border color in context bar for default theme */
+
+/* Hovered border color in context bar for default theme */
+
+/* Active border color in context bar for default theme */
+
+/* Context bar height. */
+
+/* Context bar tab accent height when tab is active. */
+
+/* Context bar tab accent height when tab is focused. */
+
+/* Context bar text color */
+
+/* Context bar text color on a dark background */
+
+/* Context bar action trigger text color */
+
+/* Primary color for illustrations */
+
+/* Secondary color for illustrations */
+
+/* Default Page Header background color */
+
+/* Secondary Page Header background color */
+
+/* Use COLOR_BACKGROUND_PAGE_HEADER instead. */
+
+/* Page Header background color */
+
+/* Page header Entity Icon size */
+
+/* Dropshadow found on docked UI panels when positioned to the left of a viewport */
+
+/* Dropshadow found on docked UI panels when positioned to the left of a viewport */
+
+/* The hover background color for Salespath stages that have not been completed. */
+
+/* The background color for the step action arrow that are the active stage */
+
+/* The background color for Salespath stages that have not been completed. */
+
+/* The hover background color for Salespath stages that are the active stage. */
+
+/* The background color for the final stage of a Salespath when it has been lost. */
+
+/* The background color for Salespath stages that are the active stage. */
+
+/* The background color for Salespath guidance coaching section. */
+
+/* The background color for the final stage of a Salespath when it has been lost. */
+
+/* The hover background color for Salespath stages that are the current stage. */
+
+/* The background color for Salespath stages that are the current stage. */
+
+/* The hover background color for Salespath stages that are complete. */
+
+/* The background color for Salespath stages that are complete. */
+
+/* The background color for the step action arrow that are the current stage */
+
+/* The background color for the overall Salespath coaching section. */
+
+/* Used as a separator between dark colors like the stages of salespath. */
+
+/* Used as a border color for the active Path step. */
+
+/* Used as a border color for the current path step on hover. */
+
+/* Line heights for salespath */
+
+/* Height of Path */
+
+/* Width of action button to right */
+
+/* Border width of current stage for path item */
+
+/* Used as a text color for the active Path step. */
+
+/* Used as a text hover color for the active Path step. */
+
+/* The default background color for Popover Walkthrough */
+
+/* The default background color for Popover Walkthrough Header */
+
+/* The default background color for alternative Popover Walkthrough */
+
+/* The background color for nubbins on the bottom of alternate walkthrough popovers */
+
+/* Tooltip nubbin square size */
+
+/* Text color for step counter in walkthrough variant of popovers */
+
+/* The default background color for Progress Indicator */
+
+/* The shaded background color for Progress Indicator */
+
+/* The background color for the Progress Bar */
+
+/* The background color of the fill for the Progress Bar */
+
+/* The success background color of the fill for the Progress Bar */
+
+/* Borders of each indicator item within the Progress Indicator */
+
+/* Shaded borders of each indicator item within the Progress Indicator */
+
+/* Hovered border color of each indicator item within the Progress Indicator */
+
+/* Active border color of each indicator item within the Progress Indicator */
+
+/* Height of the Progress Bar */
+
+/* Inner color for progress ring component */
+
+/* Thickness of the Progress Ring's ring */
+
+/* Line height for touch screens */
+
+/* Dark notification component background color. */
+
+/* Spinner size for xx-small modifier */
+
+/* Spinner size for x-small modifier */
+
+/* Spinner size for small modifier */
+
+/* Spinner size for medium modifier */
+
+/* Spinner size for large modifier */
+
+/* Split View background color. */
+
+/* Split View background color on row hover. */
+
+/* Row dividers in Split View list */
+
+/* Default width for split view container */
+
+/* Use for active tab. */
+
+/* Vertical navigation shaded background color on row hover. */
+
+/* Vertical navigation shaded background color on row active. */
+
+/* Text color for the Info section */
+
+/* Background Image Path for the Welcome Mat Info section */
+
+/* Background overflow color for the Welcome Mat Info section */
+
+/* Progress Bar background is white */
+
+/* Box Shadow declaration */
+
+/* Completed icon color for the Welcome Mat Boxes */
+
+/* Font size for the info title */
+
+/* Welcome Mat Width */
+
+/* Min height for Overlay */
+
+/* Max height for Overlay */
+
+/* Welcome Mat Progress Bar width */
+
+/* Size of the green completed check mark */
+
+/* Size of the check mark in the green icon */
+
+/* Bottom spacing (safe area) for background image */
+
+/* Use ACTION_NEW_NOTEBOOK instead. */
+
 /*
 * @param direction vertical or horizontal
 * @param position type of positioning to apply (relative/absolute)
@@ -4479,6 +6347,12 @@
 .coveo-icon.objecttype.coveo-small.Contact,
 .coveo-icon.objecttype.coveo-small.contact {
   background-color: #a094ed;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-multi-select-checkbox,
+.coveo-filetype-salesforce-standard-multi-select-checkbox-small {
+  background-color: #969492;
   border-radius: 2px;
 }
 
@@ -4502,15 +6376,39 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-global-constant,
+.coveo-filetype-salesforce-standard-global-constant-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-carousel,
 .coveo-filetype-salesforce-standard-carousel-small {
   background-color: #6bbd6e;
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-work-contract,
+.coveo-filetype-salesforce-standard-work-contract-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-resource-skill,
 .coveo-filetype-salesforce-standard-resource-skill-small {
   background-color: #45c173;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-system-and-global-variable,
+.coveo-filetype-salesforce-standard-system-and-global-variable-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-segments,
+.coveo-filetype-salesforce-standard-segments-small {
+  background-color: #f28b00;
   border-radius: 2px;
 }
 
@@ -4524,9 +6422,57 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-case-wrap-up,
+.coveo-filetype-salesforce-standard-case-wrap-up-small {
+  background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-investment-account,
 .coveo-filetype-salesforce-standard-investment-account-small {
   background-color: #4bc076;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-store,
+.coveo-filetype-salesforce-standard-store-small {
+  background-color: #04844b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-output,
+.coveo-filetype-salesforce-standard-output-small {
+  background-color: #439cba;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-store-group,
+.coveo-filetype-salesforce-standard-store-group-small {
+  background-color: #3c97dd;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-all,
+.coveo-filetype-salesforce-standard-all-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-picklist-choice,
+.coveo-filetype-salesforce-standard-picklist-choice-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-choice,
+.coveo-filetype-salesforce-standard-choice-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-app,
+.coveo-filetype-salesforce-standard-app-small {
+  background-color: #fcb95b;
   border-radius: 2px;
 }
 
@@ -4552,9 +6498,27 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-buyer-account,
+.coveo-filetype-salesforce-standard-buyer-account-small {
+  background-color: #04844b;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-lead-list,
 .coveo-filetype-salesforce-standard-lead-list-small {
   background-color: #f88962;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-plan-template,
+.coveo-filetype-salesforce-standard-work-plan-template-small {
+  background-color: #449488;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-shift,
+.coveo-filetype-salesforce-standard-shift-small {
+  background-color: #eb7092;
   border-radius: 2px;
 }
 
@@ -4564,9 +6528,33 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-apex,
+.coveo-filetype-salesforce-standard-apex-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-reply-text,
+.coveo-filetype-salesforce-standard-reply-text-small {
+  background-color: #f88965;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-answer-private,
 .coveo-filetype-salesforce-standard-answer-private-small {
   background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-asset-downtime-period,
+.coveo-filetype-salesforce-standard-asset-downtime-period-small {
+  background-color: #317a92;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-opportunity-contact-role,
+.coveo-filetype-salesforce-standard-opportunity-contact-role-small {
+  background-color: #7e8be4;
   border-radius: 2px;
 }
 
@@ -4591,6 +6579,12 @@
 .coveo-filetype-salesforce-standard-datadotcom,
 .coveo-filetype-salesforce-standard-datadotcom-small {
   background-color: #1589ee;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-settings,
+.coveo-filetype-salesforce-standard-settings-small {
+  background-color: #04844b;
   border-radius: 2px;
 }
 
@@ -4624,9 +6618,21 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-work-queue,
+.coveo-filetype-salesforce-standard-work-queue-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-iot-orchestrations,
 .coveo-filetype-salesforce-standard-iot-orchestrations-small {
   background-color: #2a739e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-visualforce-page,
+.coveo-filetype-salesforce-standard-visualforce-page-small {
+  background-color: #fcb95b;
   border-radius: 2px;
 }
 
@@ -4648,15 +6654,69 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-entitlement-policy,
+.coveo-filetype-salesforce-standard-entitlement-policy-small {
+  background-color: #04844b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-order-item,
+.coveo-filetype-salesforce-standard-order-item-small {
+  background-color: #769ed3;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-read-receipts,
 .coveo-filetype-salesforce-standard-read-receipts-small {
   background-color: #4bc076;
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-javascript-button,
+.coveo-filetype-salesforce-standard-javascript-button-small {
+  background-color: #fcb95b;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-maintenance-asset,
 .coveo-filetype-salesforce-standard-maintenance-asset-small {
   background-color: #2a739e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-plan-rule,
+.coveo-filetype-salesforce-standard-work-plan-rule-small {
+  background-color: #449488;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-loop,
+.coveo-filetype-salesforce-standard-loop-small {
+  background-color: #ff9a3c;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-portal-roles-and-subordinates,
+.coveo-filetype-salesforce-standard-portal-roles-and-subordinates-small {
+  background-color: #7a9ae6;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-capacity-limit,
+.coveo-filetype-salesforce-standard-work-capacity-limit-small {
+  background-color: #0079bc;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-employee-organization,
+.coveo-filetype-salesforce-standard-employee-organization-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-constant,
+.coveo-filetype-salesforce-standard-constant-small {
+  background-color: #54698d;
   border-radius: 2px;
 }
 
@@ -4678,6 +6738,18 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-multi-picklist,
+.coveo-filetype-salesforce-standard-multi-picklist-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-visit-templates,
+.coveo-filetype-salesforce-standard-visit-templates-small {
+  background-color: #3c97dd;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-task,
 .coveo-icon.objecttype.Task,
 .coveo-icon.objecttype.task,
@@ -4691,6 +6763,12 @@
 .coveo-filetype-salesforce-standard-answer-best,
 .coveo-filetype-salesforce-standard-answer-best-small {
   background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-asset-action,
+.coveo-filetype-salesforce-standard-asset-action-small {
+  background-color: #317a92;
   border-radius: 2px;
 }
 
@@ -4754,9 +6832,21 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-trailhead,
+.coveo-filetype-salesforce-standard-trailhead-small {
+  background-color: #032e61;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-entitlements,
 .coveo-filetype-salesforce-standard-entitlements-small {
   background-color: #b781d3;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-formula,
+.coveo-filetype-salesforce-standard-formula-small {
+  background-color: #54698d;
   border-radius: 2px;
 }
 
@@ -4772,9 +6862,27 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-job-family,
+.coveo-filetype-salesforce-standard-job-family-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-service-appointment-capacity-usage,
+.coveo-filetype-salesforce-standard-service-appointment-capacity-usage-small {
+  background-color: #0079bc;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-channel-program-levels,
 .coveo-filetype-salesforce-standard-channel-program-levels-small {
   background-color: #0eb58a;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-letterhead,
+.coveo-filetype-salesforce-standard-letterhead-small {
+  background-color: #3c97dd;
   border-radius: 2px;
 }
 
@@ -4802,15 +6910,69 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-dashboard-ea,
+.coveo-filetype-salesforce-standard-dashboard-ea-small {
+  background-color: #7e8be4;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-job-profile,
+.coveo-filetype-salesforce-standard-job-profile-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-steps,
+.coveo-filetype-salesforce-standard-steps-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-asset-relationship,
 .coveo-filetype-salesforce-standard-asset-relationship-small {
   background-color: #fa975c;
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-high-velocity-sales,
+.coveo-filetype-salesforce-standard-high-velocity-sales-small {
+  background-color: #47cfc9;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-brand,
+.coveo-filetype-salesforce-standard-brand-small {
+  background-color: #7e8be4;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-visits,
+.coveo-filetype-salesforce-standard-visits-small {
+  background-color: #3c97dd;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-einstein-replies,
+.coveo-filetype-salesforce-standard-einstein-replies-small {
+  background-color: #f88965;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-coaching,
 .coveo-filetype-salesforce-standard-coaching-small {
   background-color: #f67594;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-record-lookup,
+.coveo-filetype-salesforce-standard-record-lookup-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-lightning-component,
+.coveo-filetype-salesforce-standard-lightning-component-small {
+  background-color: #969492;
   border-radius: 2px;
 }
 
@@ -4823,6 +6985,18 @@
 .coveo-filetype-salesforce-standard-connected-apps,
 .coveo-filetype-salesforce-standard-connected-apps-small {
   background-color: #9895ee;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-type-group,
+.coveo-filetype-salesforce-standard-work-type-group-small {
+  background-color: #0079bc;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-education,
+.coveo-filetype-salesforce-standard-education-small {
+  background-color: #3c97dd;
   border-radius: 2px;
 }
 
@@ -4844,6 +7018,18 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-call-coaching,
+.coveo-filetype-salesforce-standard-call-coaching-small {
+  background-color: #3c97dd;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-salesforce-cms,
+.coveo-filetype-salesforce-standard-salesforce-cms-small {
+  background-color: #00a1df;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-thanks,
 .coveo-filetype-salesforce-standard-thanks-small {
   background-color: #e9696e;
@@ -4853,6 +7039,24 @@
 .coveo-filetype-salesforce-standard-service-territory-member,
 .coveo-filetype-salesforce-standard-service-territory-member-small {
   background-color: #7e8be4;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-user-role,
+.coveo-filetype-salesforce-standard-user-role-small {
+  background-color: #8fc96e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-capacity-usage,
+.coveo-filetype-salesforce-standard-work-capacity-usage-small {
+  background-color: #0079bc;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-record-create,
+.coveo-filetype-salesforce-standard-record-create-small {
+  background-color: #eb7092;
   border-radius: 2px;
 }
 
@@ -4868,6 +7072,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-portal-roles,
+.coveo-filetype-salesforce-standard-portal-roles-small {
+  background-color: #fb8950;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-calibration,
 .coveo-filetype-salesforce-standard-calibration-small {
   background-color: #47cfd2;
@@ -4877,6 +7087,12 @@
 .coveo-filetype-salesforce-standard-answer-public,
 .coveo-filetype-salesforce-standard-answer-public-small {
   background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-display-text,
+.coveo-filetype-salesforce-standard-display-text-small {
+  background-color: #969492;
   border-radius: 2px;
 }
 
@@ -4904,6 +7120,18 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-voice-call,
+.coveo-filetype-salesforce-standard-voice-call-small {
+  background-color: #30c85a;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-cancel-checkout,
+.coveo-filetype-salesforce-standard-cancel-checkout-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-resource-capacity,
 .coveo-filetype-salesforce-standard-resource-capacity-small {
   background-color: #45c173;
@@ -4918,7 +7146,7 @@
 
 .coveo-filetype-salesforce-standard-quip,
 .coveo-filetype-salesforce-standard-quip-small {
-  background-color: #25b4e9;
+  background-color: #d3451d;
   border-radius: 2px;
 }
 
@@ -4940,6 +7168,18 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-job-position,
+.coveo-filetype-salesforce-standard-job-position-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-sobject-collection,
+.coveo-filetype-salesforce-standard-sobject-collection-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-user,
 .coveo-filetype-salesforce-standard-user-small {
   background-color: #34becd;
@@ -4949,6 +7189,18 @@
 .coveo-filetype-salesforce-standard-client,
 .coveo-filetype-salesforce-standard-client-small {
   background-color: #00d2be;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-scheduling-constraints,
+.coveo-filetype-salesforce-standard-scheduling-constraints-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-screen,
+.coveo-filetype-salesforce-standard-screen-small {
+  background-color: #1589ee;
   border-radius: 2px;
 }
 
@@ -4970,14 +7222,44 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-first-non-empty,
+.coveo-filetype-salesforce-standard-first-non-empty-small {
+  background-color: #e9696e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-customer-360,
+.coveo-filetype-salesforce-standard-customer-360-small {
+  background-color: #032e61;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-employee-job,
+.coveo-filetype-salesforce-standard-employee-job-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-resource-absence,
 .coveo-filetype-salesforce-standard-resource-absence-small {
   background-color: #45c173;
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-text-template,
+.coveo-filetype-salesforce-standard-text-template-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-entitlement-template,
 .coveo-filetype-salesforce-standard-entitlement-template-small {
+  background-color: #7e8be4;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-lightning-usage,
+.coveo-filetype-salesforce-standard-lightning-usage-small {
   background-color: #7e8be4;
   border-radius: 2px;
 }
@@ -4991,6 +7273,24 @@
 .coveo-filetype-salesforce-standard-empty,
 .coveo-filetype-salesforce-standard-empty-small {
   background-color: #8199af;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-text,
+.coveo-filetype-salesforce-standard-text-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-delegated-account,
+.coveo-filetype-salesforce-standard-delegated-account-small {
+  background-color: #04844b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-fulfillment-order,
+.coveo-filetype-salesforce-standard-fulfillment-order-small {
+  background-color: #b9ac91;
   border-radius: 2px;
 }
 
@@ -5010,6 +7310,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-assignment,
+.coveo-filetype-salesforce-standard-assignment-small {
+  background-color: #ff9a3c;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-wealth-management-console,
 .coveo-filetype-salesforce-standard-wealth-management-console-small {
   background-color: #00afa0;
@@ -5019,6 +7325,12 @@
 .coveo-filetype-salesforce-standard-task2,
 .coveo-filetype-salesforce-standard-task2-small {
   background-color: #4bc076;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-code-playground,
+.coveo-filetype-salesforce-standard-code-playground-small {
+  background-color: #54698d;
   border-radius: 2px;
 }
 
@@ -5056,9 +7368,27 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-expense-report-entry,
+.coveo-filetype-salesforce-standard-expense-report-entry-small {
+  background-color: #3a3180;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-employee,
+.coveo-filetype-salesforce-standard-employee-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-omni-supervisor,
 .coveo-filetype-salesforce-standard-omni-supervisor-small {
   background-color: #8a76f0;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-asset-object,
+.coveo-filetype-salesforce-standard-asset-object-small {
+  background-color: #317a92;
   border-radius: 2px;
 }
 
@@ -5088,6 +7418,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-dynamic-record-choice,
+.coveo-filetype-salesforce-standard-dynamic-record-choice-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-process,
 .coveo-filetype-salesforce-standard-process-small {
   background-color: #0079bc;
@@ -5106,6 +7442,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-employee-contact,
+.coveo-filetype-salesforce-standard-employee-contact-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-performance,
 .coveo-filetype-salesforce-standard-performance-small {
   background-color: #f8b156;
@@ -5118,6 +7460,18 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-sales-channel,
+.coveo-filetype-salesforce-standard-sales-channel-small {
+  background-color: #2a739e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-apex-plugin,
+.coveo-filetype-salesforce-standard-apex-plugin-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-campaign,
 .coveo-icon.objecttype.Campaign,
 .coveo-icon.objecttype.campaign,
@@ -5125,6 +7479,12 @@
 .coveo-icon.objecttype.coveo-small.Campaign,
 .coveo-icon.objecttype.coveo-small.campaign {
   background-color: #f49756;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-contact-request,
+.coveo-filetype-salesforce-standard-contact-request-small {
+  background-color: #fb8954;
   border-radius: 2px;
 }
 
@@ -5146,15 +7506,39 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-customer-lifecycle-analytics,
+.coveo-filetype-salesforce-standard-customer-lifecycle-analytics-small {
+  background-color: #9274df;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-case,
 .coveo-filetype-salesforce-standard-case-small {
   background-color: #f2cf5b;
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-currency,
+.coveo-filetype-salesforce-standard-currency-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-record,
 .coveo-filetype-salesforce-standard-record-small {
   background-color: #7dc37d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-queue,
+.coveo-filetype-salesforce-standard-queue-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-schedule-objective,
+.coveo-filetype-salesforce-standard-schedule-objective-small {
+  background-color: #2a739e;
   border-radius: 2px;
 }
 
@@ -5210,6 +7594,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-bot-training,
+.coveo-filetype-salesforce-standard-bot-training-small {
+  background-color: #5876a3;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-case-change-status,
 .coveo-filetype-salesforce-standard-case-change-status-small {
   background-color: #f2cf5b;
@@ -5229,6 +7619,18 @@
 .coveo-icon.objecttype.coveo-small.Contract,
 .coveo-icon.objecttype.coveo-small.contract {
   background-color: #6ec06e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-sobject,
+.coveo-filetype-salesforce-standard-sobject-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-sales-cadence-target,
+.coveo-filetype-salesforce-standard-sales-cadence-target-small {
+  background-color: #54698d;
   border-radius: 2px;
 }
 
@@ -5253,6 +7655,12 @@
 .coveo-filetype-salesforce-standard-drafts,
 .coveo-filetype-salesforce-standard-drafts-small {
   background-color: #6ca1e9;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-outcome,
+.coveo-filetype-salesforce-standard-outcome-small {
+  background-color: #ff9a3c;
   border-radius: 2px;
 }
 
@@ -5284,6 +7692,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-buyer-group,
+.coveo-filetype-salesforce-standard-buyer-group-small {
+  background-color: #04844b;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-opportunity,
 .coveo-icon.objecttype.Opportunity,
 .coveo-icon.objecttype.opportunity,
@@ -5304,9 +7718,27 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-display-rich-text,
+.coveo-filetype-salesforce-standard-display-rich-text-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-strategy,
+.coveo-filetype-salesforce-standard-strategy-small {
+  background-color: #4bc071;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-call-history,
 .coveo-filetype-salesforce-standard-call-history-small {
   background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-webcart,
+.coveo-filetype-salesforce-standard-webcart-small {
+  background-color: #04844b;
   border-radius: 2px;
 }
 
@@ -5334,6 +7766,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-data-model,
+.coveo-filetype-salesforce-standard-data-model-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-dashboard,
 .coveo-icon.objecttype.Dashboard,
 .coveo-icon.objecttype.dashboard,
@@ -5347,6 +7785,12 @@
 .coveo-filetype-salesforce-standard-generic-loading,
 .coveo-filetype-salesforce-standard-generic-loading-small {
   background-color: #b8c3ce;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-number-input,
+.coveo-filetype-salesforce-standard-number-input-small {
+  background-color: #969492;
   border-radius: 2px;
 }
 
@@ -5374,6 +7818,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-story,
+.coveo-filetype-salesforce-standard-story-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-service-appointment,
 .coveo-icon.objecttype.Appointment,
 .coveo-icon.objecttype.appointment,
@@ -5396,6 +7846,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-work-plan-template-entry,
+.coveo-filetype-salesforce-standard-work-plan-template-entry-small {
+  background-color: #449488;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-hierarchy,
 .coveo-filetype-salesforce-standard-hierarchy-small {
   background-color: #34becd;
@@ -5408,6 +7864,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-asset-action-source,
+.coveo-filetype-salesforce-standard-asset-action-source-small {
+  background-color: #317a92;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-skill-requirement,
 .coveo-filetype-salesforce-standard-skill-requirement-small {
   background-color: #fa975c;
@@ -5417,6 +7879,12 @@
 .coveo-filetype-salesforce-standard-location,
 .coveo-filetype-salesforce-standard-location-small {
   background-color: #4bc076;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-radio-button,
+.coveo-filetype-salesforce-standard-radio-button-small {
+  background-color: #969492;
   border-radius: 2px;
 }
 
@@ -5448,6 +7916,48 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-invocable-action,
+.coveo-filetype-salesforce-standard-invocable-action-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-proposition,
+.coveo-filetype-salesforce-standard-proposition-small {
+  background-color: #3c97dd;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-snippets,
+.coveo-filetype-salesforce-standard-snippets-small {
+  background-color: #0eb58a;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-customer-portal-users,
+.coveo-filetype-salesforce-standard-customer-portal-users-small {
+  background-color: #3c97db;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-actions-and-buttons,
+.coveo-filetype-salesforce-standard-actions-and-buttons-small {
+  background-color: #fcb95b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-record-update,
+.coveo-filetype-salesforce-standard-record-update-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-shift-type,
+.coveo-filetype-salesforce-standard-shift-type-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-log-a-call,
 .coveo-filetype-salesforce-standard-log-a-call-small {
   background-color: #48c3cc;
@@ -5474,9 +7984,39 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-kanban,
+.coveo-filetype-salesforce-standard-kanban-small {
+  background-color: #3c97dd;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-plan,
+.coveo-filetype-salesforce-standard-work-plan-small {
+  background-color: #449488;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-shift-template,
+.coveo-filetype-salesforce-standard-shift-template-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-merge,
 .coveo-filetype-salesforce-standard-merge-small {
   background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-expense,
+.coveo-filetype-salesforce-standard-expense-small {
+  background-color: #3a3180;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-dataset,
+.coveo-filetype-salesforce-standard-dataset-small {
+  background-color: #b070e6;
   border-radius: 2px;
 }
 
@@ -5510,9 +8050,27 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-filter,
+.coveo-filetype-salesforce-standard-filter-small {
+  background-color: #1539ee;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-sales-path,
 .coveo-filetype-salesforce-standard-sales-path-small {
   background-color: #2a739e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-events,
+.coveo-filetype-salesforce-standard-events-small {
+  background-color: #3c97db;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-sms,
+.coveo-filetype-salesforce-standard-sms-small {
+  background-color: #88c651;
   border-radius: 2px;
 }
 
@@ -5525,6 +8083,12 @@
 .coveo-filetype-salesforce-standard-avatar,
 .coveo-filetype-salesforce-standard-avatar-small {
   background-color: #62b7ed;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-record-delete,
+.coveo-filetype-salesforce-standard-record-delete-small {
+  background-color: #eb7092;
   border-radius: 2px;
 }
 
@@ -5557,6 +8121,18 @@
 .coveo-filetype-salesforce-standard-custom-notification,
 .coveo-filetype-salesforce-standard-custom-notification-small {
   background-color: #6bb7e4;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-date-input,
+.coveo-filetype-salesforce-standard-date-input-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-catalog,
+.coveo-filetype-salesforce-standard-catalog-small {
+  background-color: #027e46;
   border-radius: 2px;
 }
 
@@ -5594,6 +8170,24 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-textarea,
+.coveo-filetype-salesforce-standard-textarea-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-step,
+.coveo-filetype-salesforce-standard-work-step-small {
+  background-color: #449488;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-picklist-type,
+.coveo-filetype-salesforce-standard-picklist-type-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-survey,
 .coveo-filetype-salesforce-standard-survey-small {
   background-color: #319fd6;
@@ -5618,6 +8212,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-recycle-bin,
+.coveo-filetype-salesforce-standard-recycle-bin-small {
+  background-color: #1589e4;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-document,
 .coveo-filetype-salesforce-standard-document-small {
   background-color: #baac93;
@@ -5630,9 +8230,39 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-instore-locations,
+.coveo-filetype-salesforce-standard-instore-locations-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-recent,
 .coveo-filetype-salesforce-standard-recent-small {
   background-color: #6ca1e9;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-shift-preferences,
+.coveo-filetype-salesforce-standard-shift-preferences-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-password,
+.coveo-filetype-salesforce-standard-password-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-expense-report,
+.coveo-filetype-salesforce-standard-expense-report-small {
+  background-color: #3a3180;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-branch-merge,
+.coveo-filetype-salesforce-standard-branch-merge-small {
+  background-color: #e9696e;
   border-radius: 2px;
 }
 
@@ -5652,6 +8282,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-employee-job-position,
+.coveo-filetype-salesforce-standard-employee-job-position-small {
+  background-color: #00a1e0;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-file,
 .coveo-icon.objecttype.File,
 .coveo-icon.objecttype.file,
@@ -5666,6 +8302,18 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-currency-input,
+.coveo-filetype-salesforce-standard-currency-input-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-variable,
+.coveo-filetype-salesforce-standard-variable-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-team-member,
 .coveo-icon.filetype.Lithiumcommunity,
 .coveo-icon.filetype.lithiumcommunity,
@@ -5673,6 +8321,12 @@
 .coveo-icon.filetype.coveo-small.Lithiumcommunity,
 .coveo-icon.filetype.coveo-small.lithiumcommunity {
   background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-agent-session,
+.coveo-filetype-salesforce-standard-agent-session-small {
+  background-color: #f88960;
   border-radius: 2px;
 }
 
@@ -5708,6 +8362,18 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-decision,
+.coveo-filetype-salesforce-standard-decision-small {
+  background-color: #ff9a3c;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-snippet,
+.coveo-filetype-salesforce-standard-snippet-small {
+  background-color: #a094ed;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-entitlement-process,
 .coveo-filetype-salesforce-standard-entitlement-process-small {
   background-color: #7e8be4;
@@ -5720,6 +8386,24 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-planogram,
+.coveo-filetype-salesforce-standard-planogram-small {
+  background-color: #3c97dd;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-activations,
+.coveo-filetype-salesforce-standard-activations-small {
+  background-color: #b070e6;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-scheduling-policy,
+.coveo-filetype-salesforce-standard-scheduling-policy-small {
+  background-color: #eb7092;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-channel-program-history,
 .coveo-filetype-salesforce-standard-channel-program-history-small {
   background-color: #0eb58a;
@@ -5729,6 +8413,18 @@
 .coveo-filetype-salesforce-standard-question-best,
 .coveo-filetype-salesforce-standard-question-best-small {
   background-color: #f2cf5b;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-collection-variable,
+.coveo-filetype-salesforce-standard-collection-variable-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-sales-value,
+.coveo-filetype-salesforce-standard-sales-value-small {
+  background-color: #3c97dd;
   border-radius: 2px;
 }
 
@@ -5750,9 +8446,39 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-date-time,
+.coveo-filetype-salesforce-standard-date-time-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-category,
+.coveo-filetype-salesforce-standard-category-small {
+  background-color: #027e46;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-data-streams,
+.coveo-filetype-salesforce-standard-data-streams-small {
+  background-color: #ef6e64;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-textbox,
+.coveo-filetype-salesforce-standard-textbox-small {
+  background-color: #969492;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-lead-insights,
 .coveo-filetype-salesforce-standard-lead-insights-small {
   background-color: #22b0e6;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-waits,
+.coveo-filetype-salesforce-standard-waits-small {
+  background-color: #ff9a3c;
   border-radius: 2px;
 }
 
@@ -5776,6 +8502,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-sort,
+.coveo-filetype-salesforce-standard-sort-small {
+  background-color: #1539ee;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-messaging-conversation,
 .coveo-filetype-salesforce-standard-messaging-conversation-small {
   background-color: #34becd;
@@ -5789,6 +8521,18 @@
 .coveo-icon.filetype.coveo-small.Jiraissue,
 .coveo-icon.filetype.coveo-small.jiraissue {
   background-color: #7e8be4;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-iot-context,
+.coveo-filetype-salesforce-standard-iot-context-small {
+  background-color: #2a739e;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-asset-state-period,
+.coveo-filetype-salesforce-standard-asset-state-period-small {
+  background-color: #317a92;
   border-radius: 2px;
 }
 
@@ -5808,6 +8552,12 @@
   border-radius: 2px;
 }
 
+.coveo-filetype-salesforce-standard-sales-cadence,
+.coveo-filetype-salesforce-standard-sales-cadence-small {
+  background-color: #54698d;
+  border-radius: 2px;
+}
+
 .coveo-filetype-salesforce-standard-product-request-line-item,
 .coveo-filetype-salesforce-standard-product-request-line-item-small {
   background-color: #88c651;
@@ -5817,6 +8567,12 @@
 .coveo-filetype-salesforce-standard-return-order-line-item,
 .coveo-filetype-salesforce-standard-return-order-line-item-small {
   background-color: #009688;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-chart,
+.coveo-filetype-salesforce-standard-chart-small {
+  background-color: #1fcaa0;
   border-radius: 2px;
 }
 
@@ -5835,6 +8591,12 @@
 .coveo-filetype-salesforce-standard-sossession,
 .coveo-filetype-salesforce-standard-sossession-small {
   background-color: #54698d;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-employee-asset,
+.coveo-filetype-salesforce-standard-employee-asset-small {
+  background-color: #00a1e0;
   border-radius: 2px;
 }
 
@@ -5877,6 +8639,12 @@
 .coveo-filetype-salesforce-standard-household,
 .coveo-filetype-salesforce-standard-household-small {
   background-color: #00afa0;
+  border-radius: 2px;
+}
+
+.coveo-filetype-salesforce-standard-work-step-template,
+.coveo-filetype-salesforce-standard-work-step-template-small {
+  background-color: #449488;
   border-radius: 2px;
 }
 
@@ -8938,8 +11706,10 @@ input[type='checkbox'].coveo-checkbox + button {
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
   display: inline-block;
 }
 
@@ -9418,8 +12188,10 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
 }
 
 .coveo-advanced-search-breadcrumb-value:visited,
@@ -9451,8 +12223,10 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
   margin-left: 5px;
 }
 
@@ -9567,11 +12341,22 @@ a.CoveoResultLink.coveo-selected *,
 * @param $size size of the icon to use
 */
 
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
 .CoveoBreadcrumb {
   padding: 10px 0;
   position: relative;
   overflow: hidden;
   border-bottom: thin solid #bcc3ca;
+  outline: none;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -9608,10 +12393,12 @@ a.CoveoResultLink.coveo-selected *,
   -moz-flex-shrink: 0;
   flex-shrink: 0;
   -ms-flex-negative: 0;
+  outline: 1px solid transparent;
   display: inline-block;
   font-size: 14px;
   padding: 5px;
   margin-left: 5px;
+  margin-right: 1px;
 }
 
 .coveo-breadcrumb-clear-all:visited,
@@ -10092,7 +12879,7 @@ a.CoveoResultLink.coveo-selected *,
 .CoveoTimespanFacet {
   margin: 10px 0;
   padding: 0;
-  border: thin solid #bcc3ca;
+  border: thin solid #7e8c9a;
   border-radius: 2px;
   background: white;
   position: relative;
@@ -10170,7 +12957,84 @@ a.CoveoResultLink.coveo-selected *,
 .coveo-facet-less:hover,
 .coveo-facet-less:focus {
   background: #bcc3ca;
-  outline: none;
+  /* Works on IE and Edge, doesn't work on Firefox & Chrome */
+}
+
+.coveo-facet-more:hover,
+.coveo-facet-more:hover.coveo-accessible-button-pressed,
+.coveo-facet-more:focus,
+.coveo-facet-more:focus.coveo-accessible-button-pressed,
+.coveo-facet-less:hover,
+.coveo-facet-less:hover.coveo-accessible-button-pressed,
+.coveo-facet-less:focus,
+.coveo-facet-less:focus.coveo-accessible-button-pressed {
+  outline: 1px solid transparent;
+  /* Works on Firefox, doesn't work on IE */
+  outline-offset: -3px;
+}
+
+@media screen and (-ms-high-contrast: white-on-black) {
+  .coveo-facet-more:hover,
+  .coveo-facet-more:hover.coveo-accessible-button-pressed,
+  .coveo-facet-more:focus,
+  .coveo-facet-more:focus.coveo-accessible-button-pressed,
+  .coveo-facet-less:hover,
+  .coveo-facet-less:hover.coveo-accessible-button-pressed,
+  .coveo-facet-less:focus,
+  .coveo-facet-less:focus.coveo-accessible-button-pressed {
+    background-color: white;
+  }
+
+  .coveo-facet-more:hover .coveo-facet-more-icon-svg,
+  .coveo-facet-more:hover .coveo-facet-less-icon-svg,
+  .coveo-facet-more:hover.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-more:hover.coveo-accessible-button-pressed .coveo-facet-less-icon-svg,
+  .coveo-facet-more:focus .coveo-facet-more-icon-svg,
+  .coveo-facet-more:focus .coveo-facet-less-icon-svg,
+  .coveo-facet-more:focus.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-more:focus.coveo-accessible-button-pressed .coveo-facet-less-icon-svg,
+  .coveo-facet-less:hover .coveo-facet-more-icon-svg,
+  .coveo-facet-less:hover .coveo-facet-less-icon-svg,
+  .coveo-facet-less:hover.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-less:hover.coveo-accessible-button-pressed .coveo-facet-less-icon-svg,
+  .coveo-facet-less:focus .coveo-facet-more-icon-svg,
+  .coveo-facet-less:focus .coveo-facet-less-icon-svg,
+  .coveo-facet-less:focus.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-less:focus.coveo-accessible-button-pressed .coveo-facet-less-icon-svg {
+    color: black;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .coveo-facet-more:hover,
+  .coveo-facet-more:hover.coveo-accessible-button-pressed,
+  .coveo-facet-more:focus,
+  .coveo-facet-more:focus.coveo-accessible-button-pressed,
+  .coveo-facet-less:hover,
+  .coveo-facet-less:hover.coveo-accessible-button-pressed,
+  .coveo-facet-less:focus,
+  .coveo-facet-less:focus.coveo-accessible-button-pressed {
+    background-color: black;
+  }
+
+  .coveo-facet-more:hover .coveo-facet-more-icon-svg,
+  .coveo-facet-more:hover .coveo-facet-less-icon-svg,
+  .coveo-facet-more:hover.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-more:hover.coveo-accessible-button-pressed .coveo-facet-less-icon-svg,
+  .coveo-facet-more:focus .coveo-facet-more-icon-svg,
+  .coveo-facet-more:focus .coveo-facet-less-icon-svg,
+  .coveo-facet-more:focus.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-more:focus.coveo-accessible-button-pressed .coveo-facet-less-icon-svg,
+  .coveo-facet-less:hover .coveo-facet-more-icon-svg,
+  .coveo-facet-less:hover .coveo-facet-less-icon-svg,
+  .coveo-facet-less:hover.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-less:hover.coveo-accessible-button-pressed .coveo-facet-less-icon-svg,
+  .coveo-facet-less:focus .coveo-facet-more-icon-svg,
+  .coveo-facet-less:focus .coveo-facet-less-icon-svg,
+  .coveo-facet-less:focus.coveo-accessible-button-pressed .coveo-facet-more-icon-svg,
+  .coveo-facet-less:focus.coveo-accessible-button-pressed .coveo-facet-less-icon-svg {
+    color: white;
+  }
 }
 
 .coveo-facet-more {
@@ -10413,7 +13277,8 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-facet-breadcrumb-value,
-.coveo-facet-slider-breadcrumb-value {
+.coveo-facet-slider-breadcrumb-value,
+.coveo-facet-breadcrumb-value-list-item {
   color: #0059b3;
   text-decoration: none;
   cursor: pointer;
@@ -10424,38 +13289,52 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
   display: inline-block;
 }
 
 .coveo-facet-breadcrumb-value:visited,
 .coveo-facet-breadcrumb-value:visited:hover,
 .coveo-facet-slider-breadcrumb-value:visited,
-.coveo-facet-slider-breadcrumb-value:visited:hover {
+.coveo-facet-slider-breadcrumb-value:visited:hover,
+.coveo-facet-breadcrumb-value-list-item:visited,
+.coveo-facet-breadcrumb-value-list-item:visited:hover {
   color: #609;
 }
 
 .coveo-facet-breadcrumb-value:hover,
 .coveo-facet-breadcrumb-value:hover a,
 .coveo-facet-slider-breadcrumb-value:hover,
-.coveo-facet-slider-breadcrumb-value:hover a {
+.coveo-facet-slider-breadcrumb-value:hover a,
+.coveo-facet-breadcrumb-value-list-item:hover,
+.coveo-facet-breadcrumb-value-list-item:hover a {
   text-decoration: underline;
 }
 
 .coveo-facet-breadcrumb-value.coveo-selected *,
-.coveo-facet-slider-breadcrumb-value.coveo-selected * {
+.coveo-facet-slider-breadcrumb-value.coveo-selected *,
+.coveo-facet-breadcrumb-value-list-item.coveo-selected * {
   color: #0059b3;
 }
 
 .coveo-facet-breadcrumb-value.coveo-selected *,
-.coveo-facet-slider-breadcrumb-value.coveo-selected * {
+.coveo-facet-slider-breadcrumb-value.coveo-selected *,
+.coveo-facet-breadcrumb-value-list-item.coveo-selected * {
   color: #296896;
 }
 
 .coveo-facet-breadcrumb-value.coveo-excluded .coveo-facet-breadcrumb-caption,
-.coveo-facet-slider-breadcrumb-value.coveo-excluded .coveo-facet-breadcrumb-caption {
+.coveo-facet-slider-breadcrumb-value.coveo-excluded .coveo-facet-breadcrumb-caption,
+.coveo-facet-breadcrumb-value-list-item.coveo-excluded .coveo-facet-breadcrumb-caption {
   text-decoration: line-through;
+}
+
+.coveo-facet-breadcrumb-value-list-item {
+  margin: 0;
+  padding: 0;
 }
 
 .coveo-facet-breadcrumb-clear,
@@ -10467,6 +13346,13 @@ a.CoveoResultLink.coveo-selected *,
 .coveo-facet-slider-breadcrumb-clear svg {
   width: 9px;
   height: 9px;
+}
+
+ul.coveo-facet-breadcrumb-values {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -10694,7 +13580,6 @@ a.CoveoResultLink.coveo-selected *,
   margin-right: 15px;
   background: white;
   position: relative;
-  float: left;
   top: 2px;
 }
 
@@ -10745,15 +13630,15 @@ a.CoveoResultLink.coveo-selected *,
   fill-opacity: 0;
 }
 
-.coveo-facet-value.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg,
-.coveo-facet-value:hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg {
+.coveo-facet-value:not(.coveo-excluded).coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg,
+.coveo-facet-value:not(.coveo-excluded):hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg {
   width: 10px;
   height: 10px;
   bottom: 3px;
 }
 
-.coveo-facet-value.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg,
-.coveo-facet-value:hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
+.coveo-facet-value:not(.coveo-excluded).coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg,
+.coveo-facet-value:not(.coveo-excluded):hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
   fill: #cc0d00;
 }
 
@@ -10762,13 +13647,13 @@ a.CoveoResultLink.coveo-selected *,
   fill-opacity: 0;
 }
 
-.coveo-facet-value.coveo-excluded .coveo-facet-value-checkbox svg {
+.coveo-facet-value.coveo-excluded:not(.coveo-facet-value-will-exclude) .coveo-facet-value-checkbox svg {
   width: 10px;
   height: 10px;
   bottom: 3px;
 }
 
-.coveo-facet-value.coveo-excluded .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
+.coveo-facet-value.coveo-excluded:not(.coveo-facet-value-will-exclude) .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
   fill: #cc0d00;
 }
 
@@ -10796,16 +13681,12 @@ a.CoveoResultLink.coveo-selected *,
   background-color: #e6ecf0;
 }
 
-.coveo-facet-value.coveo-excluded .coveo-facet-value-exclude {
-  visibility: hidden;
-}
-
-.coveo-facet-value.coveo-excluded.coveo-with-hover:hover .coveo-facet-value-exclude {
-  visibility: hidden;
-}
-
 .coveo-facet-value.coveo-with-hover:hover .coveo-facet-value-exclude {
   visibility: visible;
+}
+
+.coveo-facet-value-label-wrapper {
+  display: flex;
 }
 
 .coveo-facet-value-label {
@@ -10821,6 +13702,7 @@ a.CoveoResultLink.coveo-selected *,
   white-space: nowrap;
   text-overflow: ellipsis;
   vertical-align: middle;
+  flex-grow: 1;
 }
 
 .coveo-facet-value-icon {
@@ -10834,7 +13716,6 @@ a.CoveoResultLink.coveo-selected *,
   vertical-align: middle;
   margin: 0 5px;
   display: inline-block;
-  float: right;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   transition: opacity 1s;
@@ -10971,11 +13852,20 @@ a.CoveoResultLink.coveo-selected *,
   fill: grey;
 }
 
+.coveo-facet-value-unexclude-svg {
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  fill: grey;
+}
+
 .coveo-facet-search-results {
   position: absolute;
   left: 20px;
   right: 20px;
-  border: thin solid #bcc3ca;
+  border: thin solid #7e8c9a;
   border-radius: 2px;
   background-color: white;
   list-style: none;
@@ -11018,7 +13908,6 @@ a.CoveoResultLink.coveo-selected *,
   margin-right: 15px;
   background: white;
   position: relative;
-  float: left;
   top: 2px;
 }
 
@@ -11069,15 +13958,15 @@ a.CoveoResultLink.coveo-selected *,
   fill-opacity: 0;
 }
 
-.coveo-facet-search-results .coveo-facet-value.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg,
-.coveo-facet-search-results .coveo-facet-value:hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg {
+.coveo-facet-search-results .coveo-facet-value:not(.coveo-excluded).coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg,
+.coveo-facet-search-results .coveo-facet-value:not(.coveo-excluded):hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg {
   width: 7px;
   height: 7px;
   bottom: 5px;
 }
 
-.coveo-facet-search-results .coveo-facet-value.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg,
-.coveo-facet-search-results .coveo-facet-value:hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
+.coveo-facet-search-results .coveo-facet-value:not(.coveo-excluded).coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg,
+.coveo-facet-search-results .coveo-facet-value:not(.coveo-excluded):hover.coveo-facet-value-will-exclude .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
   fill: #cc0d00;
 }
 
@@ -11086,13 +13975,13 @@ a.CoveoResultLink.coveo-selected *,
   fill-opacity: 0;
 }
 
-.coveo-facet-search-results .coveo-facet-value.coveo-excluded .coveo-facet-value-checkbox svg {
+.coveo-facet-search-results .coveo-facet-value.coveo-excluded:not(.coveo-facet-value-will-exclude) .coveo-facet-value-checkbox svg {
   width: 7px;
   height: 7px;
   bottom: 5px;
 }
 
-.coveo-facet-search-results .coveo-facet-value.coveo-excluded .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
+.coveo-facet-search-results .coveo-facet-value.coveo-excluded:not(.coveo-facet-value-will-exclude) .coveo-facet-value-checkbox svg .coveo-exclusion-svg {
   fill: #cc0d00;
 }
 
@@ -11210,7 +14099,7 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-facet-search {
-  border: thin solid #bcc3ca;
+  border: thin solid #7e8c9a;
   border-radius: 2px;
   position: relative;
   background: white;
@@ -11229,12 +14118,15 @@ a.CoveoResultLink.coveo-selected *,
   display: block;
 }
 
-.coveo-facet-search-no-results {
-  background-color: #ffd0d0;
+.coveo-facet-search-no-results + .coveo-facet-search-results {
+  padding: 0;
+  overflow-y: hidden;
 }
 
-.coveo-facet-search-no-results .coveo-facet-search-magnifier {
-  visibility: hidden;
+.coveo-facet-value-not-found {
+  margin: 1px;
+  padding: 4px 9px;
+  font-size: 13px;
 }
 
 .coveo-facet-search-magnifier {
@@ -11525,8 +14417,10 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
 }
 
 .coveo-category-facet-breadcrumb-values:visited,
@@ -11566,6 +14460,10 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-category-facet-search-container .coveo-facet-search {
   margin: 0;
+}
+
+.coveo-category-facet-search-container .coveo-facet-search-results {
+  cursor: auto;
 }
 
 .coveo-category-facet-search-container + .coveo-category-facet-values {
@@ -12108,6 +15006,7 @@ a.CoveoResultLink.coveo-selected *,
 .CoveoResultList {
   margin-top: 15px;
   margin-bottom: 15px;
+  outline: none;
 }
 
 .CoveoResultList .coveo-fade-out {
@@ -12786,6 +15685,8 @@ a.CoveoResultLink.coveo-selected *,
   color: #0059b3;
   text-decoration: none;
   cursor: pointer;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
 }
 
 .CoveoFieldValue .coveo-clickable:visited,
@@ -12880,8 +15781,10 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
 }
 
 .coveo-hidden-query-breadcrumb-value:visited,
@@ -13906,7 +16809,7 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-pager-list-item {
-  border: thin solid #bcc3ca;
+  border: thin solid #7e8c9a;
   border-radius: 2px;
   margin: 5px 6px;
   padding: 4px 8px;
@@ -15357,8 +18260,10 @@ a.coveo-folding-show-less.coveo-selected * {
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value:visited,
@@ -15524,7 +18429,7 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-results-per-page-list-item {
-  border: thin solid #bcc3ca;
+  border: thin solid #7e8c9a;
   border-radius: 2px;
   margin: 5px 6px;
   padding: 4px 8px;
@@ -16688,8 +19593,10 @@ a.coveo-folding-show-less.coveo-selected * {
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
 }
 
 .coveo-simplefilter-breadcrumb-value:visited,
@@ -17246,8 +20153,10 @@ a.coveo-folding-show-less.coveo-selected * {
   background: none;
   border: none;
   color: #296896;
+  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
+  outline-offset: 1px;
 }
 
 .coveo-dynamic-facet-breadcrumb-value:visited,
@@ -17281,6 +20190,16 @@ a.coveo-folding-show-less.coveo-selected * {
 .coveo-dynamic-facet-breadcrumb-value-clear svg {
   width: 9px;
   height: 9px;
+}
+
+ul.coveo-dynamic-facet-breadcrumb.coveo-breadcrumb-item {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
+li.coveo-dynamic-facet-breadcrumb-value-list-item {
+  display: inline-block;
 }
 
 /*
@@ -17481,19 +20400,30 @@ button.coveo-dynamic-hierarchical-facet-all {
   color: #67768b;
 }
 
-.coveo-dynamic-hierarchical-facet-value-arrow {
-  position: absolute;
-  top: -1px;
-  left: 0;
-}
-
-.coveo-dynamic-hierarchical-facet-value-arrow-svg {
-  transform: rotate(90deg);
-  width: 14px;
-  height: 14px;
+.coveo-dynamic-hierarchical-facet-value-arrow-right svg,
+.coveo-dynamic-hierarchical-facet-value-arrow-left svg {
+  width: 11px;
+  height: 11px;
   color: #0059b3;
   display: inline-block;
+}
+
+.coveo-dynamic-hierarchical-facet-value-arrow-right {
+  margin-left: 8px;
+}
+
+.coveo-dynamic-hierarchical-facet-value-arrow-right svg {
+  transform: rotate(270deg);
   vertical-align: middle;
+}
+
+.coveo-dynamic-hierarchical-facet-value-arrow-left {
+  position: absolute;
+  left: 2px;
+}
+
+.coveo-dynamic-hierarchical-facet-value-arrow-left svg {
+  transform: rotate(90deg);
 }
 
 .coveo-dynamic-hierarchical-facet-show-more {
@@ -17681,6 +20611,7 @@ button.coveo-dynamic-hierarchical-facet-all {
   top: 36px;
   z-index: 1;
   box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: auto;
 }
 
 .coveo-combobox-value,
@@ -17692,6 +20623,35 @@ button.coveo-dynamic-hierarchical-facet-all {
 .coveo-combobox-value.coveo-focused,
 .coveo-combobox-value:hover {
   background: #e6ecf0;
+}
+
+/*
+* @param direction vertical or horizontal
+* @param position type of positioning to apply (relative/absolute)
+*/
+
+/*
+* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
+* @param $size size of the icon to use
+*/
+
+.coveo-dynamic-facet-search {
+  margin-top: 15px;
+}
+
+.coveo-dynamic-facet-search .coveo-checkbox-span-label-suffix {
+  color: black;
+}
+
+.coveo-dynamic-facet-search .coveo-combobox-value {
+  padding: 0 5px;
+}
+
+.coveo-dynamic-facet-search .coveo-combobox-value.coveo-focused .coveo-checkbox-span-label,
+.coveo-dynamic-facet-search .coveo-combobox-value.coveo-focused .coveo-checkbox-span-label-suffix,
+.coveo-dynamic-facet-search .coveo-combobox-value:hover .coveo-checkbox-span-label,
+.coveo-dynamic-facet-search .coveo-combobox-value:hover .coveo-checkbox-span-label-suffix {
+  opacity: 1;
 }
 
 /*
@@ -17920,35 +20880,6 @@ button.coveo-dynamic-hierarchical-facet-all {
 
 .coveo-dynamic-facet-collapsed .coveo-dynamic-facet-collapsed-values {
   display: inherit;
-}
-
-/*
-* @param direction vertical or horizontal
-* @param position type of positioning to apply (relative/absolute)
-*/
-
-/*
-* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;
-* @param $size size of the icon to use
-*/
-
-.coveo-dynamic-facet-search {
-  margin-top: 15px;
-}
-
-.coveo-dynamic-facet-search .coveo-checkbox-span-label-suffix {
-  color: black;
-}
-
-.coveo-dynamic-facet-search .coveo-combobox-value {
-  padding: 0 5px;
-}
-
-.coveo-dynamic-facet-search .coveo-combobox-value.coveo-focused .coveo-checkbox-span-label,
-.coveo-dynamic-facet-search .coveo-combobox-value.coveo-focused .coveo-checkbox-span-label-suffix,
-.coveo-dynamic-facet-search .coveo-combobox-value:hover .coveo-checkbox-span-label,
-.coveo-dynamic-facet-search .coveo-combobox-value:hover .coveo-checkbox-span-label-suffix {
-  opacity: 1;
 }
 
 /*
