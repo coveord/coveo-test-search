@@ -18,27 +18,27 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="139" />
-          <entry key="project.open.time.0" value="105" />
+          <entry key="project.closed" value="140" />
+          <entry key="project.open.time.0" value="106" />
           <entry key="project.open.time.1" value="17" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="11" />
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="6" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="145" />
+          <entry key="project.opened" value="146" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="363" />
+          <entry key="html" value="364" />
           <entry key="js" value="22" />
           <entry key="json" value="305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="363" />
+          <entry key="HTML" value="364" />
           <entry key="JSON" value="305" />
           <entry key="JavaScript" value="22" />
         </counts>
@@ -92,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="1534">
               <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="93" />
             </state>
           </provider>
@@ -101,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="38" column="86" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+            <state relative-caret-position="338">
+              <caret line="39" column="389" selection-start-line="39" selection-start-column="389" selection-end-line="39" selection-end-column="389" />
             </state>
           </provider>
         </entry>
@@ -191,11 +191,11 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -463,7 +463,8 @@
       <workItem from="1598627420857" duration="256000" />
       <workItem from="1600698687250" duration="732000" />
       <workItem from="1600720487257" duration="721000" />
-      <workItem from="1600779506832" duration="21000" />
+      <workItem from="1600779506832" duration="344000" />
+      <workItem from="1600779883877" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -476,7 +477,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169116000" />
+    <option name="totallyTimeSpent" value="169452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,15 +837,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
+        <state relative-caret-position="1534">
           <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="38" column="86" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+        <state relative-caret-position="338">
+          <caret line="39" column="389" selection-start-line="39" selection-start-column="389" selection-end-line="39" selection-end-column="389" />
         </state>
       </provider>
     </entry>
