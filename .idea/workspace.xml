@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/brokenHierarchical.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/brokenHierarchical.html" afterDir="false" />
-    </list>
+    <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,14 +28,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="426" />
+          <entry key="html" value="427" />
           <entry key="js" value="22" />
           <entry key="json" value="305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="426" />
+          <entry key="HTML" value="427" />
           <entry key="JSON" value="305" />
           <entry key="JavaScript" value="22" />
         </counts>
@@ -101,8 +98,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+            <state relative-caret-position="390">
+              <caret line="39" column="383" selection-start-line="39" selection-start-column="383" selection-end-line="39" selection-end-column="383" />
               <folding>
                 <element signature="n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -469,7 +466,7 @@
       <workItem from="1600779506832" duration="344000" />
       <workItem from="1600779883877" duration="741000" />
       <workItem from="1600784951030" duration="960000" />
-      <workItem from="1600866322518" duration="70000" />
+      <workItem from="1600866322518" duration="380000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -482,7 +479,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171210000" />
+    <option name="totallyTimeSpent" value="171520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -849,8 +846,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        <state relative-caret-position="390">
+          <caret line="39" column="383" selection-start-line="39" selection-start-column="383" selection-end-line="39" selection-end-column="383" />
           <folding>
             <element signature="n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
