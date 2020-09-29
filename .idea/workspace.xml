@@ -17,15 +17,15 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="144" />
-          <entry key="project.open.time.0" value="109" />
+          <entry key="project.closed" value="145" />
+          <entry key="project.open.time.0" value="110" />
           <entry key="project.open.time.1" value="18" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="11" />
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="6" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="150" />
+          <entry key="project.opened" value="151" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -193,8 +193,8 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1929" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
@@ -470,7 +470,8 @@
       <workItem from="1600784951030" duration="960000" />
       <workItem from="1600866322518" duration="1013000" />
       <workItem from="1601043829922" duration="679000" />
-      <workItem from="1601299494689" duration="400000" />
+      <workItem from="1601299494689" duration="1161000" />
+      <workItem from="1601417734422" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -483,7 +484,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173232000" />
+    <option name="totallyTimeSpent" value="174251000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +496,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1927" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-1925" y="-5" width="1551" height="839" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26979867" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -516,7 +517,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.34026846" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.34004024" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
