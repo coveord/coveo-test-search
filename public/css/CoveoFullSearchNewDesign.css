@@ -10813,6 +10813,7 @@ ul.coveo-facet-breadcrumb-values {
   background: white;
   position: relative;
   top: 2px;
+  flex-shrink: 0;
 }
 
 .coveo-facet-value .coveo-facet-value-checkbox > svg {
@@ -11141,6 +11142,7 @@ ul.coveo-facet-breadcrumb-values {
   background: white;
   position: relative;
   top: 2px;
+  flex-shrink: 0;
 }
 
 .coveo-facet-search-results .coveo-facet-value .coveo-facet-value-checkbox > svg {
@@ -17445,8 +17447,8 @@ li.coveo-dynamic-facet-breadcrumb-value-list-item {
 */
 
 .coveo-dynamic-facet-header {
-  padding: 8px 0;
   border-bottom: thin solid #bcc3ca;
+  height: 35px;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -17464,6 +17466,7 @@ li.coveo-dynamic-facet-breadcrumb-value-list-item {
   text-overflow: ellipsis;
   overflow: hidden;
   text-transform: capitalize;
+  line-height: 35px;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
@@ -17499,6 +17502,11 @@ li.coveo-dynamic-facet-breadcrumb-value-list-item {
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+.coveo-dynamic-facet-header-collapse,
+.coveo-dynamic-facet-header-expand {
+  height: 100%;
 }
 
 .coveo-dynamic-facet-collapse-toggle-svg {
