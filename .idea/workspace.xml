@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/0_testAllComponent.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/0_testAllComponent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/AllComponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/AllComponents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/AllWithUA.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/AllWithUA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/Standalone.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/Standalone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/TestNextedQuery.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/TestNextedQuery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/autenticationProvider.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/autenticationProvider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/jsui1841_customizeOmnibox.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/jsui1841_customizeOmnibox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/jsui2421_pager.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/jsui2421_pager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/recommendations.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/recommendations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/resultPreferences.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/resultPreferences.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPages/togglingOption.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/togglingOption.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,27 +28,27 @@
     <session id="-1914664854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="151" />
+          <entry key="project.closed" value="152" />
           <entry key="project.open.time.0" value="115" />
-          <entry key="project.open.time.1" value="19" />
+          <entry key="project.open.time.1" value="20" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="11" />
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="6" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="157" />
+          <entry key="project.opened" value="158" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="427" />
+          <entry key="html" value="451" />
           <entry key="js" value="22" />
           <entry key="json" value="332" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="427" />
+          <entry key="HTML" value="451" />
           <entry key="JSON" value="332" />
           <entry key="JavaScript" value="22" />
         </counts>
@@ -70,10 +81,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
+            <state relative-caret-position="115">
               <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
             </state>
           </provider>
@@ -88,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1794">
-              <caret line="69" column="371" selection-start-line="69" selection-start-column="349" selection-end-line="69" selection-end-column="371" />
+            <state relative-caret-position="364">
+              <caret line="12" column="58" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -194,8 +205,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-974" />
-    <option name="y" value="-1070" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -477,7 +488,8 @@
       <workItem from="1605039049620" duration="1301000" />
       <workItem from="1605111317202" duration="733000" />
       <workItem from="1610124275420" duration="2357000" />
-      <workItem from="1610379307778" duration="698000" />
+      <workItem from="1610379307778" duration="1047000" />
+      <workItem from="1610466497995" duration="90000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -490,7 +502,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182537000" />
+    <option name="totallyTimeSpent" value="182976000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -502,10 +514,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-983" y="-1087" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17583893" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1785235" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -524,7 +535,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.39731544" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.39731544" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -836,7 +847,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
+        <state relative-caret-position="115">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
@@ -848,13 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1794">
-          <caret line="69" column="371" selection-start-line="69" selection-start-column="349" selection-end-line="69" selection-end-column="371" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
@@ -862,6 +866,13 @@
           <folding>
             <element signature="n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="58" />
         </state>
       </provider>
     </entry>
