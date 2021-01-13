@@ -3,124 +3,95 @@
   <component name="ChangeListManager">
     <list default="true" id="6a612283-1b39-41c7-9c0b-b397233e5274" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/0_testAllComponent.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/0_testAllComponent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/AllComponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/AllComponents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/AllWithUA.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/AllWithUA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/Standalone.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/Standalone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/TestNextedQuery.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/TestNextedQuery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/autenticationProvider.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/autenticationProvider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/jsui1841_customizeOmnibox.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/jsui1841_customizeOmnibox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/jsui2421_pager.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/jsui2421_pager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/recommendations.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/recommendations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/resultPreferences.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/resultPreferences.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPages/togglingOption.html" beforeDir="false" afterPath="$PROJECT_DIR$/testPages/togglingOption.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/All.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/All.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Chatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Chatter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Confluence.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Confluence.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Dropbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Dropbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/DynamicsCrm.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/DynamicsCrm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Email.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/GoogleDrive.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/GoogleDrive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Jira.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Jira.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Lithium.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Lithium.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/People.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/People.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Recommendation.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Recommendation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Salesforce.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Salesforce.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/SalesforceCase.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/SalesforceCase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ServiceNow.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/ServiceNow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/SharePoint.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/SharePoint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Standalone.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Standalone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/YouTube.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/YouTube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/CoveoFullSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/CoveoFullSearch.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/CoveoFullSearch.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/CoveoFullSearch.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/CoveoFullSearchNewDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/CoveoFullSearchNewDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/retinaNew.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/retinaNew.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/spritesNew.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/spritesNew.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/icon-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon-list.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/icon-list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/normal-icon-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/normal-icon-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/normal-icon-list.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/normal-icon-list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/retina-icon-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/retina-icon-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/retina-icon-list.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/retina-icon-list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Dependencies.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Dependencies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.Lazy.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/CoveoJsSearch.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/es-es.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/es-es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/no.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/no.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/pt-br.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/pt-br.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/zh-cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/zh-cn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cultures/zh-tw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cultures/zh-tw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/All.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/All.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/Chatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/Chatter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/Confluence.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/Confluence.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/Dropbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/Dropbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/DynamicsCrm.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/DynamicsCrm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/DynamicsCrmCase.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/DynamicsCrmCase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/Email.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/Email.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/GoogleDrive.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/GoogleDrive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/Jira.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/Jira.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/Lithium.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/Lithium.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/People.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/People.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/RSS.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/RSS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/Salesforce.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/Salesforce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/SalesforceB2BProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/SalesforceB2BProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/SalesforceCase.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/SalesforceCase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/ServiceNow.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/ServiceNow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/SharePoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/SharePoint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/YouTube.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/YouTube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/templates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/templates/templatesNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/templates/templatesNew.js" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1914664854">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="152" />
-          <entry key="project.open.time.0" value="115" />
-          <entry key="project.open.time.1" value="20" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="11" />
-          <entry key="project.open.time.3" value="4" />
-          <entry key="project.open.time.4" value="6" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="158" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="451" />
-          <entry key="js" value="22" />
-          <entry key="json" value="332" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="451" />
-          <entry key="JSON" value="332" />
-          <entry key="JavaScript" value="22" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="gitignore" value="3" />
-          <entry key="html" value="55" />
-          <entry key="js" value="1" />
-          <entry key="json" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="55" />
-          <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="TypeScriptServerServiceImpl" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="coveo-test-search" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testPages/0_DynamicFacet_All.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="12" column="58" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testPages/brokenHierarchical.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="39" column="383" selection-start-line="39" selection-start-column="383" selection-end-line="39" selection-end-column="383" />
-              <folding>
-                <element signature="n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -134,11 +105,13 @@
       <find>search-as-</find>
       <find>AnalyticsEndpointCaller</find>
       <find>hie</find>
+      <find>configureSampleEndpoint</find>
     </findStrings>
     <dirStrings>
       <dir>D:\workspace\coveo\jsuiV1sp\coveo-test-search\testPages</dir>
       <dir>D:\workspace\Coveo\jsui_heroku\coveo-test-</dir>
       <dir>D:\workspace\Coveo\jsui_heroku\coveo-test-search</dir>
+      <dir>D:\workspace\Coveo\jsui_heroku\coveo-test-search\testPages</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -210,6 +183,7 @@
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
+  <component name="ProjectId" id="1n1FBcgT3SzMK4Sk2W8VdNyquWA" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -234,6 +208,10 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -242,6 +220,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -253,18 +232,6 @@
       <recent name="D:\workspace\coveo\jsuiV1sp\coveo-test-search\testPages" />
       <recent name="D:\workspace\coveo\herokuTesting\coveo-test-search\testPages" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -489,7 +456,8 @@
       <workItem from="1605111317202" duration="733000" />
       <workItem from="1610124275420" duration="2357000" />
       <workItem from="1610379307778" duration="1047000" />
-      <workItem from="1610466497995" duration="90000" />
+      <workItem from="1610466497995" duration="779000" />
+      <workItem from="1610549557812" duration="493000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -502,7 +470,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182976000" />
+    <option name="totallyTimeSpent" value="183665000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,7 +484,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1785235" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1785235" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -535,7 +503,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.39731544" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.39731544" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" side_tool="true" />
@@ -566,29 +534,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html" />
@@ -845,13 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -873,6 +817,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="12" column="58" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
