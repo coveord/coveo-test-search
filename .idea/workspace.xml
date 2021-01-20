@@ -153,6 +153,7 @@
       <recent name="D:\workspace\coveo\herokuTesting\coveo-test-search\testPages" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -378,7 +379,11 @@
       <workItem from="1610379307778" duration="1047000" />
       <workItem from="1610466497995" duration="779000" />
       <workItem from="1610549557812" duration="906000" />
-      <workItem from="1610558494036" duration="6000" />
+      <workItem from="1610558494036" duration="336000" />
+      <workItem from="1610984829653" duration="1352000" />
+      <workItem from="1611066897356" duration="55000" />
+      <workItem from="1611067764814" duration="429000" />
+      <workItem from="1611069141581" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://git.heroku.com/coveo-test-search&#10;&#10;# Conflicts:&#10;#&#9;public/custom/searchboxQueryPreviewSuggestion.html">
       <created>1576459274346</created>
@@ -448,7 +453,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
