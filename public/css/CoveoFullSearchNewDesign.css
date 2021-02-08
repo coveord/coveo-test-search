@@ -18351,6 +18351,7 @@ button.coveo-dynamic-hierarchical-facet-all {
 .coveo-smart-snippet-content {
   transition: height ease-in-out 0.5s;
   overflow: hidden;
+  margin-top: 16px;
 }
 
 .coveo-height-limiter-container-active {
@@ -18390,6 +18391,7 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .coveo-smart-snippet-answer .coveo-height-limiter-button {
+  margin-top: 5px;
   border: none;
   align-self: center;
   padding: 8px;
@@ -18414,22 +18416,22 @@ button.coveo-dynamic-hierarchical-facet-all {
   height: 14px;
 }
 
-.coveo-smart-snippet-source {
+a.CoveoResultLink.coveo-smart-snippet-source {
   margin-top: 24px;
 }
 
-.coveo-smart-snippet-source-url {
+a.CoveoResultLink.coveo-smart-snippet-source-url {
   display: block;
   color: #657381;
   text-decoration: none;
 }
 
-.coveo-smart-snippet-source-url:hover,
-.coveo-smart-snippet-source-url:focus {
+a.CoveoResultLink.coveo-smart-snippet-source-url:hover,
+a.CoveoResultLink.coveo-smart-snippet-source-url:focus {
   text-decoration: underline;
 }
 
-.coveo-smart-snippet-source-title {
+a.CoveoResultLink.coveo-smart-snippet-source-title {
   margin-top: 8px;
   display: block;
   font-size: 22px;
@@ -18437,8 +18439,8 @@ button.coveo-dynamic-hierarchical-facet-all {
   text-decoration: none;
 }
 
-.coveo-smart-snippet-source-title:hover,
-.coveo-smart-snippet-source-title:focus {
+a.CoveoResultLink.coveo-smart-snippet-source-title:hover,
+a.CoveoResultLink.coveo-smart-snippet-source-title:focus {
   text-decoration: underline;
 }
 
@@ -18623,6 +18625,10 @@ button.coveo-user-feedback-banner-explain-why-active {
   flex-grow: 1;
 }
 
+.coveo-user-explanation-modal-explanation-section .coveo-user-explanation-modal-details.coveo-hidden {
+  visibility: hidden;
+}
+
 .coveo-user-explanation-modal-explanation-section .coveo-user-explanation-modal-details-textarea {
   border: thin solid #7e8c9a;
   border-radius: 2px;
@@ -18635,11 +18641,6 @@ button.coveo-user-feedback-banner-explain-why-active {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
   font-size: 1em;
-}
-
-.coveo-user-explanation-modal-explanation-section .coveo-user-explanation-modal-details-textarea[disabled] {
-  background-color: #ddd;
-  color: #616161;
 }
 
 .coveo-user-explanation-modal-explanation-section .coveo-user-explanation-modal-details-textarea:focus {
@@ -18785,37 +18786,30 @@ button.coveo-user-feedback-banner-explain-why-active {
 
 .coveo-smart-snippet-suggestions-question-snippet {
   overflow: hidden;
-}
-
-.coveo-smart-snippet-suggestions-question-snippet-hidden {
-  height: 0;
+  transition: height ease-in-out 0.2s;
 }
 
 .coveo-smart-snippet-suggestions-question-snippet-content {
-  padding: 8px 16px;
+  padding: 16px 16px 24px 16px;
 }
 
-.coveo-smart-snippet-suggestions-question-source {
-  margin-top: 24px;
-}
-
-.coveo-smart-snippet-suggestions-question-source-url,
-.coveo-smart-snippet-suggestions-question-source-title {
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-url,
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-title {
   padding: 0 16px;
 }
 
-.coveo-smart-snippet-suggestions-question-source-url {
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-url {
   display: block;
   color: #657381;
   text-decoration: none;
 }
 
-.coveo-smart-snippet-suggestions-question-source-url:hover,
-.coveo-smart-snippet-suggestions-question-source-url:focus {
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-url:hover,
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-url:focus {
   text-decoration: underline;
 }
 
-.coveo-smart-snippet-suggestions-question-source-title {
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-title {
   margin-top: 8px;
   display: block;
   font-size: 19px;
@@ -18824,8 +18818,8 @@ button.coveo-user-feedback-banner-explain-why-active {
   padding-bottom: 16px;
 }
 
-.coveo-smart-snippet-suggestions-question-source-title:hover,
-.coveo-smart-snippet-suggestions-question-source-title:focus {
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-title:hover,
+a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-title:focus {
   text-decoration: underline;
 }
 
