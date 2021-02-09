@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "c375feb182fe11d25048" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "e19328ff555658c306b4" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -3830,7 +3830,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
-var QueryController_1 = __webpack_require__(42);
+var QueryController_1 = __webpack_require__(43);
 var InitializationEvents_1 = __webpack_require__(17);
 var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(10);
@@ -3838,7 +3838,7 @@ var ComponentOptionsModel_1 = __webpack_require__(28);
 var ComponentStateModel_1 = __webpack_require__(77);
 var QueryStateModel_1 = __webpack_require__(13);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(48);
+var HashUtils_1 = __webpack_require__(41);
 var JQueryutils_1 = __webpack_require__(75);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
@@ -4682,6 +4682,14 @@ exports.lazyExportModule = lazyExportModule;
 
 "use strict";
 
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var isCoveoFieldRegex = /^@[a-zA-Z0-9_\.]+$/;
@@ -5104,6 +5112,19 @@ var Utils = /** @class */ (function () {
     Utils.resolveAfter = function (ms, returns) {
         return new Promise(function (resolve) { return setTimeout(function () { return (returns !== undefined ? resolve(returns) : resolve()); }, ms); });
     };
+    Utils.reorderValuesByKeys = function (values, order, getKey) {
+        var valuesMap = values.reduce(function (map, value) {
+            return (__assign({}, map, (_a = {}, _a[getKey(value)] = value, _a)));
+            var _a;
+        }, {});
+        var orderedValues = [];
+        order.forEach(function (keyToAppend) {
+            if (valuesMap[keyToAppend]) {
+                orderedValues.push(valuesMap[keyToAppend]);
+            }
+        });
+        return orderedValues.concat(_.without.apply(_, [values].concat(orderedValues)));
+    };
     return Utils;
 }());
 exports.Utils = Utils;
@@ -5258,7 +5279,7 @@ var Dom_1 = __webpack_require__(1);
 var QueryStateModel_1 = __webpack_require__(13);
 var ComponentStateModel_1 = __webpack_require__(77);
 var ComponentOptionsModel_1 = __webpack_require__(28);
-var QueryController_1 = __webpack_require__(42);
+var QueryController_1 = __webpack_require__(43);
 var SearchInterface_1 = __webpack_require__(19);
 var NoopAnalyticsClient_1 = __webpack_require__(100);
 var BaseComponent_1 = __webpack_require__(35);
@@ -5644,7 +5665,7 @@ var ComponentOptionsLoader_1 = __webpack_require__(376);
 var ComponentOptionsMerger_1 = __webpack_require__(377);
 var ComponentOptionsPostProcessor_1 = __webpack_require__(378);
 var ComponentOptionsValidator_1 = __webpack_require__(379);
-var IComponentOptions_1 = __webpack_require__(47);
+var IComponentOptions_1 = __webpack_require__(48);
 var TemplateComponentOptions_1 = __webpack_require__(61);
 var camelCaseToHyphenRegex = /([A-Z])|\W+(\w)/g;
 var fieldsSeperator = /\s*,\s*/;
@@ -8745,7 +8766,7 @@ var underscore_1 = __webpack_require__(0);
 var HistoryController_1 = __webpack_require__(153);
 var LocalStorageHistoryController_1 = __webpack_require__(154);
 var NoopHistoryController_1 = __webpack_require__(336);
-var QueryController_1 = __webpack_require__(42);
+var QueryController_1 = __webpack_require__(43);
 var InitializationEvents_1 = __webpack_require__(17);
 var QueryEvents_1 = __webpack_require__(11);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(95);
@@ -8757,7 +8778,7 @@ var Model_1 = __webpack_require__(18);
 var QueryStateModel_1 = __webpack_require__(13);
 var SearchEndpoint_1 = __webpack_require__(50);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(48);
+var HashUtils_1 = __webpack_require__(41);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsActionListMeta_1 = __webpack_require__(9);
 var NoopAnalyticsClient_1 = __webpack_require__(100);
@@ -8765,14 +8786,14 @@ var AriaLive_1 = __webpack_require__(338);
 var BaseComponent_1 = __webpack_require__(35);
 var ComponentOptions_1 = __webpack_require__(8);
 var InitializationPlaceholder_1 = __webpack_require__(177);
-var RootComponent_1 = __webpack_require__(43);
+var RootComponent_1 = __webpack_require__(44);
 var Debug_1 = __webpack_require__(157);
 var MissingTermManager_1 = __webpack_require__(203);
 var OmniboxAnalytics_1 = __webpack_require__(441);
 var ResponsiveComponents_1 = __webpack_require__(52);
 var FacetColumnAutoLayoutAdjustment_1 = __webpack_require__(442);
 var FacetValueStateHandler_1 = __webpack_require__(443);
-var ComponentsTypes_1 = __webpack_require__(45);
+var ComponentsTypes_1 = __webpack_require__(46);
 var ScrollRestorer_1 = __webpack_require__(444);
 /**
  * The SearchInterface component is the root and main component of your Coveo search interface. You should place all
@@ -10786,7 +10807,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
-var QueryController_1 = __webpack_require__(42);
+var QueryController_1 = __webpack_require__(43);
 var QueryStateModel_1 = __webpack_require__(13);
 var InitializationEvents_1 = __webpack_require__(17);
 var Dom_1 = __webpack_require__(1);
@@ -11999,6 +12020,254 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
+var Assert_1 = __webpack_require__(5);
+var Utils_1 = __webpack_require__(4);
+var _ = __webpack_require__(0);
+var MiscModules_1 = __webpack_require__(72);
+var HashUtils = /** @class */ (function () {
+    function HashUtils() {
+    }
+    HashUtils.getHash = function (w) {
+        if (w === void 0) { w = window; }
+        Assert_1.Assert.exists(w);
+        // window.location.hash returns the DECODED hash on Firefox (it's a well known bug),
+        // so any & in values will be already unescaped. This breaks our value splitting.
+        // The following trick works on all browsers.
+        var ret = '#' + (w.location.href.split('#')[1] || '');
+        return HashUtils.getAjaxcrawlableHash(ret);
+    };
+    HashUtils.getValue = function (key, toParse) {
+        Assert_1.Assert.isNonEmptyString(key);
+        Assert_1.Assert.exists(toParse);
+        toParse = HashUtils.getAjaxcrawlableHash(toParse);
+        var paramValue = HashUtils.getRawValue(key, toParse);
+        if (paramValue != undefined) {
+            paramValue = HashUtils.getValueDependingOnType(key, paramValue);
+        }
+        return paramValue;
+    };
+    HashUtils.encodeValues = function (values) {
+        var hash = [];
+        _.each(values, function (valueToEncode, key, obj) {
+            var encodedValue = '';
+            if (Utils_1.Utils.isNonEmptyArray(valueToEncode)) {
+                encodedValue = HashUtils.encodeArray(valueToEncode);
+            }
+            else if (_.isObject(valueToEncode) && Utils_1.Utils.isNonEmptyArray(_.keys(valueToEncode))) {
+                encodedValue = HashUtils.encodeObject(valueToEncode);
+            }
+            else if (!Utils_1.Utils.isNullOrUndefined(valueToEncode)) {
+                encodedValue = Utils_1.Utils.safeEncodeURIComponent(valueToEncode.toString());
+            }
+            if (encodedValue != '') {
+                hash.push(key + '=' + encodedValue);
+            }
+        });
+        return hash.join('&');
+    };
+    HashUtils.getAjaxcrawlableHash = function (hash) {
+        if (hash[1] != undefined && hash[1] == '!') {
+            return hash.substring(0, 1) + hash.substring(2);
+        }
+        else {
+            return hash;
+        }
+    };
+    HashUtils.getRawValue = function (key, toParse) {
+        Assert_1.Assert.exists(key);
+        Assert_1.Assert.exists(toParse);
+        Assert_1.Assert.check(toParse.indexOf('#') == 0 || toParse == '');
+        var toParseArray = toParse.substr(1).split('&');
+        var paramPos = 0;
+        var loop = true;
+        var paramValue = undefined;
+        while (loop) {
+            var paramValuePair = toParseArray[paramPos].split('=');
+            if (paramValuePair[0] == key) {
+                loop = false;
+                paramValue = paramValuePair[1];
+            }
+            else {
+                paramPos++;
+                if (paramPos >= toParseArray.length) {
+                    paramPos = undefined;
+                    loop = false;
+                }
+            }
+        }
+        return paramValue;
+    };
+    HashUtils.getValueDependingOnType = function (key, paramValue) {
+        var type = HashUtils.getValueType(key, paramValue);
+        var returnValue;
+        if (type == 'object') {
+            returnValue = HashUtils.decodeObject(paramValue);
+        }
+        else if (type == 'array') {
+            returnValue = HashUtils.decodeArray(paramValue);
+        }
+        else {
+            try {
+                returnValue = decodeURIComponent(paramValue);
+            }
+            catch (e) {
+                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as a standard value', e, key, paramValue);
+            }
+        }
+        return returnValue;
+    };
+    HashUtils.getValueType = function (key, paramValue) {
+        if (key == 'q') {
+            return 'other';
+        }
+        else if (HashUtils.isObject(paramValue)) {
+            return 'object';
+        }
+        else if (HashUtils.startsOrEndsWithSquareBracket(paramValue)) {
+            return 'array';
+        }
+        else {
+            return 'other';
+        }
+    };
+    HashUtils.startsWithLeftSquareBracket = function (value) {
+        return HashUtils.DELIMITER.arrayStartRegExp.test(value);
+    };
+    HashUtils.startsWithEncodedLeftSquareBracket = function (value) {
+        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart)) == 0;
+    };
+    HashUtils.endsWithRightSquareBracket = function (value) {
+        return HashUtils.DELIMITER.arrayEndRegExp.test(value);
+    };
+    HashUtils.endsWithEncodedRightSquareBracket = function (value) {
+        var encodedBracket = Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd);
+        var encodedBracketIndex = value.indexOf(encodedBracket);
+        var hasEncodedBracket = encodedBracketIndex !== -1;
+        return hasEncodedBracket && encodedBracketIndex == value.length - encodedBracket.length;
+    };
+    HashUtils.isObjectStartNotEncoded = function (value) {
+        return value.substr(0, 1) == HashUtils.DELIMITER.objectStart;
+    };
+    HashUtils.isObjectStartEncoded = function (value) {
+        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectStart)) == 0;
+    };
+    HashUtils.isObjectEndNotEncoded = function (value) {
+        return value.substr(value.length - 1) == HashUtils.DELIMITER.objectEnd;
+    };
+    HashUtils.isObjectEndEncoded = function (value) {
+        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd)) ==
+            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd).length);
+    };
+    HashUtils.isObject = function (value) {
+        var isObjectStart = HashUtils.isObjectStartNotEncoded(value) || HashUtils.isObjectStartEncoded(value);
+        var isObjectEnd = HashUtils.isObjectEndNotEncoded(value) || HashUtils.isObjectEndEncoded(value);
+        return isObjectStart && isObjectEnd;
+    };
+    HashUtils.startsOrEndsWithSquareBracket = function (value) {
+        var isArrayStart = HashUtils.startsWithLeftSquareBracket(value) || HashUtils.startsWithEncodedLeftSquareBracket(value);
+        var isArrayEnd = HashUtils.endsWithRightSquareBracket(value) || HashUtils.endsWithEncodedRightSquareBracket(value);
+        return isArrayStart || isArrayEnd;
+    };
+    HashUtils.encodeArray = function (array) {
+        var arrayReturn = _.map(array, function (value) {
+            return Utils_1.Utils.safeEncodeURIComponent(value);
+        });
+        return HashUtils.DELIMITER.arrayStart + arrayReturn.join(',') + HashUtils.DELIMITER.arrayEnd;
+    };
+    HashUtils.encodeObject = function (obj) {
+        var _this = this;
+        var retArray = _.map(obj, function (val, key, obj) {
+            return "\"" + Utils_1.Utils.safeEncodeURIComponent(key) + "\":" + _this.encodeValue(val);
+        });
+        return HashUtils.DELIMITER.objectStart + retArray.join(' , ') + HashUtils.DELIMITER.objectEnd;
+    };
+    HashUtils.encodeValue = function (val) {
+        var encodedValue = '';
+        if (_.isArray(val)) {
+            encodedValue = HashUtils.encodeArray(val);
+        }
+        else if (_.isObject(val)) {
+            encodedValue = JSON.stringify(val);
+        }
+        else if (_.isNumber(val) || _.isBoolean(val)) {
+            encodedValue = Utils_1.Utils.safeEncodeURIComponent(val.toString());
+        }
+        else {
+            encodedValue = '"' + Utils_1.Utils.safeEncodeURIComponent(val) + '"';
+        }
+        return encodedValue;
+    };
+    HashUtils.decodeObject = function (obj) {
+        if (HashUtils.isObjectStartEncoded(obj) && HashUtils.isObjectEndEncoded(obj)) {
+            obj = obj.replace(/encodeURIComponent(HashUtils.Delimiter.objectStart)/, HashUtils.DELIMITER.objectStart);
+            obj = obj.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd), HashUtils.DELIMITER.objectEnd);
+        }
+        try {
+            var containsArray = /(\[.*\])/.exec(obj);
+            if (containsArray) {
+                obj = obj.replace(/(\[.*\])/, "[" + this.decodeArray(containsArray[1])
+                    .map(function (val) { return "\"" + val + "\""; })
+                    .join(',') + "]");
+            }
+            var decoded = decodeURIComponent(obj);
+            return JSON.parse(decoded);
+        }
+        catch (e) {
+            new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an object', e, obj);
+            return {};
+        }
+    };
+    HashUtils.decodeArray = function (value) {
+        var valueWithoutSquareBrackets = HashUtils.removeSquareBrackets(value);
+        var array = valueWithoutSquareBrackets.split(',');
+        return _.chain(array)
+            .map(function (val) {
+            try {
+                return decodeURIComponent(val);
+            }
+            catch (e) {
+                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an array', e, val, value);
+                return null;
+            }
+        })
+            .compact()
+            .value();
+    };
+    HashUtils.removeSquareBrackets = function (value) {
+        if (HashUtils.startsWithEncodedLeftSquareBracket(value)) {
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), '');
+        }
+        if (HashUtils.endsWithEncodedRightSquareBracket(value)) {
+            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), '');
+        }
+        if (HashUtils.startsWithLeftSquareBracket(value)) {
+            value = value.replace(HashUtils.DELIMITER.arrayStart, '');
+        }
+        if (HashUtils.endsWithRightSquareBracket(value)) {
+            value = value.replace(HashUtils.DELIMITER.arrayEnd, '');
+        }
+        return value;
+    };
+    HashUtils.DELIMITER = {
+        objectStart: '{',
+        objectEnd: '}',
+        arrayStart: '[',
+        arrayEnd: ']',
+        arrayStartRegExp: /^\[/,
+        arrayEndRegExp: /\]$/
+    };
+    return HashUtils;
+}());
+exports.HashUtils = HashUtils;
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -12172,7 +12441,7 @@ exports.UrlUtils = UrlUtils;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12231,12 +12500,12 @@ var Assert_1 = __webpack_require__(5);
 var Defer_1 = __webpack_require__(31);
 var SearchEndpointWithDefaultCallOptions_1 = __webpack_require__(327);
 var BaseComponent_1 = __webpack_require__(35);
-var QueryBuilder_1 = __webpack_require__(46);
-var RootComponent_1 = __webpack_require__(43);
+var QueryBuilder_1 = __webpack_require__(47);
+var RootComponent_1 = __webpack_require__(44);
 var Dom_1 = __webpack_require__(1);
 var LocalStorageUtils_1 = __webpack_require__(55);
 var QueryUtils_1 = __webpack_require__(21);
-var UrlUtils_1 = __webpack_require__(41);
+var UrlUtils_1 = __webpack_require__(42);
 var Utils_1 = __webpack_require__(4);
 var DefaultQueryOptions = /** @class */ (function () {
     function DefaultQueryOptions() {
@@ -12778,7 +13047,7 @@ exports.QueryController = QueryController;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12809,7 +13078,7 @@ exports.RootComponent = RootComponent;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var store = __webpack_require__(161)('wks');
@@ -12826,7 +13095,7 @@ $exports.store = store;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12880,7 +13149,7 @@ exports.ComponentsTypes = ComponentsTypes;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13217,7 +13486,7 @@ exports.QueryBuilder = QueryBuilder;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13246,254 +13515,6 @@ var ComponentOptionsType;
     ComponentOptionsType[ComponentOptionsType["NONE"] = 18] = "NONE";
     ComponentOptionsType[ComponentOptionsType["QUERY_EXPRESSION"] = 19] = "QUERY_EXPRESSION";
 })(ComponentOptionsType = exports.ComponentOptionsType || (exports.ComponentOptionsType = {}));
-
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Assert_1 = __webpack_require__(5);
-var Utils_1 = __webpack_require__(4);
-var _ = __webpack_require__(0);
-var MiscModules_1 = __webpack_require__(72);
-var HashUtils = /** @class */ (function () {
-    function HashUtils() {
-    }
-    HashUtils.getHash = function (w) {
-        if (w === void 0) { w = window; }
-        Assert_1.Assert.exists(w);
-        // window.location.hash returns the DECODED hash on Firefox (it's a well known bug),
-        // so any & in values will be already unescaped. This breaks our value splitting.
-        // The following trick works on all browsers.
-        var ret = '#' + (w.location.href.split('#')[1] || '');
-        return HashUtils.getAjaxcrawlableHash(ret);
-    };
-    HashUtils.getValue = function (key, toParse) {
-        Assert_1.Assert.isNonEmptyString(key);
-        Assert_1.Assert.exists(toParse);
-        toParse = HashUtils.getAjaxcrawlableHash(toParse);
-        var paramValue = HashUtils.getRawValue(key, toParse);
-        if (paramValue != undefined) {
-            paramValue = HashUtils.getValueDependingOnType(key, paramValue);
-        }
-        return paramValue;
-    };
-    HashUtils.encodeValues = function (values) {
-        var hash = [];
-        _.each(values, function (valueToEncode, key, obj) {
-            var encodedValue = '';
-            if (Utils_1.Utils.isNonEmptyArray(valueToEncode)) {
-                encodedValue = HashUtils.encodeArray(valueToEncode);
-            }
-            else if (_.isObject(valueToEncode) && Utils_1.Utils.isNonEmptyArray(_.keys(valueToEncode))) {
-                encodedValue = HashUtils.encodeObject(valueToEncode);
-            }
-            else if (!Utils_1.Utils.isNullOrUndefined(valueToEncode)) {
-                encodedValue = Utils_1.Utils.safeEncodeURIComponent(valueToEncode.toString());
-            }
-            if (encodedValue != '') {
-                hash.push(key + '=' + encodedValue);
-            }
-        });
-        return hash.join('&');
-    };
-    HashUtils.getAjaxcrawlableHash = function (hash) {
-        if (hash[1] != undefined && hash[1] == '!') {
-            return hash.substring(0, 1) + hash.substring(2);
-        }
-        else {
-            return hash;
-        }
-    };
-    HashUtils.getRawValue = function (key, toParse) {
-        Assert_1.Assert.exists(key);
-        Assert_1.Assert.exists(toParse);
-        Assert_1.Assert.check(toParse.indexOf('#') == 0 || toParse == '');
-        var toParseArray = toParse.substr(1).split('&');
-        var paramPos = 0;
-        var loop = true;
-        var paramValue = undefined;
-        while (loop) {
-            var paramValuePair = toParseArray[paramPos].split('=');
-            if (paramValuePair[0] == key) {
-                loop = false;
-                paramValue = paramValuePair[1];
-            }
-            else {
-                paramPos++;
-                if (paramPos >= toParseArray.length) {
-                    paramPos = undefined;
-                    loop = false;
-                }
-            }
-        }
-        return paramValue;
-    };
-    HashUtils.getValueDependingOnType = function (key, paramValue) {
-        var type = HashUtils.getValueType(key, paramValue);
-        var returnValue;
-        if (type == 'object') {
-            returnValue = HashUtils.decodeObject(paramValue);
-        }
-        else if (type == 'array') {
-            returnValue = HashUtils.decodeArray(paramValue);
-        }
-        else {
-            try {
-                returnValue = decodeURIComponent(paramValue);
-            }
-            catch (e) {
-                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as a standard value', e, key, paramValue);
-            }
-        }
-        return returnValue;
-    };
-    HashUtils.getValueType = function (key, paramValue) {
-        if (key == 'q') {
-            return 'other';
-        }
-        else if (HashUtils.isObject(paramValue)) {
-            return 'object';
-        }
-        else if (HashUtils.startsOrEndsWithSquareBracket(paramValue)) {
-            return 'array';
-        }
-        else {
-            return 'other';
-        }
-    };
-    HashUtils.startsWithLeftSquareBracket = function (value) {
-        return HashUtils.DELIMITER.arrayStartRegExp.test(value);
-    };
-    HashUtils.startsWithEncodedLeftSquareBracket = function (value) {
-        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart)) == 0;
-    };
-    HashUtils.endsWithRightSquareBracket = function (value) {
-        return HashUtils.DELIMITER.arrayEndRegExp.test(value);
-    };
-    HashUtils.endsWithEncodedRightSquareBracket = function (value) {
-        var encodedBracket = Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd);
-        var encodedBracketIndex = value.indexOf(encodedBracket);
-        var hasEncodedBracket = encodedBracketIndex !== -1;
-        return hasEncodedBracket && encodedBracketIndex == value.length - encodedBracket.length;
-    };
-    HashUtils.isObjectStartNotEncoded = function (value) {
-        return value.substr(0, 1) == HashUtils.DELIMITER.objectStart;
-    };
-    HashUtils.isObjectStartEncoded = function (value) {
-        return value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectStart)) == 0;
-    };
-    HashUtils.isObjectEndNotEncoded = function (value) {
-        return value.substr(value.length - 1) == HashUtils.DELIMITER.objectEnd;
-    };
-    HashUtils.isObjectEndEncoded = function (value) {
-        return (value.indexOf(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd)) ==
-            value.length - Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd).length);
-    };
-    HashUtils.isObject = function (value) {
-        var isObjectStart = HashUtils.isObjectStartNotEncoded(value) || HashUtils.isObjectStartEncoded(value);
-        var isObjectEnd = HashUtils.isObjectEndNotEncoded(value) || HashUtils.isObjectEndEncoded(value);
-        return isObjectStart && isObjectEnd;
-    };
-    HashUtils.startsOrEndsWithSquareBracket = function (value) {
-        var isArrayStart = HashUtils.startsWithLeftSquareBracket(value) || HashUtils.startsWithEncodedLeftSquareBracket(value);
-        var isArrayEnd = HashUtils.endsWithRightSquareBracket(value) || HashUtils.endsWithEncodedRightSquareBracket(value);
-        return isArrayStart || isArrayEnd;
-    };
-    HashUtils.encodeArray = function (array) {
-        var arrayReturn = _.map(array, function (value) {
-            return Utils_1.Utils.safeEncodeURIComponent(value);
-        });
-        return HashUtils.DELIMITER.arrayStart + arrayReturn.join(',') + HashUtils.DELIMITER.arrayEnd;
-    };
-    HashUtils.encodeObject = function (obj) {
-        var _this = this;
-        var retArray = _.map(obj, function (val, key, obj) {
-            return "\"" + Utils_1.Utils.safeEncodeURIComponent(key) + "\":" + _this.encodeValue(val);
-        });
-        return HashUtils.DELIMITER.objectStart + retArray.join(' , ') + HashUtils.DELIMITER.objectEnd;
-    };
-    HashUtils.encodeValue = function (val) {
-        var encodedValue = '';
-        if (_.isArray(val)) {
-            encodedValue = HashUtils.encodeArray(val);
-        }
-        else if (_.isObject(val)) {
-            encodedValue = JSON.stringify(val);
-        }
-        else if (_.isNumber(val) || _.isBoolean(val)) {
-            encodedValue = Utils_1.Utils.safeEncodeURIComponent(val.toString());
-        }
-        else {
-            encodedValue = '"' + Utils_1.Utils.safeEncodeURIComponent(val) + '"';
-        }
-        return encodedValue;
-    };
-    HashUtils.decodeObject = function (obj) {
-        if (HashUtils.isObjectStartEncoded(obj) && HashUtils.isObjectEndEncoded(obj)) {
-            obj = obj.replace(/encodeURIComponent(HashUtils.Delimiter.objectStart)/, HashUtils.DELIMITER.objectStart);
-            obj = obj.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.objectEnd), HashUtils.DELIMITER.objectEnd);
-        }
-        try {
-            var containsArray = /(\[.*\])/.exec(obj);
-            if (containsArray) {
-                obj = obj.replace(/(\[.*\])/, "[" + this.decodeArray(containsArray[1])
-                    .map(function (val) { return "\"" + val + "\""; })
-                    .join(',') + "]");
-            }
-            var decoded = decodeURIComponent(obj);
-            return JSON.parse(decoded);
-        }
-        catch (e) {
-            new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an object', e, obj);
-            return {};
-        }
-    };
-    HashUtils.decodeArray = function (value) {
-        var valueWithoutSquareBrackets = HashUtils.removeSquareBrackets(value);
-        var array = valueWithoutSquareBrackets.split(',');
-        return _.chain(array)
-            .map(function (val) {
-            try {
-                return decodeURIComponent(val);
-            }
-            catch (e) {
-                new MiscModules_1.Logger(HashUtils).warn('Error while decoding a value from the URL as an array', e, val, value);
-                return null;
-            }
-        })
-            .compact()
-            .value();
-    };
-    HashUtils.removeSquareBrackets = function (value) {
-        if (HashUtils.startsWithEncodedLeftSquareBracket(value)) {
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayStart), '');
-        }
-        if (HashUtils.endsWithEncodedRightSquareBracket(value)) {
-            value = value.replace(Utils_1.Utils.safeEncodeURIComponent(HashUtils.DELIMITER.arrayEnd), '');
-        }
-        if (HashUtils.startsWithLeftSquareBracket(value)) {
-            value = value.replace(HashUtils.DELIMITER.arrayStart, '');
-        }
-        if (HashUtils.endsWithRightSquareBracket(value)) {
-            value = value.replace(HashUtils.DELIMITER.arrayEnd, '');
-        }
-        return value;
-    };
-    HashUtils.DELIMITER = {
-        objectStart: '{',
-        objectEnd: '}',
-        arrayStart: '[',
-        arrayEnd: ']',
-        arrayStartRegExp: /^\[/,
-        arrayEndRegExp: /\]$/
-    };
-    return HashUtils;
-}());
-exports.HashUtils = HashUtils;
 
 
 /***/ }),
@@ -13565,7 +13586,7 @@ var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
 var HistoryStore_1 = __webpack_require__(122);
 var TimeSpanUtils_1 = __webpack_require__(71);
-var UrlUtils_1 = __webpack_require__(41);
+var UrlUtils_1 = __webpack_require__(42);
 var AccessToken_1 = __webpack_require__(147);
 var BackOffRequest_1 = __webpack_require__(312);
 var Plan_1 = __webpack_require__(320);
@@ -15611,7 +15632,7 @@ var TemplateCache_1 = __webpack_require__(66);
 var TemplateList_1 = __webpack_require__(91);
 var UnderscoreTemplate_1 = __webpack_require__(57);
 var ComponentOptions_1 = __webpack_require__(8);
-var IComponentOptions_1 = __webpack_require__(47);
+var IComponentOptions_1 = __webpack_require__(48);
 var TemplateComponentOptions = /** @class */ (function () {
     function TemplateComponentOptions() {
     }
@@ -16944,7 +16965,7 @@ var DeviceUtils_1 = __webpack_require__(24);
 var Utils_1 = __webpack_require__(4);
 var JQueryutils_1 = __webpack_require__(75);
 var _ = __webpack_require__(0);
-var UrlUtils_1 = __webpack_require__(41);
+var UrlUtils_1 = __webpack_require__(42);
 // In ie8, XMLHttpRequest has no status property, so let's use this enum instead
 var XMLHttpRequestStatus;
 (function (XMLHttpRequestStatus) {
@@ -20243,8 +20264,8 @@ exports.PreferencesPanelEvents = PreferencesPanelEvents;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10083.1',
-    product: '2.10083.1',
+    lib: '2.10083.2',
+    product: '2.10083.2',
     supportedApiVersion: 2
 };
 
@@ -20589,7 +20610,7 @@ var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
 var SearchInterface_1 = __webpack_require__(19);
 var Component_1 = __webpack_require__(7);
-var QueryController_1 = __webpack_require__(42);
+var QueryController_1 = __webpack_require__(43);
 var Defer_1 = __webpack_require__(31);
 var APIAnalyticsBuilder_1 = __webpack_require__(171);
 var AnalyticsEvents_1 = __webpack_require__(56);
@@ -21354,7 +21375,7 @@ var DomUtils_1 = __webpack_require__(92);
 exports.DomUtils = DomUtils_1.DomUtils;
 var EmailUtils_1 = __webpack_require__(178);
 exports.EmailUtils = EmailUtils_1.EmailUtils;
-var HashUtils_1 = __webpack_require__(48);
+var HashUtils_1 = __webpack_require__(41);
 exports.HashUtils = HashUtils_1.HashUtils;
 var HighlightUtils_1 = __webpack_require__(67);
 exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
@@ -21381,7 +21402,7 @@ var TimeSpanUtils_1 = __webpack_require__(71);
 exports.TimeSpan = TimeSpanUtils_1.TimeSpan;
 var Utils_1 = __webpack_require__(4);
 exports.Utils = Utils_1.Utils;
-var UrlUtils_1 = __webpack_require__(41);
+var UrlUtils_1 = __webpack_require__(42);
 exports.UrlUtils = UrlUtils_1.UrlUtils;
 
 
@@ -28480,7 +28501,7 @@ var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(10);
 var AnalyticsEndpointCaller_1 = __webpack_require__(325);
-var UrlUtils_1 = __webpack_require__(41);
+var UrlUtils_1 = __webpack_require__(42);
 var Utils_1 = __webpack_require__(4);
 var AnalyticsInformation_1 = __webpack_require__(65);
 var AnalyticsEndpoint = /** @class */ (function () {
@@ -28691,9 +28712,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
 var InitializationEvents_1 = __webpack_require__(17);
 var Dom_1 = __webpack_require__(1);
-var HashUtils_1 = __webpack_require__(48);
+var HashUtils_1 = __webpack_require__(41);
 var Defer_1 = __webpack_require__(31);
-var RootComponent_1 = __webpack_require__(43);
+var RootComponent_1 = __webpack_require__(44);
 var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
 var QueryStateModel_1 = __webpack_require__(13);
@@ -28968,7 +28989,7 @@ var Model_1 = __webpack_require__(18);
 var Logger_1 = __webpack_require__(10);
 var Assert_1 = __webpack_require__(5);
 var InitializationEvents_1 = __webpack_require__(17);
-var RootComponent_1 = __webpack_require__(43);
+var RootComponent_1 = __webpack_require__(44);
 var Dom_1 = __webpack_require__(1);
 var underscore_1 = __webpack_require__(0);
 /**
@@ -29292,7 +29313,7 @@ var DebugEvents_1 = __webpack_require__(99);
 var Dom_1 = __webpack_require__(1);
 var StringUtils_1 = __webpack_require__(22);
 var SearchEndpoint_1 = __webpack_require__(50);
-var RootComponent_1 = __webpack_require__(43);
+var RootComponent_1 = __webpack_require__(44);
 var BaseComponent_1 = __webpack_require__(35);
 var ExternalModulesShim_1 = __webpack_require__(26);
 var Globalize = __webpack_require__(23);
@@ -30004,7 +30025,7 @@ var Iterators = __webpack_require__(82);
 var $iterCreate = __webpack_require__(416);
 var setToStringTag = __webpack_require__(166);
 var getPrototypeOf = __webpack_require__(417);
-var ITERATOR = __webpack_require__(44)('iterator');
+var ITERATOR = __webpack_require__(45)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
 var KEYS = 'keys';
@@ -30072,7 +30093,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 var def = __webpack_require__(102).f;
 var has = __webpack_require__(80);
-var TAG = __webpack_require__(44)('toStringTag');
+var TAG = __webpack_require__(45)('toStringTag');
 
 module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -30626,8 +30647,8 @@ __webpack_require__(381);
 var QueryEvents_1 = __webpack_require__(11);
 var InitializationEvents_1 = __webpack_require__(17);
 var ResultListEvents_1 = __webpack_require__(29);
-var HashUtils_1 = __webpack_require__(48);
-var ComponentsTypes_1 = __webpack_require__(45);
+var HashUtils_1 = __webpack_require__(41);
+var ComponentsTypes_1 = __webpack_require__(46);
 var InitializationPlaceholder = /** @class */ (function () {
     function InitializationPlaceholder(root) {
         this.root = root;
@@ -34842,7 +34863,7 @@ exports.QueryError = QueryError_1.QueryError;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var EndpointCaller_1 = __webpack_require__(87);
-var UrlUtils_1 = __webpack_require__(41);
+var UrlUtils_1 = __webpack_require__(42);
 var AnalyticsEndpointCaller = /** @class */ (function () {
     function AnalyticsEndpointCaller(options) {
         if (options === void 0) { options = {}; }
@@ -34900,7 +34921,7 @@ exports.AnalyticsEndpointCaller = AnalyticsEndpointCaller;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var QueryController_1 = __webpack_require__(42);
+var QueryController_1 = __webpack_require__(43);
 exports.QueryController = QueryController_1.QueryController;
 var HistoryController_1 = __webpack_require__(153);
 exports.HistoryController = HistoryController_1.HistoryController;
@@ -35022,7 +35043,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(30));
-var IComponentOptions_1 = __webpack_require__(47);
+var IComponentOptions_1 = __webpack_require__(48);
 exports.ComponentOptionsType = IComponentOptions_1.ComponentOptionsType;
 var ComponentOptions_1 = __webpack_require__(8);
 exports.ComponentOptions = ComponentOptions_1.ComponentOptions;
@@ -35030,9 +35051,9 @@ var Component_1 = __webpack_require__(7);
 exports.Component = Component_1.Component;
 var BaseComponent_1 = __webpack_require__(35);
 exports.BaseComponent = BaseComponent_1.BaseComponent;
-var RootComponent_1 = __webpack_require__(43);
+var RootComponent_1 = __webpack_require__(44);
 exports.RootComponent = RootComponent_1.RootComponent;
-var QueryBuilder_1 = __webpack_require__(46);
+var QueryBuilder_1 = __webpack_require__(47);
 exports.QueryBuilder = QueryBuilder_1.QueryBuilder;
 var ExpressionBuilder_1 = __webpack_require__(73);
 exports.ExpressionBuilder = ExpressionBuilder_1.ExpressionBuilder;
@@ -36918,7 +36939,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var underscore_1 = __webpack_require__(0);
 var Logger_1 = __webpack_require__(10);
 var Utils_1 = __webpack_require__(4);
-var IComponentOptions_1 = __webpack_require__(47);
+var IComponentOptions_1 = __webpack_require__(48);
 var ComponentOptionLoader = /** @class */ (function () {
     function ComponentOptionLoader(element, values, optionName, optionDefinition) {
         this.element = element;
@@ -37000,7 +37021,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Strings_1 = __webpack_require__(6);
 var Utils_1 = __webpack_require__(4);
-var IComponentOptions_1 = __webpack_require__(47);
+var IComponentOptions_1 = __webpack_require__(48);
 var ComponentOptionsMerger = /** @class */ (function () {
     function ComponentOptionsMerger(optionDefinition, valueToMerge, optionsDictionary) {
         this.optionDefinition = optionDefinition;
@@ -40666,7 +40687,7 @@ __webpack_require__(412);
 var global = __webpack_require__(37);
 var hide = __webpack_require__(59);
 var Iterators = __webpack_require__(82);
-var TO_STRING_TAG = __webpack_require__(44)('toStringTag');
+var TO_STRING_TAG = __webpack_require__(45)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
   'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
@@ -40759,7 +40780,7 @@ var setToStringTag = __webpack_require__(166);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(59)(IteratorPrototype, __webpack_require__(44)('iterator'), function () { return this; });
+__webpack_require__(59)(IteratorPrototype, __webpack_require__(45)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -40862,7 +40883,7 @@ module.exports = __webpack_require__(38).getIterator = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var classof = __webpack_require__(423);
-var ITERATOR = __webpack_require__(44)('iterator');
+var ITERATOR = __webpack_require__(45)('iterator');
 var Iterators = __webpack_require__(82);
 module.exports = __webpack_require__(38).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
@@ -40877,7 +40898,7 @@ module.exports = __webpack_require__(38).getIteratorMethod = function (it) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
 var cof = __webpack_require__(106);
-var TAG = __webpack_require__(44)('toStringTag');
+var TAG = __webpack_require__(45)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
 
@@ -44155,7 +44176,7 @@ exports.FacetColumnAutoLayoutAdjustment = FacetColumnAutoLayoutAdjustment;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var QueryStateModel_1 = __webpack_require__(13);
-var ComponentsTypes_1 = __webpack_require__(45);
+var ComponentsTypes_1 = __webpack_require__(46);
 var FacetValueStateHandler = /** @class */ (function () {
     function FacetValueStateHandler(searchInterface) {
         this.searchInterface = searchInterface;
