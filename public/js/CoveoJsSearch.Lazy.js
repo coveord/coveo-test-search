@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "b3a6ab26d30467bc4f5a" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "ac479abfd246bbe11a67" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -2979,6 +2979,7 @@ var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(10);
 var JQueryutils_1 = __webpack_require__(75);
 var Utils_1 = __webpack_require__(4);
+var DeviceUtils_1 = __webpack_require__(24);
 /**
  * This is essentially an helper class for dom manipulation.<br/>
  * This is intended to provide some basic functionality normally offered by jQuery.<br/>
@@ -3080,6 +3081,22 @@ var Dom = /** @class */ (function () {
             arr[i] = nodeList.item(i);
         }
         return arr;
+    };
+    /**
+     * Focuses on an element.
+     * @param preserveScroll Whether or not to scroll the page to the focused element.
+     */
+    Dom.prototype.focus = function (preserveScroll) {
+        if (DeviceUtils_1.DeviceUtils.getDeviceName() === 'IE') {
+            var pageXOffset_1 = window.pageXOffset, pageYOffset_1 = window.pageYOffset;
+            this.el.focus();
+            if (preserveScroll) {
+                window.scrollTo(pageXOffset_1, pageYOffset_1);
+            }
+        }
+        else {
+            this.el.focus({ preventScroll: preserveScroll });
+        }
     };
     /**
      * Empty (remove all child) from the element;
@@ -3730,12 +3747,16 @@ var Win = /** @class */ (function () {
     Win.prototype.scrollY = function () {
         return this.supportPageOffset()
             ? this.win.pageYOffset
-            : this.isCSS1Compat() ? this.win.document.documentElement.scrollTop : this.win.document.body.scrollTop;
+            : this.isCSS1Compat()
+                ? this.win.document.documentElement.scrollTop
+                : this.win.document.body.scrollTop;
     };
     Win.prototype.scrollX = function () {
         return this.supportPageOffset()
             ? window.pageXOffset
-            : this.isCSS1Compat() ? document.documentElement.scrollLeft : document.body.scrollLeft;
+            : this.isCSS1Compat()
+                ? document.documentElement.scrollLeft
+                : document.body.scrollLeft;
     };
     Win.prototype.isCSS1Compat = function () {
         return (this.win.document.compatMode || '') === 'CSS1Compat';
@@ -13208,7 +13229,7 @@ var QueryBuilder = /** @class */ (function () {
         /**
          * Whether to interpret special query syntax (e.g., `@objecttype=message`) in the basic
          * [`expression`]{@link QueryBuilder.expression} (see
-         * [Coveo Query Syntax Reference](https://www.coveo.com/go?dest=adminhelp70&lcid=9&context=10005)).
+         * [Coveo Query Syntax Reference](https://docs.coveo.com/en/1552/searching-with-coveo/coveo-cloud-query-syntax)).
          *
          * See also [`enableLowercaseOperators`]{@link QueryBuilder.enableLowercaseOperators}.
          *
@@ -20251,8 +20272,8 @@ exports.PreferencesPanelEvents = PreferencesPanelEvents;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10083.5',
-    product: '2.10083.5',
+    lib: '2.10084.4',
+    product: '2.10084.4',
     supportedApiVersion: 2
 };
 
@@ -27996,7 +28017,7 @@ var dict = {
     "Preferences": "Preferences",
     "LinkOpeningSettings": "Link opening settings",
     "Reauthenticate": "Reauthenticate {0}",
-    "ResultsFilteringExpression": "Results filtering expressions",
+    "ResultsFilteringExpression": "Result filtering expressions",
     "FiltersInYourPreferences": "Filters in your preferences",
     "Create": "Create",
     "SearchIn": "Search in {0}",
