@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "5f94980c46f09242a5aa" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "4d6a86ddbef6b7daf29e" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -175,12 +175,8 @@ __webpack_require__.d(modules_namespaceObject, "isDate", function() { return isD
 __webpack_require__.d(modules_namespaceObject, "isRegExp", function() { return isRegExp; });
 __webpack_require__.d(modules_namespaceObject, "isError", function() { return isError; });
 __webpack_require__.d(modules_namespaceObject, "isSymbol", function() { return isSymbol; });
-__webpack_require__.d(modules_namespaceObject, "isMap", function() { return isMap; });
-__webpack_require__.d(modules_namespaceObject, "isWeakMap", function() { return isWeakMap; });
-__webpack_require__.d(modules_namespaceObject, "isSet", function() { return isSet; });
-__webpack_require__.d(modules_namespaceObject, "isWeakSet", function() { return isWeakSet; });
 __webpack_require__.d(modules_namespaceObject, "isArrayBuffer", function() { return isArrayBuffer; });
-__webpack_require__.d(modules_namespaceObject, "isDataView", function() { return isDataView; });
+__webpack_require__.d(modules_namespaceObject, "isDataView", function() { return modules_isDataView; });
 __webpack_require__.d(modules_namespaceObject, "isArray", function() { return isArray; });
 __webpack_require__.d(modules_namespaceObject, "isFunction", function() { return modules_isFunction; });
 __webpack_require__.d(modules_namespaceObject, "isArguments", function() { return modules_isArguments; });
@@ -190,6 +186,10 @@ __webpack_require__.d(modules_namespaceObject, "isTypedArray", function() { retu
 __webpack_require__.d(modules_namespaceObject, "isEmpty", function() { return isEmpty; });
 __webpack_require__.d(modules_namespaceObject, "isMatch", function() { return isMatch; });
 __webpack_require__.d(modules_namespaceObject, "isEqual", function() { return isEqual; });
+__webpack_require__.d(modules_namespaceObject, "isMap", function() { return isMap; });
+__webpack_require__.d(modules_namespaceObject, "isWeakMap", function() { return isWeakMap; });
+__webpack_require__.d(modules_namespaceObject, "isSet", function() { return isSet; });
+__webpack_require__.d(modules_namespaceObject, "isWeakSet", function() { return isWeakSet; });
 __webpack_require__.d(modules_namespaceObject, "keys", function() { return keys_keys; });
 __webpack_require__.d(modules_namespaceObject, "allKeys", function() { return allKeys; });
 __webpack_require__.d(modules_namespaceObject, "values", function() { return values_values; });
@@ -204,11 +204,13 @@ __webpack_require__.d(modules_namespaceObject, "defaults", function() { return d
 __webpack_require__.d(modules_namespaceObject, "create", function() { return create; });
 __webpack_require__.d(modules_namespaceObject, "clone", function() { return clone; });
 __webpack_require__.d(modules_namespaceObject, "tap", function() { return tap; });
+__webpack_require__.d(modules_namespaceObject, "get", function() { return get; });
 __webpack_require__.d(modules_namespaceObject, "has", function() { return has_has; });
 __webpack_require__.d(modules_namespaceObject, "mapObject", function() { return mapObject; });
 __webpack_require__.d(modules_namespaceObject, "identity", function() { return identity; });
 __webpack_require__.d(modules_namespaceObject, "constant", function() { return constant; });
 __webpack_require__.d(modules_namespaceObject, "noop", function() { return noop; });
+__webpack_require__.d(modules_namespaceObject, "toPath", function() { return toPath; });
 __webpack_require__.d(modules_namespaceObject, "property", function() { return property; });
 __webpack_require__.d(modules_namespaceObject, "propertyOf", function() { return propertyOf; });
 __webpack_require__.d(modules_namespaceObject, "matcher", function() { return matcher_matcher; });
@@ -363,7 +365,7 @@ function isUndefined(obj) {
 
 // Is a given value a boolean?
 function isBoolean(obj) {
-  return obj === true || obj === false || _setup["s" /* toString */].call(obj) === '[object Boolean]';
+  return obj === true || obj === false || _setup["t" /* toString */].call(obj) === '[object Boolean]';
 }
 
 // CONCATENATED MODULE: ./node_modules/underscore/modules/isElement.js
@@ -377,8 +379,9 @@ function isElement(obj) {
 
 // Internal function for creating a `toString`-based type tester.
 function tagTester(name) {
+  var tag = '[object ' + name + ']';
   return function(obj) {
-    return _setup["s" /* toString */].call(obj) === '[object ' + name + ']';
+    return _setup["t" /* toString */].call(obj) === tag;
   };
 }
 
@@ -412,43 +415,10 @@ function tagTester(name) {
 
 /* harmony default export */ var isSymbol = (tagTester('Symbol'));
 
-// CONCATENATED MODULE: ./node_modules/underscore/modules/isMap.js
-
-
-/* harmony default export */ var isMap = (tagTester('Map'));
-
-// CONCATENATED MODULE: ./node_modules/underscore/modules/isWeakMap.js
-
-
-/* harmony default export */ var isWeakMap = (tagTester('WeakMap'));
-
-// CONCATENATED MODULE: ./node_modules/underscore/modules/isSet.js
-
-
-/* harmony default export */ var isSet = (tagTester('Set'));
-
-// CONCATENATED MODULE: ./node_modules/underscore/modules/isWeakSet.js
-
-
-/* harmony default export */ var isWeakSet = (tagTester('WeakSet'));
-
 // CONCATENATED MODULE: ./node_modules/underscore/modules/isArrayBuffer.js
 
 
 /* harmony default export */ var isArrayBuffer = (tagTester('ArrayBuffer'));
-
-// CONCATENATED MODULE: ./node_modules/underscore/modules/isDataView.js
-
-
-/* harmony default export */ var isDataView = (tagTester('DataView'));
-
-// CONCATENATED MODULE: ./node_modules/underscore/modules/isArray.js
-
-
-
-// Is a given value an array?
-// Delegates to ECMA5's native `Array.isArray`.
-/* harmony default export */ var isArray = (_setup["k" /* nativeIsArray */] || tagTester('Array'));
 
 // CONCATENATED MODULE: ./node_modules/underscore/modules/isFunction.js
 
@@ -466,6 +436,47 @@ if (typeof /./ != 'function' && typeof Int8Array != 'object' && typeof nodelist 
 }
 
 /* harmony default export */ var modules_isFunction = (isFunction);
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/_hasObjectTag.js
+
+
+/* harmony default export */ var _hasObjectTag = (tagTester('Object'));
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/_stringTagBug.js
+
+
+
+// In IE 10 - Edge 13, `DataView` has string tag `'[object Object]'`.
+// In IE 11, the most common among them, this problem also applies to
+// `Map`, `WeakMap` and `Set`.
+var hasStringTagBug = (
+      _setup["s" /* supportsDataView */] && _hasObjectTag(new DataView(new ArrayBuffer(8)))
+    ),
+    isIE11 = (typeof Map !== 'undefined' && _hasObjectTag(new Map));
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/isDataView.js
+
+
+
+
+
+var isDataView = tagTester('DataView');
+
+// In IE 10 - Edge 13, we need a different heuristic
+// to determine whether an object is a `DataView`.
+function ie10IsDataView(obj) {
+  return obj != null && modules_isFunction(obj.getInt8) && isArrayBuffer(obj.buffer);
+}
+
+/* harmony default export */ var modules_isDataView = (hasStringTagBug ? ie10IsDataView : isDataView);
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/isArray.js
+
+
+
+// Is a given value an array?
+// Delegates to ECMA5's native `Array.isArray`.
+/* harmony default export */ var isArray = (_setup["k" /* nativeIsArray */] || tagTester('Array'));
 
 // CONCATENATED MODULE: ./node_modules/underscore/modules/_has.js
 
@@ -563,8 +574,8 @@ var typedArrayPattern = /\[object ((I|Ui)nt(8|16|32)|Float(32|64)|Uint8Clamped|B
 function isTypedArray(obj) {
   // `ArrayBuffer.isView` is the most future-proof, so use it when available.
   // Otherwise, fall back on the above regular expression.
-  return _setup["l" /* nativeIsView */] ? (Object(_setup["l" /* nativeIsView */])(obj) && !isDataView(obj)) :
-                _isBufferLike(obj) && typedArrayPattern.test(_setup["s" /* toString */].call(obj));
+  return _setup["l" /* nativeIsView */] ? (Object(_setup["l" /* nativeIsView */])(obj) && !modules_isDataView(obj)) :
+                _isBufferLike(obj) && typedArrayPattern.test(_setup["t" /* toString */].call(obj));
 }
 
 /* harmony default export */ var modules_isTypedArray = (_setup["r" /* supportsArrayBuffer */] ? isTypedArray : constant(false));
@@ -574,16 +585,6 @@ function isTypedArray(obj) {
 
 // Internal helper to obtain the `length` property of an object.
 /* harmony default export */ var _getLength = (shallowProperty('length'));
-
-// CONCATENATED MODULE: ./node_modules/underscore/modules/_isArrayLike.js
-
-
-
-// Internal helper for collection methods to determine whether a collection
-// should be iterated as an array or as an object.
-// Related: https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
-// Avoids a very nasty iOS 8 JIT bug on ARM-64. #2094
-/* harmony default export */ var _isArrayLike = (createSizePropertyCheck(_getLength));
 
 // CONCATENATED MODULE: ./node_modules/underscore/modules/_collectNonEnumProps.js
 
@@ -658,8 +659,11 @@ function isEmpty(obj) {
   if (obj == null) return true;
   // Skip the more expensive `toString`-based type checks if `obj` has no
   // `.length`.
-  if (_isArrayLike(obj) && (isArray(obj) || isString(obj) || modules_isArguments(obj))) return obj.length === 0;
-  return keys_keys(obj).length === 0;
+  var length = _getLength(obj);
+  if (typeof length == 'number' && (
+    isArray(obj) || isString(obj) || modules_isArguments(obj)
+  )) return length === 0;
+  return _getLength(keys_keys(obj)) === 0;
 }
 
 // CONCATENATED MODULE: ./node_modules/underscore/modules/isMatch.js
@@ -704,6 +708,19 @@ _.prototype.toString = function() {
   return String(this._wrapped);
 };
 
+// CONCATENATED MODULE: ./node_modules/underscore/modules/_toBufferView.js
+
+
+// Internal function to wrap or shallow-copy an ArrayBuffer,
+// typed array or DataView to a new view, reusing the buffer.
+function toBufferView(bufferSource) {
+  return new Uint8Array(
+    bufferSource.buffer || bufferSource,
+    bufferSource.byteOffset || 0,
+    _getByteLength(bufferSource)
+  );
+}
+
 // CONCATENATED MODULE: ./node_modules/underscore/modules/isEqual.js
 
 
@@ -712,6 +729,12 @@ _.prototype.toString = function() {
 
 
 
+
+
+
+
+// We use this string twice, so give it a name for minification.
+var tagDataView = '[object DataView]';
 
 // Internal recursive comparison function for `_.isEqual`.
 function eq(a, b, aStack, bStack) {
@@ -734,8 +757,13 @@ function deepEq(a, b, aStack, bStack) {
   if (a instanceof _) a = a._wrapped;
   if (b instanceof _) b = b._wrapped;
   // Compare `[[Class]]` names.
-  var className = _setup["s" /* toString */].call(a);
-  if (className !== _setup["s" /* toString */].call(b)) return false;
+  var className = _setup["t" /* toString */].call(a);
+  if (className !== _setup["t" /* toString */].call(b)) return false;
+  // Work around a bug in IE 10 - Edge 13.
+  if (hasStringTagBug && className == '[object Object]' && modules_isDataView(a)) {
+    if (!modules_isDataView(b)) return false;
+    className = tagDataView;
+  }
   switch (className) {
     // These types are compared by value.
     case '[object RegExp]':
@@ -759,27 +787,18 @@ function deepEq(a, b, aStack, bStack) {
     case '[object Symbol]':
       return _setup["d" /* SymbolProto */].valueOf.call(a) === _setup["d" /* SymbolProto */].valueOf.call(b);
     case '[object ArrayBuffer]':
-      // Coerce to `DataView` so we can fall through to the next case.
-      return deepEq(new DataView(a), new DataView(b), aStack, bStack);
-    case '[object DataView]':
-      var byteLength = _getByteLength(a);
-      if (byteLength !== _getByteLength(b)) {
-        return false;
-      }
-      while (byteLength--) {
-        if (a.getUint8(byteLength) !== b.getUint8(byteLength)) {
-          return false;
-        }
-      }
-      return true;
-  }
-
-  if (modules_isTypedArray(a)) {
-    // Coerce typed arrays to `DataView`.
-    return deepEq(new DataView(a.buffer), new DataView(b.buffer), aStack, bStack);
+    case tagDataView:
+      // Coerce to typed array so we can fall through.
+      return deepEq(toBufferView(a), toBufferView(b), aStack, bStack);
   }
 
   var areArrays = className === '[object Array]';
+  if (!areArrays && modules_isTypedArray(a)) {
+      var byteLength = _getByteLength(a);
+      if (byteLength !== _getByteLength(b)) return false;
+      if (a.buffer === b.buffer && a.byteOffset === b.byteOffset) return true;
+      areArrays = true;
+  }
   if (!areArrays) {
     if (typeof a != 'object' || typeof b != 'object') return false;
 
@@ -856,6 +875,71 @@ function allKeys(obj) {
   if (_setup["h" /* hasEnumBug */]) collectNonEnumProps(obj, keys);
   return keys;
 }
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/_methodFingerprint.js
+
+
+
+
+// Since the regular `Object.prototype.toString` type tests don't work for
+// some types in IE 11, we use a fingerprinting heuristic instead, based
+// on the methods. It's not great, but it's the best we got.
+// The fingerprint method lists are defined below.
+function ie11fingerprint(methods) {
+  var length = _getLength(methods);
+  return function(obj) {
+    if (obj == null) return false;
+    // `Map`, `WeakMap` and `Set` have no enumerable keys.
+    var keys = allKeys(obj);
+    if (_getLength(keys)) return false;
+    for (var i = 0; i < length; i++) {
+      if (!modules_isFunction(obj[methods[i]])) return false;
+    }
+    // If we are testing against `WeakMap`, we need to ensure that
+    // `obj` doesn't have a `forEach` method in order to distinguish
+    // it from a regular `Map`.
+    return methods !== weakMapMethods || !modules_isFunction(obj[forEachName]);
+  };
+}
+
+// In the interest of compact minification, we write
+// each string in the fingerprints only once.
+var forEachName = 'forEach',
+    hasName = 'has',
+    commonInit = ['clear', 'delete'],
+    mapTail = ['get', hasName, 'set'];
+
+// `Map`, `WeakMap` and `Set` each have slightly different
+// combinations of the above sublists.
+var mapMethods = commonInit.concat(forEachName, mapTail),
+    weakMapMethods = commonInit.concat(mapTail),
+    setMethods = ['add'].concat(commonInit, forEachName, hasName);
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/isMap.js
+
+
+
+
+/* harmony default export */ var isMap = (isIE11 ? ie11fingerprint(mapMethods) : tagTester('Map'));
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/isWeakMap.js
+
+
+
+
+/* harmony default export */ var isWeakMap = (isIE11 ? ie11fingerprint(weakMapMethods) : tagTester('WeakMap'));
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/isSet.js
+
+
+
+
+/* harmony default export */ var isSet = (isIE11 ? ie11fingerprint(setMethods) : tagTester('Set'));
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/isWeakSet.js
+
+
+/* harmony default export */ var isWeakSet = (tagTester('WeakSet'));
 
 // CONCATENATED MODULE: ./node_modules/underscore/modules/values.js
 
@@ -1007,8 +1091,53 @@ function tap(obj, interceptor) {
   return obj;
 }
 
-// CONCATENATED MODULE: ./node_modules/underscore/modules/has.js
+// CONCATENATED MODULE: ./node_modules/underscore/modules/toPath.js
 
+
+
+// Normalize a (deep) property `path` to array.
+// Like `_.iteratee`, this function can be customized.
+function toPath(path) {
+  return isArray(path) ? path : [path];
+}
+_.toPath = toPath;
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/_toPath.js
+
+
+
+// Internal wrapper for `_.toPath` to enable minification.
+// Similar to `cb` for `_.iteratee`.
+function _toPath_toPath(path) {
+  return _.toPath(path);
+}
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/_deepGet.js
+// Internal function to obtain a nested property in `obj` along `path`.
+function deepGet(obj, path) {
+  var length = path.length;
+  for (var i = 0; i < length; i++) {
+    if (obj == null) return void 0;
+    obj = obj[path[i]];
+  }
+  return length ? obj : void 0;
+}
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/get.js
+
+
+
+
+// Get the value of the (deep) property on `path` from `object`.
+// If any property in `path` does not exist or if the value is
+// `undefined`, return `defaultValue` instead.
+// The `path` is normalized through `_.toPath`.
+function get(object, path, defaultValue) {
+  var value = deepGet(object, _toPath_toPath(path));
+  return isUndefined(value) ? defaultValue : value;
+}
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/has.js
 
 
 
@@ -1016,15 +1145,11 @@ function tap(obj, interceptor) {
 // itself (in other words, not on a prototype). Unlike the internal `has`
 // function, this public version can also traverse nested properties.
 function has_has(obj, path) {
-  if (!isArray(path)) {
-    return has(obj, path);
-  }
+  path = _toPath_toPath(path);
   var length = path.length;
   for (var i = 0; i < length; i++) {
     var key = path[i];
-    if (obj == null || !_setup["i" /* hasOwnProperty */].call(obj, key)) {
-      return false;
-    }
+    if (!has(obj, key)) return false;
     obj = obj[key];
   }
   return !!length;
@@ -1049,28 +1174,14 @@ function matcher_matcher(attrs) {
   };
 }
 
-// CONCATENATED MODULE: ./node_modules/underscore/modules/_deepGet.js
-// Internal function to obtain a nested property in `obj` along `path`.
-function deepGet(obj, path) {
-  var length = path.length;
-  for (var i = 0; i < length; i++) {
-    if (obj == null) return void 0;
-    obj = obj[path[i]];
-  }
-  return length ? obj : void 0;
-}
-
 // CONCATENATED MODULE: ./node_modules/underscore/modules/property.js
-
 
 
 
 // Creates a function that, when passed an object, will traverse that object’s
 // properties down the given `path`, specified as an array of keys or indices.
 function property(path) {
-  if (!isArray(path)) {
-    return shallowProperty(path);
-  }
+  path = _toPath_toPath(path);
   return function(obj) {
     return deepGet(obj, path);
   };
@@ -1170,11 +1281,9 @@ function noop(){}
 
 // Generates a function for a given object that returns a given property.
 function propertyOf(obj) {
-  if (obj == null) {
-    return function(){};
-  }
+  if (obj == null) return noop;
   return function(path) {
-    return !isArray(path) ? obj[path] : deepGet(obj, path);
+    return get(obj, path);
   };
 }
 
@@ -1294,6 +1403,13 @@ function escapeChar(match) {
   return '\\' + escapes[match];
 }
 
+// In order to prevent third-party code injection through
+// `_.templateSettings.variable`, we test it against the following regular
+// expression. It is intentionally a bit more liberal than just matching valid
+// identifiers, but still prevents possible loopholes through defaults or
+// destructuring assignment.
+var bareIdentifier = /^\s*(\w|\$)+\s*$/;
+
 // JavaScript micro-templating, similar to John Resig's implementation.
 // Underscore templating handles arbitrary delimiters, preserves whitespace,
 // and correctly escapes quotes within interpolated code.
@@ -1329,8 +1445,17 @@ function template_template(text, settings, oldSettings) {
   });
   source += "';\n";
 
-  // If a variable is not specified, place data values in local scope.
-  if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
+  var argument = settings.variable;
+  if (argument) {
+    // Insure against third-party code injection. (CVE-2021-23358)
+    if (!bareIdentifier.test(argument)) throw new Error(
+      'variable is not a bare identifier: ' + argument
+    );
+  } else {
+    // If a variable is not specified, place data values in local scope.
+    source = 'with(obj||{}){\n' + source + '}\n';
+    argument = 'obj';
+  }
 
   source = "var __t,__p='',__j=Array.prototype.join," +
     "print=function(){__p+=__j.call(arguments,'');};\n" +
@@ -1338,7 +1463,7 @@ function template_template(text, settings, oldSettings) {
 
   var render;
   try {
-    render = new Function(settings.variable || 'obj', '_', source);
+    render = new Function(argument, '_', source);
   } catch (e) {
     e.source = source;
     throw e;
@@ -1349,7 +1474,6 @@ function template_template(text, settings, oldSettings) {
   };
 
   // Provide the compiled source as a convenience for precompilation.
-  var argument = settings.variable || 'obj';
   template.source = 'function(' + argument + '){\n' + source + '}';
 
   return template;
@@ -1363,7 +1487,7 @@ function template_template(text, settings, oldSettings) {
 // is invoked with its parent as context. Returns the value of the final
 // child, or `fallback` if any child is undefined.
 function result_result(obj, path, fallback) {
-  if (!isArray(path)) path = [path];
+  path = _toPath_toPath(path);
   var length = path.length;
   if (!length) {
     return modules_isFunction(fallback) ? fallback.call(obj) : fallback;
@@ -1453,6 +1577,16 @@ partial.placeholder = _;
   });
   return bound;
 }));
+
+// CONCATENATED MODULE: ./node_modules/underscore/modules/_isArrayLike.js
+
+
+
+// Internal helper for collection methods to determine whether a collection
+// should be iterated as an array or as an object.
+// Related: https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
+// Avoids a very nasty iOS 8 JIT bug on ARM-64. #2094
+/* harmony default export */ var _isArrayLike = (createSizePropertyCheck(_getLength));
 
 // CONCATENATED MODULE: ./node_modules/underscore/modules/_flatten.js
 
@@ -1599,29 +1733,34 @@ function throttle(func, wait, options) {
 // parameter. If `immediate` is passed, the argument function will be
 // triggered at the beginning of the sequence instead of at the end.
 function debounce(func, wait, immediate) {
-  var timeout, result;
+  var timeout, previous, args, result, context;
 
-  var later = function(context, args) {
-    timeout = null;
-    if (args) result = func.apply(context, args);
+  var later = function() {
+    var passed = now() - previous;
+    if (wait > passed) {
+      timeout = setTimeout(later, wait - passed);
+    } else {
+      timeout = null;
+      if (!immediate) result = func.apply(context, args);
+      // This check is needed because `func` can recursively invoke `debounced`.
+      if (!timeout) args = context = null;
+    }
   };
 
-  var debounced = restArguments(function(args) {
-    if (timeout) clearTimeout(timeout);
-    if (immediate) {
-      var callNow = !timeout;
+  var debounced = restArguments(function(_args) {
+    context = this;
+    args = _args;
+    previous = now();
+    if (!timeout) {
       timeout = setTimeout(later, wait);
-      if (callNow) result = func.apply(this, args);
-    } else {
-      timeout = delay(later, wait, this, args);
+      if (immediate) result = func.apply(context, args);
     }
-
     return result;
   });
 
   debounced.cancel = function() {
     clearTimeout(timeout);
-    timeout = null;
+    timeout = args = context = null;
   };
 
   return debounced;
@@ -1990,7 +2129,8 @@ function contains(obj, item, fromIndex, guard) {
   var contextPath, func;
   if (modules_isFunction(path)) {
     func = path;
-  } else if (isArray(path)) {
+  } else {
+    path = _toPath_toPath(path);
     contextPath = path.slice(0, -1);
     path = path[path.length - 1];
   }
@@ -2597,9 +2737,9 @@ each(['concat', 'join', 'slice'], function(name) {
 // Named Exports
 // =============
 
-//     Underscore.js 1.11.0
+//     Underscore.js 1.13.1
 //     https://underscorejs.org
-//     (c) 2009-2020 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+//     (c) 2009-2021 Jeremy Ashkenas, Julian Gonggrijp, and DocumentCloud and Investigative Reporters & Editors
 //     Underscore may be freely distributed under the MIT license.
 
 // Baseline setup.
@@ -2656,11 +2796,13 @@ each(['concat', 'join', 'slice'], function(name) {
 
 
 
+
 // Utility Functions
 // -----------------
 // A bit of a grab bag: Predicate-generating functions for use with filters and
 // loops, string escaping and templating, create random numbers and unique ids,
 // and functions that facilitate Underscore's chaining and iteration conventions.
+
 
 
 
@@ -2817,12 +2959,8 @@ index_default__._ = index_default__;
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isRegExp", function() { return isRegExp; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isError", function() { return isError; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isSymbol", function() { return isSymbol; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isMap", function() { return isMap; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isWeakMap", function() { return isWeakMap; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isSet", function() { return isSet; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isWeakSet", function() { return isWeakSet; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isArrayBuffer", function() { return isArrayBuffer; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isDataView", function() { return isDataView; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isDataView", function() { return modules_isDataView; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isArray", function() { return isArray; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isFunction", function() { return modules_isFunction; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isArguments", function() { return modules_isArguments; });
@@ -2832,6 +2970,10 @@ index_default__._ = index_default__;
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isEmpty", function() { return isEmpty; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isMatch", function() { return isMatch; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isEqual", function() { return isEqual; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isMap", function() { return isMap; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isWeakMap", function() { return isWeakMap; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isSet", function() { return isSet; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "isWeakSet", function() { return isWeakSet; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "keys", function() { return keys_keys; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "allKeys", function() { return allKeys; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "values", function() { return values_values; });
@@ -2846,11 +2988,13 @@ index_default__._ = index_default__;
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "create", function() { return create; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "clone", function() { return clone; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "tap", function() { return tap; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "get", function() { return get; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "has", function() { return has_has; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "mapObject", function() { return mapObject; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "identity", function() { return identity; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "constant", function() { return constant; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "noop", function() { return noop; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "toPath", function() { return toPath; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "property", function() { return property; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "propertyOf", function() { return propertyOf; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "matcher", function() { return matcher_matcher; });
@@ -8022,9 +8166,10 @@ exports.setState = setState;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return SymbolProto; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return push; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return slice; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return toString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return toString; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return hasOwnProperty; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return supportsArrayBuffer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return supportsDataView; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return nativeIsArray; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return nativeKeys; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return nativeCreate; });
@@ -8035,7 +8180,7 @@ exports.setState = setState;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return nonEnumerableProps; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MAX_ARRAY_INDEX; });
 // Current version.
-var VERSION = '1.11.0';
+var VERSION = '1.13.1';
 
 // Establish the root object, `window` (`self`) in the browser, `global`
 // on the server, or `this` in some virtual machines. We use `self`
@@ -8056,7 +8201,8 @@ var push = ArrayProto.push,
     hasOwnProperty = ObjProto.hasOwnProperty;
 
 // Modern feature detection.
-var supportsArrayBuffer = typeof ArrayBuffer !== 'undefined';
+var supportsArrayBuffer = typeof ArrayBuffer !== 'undefined',
+    supportsDataView = typeof DataView !== 'undefined';
 
 // All **ECMAScript 5+** native function implementations that we hope to use
 // are declared here.
@@ -20272,8 +20418,8 @@ exports.PreferencesPanelEvents = PreferencesPanelEvents;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10085.0',
-    product: '2.10085.0',
+    lib: '2.10085.1',
+    product: '2.10085.1',
     supportedApiVersion: 2
 };
 
@@ -20859,11 +21005,7 @@ var StreamHighlightUtils = /** @class */ (function () {
 exports.StreamHighlightUtils = StreamHighlightUtils;
 function getRestHighlightsForAllTerms(toHighlight, termsToHighlight, phrasesToHighlight, opts) {
     var indexes = [];
-    var termsFromPhrases = _.chain(phrasesToHighlight)
-        .values()
-        .map(_.keys)
-        .flatten()
-        .value();
+    var termsFromPhrases = _.chain(phrasesToHighlight).values().map(_.keys).flatten().value();
     _.each(termsToHighlight, function (terms, term) {
         var uniqueTermsToHighlight = _.chain([term])
             .concat(terms)
@@ -20872,6 +21014,9 @@ function getRestHighlightsForAllTerms(toHighlight, termsToHighlight, phrasesToHi
             .map(Utils_1.Utils.escapeRegexCharacter)
             .sortBy('length')
             .value();
+        if (uniqueTermsToHighlight.length === 0) {
+            return;
+        }
         var regex = "" + regexStart + uniqueTermsToHighlight.join('|') + ")(?=(?:" + wordBoundary + "|$)+)";
         var indexesFound = StringUtils_1.StringUtils.getHighlights(toHighlight, new RegExp(regex, opts.regexFlags), term);
         if (indexesFound != undefined && Utils_1.Utils.isNonEmptyArray(indexesFound)) {
