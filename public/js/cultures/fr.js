@@ -922,6 +922,8 @@ var dict = {
   "ExpandQuestionAnswer": "Regarder la réponse à « {0} »",
   "MoreValuesAvailable": "des valeurs additionnelles sont disponibles",
   "Breadcrumb": "Filtres actifs",
+  "OrganizationIsPaused": "Votre organisation Coveo est pausée et la recherche est présentement non disponible.",
+  "OrganizationWillResume": "Votre organisation redeviendra active et sera bientôt disponible.",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["fr"] = merge(locales["fr"], dict);
@@ -1776,6 +1778,8 @@ var dict = {
   "ExpandQuestionAnswer": "Regarder la réponse à « {0} »",
   "MoreValuesAvailable": "des valeurs additionnelles sont disponibles",
   "Breadcrumb": "Filtres actifs",
+  "OrganizationIsPaused": "Votre organisation Coveo est pausée et la recherche est présentement non disponible.",
+  "OrganizationWillResume": "Votre organisation redeviendra active et sera bientôt disponible.",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
