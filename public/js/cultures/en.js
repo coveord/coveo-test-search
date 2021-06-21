@@ -876,8 +876,8 @@ var dict = {
   "ExpandQuestionAnswer": "View answer for \"{0}\"",
   "MoreValuesAvailable": "additional values are available",
   "Breadcrumb": "Active filters",
-  "OrganizationIsPaused": "Your Coveo organization is paused and search is currently unavailable.",
-  "OrganizationWillResume": "Your organisation will resume and will be available shortly.",
+  "OrganizationIsPaused": "Your Coveo organization is paused due to inactivity and search is currently unavailable.",
+  "OrganizationWillResume": "Your organization is resuming and will be available shortly.",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1732,8 +1732,8 @@ var dict = {
   "ExpandQuestionAnswer": "View answer for \"{0}\"",
   "MoreValuesAvailable": "additional values are available",
   "Breadcrumb": "Active filters",
-  "OrganizationIsPaused": "Your Coveo organization is paused and search is currently unavailable.",
-  "OrganizationWillResume": "Your organisation will resume and will be available shortly.",
+  "OrganizationIsPaused": "Your Coveo organization is paused due to inactivity and search is currently unavailable.",
+  "OrganizationWillResume": "Your organization is resuming and will be available shortly.",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
