@@ -193,7 +193,9 @@
 }
 
 .coveo-emails-excess-collapsed:hover,
-.coveo-emails-excess-collapsed:hover a {
+.coveo-emails-excess-collapsed:hover a,
+.coveo-emails-excess-collapsed:focus,
+.coveo-emails-excess-collapsed:focus a {
   text-decoration: underline;
 }
 
@@ -239,8 +241,12 @@
 
 .coveo-modal-container .coveo-email-from a:hover,
 .coveo-modal-container .coveo-email-from a:hover a,
+.coveo-modal-container .coveo-email-from a:focus,
+.coveo-modal-container .coveo-email-from a:focus a,
 .coveo-modal-container .coveo-email-to a:hover,
-.coveo-modal-container .coveo-email-to a:hover a {
+.coveo-modal-container .coveo-email-to a:hover a,
+.coveo-modal-container .coveo-email-to a:focus,
+.coveo-modal-container .coveo-email-to a:focus a {
   text-decoration: underline;
 }
 
@@ -267,7 +273,9 @@
 }
 
 .CoveoEmailAction:hover,
-.CoveoEmailAction:hover a {
+.CoveoEmailAction:hover a,
+.CoveoEmailAction:focus,
+.CoveoEmailAction:focus a {
   text-decoration: underline;
 }
 
@@ -648,8 +656,12 @@
 
 .coveo-lithium-from a:hover,
 .coveo-lithium-from a:hover a,
+.coveo-lithium-from a:focus,
+.coveo-lithium-from a:focus a,
 .coveo-lithium-to a:hover,
-.coveo-lithium-to a:hover a {
+.coveo-lithium-to a:hover a,
+.coveo-lithium-to a:focus,
+.coveo-lithium-to a:focus a {
   text-decoration: underline;
 }
 
@@ -8517,7 +8529,9 @@ body.coveo-modalBox-opened .CoveoSearchInterface {
 }
 
 .coveo-debug.coveo-modal-container .coveo-modal-header a:hover,
-.coveo-debug.coveo-modal-container .coveo-modal-header a:hover a {
+.coveo-debug.coveo-modal-container .coveo-modal-header a:hover a,
+.coveo-debug.coveo-modal-container .coveo-modal-header a:focus,
+.coveo-debug.coveo-modal-container .coveo-modal-header a:focus a {
   text-decoration: underline;
 }
 
@@ -8932,7 +8946,6 @@ input[type='checkbox'].coveo-checkbox + button {
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -8945,12 +8958,18 @@ input[type='checkbox'].coveo-checkbox + button {
 }
 
 .coveo-missing-term-breadcrumb-value:hover,
-.coveo-missing-term-breadcrumb-value:hover a {
+.coveo-missing-term-breadcrumb-value:hover a,
+.coveo-missing-term-breadcrumb-value:focus,
+.coveo-missing-term-breadcrumb-value:focus a {
   text-decoration: underline;
 }
 
 .coveo-missing-term-breadcrumb-value.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-missing-term-breadcrumb-value:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-missing-term-breadcrumb-value.coveo-selected * {
@@ -8996,10 +9015,16 @@ a.CoveoResultLink:visited:hover,
 
 .CoveoResultLink:hover,
 .CoveoResultLink:hover a,
+.CoveoResultLink:focus,
+.CoveoResultLink:focus a,
 a.CoveoResultLink:hover,
 a.CoveoResultLink:hover a,
+a.CoveoResultLink:focus,
+a.CoveoResultLink:focus a,
 .CoveoResult a.CoveoResultLink:hover,
-.CoveoResult a.CoveoResultLink:hover a {
+.CoveoResult a.CoveoResultLink:hover a,
+.CoveoResult a.CoveoResultLink:focus,
+.CoveoResult a.CoveoResultLink:focus a {
   text-decoration: underline;
 }
 
@@ -9024,7 +9049,9 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-card-overlay a.CoveoResultLink:hover,
-.coveo-card-overlay a.CoveoResultLink:hover a {
+.coveo-card-overlay a.CoveoResultLink:hover a,
+.coveo-card-overlay a.CoveoResultLink:focus,
+.coveo-card-overlay a.CoveoResultLink:focus a {
   text-decoration: underline;
 }
 
@@ -9414,7 +9441,6 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -9426,12 +9452,18 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-advanced-search-breadcrumb-value:hover,
-.coveo-advanced-search-breadcrumb-value:hover a {
+.coveo-advanced-search-breadcrumb-value:hover a,
+.coveo-advanced-search-breadcrumb-value:focus,
+.coveo-advanced-search-breadcrumb-value:focus a {
   text-decoration: underline;
 }
 
 .coveo-advanced-search-breadcrumb-value.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-advanced-search-breadcrumb-value:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-advanced-search-breadcrumb-value.coveo-selected * {
@@ -9449,7 +9481,6 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -9462,12 +9493,18 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-advanced-search-breadcrumb-clear:hover,
-.coveo-advanced-search-breadcrumb-clear:hover a {
+.coveo-advanced-search-breadcrumb-clear:hover a,
+.coveo-advanced-search-breadcrumb-clear:focus,
+.coveo-advanced-search-breadcrumb-clear:focus a {
   text-decoration: underline;
 }
 
 .coveo-advanced-search-breadcrumb-clear.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-advanced-search-breadcrumb-clear:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-advanced-search-breadcrumb-clear.coveo-selected * {
@@ -9619,7 +9656,6 @@ a.CoveoResultLink.coveo-selected *,
   -moz-flex-shrink: 0;
   flex-shrink: 0;
   -ms-flex-negative: 0;
-  outline: 1px solid transparent;
   display: inline-block;
   font-size: 14px;
   padding: 5px;
@@ -9633,12 +9669,18 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-breadcrumb-clear-all:hover,
-.coveo-breadcrumb-clear-all:hover a {
+.coveo-breadcrumb-clear-all:hover a,
+.coveo-breadcrumb-clear-all:focus,
+.coveo-breadcrumb-clear-all:focus a {
   text-decoration: underline;
 }
 
 .coveo-breadcrumb-clear-all.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-breadcrumb-clear-all:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-breadcrumb-items {
@@ -9921,7 +9963,9 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .CoveoDidYouMean button:hover,
-.CoveoDidYouMean button:hover a {
+.CoveoDidYouMean button:hover a,
+.CoveoDidYouMean button:focus,
+.CoveoDidYouMean button:focus a {
   text-decoration: underline;
 }
 
@@ -10032,12 +10076,20 @@ a.CoveoResultLink.coveo-selected *,
 
 .coveo-error-report-previous:hover,
 .coveo-error-report-previous:hover a,
+.coveo-error-report-previous:focus,
+.coveo-error-report-previous:focus a,
 .coveo-error-report-clear:hover,
 .coveo-error-report-clear:hover a,
+.coveo-error-report-clear:focus,
+.coveo-error-report-clear:focus a,
 .coveo-error-report-retry:hover,
 .coveo-error-report-retry:hover a,
+.coveo-error-report-retry:focus,
+.coveo-error-report-retry:focus a,
 .coveo-error-report-more-info:hover,
-.coveo-error-report-more-info:hover a {
+.coveo-error-report-more-info:hover a,
+.coveo-error-report-more-info:focus,
+.coveo-error-report-more-info:focus a {
   text-decoration: underline;
 }
 
@@ -10506,8 +10558,7 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-facet-breadcrumb-value,
-.coveo-facet-slider-breadcrumb-value,
-.coveo-facet-breadcrumb-value-list-item {
+.coveo-facet-slider-breadcrumb-value {
   color: #0059b3;
   text-decoration: none;
   cursor: pointer;
@@ -10518,7 +10569,6 @@ a.CoveoResultLink.coveo-selected *,
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -10528,40 +10578,43 @@ a.CoveoResultLink.coveo-selected *,
 .coveo-facet-breadcrumb-value:visited,
 .coveo-facet-breadcrumb-value:visited:hover,
 .coveo-facet-slider-breadcrumb-value:visited,
-.coveo-facet-slider-breadcrumb-value:visited:hover,
-.coveo-facet-breadcrumb-value-list-item:visited,
-.coveo-facet-breadcrumb-value-list-item:visited:hover {
+.coveo-facet-slider-breadcrumb-value:visited:hover {
   color: #609;
 }
 
 .coveo-facet-breadcrumb-value:hover,
 .coveo-facet-breadcrumb-value:hover a,
+.coveo-facet-breadcrumb-value:focus,
+.coveo-facet-breadcrumb-value:focus a,
 .coveo-facet-slider-breadcrumb-value:hover,
 .coveo-facet-slider-breadcrumb-value:hover a,
-.coveo-facet-breadcrumb-value-list-item:hover,
-.coveo-facet-breadcrumb-value-list-item:hover a {
+.coveo-facet-slider-breadcrumb-value:focus,
+.coveo-facet-slider-breadcrumb-value:focus a {
   text-decoration: underline;
 }
 
 .coveo-facet-breadcrumb-value.coveo-selected *,
-.coveo-facet-slider-breadcrumb-value.coveo-selected *,
-.coveo-facet-breadcrumb-value-list-item.coveo-selected * {
+.coveo-facet-slider-breadcrumb-value.coveo-selected * {
   color: #0059b3;
 }
 
+.coveo-facet-breadcrumb-value:not(:focus),
+.coveo-facet-slider-breadcrumb-value:not(:focus) {
+  outline: 1px solid transparent;
+}
+
 .coveo-facet-breadcrumb-value.coveo-selected *,
-.coveo-facet-slider-breadcrumb-value.coveo-selected *,
-.coveo-facet-breadcrumb-value-list-item.coveo-selected * {
+.coveo-facet-slider-breadcrumb-value.coveo-selected * {
   color: #296896;
 }
 
 .coveo-facet-breadcrumb-value.coveo-excluded .coveo-facet-breadcrumb-caption,
-.coveo-facet-slider-breadcrumb-value.coveo-excluded .coveo-facet-breadcrumb-caption,
-.coveo-facet-breadcrumb-value-list-item.coveo-excluded .coveo-facet-breadcrumb-caption {
+.coveo-facet-slider-breadcrumb-value.coveo-excluded .coveo-facet-breadcrumb-caption {
   text-decoration: line-through;
 }
 
 .coveo-facet-breadcrumb-value-list-item {
+  display: inline-block;
   margin: 0;
   padding: 0;
 }
@@ -11266,7 +11319,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-facet-search-select-all:hover,
-.coveo-facet-search-select-all:hover a {
+.coveo-facet-search-select-all:hover a,
+.coveo-facet-search-select-all:focus,
+.coveo-facet-search-select-all:focus a {
   text-decoration: underline;
 }
 
@@ -11648,7 +11703,6 @@ ul.coveo-facet-breadcrumb-values {
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -11660,12 +11714,18 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-category-facet-breadcrumb-values:hover,
-.coveo-category-facet-breadcrumb-values:hover a {
+.coveo-category-facet-breadcrumb-values:hover a,
+.coveo-category-facet-breadcrumb-values:focus,
+.coveo-category-facet-breadcrumb-values:focus a {
   text-decoration: underline;
 }
 
 .coveo-category-facet-breadcrumb-values.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-category-facet-breadcrumb-values:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-category-facet-breadcrumb-values.coveo-selected * {
@@ -11901,7 +11961,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .CoveoResult a:hover,
-.CoveoResult a:hover a {
+.CoveoResult a:hover a,
+.CoveoResult a:focus,
+.CoveoResult a:focus a {
   text-decoration: underline;
 }
 
@@ -11936,7 +11998,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .CoveoResult .CoveoBadge .coveo-value.coveo-clickable:hover,
-.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:hover a {
+.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:hover a,
+.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:focus,
+.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:focus a {
   text-decoration: underline;
 }
 
@@ -12008,7 +12072,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .CoveoResult .coveo-selectable-link:hover,
-.CoveoResult .coveo-selectable-link:hover a {
+.CoveoResult .coveo-selectable-link:hover a,
+.CoveoResult .coveo-selectable-link:focus,
+.CoveoResult .coveo-selectable-link:focus a {
   text-decoration: underline;
 }
 
@@ -12160,7 +12226,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-card-overlay a:hover,
-.coveo-card-overlay a:hover a {
+.coveo-card-overlay a:hover a,
+.coveo-card-overlay a:focus,
+.coveo-card-overlay a:focus a {
   text-decoration: underline;
 }
 
@@ -12819,7 +12887,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .CoveoFieldTable .coveo-clickable:hover,
-.CoveoFieldTable .coveo-clickable:hover a {
+.CoveoFieldTable .coveo-clickable:hover a,
+.CoveoFieldTable .coveo-clickable:focus,
+.CoveoFieldTable .coveo-clickable:focus a {
   text-decoration: underline;
 }
 
@@ -12844,7 +12914,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-field-table-toggle:hover,
-.coveo-field-table-toggle:hover a {
+.coveo-field-table-toggle:hover a,
+.coveo-field-table-toggle:focus,
+.coveo-field-table-toggle:focus a {
   text-decoration: underline;
 }
 
@@ -12916,7 +12988,6 @@ ul.coveo-facet-breadcrumb-values {
   color: #0059b3;
   text-decoration: none;
   cursor: pointer;
-  outline: 1px solid transparent;
   outline-offset: 3px;
 }
 
@@ -12926,12 +12997,18 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .CoveoFieldValue .coveo-clickable:hover,
-.CoveoFieldValue .coveo-clickable:hover a {
+.CoveoFieldValue .coveo-clickable:hover a,
+.CoveoFieldValue .coveo-clickable:focus,
+.CoveoFieldValue .coveo-clickable:focus a {
   text-decoration: underline;
 }
 
 .CoveoFieldValue .coveo-clickable.coveo-selected * {
   color: #0059b3;
+}
+
+.CoveoFieldValue .coveo-clickable:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .CoveoFieldValue .coveo-clickable.coveo-selected {
@@ -12973,7 +13050,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-card-overlay .coveo-clickable:hover,
-.coveo-card-overlay .coveo-clickable:hover a {
+.coveo-card-overlay .coveo-clickable:hover a,
+.coveo-card-overlay .coveo-clickable:focus,
+.coveo-card-overlay .coveo-clickable:focus a {
   text-decoration: underline;
 }
 
@@ -13012,7 +13091,6 @@ ul.coveo-facet-breadcrumb-values {
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -13024,12 +13102,18 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-hidden-query-breadcrumb-value:hover,
-.coveo-hidden-query-breadcrumb-value:hover a {
+.coveo-hidden-query-breadcrumb-value:hover a,
+.coveo-hidden-query-breadcrumb-value:focus,
+.coveo-hidden-query-breadcrumb-value:focus a {
   text-decoration: underline;
 }
 
 .coveo-hidden-query-breadcrumb-value.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-hidden-query-breadcrumb-value:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-hidden-query-breadcrumb-value.coveo-selected * {
@@ -14060,7 +14144,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-pager-list-item:hover,
-.coveo-pager-list-item:hover a {
+.coveo-pager-list-item:hover a,
+.coveo-pager-list-item:focus,
+.coveo-pager-list-item:focus a {
   text-decoration: underline;
 }
 
@@ -14225,7 +14311,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .CoveoPrintableUri .coveo-printable-uri-ellipsis > button:hover,
-.CoveoPrintableUri .coveo-printable-uri-ellipsis > button:hover a {
+.CoveoPrintableUri .coveo-printable-uri-ellipsis > button:hover a,
+.CoveoPrintableUri .coveo-printable-uri-ellipsis > button:focus,
+.CoveoPrintableUri .coveo-printable-uri-ellipsis > button:focus a {
   text-decoration: underline;
 }
 
@@ -14311,7 +14399,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .coveo-query-summary-cancel-last:hover,
-.coveo-query-summary-cancel-last:hover a {
+.coveo-query-summary-cancel-last:hover a,
+.coveo-query-summary-cancel-last:focus,
+.coveo-query-summary-cancel-last:focus a {
   text-decoration: underline;
 }
 
@@ -14341,7 +14431,9 @@ ul.coveo-facet-breadcrumb-values {
 }
 
 .CoveoQuickview:hover,
-.CoveoQuickview:hover a {
+.CoveoQuickview:hover a,
+.CoveoQuickview:focus,
+.CoveoQuickview:focus a {
   text-decoration: underline;
 }
 
@@ -15008,8 +15100,12 @@ a.coveo-folding-show-less:visited:hover {
 
 a.coveo-folding-show-more:hover,
 a.coveo-folding-show-more:hover a,
+a.coveo-folding-show-more:focus,
+a.coveo-folding-show-more:focus a,
 a.coveo-folding-show-less:hover,
-a.coveo-folding-show-less:hover a {
+a.coveo-folding-show-less:hover a,
+a.coveo-folding-show-less:focus,
+a.coveo-folding-show-less:focus a {
   text-decoration: underline;
 }
 
@@ -15037,8 +15133,12 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-card-layout a.coveo-folding-show-more:hover,
 .coveo-card-layout a.coveo-folding-show-more:hover a,
+.coveo-card-layout a.coveo-folding-show-more:focus,
+.coveo-card-layout a.coveo-folding-show-more:focus a,
 .coveo-card-layout a.coveo-folding-show-less:hover,
-.coveo-card-layout a.coveo-folding-show-less:hover a {
+.coveo-card-layout a.coveo-folding-show-less:hover a,
+.coveo-card-layout a.coveo-folding-show-less:focus,
+.coveo-card-layout a.coveo-folding-show-less:focus a {
   text-decoration: underline;
 }
 
@@ -15319,7 +15419,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .CoveoResultsFiltersPreferences .coveo-online-help:hover,
-.CoveoResultsFiltersPreferences .coveo-online-help:hover a {
+.CoveoResultsFiltersPreferences .coveo-online-help:hover a,
+.CoveoResultsFiltersPreferences .coveo-online-help:focus,
+.CoveoResultsFiltersPreferences .coveo-online-help:focus a {
   text-decoration: underline;
 }
 
@@ -15416,7 +15518,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .CoveoResultsFiltersPreferences .coveo-advanced-filters-builder .coveo-close-and-save .coveo-save:hover,
-.CoveoResultsFiltersPreferences .coveo-advanced-filters-builder .coveo-close-and-save .coveo-save:hover a {
+.CoveoResultsFiltersPreferences .coveo-advanced-filters-builder .coveo-close-and-save .coveo-save:hover a,
+.CoveoResultsFiltersPreferences .coveo-advanced-filters-builder .coveo-close-and-save .coveo-save:focus,
+.CoveoResultsFiltersPreferences .coveo-advanced-filters-builder .coveo-close-and-save .coveo-save:focus a {
   text-decoration: underline;
 }
 
@@ -15491,7 +15595,6 @@ a.coveo-folding-show-less.coveo-selected * {
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -15503,12 +15606,18 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value:hover,
-.coveo-results-filter-preferences-breadcrumb .coveo-value:hover a {
+.coveo-results-filter-preferences-breadcrumb .coveo-value:hover a,
+.coveo-results-filter-preferences-breadcrumb .coveo-value:focus,
+.coveo-results-filter-preferences-breadcrumb .coveo-value:focus a {
   text-decoration: underline;
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-results-filter-preferences-breadcrumb .coveo-value:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-results-filter-preferences-breadcrumb .coveo-value.coveo-selected * {
@@ -15681,7 +15790,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-results-per-page-list-item:hover,
-.coveo-results-per-page-list-item:hover a {
+.coveo-results-per-page-list-item:hover a,
+.coveo-results-per-page-list-item:focus,
+.coveo-results-per-page-list-item:focus a {
   text-decoration: underline;
 }
 
@@ -16091,7 +16202,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-settings-item:hover,
-.coveo-settings-item:hover a {
+.coveo-settings-item:hover a,
+.coveo-settings-item:focus,
+.coveo-settings-item:focus a {
   text-decoration: underline;
 }
 
@@ -16565,7 +16678,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .CoveoTriggers a:hover,
-.CoveoTriggers a:hover a {
+.CoveoTriggers a:hover a,
+.CoveoTriggers a:focus,
+.CoveoTriggers a:focus a {
   text-decoration: underline;
 }
 
@@ -16824,7 +16939,6 @@ a.coveo-folding-show-less.coveo-selected * {
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -16836,12 +16950,18 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-simplefilter-breadcrumb-value:hover,
-.coveo-simplefilter-breadcrumb-value:hover a {
+.coveo-simplefilter-breadcrumb-value:hover a,
+.coveo-simplefilter-breadcrumb-value:focus,
+.coveo-simplefilter-breadcrumb-value:focus a {
   text-decoration: underline;
 }
 
 .coveo-simplefilter-breadcrumb-value.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-simplefilter-breadcrumb-value:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-simplefilter-breadcrumb-value.coveo-selected * {
@@ -17009,7 +17129,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .CoveoResult a:hover,
-.CoveoResult a:hover a {
+.CoveoResult a:hover a,
+.CoveoResult a:focus,
+.CoveoResult a:focus a {
   text-decoration: underline;
 }
 
@@ -17044,7 +17166,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .CoveoResult .CoveoBadge .coveo-value.coveo-clickable:hover,
-.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:hover a {
+.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:hover a,
+.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:focus,
+.CoveoResult .CoveoBadge .coveo-value.coveo-clickable:focus a {
   text-decoration: underline;
 }
 
@@ -17116,7 +17240,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .CoveoResult .coveo-selectable-link:hover,
-.CoveoResult .coveo-selectable-link:hover a {
+.CoveoResult .coveo-selectable-link:hover a,
+.CoveoResult .coveo-selectable-link:focus,
+.CoveoResult .coveo-selectable-link:focus a {
   text-decoration: underline;
 }
 
@@ -17268,7 +17394,9 @@ a.coveo-folding-show-less.coveo-selected * {
 }
 
 .coveo-card-overlay a:hover,
-.coveo-card-overlay a:hover a {
+.coveo-card-overlay a:hover a,
+.coveo-card-overlay a:focus,
+.coveo-card-overlay a:focus a {
   text-decoration: underline;
 }
 
@@ -17384,7 +17512,6 @@ a.coveo-folding-show-less.coveo-selected * {
   background: none;
   border: none;
   color: #296896;
-  outline: 1px solid transparent;
   font-size: 14px;
   margin-right: 15px;
   outline-offset: 1px;
@@ -17399,14 +17526,23 @@ a.coveo-folding-show-less.coveo-selected * {
 
 .coveo-dynamic-facet-breadcrumb-value:hover,
 .coveo-dynamic-facet-breadcrumb-value:hover a,
+.coveo-dynamic-facet-breadcrumb-value:focus,
+.coveo-dynamic-facet-breadcrumb-value:focus a,
 .coveo-dynamic-facet-breadcrumb-collapse:hover,
-.coveo-dynamic-facet-breadcrumb-collapse:hover a {
+.coveo-dynamic-facet-breadcrumb-collapse:hover a,
+.coveo-dynamic-facet-breadcrumb-collapse:focus,
+.coveo-dynamic-facet-breadcrumb-collapse:focus a {
   text-decoration: underline;
 }
 
 .coveo-dynamic-facet-breadcrumb-value.coveo-selected *,
 .coveo-dynamic-facet-breadcrumb-collapse.coveo-selected * {
   color: #0059b3;
+}
+
+.coveo-dynamic-facet-breadcrumb-value:not(:focus),
+.coveo-dynamic-facet-breadcrumb-collapse:not(:focus) {
+  outline: 1px solid transparent;
 }
 
 .coveo-dynamic-facet-breadcrumb-value.coveo-selected *,
@@ -17535,7 +17671,9 @@ li.coveo-dynamic-facet-breadcrumb-value-list-item {
 }
 
 .coveo-dynamic-facet-header-btn:hover,
-.coveo-dynamic-facet-header-btn:hover a {
+.coveo-dynamic-facet-header-btn:hover a,
+.coveo-dynamic-facet-header-btn:focus,
+.coveo-dynamic-facet-header-btn:focus a {
   text-decoration: underline;
 }
 
@@ -17688,7 +17826,9 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .coveo-dynamic-hierarchical-facet-show-more:hover,
-.coveo-dynamic-hierarchical-facet-show-more:hover a {
+.coveo-dynamic-hierarchical-facet-show-more:hover a,
+.coveo-dynamic-hierarchical-facet-show-more:focus,
+.coveo-dynamic-hierarchical-facet-show-more:focus a {
   text-decoration: underline;
 }
 
@@ -17736,7 +17876,9 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .coveo-dynamic-hierarchical-facet-show-less:hover,
-.coveo-dynamic-hierarchical-facet-show-less:hover a {
+.coveo-dynamic-hierarchical-facet-show-less:hover a,
+.coveo-dynamic-hierarchical-facet-show-less:focus,
+.coveo-dynamic-hierarchical-facet-show-less:focus a {
   text-decoration: underline;
 }
 
@@ -18034,7 +18176,9 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .coveo-dynamic-facet-show-more:hover,
-.coveo-dynamic-facet-show-more:hover a {
+.coveo-dynamic-facet-show-more:hover a,
+.coveo-dynamic-facet-show-more:focus,
+.coveo-dynamic-facet-show-more:focus a {
   text-decoration: underline;
 }
 
@@ -18082,7 +18226,9 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .coveo-dynamic-facet-show-less:hover,
-.coveo-dynamic-facet-show-less:hover a {
+.coveo-dynamic-facet-show-less:hover a,
+.coveo-dynamic-facet-show-less:focus,
+.coveo-dynamic-facet-show-less:focus a {
   text-decoration: underline;
 }
 
@@ -18153,7 +18299,9 @@ button.coveo-dynamic-hierarchical-facet-all {
 }
 
 .CoveoMissingTerms .coveo-clickable:hover,
-.CoveoMissingTerms .coveo-clickable:hover a {
+.CoveoMissingTerms .coveo-clickable:hover a,
+.CoveoMissingTerms .coveo-clickable:focus,
+.CoveoMissingTerms .coveo-clickable:focus a {
   text-decoration: underline;
 }
 
