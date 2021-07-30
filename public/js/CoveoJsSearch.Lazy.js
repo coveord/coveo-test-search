@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "1dfb0162466f97b79f89" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "538c2c79e3652667ef21" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -13975,6 +13975,27 @@ var SearchEndpoint = /** @class */ (function () {
         });
     };
     /**
+     * Exchanges a temporary authentication provider token for an access token.
+     *
+     * @param token - the temporary token.
+     * @returns {string} The access token.
+     */
+    SearchEndpoint.prototype.exchangeAuthenticationProviderToken = function (token, callOptions, callParams) {
+        return __awaiter(this, void 0, void 0, function () {
+            var call, data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        call = this.buildCompleteCall({ token: token }, callOptions, callParams);
+                        return [4 /*yield*/, this.performOneCall(call.params, call.options)];
+                    case 1:
+                        data = _a.sent();
+                        return [2 /*return*/, data.token];
+                }
+            });
+        });
+    };
+    /**
      * Indicates whether the search endpoint is using JSONP internally to communicate with the Search API.
      * @returns {boolean} `true` in the search enpoint is using JSONP; `false` otherwise.
      */
@@ -14641,6 +14662,12 @@ var SearchEndpoint = /** @class */ (function () {
         path('/login/'),
         accessTokenInUrl()
     ], SearchEndpoint.prototype, "getAuthenticationProviderUri", null);
+    __decorate([
+        path('/login/handshake/token'),
+        method('POST'),
+        requestDataType('application/json'),
+        responseType('json')
+    ], SearchEndpoint.prototype, "exchangeAuthenticationProviderToken", null);
     __decorate([
         includeActionsHistory(),
         includeReferrer(),
@@ -20448,8 +20475,8 @@ exports.PreferencesPanelEvents = PreferencesPanelEvents;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10088.0',
-    product: '2.10088.0',
+    lib: '2.10088.2',
+    product: '2.10088.2',
     supportedApiVersion: 2
 };
 
@@ -27491,9 +27518,12 @@ var AccessToken = /** @class */ (function () {
             _this.triedRenewals = 0;
         }, 500, false);
     }
+    AccessToken.prototype.updateToken = function (token) {
+        this.token = token;
+        this.notifySubscribers();
+    };
     AccessToken.prototype.doRenew = function (onError) {
         return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
             var _a, err_1;
             return __generator(this, function (_b) {
                 switch (_b.label) {
@@ -27510,7 +27540,7 @@ var AccessToken = /** @class */ (function () {
                     case 2:
                         _a.token = _b.sent();
                         this.logger.info('Access token renewed', this.token);
-                        this.subscribers.forEach(function (subscriber) { return subscriber(_this.token); });
+                        this.notifySubscribers();
                         return [2 /*return*/, true];
                     case 3:
                         err_1 = _b.sent();
@@ -27545,6 +27575,10 @@ var AccessToken = /** @class */ (function () {
         if (this.triedRenewals >= 5) {
             throw new Error(ACCESS_TOKEN_ERRORS.REPEATED_FAILURES);
         }
+    };
+    AccessToken.prototype.notifySubscribers = function () {
+        var _this = this;
+        this.subscribers.forEach(function (subscriber) { return subscriber(_this.token); });
     };
     return AccessToken;
 }());
@@ -35093,6 +35127,13 @@ var SearchEndpointWithDefaultCallOptions = /** @class */ (function () {
         this.callOptions = callOptions;
         this.options = endpoint.options;
     }
+    Object.defineProperty(SearchEndpointWithDefaultCallOptions.prototype, "accessToken", {
+        get: function () {
+            return this.endpoint.accessToken;
+        },
+        enumerable: true,
+        configurable: true
+    });
     SearchEndpointWithDefaultCallOptions.prototype.getBaseUri = function () {
         return this.endpoint.getBaseUri();
     };
@@ -35173,6 +35214,9 @@ var SearchEndpointWithDefaultCallOptions = /** @class */ (function () {
     };
     SearchEndpointWithDefaultCallOptions.prototype.logError = function (sentryLog) {
         return this.endpoint.logError(sentryLog);
+    };
+    SearchEndpointWithDefaultCallOptions.prototype.exchangeAuthenticationProviderToken = function (token) {
+        return this.endpoint.exchangeAuthenticationProviderToken(token);
     };
     SearchEndpointWithDefaultCallOptions.prototype.enrichCallOptions = function (callOptions) {
         return _.extend({}, callOptions, this.callOptions);
