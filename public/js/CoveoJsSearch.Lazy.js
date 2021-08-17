@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "538c2c79e3652667ef21" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "fd0f3fc3c92d039f107f" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -13975,21 +13975,25 @@ var SearchEndpoint = /** @class */ (function () {
         });
     };
     /**
-     * Exchanges a temporary authentication provider token for an access token.
+     * Exchanges a temporary handshake token to either get an initial access token
+     * or extend the privileges of an existing access token.
      *
      * @param token - the temporary token.
      * @returns {string} The access token.
      */
-    SearchEndpoint.prototype.exchangeAuthenticationProviderToken = function (token, callOptions, callParams) {
+    SearchEndpoint.prototype.exchangeHandshakeToken = function (options, callOptions, callParams) {
         return __awaiter(this, void 0, void 0, function () {
             var call, data;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        call = this.buildCompleteCall({ token: token }, callOptions, callParams);
+                        call = this.buildCompleteCall(options, callOptions, callParams);
                         return [4 /*yield*/, this.performOneCall(call.params, call.options)];
                     case 1:
                         data = _a.sent();
+                        if (!data.token) {
+                            throw new Error('Failed to exchange handshake token.');
+                        }
                         return [2 /*return*/, data.token];
                 }
             });
@@ -14667,7 +14671,7 @@ var SearchEndpoint = /** @class */ (function () {
         method('POST'),
         requestDataType('application/json'),
         responseType('json')
-    ], SearchEndpoint.prototype, "exchangeAuthenticationProviderToken", null);
+    ], SearchEndpoint.prototype, "exchangeHandshakeToken", null);
     __decorate([
         includeActionsHistory(),
         includeReferrer(),
@@ -20475,8 +20479,8 @@ exports.PreferencesPanelEvents = PreferencesPanelEvents;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10088.2',
-    product: '2.10088.2',
+    lib: '2.10089.0',
+    product: '2.10089.0',
     supportedApiVersion: 2
 };
 
@@ -32196,7 +32200,14 @@ function setTemplateSettings(_a) {
     templateSettings.interpolate = /(?:<%|{{)=([\s\S]+?)(?:%>|}})/g;
     templateSettings.escape = /(?:<%|{{)-([\s\S]+?)(?:%>|}})/g;
 }
+var previousUnderscore = window['_'];
 window['_'] = _;
+// Run Underscore.js in "noConflict" mode, returning the `_` variable to its previous owner.
+// Returns a reference to the Underscore object. This method was removed from the module in v1.10.0
+window['_'].noConflict = function () {
+    window['_'] = previousUnderscore;
+    return _;
+};
 setTemplateSettings(window['_']);
 
 
@@ -35215,8 +35226,8 @@ var SearchEndpointWithDefaultCallOptions = /** @class */ (function () {
     SearchEndpointWithDefaultCallOptions.prototype.logError = function (sentryLog) {
         return this.endpoint.logError(sentryLog);
     };
-    SearchEndpointWithDefaultCallOptions.prototype.exchangeAuthenticationProviderToken = function (token) {
-        return this.endpoint.exchangeAuthenticationProviderToken(token);
+    SearchEndpointWithDefaultCallOptions.prototype.exchangeHandshakeToken = function (options) {
+        return this.endpoint.exchangeHandshakeToken(options);
     };
     SearchEndpointWithDefaultCallOptions.prototype.enrichCallOptions = function (callOptions) {
         return _.extend({}, callOptions, this.callOptions);
