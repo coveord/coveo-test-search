@@ -10179,12 +10179,14 @@ a.CoveoResultLink.coveo-selected *,
 }
 
 .coveo-facet-empty,
-.coveo-hidden {
+.coveo-hidden,
+.coveo-hidden-dependant-facet {
   display: none;
 }
 
 .coveo-facet-empty.coveo-with-placeholder,
-.coveo-hidden.coveo-with-placeholder {
+.coveo-hidden.coveo-with-placeholder,
+.coveo-hidden-dependant-facet.coveo-with-placeholder {
   display: block;
 }
 
@@ -11510,11 +11512,13 @@ ul.coveo-facet-breadcrumb-values {
 * @param $size size of the icon to use
 */
 
-.CoveoCategoryFacet.coveo-hidden {
+.CoveoCategoryFacet.coveo-hidden,
+.CoveoCategoryFacet.coveo-hidden-dependant-facet {
   display: none;
 }
 
-.CoveoCategoryFacet.coveo-hidden.coveo-with-placeholder {
+.CoveoCategoryFacet.coveo-hidden.coveo-with-placeholder,
+.CoveoCategoryFacet.coveo-hidden-dependant-facet.coveo-with-placeholder {
   display: block;
 }
 
@@ -17464,6 +17468,12 @@ a.coveo-folding-show-less.coveo-selected * {
 .CoveoDynamicFacet.coveo-hidden,
 .CoveoDynamicFacetRange.coveo-hidden,
 .CoveoDynamicHierarchicalFacet.coveo-hidden {
+  display: none;
+}
+
+.CoveoDynamicFacet.coveo-hidden-dependant-facet,
+.CoveoDynamicFacetRange.coveo-hidden-dependant-facet,
+.CoveoDynamicHierarchicalFacet.coveo-hidden-dependant-facet {
   display: none;
 }
 
