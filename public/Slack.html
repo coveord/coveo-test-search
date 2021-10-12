@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+​
 
 <head>
-  <title>Slack</title>
-  <meta about="Search Slack content." />
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, height=device-height">
-  <link rel="stylesheet" href="./css/CoveoFullSearch.css" />
-  <script src="js/CoveoJsSearch.Lazy.js"></script>
-  <script src="js/templates/templates.js"></script>
+  <title>Title</title>
+  <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.10090/css/CoveoFullSearch.css" />
+  <script class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.10090/js/CoveoJsSearch.Lazy.js"></script>
+  <script src="https://static.cloud.coveo.com/searchui/v2.10090/js/templates/templates.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      Coveo.SearchEndpoint.configureSampleEndpoint();
+      Coveo.SearchEndpoint.configureCloudV2Endpoint('coveointernaltesting1', 'xxa17a99f4-aab0-487e-809e-c72b0c33e9f5')
       Coveo.init(document.body);
     })
   </script>
 </head>
+​
 
 <body id="search" class='CoveoSearchInterface' data-enable-history="true">
   <div class="coveo-tab-section">
-    <a class="CoveoTab" data-id="Slack" data-caption="Slack" data-expression='@syssourcetype=="Slack"'></a>
+    <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
   </div>
   <div class='coveo-search-section'>
-    <div class="CoveoSettings"></div>
     <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+    <div class="CoveoSettings"></div>
   </div>
   <div class="coveo-main-section">
     <div class="coveo-facet-column">
-      <div class="CoveoFacet" data-title="Document Type" data-field="@slackdocumenttype" data-tab="Slack"></div>
-      <div class="CoveoFacet" data-title="Channels" data-field="@slackchannelsname" data-tab="Slack"></div>
-      <div class="CoveoFacet" data-title="Participating Users" data-field="@slackparticipatingusers" data-tab="Slack" data-is-multi-value-field="true"></div>
-      <div class="CoveoFacet" data-title="Shared Channels" data-field="@slackfilesharedchannelsnames" data-tab="Slack" data-is-multi-value-field="true"></div>
-      <div class="CoveoFacet" data-title="File Type" data-field="@sysfiletype" data-tab="Slack"></div>
-      <div class="CoveoFacetSlider" data-title="Date Posted" data-field="@sysdate" data-tab="Slack" data-date-field="true" data-range-slider="true"
-        data-start="08/01/2013"></div>
-      <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="Slack"></div>
-      <div class="CoveoTimespanFacet" data-tab="Slack"></div>
+      <div class="CoveoDynamicFacetManager">
+        <div class="CoveoDynamicFacet" data-title="Type" data-field="@objecttype" data-tab="All"></div>
+        <div class="CoveoDynamicFacet" data-title="FileType" data-field="@filetype" data-tab="All"></div>
+        <div class="CoveoDynamicFacet" data-title="Author" data-field="@author" data-tab="All"></div>
+        <div class="CoveoDynamicFacet" data-title="FileType" data-field="@filetype" data-tab="All"></div>
+        <div class="CoveoDynamicFacet" data-title="Source" data-field="@source" data-tab="All"></div>
+      </div>
     </div>
     <div class="coveo-results-column">
       <div class="CoveoShareQuery"></div>
+      <div class="CoveoExportToExcel"></div>
       <div class="CoveoPreferencesPanel">
         <div class="CoveoResultsPreferences"></div>
         <div class="CoveoResultsFiltersPreferences"></div>
@@ -51,18 +50,44 @@
           <span class="CoveoQuerySummary"></span>
           <span class="CoveoQueryDuration"></span>
         </div>
-        <div class="coveo-sort-section">
+
+
+
+
+
+        <div class="coveo-result-layout-section">
+          <span class="CoveoResultLayoutSelector"></span>
+        </div>
+        <div class="coveo-sort-section" role="radiogroup">
           <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
           <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
         </div>
       </div>
       <div class="CoveoHiddenQuery"></div>
+      ​
       <div class="CoveoErrorReport"></div>
-      <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true"></div>
-      <div class="CoveoResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true"></div>
-      <div class="CoveoPager"></div>
+      <div class="CoveoResultList" data-layout="list" data-wait-animation="fade"
+        data-auto-select-fields-to-include="true">
+
+
+
+
+        
+      </div>
+      <div class="CoveoResultList" data-layout="card" data-wait-animation="fade"
+        data-auto-select-fields-to-include="true"></div>
+      <div class="coveo-results-footer">
+        <div class="coveo-results-footer-left">
+          <div class="CoveoPager"></div>
+        </div>
+        <div class="coveo-results-footer-right">
+          <div class="CoveoResultsPerPage"></div>
+          <div class="CoveoLogo"></div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
+​
 
 </html>
