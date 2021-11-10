@@ -823,6 +823,7 @@ var dict = {
   "WithinLastYear": "Within last year",
   "RelevanceInspector": "Relevance Inspector",
   "KeywordInCategory": "{0} <span class=\"coveo-omnibox-suggestion-category\">in {1}</span>",
+  "Result": "Result",
   "ResultCount": "{0} result<pl>s</pl>",
   "ShowingResults": "{0} result<pl>s</pl>",
   "ShowingResultsWithQuery": "{0} result<pl>s</pl> for {1}",
@@ -886,6 +887,7 @@ var dict = {
   "Breadcrumb": "Active filters",
   "OrganizationIsPaused": "Your Coveo organization is paused due to inactivity and search is currently unavailable.",
   "OrganizationWillResume": "Your organization is resuming and will be available shortly.",
+  "UpdatingResults": "Updating results",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1687,6 +1689,7 @@ var dict = {
   "WithinLastYear": "Within last year",
   "RelevanceInspector": "Relevance Inspector",
   "KeywordInCategory": "{0} <span class=\"coveo-omnibox-suggestion-category\">in {1}</span>",
+  "Result": "Result",
   "ResultCount": "{0} result<pl>s</pl>",
   "ShowingResults": "{0} result<pl>s</pl>",
   "ShowingResultsWithQuery": "{0} result<pl>s</pl> for {1}",
@@ -1750,6 +1753,7 @@ var dict = {
   "Breadcrumb": "Active filters",
   "OrganizationIsPaused": "Your Coveo organization is paused due to inactivity and search is currently unavailable.",
   "OrganizationWillResume": "Your organization is resuming and will be available shortly.",
+  "UpdatingResults": "Updating results",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
