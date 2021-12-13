@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "eaedf59c12ebc7a702e7" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"DynamicHierarchicalFacet","4":"HierarchicalFacet","5":"TimespanFacet","6":"FacetRange","7":"DynamicFacetRange","8":"Searchbox","9":"Omnibox","10":"Querybox","11":"FacetSlider","12":"QuerySuggestPreview","13":"AdvancedSearch","14":"ResultsPerPage","15":"Pager","16":"OmniboxResultList","17":"ResultList","18":"SmartSnippet","19":"Quickview","20":"Recommendation","21":"SmartSnippetSuggestions","22":"Backdrop","23":"SortDropdown","24":"ResultsPreferences","25":"ResultsFiltersPreferences","26":"YouTubeThumbnail","27":"Tab","28":"FieldTable","29":"ImageFieldValue","30":"DistanceResources","31":"Badge","32":"SearchAlerts","33":"SimpleFilter","34":"Thumbnail","35":"PrintableUri","36":"Matrix","37":"FoldingForThread","38":"FieldValue","39":"Sort","40":"ResultLayoutSelector","41":"ResultFolding","42":"ResultAttachments","43":"QuerySummary","44":"FieldSuggestions","45":"FacetValueSuggestions","46":"CardOverlay","47":"Folding","48":"ChatterPostedBy","49":"ChatterPostAttachment","50":"ChatterLikedBy","51":"AnalyticsSuggestions","52":"FollowItem","53":"RadioButton","54":"MultiSelect","55":"FormGroup","56":"Triggers","57":"Text","58":"StarRating","59":"ShareQuery","60":"Settings","61":"ResultTagging","62":"ResultRating","63":"ResultLink","64":"ResultActionsMenu","65":"QueryDuration","66":"PromotedResultsBadge","67":"PreferencesPanel","68":"MissingTerms","69":"HiddenQuery","70":"ExportToExcel","71":"Excerpt","72":"ErrorReport","73":"DidYouMean","74":"CardActionBar","75":"Breadcrumb","76":"AuthenticationProvider","77":"TemplateLoader","78":"SearchButton","79":"PipelineContext","80":"Logo","81":"Icon","82":"NumericSpinner","83":"Dropdown","84":"FacetsMobileMode","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "55fa668a342c9d64a11e" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -12809,7 +12809,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var HistoryStore_1 = __webpack_require__(86);
-var _ = __webpack_require__(0);
+var underscore_1 = __webpack_require__(0);
 var QueryEvents_1 = __webpack_require__(11);
 var ExternalModulesShim_1 = __webpack_require__(26);
 var Assert_1 = __webpack_require__(5);
@@ -12935,7 +12935,7 @@ var QueryController = /** @class */ (function (_super) {
      */
     QueryController.prototype.executeQuery = function (options) {
         var _this = this;
-        options = _.extend(new DefaultQueryOptions(), options);
+        options = underscore_1.extend(new DefaultQueryOptions(), options);
         this.closeModalBoxIfNeeded(options ? options.closeModalBox : undefined);
         this.logger.debug('Executing new query');
         this.cancelAnyCurrentPendingQuery();
@@ -13097,7 +13097,7 @@ var QueryController = /** @class */ (function (_super) {
                 _this.lastQueryResults = results;
             }
             else {
-                _.forEach(results.results, function (result) {
+                underscore_1.forEach(results.results, function (result) {
                     _this.lastQueryResults.results.push(result);
                 });
             }
@@ -13184,7 +13184,7 @@ var QueryController = /** @class */ (function (_super) {
     // the entire query to the Search API. For other components, QueryStateModel or
     // listening to events like 'doneBuildingQuery' is the way to go.
     QueryController.prototype.getLastQueryHash = function () {
-        if (this.lastQueryHash != null) {
+        if (this.lastQueryHash) {
             return this.lastQueryHash;
         }
         this.loadLastQueryHash();
@@ -13228,7 +13228,7 @@ var QueryController = /** @class */ (function (_super) {
         }
     };
     QueryController.prototype.continueLastQueryBuilder = function (queryBuilder, count) {
-        _.extend(queryBuilder, this.lastQueryBuilder);
+        underscore_1.extend(queryBuilder, this.lastQueryBuilder);
         queryBuilder.firstResult = queryBuilder.firstResult + queryBuilder.numberOfResults;
         queryBuilder.numberOfResults = count;
     };
@@ -13260,15 +13260,32 @@ var QueryController = /** @class */ (function (_super) {
         if (options.keepLastSearchUid === true) {
             return true;
         }
-        var enableHistory = this.searchInterface && this.searchInterface.options && this.searchInterface.options.enableHistory;
-        return enableHistory && this.getLastQueryHash() == this.queryHash(query, queryResults);
+        var enableHistory = !!(this.searchInterface && this.searchInterface.options && this.searchInterface.options.enableHistory);
+        return enableHistory && this.compareWithLastQueryHash(this.queryHash(query, queryResults));
+    };
+    QueryController.prototype.compareWithLastQueryHash = function (queryHash) {
+        var lastParams = JSON.parse(this.getLastQueryHash());
+        var newParams = JSON.parse(queryHash);
+        return Utils_1.Utils.objectEqual(lastParams, newParams);
     };
     QueryController.prototype.queryHash = function (query, queryResults) {
-        var queryHash = JSON.stringify(_.omit(query, 'firstResult', 'groupBy', 'debug'));
-        if (queryResults != null) {
-            queryHash += queryResults.pipeline;
+        var queryKeys = [
+            'q',
+            'aq',
+            'cq',
+            'dq',
+            'searchHub',
+            'tab',
+            'pipeline',
+            'sortCriteria',
+            'recommendation',
+            'commerce'
+        ];
+        var queryParams = underscore_1.pick.apply(void 0, [query].concat(queryKeys));
+        if (queryResults) {
+            queryParams.pipeline = queryResults.pipeline;
         }
-        return queryHash;
+        return JSON.stringify(queryParams);
     };
     QueryController.prototype.getCallOptions = function () {
         var args = {
@@ -13316,7 +13333,7 @@ var QueryController = /** @class */ (function (_super) {
         };
         if (this.lastQueryResults != null) {
             info.queryDuration = function () { return _this.buildQueryDurationSection(_this.lastQueryResults); };
-            info.results = function () { return _.omit(_this.lastQueryResults, 'results'); };
+            info.results = function () { return underscore_1.omit(_this.lastQueryResults, 'results'); };
         }
         if (this.currentError != null) {
             info.error = function () { return _this.currentError; };
@@ -13328,7 +13345,7 @@ var QueryController = /** @class */ (function (_super) {
         var graph = Dom_1.Dom.createElement('div', { className: 'coveo-debug-durations' });
         var debugRef = BaseComponent_1.BaseComponent.getComponentRef('Debug');
         dom.appendChild(graph);
-        _.forEach(debugRef.durationKeys, function (key) {
+        underscore_1.forEach(debugRef.durationKeys, function (key) {
             var duration = queryResults[key];
             if (duration != null) {
                 graph.appendChild(Dom_1.Dom.createElement('div', {
@@ -20688,8 +20705,8 @@ exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents_1.Stan
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10092.1',
-    product: '2.10092.1',
+    lib: '2.10092.2',
+    product: '2.10092.2',
     supportedApiVersion: 2
 };
 
