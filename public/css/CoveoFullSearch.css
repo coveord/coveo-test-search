@@ -18990,10 +18990,6 @@ button.coveo-user-feedback-banner-explain-why-active {
   padding: 16px 16px 24px 16px;
 }
 
-.coveo-smart-snippet-suggestions-question-snippet-hidden * {
-  display: none;
-}
-
 a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-url,
 a.CoveoResultLink.coveo-smart-snippet-suggestions-question-source-title {
   padding: 0 16px;
