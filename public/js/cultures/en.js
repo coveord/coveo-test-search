@@ -888,6 +888,8 @@ var dict = {
   "OrganizationIsPaused": "Your Coveo organization is paused due to inactivity and search is currently unavailable.",
   "OrganizationWillResume": "Your organization is resuming and will be available shortly.",
   "UpdatingResults": "Updating results",
+  "QuerySuggestionsAvailable": "{0} search suggestion<pl>s are</pl> available.",
+  "QuerySuggestionsUnavailable": "There are no search suggestions.",
 }
   var locales = String["locales"] || (String["locales"] = {});
   locales["en"] = merge(locales["en"], dict);
@@ -1754,6 +1756,8 @@ var dict = {
   "OrganizationIsPaused": "Your Coveo organization is paused due to inactivity and search is currently unavailable.",
   "OrganizationWillResume": "Your organization is resuming and will be available shortly.",
   "UpdatingResults": "Updating results",
+  "QuerySuggestionsAvailable": "{0} search suggestion<pl>s are</pl> available.",
+  "QuerySuggestionsUnavailable": "There are no search suggestions.",
 }
 
   var locales = String["locales"] || (String["locales"] = {});
