@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, height=device-height" >
+  <title>JSUIpage1</title>
+  <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css"/>
+  <script src="../js/CoveoJsSearch.js"></script>
+  <script src="../js/templates/templatesNew.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function(){
+          Coveo.SearchEndpoint.configureSampleEndpointV2();
+          Coveo.init(document.body);
+      });
+   </script>
+</head>
+<body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new">
+<div class="CoveoAnalytics"></div>
+
+<div class="coveo-tab-section">
+  <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
+
+</div>
+<div class='coveo-search-section'>
+  <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+  <div class="CoveoOmniboxResultList" data-header-title="Recommended"></div>
+
+  </div>
+</div>
+<div class="coveo-main-section">
+  <div class="coveo-facet-column">
+    <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All" data-include-in-omnibox="true"></div>
+    <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
+    <div class="CoveoFacet" data-title="Category" data-field="@licategoryshorttitle" data-tab="Lithium"></div>
+    <div class="CoveoFacet" data-title="Board" data-field="@liboardshorttitle" data-tab="Lithium"></div>
+    <div class="CoveoFacet" data-title="Author" data-field="@limessageauthor" data-tab="Lithium"></div>
+    <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All,Lithium"></div>
+    <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="All,Lithium"></div>
+  </div>
+  <div class="coveo-results-column">
+    <div class="CoveoTriggers"></div>
+    <div class="CoveoShareQuery"></div>
+    <div class="CoveoExportToExcel"></div>
+    <div class="CoveoPreferencesPanel">
+      <div class="CoveoResultsPreferences" data-enable-open-in-new-window="true"></div>
+      <div class="CoveoResultsFiltersPreferences"></div>
+    </div>
+    <div class="CoveoSearchAlerts"></div>
+    <div class="CoveoBreadcrumb"></div>
+    <div class="coveo-results-header">
+      <div class="coveo-summary-section">
+        <span class="CoveoQuerySummary"></span>
+        <span class="CoveoQueryDuration"></span>
+      </div>
+      <div class="coveo-result-layout-section">
+        <span class="CoveoResultLayout"></span>
+      </div>
+      <div class="coveo-sort-section">
+        <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+        <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+      </div>
+    </div>
+    <div class="CoveoHiddenQuery"></div>
+    <div class="CoveoDidYouMean"></div>
+    <div class="CoveoErrorReport"></div>
+    <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="false"></div>
+    <div class="CoveoResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="false"></div>
+    <div class="CoveoResultList" data-layout="table" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="false">
+      <script id="my-table-header" class="result-template" type="text/html" data-role="table-header">
+        <th style="width: 40%">Title</th>
+        <th>Description</th>
+        <th>URL</th>
+        <th>Source</th>
+        <th>Author</th>
+        <th style="width: 20%" class="CoveoSort coveo-table-header-sort" data-sort-criteria="date ascending,date descending" data-display-unselected-icon="false">Date</th>
+      </script>
+      <script id="my-table-template" class="result-template" type="text/html">
+        <td><a class="CoveoResultLink" style="display:block;word-wrap: break-word;overflow:hidden;text-overflow:ellipsis"></a></td>
+        <td><span class="CoveoExcerpt" style="color: red;"></span></td>
+        <td><span class="CoveoFieldValue" data-field="@uri"></span></td>
+        <td><span class="CoveoFieldValue" data-field="@source"></span></td>
+        <td><span class="CoveoFieldValue" data-field="@author"></span></td>
+        <td><span class="CoveoFieldValue" data-field="@date" data-helper="date"></span></td>
+      </script>
+    </div>
+    <div class="CoveoPager"></div>
+    <div class="CoveoLogo"></div>
+    <div class="CoveoResultsPerPage"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css"/>
+    <script src="../js/CoveoJsSearch.Lazy.js"></script>
+    <script src="../js/CoveoJsSearch.Dependencies.js"></script>
+    <script src="../js/templates/templatesNew.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
+            Coveo.init(document.querySelector('#search'));
+        });
+    </script>
+
+</head>
+<body id="search" class='CoveoSearchInterface' data-enable-history="true" data-results-per-page="">
+<div class="CoveoFolding"></div>
+<div class="CoveoAnalytics"></div>
+<div class="coveo-tab-section">
+    <a class="CoveoTab" data-id="All" data-caption="All Content" data-responsive-breakpoint="1000"></a>
+    <a class="CoveoTab" data-id="YouTube" data-caption="YouTube" data-expression="@filetype==&quot;youtubevideo&quot;"></a>
+</div>
+<div class='coveo-search-section'>
+    <div class="CoveoSettings"></div>
+    <div class="CoveoSearchbox" data-enable-omnibox="true" data-trigger-query-on-clear="true" data-height="40"></div>
+    <div class="CoveoQuerySuggestPreview" data-number-of-preview-results="6" data-execute-query-delay="50" data-result-template-id="QSP">
+    </div>
+    <script class="result-template" type="text/html" id="QSP">
+        <div class="coveo-result-frame">
+            <div class="CoveoImageFieldValue" data-field="@countryflag" data-width="140"></div>
+            <a class="CoveoResultLink"></a>
+        </div>
+    </script>
+</div>
+<div class="coveo-main-section">
+    <div class="coveo-facet-column">
+        <div class="CoveoDynamicFacetManager" data-maximum-number-of-expanded-facets="2">
+            <div class="CoveoDynamicFacet" data-title="Source" data-field="@source" data-tab="All"></div>
+            <div class="CoveoDynamicFacet" data-title="Object Type" data-field="@objecttype" data-id="facetobject" data-tab="All"></div>
+            <div class="CoveoDynamicFacet" data-title="Author" data-field="@author" data-tab="YouTube"></div>
+            <div class="CoveoDynamicFacet" data-title="Month" data-field="@month" data-tab="YouTube"></div>
+            <div class="CoveoDynamicFacet" data-title="Year" data-field="@year" data-enable-facet-search="false" data-tab="YouTube"></div>
+            <div class="CoveoDynamicFacet" data-title="Language" data-field="@language" data-tab="All"></div>
+        </div>
+    </div>
+    <div class="coveo-results-column">
+        <div class="CoveoShareQuery"></div>
+        <div class="CoveoExportToExcel"></div>
+        <div class="CoveoPreferencesPanel">
+            <div class="CoveoResultsPreferences"></div>
+            <div class="CoveoResultsFiltersPreferences"></div>
+        </div>
+        <div class="CoveoBreadcrumb"></div>
+        <div class="CoveoDidYouMean"></div>
+        <div class="coveo-results-header">
+            <div class="coveo-summary-section">
+                <span class="CoveoQuerySummary"></span>
+                <span class="CoveoQueryDuration"></span>
+            </div>
+            <div class="coveo-result-layout-section">
+                <span class="CoveoResultLayoutSelector"></span>
+            </div>
+            <div class="CoveoSortDropdown">
+                <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance" data-tab="All"></span>
+                <span class="CoveoSort" data-sort-criteria="date descending" data-caption="Date descending"></span>
+                <span class="CoveoSort" data-sort-criteria="date ascending" data-caption="Date ascending"></span>
+                <span class="CoveoSort" data-sort-criteria="@size ascending" data-caption="Size ascending"></span>
+                <span class="CoveoSort" data-sort-criteria="@size descending" data-caption="Size descending"></span>
+            </div>
+        </div>
+        <div class="CoveoHiddenQuery"></div>
+        <div class="CoveoErrorReport"></div>
+        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">        </div>
+        <div class="CoveoResultList" data-layout="card"
+             data-wait-animation="fade"
+             data-auto-select-fields-to-include="true"></div>
+        <div class="CoveoPager"></div>
+        <div class="CoveoLogo"></div>
+        <div class="CoveoResultsPerPage"></div>
+    </div>
+</div>
+</body>
+
+</html>

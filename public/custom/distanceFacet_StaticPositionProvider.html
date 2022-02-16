@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DistanceFacet StaticPositionProvider</title>
+    <meta about="Search all content at once." />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, height=device-height" >
+    <link rel="stylesheet" href="../css/CoveoFullSearch.css"/>
+    <script src="../js/CoveoJsSearch.js"></script>
+    <script src="../js/templates/templates.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
+            Coveo.init(document.querySelector("#search"));
+        })
+
+    </script>
+
+  </head>
+
+  <body id="search" class='CoveoSearchInterface' data-enable-history="true">
+      <div class="CoveoAnalytics">
+      </div>
+      <!-- StaticPositionProvider -->
+      <div class="CoveoDistanceResources" data-distance-field="@distance"
+           data-distance-field="@distance" data-longitude-field='@longitude1'
+           data-latitude-field='@latitude1' data-unit-display-name='km'
+           data-use-navigator="true" data-unit-conversion-factor='1000'></div>
+
+
+    <div class="coveo-tab-section">
+      <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
+    </div>
+
+    <div class='coveo-search-section'>
+      <div class="CoveoSettings"></div>
+      <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+    </div>
+    <div class="coveo-main-section">
+      <div class="coveo-facet-column">
+        <div class="CoveoFacetRange" data-field='@distance' data-id='Distance Range Facet' data-injection-depth='1000' data-title='Distance Range Facet' data-ranges='[{"start":"1","end":"1000","endInclusive":true,"label":"1 - 1000"},{"start":"1001","end":"10000","endInclusive":true,"label":"1001 - 10000"},{"start":"10001","end":"50000","endInclusive":true,"label":"10001 - 50000"}]' data-available-sorts="AlphaAscending" data-date-field='false' data-maximum-number-of-values='2'></div>
+        <div class="CoveoFacetSlider" data-field='@distance' data-id='Distance Facet Slider' data-injection-depth='1000' data-sort-criteria='occurrences' data-title='Distance Range Facet' data-start="0" data-end="50000" data-date-field='false' data-graph-steps="10" data-graph-animation-duration="500" data-range-slider="true"></div>
+        <div class="CoveoFacet" data-title="Sources" data-field="@source" data-tab="All"></div>
+        <div class="CoveoFacetSlider" data-title="JSUI1623" data-field="@date" data-date-field="true" data-range-slider="true" data-graph-steps="32" data-graph-animation-duration="500" data-start="01/01/2012" data-end="01/01/2017"></div>
+      </div>
+      <div class="coveo-results-column">
+        <div class="CoveoShareQuery"></div>
+        <div class="CoveoExportToExcel"></div>
+        <div class="CoveoPreferencesPanel">
+          <div class="CoveoResultsPreferences"></div>
+          <div class="CoveoResultsFiltersPreferences"></div>
+        </div>
+        <div class="CoveoBreadcrumb"></div>
+        <div class="coveo-results-header">
+          <div class="coveo-summary-section">
+            <span class="CoveoQuerySummary"></span>
+            <span class="CoveoQueryDuration"></span>
+          </div>
+          <div class="coveo-result-layout-section">
+            <span class="CoveoResultLayout"></span>
+          </div>
+          <div class="coveo-sort-section">
+            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+            <span class="CoveoSort" data-caption='Distance' data-sort-criteria='@distance ascending'></span>
+          </div>
+        </div>
+        <div class="CoveoHiddenQuery"></div>
+        <div class="CoveoDidYouMean"></div>
+        <div class="CoveoErrorReport"></div>
+        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="false"></div>
+
+      </div>
+    </div>
+  </body>
+
+</html>
