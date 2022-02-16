@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height">
+    <title>Automated Search Page 4</title>
+    <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css"/>
+    <script src="../js/CoveoJsSearch.js"></script>
+    <script src="../js/CoveoJsSearch.Dependencies.js"></script>
+    <script src="../js/templates/templatesNew.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
+            Coveo.init(document.querySelector('#search'));
+        });
+
+    </script>
+</head>
+<body >
+<div id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new">
+    <div class="CoveoAnalytics"></div>
+    <div class="coveo-tab-section">
+        <a class="CoveoTab" data-id="All" data-caption="All Content" data-responsive-breakpoint="700"></a>
+
+    </div>
+    <div class='coveo-search-section'>
+        <div class="CoveoSettings"></div>
+        <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-reveal-query-suggest-addon="true" data-enable-search-as-you-type="true"></div>
+    </div>
+    <div id="coveo-main-section" class="coveo-main-section">
+        <div id="coveo-facet-column" class="coveo-facet-column">
+            <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="All" data-include-in-omnibox="true"></div>
+            <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All" data-include-in-omnibox="true"></div>
+            <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
+        </div>
+        <div class="coveo-results-column">
+            <div class="CoveoTriggers"></div>
+            <div class="CoveoShareQuery"></div>
+            <div class="CoveoExportToExcel"></div>
+            <div class="CoveoPreferencesPanel">
+                <div class="CoveoResultsPreferences" data-enable-open-in-new-window="true"></div>
+                <div class="CoveoResultsFiltersPreferences"></div>
+            </div>
+            <div class="CoveoBreadcrumb"></div>
+            <div class="coveo-results-header">
+                <div class="coveo-summary-section">
+                    <span class="CoveoQuerySummary"></span>
+                    <span class="CoveoQueryDuration"></span>
+                </div>
+                <div class="coveo-result-layout-section">
+                    <span class="CoveoResultLayout"></span>
+                </div>
+                <div class="coveo-sort-section">
+                    <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+                    <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+                </div>
+            </div>
+            <div class="CoveoHiddenQuery"></div>
+            <div class="CoveoDidYouMean"></div>
+            <div class="CoveoErrorReport"></div>
+            <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true"></div>
+            <div class="CoveoPager"></div>
+            <div class="CoveoLogo"></div>
+            <div class="CoveoResultsPerPage"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
