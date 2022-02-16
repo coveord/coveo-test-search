@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jsui2421</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height">
+    <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css" />
+    <script src="../js/CoveoJsSearch.js"></script>
+    <script src="../js/CoveoJsSearch.Dependencies.js"></script>
+    <script src="../js/templates/templatesNew.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
+            Coveo.init(document.querySelector("#search"));
+        })
+
+    </script>
+
+</head>
+
+<body>
+<div id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new" data-enable-collaborative-rating="true" data-maximum-age="0" data-pipeline="">
+    <div class="CoveoFoldingForThread" data-field="@sffeeditemid" data-tab="Chatter" data-parent-field="@sfid" data-child-field="@sffeeditemid" data-rearrange="date descending" data-range="0"></div>
+    <div class="CoveoFolding" data-field="@litopicurl" data-expand-expression="@filetype==lithiummessage" data-rearrange="date ascending" data-tab="Lithium"></div>
+    <div class="CoveoFoldingForThread" data-field="@sfcaseid" data-tab="SalesforceCase" data-parent-field="@sfid" data-child-field="@sfcaseid" data-range="0"></div>
+    <div class="CoveoFolding" data-field="@conversationreferenceid" data-tab="Email" data-parent-field="@containsattachment"
+         data-child-field="@isattachment" data-range="0"></div>
+    <div class="CoveoFolding" data-field="@jiissueid" data-expand-expression="@jidocumenttype==Attachment" data-tab="Jira" data-parent-field="@jiid" data-child-field="@jiparentissueid" data-range="10"> </div>
+    <div class="CoveoAnalytics"></div>
+    <div class="coveo-tab-section">
+        <a class="CoveoTab" data-id="All" data-caption="All Content" data-responsive-breakpoint="1000"></a>
+
+    </div>
+    <div class='coveo-search-section'>
+        <div class="CoveoSettings"></div>
+        <span>Coveo Search Box - JSUI 1566</span>
+        <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-reveal-query-suggest-addon="false" data-enable-search-as-you-type="true" data-placeholder='Enter your query here' data-enable-auto-correction='true' data-enable-query-syntax='true'></div>
+    </div>
+    <div id="coveo-main-section" class="coveo-main-section">
+        <div id="coveo-facet-column" class="coveo-facet-column">
+            <div class="CoveoFacet" data-id="my ID" data-title="Here is my Source Facet Long Long" data-enable-settings-facet-state="true" data-field="@source" data-number-of-values="5" data-enable-collapse="true" data-responsive-breakpoint="1000" data-enable-toggling-operator="true" data-include-in-omnibox="false"></div>
+
+        </div>
+        <div id="coveo-results-column" class="coveo-results-column">
+            <div class="CoveoTriggers"></div>
+            <div class="CoveoShareQuery"></div>
+            <div class="CoveoExportToExcel" data-fields-to-include='@source,@language,@author' data-number-of-results='20'></div>
+            <div class="CoveoPreferencesPanel">
+                <div class="CoveoResultsPreferences" data-open-in-outlook='true' data-enable-query-syntax='true'></div>
+                <div class="CoveoResultsFiltersPreferences"></div>
+            </div>
+            <div class="CoveoAdvancedSearch"></div>
+            <div class="CoveoSearchAlerts"></div>
+            <div class="CoveoBreadcrumb"></div>
+            <div class="coveo-results-header">
+                <div class="coveo-summary-section">
+                    <span class="CoveoQuerySummary" data-only-display-search-tips='false' data-enable-search-tips='true'></span>
+                    <span class="CoveoQueryDuration"></span>
+                </div>
+                <div class="coveo-result-layout-section">
+                    <span class="CoveoResultLayout"></span>
+                </div>
+                <div class="coveo-sort-section">
+                    <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+                    <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+                    <span class="CoveoSort" data-sort-criteria="@sfopportunityamountconverted descending,@sfopportunityamountconverted ascending"
+                          data-tab="Salesforce" data-caption="Amount"></span>
+                </div>
+            </div>
+            <div class="CoveoHiddenQuery"></div>
+            <div class="CoveoDidYouMean"></div>
+            <div class="CoveoErrorReport"></div>
+            <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="false"> </div>
+            <div class="CoveoResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-enable-infinite-scroll="false"></div>
+            <div class="CoveoPager" data-number-of-pages="10"></div>
+            <div class="CoveoLogo"></div>
+            <div class="CoveoResultsPerPage" data-choices-displayed="10, 25, 50" data-initial-choice='25'></div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
