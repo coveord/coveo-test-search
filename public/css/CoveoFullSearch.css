@@ -18770,6 +18770,10 @@ button.coveo-user-feedback-banner-explain-why-active {
 * @param $size size of the icon to use
 */
 
+.coveo-user-explanation-modal .coveo-small-close {
+  display: none;
+}
+
 .coveo-user-explanation-modal-explanation-section {
   display: flex;
   flex-wrap: wrap;
