@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"Matrix","38":"FoldingForThread","39":"FieldValue","40":"Sort","41":"ResultLayoutSelector","42":"ResultFolding","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardOverlay","48":"Folding","49":"ChatterPostedBy","50":"ChatterPostAttachment","51":"ChatterLikedBy","52":"AnalyticsSuggestions","53":"FollowItem","54":"RadioButton","55":"MultiSelect","56":"FormGroup","57":"Triggers","58":"Text","59":"StarRating","60":"ShareQuery","61":"Settings","62":"ResultTagging","63":"ResultRating","64":"ResultLink","65":"ResultActionsMenu","66":"QueryDuration","67":"PromotedResultsBadge","68":"PreferencesPanel","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "6eb00344d7ac6aca379d" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"Matrix","38":"FoldingForThread","39":"FieldValue","40":"Sort","41":"ResultLayoutSelector","42":"ResultFolding","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardOverlay","48":"Folding","49":"ChatterPostedBy","50":"ChatterPostAttachment","51":"ChatterLikedBy","52":"AnalyticsSuggestions","53":"FollowItem","54":"RadioButton","55":"MultiSelect","56":"FormGroup","57":"Triggers","58":"Text","59":"StarRating","60":"ShareQuery","61":"Settings","62":"ResultTagging","63":"ResultRating","64":"ResultLink","65":"ResultActionsMenu","66":"QueryDuration","67":"PromotedResultsBadge","68":"PreferencesPanel","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "7e3534f5d73da73c9ec5" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -13399,8 +13399,19 @@ var QueryController = /** @class */ (function (_super) {
     QueryController.prototype.getAnalyticsInformation = function () {
         var analyticsInfo = new AnalyticsInformation_1.AnalyticsInformation();
         analyticsInfo.pendingSearchEvent = this.usageAnalytics.getPendingSearchEvent();
-        analyticsInfo.originContext = this.usageAnalytics.getOriginContext();
-        analyticsInfo.userDisplayName = this.usageAnalytics.getUserDisplayName();
+        // add fallback for custom code that incorrectly implement the interface.
+        if (this.usageAnalytics.getOriginContext) {
+            analyticsInfo.originContext = this.usageAnalytics.getOriginContext();
+        }
+        else {
+            analyticsInfo.originContext = 'Search';
+        }
+        if (this.usageAnalytics.getUserDisplayName) {
+            analyticsInfo.userDisplayName = this.usageAnalytics.getUserDisplayName();
+        }
+        else {
+            analyticsInfo.userDisplayName = undefined;
+        }
         return analyticsInfo;
     };
     QueryController.ID = 'QueryController';
@@ -20744,8 +20755,8 @@ exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents_1.Stan
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10095.3',
-    product: '2.10095.3',
+    lib: '2.10095.4',
+    product: '2.10095.4',
     supportedApiVersion: 2
 };
 

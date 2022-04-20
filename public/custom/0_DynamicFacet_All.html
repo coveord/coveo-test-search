@@ -19,29 +19,10 @@
 <div class="CoveoFolding"></div>
 <div class="CoveoAnalytics"></div>
 <div class="coveo-tab-section">
-    <a class="CoveoTab" data-id="All" data-caption="All Content" data-responsive-breakpoint="1000"></a>
-    <a class="CoveoTab" data-id="Chatter" data-caption="Chatter" data-expression="@objecttype==(FeedItem,FeedComment)"
-       data-layout="list"></a>
-    <a class="CoveoTab" data-id="Dropbox" data-caption="Dropbox" data-expression="@connectortype==DropboxCrawler"
-       data-layout="table"></a>
-    <a class="CoveoTab" data-id="GoogleDrive" data-caption="Google Drive" data-expression="@connectortype==GoogleDriveCrawler"></a>
-    <a class="CoveoTab" data-id="Lithium" data-caption="Lithium" data-expression="@litopicid @filetype==lithiummessage"
-       data-sort="date descending" data-layout="list"></a>
-    <a class="CoveoTab" data-id="Rss" data-caption="RSS" data-expression="@connectortype==RSSCrawler"></a>
-    <a class="CoveoTab" data-id="People" data-caption="People" data-expression="@fullname"></a>
-    <a class="CoveoTab" data-id="Salesforce" data-caption="Salesforce" data-expression="@sfid"></a>
-    <a class="CoveoTab" data-id="SalesforceCase" data-caption="Cases" data-expression="@sfcaseid"></a>
-    <a class="CoveoTab" data-id="SharePoint" data-caption="SharePoint" data-expression="@connectortype==SharePoint OR @connectortype==SharepointCrawler"></a>
-    <a class="CoveoTab" data-id="YouTube" data-caption="YouTube" data-expression="@filetype==&quot;youtubevideo&quot;"
-       data-layout="card"></a>
-    <a class="CoveoTab" data-id="DynamicsCRM" data-caption="Dynamics CRM" data-expression="@connectortype==Dynamics2Crawler"></a>
-    <a class="CoveoTab" data-id="Email" data-caption="Email" data-expression="@mailbox" data-sort="date descending"></a>
-    <a class="CoveoTab" data-id="Jira" data-caption="Jira" data-expression="@jisourcetype AND NOT @jidocumenttype=&quot;WorkLog&quot;"></a>
-    <a class="CoveoTab" data-id="Slack" data-caption="Slack" data-expression="@syssourcetype==&quot;Slack&quot;"></a>
-    <a class="CoveoAttachedResultsTab" data-id="AttachedResults" data-caption="Attached results"></a>
-    <a class="CoveoTab" data-id="LVU85" data-caption="Lvu85"></a>
-</div>
-<div class='coveo-search-section'>
+    <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
+    <a class="CoveoTab" data-id="Authors" data-caption="Authors"></a>
+    <a class="CoveoTab" data-id="Type" data-caption="Type"></a>
+  </div>
     <div class="CoveoSettings"></div>
     <div class="CoveoSearchbox" data-enable-omnibox="true" data-trigger-query-on-clear="true" data-height="40"></div>
     <div class="CoveoQuerySuggestPreview" data-number-of-preview-results="6" data-execute-query-delay="50" data-result-template-id="QSP">
@@ -55,21 +36,11 @@
 </div>
 <div class="coveo-main-section">
     <div class="coveo-facet-column">
-        <div class="CoveoDynamicHierarchicalFacet" data-title="Country Dynamic Hierarchical" data-field="@geographicalhierarchy" data-depends-on="" data-value-caption='{"Africa":"Edited Africa"}' data-number-of-values="" data-collapsed-by-default="false" data-enable-more-less='true' data-include-in-breadcrumb="true" data-injection-depth="" data-base-path="" data-delimiting-character=';'></div>
-        <div class="CoveoDynamicFacetManager" data-maximum-number-of-expanded-facets="5">
-               <div class="CoveoDynamicFacet" data-title="Source" data-field="@source"></div>
-            <div class="CoveoDynamicFacet" data-title="Continent" data-field="@continent"></div>
-            <div class="CoveoDynamicFacet" data-title="Object Type" data-field="@objecttype" data-id="facetobject"></div>
-            <div class="CoveoDynamicFacet" data-title="File Type depends on ObjectType" data-field="@filetype" data-depends-on="facetobject"></div>
-            <div class="CoveoDynamicFacet" data-title="Author" data-field="@author"></div>
-            <div class="CoveoDynamicFacet" data-title="Company" data-field="@company"></div>
-            <div class="CoveoDynamicFacet" data-title="Month" data-field="@month"></div>
-            <div class="CoveoDynamicFacet" data-title="Year" data-field="@year" data-enable-facet-search="false"></div>
-            <div class="CoveoDynamicFacet" data-title="Language" data-field="@language"></div>
-            <div class="CoveoDynamicFacetRange" data-title="Another date" data-value-format="date" data-field="@date" data-tab="All" data-ranges='[{"start": "2013/01/02", "end": "2014/01/01"}, {"start": "2014/01/02", "end": "2015/01/01"}, {"start": "2015/01/02", "end": "2016/01/01"}, {"start": "2016/01/02", "end": "2017/01/01"}, {"start": "2017/01/02", "end": "2015/01/01"}, {"start": "2018/01/02", "end": "2019/01/01"},{"start": "2019/01/02", "end": "2020/01/01"}]'></div>
-            <div class='CoveoDynamicFacetRange' data-id="Youtubeview" data-title="Youtube view" data-field='@ytviewcount' data-ranges='[{"start": 0, "end": 100, "label": "0 - 10", "endInclusive": false}, {"start": 10, "end": 100, "label": "10 - 100", "endInclusive": false}, {"start": 100, "end": 200, "label": "100 - 200", "endInclusive": false}]' data-tab="All,YouTube"></div>
-        </div>
-    </div>
+        <div class="CoveoDynamicFacet" data-title="Type" data-field="@objecttype" data-tab="All"></div>
+        <div class="CoveoDynamicFacet" data-title="FileType" data-field="@filetype" data-tab="Type"></div>
+        <div class="CoveoDynamicFacet" data-title="Author" data-field="@author" data-tab="Authors"></div>
+        <div class="CoveoDynamicFacet" data-title="Source Type" data-field="@source" data-tab="Authors" data-depends-on="@author"></div>
+      </div>
     <div class="coveo-results-column">
         <div class="CoveoShareQuery"></div>
         <div class="CoveoExportToExcel"></div>
