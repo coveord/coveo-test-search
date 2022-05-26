@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"Matrix","38":"FoldingForThread","39":"FieldValue","40":"Sort","41":"ResultLayoutSelector","42":"ResultFolding","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardOverlay","48":"Folding","49":"ChatterPostedBy","50":"ChatterPostAttachment","51":"ChatterLikedBy","52":"AnalyticsSuggestions","53":"FollowItem","54":"RadioButton","55":"MultiSelect","56":"FormGroup","57":"Triggers","58":"Text","59":"StarRating","60":"ShareQuery","61":"Settings","62":"ResultTagging","63":"ResultRating","64":"ResultLink","65":"ResultActionsMenu","66":"QueryDuration","67":"PromotedResultsBadge","68":"PreferencesPanel","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "655f364b193a7b1db43f" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"Matrix","38":"FoldingForThread","39":"FieldValue","40":"Sort","41":"ResultLayoutSelector","42":"ResultFolding","43":"ResultAttachments","44":"QuerySummary","45":"FieldSuggestions","46":"FacetValueSuggestions","47":"CardOverlay","48":"Folding","49":"ChatterPostedBy","50":"ChatterPostAttachment","51":"ChatterLikedBy","52":"AnalyticsSuggestions","53":"FollowItem","54":"RadioButton","55":"MultiSelect","56":"FormGroup","57":"Triggers","58":"Text","59":"StarRating","60":"ShareQuery","61":"Settings","62":"ResultTagging","63":"ResultRating","64":"ResultLink","65":"ResultActionsMenu","66":"QueryDuration","67":"PromotedResultsBadge","68":"PreferencesPanel","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "cedd67c13cdfc1e4d305" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -10145,7 +10145,7 @@ if (!(promise instanceof Function)) {
 var CoveoUnderscore_1 = __webpack_require__(207);
 exports._ = CoveoUnderscore_1.underscoreInstance;
 __export(__webpack_require__(299));
-__export(__webpack_require__(63));
+__export(__webpack_require__(72));
 __export(__webpack_require__(325));
 __export(__webpack_require__(100));
 __export(__webpack_require__(327));
@@ -12383,7 +12383,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
 var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
-var MiscModules_1 = __webpack_require__(63);
+var MiscModules_1 = __webpack_require__(72);
 var HashUtils = /** @class */ (function () {
     function HashUtils() {
     }
@@ -14051,7 +14051,7 @@ var QueryError_1 = __webpack_require__(142);
 var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
 var HistoryStore_1 = __webpack_require__(88);
-var TimeSpanUtils_1 = __webpack_require__(72);
+var TimeSpanUtils_1 = __webpack_require__(71);
 var UrlUtils_1 = __webpack_require__(43);
 var AccessToken_1 = __webpack_require__(146);
 var BackOffRequest_1 = __webpack_require__(313);
@@ -15934,6 +15934,9 @@ var ResponsiveComponentsManager = /** @class */ (function () {
                 }
             }
         });
+        initEventRoot.one(QueryEvents_1.QueryEvents.querySuccess, function () {
+            _this.resizeAllComponentsManager();
+        });
         this.remainingComponentInitializations++;
     };
     ResponsiveComponentsManager.registerComponentIfResponsiveModeEnabled = function (responsiveComponentConstructor, root, ID, component, options) {
@@ -16065,7 +16068,7 @@ var underscore_1 = __webpack_require__(0);
 var Assert_1 = __webpack_require__(5);
 var Utils_1 = __webpack_require__(4);
 var HtmlTemplate_1 = __webpack_require__(106);
-var TemplateCache_1 = __webpack_require__(67);
+var TemplateCache_1 = __webpack_require__(66);
 var TemplateList_1 = __webpack_require__(94);
 var UnderscoreTemplate_1 = __webpack_require__(58);
 var ComponentOptions_1 = __webpack_require__(8);
@@ -16160,34 +16163,9 @@ exports.TemplateComponentOptions = TemplateComponentOptions;
 
 
 /***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Assert_1 = __webpack_require__(5);
-exports.Assert = Assert_1.Assert;
-var Defer_1 = __webpack_require__(31);
-exports.Defer = Defer_1.Defer;
-var L10N_1 = __webpack_require__(150);
-exports.L10N = L10N_1.L10N;
-var Logger_1 = __webpack_require__(9);
-exports.Logger = Logger_1.Logger;
-var Options_1 = __webpack_require__(76);
-exports.Options = Options_1.Options;
-var Strings_1 = __webpack_require__(6);
-exports.l = Strings_1.l;
-var Logger_2 = __webpack_require__(9);
-if (false) {
-    Logger_2.Logger.disable();
-}
-
-
-/***/ }),
+/* 63 */,
 /* 64 */,
-/* 65 */,
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16336,7 +16314,7 @@ exports.Checkbox = Checkbox;
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16500,7 +16478,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16793,10 +16771,10 @@ function createSpanWithText(text) {
 
 
 /***/ }),
+/* 68 */,
 /* 69 */,
 /* 70 */,
-/* 71 */,
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16855,6 +16833,31 @@ var TimeSpan = /** @class */ (function () {
     return TimeSpan;
 }());
 exports.TimeSpan = TimeSpan;
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Assert_1 = __webpack_require__(5);
+exports.Assert = Assert_1.Assert;
+var Defer_1 = __webpack_require__(31);
+exports.Defer = Defer_1.Defer;
+var L10N_1 = __webpack_require__(150);
+exports.L10N = L10N_1.L10N;
+var Logger_1 = __webpack_require__(9);
+exports.Logger = Logger_1.Logger;
+var Options_1 = __webpack_require__(76);
+exports.Options = Options_1.Options;
+var Strings_1 = __webpack_require__(6);
+exports.l = Strings_1.l;
+var Logger_2 = __webpack_require__(9);
+if (false) {
+    Logger_2.Logger.disable();
+}
 
 
 /***/ }),
@@ -17223,7 +17226,7 @@ var EmailUtils_1 = __webpack_require__(175);
 exports.EmailUtils = EmailUtils_1.EmailUtils;
 var HashUtils_1 = __webpack_require__(42);
 exports.HashUtils = HashUtils_1.HashUtils;
-var HighlightUtils_1 = __webpack_require__(68);
+var HighlightUtils_1 = __webpack_require__(67);
 exports.HighlightUtils = HighlightUtils_1.HighlightUtils;
 exports.StringAndHoles = HighlightUtils_1.StringAndHoles;
 var HtmlUtils_1 = __webpack_require__(176);
@@ -17244,7 +17247,7 @@ var StreamHighlightUtils_1 = __webpack_require__(118);
 exports.StreamHighlightUtils = StreamHighlightUtils_1.StreamHighlightUtils;
 var StringUtils_1 = __webpack_require__(22);
 exports.StringUtils = StringUtils_1.StringUtils;
-var TimeSpanUtils_1 = __webpack_require__(72);
+var TimeSpanUtils_1 = __webpack_require__(71);
 exports.TimeSpan = TimeSpanUtils_1.TimeSpan;
 var Utils_1 = __webpack_require__(4);
 exports.Utils = Utils_1.Utils;
@@ -17429,7 +17432,7 @@ exports.DatePicker = DatePicker;
 Object.defineProperty(exports, "__esModule", { value: true });
 var Logger_1 = __webpack_require__(9);
 var Assert_1 = __webpack_require__(5);
-var TimeSpanUtils_1 = __webpack_require__(72);
+var TimeSpanUtils_1 = __webpack_require__(71);
 var DeviceUtils_1 = __webpack_require__(24);
 var Utils_1 = __webpack_require__(4);
 var JQueryutils_1 = __webpack_require__(75);
@@ -26464,8 +26467,8 @@ exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents_1.Stan
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10096.0',
-    product: '2.10096.0',
+    lib: '2.10097.0',
+    product: '2.10097.0',
     supportedApiVersion: 2
 };
 
@@ -27006,7 +27009,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Options_1 = __webpack_require__(76);
-var HighlightUtils_1 = __webpack_require__(68);
+var HighlightUtils_1 = __webpack_require__(67);
 var StringUtils_1 = __webpack_require__(22);
 var Utils_1 = __webpack_require__(4);
 var Dom_1 = __webpack_require__(1);
@@ -27296,7 +27299,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Template_1 = __webpack_require__(27);
 var UnderscoreTemplate_1 = __webpack_require__(58);
-var TemplateCache_1 = __webpack_require__(67);
+var TemplateCache_1 = __webpack_require__(66);
 var Assert_1 = __webpack_require__(5);
 var Dom_1 = __webpack_require__(1);
 var _ = __webpack_require__(0);
@@ -39657,7 +39660,7 @@ var QueryEvents_1 = __webpack_require__(11);
 var ResultListEvents_1 = __webpack_require__(29);
 var ComponentOptionsModel_1 = __webpack_require__(28);
 var Dom_1 = __webpack_require__(1);
-var Checkbox_1 = __webpack_require__(66);
+var Checkbox_1 = __webpack_require__(65);
 var TextInput_1 = __webpack_require__(56);
 var DebugHeader = /** @class */ (function () {
     function DebugHeader(debugInstance, element, onSearch, infoToDebug) {
@@ -47348,7 +47351,7 @@ var TemplateHelpers_1 = __webpack_require__(120);
 exports.TemplateHelpers = TemplateHelpers_1.TemplateHelpers;
 var TemplateList_1 = __webpack_require__(94);
 exports.TemplateList = TemplateList_1.TemplateList;
-var TemplateCache_1 = __webpack_require__(67);
+var TemplateCache_1 = __webpack_require__(66);
 exports.TemplateCache = TemplateCache_1.TemplateCache;
 var HtmlTemplate_1 = __webpack_require__(106);
 exports.HtmlTemplate = HtmlTemplate_1.HtmlTemplate;
@@ -48915,7 +48918,7 @@ function lazyFacet() {
     Initialization_1.LazyInitialization.registerLazyComponent('Facet', function () {
         return new Promise(function (resolve, reject) {
             __webpack_require__.e/* require.ensure */(1/* duplicate */).then((function () {
-                var loaded = __webpack_require__(69)['Facet'];
+                var loaded = __webpack_require__(68)['Facet'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Facet', resolve));
         });
@@ -49575,7 +49578,7 @@ function lazyResultLink() {
     Initialization_1.LazyInitialization.registerLazyComponent('ResultLink', function () {
         return new Promise(function (resolve, reject) {
             __webpack_require__.e/* require.ensure */(64).then((function () {
-                var loaded = __webpack_require__(70)['ResultLink'];
+                var loaded = __webpack_require__(69)['ResultLink'];
                 GlobalExports_1.lazyExport(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('ResultLink', resolve));
         });
@@ -50039,7 +50042,7 @@ function lazyCheckbox() {
     Initialization_1.LazyInitialization.registerLazyModule('Checkbox', function () {
         return new Promise(function (resolve, reject) {
             new Promise(function(resolve) { resolve(); }).then((function () {
-                var loaded = __webpack_require__(66)['Checkbox'];
+                var loaded = __webpack_require__(65)['Checkbox'];
                 GlobalExports_1.lazyExportModule(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Checkbox', resolve));
         });
@@ -50083,7 +50086,7 @@ function lazyDropdown() {
     Initialization_1.LazyInitialization.registerLazyModule('Dropdown', function () {
         return new Promise(function (resolve, reject) {
             __webpack_require__.e/* require.ensure */(84).then((function () {
-                var loaded = __webpack_require__(64)['Dropdown'];
+                var loaded = __webpack_require__(63)['Dropdown'];
                 GlobalExports_1.lazyExportModule(loaded, resolve);
             }).bind(null, __webpack_require__)).catch(Initialization_1.LazyInitialization.buildErrorCallback('Dropdown', resolve));
         });
