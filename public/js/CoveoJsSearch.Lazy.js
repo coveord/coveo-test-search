@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"PreferencesPanel","38":"Matrix","39":"FoldingForThread","40":"FieldValue","41":"Sort","42":"ResultLayoutSelector","43":"ResultFolding","44":"ResultAttachments","45":"QuerySummary","46":"FieldSuggestions","47":"FacetValueSuggestions","48":"CardOverlay","49":"Folding","50":"ChatterPostedBy","51":"ChatterPostAttachment","52":"ChatterLikedBy","53":"AnalyticsSuggestions","54":"FollowItem","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"StarRating","61":"ShareQuery","62":"Settings","63":"ResultTagging","64":"ResultRating","65":"ResultLink","66":"ResultActionsMenu","67":"QueryDuration","68":"PromotedResultsBadge","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "41cc97b23a31923f52bd" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"PreferencesPanel","38":"Matrix","39":"FoldingForThread","40":"FieldValue","41":"Sort","42":"ResultLayoutSelector","43":"ResultFolding","44":"ResultAttachments","45":"QuerySummary","46":"FieldSuggestions","47":"FacetValueSuggestions","48":"CardOverlay","49":"Folding","50":"ChatterPostedBy","51":"ChatterPostAttachment","52":"ChatterLikedBy","53":"AnalyticsSuggestions","54":"FollowItem","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"StarRating","61":"ShareQuery","62":"Settings","63":"ResultTagging","64":"ResultRating","65":"ResultLink","66":"ResultActionsMenu","67":"QueryDuration","68":"PromotedResultsBadge","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "134b5a19c2c85d5f70b7" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -26467,8 +26467,8 @@ exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents_1.Stan
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10099.1',
-    product: '2.10099.1',
+    lib: '2.10099.2',
+    product: '2.10099.2',
     supportedApiVersion: 2
 };
 
@@ -29958,6 +29958,9 @@ var dict = {
     "No": "No",
     "Other": "Other",
     "Send": "Send",
+    "Edit": "Edit",
+    "Delete": "Delete",
+    "Save": "Save",
     "UsefulnessFeedbackReason": "Reason",
     "AnswerSnippet": "Answer to your question",
     "AnswerSpecificSnippet": "Answer to \"{0}\"",
