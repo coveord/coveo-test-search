@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"PreferencesPanel","38":"Matrix","39":"FoldingForThread","40":"FieldValue","41":"Sort","42":"ResultLayoutSelector","43":"ResultFolding","44":"ResultAttachments","45":"QuerySummary","46":"FieldSuggestions","47":"FacetValueSuggestions","48":"CardOverlay","49":"Folding","50":"ChatterPostedBy","51":"ChatterPostAttachment","52":"ChatterLikedBy","53":"AnalyticsSuggestions","54":"FollowItem","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"StarRating","61":"ShareQuery","62":"Settings","63":"ResultTagging","64":"ResultRating","65":"ResultLink","66":"ResultActionsMenu","67":"QueryDuration","68":"PromotedResultsBadge","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "134b5a19c2c85d5f70b7" + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"RelevanceInspector","1":"CategoryFacet","2":"DynamicFacet","3":"FacetsMobileMode","4":"DynamicHierarchicalFacet","5":"HierarchicalFacet","6":"TimespanFacet","7":"FacetRange","8":"DynamicFacetRange","9":"Searchbox","10":"Omnibox","11":"Querybox","12":"FacetSlider","13":"QuerySuggestPreview","14":"AdvancedSearch","15":"ResultsPerPage","16":"Pager","17":"OmniboxResultList","18":"ResultList","19":"SmartSnippet","20":"Quickview","21":"Recommendation","22":"SmartSnippetSuggestions","23":"Backdrop","24":"SortDropdown","25":"ResultsPreferences","26":"ResultsFiltersPreferences","27":"YouTubeThumbnail","28":"Tab","29":"FieldTable","30":"ImageFieldValue","31":"DistanceResources","32":"Badge","33":"SearchAlerts","34":"SimpleFilter","35":"Thumbnail","36":"PrintableUri","37":"PreferencesPanel","38":"Matrix","39":"FoldingForThread","40":"FieldValue","41":"Sort","42":"ResultLayoutSelector","43":"ResultFolding","44":"ResultAttachments","45":"QuerySummary","46":"FieldSuggestions","47":"FacetValueSuggestions","48":"CardOverlay","49":"Folding","50":"ChatterPostedBy","51":"ChatterPostAttachment","52":"ChatterLikedBy","53":"AnalyticsSuggestions","54":"FollowItem","55":"RadioButton","56":"MultiSelect","57":"FormGroup","58":"Triggers","59":"Text","60":"StarRating","61":"ShareQuery","62":"Settings","63":"ResultTagging","64":"ResultRating","65":"ResultLink","66":"ResultActionsMenu","67":"QueryDuration","68":"PromotedResultsBadge","69":"MissingTerms","70":"HiddenQuery","71":"ExportToExcel","72":"Excerpt","73":"ErrorReport","74":"DidYouMean","75":"CardActionBar","76":"Breadcrumb","77":"AuthenticationProvider","78":"TemplateLoader","79":"SearchButton","80":"PipelineContext","81":"Logo","82":"Icon","83":"NumericSpinner","84":"Dropdown","85":"CommerceQuery","86":"ChatterTopic","87":"Aggregate"}[chunkId]||chunkId) + "__" + "957fc7bb4b8ce43b9534" + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -3999,7 +3999,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(0);
 var QueryController_1 = __webpack_require__(44);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var Assert_1 = __webpack_require__(5);
 var Logger_1 = __webpack_require__(9);
 var ComponentOptionsModel_1 = __webpack_require__(28);
@@ -8294,114 +8294,6 @@ var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var underscore_1 = __webpack_require__(0);
-var SVGDom = /** @class */ (function () {
-    function SVGDom() {
-    }
-    SVGDom.addClassToSVGInContainer = function (svgContainer, classToAdd) {
-        var svgElement = svgContainer.querySelector('svg');
-        svgElement.setAttribute('class', "" + SVGDom.getClass(svgElement) + classToAdd);
-    };
-    SVGDom.removeClassFromSVGInContainer = function (svgContainer, classToRemove) {
-        var svgElement = svgContainer.querySelector('svg');
-        svgElement.setAttribute('class', SVGDom.getClass(svgElement).replace(classToRemove, ''));
-    };
-    SVGDom.addStyleToSVGInContainer = function (svgContainer, styleToAdd) {
-        var svgElement = svgContainer.querySelector('svg');
-        underscore_1.each(styleToAdd, function (styleValue, styleKey) {
-            svgElement.style[styleKey] = styleValue;
-        });
-    };
-    SVGDom.addAttributesToSVGInContainer = function (svgContainer, attributesToAdd) {
-        var svgElement = svgContainer.querySelector('svg');
-        underscore_1.each(attributesToAdd, function (attributeValue, attributeKey) {
-            svgElement.setAttribute(attributeKey, attributeValue);
-        });
-    };
-    SVGDom.getClass = function (svgElement) {
-        var className = svgElement.getAttribute('class');
-        return className ? className + ' ' : '';
-    };
-    return SVGDom;
-}());
-exports.SVGDom = SVGDom;
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * This static class is there to contain the different string definitions for all the events related to initialization.
- *
- * Note that these events will only be triggered when the {@link init} function is called.
- *
- * This means these events are normally called only once when the search interface is initialized.
- */
-var InitializationEvents = /** @class */ (function () {
-    function InitializationEvents() {
-    }
-    /**
-     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
-     *
-     * The string value is `beforeInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.beforeInitialization = 'beforeInitialization';
-    /**
-     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
-     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
-     *
-     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
-     *
-     * The string value is `afterComponentsInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
-    /**
-     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
-     *
-     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
-     *
-     * The string value is `restoreHistoryState`.
-     * @type {string}
-     */
-    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
-    /**
-     * Triggered right after the UI is fully initialized.
-     *
-     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
-     *
-     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
-     *
-     * The string value is `afterInitialization`.
-     * @type {string}
-     */
-    InitializationEvents.afterInitialization = 'afterInitialization';
-    /**
-     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
-     *
-     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
-     *
-     * The string value is `nuke`.
-     * @type {string}
-     */
-    InitializationEvents.nuke = 'nuke';
-    return InitializationEvents;
-}());
-exports.InitializationEvents = InitializationEvents;
-
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
 var Logger_1 = __webpack_require__(9);
 var KeyboardUtils_1 = __webpack_require__(25);
 var Dom_1 = __webpack_require__(1);
@@ -8601,6 +8493,114 @@ var AccessibleButton = /** @class */ (function () {
     return AccessibleButton;
 }());
 exports.AccessibleButton = AccessibleButton;
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var underscore_1 = __webpack_require__(0);
+var SVGDom = /** @class */ (function () {
+    function SVGDom() {
+    }
+    SVGDom.addClassToSVGInContainer = function (svgContainer, classToAdd) {
+        var svgElement = svgContainer.querySelector('svg');
+        svgElement.setAttribute('class', "" + SVGDom.getClass(svgElement) + classToAdd);
+    };
+    SVGDom.removeClassFromSVGInContainer = function (svgContainer, classToRemove) {
+        var svgElement = svgContainer.querySelector('svg');
+        svgElement.setAttribute('class', SVGDom.getClass(svgElement).replace(classToRemove, ''));
+    };
+    SVGDom.addStyleToSVGInContainer = function (svgContainer, styleToAdd) {
+        var svgElement = svgContainer.querySelector('svg');
+        underscore_1.each(styleToAdd, function (styleValue, styleKey) {
+            svgElement.style[styleKey] = styleValue;
+        });
+    };
+    SVGDom.addAttributesToSVGInContainer = function (svgContainer, attributesToAdd) {
+        var svgElement = svgContainer.querySelector('svg');
+        underscore_1.each(attributesToAdd, function (attributeValue, attributeKey) {
+            svgElement.setAttribute(attributeKey, attributeValue);
+        });
+    };
+    SVGDom.getClass = function (svgElement) {
+        var className = svgElement.getAttribute('class');
+        return className ? className + ' ' : '';
+    };
+    return SVGDom;
+}());
+exports.SVGDom = SVGDom;
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * This static class is there to contain the different string definitions for all the events related to initialization.
+ *
+ * Note that these events will only be triggered when the {@link init} function is called.
+ *
+ * This means these events are normally called only once when the search interface is initialized.
+ */
+var InitializationEvents = /** @class */ (function () {
+    function InitializationEvents() {
+    }
+    /**
+     * This event is triggered right before each components inside the search interface get initialized (eg: Before the constructor of each component is executed).
+     *
+     * The string value is `beforeInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.beforeInitialization = 'beforeInitialization';
+    /**
+     * Triggered after the components are initialized (eg: After the constructor of each component is executed)
+     * but before their state is set from the hash portion of the URL (e.g., `http://mysearchinterface#q=myQuery`).
+     *
+     * This is also before the first query is launched (if the {@link SearchInterface.options.autoTriggerQuery} is `true`).
+     *
+     * The string value is `afterComponentsInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterComponentsInitialization = 'afterComponentsInitialization';
+    /**
+     * Triggered right before the state from the URL (e.g., `http://mysearchinterface#q=myQuery`) gets applied in the interface.
+     *
+     * This will typically only be useful if the {@link SearchInterface.options.enableHistory} is set to `true`.
+     *
+     * The string value is `restoreHistoryState`.
+     * @type {string}
+     */
+    InitializationEvents.restoreHistoryState = 'restoreHistoryState';
+    /**
+     * Triggered right after the UI is fully initialized.
+     *
+     * Concretely this means that the constructor of each component has been executed, and that the state coming for the URL (e.g., `http://mysearchinterface#q=myquery`) has been applied.
+     *
+     * It is triggered *before* the first query is launched, and if the {@link SearchInterface.options.autoTriggerQuery} is `true`.
+     *
+     * The string value is `afterInitialization`.
+     * @type {string}
+     */
+    InitializationEvents.afterInitialization = 'afterInitialization';
+    /**
+     * This is triggered when the UI needs to be dynamically removed so that components can unbind any internal handlers they might have set globally on the window or the document.
+     *
+     * After this event has been executed, the search interface can be dynamically removed and all handlers can be considered cleanly removed.
+     *
+     * The string value is `nuke`.
+     * @type {string}
+     */
+    InitializationEvents.nuke = 'nuke';
+    return InitializationEvents;
+}());
+exports.InitializationEvents = InitializationEvents;
 
 
 /***/ }),
@@ -8996,7 +8996,7 @@ var HistoryController_1 = __webpack_require__(152);
 var LocalStorageHistoryController_1 = __webpack_require__(153);
 var NoopHistoryController_1 = __webpack_require__(337);
 var QueryController_1 = __webpack_require__(44);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var QueryEvents_1 = __webpack_require__(11);
 var StandaloneSearchInterfaceEvents_1 = __webpack_require__(98);
 var Assert_1 = __webpack_require__(5);
@@ -11054,7 +11054,7 @@ var Initialization_1 = __webpack_require__(2);
 var Assert_1 = __webpack_require__(5);
 var QueryController_1 = __webpack_require__(44);
 var QueryStateModel_1 = __webpack_require__(13);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var Dom_1 = __webpack_require__(1);
 var Component_1 = __webpack_require__(7);
 var SearchInterface_1 = __webpack_require__(19);
@@ -15488,7 +15488,7 @@ var GlobalExports_1 = __webpack_require__(3);
 var SVGIcons_1 = __webpack_require__(12);
 var Dom_1 = __webpack_require__(1);
 var KeyboardUtils_1 = __webpack_require__(25);
-var SVGDom_1 = __webpack_require__(15);
+var SVGDom_1 = __webpack_require__(16);
 var defaultOptions = {
     usePlaceholder: false,
     className: 'coveo-input',
@@ -15857,7 +15857,7 @@ module.exports = __webpack_require__(79) ? function (object, key, value) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var Component_1 = __webpack_require__(7);
 var SearchInterface_1 = __webpack_require__(19);
 var Utils_1 = __webpack_require__(4);
@@ -20745,7 +20745,7 @@ var DebugEvents_1 = __webpack_require__(104);
 exports.DebugEvents = DebugEvents_1.DebugEvents;
 var DistanceEvents_1 = __webpack_require__(201);
 exports.DistanceEvents = DistanceEvents_1.DistanceEvents;
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 exports.InitializationEvents = InitializationEvents_1.InitializationEvents;
 var OmniboxEvents_1 = __webpack_require__(34);
 exports.OmniboxEvents = OmniboxEvents_1.OmniboxEvents;
@@ -26467,8 +26467,8 @@ exports.StandaloneSearchInterfaceEvents = StandaloneSearchInterfaceEvents_1.Stan
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = {
-    lib: '2.10099.2',
-    product: '2.10099.2',
+    lib: '2.10100.0',
+    product: '2.10100.0',
     supportedApiVersion: 2
 };
 
@@ -27379,9 +27379,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Dom_1 = __webpack_require__(1);
 var EventsUtils_1 = __webpack_require__(136);
 var _ = __webpack_require__(0);
-var AccessibleButton_1 = __webpack_require__(17);
+var AccessibleButton_1 = __webpack_require__(15);
 var KeyboardUtils_1 = __webpack_require__(25);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var Assert_1 = __webpack_require__(5);
 var Strings_1 = __webpack_require__(6);
 var ResponsiveDropdownEvent;
@@ -27580,7 +27580,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var PendingSearchEvent_1 = __webpack_require__(115);
 var Dom_1 = __webpack_require__(1);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var SearchInterface_1 = __webpack_require__(19);
 var Component_1 = __webpack_require__(7);
 var QueryStateModel_1 = __webpack_require__(13);
@@ -27793,7 +27793,7 @@ var AccessToken_1 = __webpack_require__(146);
 var AnalyticsEvents_1 = __webpack_require__(57);
 var QueryUtils_1 = __webpack_require__(21);
 var AnalyticsInformation_1 = __webpack_require__(49);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 /**
  * The `Analytics` component can log user actions performed in the search interface and send them to a REST web service
  * exposed through the Coveo Cloud Platform.
@@ -30313,7 +30313,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var Dom_1 = __webpack_require__(1);
 var HashUtils_1 = __webpack_require__(42);
 var Defer_1 = __webpack_require__(31);
@@ -30589,7 +30589,7 @@ var LocalStorageUtils_1 = __webpack_require__(41);
 var Model_1 = __webpack_require__(18);
 var Logger_1 = __webpack_require__(9);
 var Assert_1 = __webpack_require__(5);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var RootComponent_1 = __webpack_require__(45);
 var Dom_1 = __webpack_require__(1);
 var underscore_1 = __webpack_require__(0);
@@ -32223,7 +32223,7 @@ var Utils_1 = __webpack_require__(4);
 var _ = __webpack_require__(0);
 __webpack_require__(385);
 var QueryEvents_1 = __webpack_require__(11);
-var InitializationEvents_1 = __webpack_require__(16);
+var InitializationEvents_1 = __webpack_require__(17);
 var ResultListEvents_1 = __webpack_require__(29);
 var HashUtils_1 = __webpack_require__(42);
 var ComponentsTypes_1 = __webpack_require__(47);

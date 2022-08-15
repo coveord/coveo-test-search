@@ -1,14 +1,14 @@
 {
   "name": "coveo-search-test",
   "engines": {
-    "node": "^6.2.0"
+    "node": ">=6.2.0"
   },
   "version": "0.0.1",
   "private": "true",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cheerio": "^0.20.0",
-    "coveo-search-ui": "2.10099.2",
+    "coveo-search-ui": "2.10100.0",
     "express": "4.x",
     "foreman": "1.4.1",
     "gulp": "^4.0.2",
