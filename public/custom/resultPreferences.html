@@ -1,272 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta about="Search all content at once." />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0">
     <script src="../js/CoveoJsSearch.js"></script>
     <script src="../js/CoveoJsSearch.Dependencies.js"></script>
     <script src="../js/templates/templatesNew.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://static.cloud.coveo.com/coveo.analytics.js/coveoua.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function(){
-        Coveo.SearchEndpoint.configureSampleEndpointV2();
-        var options = {
-                        ResultsFiltersPreferences : {
-                            filters: {
-                                'Expression 1': {
-                                    expression: "expression1",
-                                    selected: true
-                                },
-                                'Remove Current Case': {
-                                    expression: 'NOT @dyticketnumber==CAS-23123',
-                                    selected: false
-                                }
-                            }
+        document.addEventListener('DOMContentLoaded', function () {
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
+            var options = {
+                ResultsFiltersPreferences: {
+                    filters: {
+                        'Expression 1': {
+                            expression: "expression1",
+                            selected: true
+                        },
+                        'Remove Current Case': {
+                            expression: 'NOT @dyticketnumber==CAS-23123',
+                            selected: false
                         }
-                    };
-        Coveo.init(document.querySelector("#search"), options);
-      })
+                    }
+                }
+            };
+            Coveo.init(document.querySelector("#search"), options);
+        })
     </script>
 
     <link rel="stylesheet" href="../css/CoveoFullSearchNewDesign.css" />
     <title>Coveo Search Test</title>
 </head>
+
 <body>
 
-  <div id="search" class="CoveoSearchInterface" data-enable-history="true" data-design="new" data-maximum-age="0" data-enable-collaborative-rating="true">
-      <div class="CoveoAuthenticationProvider" data-name="sp" data-caption="Claims auth" data-tab="Salesforce">
-      </div>
-      <div class="CoveoFoldingForThread" data-field="@sffeeditemid" data-tab="Chatter" data-parent-field="@sfid" data-child-field="@sffeeditemid" data-rearrange="date descending" data-range="0">
-      </div>
-      <div class="CoveoFolding" data-field="@conversationreferenceid" data-tab="Email" data-parent-field="@containsattachment" data-child-field="@isattachment" data-range="0">
-      </div>
-      <div class="CoveoFolding" data-field="@jiissueid" data-expand-expression="@jidocumenttype==Attachment" data-tab="Jira" data-parent-field="@jiid" data-child-field="@jiparentissueid" data-range="10">
-      </div>
-      <div class="CoveoFoldingForThread" data-field="@sfcaseid" data-tab="SalesforceCase" data-parent-field="@sfid" data-child-field="@sfcaseid" data-range="0">
-      </div>
-      <div class="CoveoAnalytics" >
-      </div>
-      <div class="CoveoAnalyticsSuggestions">
-      </div>
-      <div class="coveo-tab-section">
-          <a class="CoveoTab" data-id="All" data-caption="All Content">
-          </a>
-          <a class="CoveoTab" data-id="Chatter" data-caption="Chatter" data-expression="@objecttype==(FeedItem,FeedComment)">
-          </a>
-          <a class="CoveoTab" data-id="Dropbox" data-caption="Dropbox" data-expression="@connectortype==DropboxCrawler">
-          </a>
-          <a class="CoveoTab" data-id="Email" data-caption="Email" data-expression="@mailbox" data-sort="date descending">
-          </a>
-          <a class="CoveoTab" data-id="GoogleDrive" data-caption="Google Drive" data-expression="@connectortype==GoogleDriveCrawler">
-          </a>
-          <a class="CoveoTab" data-id="Jira" data-caption="Jira" data-expression="@jisourcetype AND NOT @jidocumenttype=&quot;WorkLog&quot;">
-          </a>
-          <a class="CoveoTab" data-id="People" data-caption="People" data-expression="@fullname">
-          </a>
-          <a class="CoveoTab" data-id="Salesforce" data-caption="Salesforce" data-expression="@sfid">
-          </a>
-          <a class="CoveoTab" data-id="SalesforceCase" data-caption="Cases" data-expression="@sfcaseid">
-          </a>
-          <a class="CoveoTab" data-id="YouTube" data-caption="YouTube" data-expression="@filetype==&quot;youtubevideo&quot;">
-          </a>
-      </div>
-      <div class="coveo-search-section">
-          <div class="CoveoSettings" data-include-in-menu=".CoveoShareQuery,.CoveoPreferencesPanel,.CoveoExportToExcel">
-          </div>
-          <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-field-addon="true" data-enable-search-as-you-type="false"
-          data-enable-partial-match="true"
-        data-partial-match-keywords="3"
-        data-partial-match-threshold="50%"
-        data-enable-reveal-query-suggest-addon="true">
-          </div>
-      </div>
-      <div class="coveo-main-section">
-          <div class="coveo-facet-column">
-            <div class="CoveoHierarchicalFacet" data-title="Hierarchical" data-field="@hierarchicfield" data-tab="All">
+    <div id="search" class="CoveoSearchInterface" data-enable-history="true" data-design="new" data-maximum-age="0"
+        data-enable-collaborative-rating="true">
+        <div class="CoveoAuthenticationProvider" data-name="sp" data-caption="Claims auth" data-tab="Salesforce">
+        </div>
+        <div class="CoveoFoldingForThread" data-field="@sffeeditemid" data-tab="Chatter" data-parent-field="@sfid"
+            data-child-field="@sffeeditemid" data-rearrange="date descending" data-range="0">
+        </div>
+        <div class="CoveoFolding" data-field="@conversationreferenceid" data-tab="Email"
+            data-parent-field="@containsattachment" data-child-field="@isattachment" data-range="0">
+        </div>
+        <div class="CoveoFolding" data-field="@jiissueid" data-expand-expression="@jidocumenttype==Attachment"
+            data-tab="Jira" data-parent-field="@jiid" data-child-field="@jiparentissueid" data-range="10">
+        </div>
+        <div class="CoveoFoldingForThread" data-field="@sfcaseid" data-tab="SalesforceCase" data-parent-field="@sfid"
+            data-child-field="@sfcaseid" data-range="0">
+        </div>
+        <div class="CoveoAnalytics">
+        </div>
+        <div class="CoveoAnalyticsSuggestions">
+        </div>
+        <div class="coveo-tab-section">
+            <a class="CoveoTab" data-id="All" data-caption="All Content">
+            </a>
+            <a class="CoveoTab" data-id="Chatter" data-caption="Chatter"
+                data-expression="@objecttype==(FeedItem,FeedComment)">
+            </a>
+            <a class="CoveoTab" data-id="Dropbox" data-caption="Dropbox"
+                data-expression="@connectortype==DropboxCrawler">
+            </a>
+            <a class="CoveoTab" data-id="Email" data-caption="Email" data-expression="@mailbox"
+                data-sort="date descending">
+            </a>
+            <a class="CoveoTab" data-id="GoogleDrive" data-caption="Google Drive"
+                data-expression="@connectortype==GoogleDriveCrawler">
+            </a>
+            <a class="CoveoTab" data-id="Jira" data-caption="Jira"
+                data-expression="@jisourcetype AND NOT @jidocumenttype=&quot;WorkLog&quot;">
+            </a>
+            <a class="CoveoTab" data-id="People" data-caption="People" data-expression="@fullname">
+            </a>
+            <a class="CoveoTab" data-id="Salesforce" data-caption="Salesforce" data-expression="@sfid">
+            </a>
+            <a class="CoveoTab" data-id="SalesforceCase" data-caption="Cases" data-expression="@sfcaseid">
+            </a>
+            <a class="CoveoTab" data-id="YouTube" data-caption="YouTube"
+                data-expression="@filetype==&quot;youtubevideo&quot;">
+            </a>
+        </div>
+        <div class="coveo-search-section">
+            <div class="CoveoSettings"
+                data-include-in-menu=".CoveoShareQuery,.CoveoPreferencesPanel,.CoveoExportToExcel">
             </div>
-              <div class="CoveoFacet" data-title="Type"
-                                      data-field="@objecttype"
-                                      data-tab="All"
-                                      data-allow-toggling-operator="true"
-                                      data-include-in-omnibox="true"
-                                      data-available-sorts="occurrences, score" >
-              </div>
-              <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All" data-enable-toggling-operator="true">
-              </div>
-              <div class="CoveoFacet" data-title="Author"
-                                      data-field="@author"
-                                      data-tab="All"
-                                      data-include-in-omnibox="true"
-                                      data-additional-filter="@date>2015/01/01" >
-              </div>
-              <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All">
-              </div>
-              <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="All">
-              </div>
-              <div class='CoveoFacetSlider' data-field='@syssize' data-start='1000' data-end='5000' data-range-slider='true' data-graph-steps='10' data-tab="All">
-              </div>
-              <div class="CoveoFacet" data-title="Posted on" data-tab="Chatter" data-field="@sfparentname" data-include-in-omnibox="true">
-              </div>
-              <div class="CoveoFacet" data-title="Posted by" data-tab="Chatter" data-field="@sfcreatedbyname" data-include-in-omnibox="true">
-              </div>
-              <div class="CoveoFacet" data-title="Topic" data-tab="Chatter" data-field="@coveochatterfeedtopics" data-include-in-omnibox="true">
-              </div>
-              <div class="CoveoFacet" data-title="Liked by" data-tab="Chatter" data-field="@sflikedby">
-              </div>
-              <div class="CoveoFacet" data-title="File Type" data-field="@filetype" data-tab="Dropbox">
-              </div>
-              <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="Dropbox" data-include-in-omnibox="true">
-              </div>
-              <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="Dropbox">
-              </div>
-              <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="Dropbox">
-              </div>
-              <div class="CoveoFacet" data-title="Mailbox" data-field="@mailbox" data-tab="Email">
-              </div>
-              <div class="CoveoFacet" data-title="Mail from lookup Display From" data-field="@from" data-lookup-field="@displayfrom" data-tab="Email">
-              </div>
-              <div class="CoveoFacet" data-title="From" data-field="@from" data-tab="Email">
-              </div>
-              <div class="CoveoFacet" data-title="To" data-field="@to" data-tab="Email">
-              </div>
-              <div class="CoveoFacet" data-title="File Type" data-field="@filetype" data-tab="Email">
-              </div>
-              <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="Email">
-              </div>
-              <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="Email">
-              </div>
-              <div class="CoveoFacet" data-title="File Type" data-field="@filetype" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Origin" data-field="@gdfilesource" data-custom-sort="My Drive,Shared with Me, Shared Globally" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Owner" data-field="@author" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Last modified by" data-field="@gdfilelastmodifyinguserdisplayname" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Shared To" data-field="@to" data-allow-toggling-operator="true" data-is-multi-value="true" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Shared From" data-field="@from" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="GoogleDrive">
-              </div>
-              <div class="CoveoFacet" data-title="Type" data-field="@jidocumenttype" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Project" data-field="@jiprojectname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Assignee" data-field="@jifieldsassigneedisplayname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Reporter" data-field="@jifieldsreporterdisplayname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Issue type" data-field="@jifieldsissuetypename" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Author" data-field="@jiauthordisplayname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Update Author" data-field="@jiupdateauthordisplayname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Commenter" data-field="@jifieldscommentcommentsauthordisplayname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Links" data-field="@jifieldsissuelinkstypename" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Outward links" data-field="@jifieldsissuelinkstypeoutward" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Inward links" data-field="@jifieldsissuelinkstypeinward" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Fix Version/s" data-field="@jifieldsfixversionsname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Version" data-field="@jifieldsversionsname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Label" data-field="@jifieldslabels" data-allow-toggling-operator="true" data-is-multi-value="true" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Status" data-field="@jifieldsstatusname" data-allow-toggling-operator="true" data-is-multi-value="true" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Priority" data-field="@jifieldspriorityname" data-tab="Jira">
-              </div>
-              <div class="CoveoFacet" data-title="Title" data-field="@worktitle" data-tab="People">
-              </div>
-              <div class="CoveoFacet" data-title="Office" data-field="@office" data-tab="People">
-              </div>
-              <div class="CoveoFacet" data-title="Company" data-field="@company" data-tab="People">
-              </div>
-              <div class="CoveoFacet" data-title="Country" data-field="@sfcountry" data-tab="People">
-              </div>
-              <div class="CoveoFacet" data-title="State" data-field="@sfstate" data-tab="People">
-              </div>
-              <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-number-of-values="5" data-tab="Salesforce">
-              </div>
-              <div class="CoveoFacet" data-title="Close quarter" data-field="@sfopportunityclosedquarterc" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="AlphaDescending" data-tab="Salesforce">
-              </div>
-              <div class="CoveoFacet" data-title="Salesforce Account" data-field="@sfaccountname" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="7" data-tab="Salesforce">
-              </div>
-              <div class="CoveoFacet" data-title="Salesforce Owner" data-field="@sfownername" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="7" data-tab="Salesforce">
-              </div>
-              <div class="CoveoFacet" data-title="Opportunity Type" data-field="@sfopportunitytype" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="5" data-tab="Salesforce">
-              </div>
-              <div class="CoveoFacet" data-title="Opportunity Stage" data-field="@sfopportunitystagename" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-tab="Salesforce">
-              </div>
-              <div class="CoveoFacet" data-title="Lead Source" data-field="@sfleadsource" data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending" data-number-of-values="5" data-tab="Salesforce">
-              </div>
-              <div class="CoveoFacet" data-title="Case Status" data-field="@objecttype" data-tab="SalesforceCase">
-              </div>
-              <div class="CoveoFacet" data-title="Case Status" data-field="@sfcasestatus" data-tab="SalesforceCase">
-              </div>
-              <div class="CoveoFacet" data-title="Case Priority" data-field="@sfcasesriority" data-tab="SalesforceCase">
-              </div>
-              <div class="CoveoFacet" data-title="Account" data-field="@sfaccountname" data-tab="SalesforceCase">
-              </div>
-              <div class="CoveoFacet" data-title="Owner" data-field="@sfownername" data-tab="SalesforceCase">
-              </div>
-              <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="YouTube">
-              </div>
-              <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="YouTube">
-              </div>
-              <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="YouTube">
-              </div>
-          </div>
-          <div class="coveo-results-column">
-              <div class="CoveoShareQuery">
-              </div>
-              <div class="CoveoPreferencesPanel">
-                  <div class="CoveoResultsPreferences">
-                  </div>
-                  <div class="CoveoResultsFiltersPreferences">
-                  </div>
-                  <div class="CoveoExportToExcel" data-number-of-results="800"></div>
-              </div>
-              <div class="CoveoTriggers">
-              </div>
-              <div class="CoveoBreadcrumb">
-              </div>
-              <div class="CoveoSearchAlerts">
-              </div>
-              <div class="coveo-results-header">
-                  <div class="coveo-summary-section">
-            <span class="CoveoQuerySummary">
-            </span>
-            <span class="CoveoQueryDuration">
-            </span>
-                  </div>
-                  <div class="coveo-sort-section">
-            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance">
-            </span>
-            <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date">
-            </span>
-            <span class="CoveoSort" data-sort-criteria="@sfopportunityamountconverted descending,@sfopportunityamountconverted ascending" data-tab="Salesforce" data-caption="Amount">
-            </span>
-                  </div>
-              </div>
-              <div class="CoveoHiddenQuery">
-              </div>
-              <div class="CoveoDidYouMean">
-              </div>
-              <div class="CoveoErrorReport" data-pop-up="false">
-              </div>
-              <div class="CoveoResultList" data-wait-animation="fade" data-auto-select-fields-to-include="true">
-                  <script id="MobileSalesforceCase" class="result-template" type="text/html" data-condition="raw.sfcaseid != null &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+            <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-field-addon="true"
+                data-enable-search-as-you-type="false" data-enable-partial-match="true" data-partial-match-keywords="3"
+                data-partial-match-threshold="50%" data-enable-reveal-query-suggest-addon="true">
+            </div>
+        </div>
+        <div class="coveo-main-section">
+            <div class="coveo-facet-column">
+                <div class="CoveoHierarchicalFacet" data-title="Hierarchical" data-field="@geographicalhierarchy" data-delimiting-character=";"
+                    data-tab="All">
+                </div>
+                <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="All"
+                    data-allow-toggling-operator="true" data-include-in-omnibox="true"
+                    data-available-sorts="occurrences, score">
+                </div>
+                <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All"
+                    data-enable-toggling-operator="true">
+                </div>
+                <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"
+                    data-include-in-omnibox="true" data-additional-filter="@date>2015/01/01">
+                </div>
+                <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All">
+                </div>
+                <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="All">
+                </div>
+                <div class='CoveoFacetSlider' data-field='@syssize' data-start='1000' data-end='5000'
+                    data-range-slider='true' data-graph-steps='10' data-tab="All">
+                </div>
+                <div class="CoveoFacet" data-title="Posted on" data-tab="Chatter" data-field="@sfparentname"
+                    data-include-in-omnibox="true">
+                </div>
+                <div class="CoveoFacet" data-title="Posted by" data-tab="Chatter" data-field="@sfcreatedbyname"
+                    data-include-in-omnibox="true">
+                </div>
+                <div class="CoveoFacet" data-title="Topic" data-tab="Chatter" data-field="@coveochatterfeedtopics"
+                    data-include-in-omnibox="true">
+                </div>
+                <div class="CoveoFacet" data-title="Liked by" data-tab="Chatter" data-field="@sflikedby">
+                </div>
+                <div class="CoveoFacet" data-title="File Type" data-field="@filetype" data-tab="Dropbox">
+                </div>
+                <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="Dropbox"
+                    data-include-in-omnibox="true">
+                </div>
+                <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="Dropbox">
+                </div>
+                <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="Dropbox">
+                </div>
+                <div class="CoveoFacet" data-title="Mailbox" data-field="@mailbox" data-tab="Email">
+                </div>
+                <div class="CoveoFacet" data-title="Mail from lookup Display From" data-field="@from"
+                    data-lookup-field="@displayfrom" data-tab="Email">
+                </div>
+                <div class="CoveoFacet" data-title="From" data-field="@from" data-tab="Email">
+                </div>
+                <div class="CoveoFacet" data-title="To" data-field="@to" data-tab="Email">
+                </div>
+                <div class="CoveoFacet" data-title="File Type" data-field="@filetype" data-tab="Email">
+                </div>
+                <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="Email">
+                </div>
+                <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="Email">
+                </div>
+                <div class="CoveoFacet" data-title="File Type" data-field="@filetype" data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Origin" data-field="@gdfilesource"
+                    data-custom-sort="My Drive,Shared with Me, Shared Globally" data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Owner" data-field="@author" data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Last modified by" data-field="@gdfilelastmodifyinguserdisplayname"
+                    data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Shared To" data-field="@to" data-allow-toggling-operator="true"
+                    data-is-multi-value="true" data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Shared From" data-field="@from" data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="GoogleDrive">
+                </div>
+                <div class="CoveoFacet" data-title="Type" data-field="@jidocumenttype" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Project" data-field="@jiprojectname" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Assignee" data-field="@jifieldsassigneedisplayname" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Reporter" data-field="@jifieldsreporterdisplayname" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Issue type" data-field="@jifieldsissuetypename" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Author" data-field="@jiauthordisplayname" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Update Author" data-field="@jiupdateauthordisplayname"
+                    data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Commenter" data-field="@jifieldscommentcommentsauthordisplayname"
+                    data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Links" data-field="@jifieldsissuelinkstypename" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Outward links" data-field="@jifieldsissuelinkstypeoutward"
+                    data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Inward links" data-field="@jifieldsissuelinkstypeinward"
+                    data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Fix Version/s" data-field="@jifieldsfixversionsname"
+                    data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Version" data-field="@jifieldsversionsname" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Label" data-field="@jifieldslabels"
+                    data-allow-toggling-operator="true" data-is-multi-value="true" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Status" data-field="@jifieldsstatusname"
+                    data-allow-toggling-operator="true" data-is-multi-value="true" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Priority" data-field="@jifieldspriorityname" data-tab="Jira">
+                </div>
+                <div class="CoveoFacet" data-title="Title" data-field="@worktitle" data-tab="People">
+                </div>
+                <div class="CoveoFacet" data-title="Office" data-field="@office" data-tab="People">
+                </div>
+                <div class="CoveoFacet" data-title="Company" data-field="@company" data-tab="People">
+                </div>
+                <div class="CoveoFacet" data-title="Country" data-field="@sfcountry" data-tab="People">
+                </div>
+                <div class="CoveoFacet" data-title="State" data-field="@sfstate" data-tab="People">
+                </div>
+                <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-number-of-values="5"
+                    data-tab="Salesforce">
+                </div>
+                <div class="CoveoFacet" data-title="Close quarter" data-field="@sfopportunityclosedquarterc"
+                    data-computed-field="@sfopportunityamountconverted" data-sort-criteria="AlphaDescending"
+                    data-tab="Salesforce">
+                </div>
+                <div class="CoveoFacet" data-title="Salesforce Account" data-field="@sfaccountname"
+                    data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending"
+                    data-number-of-values="7" data-tab="Salesforce">
+                </div>
+                <div class="CoveoFacet" data-title="Salesforce Owner" data-field="@sfownername"
+                    data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending"
+                    data-number-of-values="7" data-tab="Salesforce">
+                </div>
+                <div class="CoveoFacet" data-title="Opportunity Type" data-field="@sfopportunitytype"
+                    data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending"
+                    data-number-of-values="5" data-tab="Salesforce">
+                </div>
+                <div class="CoveoFacet" data-title="Opportunity Stage" data-field="@sfopportunitystagename"
+                    data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending"
+                    data-tab="Salesforce">
+                </div>
+                <div class="CoveoFacet" data-title="Lead Source" data-field="@sfleadsource"
+                    data-computed-field="@sfopportunityamountconverted" data-sort-criteria="ComputedFieldDescending"
+                    data-number-of-values="5" data-tab="Salesforce">
+                </div>
+                <div class="CoveoFacet" data-title="Case Status" data-field="@objecttype" data-tab="SalesforceCase">
+                </div>
+                <div class="CoveoFacet" data-title="Case Status" data-field="@sfcasestatus" data-tab="SalesforceCase">
+                </div>
+                <div class="CoveoFacet" data-title="Case Priority" data-field="@sfcasesriority"
+                    data-tab="SalesforceCase">
+                </div>
+                <div class="CoveoFacet" data-title="Account" data-field="@sfaccountname" data-tab="SalesforceCase">
+                </div>
+                <div class="CoveoFacet" data-title="Owner" data-field="@sfownername" data-tab="SalesforceCase">
+                </div>
+                <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="YouTube">
+                </div>
+                <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="YouTube">
+                </div>
+                <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="YouTube">
+                </div>
+            </div>
+            <div class="coveo-results-column">
+                <div class="CoveoShareQuery">
+                </div>
+                <div class="CoveoPreferencesPanel">
+                    <div class="CoveoResultsPreferences">
+                    </div>
+                    <div class="CoveoResultsFiltersPreferences">
+                    </div>
+                    <div class="CoveoExportToExcel" data-number-of-results="800"></div>
+                </div>
+                <div class="CoveoTriggers">
+                </div>
+                <div class="CoveoBreadcrumb">
+                </div>
+                <div class="CoveoSearchAlerts">
+                </div>
+                <div class="coveo-results-header">
+                    <div class="coveo-summary-section">
+                        <span class="CoveoQuerySummary">
+                        </span>
+                        <span class="CoveoQueryDuration">
+                        </span>
+                    </div>
+                    <div class="coveo-sort-section">
+                        <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance">
+                        </span>
+                        <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date">
+                        </span>
+                        <span class="CoveoSort"
+                            data-sort-criteria="@sfopportunityamountconverted descending,@sfopportunityamountconverted ascending"
+                            data-tab="Salesforce" data-caption="Amount">
+                        </span>
+                    </div>
+                </div>
+                <div class="CoveoHiddenQuery">
+                </div>
+                <div class="CoveoDidYouMean">
+                </div>
+                <div class="CoveoErrorReport" data-pop-up="false">
+                </div>
+                <div class="CoveoResultList" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+                    <script id="MobileSalesforceCase" class="result-template" type="text/html"
+                        data-condition="raw.sfcaseid != null &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:40px; vertical-align:middle">
@@ -326,7 +368,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="MobileChatter" class="result-template" type="text/html" data-condition="(raw.objecttype ==&apos;FeedItem&apos; || raw.objecttype == &apos;FeedComment&apos;) &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobileChatter" class="result-template" type="text/html"
+                        data-condition="(raw.objecttype ==&apos;FeedItem&apos; || raw.objecttype == &apos;FeedComment&apos;) &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:40px; vertical-align:middle">
@@ -368,7 +411,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="SalesforceCase" class="result-template" type="text/html" data-condition="raw.sfcaseid != null">
+                    <script id="SalesforceCase" class="result-template" type="text/html"
+                        data-condition="raw.sfcaseid != null">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px; text-align:center; padding-top:7px">
@@ -430,7 +474,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="Chatter" class="result-template" type="text/html" data-condition="raw.objecttype ==&apos;FeedItem&apos; || raw.objecttype == &apos;FeedComment&apos;">
+                    <script id="Chatter" class="result-template" type="text/html"
+                        data-condition="raw.objecttype ==&apos;FeedItem&apos; || raw.objecttype == &apos;FeedComment&apos;">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px; text-align:center; padding-top:5px">
@@ -474,7 +519,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="MobileDropbox" class="result-template" type="text/html" data-condition="raw.connectortype == &apos;DropboxCrawler&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobileDropbox" class="result-template" type="text/html"
+                        data-condition="raw.connectortype == &apos;DropboxCrawler&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:40px; vertical-align:middle">
@@ -524,7 +570,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="MobileEmailThread" class="result-template" type="text/html" data-condition="raw.mailbox != undefined &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobileEmailThread" class="result-template" type="text/html"
+                        data-condition="raw.mailbox != undefined &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame coveo-email-result">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:40px">
@@ -576,7 +623,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="MobileGoogleDrive" class="result-template" type="text/html" data-condition="raw.connectortype == &apos;GoogleDriveCrawler&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobileGoogleDrive" class="result-template" type="text/html"
+                        data-condition="raw.connectortype == &apos;GoogleDriveCrawler&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:40px; vertical-align:middle">
@@ -626,7 +674,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="People" class="result-template" type="text/html" data-condition="raw.fullname != undefined">
+                    <script id="People" class="result-template" type="text/html"
+                        data-condition="raw.fullname != undefined">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px; text-align:center; padding-top:5px">
@@ -669,7 +718,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="MobilePeople" class="result-template" type="text/html" data-condition="raw.fullname != undefined &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobilePeople" class="result-template" type="text/html"
+                        data-condition="raw.fullname != undefined &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:40px; text-align:center">
@@ -710,7 +760,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="MobileSalesforce" class="result-template" type="text/html" data-condition="(raw.sfid != null || raw.sfid != null) &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobileSalesforce" class="result-template" type="text/html"
+                        data-condition="(raw.sfid != null || raw.sfid != null) &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:40px; vertical-align:middle">
@@ -777,7 +828,8 @@
                               </div>
                           </div>
                       </div></script>
-                  <script id="MobileYouTubeVideo" class="result-template" type="text/html" data-condition="raw.filetype == &apos;YouTubeVideo&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobileYouTubeVideo" class="result-template" type="text/html"
+                        data-condition="raw.filetype == &apos;YouTubeVideo&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="padding-top:5px; padding-bottom:5px; vertical-align:middle">
@@ -809,7 +861,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="MobileYouTubePlaylistItem" class="result-template" type="text/html" data-condition="raw.filetype== &apos;YouTubePlaylistItem&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
+                    <script id="MobileYouTubePlaylistItem" class="result-template" type="text/html"
+                        data-condition="raw.filetype== &apos;YouTubePlaylistItem&apos; &amp;&amp; Coveo.DeviceUtils.isSmallScreenWidth()">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="vertical-align:middle">
@@ -829,7 +882,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="Dropbox" class="result-template" type="text/html" data-condition="raw.connectortype == &apos;DropboxCrawler&apos;">
+                    <script id="Dropbox" class="result-template" type="text/html"
+                        data-condition="raw.connectortype == &apos;DropboxCrawler&apos;">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px; text-align:center; padding-top:7px">
@@ -881,7 +935,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="EmailThread" class="result-template" type="text/html" data-condition="raw.mailbox != undefined">
+                    <script id="EmailThread" class="result-template" type="text/html"
+                        data-condition="raw.mailbox != undefined">
                       <div class="coveo-result-frame coveo-email-result">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px; text-align:center; padding-top:7px">
@@ -935,7 +990,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="GoogleDrive" class="result-template" type="text/html" data-condition="raw.connectortype == &apos;GoogleDriveCrawler&apos;">
+                    <script id="GoogleDrive" class="result-template" type="text/html"
+                        data-condition="raw.connectortype == &apos;GoogleDriveCrawler&apos;">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px; text-align:center; padding-top:7px">
@@ -998,7 +1054,8 @@
                               </div>
                           </div>
                       </div></script>
-                  <script id="Jira" class="result-template" type="text/html" data-condition="raw.connectortype == &apos;JiraCrawler&apos;">
+                    <script id="Jira" class="result-template" type="text/html"
+                        data-condition="raw.connectortype == &apos;JiraCrawler&apos;">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px;text-align:center">
@@ -1071,7 +1128,7 @@
                               </div>
                           </div>
                       </div></script>
-                  <script id="Salesforce" class="result-template" type="text/html" data-condition="raw.sfid != null">
+                    <script id="Salesforce" class="result-template" type="text/html" data-condition="raw.sfid != null">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:85px; text-align:center; padding-top:7px">
@@ -1141,7 +1198,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="YouTubePlaylistItem" class="result-template" type="text/html" data-condition="raw.filetype== &apos;YouTubePlaylistItem&apos;">
+                    <script id="YouTubePlaylistItem" class="result-template" type="text/html"
+                        data-condition="raw.filetype== &apos;YouTubePlaylistItem&apos;">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:220px; padding-top:4px">
@@ -1159,7 +1217,8 @@
                           </div>
                       </div>
                   </script>
-                  <script id="YouTubeVideo" class="result-template" type="text/html" data-condition="raw.filetype == &apos;YouTubeVideo&apos;">
+                    <script id="YouTubeVideo" class="result-template" type="text/html"
+                        data-condition="raw.filetype == &apos;YouTubeVideo&apos;">
                       <div class="coveo-result-frame">
                           <div class="coveo-result-row">
                               <div class="coveo-result-cell" style="width:220px; padding-top:7px">
@@ -1199,7 +1258,7 @@
                           </div>
                       </div>
                   </script>
-                  <script id="Default" class="result-template" type="text/html"><div class="coveo-result-frame">
+                    <script id="Default" class="result-template" type="text/html"><div class="coveo-result-frame">
                   <div class="coveo-result-row">
                       <div class="coveo-result-cell" style="width:85px;text-align:center;padding-top:7px;">
                           <span class="CoveoIcon"></span>
@@ -1245,12 +1304,13 @@
                       </div>
                   </div><div class="coveo-result-row"><div class="coveo-result-cell"><span class="CoveoFollowItem"></span></div></div>
                   </div></script>
-              </div>
-              <div class="CoveoPager">
-              </div>
+                </div>
+                <div class="CoveoPager">
+                </div>
 
-          </div>
-      </div>
-  </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
