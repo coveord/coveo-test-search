@@ -19,7 +19,8 @@
     "underscore": "^1.13.4"
   },
   "scripts": {
-    "start": "node gulpfile.js",
-    "postinstall": "gulp"
+    "start": "node server",
+    "postinstall": "node_modules/gulp/bin/gulp.js",
+    "upgrade_heroku": "git commit --allow-empty -m 'Upgrading heroku to latest beta'"
   }
 }
