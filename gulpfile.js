@@ -19,4 +19,12 @@ gulp.task("copySearchUi", function () {
 
 })
 
+gulp.task("useBetaJSUIVersion", function (callback) {
+  exec("npm i @coveo/atomic@beta", function (_, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(callback);
+  });
+});
+
 gulp.task('default', gulp.series('copyCustomUi', 'copySearchUi', async function () {}));

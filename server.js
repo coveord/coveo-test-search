@@ -3,7 +3,7 @@ var express = require('express');
 var serveIndex = require('serve-index')
 var serveStatic = require('serve-static')
 var app = express();
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5001));
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
