@@ -21,6 +21,7 @@
   "scripts": {
     "start": "node server",
     "postinstall": "node_modules/gulp/bin/gulp.js",
+    "copy_test_pages": "node_modules/gulp/bin/gulp.js copyCustomUi",
     "upgrade_heroku": "git commit --allow-empty -m 'Upgrading heroku to latest beta'"
   }
 }
