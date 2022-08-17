@@ -21,15 +21,14 @@ To push changes to Heroku, commit any change and push to git.
 
 If there is no change to push, you can use this command to trigger redeployment 
 with an empty commit:  
-`npm run update_heroku`
+`npm run update-heroku`
 
 
 ## Changing test files
 
 If you make changes to files in `./public/custom` or add new ones, these will be 
 local changes. They will be visible immediately on the server, but will not be 
-committed to Heroku. They will may be overwritten if you run `npm i`.
+committed to Heroku. They may be overwritten next time you run the server.
 
 If you make changes to files in `./testpages`, these chages will be tracked 
-by git. In order to see the changes locally, you can run `npm run copy_test_pages` 
-(or do `npm i`) to copy them to `./public/custom`.
+by git. In order to see the changes locally, you can restart the server.
