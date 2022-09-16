@@ -19,8 +19,8 @@
     "underscore": "^1.13.4"
   },
   "scripts": {
-    "start": "node_modules/gulp/bin/gulp.js copyCustomUi && node server",
-    "postinstall": "node_modules/gulp/bin/gulp.js",
+    "postinstall": "npx gulp",
+    "start": "npx gulp copyCustomUi && node server",
     "upgrade-heroku": "git commit --allow-empty -m 'Upgrading heroku to current JSUI beta'"
   }
 }
