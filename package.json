@@ -21,6 +21,6 @@
   "scripts": {
     "postinstall": "npx gulp",
     "start": "npx gulp copyCustomUi && node server",
-    "upgrade-heroku": "git commit --allow-empty -m 'Upgrading heroku to current JSUI beta'"
+    "upgrade-heroku": "git commit --allow-empty -m \"Upgrading heroku to current JSUI beta\""
   }
 }
