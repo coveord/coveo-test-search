@@ -3,7 +3,7 @@ const debug = require("gulp-debug");
 const exec = require("child_process").exec;
 
 gulp.task("installBetaPackage", function (cb) {
-  return exec("npm i @coveo/atomic@beta", function (err, stdout, stderr) {
+  return exec("npm i coveo-search-ui@beta", function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
