@@ -32,7 +32,7 @@ gulp.task("copySearchUi", function () {
 });
 
 gulp.task(
-  "default",
+  "build",
   gulp.series(
     "installBetaPackage",
     "copyCustomUi",
