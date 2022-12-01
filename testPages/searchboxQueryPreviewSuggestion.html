@@ -13,13 +13,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            Coveo.SearchEndpoint.endpoints['default'] = new Coveo.SearchEndpoint({
-                restUri: 'https://platform.cloud.coveo.com/rest/search',
-                accessToken: 'xx641c6ec2-5525-4cce-ba73-2cb6e94bebb9',
-                queryStringArguments: {
-                    organizationId: 'coveodemocommerceqmqaepc4'
-                }
-            });
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
             // Coveo.Analytics.options.endpoint.defaultValue = 'https://usageanalytics.coveo.com/';
             // Coveo.Analytics.options.searchHub.defaultValue = 'default';
             // Coveo.Analytics.options.organization.defaultValue = 'coveodemocommerceqmqaepc4';

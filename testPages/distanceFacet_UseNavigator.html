@@ -12,13 +12,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            Coveo.SearchEndpoint.endpoints['default'] = new Coveo.SearchEndpoint({
-                restUri: 'https://platformqa.cloud.coveo.com/rest/search',
-                accessToken: 'xx7d4c8f7d-11b7-4ed7-80bf-ef3f8de31697',
-                queryStringArguments: {
-                    organizationId: 'qasitecorecloud'
-                }
-            });
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
             Coveo.Analytics.options.endpoint.defaultValue = 'https://ua1staging.coveo.com';
             Coveo.Analytics.options.searchHub.defaultValue = 'default';
             Coveo.Analytics.options.organization.defaultValue = 'qasitecorecloud';

@@ -10,13 +10,7 @@
     <script src="../js/templates/templatesNew.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            Coveo.SearchEndpoint.endpoints['default'] = new Coveo.SearchEndpoint({
-                restUri: 'https://platformdev.cloud.coveo.com/rest/search',
-                accessToken: 'xx14c27487-b905-4977-bc78-c69bde37524f',
-                queryStringArguments: {
-                    organizationId: 'jsuifacetsensedemo8fm8w12c'
-                }
-            });
+            Coveo.SearchEndpoint.configureSampleEndpointV2();
             Coveo.Analytics.options.endpoint.defaultValue = 'https://usageanalyticsdev.coveo.com/';
             Coveo.Analytics.options.searchHub.defaultValue = 'default';
             Coveo.Analytics.options.organization.defaultValue = 'jsuifacetsensedemo8fm8w12c';

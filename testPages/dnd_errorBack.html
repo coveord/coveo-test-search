@@ -10,10 +10,7 @@
   <script src="../js/templates/templatesNew.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      Coveo.SearchEndpoint.endpoints['default'] = new Coveo.SearchEndpoint({
-        restUri: 'https://cloudplatform.coveo.com/rest/search',
-        accessToken: '52d806a2-0f64-4390-a3f2-e0f41a4a73ec'
-      });
+      Coveo.SearchEndpoint.configureSampleEndpointV2();
       Coveo.Analytics.options.endpoint.defaultValue = 'https://usageanalytics.coveo.com/rest';
       Coveo.init(document.querySelector('#search'));
     });
