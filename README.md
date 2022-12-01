@@ -22,4 +22,4 @@ local changes. They will be visible immediately on your local server, but will n
 tracked by git. They may be overwritten next time you run the server.
 
 If you make changes to files in `./testpages`, these changes will be tracked 
-by git. In order to see the changes locally, you can re-run `npm-start`.
+by git. In order to see the changes locally, you can re-run `npm start`.
