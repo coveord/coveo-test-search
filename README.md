@@ -27,7 +27,8 @@ by git. In order to see the changes locally, you can re-run `npm start`.
 ## Building a search-ui version other than 'beta'
 
 The gulpfile looks for the environment variable SEARCH_UI_VERSION. If it doesn't find one,
-it defaults to building the version with the 'beta' tag.
+it defaults to building the version with the 'beta' tag. This overrides any value you put 
+in `coveo-search-ui` value you set in the `package.json` dependencies.
 
 See here for versions:
 https://www.npmjs.com/package/coveo-search-ui?activeTab=versions
