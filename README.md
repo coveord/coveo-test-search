@@ -14,6 +14,16 @@ Run local server with:
 
 The server will be accessible at http://localhost:5001/
 
+## Building on Netlify
+
+If you have no changes to make to the test files, just run the build hook using the value stored in Lastpass:
+```
+curl --request POST 'https://api.netlify.com/build_hooks/63891a2e11339b52ac8e9e2a'
+```
+This will build the beta version by default, or whatever version is set as the environment variable
+SEARCH_UI_VERSION in Netlify (See `Building a search-ui version other than 'beta'` below).
+
+If you need to change anything in the repo, Netlify will build when you merge your PR.
 
 ## Changing test files
 
@@ -47,11 +57,11 @@ Remember to set it back to an empty value or 'beta' when you're done testing the
 ### Forcing a specific version locally on Mac/Linux
 
 ```sh
-NPM_VERSION_TO_BUILD=2.10106.1 npm i
+SEARCH_UI_VERSION=2.10106.1 npm i
 ```
 
 ### Forcing a specific version locally on Windows
 
 ```bat
-cmd /C "set NPM_VERSION_TO_BUILD=2.10106.1 && npm i"
+cmd /C "set SEARCH_UI_VERSION=2.10106.1 && npm i"
 ```
