@@ -18,7 +18,7 @@ The server will be accessible at http://localhost:5001/
 
 If you have no changes to make to the test files, just run the build hook using the value stored in Lastpass:
 ```
-curl --request POST 'https://api.netlify.com/build_hooks/63891a2e11339b52ac8e9e2a'
+curl --request POST 'https://api.netlify.com/build_hooks/************************'
 ```
 This will build the beta version by default, or whatever version is set as the environment variable
 SEARCH_UI_VERSION in Netlify (See `Building a search-ui version other than 'beta'` below).
