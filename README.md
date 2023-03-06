@@ -40,7 +40,9 @@ SEARCH_UI_VERSION accepts a specific version such as '2.10107.0', or a tag such 
 Browse to this page on the Netlify console (requires log-in):
 https://app.netlify.com/sites/coveo-test-search/settings/env
 
-Set a specific version here as a string, such as '2.10107.0', or a tag, such as 'latest'
+Set a specific version here as a string, such as '2.10107.0', or a tag, such as 'latest'.
+
+Remember to set it back to an empty value or 'beta' when you're done testing the version.
 
 ### Forcing a specific version locally on Mac/Linux
 
