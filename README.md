@@ -65,6 +65,7 @@ npm install netlify-cli -g
 ```sh
 netlify env:set SEARCH_UI_VERSION 2.10106.1
 ```
+You will be redirected to the browser to authenticate.
 
 - Run the build hook (see instructions above)
 
