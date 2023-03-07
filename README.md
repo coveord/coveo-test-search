@@ -45,7 +45,7 @@ https://www.npmjs.com/package/coveo-search-ui?activeTab=versions
 
 SEARCH_UI_VERSION accepts a specific version such as '2.10107.0', or a tag such as 'latest'
 
-### Setting the value in the Netlify build
+### Setting the value in the Netlify UI
 
 Browse to this page on the Netlify console (requires log-in):
 https://app.netlify.com/sites/coveo-test-search/settings/env
@@ -53,6 +53,26 @@ https://app.netlify.com/sites/coveo-test-search/settings/env
 Set a specific version here as a string, such as '2.10107.0', or a tag, such as 'latest'.
 
 Remember to set it back to an empty value or 'beta' when you're done testing the version.
+
+### Setting the value in the Netlify UI
+
+If you don't have the [Netlify CLI](https://docs.netlify.com/cli/get-started/) installed, run:
+```sh
+npm install netlify-cli -g
+```
+
+From inside this repository, run this command with the version you want:
+```sh
+netlify env:set SEARCH_UI_VERSION 2.10106.1
+```
+
+Run the build hook (see instructions above)
+
+When you're done, set the version back to 'beta':
+```sh
+netlify env:set SEARCH_UI_VERSION beta
+```
+(It is not possible to set it back to a null value in the CLI without deleting the variable)
 
 ### Forcing a specific version locally on Mac/Linux
 
