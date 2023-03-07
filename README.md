@@ -55,8 +55,7 @@ https://app.netlify.com/sites/coveo-test-search/settings/env
 
 - Remember to set it back to an empty value or 'beta' when you're done testing the version.
 
-## Setting the value for using the Netlify CLI
-
+## Setting the value using the Netlify CLI
 - If you don't have the [Netlify CLI](https://docs.netlify.com/cli/get-started/) installed, run:
 ```sh
 npm install netlify-cli -g
