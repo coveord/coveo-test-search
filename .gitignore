@@ -2,3 +2,7 @@ node_modules/
 public/
 .DS_Store
 .dccache
+
+# Ignore local Netlify folder exept for state file
+.netlify/
+!.netlify/state.json
