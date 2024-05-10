@@ -1,0 +1,11 @@
+Step 1:
+- Update package.json version
+
+Step 2:
+- Run command
+netlify env:set SEARCH_UI_VERSION 2.10106.1
+
+Step 3:
+- git add .
+- git commit -am"Message here"
+- git push
