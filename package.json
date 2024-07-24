@@ -23,5 +23,8 @@
   "scripts": {
     "postinstall": "npx gulp",
     "start": "npx gulp copyCustomUi && node server"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.0"
   }
 }
