@@ -31,5 +31,5 @@ app.use(
 )
 
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on http://localhost:' + app.get('port'));
+  console.log('Node app is running on http://127.0.0.1:' + app.get('port'));
 });
