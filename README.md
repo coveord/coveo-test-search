@@ -16,7 +16,8 @@ The server will be accessible at http://localhost:5001/
 
 # Building on Netlify
 
-If you have no changes to make to the test files, just run the build hook using the value stored in Lastpass:
+If you have no changes to make to the test files, just run the build hook using the value stored in 1passord
+as `Netlify build hook for coveo-test-search`:
 ```
 curl --request POST 'https://api.netlify.com/build_hooks/************************'
 ```
