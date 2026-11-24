@@ -37,8 +37,11 @@ SEARCH_UI_VERSION in Netlify (See `Building a search-ui version other than 'beta
 
 If you need to change anything in the repo, Netlify will build when you merge your PR.
 
-Unlike GitHub Pages, Netlify has no fallback to `latest`: while no `beta` dist-tag exists, its build fails
-unless SEARCH_UI_VERSION is set. A failed build leaves the previous Netlify deploy live.
+In Netlify, SEARCH_UI_VERSION is set per deploy context: production builds `beta` (the e2e certifier
+expects the release candidate there), while deploy previews and branch deploys build `latest`.
+
+Unlike GitHub Pages, Netlify production has no fallback to `latest`: while no `beta` dist-tag exists,
+its build fails. A failed build leaves the previous Netlify deploy live.
 
 ## Building a search-ui version other than 'beta'
 
@@ -57,9 +60,10 @@ SEARCH_UI_VERSION accepts a specific version such as '2.10107.0', or a tag such 
 - Browse to this page on the Netlify console (requires log-in):
 https://app.netlify.com/sites/coveo-test-search/settings/env
 
-- Set a specific version here as a string, such as '2.10107.0', or a tag, such as 'latest'.
+- Edit the **Production** value only: set a specific version as a string, such as '2.10107.0', or a tag,
+  such as 'latest'. Leave the deploy preview and branch deploy values at 'latest'.
 
-- Remember to set it back to an empty value or 'beta' when you're done testing the version.
+- Remember to set the production value back to 'beta' when you're done testing the version.
 
 ### Setting the value using the Netlify CLI
 - If you don't have the [Netlify CLI](https://docs.netlify.com/cli/get-started/) installed, run:
@@ -67,17 +71,18 @@ https://app.netlify.com/sites/coveo-test-search/settings/env
 npm install netlify-cli -g
 ```
 
-- From inside this repository, run this command with the version you want:
+- From inside this repository, run this command with the version you want. Always pass
+`--context production`: without it, the command overwrites the value for every deploy context.
 ```sh
-netlify env:set SEARCH_UI_VERSION 2.10106.1
+netlify env:set SEARCH_UI_VERSION 2.10106.1 --context production
 ```
 You will be redirected to the browser to authenticate.
 
 - Run the build hook (see instructions above)
 
-- When you're done, set the version back to `beta`:
+- When you're done, set the production version back to `beta`:
 ```sh
-netlify env:set SEARCH_UI_VERSION beta
+netlify env:set SEARCH_UI_VERSION beta --context production
 ```
 (It is not possible to set it back to a null value in the CLI without deleting the variable)
 
