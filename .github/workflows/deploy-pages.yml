@@ -36,7 +36,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Validate search_ui_version
@@ -69,17 +69,7 @@ jobs:
           done
 
       - name: Check base paths in test pages
-        run: |
-          status=0
-          if grep -nE '(src|href)="/[^/]' testPages/*.html; then
-            echo "::error::Root-absolute src/href found in testPages (see lines above)"
-            status=1
-          fi
-          if grep -nE "initSearchbox\(.*['\"]/[^/]" testPages/*.html; then
-            echo "::error::Root-absolute initSearchbox argument found in testPages (see lines above)"
-            status=1
-          fi
-          exit $status
+        run: scripts/check-test-page-paths.sh
 
       - name: Write run summary
         run: |
