@@ -1,0 +1,121 @@
+name: Deploy test pages to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      search_ui_version:
+        description: "coveo-search-ui npm version or dist-tag"
+        required: false
+        default: beta
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SEARCH_UI_VERSION: ${{ inputs.search_ui_version || 'beta' }}
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Validate search_ui_version
+        run: |
+          if ! [[ "$SEARCH_UI_VERSION" =~ ^[A-Za-z0-9._+~-]+$ ]]; then
+            echo "::error::Invalid search_ui_version: $SEARCH_UI_VERSION (allowed: letters, digits, '.', '-', '_', '+', '~')"
+            exit 1
+          fi
+
+      - name: Check that the version exists on npm
+        run: |
+          if ! out=$(npm view "coveo-search-ui@${SEARCH_UI_VERSION}" version 2>/dev/null) || [ -z "$out" ]; then
+            echo "::error::coveo-search-ui version or tag not found on npm: $SEARCH_UI_VERSION"
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build
+        run: npx gulp
+
+      - name: Verify build output
+        run: |
+          for d in public/custom public/js; do
+            if [ ! -d "$d" ]; then
+              echo "::error::Build output is missing directory: $d"
+              exit 1
+            fi
+          done
+
+      - name: Check base paths in test pages
+        run: |
+          status=0
+          if grep -nE '(src|href)="/[^/]' testPages/*.html; then
+            echo "::error::Root-absolute src/href found in testPages (see lines above)"
+            status=1
+          fi
+          if grep -nE "initSearchbox\(.*['\"]/[^/]" testPages/*.html; then
+            echo "::error::Root-absolute initSearchbox argument found in testPages (see lines above)"
+            status=1
+          fi
+          exit $status
+
+      - name: Write run summary
+        run: |
+          installed=$(node -p "require('./node_modules/coveo-search-ui/package.json').version")
+          owner=$(echo "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')
+          repo="${GITHUB_REPOSITORY#*/}"
+          {
+            echo "### Test pages deployment"
+            echo ""
+            echo "- Requested coveo-search-ui version: \`$SEARCH_UI_VERSION\`"
+            echo "- Installed coveo-search-ui version: \`$installed\`"
+            echo "- Site URL: https://${owner}.github.io/${repo}/"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
+        with:
+          egress-policy: audit
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

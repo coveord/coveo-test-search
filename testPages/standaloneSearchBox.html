@@ -12,7 +12,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function(){
             Coveo.SearchEndpoint.configureSampleEndpointV2();
-            Coveo.initSearchbox(document.body, '/custom/standaloneSearchBox_main.html');
+            Coveo.initSearchbox(document.body, 'standaloneSearchBox_main.html');
             $(".searchbtn").click(function(evt) {
                 $('#search').coveo('executeQuery');
             });
