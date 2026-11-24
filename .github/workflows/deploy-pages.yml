@@ -1,5 +1,5 @@
 name: Deploy test pages to GitHub Pages
-run-name: Deploy test pages (${{ inputs.search_ui_version || 'beta' }})
+run-name: Deploy test pages (${{ inputs.search_ui_version || 'default' }})
 
 on:
   push:
@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       search_ui_version:
-        description: "coveo-search-ui npm version or dist-tag"
+        description: "coveo-search-ui npm version or dist-tag (empty: beta if it exists, else latest)"
         required: false
-        default: beta
+        default: ""
         type: string
 
 permissions:
@@ -22,8 +22,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      SEARCH_UI_VERSION: ${{ inputs.search_ui_version || 'beta' }}
     steps:
       - name: Harden runner
         uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
@@ -39,19 +37,39 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Validate search_ui_version
+      # An explicit version is used as is. With no input, use the beta dist-tag while a
+      # release candidate is out, otherwise latest (beta is removed after each promotion).
+      - name: Resolve search-ui version
+        env:
+          REQUESTED: ${{ inputs.search_ui_version }}
         run: |
-          if ! [[ "$SEARCH_UI_VERSION" =~ ^[A-Za-z0-9._+~-]+$ ]]; then
-            echo "::error::Invalid search_ui_version: $SEARCH_UI_VERSION (allowed: letters, digits, '.', '-', '_', '+', '~')"
+          exists() {
+            local out
+            out=$(npm view "coveo-search-ui@$1" version 2>/dev/null) && [ -n "$out" ]
+          }
+
+          if [ -n "$REQUESTED" ]; then
+            if ! [[ "$REQUESTED" =~ ^[A-Za-z0-9._+~-]+$ ]]; then
+              echo "::error::Invalid search_ui_version: $REQUESTED (allowed: letters, digits, '.', '-', '_', '+', '~')"
+              exit 1
+            fi
+            if ! exists "$REQUESTED"; then
+              echo "::error::coveo-search-ui version or tag not found on npm: $REQUESTED"
+              exit 1
+            fi
+            resolved="$REQUESTED"
+          elif exists beta; then
+            resolved=beta
+          elif exists latest; then
+            resolved=latest
+            echo "::notice::No beta dist-tag on npm; deploying latest ($(npm view coveo-search-ui@latest version))"
+          else
+            echo "::error::Neither the beta nor the latest dist-tag of coveo-search-ui resolves on npm"
             exit 1
           fi
 
-      - name: Check that the version exists on npm
-        run: |
-          if ! out=$(npm view "coveo-search-ui@${SEARCH_UI_VERSION}" version 2>/dev/null) || [ -z "$out" ]; then
-            echo "::error::coveo-search-ui version or tag not found on npm: $SEARCH_UI_VERSION"
-            exit 1
-          fi
+          echo "SEARCH_UI_VERSION=$resolved" >> "$GITHUB_ENV"
+          echo "REQUESTED_DISPLAY=${REQUESTED:-none}" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: npm ci --ignore-scripts
@@ -79,7 +97,8 @@ jobs:
           {
             echo "### Test pages deployment"
             echo ""
-            echo "- Requested coveo-search-ui version: \`$SEARCH_UI_VERSION\`"
+            echo "- Requested coveo-search-ui version: \`$REQUESTED_DISPLAY\`"
+            echo "- Resolved version or tag: \`$SEARCH_UI_VERSION\`"
             echo "- Installed coveo-search-ui version: \`$installed\`"
             echo "- Site URL: https://${owner}.github.io/${repo}/"
           } >> "$GITHUB_STEP_SUMMARY"

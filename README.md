@@ -13,13 +13,16 @@ Future work: Netlify is scheduled for removal after the certifier migration.
 
 The `deploy-pages.yml` GitHub Actions workflow builds the site and deploys it to GitHub Pages.
 
-- A merge to `master` deploys the `beta` version of search-ui.
-- To deploy a specific version, run the workflow with the `search_ui_version` input:
+- A merge to `master` deploys the default version of search-ui: the `beta` dist-tag while a release
+  candidate is out, otherwise `latest`. (search-ui publishes each release candidate as `beta` and
+  removes the tag after promotion, so most of the time there is no `beta`.)
+- To deploy a specific version or tag, run the workflow with the `search_ui_version` input.
+  It's used as is, with no fallback: the run fails if it doesn't exist on npm.
 ```sh
 gh workflow run deploy-pages.yml -f search_ui_version=2.10107.0
 ```
-- Running the workflow without `-f` (`gh workflow run deploy-pages.yml`) returns the site to `beta`.
-- The run summary shows the search-ui version that was installed.
+- Running the workflow without `-f` (`gh workflow run deploy-pages.yml`) returns the site to the default version.
+- The run summary shows the requested version, the resolved version or tag, and the installed version.
 - GitHub Pages caches files for 10 minutes, so you may need a hard refresh after a deployment.
 
 # Deploying to Netlify
@@ -33,6 +36,9 @@ This will build the beta version by default, or whatever version is set as the e
 SEARCH_UI_VERSION in Netlify (See `Building a search-ui version other than 'beta'` below).
 
 If you need to change anything in the repo, Netlify will build when you merge your PR.
+
+Unlike GitHub Pages, Netlify has no fallback to `latest`: while no `beta` dist-tag exists, its build fails
+unless SEARCH_UI_VERSION is set. A failed build leaves the previous Netlify deploy live.
 
 ## Building a search-ui version other than 'beta'
 
