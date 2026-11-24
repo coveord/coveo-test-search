@@ -1,4 +1,5 @@
 name: Deploy test pages to GitHub Pages
+run-name: Deploy test pages (${{ inputs.search_ui_version || 'beta' }})
 
 on:
   push:
