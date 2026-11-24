@@ -1,0 +1,131 @@
+name: Deploy test pages to GitHub Pages
+run-name: Deploy test pages (${{ inputs.search_ui_version || 'default' }})
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      search_ui_version:
+        description: "coveo-search-ui npm version or dist-tag (empty: beta if it exists, else latest)"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+
+      # An explicit version is used as is. With no input, use the beta dist-tag while a
+      # release candidate is out, otherwise latest (beta is removed after each promotion).
+      - name: Resolve search-ui version
+        env:
+          REQUESTED: ${{ inputs.search_ui_version }}
+        run: |
+          exists() {
+            local out
+            out=$(npm view "coveo-search-ui@$1" version 2>/dev/null) && [ -n "$out" ]
+          }
+
+          if [ -n "$REQUESTED" ]; then
+            if ! [[ "$REQUESTED" =~ ^[A-Za-z0-9._+~-]+$ ]]; then
+              echo "::error::Invalid search_ui_version: $REQUESTED (allowed: letters, digits, '.', '-', '_', '+', '~')"
+              exit 1
+            fi
+            if ! exists "$REQUESTED"; then
+              echo "::error::coveo-search-ui version or tag not found on npm: $REQUESTED"
+              exit 1
+            fi
+            resolved="$REQUESTED"
+          elif exists beta; then
+            resolved=beta
+          elif exists latest; then
+            resolved=latest
+            echo "::notice::No beta dist-tag on npm; deploying latest ($(npm view coveo-search-ui@latest version))"
+          else
+            echo "::error::Neither the beta nor the latest dist-tag of coveo-search-ui resolves on npm"
+            exit 1
+          fi
+
+          echo "SEARCH_UI_VERSION=$resolved" >> "$GITHUB_ENV"
+          echo "REQUESTED_DISPLAY=${REQUESTED:-none}" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build
+        run: npx gulp
+
+      - name: Verify build output
+        run: |
+          for d in public/custom public/js; do
+            if [ ! -d "$d" ]; then
+              echo "::error::Build output is missing directory: $d"
+              exit 1
+            fi
+          done
+
+      - name: Check base paths in test pages
+        run: scripts/check-test-page-paths.sh
+
+      - name: Write run summary
+        run: |
+          installed=$(node -p "require('./node_modules/coveo-search-ui/package.json').version")
+          owner=$(echo "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')
+          repo="${GITHUB_REPOSITORY#*/}"
+          {
+            echo "### Test pages deployment"
+            echo ""
+            echo "- Requested coveo-search-ui version: \`$REQUESTED_DISPLAY\`"
+            echo "- Resolved version or tag: \`$SEARCH_UI_VERSION\`"
+            echo "- Installed coveo-search-ui version: \`$installed\`"
+            echo "- Site URL: https://${owner}.github.io/${repo}/"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
+        with:
+          egress-policy: audit
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

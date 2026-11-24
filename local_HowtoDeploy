@@ -3,7 +3,7 @@ Step 1:
 
 Step 2:
 - Run command
-netlify env:set SEARCH_UI_VERSION 2.10106.1
+netlify env:set SEARCH_UI_VERSION 2.10106.1 --context production
 
 Step 3:
 - git add .
